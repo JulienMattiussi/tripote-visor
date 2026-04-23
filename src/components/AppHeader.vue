@@ -17,13 +17,39 @@ const currency = ref('USD');
     <div class="container header-inner">
       <a href="#" class="logo" aria-label="Tripote-visor home">
         <svg class="logo-owl" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-          <path d="M 2,13 C 3,3 13,13 13.5,1" fill="none" stroke="#d946ef" stroke-width="1.5" stroke-linecap="round" />
-          <path d="M 30,13 C 29,3 19,13 18.5,1" fill="none" stroke="#d946ef" stroke-width="1.5" stroke-linecap="round" />
-          <circle cx="9.345" cy="17.336" r="4.462" fill="none" stroke="#d946ef" stroke-width="1.5" />
-          <circle cx="9.345" cy="17.336" r="2.34" fill="#d946ef" />
-          <circle cx="22.532" cy="17.336" r="4.462" fill="none" stroke="#d946ef" stroke-width="1.5" />
-          <circle cx="22.532" cy="17.336" r="2.34" fill="#d946ef" />
-          <circle cx="16" cy="29.5" r="0.6" fill="#d946ef" />
+          <path
+            d="M 2,13 C 3,3 13,13 13.5,1"
+            fill="none"
+            stroke="var(--brand)"
+            stroke-width="1.5"
+            stroke-linecap="round"
+          />
+          <path
+            d="M 30,13 C 29,3 19,13 18.5,1"
+            fill="none"
+            stroke="var(--brand)"
+            stroke-width="1.5"
+            stroke-linecap="round"
+          />
+          <circle
+            cx="9.345"
+            cy="17.336"
+            r="4.462"
+            fill="none"
+            stroke="var(--brand)"
+            stroke-width="1.5"
+          />
+          <circle cx="9.345" cy="17.336" r="2.34" fill="var(--brand)" />
+          <circle
+            cx="22.532"
+            cy="17.336"
+            r="4.462"
+            fill="none"
+            stroke="var(--brand)"
+            stroke-width="1.5"
+          />
+          <circle cx="22.532" cy="17.336" r="2.34" fill="var(--brand)" />
+          <circle cx="16" cy="29.5" r="0.6" fill="var(--brand)" />
         </svg>
         <span class="logo-text">Tripote-visor</span>
       </a>
@@ -82,7 +108,7 @@ const currency = ref('USD');
 }
 
 .logo-text {
-  color: #6b1a4f;
+  color: var(--brand-dark);
 }
 
 .main-nav {
@@ -119,7 +145,7 @@ const currency = ref('USD');
 }
 
 .main-nav li.highlight a:hover {
-  background: rgba(0, 170, 108, 0.08);
+  background: var(--brand-tint);
 }
 
 .sparkle {

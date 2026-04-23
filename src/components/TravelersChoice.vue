@@ -10,8 +10,12 @@ const onSeeWinners = () => alert('See winners — simulation front seulement');
           <span class="tc-badge-year">2026</span>
         </div>
         <h2 class="tc-title">Travelers' Choice Awards Best of the Best</h2>
-        <p class="tc-sub">Among our top 1% of places, stays, eats, and experiences — decided by you.</p>
-        <button class="pill-btn pill-btn--light" type="button" @click="onSeeWinners">See the winners</button>
+        <p class="tc-sub">
+          Among our top 1% of places, stays, eats, and experiences — decided by you.
+        </p>
+        <button class="pill-btn pill-btn--light" type="button" @click="onSeeWinners">
+          See the winners
+        </button>
       </div>
 
       <div class="tc-art" aria-hidden="true">
@@ -23,7 +27,7 @@ const onSeeWinners = () => alert('See winners — simulation front seulement');
             loading="lazy"
           />
         </div>
-        <div class="shape shape-green"></div>
+        <div class="shape shape-accent"></div>
       </div>
     </div>
   </section>
@@ -47,7 +51,7 @@ const onSeeWinners = () => alert('See winners — simulation front seulement');
 .tc-badge {
   width: 60px;
   height: 80px;
-  background: #ffe85c;
+  background: var(--accent-yellow);
   border-radius: 8px 8px 30px 30px;
   display: flex;
   align-items: flex-end;
@@ -91,7 +95,7 @@ const onSeeWinners = () => alert('See winners — simulation front seulement');
 .shape-yellow {
   width: 180px;
   height: 180px;
-  background: #ffe85c;
+  background: var(--accent-yellow);
   top: 0;
   left: 20%;
   z-index: 1;
@@ -112,7 +116,7 @@ const onSeeWinners = () => alert('See winners — simulation front seulement');
   object-fit: cover;
 }
 
-.shape-green {
+.shape-accent {
   width: 150px;
   height: 150px;
   background: var(--brand-light);
@@ -122,11 +126,28 @@ const onSeeWinners = () => alert('See winners — simulation front seulement');
 }
 
 @media (max-width: 800px) {
-  .tc-inner { grid-template-columns: 1fr; }
-  .tc-title { font-size: 28px; }
-  .tc-art { height: 260px; }
-  .shape-yellow { width: 120px; height: 120px; }
-  .shape-photo { width: 200px; height: 200px; left: 28%; top: 30px; }
-  .shape-green { width: 110px; height: 110px; }
+  .tc-inner {
+    grid-template-columns: 1fr;
+  }
+  .tc-title {
+    font-size: 28px;
+  }
+  .tc-art {
+    height: 260px;
+  }
+  .shape-yellow {
+    width: 120px;
+    height: 120px;
+  }
+  .shape-photo {
+    width: 200px;
+    height: 200px;
+    left: 28%;
+    top: 30px;
+  }
+  .shape-accent {
+    width: 110px;
+    height: 110px;
+  }
 }
 </style>

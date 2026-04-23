@@ -5,19 +5,37 @@ const columns = [
   {
     title: 'About Tripote-visor',
     links: [
-      'About Us', 'Press', 'Resources and Policies', 'Careers', 'Investor Relations',
-      'Trust & Safety', 'Contact us', 'Bug Bounty Program', 'Tripote-visor Technology Blog',
+      'About Us',
+      'Press',
+      'Resources and Policies',
+      'Careers',
+      'Investor Relations',
+      'Trust & Safety',
+      'Contact us',
+      'Bug Bounty Program',
+      'Tripote-visor Technology Blog',
     ],
   },
   {
     title: 'Explore',
-    links: ['Write a review', 'Add a Place', 'Join', "Travelers' Choice", 'Help Center', 'Travel Stories'],
+    links: [
+      'Write a review',
+      'Add a Place',
+      'Join',
+      "Travelers' Choice",
+      'Help Center',
+      'Travel Stories',
+    ],
   },
   {
     title: 'Do Business With Us',
     links: [
-      'Owners', 'Business Advantage', 'Sponsored Placements', 'Advertise with Us',
-      'Access our Content API', 'Become an Affiliate',
+      'Owners',
+      'Business Advantage',
+      'Sponsored Placements',
+      'Advertise with Us',
+      'Access our Content API',
+      'Become an Affiliate',
     ],
     extraTitle: 'Get The App',
     extraLinks: ['iPhone App', 'Android App'],
@@ -52,12 +70,16 @@ const readMore = ref(false);
         <div v-for="col in columns" :key="col.title" class="footer-col">
           <h3>{{ col.title }}</h3>
           <ul>
-            <li v-for="l in col.links" :key="l"><a href="#">{{ l }}</a></li>
+            <li v-for="l in col.links" :key="l">
+              <a href="#">{{ l }}</a>
+            </li>
           </ul>
           <template v-if="col.extraTitle">
             <h3 class="mt">{{ col.extraTitle }}</h3>
             <ul>
-              <li v-for="l in col.extraLinks" :key="l"><a href="#">{{ l }}</a></li>
+              <li v-for="l in col.extraLinks" :key="l">
+                <a href="#">{{ l }}</a>
+              </li>
             </ul>
           </template>
         </div>
@@ -94,7 +116,14 @@ const readMore = ref(false);
       <div class="footer-bottom">
         <div class="owl-wrap">
           <svg class="owl" viewBox="0 0 40 40" aria-hidden="true">
-            <circle cx="20" cy="20" r="18" fill="none" stroke="var(--brand-dark)" stroke-width="2" />
+            <circle
+              cx="20"
+              cy="20"
+              r="18"
+              fill="none"
+              stroke="var(--brand-dark)"
+              stroke-width="2"
+            />
             <circle cx="14" cy="18" r="4" fill="var(--brand-dark)" />
             <circle cx="26" cy="18" r="4" fill="var(--brand-dark)" />
             <circle cx="14" cy="18" r="1.5" fill="#fff" />
@@ -265,10 +294,14 @@ const readMore = ref(false);
 }
 
 @media (max-width: 900px) {
-  .footer-grid { grid-template-columns: repeat(2, 1fr); }
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 600px) {
-  .footer-grid { grid-template-columns: 1fr; }
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
 }
 </style>

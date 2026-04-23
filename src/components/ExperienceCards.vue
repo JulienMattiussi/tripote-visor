@@ -61,15 +61,25 @@ const toggleFav = (exp) => {
               :aria-label="exp.favorite ? 'Remove from favorites' : 'Add to favorites'"
               @click="toggleFav(exp)"
             >
-              <svg viewBox="0 0 24 24" :class="['heart', { filled: exp.favorite }]" aria-hidden="true">
-                <path d="M12 21s-7-4.5-9.5-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.5 6C19 16.5 12 21 12 21z" />
+              <svg
+                viewBox="0 0 24 24"
+                :class="['heart', { filled: exp.favorite }]"
+                aria-hidden="true"
+              >
+                <path
+                  d="M12 21s-7-4.5-9.5-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.5 6C19 16.5 12 21 12 21z"
+                />
               </svg>
             </button>
           </div>
           <h3 class="exp-title">{{ exp.title }}</h3>
           <div class="rating">
             <span class="stars" aria-hidden="true">
-              <span v-for="i in 5" :key="i" :class="['dot', { filled: i <= Math.round(exp.rating) }]"></span>
+              <span
+                v-for="i in 5"
+                :key="i"
+                :class="['dot', { filled: i <= Math.round(exp.rating) }]"
+              ></span>
             </span>
             <span class="rating-num">{{ exp.rating.toFixed(1) }}</span>
             <span class="reviews">({{ exp.reviews }})</span>
@@ -84,9 +94,13 @@ const toggleFav = (exp) => {
 </template>
 
 <style scoped>
-.experiences { position: relative; }
+.experiences {
+  position: relative;
+}
 
-.carousel { position: relative; }
+.carousel {
+  position: relative;
+}
 
 .exp-grid {
   list-style: none;
@@ -137,7 +151,9 @@ const toggleFav = (exp) => {
   backdrop-filter: blur(2px);
 }
 
-.fav-btn:hover { background: #fff; }
+.fav-btn:hover {
+  background: #fff;
+}
 
 .heart {
   width: 18px;
@@ -148,8 +164,8 @@ const toggleFav = (exp) => {
 }
 
 .heart.filled {
-  fill: #d32f2f;
-  stroke: #d32f2f;
+  fill: var(--danger);
+  stroke: var(--danger);
 }
 
 .exp-title {
@@ -183,11 +199,17 @@ const toggleFav = (exp) => {
   display: inline-block;
 }
 
-.dot.filled { background: var(--brand); }
+.dot.filled {
+  background: var(--brand);
+}
 
-.rating-num { font-weight: 700; }
+.rating-num {
+  font-weight: 700;
+}
 
-.reviews { color: var(--text-muted); }
+.reviews {
+  color: var(--text-muted);
+}
 
 .price {
   font-size: 13px;
@@ -211,10 +233,16 @@ const toggleFav = (exp) => {
   z-index: 2;
 }
 
-.nav-arrow:hover { background: var(--surface); }
+.nav-arrow:hover {
+  background: var(--surface);
+}
 
 @media (max-width: 900px) {
-  .exp-grid { grid-template-columns: repeat(2, 1fr); }
-  .nav-arrow { display: none; }
+  .exp-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .nav-arrow {
+    display: none;
+  }
 }
 </style>

@@ -16,7 +16,7 @@ const articles = ref([
   },
   {
     id: 3,
-    title: '12 trips where you\'ll never need to rent a car',
+    title: "12 trips where you'll never need to rent a car",
     img: 'https://images.unsplash.com/photo-1467269204594-9661b134dd2b?w=700&q=60',
     favorite: false,
   },
@@ -39,7 +39,9 @@ const toggleFav = (a) => (a.favorite = !a.favorite);
             @click="toggleFav(a)"
           >
             <svg viewBox="0 0 24 24" :class="['heart', { filled: a.favorite }]" aria-hidden="true">
-              <path d="M12 21s-7-4.5-9.5-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.5 6C19 16.5 12 21 12 21z" />
+              <path
+                d="M12 21s-7-4.5-9.5-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.5 6C19 16.5 12 21 12 21z"
+              />
             </svg>
           </button>
         </div>
@@ -88,7 +90,9 @@ const toggleFav = (a) => (a.favorite = !a.favorite);
   transition: transform 0.3s ease;
 }
 
-.insp-card:hover .thumb img { transform: scale(1.03); }
+.insp-card:hover .thumb img {
+  transform: scale(1.03);
+}
 
 .fav-btn {
   position: absolute;
@@ -112,8 +116,8 @@ const toggleFav = (a) => (a.favorite = !a.favorite);
 }
 
 .heart.filled {
-  fill: #d32f2f;
-  stroke: #d32f2f;
+  fill: var(--danger);
+  stroke: var(--danger);
 }
 
 .insp-title {
@@ -124,6 +128,8 @@ const toggleFav = (a) => (a.favorite = !a.favorite);
 }
 
 @media (max-width: 800px) {
-  .insp-grid { grid-template-columns: 1fr; }
+  .insp-grid {
+    grid-template-columns: 1fr;
+  }
 }
 </style>

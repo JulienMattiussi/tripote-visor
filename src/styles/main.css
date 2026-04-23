@@ -1,13 +1,17 @@
 :root {
-  --brand: #00aa6c;
-  --brand-dark: #004f32;
-  --brand-light: #34e0a1;
+  --brand: #d946ef;
+  --brand-dark: #6b1a4f;
+  --brand-light: #f5d0fe;
+  --brand-hover: #a21caf;
+  --brand-tint: rgba(217, 70, 239, 0.08);
   --bg: #ffffff;
   --surface: #f2f2f2;
   --surface-alt: #faf0e4;
   --text: #000000;
   --text-muted: #5a5a5a;
   --border: #d9d9d9;
+  --accent-yellow: #ffe85c;
+  --danger: #d32f2f;
   --radius: 12px;
   --shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   --shadow-hover: 0 4px 16px rgba(0, 0, 0, 0.12);
@@ -60,7 +64,10 @@ img {
   border-radius: 999px;
   font-weight: 700;
   font-size: 14px;
-  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+  transition:
+    background 0.15s ease,
+    color 0.15s ease,
+    border-color 0.15s ease;
 }
 
 .pill-btn--dark {
@@ -84,7 +91,7 @@ img {
   color: #fff;
 }
 .pill-btn--brand:hover {
-  background: #008f5a;
+  background: var(--brand-hover);
 }
 
 .section {

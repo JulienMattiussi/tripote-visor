@@ -1,9 +1,21 @@
 <script setup>
 const destinations = [
-  { name: 'Rome, Italy', img: 'https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=700&q=60' },
-  { name: 'Paris, France', img: 'https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=700&q=60' },
-  { name: 'Las Vegas, NV', img: 'https://images.unsplash.com/photo-1581351721010-8cf859cb14a4?w=700&q=60' },
-  { name: 'London, UK', img: 'https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=700&q=60' },
+  {
+    name: 'Rome, Italy',
+    img: 'https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=700&q=60',
+  },
+  {
+    name: 'Paris, France',
+    img: 'https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=700&q=60',
+  },
+  {
+    name: 'Las Vegas, NV',
+    img: 'https://images.unsplash.com/photo-1581351721010-8cf859cb14a4?w=700&q=60',
+  },
+  {
+    name: 'London, UK',
+    img: 'https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=700&q=60',
+  },
 ];
 </script>
 
@@ -37,7 +49,9 @@ const destinations = [
   overflow: hidden;
   cursor: pointer;
   box-shadow: var(--shadow);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .dest-card:hover {
@@ -68,6 +82,8 @@ const destinations = [
 }
 
 @media (max-width: 900px) {
-  .dest-grid { grid-template-columns: repeat(2, 1fr); }
+  .dest-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 </style>

@@ -18,8 +18,8 @@ const onDonate = () => alert('Donate now — simulation front seulement');
       </div>
       <h2>Show some love to small businesses</h2>
       <p>
-        Donate to our partner today to provide loans to local entrepreneurs and the
-        Tripote-visor Foundation will match it, up to $150,000 USD collectively. Terms apply.
+        Donate to our partner today to provide loans to local entrepreneurs and the Tripote-visor
+        Foundation will match it, up to $150,000 USD collectively. Terms apply.
       </p>
       <button class="pill-btn pill-btn--dark" type="button" @click="onDonate">Donate now</button>
     </div>
@@ -87,7 +87,11 @@ const onDonate = () => alert('Donate now — simulation front seulement');
 }
 
 @media (max-width: 700px) {
-  .kiva { grid-template-columns: 1fr; }
-  .kiva-image img { height: 200px; }
+  .kiva {
+    grid-template-columns: 1fr;
+  }
+  .kiva-image img {
+    height: 200px;
+  }
 }
 </style>
