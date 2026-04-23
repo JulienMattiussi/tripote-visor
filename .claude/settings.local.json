@@ -1,0 +1,30 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm --version)",
+      "Bash(npm install *)",
+      "Bash(curl -s -o /dev/null -w \"HTTP %{http_code}\\\\n\" http://localhost:5173/)",
+      "Bash(curl -s http://localhost:5173/src/App.vue)",
+      "Read(//tmp/**)",
+      "Bash(convert /home/julien/Téléchargements/ico.ico ico-preview.png)",
+      "Bash(identify /home/julien/Téléchargements/ico.ico)",
+      "Bash(convert -version)",
+      "Bash(convert -background none -density 384 /home/julien/Téléchargements/ico-modified.svg -resize 16x16 ico-16.png)",
+      "Bash(convert -background none -density 384 /home/julien/Téléchargements/ico-modified.svg -resize 32x32 ico-32.png)",
+      "Bash(convert -background none -density 384 /home/julien/Téléchargements/ico-modified.svg -resize 48x48 ico-48.png)",
+      "Bash(convert ico-16.png ico-32.png ico-48.png /home/julien/Téléchargements/ico-modified.ico)",
+      "Bash(identify /home/julien/Téléchargements/ico-modified.ico)",
+      "Bash(convert -background none -density 384 /tmp/ico-inverted.svg -resize 16x16 ico-inv-16.png)",
+      "Bash(convert -background none -density 384 /tmp/ico-inverted.svg -resize 32x32 ico-inv-32.png)",
+      "Bash(convert -background none -density 384 /tmp/ico-inverted.svg -resize 48x48 ico-inv-48.png)",
+      "Bash(convert ico-inv-16.png ico-inv-32.png ico-inv-48.png /home/julien/Documents/MyRepos/tripote-visor/public/ico-modified.ico)",
+      "Bash(identify /home/julien/Documents/MyRepos/tripote-visor/public/ico-modified.ico)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:5173/ico-modified.ico)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:5173/ico-modified.svg)",
+      "Bash(curl -s http://localhost:5173/)"
+    ],
+    "additionalDirectories": [
+      "/tmp"
+    ]
+  }
+}
