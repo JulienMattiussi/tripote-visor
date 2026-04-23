@@ -3,3 +3,4 @@ dist
 .vite
 package-lock.json
 public/favicon.svg
+.claude/settings.local.json

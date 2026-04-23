@@ -1,8 +1,14 @@
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect, beforeEach } from 'vitest';
 import { mount } from '@vue/test-utils';
 import AppHeader from '../src/components/AppHeader.vue';
+import { setLocale, setCurrency } from '../src/i18n/store.js';
 
 describe('AppHeader', () => {
+  beforeEach(() => {
+    setLocale('en');
+    setCurrency('USD');
+  });
+
   it('renders the logo with the bust icon and brand name', () => {
     const wrapper = mount(AppHeader);
 

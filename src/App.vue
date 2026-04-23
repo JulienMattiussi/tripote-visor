@@ -10,6 +10,7 @@ import DestinationsGrid from './components/DestinationsGrid.vue';
 import TravelersChoice from './components/TravelersChoice.vue';
 import CommunityBlurb from './components/CommunityBlurb.vue';
 import AppFooter from './components/AppFooter.vue';
+import PreferencesModal from './components/PreferencesModal.vue';
 </script>
 
 <template>
@@ -30,4 +31,5 @@ import AppFooter from './components/AppFooter.vue';
     </div>
   </main>
   <AppFooter />
+  <PreferencesModal />
 </template>

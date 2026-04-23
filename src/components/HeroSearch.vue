@@ -1,36 +1,38 @@
 <script setup>
-import { ref } from 'vue';
+import { ref, computed } from 'vue';
+import { t } from '../i18n/store.js';
 
-const tabs = [
-  { id: 'all', label: 'Search All', icon: '🔎' },
-  { id: 'hotels', label: 'Hotels', icon: '🏨' },
-  { id: 'things', label: 'Things to Do', icon: '🎡' },
-  { id: 'restaurants', label: 'Restaurants', icon: '🍽️' },
-  { id: 'cruises', label: 'Cruises', icon: '🚢' },
-];
+const tabs = computed(() => [
+  { id: 'all', label: t('hero.tab_all'), icon: '🔎' },
+  { id: 'hotels', label: t('hero.tab_hotels'), icon: '🏨' },
+  { id: 'things', label: t('hero.tab_things'), icon: '🎡' },
+  { id: 'restaurants', label: t('hero.tab_restaurants'), icon: '🍽️' },
+  { id: 'cruises', label: t('hero.tab_cruises'), icon: '🚢' },
+]);
 
 const activeTab = ref('all');
 const query = ref('');
 
-const placeholder = {
-  all: 'Places to go, things to do, hotels…',
-  hotels: 'Where are you going?',
-  things: 'Things to do, attractions, tours…',
-  restaurants: 'Find restaurants, cuisines…',
-  cruises: 'Search cruise lines, ports…',
+const placeholderKeyMap = {
+  all: 'hero.placeholder_all',
+  hotels: 'hero.placeholder_hotels',
+  things: 'hero.placeholder_things',
+  restaurants: 'hero.placeholder_restaurants',
+  cruises: 'hero.placeholder_cruises',
 };
+const placeholder = computed(() => t(placeholderKeyMap[activeTab.value]));
 
 const onSubmit = (e) => {
   e.preventDefault();
   if (!query.value.trim()) return;
-  alert(`Recherche (${activeTab.value}): ${query.value}`);
+  alert(`${t('hero.search_btn')} (${activeTab.value}): ${query.value}`);
 };
 </script>
 
 <template>
   <section class="hero">
     <div class="container">
-      <h1 class="hero-title">Where to?</h1>
+      <h1 class="hero-title">{{ t('hero.title') }}</h1>
 
       <div class="tabs" role="tablist">
         <button
@@ -52,11 +54,13 @@ const onSubmit = (e) => {
           <input
             v-model="query"
             type="text"
-            :placeholder="placeholder[activeTab]"
-            aria-label="Search"
+            :placeholder="placeholder"
+            :aria-label="t('hero.search_aria')"
           />
         </div>
-        <button type="submit" class="pill-btn pill-btn--brand search-btn">Search</button>
+        <button type="submit" class="pill-btn pill-btn--brand search-btn">
+          {{ t('hero.search_btn') }}
+        </button>
       </form>
     </div>
   </section>

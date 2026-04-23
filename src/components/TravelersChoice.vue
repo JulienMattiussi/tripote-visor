@@ -1,5 +1,7 @@
 <script setup>
-const onSeeWinners = () => alert('See winners — simulation front seulement');
+import { t } from '../i18n/store.js';
+
+const onSeeWinners = () => alert(`${t('tc.cta')} ${t('common.sim_suffix')}`);
 </script>
 
 <template>
@@ -7,14 +9,12 @@ const onSeeWinners = () => alert('See winners — simulation front seulement');
     <div class="container tc-inner">
       <div class="tc-copy">
         <div class="tc-badge" aria-hidden="true">
-          <span class="tc-badge-year">2026</span>
+          <span class="tc-badge-year">{{ t('tc.year') }}</span>
         </div>
-        <h2 class="tc-title">Travelers' Choice Awards Best of the Best</h2>
-        <p class="tc-sub">
-          Among our top 1% of places, stays, eats, and experiences — decided by you.
-        </p>
+        <h2 class="tc-title">{{ t('tc.title') }}</h2>
+        <p class="tc-sub">{{ t('tc.subtitle') }}</p>
         <button class="pill-btn pill-btn--light" type="button" @click="onSeeWinners">
-          See the winners
+          {{ t('tc.cta') }}
         </button>
       </div>
 

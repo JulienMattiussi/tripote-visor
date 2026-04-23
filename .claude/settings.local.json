@@ -30,8 +30,14 @@
       "Bash(convert -background none -density 384 /home/julien/Documents/MyRepos/tripote-visor/public/ico-modified.svg -resize 192x192 /tmp/ico-preview-dot2.png)",
       "Bash(grep -rnE \"#[0-9a-fA-F]{3,8}\\\\b|rgb\\\\\\(|hsl\\\\\\(|\\\\bgreen\\\\b|--brand\" src/)",
       "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:5173/)",
-      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:5173/src/styles/main.css)"
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:5173/src/styles/main.css)",
+      "Bash(curl -s http://localhost:5173/src/i18n/store.js)",
+      "Bash(curl -s http://localhost:5173/src/i18n/store.js -o /dev/null -w \"store.js: %{http_code}\\\\n\")",
+      "Bash(curl -s http://localhost:5173/src/components/PreferencesModal.vue -o /dev/null -w \"modal: %{http_code}\\\\n\")",
+      "Bash(node --input-type=module -e ' *)"
     ],
-    "additionalDirectories": ["/tmp"]
+    "additionalDirectories": [
+      "/tmp"
+    ]
   }
 }

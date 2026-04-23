@@ -25,10 +25,10 @@ All user actions (fav toggles, tab switches, currency pill, Sign in, Search) are
 
 ```
 src/
-├── App.vue                 # Root — composes every section in order
+├── App.vue                 # Root — composes every section in order + mounts PreferencesModal
 ├── main.js                 # createApp + global CSS import
-├── components/             # 11 single-file components, one per section
-│   ├── AppHeader.vue           # Sticky nav + inline-SVG bust logo
+├── components/             # 12 single-file components
+│   ├── AppHeader.vue           # Sticky nav + inline-SVG bust logo; currency pill opens the modal
 │   ├── HeroSearch.vue          # Tabbed search
 │   ├── ThingsToDoBanner.vue
 │   ├── CategoryGrid.vue
@@ -38,7 +38,13 @@ src/
 │   ├── DestinationsGrid.vue
 │   ├── TravelersChoice.vue
 │   ├── CommunityBlurb.vue
-│   └── AppFooter.vue
+│   ├── AppFooter.vue
+│   └── PreferencesModal.vue    # Region/Language + Currency modal (Tripadvisor-style)
+├── i18n/
+│   ├── store.js            # Reactive `locale`/`currency` refs, `t(key, params?)`, modal controls
+│   ├── translations.js     # `{ en: {...}, fr: {...} }` — full site copy
+│   ├── regions.js          # Country list for the modal (only US + FR enabled)
+│   └── currencies.js       # Currency list for the modal (only USD + EUR enabled)
 └── styles/
     └── main.css            # :root theme tokens + global base styles
 
@@ -78,6 +84,17 @@ All colors live in `src/styles/main.css` under `:root` as CSS custom properties.
 
 To re-skin the site, edit only `main.css`. There are no other sources of truth for color.
 
+## i18n
+
+Two locales (`en`, `fr`) and two currencies (`USD`, `EUR`) are supported. Every other option in the Preferences modal is rendered grayed-out with an "Unavailable now" / "Indisponible actuellement" sub-label. The modal is opened from the header currency pill (or the footer selects when the user picks the `…` option).
+
+- **State** — `src/i18n/store.js` exports module-scoped `locale` and `currency` refs. Both persist to `localStorage` (`tv_locale`, `tv_currency`) and are restored on load. Unknown values are rejected by `setLocale`/`setCurrency`.
+- **Translation** — `t('section.key', params?)` walks the dotted key in `translations[locale.value]`, falls back to `translations.en`, and finally returns the key itself. Placeholders like `{amount}` are replaced from `params`. Because `t()` reads `locale.value`, any template or `computed()` that calls it re-evaluates automatically when the locale changes.
+- **Currency formatting** — `formatAmount(usdAmount)` converts to EUR when needed (fixed 0.92 rate), then formats with `toLocaleString(locale)` and the correct symbol position (`$` prefix / `€` suffix). Components hand in a canonical USD figure; the helper handles both the conversion and the locale-aware number grouping.
+- **Enabled vs. disabled options** — `regions.js` and `currencies.js` flag entries with `enabled: true`; the modal disables the others and shows the translated "unavailable" copy. Expanding the site's coverage = flipping the flag, not touching the component.
+
+When adding a new visible string: add its key under the right section in both `en` and `fr`, then replace the literal in the component with `{{ t('section.key') }}`. Never hardcode English copy in a template — the "no hardcoded hex" rule has a twin for strings.
+
 ## Stack
 
 - **Vue 3** (`<script setup>` SFCs, Composition API)
@@ -103,7 +120,7 @@ Every target is also available directly via `npm run <script>` — the Makefile 
 
 ## Rules
 
-- **UI copy in English.** The site mimics Tripadvisor; strings match that tone. Code, comments, and commit messages are also in English.
+- **UI copy lives in `src/i18n/translations.js`.** Both `en` and `fr` must be filled in. Templates call `t('section.key')` — never hardcode English in the template. Code, comments, and commit messages are in English; user-facing copy follows the active locale.
 - **Theme values live in `main.css` only.** Components must use `var(--token)` — no hex or rgb in component `<style>` blocks. Inline SVGs inside Vue components (e.g. `AppHeader`) must bind `fill`/`stroke` to `var(--brand)` etc., not raw hex.
 - **Favicons (`public/favicon.*`) are the sole exception** — they are standalone assets and may embed the literal brand hex. Update them in sync with `main.css` when the brand color changes.
 - **No real network, no backend.** Placeholder interactions use `alert()` or local `ref()` state. External image URLs are fine (Unsplash).

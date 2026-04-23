@@ -1,30 +1,37 @@
 <script setup>
-const categories = [
+import { computed } from 'vue';
+import { t } from '../i18n/store.js';
+
+const categories = computed(() => [
   {
-    label: 'Outdoors',
+    key: 'outdoors',
+    label: t('categories.outdoors'),
     img: 'https://images.unsplash.com/photo-1526491109672-74740652b963?w=600&q=60',
   },
   {
-    label: 'Food',
+    key: 'food',
+    label: t('categories.food'),
     img: 'https://images.unsplash.com/photo-1551183053-bf91a1d81141?w=600&q=60',
   },
   {
-    label: 'Culture',
+    key: 'culture',
+    label: t('categories.culture'),
     img: 'https://images.unsplash.com/photo-1520763185298-1b434c919102?w=600&q=60',
   },
   {
-    label: 'Water',
+    key: 'water',
+    label: t('categories.water'),
     img: 'https://images.unsplash.com/photo-1559825481-12a05cc00344?w=600&q=60',
   },
-];
+]);
 </script>
 
 <template>
   <section class="section">
-    <h2 class="section-title">Find things to do by interest</h2>
-    <p class="section-subtitle">Whatever you're into, we've got it</p>
+    <h2 class="section-title">{{ t('categories.title') }}</h2>
+    <p class="section-subtitle">{{ t('categories.subtitle') }}</p>
     <ul class="cat-grid">
-      <li v-for="c in categories" :key="c.label" class="cat-card">
+      <li v-for="c in categories" :key="c.key" class="cat-card">
         <img :src="c.img" :alt="c.label" loading="lazy" />
         <span class="cat-label">{{ c.label }}</span>
       </li>

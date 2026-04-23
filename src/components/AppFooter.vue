@@ -1,55 +1,56 @@
 <script setup>
-import { ref } from 'vue';
+import { ref, computed } from 'vue';
+import { t, currency, locale, setCurrency, setLocale, openPreferences } from '../i18n/store.js';
 
-const columns = [
+const columns = computed(() => [
   {
-    title: 'About Tripote-visor',
+    key: 'about',
+    title: t('footer.col_about_title'),
     links: [
-      'About Us',
-      'Press',
-      'Resources and Policies',
-      'Careers',
-      'Investor Relations',
-      'Trust & Safety',
-      'Contact us',
-      'Bug Bounty Program',
-      'Tripote-visor Technology Blog',
+      t('footer.col_about_1'),
+      t('footer.col_about_2'),
+      t('footer.col_about_3'),
+      t('footer.col_about_4'),
+      t('footer.col_about_5'),
+      t('footer.col_about_6'),
+      t('footer.col_about_7'),
+      t('footer.col_about_8'),
+      t('footer.col_about_9'),
     ],
   },
   {
-    title: 'Explore',
+    key: 'explore',
+    title: t('footer.col_explore_title'),
     links: [
-      'Write a review',
-      'Add a Place',
-      'Join',
-      "Travelers' Choice",
-      'Help Center',
-      'Travel Stories',
+      t('footer.col_explore_1'),
+      t('footer.col_explore_2'),
+      t('footer.col_explore_3'),
+      t('footer.col_explore_4'),
+      t('footer.col_explore_5'),
+      t('footer.col_explore_6'),
     ],
   },
   {
-    title: 'Do Business With Us',
+    key: 'business',
+    title: t('footer.col_business_title'),
     links: [
-      'Owners',
-      'Business Advantage',
-      'Sponsored Placements',
-      'Advertise with Us',
-      'Access our Content API',
-      'Become an Affiliate',
+      t('footer.col_business_1'),
+      t('footer.col_business_2'),
+      t('footer.col_business_3'),
+      t('footer.col_business_4'),
+      t('footer.col_business_5'),
+      t('footer.col_business_6'),
     ],
-    extraTitle: 'Get The App',
-    extraLinks: ['iPhone App', 'Android App'],
+    extraTitle: t('footer.col_app_title'),
+    extraLinks: [t('footer.col_app_1'), t('footer.col_app_2')],
   },
-];
+]);
 
-const sites = [
-  { label: 'Book the best restaurants with', partner: 'TheFork' },
-  { label: 'Book tours and attraction tickets on', partner: 'Viator' },
-  { label: 'Read cruise reviews on', partner: 'Cruise Critic' },
-];
-
-const currency = ref('$ USD');
-const country = ref('United States');
+const sites = computed(() => [
+  { key: 'fork', label: t('footer.site_1_label'), partner: 'TheFork' },
+  { key: 'viator', label: t('footer.site_2_label'), partner: 'Viator' },
+  { key: 'cruise', label: t('footer.site_3_label'), partner: 'Cruise Critic' },
+]);
 
 const socials = [
   { id: 'fb', label: 'Facebook' },
@@ -61,13 +62,33 @@ const socials = [
 ];
 
 const readMore = ref(false);
+
+const onCurrencyChange = (e) => {
+  const value = e.target.value;
+  if (value === 'USD' || value === 'EUR') {
+    setCurrency(value);
+  } else {
+    openPreferences('currency');
+    e.target.value = currency.value;
+  }
+};
+
+const onLocaleChange = (e) => {
+  const value = e.target.value;
+  if (value === 'en' || value === 'fr') {
+    setLocale(value);
+  } else {
+    openPreferences('region');
+    e.target.value = locale.value;
+  }
+};
 </script>
 
 <template>
   <footer class="site-footer">
     <div class="container">
       <div class="footer-grid">
-        <div v-for="col in columns" :key="col.title" class="footer-col">
+        <div v-for="col in columns" :key="col.key" class="footer-col">
           <h3>{{ col.title }}</h3>
           <ul>
             <li v-for="l in col.links" :key="l">
@@ -85,27 +106,31 @@ const readMore = ref(false);
         </div>
 
         <div class="footer-col sites-col">
-          <h3>Tripote-visor Sites</h3>
+          <h3>{{ t('footer.sites_title') }}</h3>
           <ul>
-            <li v-for="s in sites" :key="s.partner">
+            <li v-for="s in sites" :key="s.key">
               {{ s.label }} <a href="#" class="partner">{{ s.partner }}</a>
             </li>
           </ul>
 
           <div class="selects">
-            <select v-model="currency" aria-label="Currency">
-              <option>$ USD</option>
-              <option>€ EUR</option>
-              <option>£ GBP</option>
+            <select
+              :value="currency"
+              :aria-label="t('footer.currency_aria')"
+              @change="onCurrencyChange"
+            >
+              <option value="USD">$ USD</option>
+              <option value="EUR">€ EUR</option>
+              <option value="__more__">…</option>
             </select>
-            <select v-model="country" aria-label="Country">
-              <option>United States</option>
-              <option>France</option>
-              <option>United Kingdom</option>
+            <select :value="locale" :aria-label="t('footer.country_aria')" @change="onLocaleChange">
+              <option value="en">{{ t('footer.country_us') }}</option>
+              <option value="fr">{{ t('footer.country_fr') }}</option>
+              <option value="__more__">…</option>
             </select>
           </div>
 
-          <div class="socials" aria-label="Social links">
+          <div class="socials" :aria-label="t('footer.socials_aria')">
             <a v-for="s in socials" :key="s.id" href="#" :aria-label="s.label" class="social">
               <span class="social-dot">{{ s.label[0] }}</span>
             </a>
@@ -129,27 +154,23 @@ const readMore = ref(false);
             <circle cx="14" cy="18" r="1.5" fill="#fff" />
             <circle cx="26" cy="18" r="1.5" fill="#fff" />
           </svg>
-          <span class="copyright">© 2026 Tripote-visor LLC All rights reserved.</span>
+          <span class="copyright">{{ t('footer.copyright', { year: 2026 }) }}</span>
         </div>
 
         <nav class="legal">
-          <a href="#">Terms of Use</a>
-          <a href="#">Privacy and Cookies Statement</a>
-          <a href="#">Cookie consent</a>
-          <a href="#">How the site works</a>
-          <a href="#">Contact us</a>
-          <a href="#">Accessibility Statement</a>
+          <a href="#">{{ t('footer.legal_terms') }}</a>
+          <a href="#">{{ t('footer.legal_privacy') }}</a>
+          <a href="#">{{ t('footer.legal_cookies') }}</a>
+          <a href="#">{{ t('footer.legal_how') }}</a>
+          <a href="#">{{ t('footer.legal_contact') }}</a>
+          <a href="#">{{ t('footer.legal_accessibility') }}</a>
         </nav>
 
         <p class="disclaimer">
-          This is a parody website for educational/front-end demonstration purposes only.
-          Tripote-visor is not affiliated with any real travel platform.
-          <template v-if="readMore">
-            All content, logos, and layouts shown here are placeholders. No actual bookings,
-            reviews, or user data are handled. Images are sourced from free stock photo services.
-          </template>
+          {{ t('footer.disclaimer_short') }}
+          <template v-if="readMore"> {{ t('footer.disclaimer_long') }} </template>
           <button class="read-more" @click="readMore = !readMore">
-            {{ readMore ? 'Read less ▴' : 'Read more ▾' }}
+            {{ readMore ? t('footer.read_less') : t('footer.read_more') }}
           </button>
         </p>
       </div>

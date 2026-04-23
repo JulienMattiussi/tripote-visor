@@ -1,13 +1,11 @@
+<script setup>
+import { t, formatAmount } from '../i18n/store.js';
+</script>
+
 <template>
   <section class="blurb">
-    <h2>Tripote-visor: join the largest travel community</h2>
-    <p>
-      As the world's largest travel guidance platform, Tripote-visor helps you take better trips.
-      And now it pays to plan, book, and review with us: Join Rewards today and get $30 off Things
-      to Do. Plus, you can check out hotels, restaurants, and more on our site or in the app —
-      they're all backed by more than a billion reviews and opinions from travelers who have been
-      there.
-    </p>
+    <h2>{{ t('community.title') }}</h2>
+    <p>{{ t('community.body', { amount: formatAmount(30) }) }}</p>
   </section>
 </template>
 

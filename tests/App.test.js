@@ -1,8 +1,11 @@
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect, beforeEach } from 'vitest';
 import { mount } from '@vue/test-utils';
 import App from '../src/App.vue';
+import { setLocale } from '../src/i18n/store.js';
 
 describe('App', () => {
+  beforeEach(() => setLocale('en'));
+
   it('renders header, main, and footer landmarks', () => {
     const wrapper = mount(App);
 

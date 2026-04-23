@@ -1,9 +1,11 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 import { mount } from '@vue/test-utils';
 import HeroSearch from '../src/components/HeroSearch.vue';
+import { setLocale } from '../src/i18n/store.js';
 
 describe('HeroSearch', () => {
   beforeEach(() => {
+    setLocale('en');
     vi.stubGlobal('alert', vi.fn());
   });
 

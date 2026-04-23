@@ -1,22 +1,29 @@
 <script setup>
-// Purely visual promo banner — simulated click feedback only
-const onBook = () => alert('Book now — simulation front seulement');
+import { t } from '../i18n/store.js';
+
+const onBook = () => alert(`${t('ttd.cta')} ${t('common.sim_suffix')}`);
 </script>
 
 <template>
-  <section class="ttd-banner" aria-label="Things to do promo">
+  <section class="ttd-banner" :aria-label="t('ttd.aria')">
     <div class="ttd-image">
       <img
         src="https://images.unsplash.com/photo-1502680390469-be75c86b636f?w=900&q=60"
-        alt="Kayaker on calm water"
+        :alt="t('ttd.alt_image')"
         loading="lazy"
       />
       <span class="credit">@Eddie J.</span>
     </div>
     <div class="ttd-text">
-      <h2>Find things to do<br />for everything<br />you're into</h2>
-      <p>Browse 400,000+ experiences and book with us.</p>
-      <button class="pill-btn pill-btn--dark" type="button" @click="onBook">Book now</button>
+      <h2>
+        {{ t('ttd.headline_line1') }}<br />{{ t('ttd.headline_line2') }}<br />{{
+          t('ttd.headline_line3')
+        }}
+      </h2>
+      <p>{{ t('ttd.subtitle') }}</p>
+      <button class="pill-btn pill-btn--dark" type="button" @click="onBook">
+        {{ t('ttd.cta') }}
+      </button>
     </div>
   </section>
 </template>

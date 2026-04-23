@@ -1,21 +1,20 @@
 <script setup>
-import { ref } from 'vue';
+import { computed } from 'vue';
+import { t, currency, currencyFlag, openPreferences } from '../i18n/store.js';
 
-const navItems = [
-  { label: 'Plan with AI', icon: 'sparkles', highlight: true },
-  { label: 'Rewards' },
-  { label: 'Discover' },
-  { label: 'Review' },
-  { label: 'Forums' },
-];
-
-const currency = ref('USD');
+const navItems = computed(() => [
+  { key: 'plan_ai', label: t('nav.plan_ai'), highlight: true },
+  { key: 'rewards', label: t('nav.rewards') },
+  { key: 'discover', label: t('nav.discover') },
+  { key: 'review', label: t('nav.review') },
+  { key: 'forums', label: t('nav.forums') },
+]);
 </script>
 
 <template>
   <header class="site-header">
     <div class="container header-inner">
-      <a href="#" class="logo" aria-label="Tripote-visor home">
+      <a href="#" class="logo" :aria-label="t('nav.logo_aria')">
         <svg class="logo-owl" viewBox="0 0 32 32" fill="none" aria-hidden="true">
           <path
             d="M 2,13 C 3,3 13,13 13.5,1"
@@ -54,9 +53,9 @@ const currency = ref('USD');
         <span class="logo-text">Tripote-visor</span>
       </a>
 
-      <nav class="main-nav" aria-label="Primary">
+      <nav class="main-nav" :aria-label="t('nav.primary_aria')">
         <ul>
-          <li v-for="item in navItems" :key="item.label" :class="{ highlight: item.highlight }">
+          <li v-for="item in navItems" :key="item.key" :class="{ highlight: item.highlight }">
             <a href="#">
               <span v-if="item.highlight" class="sparkle" aria-hidden="true">✦</span>
               {{ item.label }}
@@ -66,11 +65,18 @@ const currency = ref('USD');
       </nav>
 
       <div class="header-actions">
-        <button class="currency-btn" type="button">
-          <span class="flag" aria-hidden="true">🇺🇸</span>
+        <button
+          class="currency-btn"
+          type="button"
+          :aria-label="t('nav.currency_aria')"
+          @click="openPreferences('region')"
+        >
+          <span class="flag" aria-hidden="true">{{ currencyFlag() }}</span>
           {{ currency }}
         </button>
-        <button class="pill-btn pill-btn--dark sign-in" type="button">Sign in</button>
+        <button class="pill-btn pill-btn--dark sign-in" type="button">
+          {{ t('nav.sign_in') }}
+        </button>
       </div>
     </div>
   </header>

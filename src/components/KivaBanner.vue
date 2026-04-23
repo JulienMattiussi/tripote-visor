@@ -1,27 +1,28 @@
 <script setup>
-const onDonate = () => alert('Donate now — simulation front seulement');
+import { t, formatAmount } from '../i18n/store.js';
+
+const onDonate = () => alert(`${t('kiva.cta')} ${t('common.sim_suffix')}`);
 </script>
 
 <template>
-  <section class="kiva" aria-label="Foundation promo">
+  <section class="kiva" :aria-label="t('kiva.aria')">
     <div class="kiva-image">
       <img
         src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=700&q=60"
-        alt="Small business owner"
+        :alt="t('kiva.alt_image')"
         loading="lazy"
       />
     </div>
     <div class="kiva-text">
       <div class="brand-tag">
         <span class="tag-icon" aria-hidden="true">◎</span>
-        <span>Tripote-visor Foundation</span>
+        <span>{{ t('kiva.foundation') }}</span>
       </div>
-      <h2>Show some love to small businesses</h2>
-      <p>
-        Donate to our partner today to provide loans to local entrepreneurs and the Tripote-visor
-        Foundation will match it, up to $150,000 USD collectively. Terms apply.
-      </p>
-      <button class="pill-btn pill-btn--dark" type="button" @click="onDonate">Donate now</button>
+      <h2>{{ t('kiva.title') }}</h2>
+      <p>{{ t('kiva.body', { amount: formatAmount(150000) }) }}</p>
+      <button class="pill-btn pill-btn--dark" type="button" @click="onDonate">
+        {{ t('kiva.cta') }}
+      </button>
     </div>
   </section>
 </template>

@@ -1,54 +1,57 @@
 <script setup>
-import { ref } from 'vue';
+import { ref, computed } from 'vue';
+import { t, formatAmount } from '../i18n/store.js';
 
-const experiences = ref([
+const favorites = ref({ 1: false, 2: false, 3: false, 4: false });
+
+const RAW_EXPERIENCES = [
   {
     id: 1,
-    title: 'French Pastry and Dessert Walking Tour in Nancy with Local Guide',
     img: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?w=600&q=60',
     rating: 4.8,
     reviews: 73,
-    price: 'from $72 per adult',
-    favorite: false,
+    priceUsd: 72,
   },
   {
     id: 2,
-    title: 'Self Guided Secrets Tour - Explore Nancy & Miss nothing',
     img: 'https://images.unsplash.com/photo-1509803874385-db7c23652552?w=600&q=60',
     rating: 4.9,
     reviews: 21,
-    price: 'from $5 per group',
-    favorite: false,
+    priceUsd: 5,
   },
   {
     id: 3,
-    title: 'Art Nouveau visit to Nancy',
     img: 'https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=600&q=60',
     rating: 4.7,
     reviews: 3,
-    price: 'from $16 per adult',
-    favorite: false,
+    priceUsd: 16,
   },
   {
     id: 4,
-    title: 'Nancy Private Walking Tour With a Professional Guide',
     img: 'https://images.unsplash.com/photo-1491557345352-5929e343eb89?w=600&q=60',
     rating: 4.7,
     reviews: 8,
-    price: 'from $320 per group',
-    favorite: false,
+    priceUsd: 320,
   },
-]);
+];
 
-const toggleFav = (exp) => {
-  exp.favorite = !exp.favorite;
+const experiences = computed(() =>
+  RAW_EXPERIENCES.map((e) => ({
+    ...e,
+    title: t(`experiences.item_${e.id}_title`),
+    price: t(`experiences.item_${e.id}_price`, { amount: formatAmount(e.priceUsd) }),
+  })),
+);
+
+const toggleFav = (id) => {
+  favorites.value[id] = !favorites.value[id];
 };
 </script>
 
 <template>
   <section class="section experiences">
-    <h2 class="section-title">Explore experiences near Nancy</h2>
-    <p class="section-subtitle">Can't-miss picks near you</p>
+    <h2 class="section-title">{{ t('experiences.title') }}</h2>
+    <p class="section-subtitle">{{ t('experiences.subtitle') }}</p>
 
     <div class="carousel">
       <ul class="exp-grid">
@@ -57,13 +60,15 @@ const toggleFav = (exp) => {
             <img :src="exp.img" :alt="exp.title" loading="lazy" />
             <button
               class="fav-btn"
-              :aria-pressed="exp.favorite"
-              :aria-label="exp.favorite ? 'Remove from favorites' : 'Add to favorites'"
-              @click="toggleFav(exp)"
+              :aria-pressed="favorites[exp.id]"
+              :aria-label="
+                favorites[exp.id] ? t('experiences.fav_remove') : t('experiences.fav_add')
+              "
+              @click="toggleFav(exp.id)"
             >
               <svg
                 viewBox="0 0 24 24"
-                :class="['heart', { filled: exp.favorite }]"
+                :class="['heart', { filled: favorites[exp.id] }]"
                 aria-hidden="true"
               >
                 <path
@@ -88,7 +93,7 @@ const toggleFav = (exp) => {
         </li>
       </ul>
 
-      <button class="nav-arrow" type="button" aria-label="Next">›</button>
+      <button class="nav-arrow" type="button" :aria-label="t('experiences.next_aria')">›</button>
     </div>
   </section>
 </template>
