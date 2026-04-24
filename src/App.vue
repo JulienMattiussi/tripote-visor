@@ -11,6 +11,7 @@ import TravelersChoice from './components/TravelersChoice.vue';
 import CommunityBlurb from './components/CommunityBlurb.vue';
 import AppFooter from './components/AppFooter.vue';
 import PreferencesModal from './components/PreferencesModal.vue';
+import SignInModal from './components/SignInModal.vue';
 </script>
 
 <template>
@@ -32,4 +33,5 @@ import PreferencesModal from './components/PreferencesModal.vue';
   </main>
   <AppFooter />
   <PreferencesModal />
+  <SignInModal />
 </template>

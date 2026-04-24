@@ -25,6 +25,7 @@ export const translations = {
       placeholder_things: 'Things to do, attractions, tours…',
       placeholder_restaurants: 'Find restaurants, cuisines…',
       placeholder_cruises: 'Search cruise lines, ports…',
+      compact_placeholder: 'Search',
     },
     ttd: {
       aria: 'Things to do promo',
@@ -148,6 +149,30 @@ export const translations = {
       footer:
         'Any changes to the preferences are optional, and will persist through your user session.',
     },
+    signin: {
+      logo_alt: 'Tripote-visor',
+      close: 'Close',
+      back: 'Back',
+      initial_title: 'Log in to enjoy the full Tripote-visor experience.',
+      continue_google: 'Continue with Google',
+      continue_email: 'Continue with email',
+      email_title: 'Welcome back!',
+      email_label: 'Email address',
+      email_placeholder: 'Email',
+      password_label: 'Password',
+      password_placeholder: 'Password',
+      show_password: 'Show password',
+      hide_password: 'Hide password',
+      forgot_password: 'Forgot password?',
+      submit: 'Log in',
+      error_invalid: 'Unknown username or password',
+      forgot_title: 'Forgot your password?',
+      forgot_body:
+        'No worries! Just enter your email address below and we’ll send you a link to reset it.',
+      forgot_submit: 'Send a link',
+      forgot_success:
+        'If that email is in our records, a reset link is on its way. Check your inbox.',
+    },
     common: {
       sim_suffix: '— front simulation only',
     },
@@ -179,6 +204,7 @@ export const translations = {
       placeholder_things: 'Activités, attractions, excursions…',
       placeholder_restaurants: 'Trouvez des restaurants, des cuisines…',
       placeholder_cruises: 'Recherchez des compagnies, des ports…',
+      compact_placeholder: 'Rechercher',
     },
     ttd: {
       aria: 'Promo activités',
@@ -302,6 +328,30 @@ export const translations = {
       unavailable: 'Indisponible actuellement',
       footer:
         'Toute modification des préférences est facultative et sera conservée le temps de la session.',
+    },
+    signin: {
+      logo_alt: 'Tripote-visor',
+      close: 'Fermer',
+      back: 'Retour',
+      initial_title: 'Connectez-vous pour profiter pleinement de Tripote-visor.',
+      continue_google: 'Se connecter avec Google',
+      continue_email: 'Se connecter via e-mail',
+      email_title: 'Quel plaisir de vous revoir !',
+      email_label: 'Adresse e-mail',
+      email_placeholder: 'E-mail',
+      password_label: 'Mot de passe',
+      password_placeholder: 'Mot de passe',
+      show_password: 'Afficher le mot de passe',
+      hide_password: 'Masquer le mot de passe',
+      forgot_password: 'Mot de passe oublié ?',
+      submit: 'Connectez-vous',
+      error_invalid: 'Identifiant ou mot de passe inconnu',
+      forgot_title: 'Vous avez oublié votre mot de passe ?',
+      forgot_body:
+        'Pas de problème ! Il vous suffit d’entrer votre adresse e-mail ci-dessous et nous vous enverrons un lien pour le réinitialiser.',
+      forgot_submit: 'Envoyer un lien',
+      forgot_success:
+        'Si cette adresse est dans nos registres, un lien de réinitialisation est en route. Consultez votre boîte de réception.',
     },
     common: {
       sim_suffix: '— simulation front seulement',
