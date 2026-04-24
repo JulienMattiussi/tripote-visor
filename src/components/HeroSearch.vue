@@ -6,7 +6,7 @@ const tabs = computed(() => [
   { id: 'all', label: t('hero.tab_all'), icon: '🔎' },
   { id: 'hotels', label: t('hero.tab_hotels'), icon: '🏨' },
   { id: 'things', label: t('hero.tab_things'), icon: '🎡' },
-  { id: 'restaurants', label: t('hero.tab_restaurants'), icon: '🍽️' },
+  { id: 'restaurants', label: t('hero.tab_restaurants'), icon: '🛣️' },
 ]);
 
 const activeTab = ref('all');

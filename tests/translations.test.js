@@ -95,7 +95,6 @@ describe('translation dictionary integrity', () => {
       'community.title',
       'footer.col_about_1',
       'footer.col_explore_title',
-      'footer.col_business_title',
       'footer.legal_terms',
       'footer.read_more',
       'prefs.title',

@@ -1,55 +1,32 @@
 <script setup>
 import { ref, computed } from 'vue';
-import { t, currency, locale, setCurrency, setLocale, openPreferences } from '../i18n/store.js';
+import {
+  t,
+  currency,
+  locale,
+  setCurrency,
+  setLocale,
+  openPreferences,
+  openSignin,
+} from '../i18n/store.js';
 
-const columns = computed(() => [
-  {
-    key: 'about',
-    title: t('footer.col_about_title'),
-    links: [
-      t('footer.col_about_1'),
-      t('footer.col_about_2'),
-      t('footer.col_about_3'),
-      t('footer.col_about_4'),
-      t('footer.col_about_5'),
-      t('footer.col_about_6'),
-      t('footer.col_about_7'),
-      t('footer.col_about_8'),
-      t('footer.col_about_9'),
-    ],
-  },
-  {
-    key: 'explore',
-    title: t('footer.col_explore_title'),
-    links: [
-      t('footer.col_explore_1'),
-      t('footer.col_explore_2'),
-      t('footer.col_explore_3'),
-      t('footer.col_explore_4'),
-      t('footer.col_explore_5'),
-      t('footer.col_explore_6'),
-    ],
-  },
-  {
-    key: 'business',
-    title: t('footer.col_business_title'),
-    links: [
-      t('footer.col_business_1'),
-      t('footer.col_business_2'),
-      t('footer.col_business_3'),
-      t('footer.col_business_4'),
-      t('footer.col_business_5'),
-      t('footer.col_business_6'),
-    ],
-    extraTitle: t('footer.col_app_title'),
-    extraLinks: [t('footer.col_app_1'), t('footer.col_app_2')],
-  },
+const aboutLinks = computed(() => [
+  { key: 'about_1', label: t('footer.col_about_1') },
+  { key: 'about_2', label: t('footer.col_about_2') },
+  { key: 'about_3', label: t('footer.col_about_3') },
+  { key: 'about_4', label: t('footer.col_about_4') },
+  { key: 'about_5', label: t('footer.col_about_5') },
+  { key: 'about_6', label: t('footer.col_about_6'), to: { name: 'how-it-works' } },
 ]);
 
-const sites = computed(() => [
-  { key: 'fork', label: t('footer.site_1_label'), partner: 'TheFork' },
-  { key: 'viator', label: t('footer.site_2_label'), partner: 'Viator' },
-  { key: 'cruise', label: t('footer.site_3_label'), partner: 'Cruise Critic' },
+// Several explore items point at real routes; the rest stay as placeholders.
+const exploreLinks = computed(() => [
+  { key: 'write', label: t('footer.col_explore_1'), to: { name: 'write-review' } },
+  { key: 'add', label: t('footer.col_explore_2'), to: { name: 'add-place' } },
+  { key: 'join', label: t('footer.col_explore_3'), onClick: openSignin },
+  { key: 'tc', label: t('footer.col_explore_4'), to: { name: 'travelers-choice' } },
+  { key: 'help', label: t('footer.col_explore_5') },
+  { key: 'stories', label: t('footer.col_explore_6'), to: { name: 'travel-stories' } },
 ]);
 
 const socials = [
@@ -88,31 +65,30 @@ const onLocaleChange = (e) => {
   <footer class="site-footer">
     <div class="container">
       <div class="footer-grid">
-        <div v-for="col in columns" :key="col.key" class="footer-col">
-          <h3>{{ col.title }}</h3>
+        <div class="footer-col">
+          <h3>{{ t('footer.col_about_title') }}</h3>
           <ul>
-            <li v-for="l in col.links" :key="l">
-              <a href="#">{{ l }}</a>
+            <li v-for="l in aboutLinks" :key="l.key">
+              <router-link v-if="l.to" :to="l.to">{{ l.label }}</router-link>
+              <a v-else href="#">{{ l.label }}</a>
             </li>
           </ul>
-          <template v-if="col.extraTitle">
-            <h3 class="mt">{{ col.extraTitle }}</h3>
-            <ul>
-              <li v-for="l in col.extraLinks" :key="l">
-                <a href="#">{{ l }}</a>
-              </li>
-            </ul>
-          </template>
         </div>
 
-        <div class="footer-col sites-col">
-          <h3>{{ t('footer.sites_title') }}</h3>
+        <div class="footer-col">
+          <h3>{{ t('footer.col_explore_title') }}</h3>
           <ul>
-            <li v-for="s in sites" :key="s.key">
-              {{ s.label }} <a href="#" class="partner">{{ s.partner }}</a>
+            <li v-for="l in exploreLinks" :key="l.key">
+              <router-link v-if="l.to" :to="l.to">{{ l.label }}</router-link>
+              <button v-else-if="l.onClick" type="button" class="link-like" @click="l.onClick">
+                {{ l.label }}
+              </button>
+              <a v-else href="#">{{ l.label }}</a>
             </li>
           </ul>
+        </div>
 
+        <div class="footer-col settings-col">
           <div class="selects">
             <select
               :value="currency"
@@ -182,7 +158,7 @@ const onLocaleChange = (e) => {
           <a href="#">{{ t('footer.legal_terms') }}</a>
           <a href="#">{{ t('footer.legal_privacy') }}</a>
           <a href="#">{{ t('footer.legal_cookies') }}</a>
-          <a href="#">{{ t('footer.legal_how') }}</a>
+          <router-link :to="{ name: 'how-it-works' }">{{ t('footer.legal_how') }}</router-link>
           <a href="#">{{ t('footer.legal_contact') }}</a>
           <a href="#">{{ t('footer.legal_accessibility') }}</a>
         </nav>
@@ -209,10 +185,24 @@ const onLocaleChange = (e) => {
 
 .footer-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: 1fr 1fr minmax(220px, 1fr);
   gap: 32px;
   padding-bottom: 24px;
   border-bottom: 1px solid var(--border);
+}
+
+.link-like {
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  color: var(--text);
+  cursor: pointer;
+  text-align: left;
+}
+
+.link-like:hover {
+  text-decoration: underline;
 }
 
 .footer-col h3 {
@@ -248,11 +238,16 @@ const onLocaleChange = (e) => {
   text-decoration: underline;
 }
 
+.settings-col {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
 .selects {
   display: flex;
   flex-direction: column;
   gap: 8px;
-  margin-top: 18px;
 }
 
 .selects select {
@@ -267,7 +262,6 @@ const onLocaleChange = (e) => {
 .socials {
   display: flex;
   gap: 12px;
-  margin-top: 18px;
 }
 
 .social {

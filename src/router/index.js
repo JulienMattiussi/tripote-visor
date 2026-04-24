@@ -7,6 +7,7 @@ import PostPhotosPage from '../pages/PostPhotosPage.vue';
 import CreateListingPage from '../pages/CreateListingPage.vue';
 import HotelsPage from '../pages/HotelsPage.vue';
 import AttractionsPage from '../pages/AttractionsPage.vue';
+import HowTheSiteWorksPage from '../pages/HowTheSiteWorksPage.vue';
 
 export const routes = [
   { path: '/', name: 'home', component: HomePage },
@@ -23,6 +24,7 @@ export const routes = [
   { path: '/add-place', name: 'add-place', component: CreateListingPage },
   { path: '/hotels', name: 'hotels', component: HotelsPage },
   { path: '/attractions', name: 'attractions', component: AttractionsPage },
+  { path: '/how-it-works', name: 'how-it-works', component: HowTheSiteWorksPage },
 ];
 
 export function createAppRouter({ history } = {}) {

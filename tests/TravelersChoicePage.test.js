@@ -24,18 +24,10 @@ describe('TravelersChoicePage', () => {
     expect(wrapper.text()).toContain('Among our top 1% of places, stays, eats, and experiences');
   });
 
-  it('renders all 7 category tabs in order', () => {
+  it('renders the 4 category tabs in order (Destinations / Beaches / Rentals removed)', () => {
     const wrapper = mount(TravelersChoicePage, withRouter(router));
     const tabs = wrapper.findAll('.tc-tab').map((b) => b.text());
-    expect(tabs).toEqual([
-      'All',
-      'Hotels',
-      'Restaurants',
-      'Things to Do',
-      'Destinations',
-      'Beaches',
-      'Vacation Rentals',
-    ]);
+    expect(tabs).toEqual(['All', 'Hotels', 'Alleys', 'Things to Do']);
     expect(wrapper.find('.tc-tab.active').text()).toBe('All');
   });
 
@@ -77,8 +69,8 @@ describe('TravelersChoicePage', () => {
   it('clicking a tab pushes the matching route and filters the visible sections', async () => {
     const wrapper = mount(TravelersChoicePage, withRouter(router));
 
-    const restaurantsTab = wrapper.findAll('.tc-tab').find((t) => t.text() === 'Restaurants');
-    await restaurantsTab.trigger('click');
+    const alleysTab = wrapper.findAll('.tc-tab').find((t) => t.text() === 'Alleys');
+    await alleysTab.trigger('click');
     await flushPromises();
 
     expect(router.currentRoute.value.name).toBe('travelers-choice-category');
@@ -86,7 +78,7 @@ describe('TravelersChoicePage', () => {
 
     const sections = wrapper.findAll('.tc-cat');
     expect(sections).toHaveLength(1);
-    expect(wrapper.find('.tc-cat-title').text()).toBe('Restaurants — Best of the Best');
+    expect(wrapper.find('.tc-cat-title').text()).toBe('Alleys — Best of the Best');
   });
 
   it('clicking the All tab from a sub-route returns to the unfiltered page', async () => {
@@ -117,15 +109,7 @@ describe('TravelersChoicePage', () => {
       'Prix Travellers’ Choice Best of the Best 2026',
     );
     const tabs = wrapper.findAll('.tc-tab').map((b) => b.text());
-    expect(tabs).toEqual([
-      'Tous',
-      'Hôtels',
-      'Restaurants',
-      'Activités',
-      'Destinations',
-      'Plages',
-      'Locations de vacances',
-    ]);
+    expect(tabs).toEqual(['Tous', 'Hôtels', 'Ruelles', 'Activités']);
     expect(wrapper.text()).toContain('Hôtels — Best of the Best');
     expect(wrapper.find('.tc-disclaimer').text()).toContain('site parodique');
   });

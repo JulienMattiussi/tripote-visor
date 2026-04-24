@@ -22,11 +22,11 @@ export const translations = {
       tab_all: 'Search All',
       tab_hotels: 'Hotels',
       tab_things: 'Things to Do',
-      tab_restaurants: 'Restaurants',
+      tab_restaurants: 'Alleys',
       placeholder_all: 'Places to go, things to do, hotels…',
       placeholder_hotels: 'Where are you going?',
       placeholder_things: 'Things to do, attractions, tours…',
-      placeholder_restaurants: 'Find restaurants, cuisines…',
+      placeholder_restaurants: 'Find alleys, cobblestone lanes, hidden passages…',
       compact_placeholder: 'Search',
     },
     ttd: {
@@ -89,7 +89,6 @@ export const translations = {
       body: "As the world's largest travel guidance platform, Tripote-visor helps you take better trips. And now it pays to plan, book, and review with us: Join Rewards today and get {amount} off Things to Do. Plus, you can check out hotels, restaurants, and more on our site or in the app — they're all backed by more than a billion reviews and opinions from travelers who have been there.",
     },
     footer: {
-      sites_title: 'Tripote-visor Sites',
       currency_aria: 'Currency',
       country_aria: 'Country',
       country_us: 'United States',
@@ -110,14 +109,11 @@ export const translations = {
       read_less: 'Read less ▴',
       col_about_title: 'About Tripote-visor',
       col_about_1: 'About Us',
-      col_about_2: 'Press',
-      col_about_3: 'Resources and Policies',
-      col_about_4: 'Careers',
-      col_about_5: 'Investor Relations',
-      col_about_6: 'Trust & Safety',
-      col_about_7: 'Contact us',
-      col_about_8: 'Bug Bounty Program',
-      col_about_9: 'Tripote-visor Technology Blog',
+      col_about_2: 'Resources and Policies',
+      col_about_3: 'Careers',
+      col_about_4: 'Investor Relations',
+      col_about_5: 'Trust & Safety',
+      col_about_6: 'How the site works',
       col_explore_title: 'Explore',
       col_explore_1: 'Write a review',
       col_explore_2: 'Add a Place',
@@ -125,19 +121,6 @@ export const translations = {
       col_explore_4: "Travelers' Choice",
       col_explore_5: 'Help Center',
       col_explore_6: 'Travel Stories',
-      col_business_title: 'Do Business With Us',
-      col_business_1: 'Owners',
-      col_business_2: 'Business Advantage',
-      col_business_3: 'Sponsored Placements',
-      col_business_4: 'Advertise with Us',
-      col_business_5: 'Access our Content API',
-      col_business_6: 'Become an Affiliate',
-      col_app_title: 'Get The App',
-      col_app_1: 'iPhone App',
-      col_app_2: 'Android App',
-      site_1_label: 'Book the best restaurants with',
-      site_2_label: 'Book tours and attraction tickets on',
-      site_3_label: 'Read cruise reviews on',
     },
     prefs: {
       title: 'Preferences',
@@ -182,29 +165,17 @@ export const translations = {
         'These are the most loved hotels, restaurants, things to do, and destinations of the year, picked by millions of travellers like you. Browse the categories below for the very best of {year}.',
       tab_all: 'All',
       tab_hotels: 'Hotels',
-      tab_restaurants: 'Restaurants',
+      tab_restaurants: 'Alleys',
       tab_things: 'Things to Do',
-      tab_destinations: 'Destinations',
-      tab_beaches: 'Beaches',
-      tab_rentals: 'Vacation Rentals',
       cat_hotels_title: 'Hotels — Best of the Best',
       cat_hotels_desc:
         'The most-loved stays of the year, from boutique riads to mountain retreats.',
-      cat_restaurants_title: 'Restaurants — Best of the Best',
+      cat_restaurants_title: 'Alleys — Best of the Best',
       cat_restaurants_desc:
-        "The dining rooms travellers can't stop raving about, from neighbourhood bistros to sushi counters.",
+        "The narrow lanes travellers can't stop wandering — cobblestone mews, sunlit passages and secret courtyards.",
       cat_things_title: 'Things to Do — Best of the Best',
       cat_things_desc:
         'The experiences that turned trips into stories worth telling — tours, dives, treks, and hot-air rides.',
-      cat_destinations_title: 'Destinations — Best of the Best',
-      cat_destinations_desc:
-        'Cities and regions topping travellers’ wishlists this year, from coast to highlands.',
-      cat_beaches_title: 'Beaches — Best of the Best',
-      cat_beaches_desc:
-        'Powder-white sand, turquoise lagoons, and the occasional black-sand thrill.',
-      cat_rentals_title: 'Vacation Rentals — Best of the Best',
-      cat_rentals_desc:
-        'Stand-out homes, lofts, and lodges loved for their character and warm welcome.',
       reviews_count: '{count} reviews',
       see_more: 'See all winners',
       back_to_top: 'Back to top',
@@ -334,6 +305,29 @@ export const translations = {
       error_required: 'Please fill in every required field before submitting.',
       back_home: 'Back to home',
     },
+    how_page: {
+      hero_title: 'How the site works',
+      hero_subtitle:
+        'The short version of how Tripote-visor collects reviews, ranks places, and keeps everything trustworthy.',
+      section_reviews_title: 'Reviews come from real travellers',
+      section_reviews_body:
+        'Every review on Tripote-visor is written by a traveller who tells us they actually visited the place. Each submission runs through automated fraud filters and, when needed, human moderators — we look for duplicate content, suspicious patterns, and anything that doesn’t match community guidelines. Suspicious reviews are blocked before they go live, or removed afterwards.',
+      section_ranking_title: 'How places are ranked',
+      section_ranking_body:
+        'A place’s ranking is driven by a popularity index that weighs the quantity, quality and recency of its reviews. Recent reviews carry more weight than older ones. A place with a handful of five-star reviews won’t out-rank one with hundreds of similarly-rated reviews — the signal is simply stronger. The ranking is not for sale: nobody can pay to move up.',
+      section_badges_title: 'Travellers’ Choice',
+      section_badges_body:
+        'Each year, Travellers’ Choice highlights the top 1% of places according to the community. The selection is produced automatically from the previous year’s reviews — no editorial picks, no commercial deals. Winners keep the badge for twelve months and the list is republished every winter.',
+      section_money_title: 'How Tripote-visor makes money',
+      section_money_body:
+        'We earn a commission when a traveller clicks through and books with one of our partners (hotels, activities, restaurants). These partnerships don’t influence reviews or rankings. Places can also buy sponsored placements, which are always clearly labelled so you know what you’re looking at.',
+      section_report_title: 'Report a problem',
+      section_report_body:
+        'Every review, photo and listing has a “Report” link. If something breaks our guidelines — fake reviews, off-topic content, harmful language, stolen photos — flag it and our moderation team will look into it. Most reports are handled within 24 to 48 hours.',
+      parody_note:
+        'This page is a parody — Tripote-visor is a front-only demo, so none of the mechanisms described here actually run. It summarises in plain words how mainstream review platforms typically operate.',
+      back_home: 'Back to home',
+    },
     listings: {
       hotels_title: 'Hotels',
       hotels_intro:
@@ -385,11 +379,11 @@ export const translations = {
       tab_all: 'Tout rechercher',
       tab_hotels: 'Hôtels',
       tab_things: 'Activités',
-      tab_restaurants: 'Restaurants',
+      tab_restaurants: 'Ruelles',
       placeholder_all: 'Des endroits à visiter, des activités, des hôtels…',
       placeholder_hotels: 'Où allez-vous ?',
       placeholder_things: 'Activités, attractions, excursions…',
-      placeholder_restaurants: 'Trouvez des restaurants, des cuisines…',
+      placeholder_restaurants: 'Trouvez des ruelles, des passages, des venelles…',
       compact_placeholder: 'Rechercher',
     },
     ttd: {
@@ -453,7 +447,6 @@ export const translations = {
       body: 'Première plateforme mondiale de guidance voyage, Tripote-visor vous aide à mieux voyager. Et planifier, réserver et laisser un avis chez nous paie : rejoignez Récompenses dès aujourd’hui et obtenez {amount} de réduction sur les Activités. Découvrez aussi des hôtels, des restaurants et plus encore sur notre site ou dans l’application — le tout soutenu par plus d’un milliard d’avis et d’opinions de voyageurs qui y sont allés.',
     },
     footer: {
-      sites_title: 'Sites Tripote-visor',
       currency_aria: 'Devise',
       country_aria: 'Pays',
       country_us: 'États-Unis',
@@ -474,14 +467,11 @@ export const translations = {
       read_less: 'Voir moins ▴',
       col_about_title: 'À propos de Tripote-visor',
       col_about_1: 'À propos de Tripote-visor',
-      col_about_2: 'Presse',
-      col_about_3: 'Ressources et règlements',
-      col_about_4: 'Emplois',
-      col_about_5: 'Relations investisseurs',
-      col_about_6: 'Confiance et sécurité',
-      col_about_7: 'Contactez-nous',
-      col_about_8: 'Programme Bug Bounty',
-      col_about_9: 'Blog Technologie Tripote-visor',
+      col_about_2: 'Ressources et règlements',
+      col_about_3: 'Emplois',
+      col_about_4: 'Relations investisseurs',
+      col_about_5: 'Confiance et sécurité',
+      col_about_6: 'Fonctionnement du site',
       col_explore_title: 'Explorez',
       col_explore_1: 'Écrire un avis',
       col_explore_2: 'Ajouter un lieu',
@@ -489,19 +479,6 @@ export const translations = {
       col_explore_4: 'Travellers’ Choice',
       col_explore_5: 'Assistance',
       col_explore_6: 'Récits de voyage',
-      col_business_title: 'Utilisez nos solutions',
-      col_business_1: 'Propriétaires',
-      col_business_2: 'Avantage business',
-      col_business_3: 'Résultats sponsorisés',
-      col_business_4: 'Faites votre publicité avec nous',
-      col_business_5: 'Accéder à notre API de contenu',
-      col_business_6: 'S’affilier',
-      col_app_title: 'Télécharger l’appli',
-      col_app_1: 'Application iPhone',
-      col_app_2: 'Application Android',
-      site_1_label: 'Réservez les meilleures tables avec',
-      site_2_label: 'Réservez vos visites guidées et activités sur',
-      site_3_label: 'Lisez les avis croisière sur',
     },
     prefs: {
       title: 'Préférences',
@@ -547,29 +524,17 @@ export const translations = {
         'Voici les hôtels, restaurants, activités et destinations les plus appréciés de l’année, choisis par des millions de voyageurs comme vous. Parcourez les catégories ci-dessous pour découvrir le meilleur de {year}.',
       tab_all: 'Tous',
       tab_hotels: 'Hôtels',
-      tab_restaurants: 'Restaurants',
+      tab_restaurants: 'Ruelles',
       tab_things: 'Activités',
-      tab_destinations: 'Destinations',
-      tab_beaches: 'Plages',
-      tab_rentals: 'Locations de vacances',
       cat_hotels_title: 'Hôtels — Best of the Best',
       cat_hotels_desc:
         'Les séjours les plus appréciés de l’année, des riads de charme aux refuges de montagne.',
-      cat_restaurants_title: 'Restaurants — Best of the Best',
+      cat_restaurants_title: 'Ruelles — Best of the Best',
       cat_restaurants_desc:
-        'Les tables dont les voyageurs ne se lassent pas, du bistrot de quartier au comptoir à sushis.',
+        'Les ruelles où les voyageurs ne se lassent pas de flâner : pavés, passages baignés de soleil et cours secrètes.',
       cat_things_title: 'Activités — Best of the Best',
       cat_things_desc:
         'Les expériences qui transforment un voyage en récit inoubliable : visites, plongées, treks et vols en montgolfière.',
-      cat_destinations_title: 'Destinations — Best of the Best',
-      cat_destinations_desc:
-        'Les villes et régions en tête des envies de voyage cette année, de la côte aux montagnes.',
-      cat_beaches_title: 'Plages — Best of the Best',
-      cat_beaches_desc:
-        'Sable blanc, lagons turquoise et, parfois, un peu de sable noir pour la surprise.',
-      cat_rentals_title: 'Locations de vacances — Best of the Best',
-      cat_rentals_desc:
-        'Des maisons, lofts et cabanes au caractère unique et à l’accueil chaleureux.',
       reviews_count: '{count} avis',
       see_more: 'Voir tous les gagnants',
       back_to_top: 'Retour en haut',
@@ -700,6 +665,29 @@ export const translations = {
       success_body:
         'Démo front uniquement : rien n’a réellement été enregistré. Dans une vraie app, la fiche serait mise en file de modération.',
       error_required: 'Merci de remplir chaque champ obligatoire avant de soumettre.',
+      back_home: 'Retour à l’accueil',
+    },
+    how_page: {
+      hero_title: 'Fonctionnement du site',
+      hero_subtitle:
+        'En version courte : comment Tripote-visor collecte les avis, classe les lieux et garde tout ça digne de confiance.',
+      section_reviews_title: 'Des avis de vrais voyageurs',
+      section_reviews_body:
+        'Chaque avis publié sur Tripote-visor est rédigé par un voyageur qui déclare avoir effectivement visité le lieu. Toute soumission passe par des filtres antifraude automatisés et, si besoin, par des modérateurs humains — nous recherchons les doublons, les motifs suspects et tout ce qui contredit notre charte communautaire. Les avis douteux sont écartés avant publication, ou retirés a posteriori.',
+      section_ranking_title: 'Comment les lieux sont classés',
+      section_ranking_body:
+        'Le classement d’un lieu repose sur un indice de popularité qui combine la quantité, la qualité et l’ancienneté de ses avis. Les avis récents pèsent plus lourd que les anciens. Un lieu avec une poignée d’avis cinq étoiles ne dépassera pas un concurrent qui cumule des centaines d’avis de niveau comparable — le signal est plus fiable. Ce classement n’est pas à vendre : personne ne peut acheter une meilleure position.',
+      section_badges_title: 'Travellers’ Choice',
+      section_badges_body:
+        'Chaque année, Travellers’ Choice met en lumière le top 1 % des lieux selon la communauté. La sélection est produite automatiquement à partir des avis de l’année écoulée — pas de pick éditorial, pas d’accord commercial. Les gagnants conservent le badge douze mois et la liste est republiée chaque hiver.',
+      section_money_title: 'Comment Tripote-visor gagne de l’argent',
+      section_money_body:
+        'Nous touchons une commission lorsqu’un voyageur passe par nos liens pour réserver chez un partenaire (hôtels, activités, restaurants). Ces partenariats n’influencent ni les avis, ni les classements. Les lieux peuvent par ailleurs acheter des emplacements sponsorisés, toujours clairement identifiés comme tels.',
+      section_report_title: 'Signaler un problème',
+      section_report_body:
+        'Chaque avis, photo et fiche comporte un lien « Signaler ». Si un contenu enfreint notre charte — faux avis, hors sujet, propos haineux, photo volée — signalez-le et notre équipe de modération l’examinera. La plupart des signalements sont traités en 24 à 48 heures.',
+      parody_note:
+        'Cette page est une parodie — Tripote-visor est une démo front uniquement, aucun des mécanismes décrits ici ne tourne réellement. Elle résume en mots simples la façon dont fonctionnent globalement les plateformes d’avis grand public.',
       back_home: 'Retour à l’accueil',
     },
     listings: {

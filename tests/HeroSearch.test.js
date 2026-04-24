@@ -19,8 +19,9 @@ describe('HeroSearch', () => {
 
     expect(tabs).toHaveLength(4);
     const labels = tabs.map((t) => t.text());
-    expect(labels.join(' ')).toMatch(/Search All.*Hotels.*Things to Do.*Restaurants/);
+    expect(labels.join(' ')).toMatch(/Search All.*Hotels.*Things to Do.*Alleys/);
     expect(labels.join(' ')).not.toContain('Cruises');
+    expect(labels.join(' ')).not.toContain('Restaurants');
   });
 
   it('switches the placeholder when the active tab changes', async () => {

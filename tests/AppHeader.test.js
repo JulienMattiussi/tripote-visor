@@ -92,7 +92,7 @@ describe('AppHeader scroll-triggered compact state', () => {
 
     // Category tabs row with the 3 verticals (Cruises was removed).
     const tabs = wrapper.findAll('.category-nav li');
-    expect(tabs.map((t) => t.text())).toEqual(['Hotels', 'Things to Do', 'Restaurants']);
+    expect(tabs.map((t) => t.text())).toEqual(['Hotels', 'Things to Do', 'Alleys']);
   });
 
   it('scrolling back above the threshold hides the compact search + tabs row', async () => {
@@ -129,7 +129,7 @@ describe('AppHeader scroll-triggered compact state', () => {
 
     expect(wrapper.find('.compact-search input').attributes('placeholder')).toBe('Rechercher');
     const tabs = wrapper.findAll('.category-nav li').map((t) => t.text());
-    expect(tabs).toEqual(['Hôtels', 'Activités', 'Restaurants']);
+    expect(tabs).toEqual(['Hôtels', 'Activités', 'Ruelles']);
   });
 });
 
