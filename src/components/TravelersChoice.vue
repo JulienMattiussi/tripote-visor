@@ -1,7 +1,9 @@
 <script setup>
+import { useRouter } from 'vue-router';
 import { t } from '../i18n/store.js';
 
-const onSeeWinners = () => alert(`${t('tc.cta')} ${t('common.sim_suffix')}`);
+const router = useRouter();
+const onSeeWinners = () => router.push({ name: 'travelers-choice' });
 </script>
 
 <template>

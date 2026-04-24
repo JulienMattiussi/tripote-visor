@@ -1,37 +1,68 @@
 <script setup>
 import { computed, ref, onMounted, onUnmounted } from 'vue';
+import { useRouter } from 'vue-router';
 import { t, currency, currencyFlag, openPreferences, openSignin } from '../i18n/store.js';
+
+const router = useRouter();
 
 const SCROLL_THRESHOLD = 220;
 
 const scrolled = ref(false);
 const compactQuery = ref('');
 
-const fullNavItems = computed(() => [
-  { key: 'plan_ai', label: t('nav.plan_ai'), highlight: true },
-  { key: 'rewards', label: t('nav.rewards') },
-  { key: 'discover', label: t('nav.discover') },
-  { key: 'review', label: t('nav.review') },
-  { key: 'forums', label: t('nav.forums') },
+// "Discover" and "Review" each own a dropdown — those are the only top-nav
+// entries. There are no plain link items today, but `topNavItems` is kept as
+// a hook for future shortcut links.
+const topNavItems = computed(() => []);
+
+const discoverMenuItems = computed(() => [
+  { key: 'choice', label: t('nav.discover_choice'), to: { name: 'travelers-choice' } },
+  { key: 'stories', label: t('nav.discover_stories'), to: { name: 'travel-stories' } },
 ]);
 
-// In scrolled state the search bar takes the center, "Plan with AI" /
-// "Rewards" hide, and "Forums" migrates to the category tabs row below —
-// "Discover" and "Review" stay in the top bar as quick links.
-const SCROLLED_NAV_KEYS = new Set(['discover', 'review']);
-const navItems = computed(() =>
-  scrolled.value
-    ? fullNavItems.value.filter((item) => SCROLLED_NAV_KEYS.has(item.key))
-    : fullNavItems.value,
-);
+const reviewMenuItems = computed(() => [
+  { key: 'write', label: t('nav.review_write'), to: { name: 'write-review' } },
+  { key: 'photos', label: t('nav.review_photos'), to: { name: 'post-photos' } },
+  { key: 'add_place', label: t('nav.review_add_place'), to: { name: 'add-place' } },
+]);
 
 const categoryTabs = computed(() => [
-  { key: 'hotels', label: t('hero.tab_hotels') },
-  { key: 'things', label: t('hero.tab_things') },
+  { key: 'hotels', label: t('hero.tab_hotels'), to: { name: 'hotels' } },
+  { key: 'things', label: t('hero.tab_things'), to: { name: 'attractions' } },
   { key: 'restaurants', label: t('hero.tab_restaurants') },
-  { key: 'cruises', label: t('hero.tab_cruises') },
-  { key: 'forums', label: t('nav.forums') },
 ]);
+
+const openMenu = ref(null);
+const discoverMenuRef = ref(null);
+const reviewMenuRef = ref(null);
+
+const toggleMenu = (key) => {
+  openMenu.value = openMenu.value === key ? null : key;
+};
+
+const onMenuItemClick = (entry) => {
+  openMenu.value = null;
+  if (entry.to) {
+    router.push(entry.to);
+    return;
+  }
+  alert(`${entry.label} ${t('common.sim_suffix')}`);
+};
+
+const onDocClick = (event) => {
+  if (!openMenu.value) return;
+  const refMap = { discover: discoverMenuRef, review: reviewMenuRef };
+  const wrapperEl = refMap[openMenu.value]?.value;
+  if (wrapperEl && !wrapperEl.contains(event.target)) {
+    openMenu.value = null;
+  }
+};
+
+const onDocKeydown = (event) => {
+  if (event.key === 'Escape' && openMenu.value) {
+    openMenu.value = null;
+  }
+};
 
 const onScroll = () => {
   scrolled.value = (window.scrollY || window.pageYOffset || 0) > SCROLL_THRESHOLD;
@@ -46,19 +77,23 @@ const onCompactSubmit = (e) => {
 onMounted(() => {
   if (typeof window === 'undefined') return;
   window.addEventListener('scroll', onScroll, { passive: true });
+  document.addEventListener('click', onDocClick);
+  document.addEventListener('keydown', onDocKeydown);
   onScroll();
 });
 
 onUnmounted(() => {
   if (typeof window === 'undefined') return;
   window.removeEventListener('scroll', onScroll);
+  document.removeEventListener('click', onDocClick);
+  document.removeEventListener('keydown', onDocKeydown);
 });
 </script>
 
 <template>
   <header class="site-header" :class="{ scrolled }">
     <div class="container header-inner">
-      <a href="#" class="logo" :aria-label="t('nav.logo_aria')">
+      <router-link to="/" class="logo" :aria-label="t('nav.logo_aria')">
         <svg class="logo-owl" viewBox="0 0 32 32" fill="none" aria-hidden="true">
           <path
             d="M 2,13 C 3,3 13,13 13.5,1"
@@ -95,7 +130,7 @@ onUnmounted(() => {
           <circle cx="16" cy="29.5" r="0.6" fill="var(--brand)" />
         </svg>
         <span class="logo-text">Tripote-visor</span>
-      </a>
+      </router-link>
 
       <form v-if="scrolled" class="compact-search" @submit="onCompactSubmit">
         <span class="compact-search-icon" aria-hidden="true">🔍</span>
@@ -109,11 +144,69 @@ onUnmounted(() => {
 
       <nav class="main-nav" :aria-label="t('nav.primary_aria')">
         <ul>
-          <li v-for="item in navItems" :key="item.key" :class="{ highlight: item.highlight }">
+          <li v-for="item in topNavItems" :key="item.key" :class="{ highlight: item.highlight }">
             <a href="#">
               <span v-if="item.highlight" class="sparkle" aria-hidden="true">✦</span>
               {{ item.label }}
             </a>
+          </li>
+          <li ref="discoverMenuRef" class="nav-menu-item">
+            <button
+              type="button"
+              class="nav-menu-trigger"
+              :class="{ active: openMenu === 'discover' }"
+              :aria-expanded="openMenu === 'discover'"
+              aria-haspopup="menu"
+              @click.stop="toggleMenu('discover')"
+            >
+              {{ t('nav.discover') }}
+            </button>
+            <div
+              v-if="openMenu === 'discover'"
+              class="nav-dropdown"
+              role="menu"
+              :aria-label="t('nav.discover_menu_aria')"
+            >
+              <button
+                v-for="entry in discoverMenuItems"
+                :key="entry.key"
+                type="button"
+                role="menuitem"
+                class="nav-dropdown-item"
+                @click="onMenuItemClick(entry)"
+              >
+                {{ entry.label }}
+              </button>
+            </div>
+          </li>
+          <li ref="reviewMenuRef" class="nav-menu-item">
+            <button
+              type="button"
+              class="nav-menu-trigger"
+              :class="{ active: openMenu === 'review' }"
+              :aria-expanded="openMenu === 'review'"
+              aria-haspopup="menu"
+              @click.stop="toggleMenu('review')"
+            >
+              {{ t('nav.review') }}
+            </button>
+            <div
+              v-if="openMenu === 'review'"
+              class="nav-dropdown"
+              role="menu"
+              :aria-label="t('nav.review_menu_aria')"
+            >
+              <button
+                v-for="entry in reviewMenuItems"
+                :key="entry.key"
+                type="button"
+                role="menuitem"
+                class="nav-dropdown-item"
+                @click="onMenuItemClick(entry)"
+              >
+                {{ entry.label }}
+              </button>
+            </div>
           </li>
         </ul>
       </nav>
@@ -139,7 +232,8 @@ onUnmounted(() => {
         <nav class="category-nav" :aria-label="t('nav.primary_aria')">
           <ul>
             <li v-for="tab in categoryTabs" :key="tab.key">
-              <a href="#">{{ tab.label }}</a>
+              <router-link v-if="tab.to" :to="tab.to">{{ tab.label }}</router-link>
+              <a v-else href="#">{{ tab.label }}</a>
             </li>
           </ul>
         </nav>
@@ -231,6 +325,56 @@ onUnmounted(() => {
 .sparkle {
   color: var(--brand);
   font-size: 12px;
+}
+
+.nav-menu-item {
+  position: relative;
+}
+
+.nav-menu-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--text);
+  font-family: inherit;
+  transition: background 0.15s ease;
+}
+
+.nav-menu-trigger:hover,
+.nav-menu-trigger.active {
+  background: var(--surface);
+}
+
+.nav-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  min-width: 220px;
+  background: var(--bg);
+  border-radius: var(--radius);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.15);
+  padding: 8px 0;
+  display: flex;
+  flex-direction: column;
+  z-index: 200;
+}
+
+.nav-dropdown-item {
+  text-align: left;
+  padding: 12px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+  font-family: inherit;
+  transition: background 0.15s ease;
+}
+
+.nav-dropdown-item:hover {
+  background: var(--surface);
 }
 
 .compact-search {

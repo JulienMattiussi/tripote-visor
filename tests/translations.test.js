@@ -3,6 +3,7 @@ import { mount } from '@vue/test-utils';
 import App from '../src/App.vue';
 import { translations } from '../src/i18n/translations.js';
 import { t, setLocale, setCurrency, AVAILABLE_LOCALES } from '../src/i18n/store.js';
+import { setupRouter, withRouter } from './helpers/router.js';
 
 const flattenKeys = (obj, prefix = '') => {
   const out = [];
@@ -70,9 +71,10 @@ describe('translation dictionary integrity', () => {
     // "France", shared year labels, etc.). But the visible navigation chrome
     // and section titles must be translated, not left in English.
     const mustDiffer = [
-      'nav.plan_ai',
-      'nav.rewards',
       'nav.discover',
+      'nav.review_write',
+      'nav.review_add_place',
+      'nav.discover_stories',
       'nav.sign_in',
       'hero.title',
       'hero.search_btn',
@@ -107,18 +109,20 @@ describe('translation dictionary integrity', () => {
 });
 
 describe('locale switching on the full App', () => {
-  beforeEach(() => {
+  let router;
+  beforeEach(async () => {
     setLocale('en');
     setCurrency('USD');
+    router = await setupRouter('/');
   });
+  const mountApp = () => mount(App, withRouter(router));
 
   // Each EN sample must be a distinctive string that does NOT appear as a
   // substring of any FR translation (catches partial matches like
   // "Explore" ⊂ "Explorez"). FR_SAMPLES holds the expected French replacement
   // for the same screen area.
   const EN_SAMPLES = [
-    'Plan with AI',
-    'Rewards',
+    'Discover',
     'Sign in',
     'Where to?',
     'Search All',
@@ -135,8 +139,7 @@ describe('locale switching on the full App', () => {
   ];
 
   const FR_SAMPLES = [
-    'Planifier avec IA',
-    'Récompenses',
+    'Découvrir',
     'Se connecter',
     'Quelle destination ?',
     'Tout rechercher',
@@ -153,7 +156,7 @@ describe('locale switching on the full App', () => {
   ];
 
   it('renders every sampled English string by default', () => {
-    const wrapper = mount(App);
+    const wrapper = mountApp();
     const text = wrapper.text();
     for (const sample of EN_SAMPLES) {
       expect(text, sample).toContain(sample);
@@ -161,7 +164,7 @@ describe('locale switching on the full App', () => {
   });
 
   it('switching to fr replaces every sampled English string with its French counterpart', async () => {
-    const wrapper = mount(App);
+    const wrapper = mountApp();
     setLocale('fr');
     await wrapper.vm.$nextTick();
     const text = wrapper.text();
@@ -176,7 +179,7 @@ describe('locale switching on the full App', () => {
   });
 
   it('switching back from fr to en restores every English string', async () => {
-    const wrapper = mount(App);
+    const wrapper = mountApp();
     setLocale('fr');
     await wrapper.vm.$nextTick();
     setLocale('en');
@@ -188,7 +191,7 @@ describe('locale switching on the full App', () => {
   });
 
   it('the html lang attribute follows the selected locale', async () => {
-    mount(App);
+    mountApp();
     setLocale('fr');
     await Promise.resolve();
     expect(document.documentElement.lang).toBe('fr');
@@ -198,7 +201,7 @@ describe('locale switching on the full App', () => {
   });
 
   it('aria-labels and image alt text are translated along with body copy', async () => {
-    const wrapper = mount(App);
+    const wrapper = mountApp();
     setLocale('fr');
     await wrapper.vm.$nextTick();
 
@@ -212,7 +215,7 @@ describe('locale switching on the full App', () => {
   });
 
   it('footer country select shows the translated country name', async () => {
-    const wrapper = mount(App);
+    const wrapper = mountApp();
     const options = () =>
       wrapper
         .findAll('.selects select')
@@ -229,7 +232,7 @@ describe('locale switching on the full App', () => {
   });
 
   it('prices reformat to EUR with French grouping when switching to fr/EUR', async () => {
-    const wrapper = mount(App);
+    const wrapper = mountApp();
     // Default EN/USD: prices contain "$72"
     expect(wrapper.text()).toMatch(/\$72\b/);
 
@@ -244,7 +247,7 @@ describe('locale switching on the full App', () => {
   it('interpolated values (year, amount) are reused across locales', async () => {
     setLocale('en');
     setCurrency('USD');
-    const wrapper = mount(App);
+    const wrapper = mountApp();
     expect(wrapper.text()).toContain('© 2026 Tripote-visor LLC All rights reserved.');
 
     setLocale('fr');
@@ -254,9 +257,15 @@ describe('locale switching on the full App', () => {
 });
 
 describe('no hardcoded UI string leaks in components', () => {
+  let router;
+  beforeEach(async () => {
+    router = await setupRouter('/');
+  });
+  const mountApp = () => mount(App, withRouter(router));
+
   it('does not leave a literal "Book now" or "Sign in" label anywhere when locale is fr', async () => {
     setLocale('fr');
-    const wrapper = mount(App);
+    const wrapper = mountApp();
     await wrapper.vm.$nextTick();
     const text = wrapper.text();
 

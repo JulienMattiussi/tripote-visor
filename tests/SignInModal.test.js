@@ -3,6 +3,7 @@ import { mount } from '@vue/test-utils';
 import SignInModal from '../src/components/SignInModal.vue';
 import AppHeader from '../src/components/AppHeader.vue';
 import { signinOpen, signinScreen, openSignin, closeSignin, setLocale } from '../src/i18n/store.js';
+import { setupRouter, withRouter } from './helpers/router.js';
 
 describe('SignInModal', () => {
   beforeEach(() => {
@@ -332,13 +333,15 @@ describe('SignInModal — forgot password flow', () => {
 });
 
 describe('AppHeader Sign-in button', () => {
-  beforeEach(() => {
+  let router;
+  beforeEach(async () => {
     setLocale('en');
     closeSignin();
+    router = await setupRouter('/');
   });
 
   it('opens the sign-in modal when the Sign in pill is clicked', async () => {
-    const wrapper = mount(AppHeader);
+    const wrapper = mount(AppHeader, withRouter(router));
     expect(signinOpen.value).toBe(false);
     await wrapper.find('.sign-in').trigger('click');
     expect(signinOpen.value).toBe(true);

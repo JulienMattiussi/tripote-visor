@@ -7,7 +7,6 @@ const tabs = computed(() => [
   { id: 'hotels', label: t('hero.tab_hotels'), icon: '🏨' },
   { id: 'things', label: t('hero.tab_things'), icon: '🎡' },
   { id: 'restaurants', label: t('hero.tab_restaurants'), icon: '🍽️' },
-  { id: 'cruises', label: t('hero.tab_cruises'), icon: '🚢' },
 ]);
 
 const activeTab = ref('all');
@@ -18,7 +17,6 @@ const placeholderKeyMap = {
   hotels: 'hero.placeholder_hotels',
   things: 'hero.placeholder_things',
   restaurants: 'hero.placeholder_restaurants',
-  cruises: 'hero.placeholder_cruises',
 };
 const placeholder = computed(() => t(placeholderKeyMap[activeTab.value]));
 

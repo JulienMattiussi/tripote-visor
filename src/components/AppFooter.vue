@@ -140,19 +140,40 @@ const onLocaleChange = (e) => {
 
       <div class="footer-bottom">
         <div class="owl-wrap">
-          <svg class="owl" viewBox="0 0 40 40" aria-hidden="true">
-            <circle
-              cx="20"
-              cy="20"
-              r="18"
+          <svg class="owl" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+            <path
+              d="M 2,13 C 3,3 13,13 13.5,1"
               fill="none"
-              stroke="var(--brand-dark)"
-              stroke-width="2"
+              stroke="var(--brand)"
+              stroke-width="1.5"
+              stroke-linecap="round"
             />
-            <circle cx="14" cy="18" r="4" fill="var(--brand-dark)" />
-            <circle cx="26" cy="18" r="4" fill="var(--brand-dark)" />
-            <circle cx="14" cy="18" r="1.5" fill="#fff" />
-            <circle cx="26" cy="18" r="1.5" fill="#fff" />
+            <path
+              d="M 30,13 C 29,3 19,13 18.5,1"
+              fill="none"
+              stroke="var(--brand)"
+              stroke-width="1.5"
+              stroke-linecap="round"
+            />
+            <circle
+              cx="9.345"
+              cy="17.336"
+              r="4.462"
+              fill="none"
+              stroke="var(--brand)"
+              stroke-width="1.5"
+            />
+            <circle cx="9.345" cy="17.336" r="2.34" fill="var(--brand)" />
+            <circle
+              cx="22.532"
+              cy="17.336"
+              r="4.462"
+              fill="none"
+              stroke="var(--brand)"
+              stroke-width="1.5"
+            />
+            <circle cx="22.532" cy="17.336" r="2.34" fill="var(--brand)" />
+            <circle cx="16" cy="29.5" r="0.6" fill="var(--brand)" />
           </svg>
           <span class="copyright">{{ t('footer.copyright', { year: 2026 }) }}</span>
         </div>

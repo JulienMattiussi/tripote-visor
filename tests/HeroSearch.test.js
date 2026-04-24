@@ -13,13 +13,14 @@ describe('HeroSearch', () => {
     vi.unstubAllGlobals();
   });
 
-  it('shows all 5 search tabs', () => {
+  it('shows the 4 search tabs (Cruises was removed)', () => {
     const wrapper = mount(HeroSearch);
     const tabs = wrapper.findAll('.tab');
 
-    expect(tabs).toHaveLength(5);
+    expect(tabs).toHaveLength(4);
     const labels = tabs.map((t) => t.text());
-    expect(labels.join(' ')).toMatch(/Search All.*Hotels.*Things to Do.*Restaurants.*Cruises/);
+    expect(labels.join(' ')).toMatch(/Search All.*Hotels.*Things to Do.*Restaurants/);
+    expect(labels.join(' ')).not.toContain('Cruises');
   });
 
   it('switches the placeholder when the active tab changes', async () => {

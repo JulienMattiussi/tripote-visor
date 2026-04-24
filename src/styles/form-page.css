@@ -1,0 +1,165 @@
+/* Shared layout for the form pages (UserReview, PostPhotos, CreateListing).
+   Imported via <style scoped> @import — Vite injects the rules under each
+   page's scoped attribute. */
+
+.form-hero {
+  background: var(--surface-alt);
+  padding: 48px 0 24px;
+}
+
+.form-hero-title {
+  font-size: 36px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  margin: 0 0 8px 0;
+  color: var(--brand-dark);
+}
+
+.form-hero-subtitle {
+  font-size: 15px;
+  margin: 0;
+  color: var(--text);
+  max-width: 640px;
+  line-height: 1.5;
+}
+
+.form-main {
+  padding-top: 32px;
+  padding-bottom: 64px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 760px;
+}
+
+.form-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 32px;
+  box-shadow: var(--shadow);
+}
+
+.form-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.field-label {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.field-label em {
+  font-style: normal;
+  color: var(--brand);
+  margin-left: 2px;
+}
+
+.field input[type='text'],
+.field input[type='date'],
+.field input[type='url'],
+.field input[type='tel'],
+.field select,
+.field textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  font-size: 15px;
+  font-family: inherit;
+  background: var(--bg);
+  outline: none;
+  color: var(--text);
+}
+
+.field textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  border-color: var(--brand);
+}
+
+.form-error {
+  background: rgba(211, 47, 47, 0.08);
+  color: var(--danger);
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.form-submit {
+  align-self: flex-start;
+  padding: 14px 28px;
+  font-size: 15px;
+}
+
+.form-success {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 40px 32px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  box-shadow: var(--shadow);
+}
+
+.form-success-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--brand-tint);
+  color: var(--brand-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  font-weight: 800;
+}
+
+.form-success h2 {
+  font-size: 22px;
+  font-weight: 800;
+  margin: 0;
+  color: var(--brand-dark);
+}
+
+.form-success p {
+  margin: 0;
+  font-size: 14px;
+  color: var(--text);
+  max-width: 480px;
+  line-height: 1.5;
+}
+
+.form-success .pill-btn {
+  margin-top: 12px;
+}
+
+@media (max-width: 600px) {
+  .form-card {
+    padding: 24px 20px;
+  }
+  .form-hero-title {
+    font-size: 28px;
+  }
+}

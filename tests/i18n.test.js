@@ -9,6 +9,7 @@ import {
   locale,
   detectBrowserDefaults,
 } from '../src/i18n/store.js';
+import { setupRouter, withRouter } from './helpers/router.js';
 
 describe('i18n store', () => {
   beforeEach(() => {
@@ -17,13 +18,13 @@ describe('i18n store', () => {
   });
 
   it('returns English strings by default', () => {
-    expect(t('nav.plan_ai')).toBe('Plan with AI');
+    expect(t('nav.discover')).toBe('Discover');
     expect(t('hero.title')).toBe('Where to?');
   });
 
   it('returns French strings after switching locale', () => {
     setLocale('fr');
-    expect(t('nav.plan_ai')).toBe('Planifier avec IA');
+    expect(t('nav.discover')).toBe('Découvrir');
     expect(t('hero.title')).toBe('Quelle destination ?');
   });
 
@@ -90,16 +91,21 @@ describe('detectBrowserDefaults', () => {
 });
 
 describe('AppHeader reacts to locale change', () => {
-  beforeEach(() => setLocale('en'));
+  let router;
+  beforeEach(async () => {
+    setLocale('en');
+    router = await setupRouter('/');
+  });
 
   it('renders French nav labels once locale is fr', async () => {
-    const wrapper = mount(AppHeader);
-    expect(wrapper.text()).toContain('Plan with AI');
+    const wrapper = mount(AppHeader, withRouter(router));
+    expect(wrapper.text()).toContain('Discover');
+    expect(wrapper.text()).toContain('Sign in');
 
     setLocale('fr');
     await wrapper.vm.$nextTick();
 
-    expect(wrapper.text()).toContain('Planifier avec IA');
+    expect(wrapper.text()).toContain('Découvrir');
     expect(wrapper.text()).toContain('Se connecter');
   });
 });

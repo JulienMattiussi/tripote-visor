@@ -25,21 +25,29 @@ All user actions (fav toggles, tab switches, currency pill, Sign in, Search) are
 
 ```
 src/
-├── App.vue                 # Root — composes every section in order + mounts PreferencesModal
-├── main.js                 # createApp + global CSS import
-├── components/             # 12 single-file components
-│   ├── AppHeader.vue           # Sticky nav + inline-SVG bust logo; currency pill opens the modal
-│   ├── HeroSearch.vue          # Tabbed search
+├── App.vue                 # Root chrome — header, <router-view>, footer, modals
+├── main.js                 # createApp + router + global CSS import
+├── router/
+│   └── index.js            # Vue Router config — routes + factory (history is injected for tests)
+├── pages/
+│   ├── HomePage.vue            # /              — composes every home section
+│   └── TravelersChoicePage.vue # /travelers-choice[/:category] — awards landing page
+├── components/             # Shared UI components
+│   ├── AppHeader.vue           # Sticky nav, inline-SVG bust logo, scroll-compact mode, Discover/Review dropdowns
+│   ├── HeroSearch.vue          # Tabbed search (home only)
 │   ├── ThingsToDoBanner.vue
 │   ├── CategoryGrid.vue
 │   ├── ExperienceCards.vue
 │   ├── KivaBanner.vue
 │   ├── InspirationCards.vue
 │   ├── DestinationsGrid.vue
-│   ├── TravelersChoice.vue
+│   ├── TravelersChoice.vue     # Home-page promo strip — its CTA navigates to the page
 │   ├── CommunityBlurb.vue
 │   ├── AppFooter.vue
-│   └── PreferencesModal.vue    # Region/Language + Currency modal (Tripadvisor-style)
+│   ├── PreferencesModal.vue    # Region/Language + Currency modal (Tripadvisor-style)
+│   └── SignInModal.vue         # Three-screen auth modal (initial / email / forgot password)
+├── data/
+│   └── travelers-choice.js # Categories + winners shown on the TC page
 ├── i18n/
 │   ├── store.js            # Reactive `locale`/`currency` refs, `t(key, params?)`, modal controls
 │   ├── translations.js     # `{ en: {...}, fr: {...} }` — full site copy
@@ -95,13 +103,26 @@ Two locales (`en`, `fr`) and two currencies (`USD`, `EUR`) are supported. Every 
 
 When adding a new visible string: add its key under the right section in both `en` and `fr`, then replace the literal in the component with `{{ t('section.key') }}`. Never hardcode English copy in a template — the "no hardcoded hex" rule has a twin for strings.
 
+## Routing
+
+Two routes today, both served by `src/router/index.js`:
+
+| Path                          | Name                        | Page                                                                                                       |
+| ----------------------------- | --------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| `/`                           | `home`                      | `HomePage.vue`                                                                                             |
+| `/travelers-choice`           | `travelers-choice`          | `TravelersChoicePage.vue` (all categories)                                                                 |
+| `/travelers-choice/:category` | `travelers-choice-category` | same page, filtered to one of `hotels` / `restaurants` / `things` / `destinations` / `beaches` / `rentals` |
+
+`createAppRouter({ history })` is a factory so tests can inject `createMemoryHistory()` (see `tests/helpers/router.js`). All route navigation goes through `router.push({ name, params })` — never raw `<a href>` to internal URLs.
+
 ## Stack
 
 - **Vue 3** (`<script setup>` SFCs, Composition API)
+- **Vue Router 4** — file in `src/router/`, two routes
 - **Vite 5** — dev server + static build
 - **Vitest** + **@vue/test-utils** + **jsdom** — unit tests
 - **Prettier** — formatting
-- No TypeScript, no router, no state library, no CSS framework
+- No TypeScript, no state library, no CSS framework
 
 ## Build & Test
 
