@@ -5,33 +5,25 @@ import { t } from '../i18n/store.js';
 
 const router = useRouter();
 
-const sections = computed(() => [
-  {
-    key: 'reviews',
-    title: t('how_page.section_reviews_title'),
-    body: t('how_page.section_reviews_body'),
-  },
-  {
-    key: 'ranking',
-    title: t('how_page.section_ranking_title'),
-    body: t('how_page.section_ranking_body'),
-  },
-  {
-    key: 'badges',
-    title: t('how_page.section_badges_title'),
-    body: t('how_page.section_badges_body'),
-  },
-  {
-    key: 'money',
-    title: t('how_page.section_money_title'),
-    body: t('how_page.section_money_body'),
-  },
-  {
-    key: 'report',
-    title: t('how_page.section_report_title'),
-    body: t('how_page.section_report_body'),
-  },
-]);
+const SECTION_KEYS = [
+  'listing',
+  'ranking',
+  'tc',
+  'revenue',
+  'moderation',
+  'publication',
+  'incentives',
+  'ai',
+  'role',
+];
+
+const sections = computed(() =>
+  SECTION_KEYS.map((key) => ({
+    key,
+    title: t(`how_page.section_${key}_title`),
+    body: t(`how_page.section_${key}_body`),
+  })),
+);
 
 const goHome = () => router.push({ name: 'home' });
 </script>

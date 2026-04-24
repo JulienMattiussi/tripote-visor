@@ -308,22 +308,34 @@ export const translations = {
     how_page: {
       hero_title: 'How the site works',
       hero_subtitle:
-        'The short version of how Tripote-visor collects reviews, ranks places, and keeps everything trustworthy.',
-      section_reviews_title: 'Reviews come from real travellers',
-      section_reviews_body:
-        'Every review on Tripote-visor is written by a traveller who tells us they actually visited the place. Each submission runs through automated fraud filters and, when needed, human moderators — we look for duplicate content, suspicious patterns, and anything that doesn’t match community guidelines. Suspicious reviews are blocked before they go live, or removed afterwards.',
+        'The short version of how Tripote-visor lists places, ranks them, shows reviews, and stays funded.',
+      section_listing_title: 'Who can be listed',
+      section_listing_body:
+        'Each vertical has its own minimum requirements. Hotels need a 24/7 front desk, private bathrooms and housekeeping. Restaurants serve meals prepared on site, keep fixed hours, and operate at least twelve weeks a year. Things to Do must have a tourist interest and run at least twelve weeks (shows: twenty-four). Airlines need scheduled commercial service with at least sixty days of activity. A permanent address open to several distinct groups is expected across the board.',
       section_ranking_title: 'How places are ranked',
       section_ranking_body:
-        'A place’s ranking is driven by a popularity index that weighs the quantity, quality and recency of its reviews. Recent reviews carry more weight than older ones. A place with a handful of five-star reviews won’t out-rank one with hundreds of similarly-rated reviews — the signal is simply stronger. The ranking is not for sale: nobody can pay to move up.',
-      section_badges_title: 'Travellers’ Choice',
-      section_badges_body:
-        'Each year, Travellers’ Choice highlights the top 1% of places according to the community. The selection is produced automatically from the previous year’s reviews — no editorial picks, no commercial deals. Winners keep the badge for twelve months and the list is republished every winter.',
-      section_money_title: 'How Tripote-visor makes money',
-      section_money_body:
-        'We earn a commission when a traveller clicks through and books with one of our partners (hotels, activities, restaurants). These partnerships don’t influence reviews or rankings. Places can also buy sponsored placements, which are always clearly labelled so you know what you’re looking at.',
-      section_report_title: 'Report a problem',
-      section_report_body:
-        'Every review, photo and listing has a “Report” link. If something breaks our guidelines — fake reviews, off-topic content, harmful language, stolen photos — flag it and our moderation team will look into it. Most reports are handled within 24 to 48 hours.',
+        'Lists are built differently depending on the sort you pick. Hotels default to "Value for money", driven by the Popularity Ranking — an index weighing the quantity, quality and recency of reviews. Restaurants default to "Our Selection", which factors in compensation from partners alongside review signals, while "Highest Rated" uses the Popularity Ranking. Things to Do surface "Travellers\' Favourites", based on reviews and distance. Nobody can pay to buy a specific position, but partners\' commercial arrangements can influence some editorial lists.',
+      section_tc_title: 'Travellers’ Choice',
+      section_tc_body:
+        'Each year, Travellers’ Choice awards the top 1% of places according to the community. Winners keep the badge for twelve months and the list is refreshed every winter. The selection is produced automatically from the previous year’s reviews — no editors, no commercial deals can influence it.',
+      section_revenue_title: 'How Tripote-visor makes money',
+      section_revenue_body:
+        'Being listed is free for every business. We earn a commission when a traveller books an activity, tour or vacation rental through one of our partner links. Hotel offers run through a Cost Per Click (CPC) auction where partners bid for visibility on the booking widget. Sponsored results are allowed but always clearly labelled "Advertisement" or "Ad".',
+      section_moderation_title: 'How reviews are moderated',
+      section_moderation_body:
+        'Each submission runs through an automated system that looks for violations of our community guidelines, and our in-house experts review content 24/7. Reports from the community are examined too. We may email the author to confirm the details of a review before publishing it.',
+      section_publication_title: 'When reviews appear and how long they stay',
+      section_publication_body:
+        'Most reviews go live in under twenty-four hours. Once published, they stay online indefinitely. We only remove them if the author deletes them, they fail re-validation, they break our guidelines, the place closes, or it changes owner or undergoes a major renovation.',
+      section_incentives_title: 'No paid reviews',
+      section_incentives_body:
+        'Writing — or commissioning — a review in exchange for money, discounts or gifts is strictly forbidden and leads to removal. Businesses cannot offer perks for reviews of current or future stays. If you suspect this happens, tell us at incentives@tripote-visor.com.',
+      section_ai_title: 'AI summaries and machine translations',
+      section_ai_body:
+        'Review summaries are produced by large language models that extract common themes (cleanliness, location, value for money). Translations are powered by Google and Phrase. Neither is guaranteed to be perfectly accurate, and the original review is always shown alongside the machine output on request.',
+      section_role_title: 'Our role, and how to report a problem',
+      section_role_body:
+        'Tripote-visor does not own any of the places listed. Booking prices, availability and itineraries come from third-party partners in real time, and we offer no commercial warranty on them. Every review, photo and listing has a "Report" link — use it to flag content that breaks our guidelines, and our moderators will usually handle it within 24 to 48 hours.',
       parody_note:
         'This page is a parody — Tripote-visor is a front-only demo, so none of the mechanisms described here actually run. It summarises in plain words how mainstream review platforms typically operate.',
       back_home: 'Back to home',
@@ -670,22 +682,34 @@ export const translations = {
     how_page: {
       hero_title: 'Fonctionnement du site',
       hero_subtitle:
-        'En version courte : comment Tripote-visor collecte les avis, classe les lieux et garde tout ça digne de confiance.',
-      section_reviews_title: 'Des avis de vrais voyageurs',
-      section_reviews_body:
-        'Chaque avis publié sur Tripote-visor est rédigé par un voyageur qui déclare avoir effectivement visité le lieu. Toute soumission passe par des filtres antifraude automatisés et, si besoin, par des modérateurs humains — nous recherchons les doublons, les motifs suspects et tout ce qui contredit notre charte communautaire. Les avis douteux sont écartés avant publication, ou retirés a posteriori.',
+        'En version courte : comment Tripote-visor répertorie les lieux, les classe, affiche les avis et se finance.',
+      section_listing_title: 'Qui peut être répertorié',
+      section_listing_body:
+        'Chaque catégorie a ses propres minimums. Les hôtels doivent proposer une réception 24h/24, des salles de bain privatives et le ménage. Les restaurants servent des plats préparés sur place à des horaires fixes, au moins douze semaines par an. Les activités présentent un intérêt touristique et tournent au moins douze semaines (vingt-quatre pour les spectacles). Les compagnies aériennes doivent opérer un service commercial régulier avec au moins soixante jours d’activité. Une adresse permanente ouverte à plusieurs groupes distincts est attendue partout.',
       section_ranking_title: 'Comment les lieux sont classés',
       section_ranking_body:
-        'Le classement d’un lieu repose sur un indice de popularité qui combine la quantité, la qualité et l’ancienneté de ses avis. Les avis récents pèsent plus lourd que les anciens. Un lieu avec une poignée d’avis cinq étoiles ne dépassera pas un concurrent qui cumule des centaines d’avis de niveau comparable — le signal est plus fiable. Ce classement n’est pas à vendre : personne ne peut acheter une meilleure position.',
-      section_badges_title: 'Travellers’ Choice',
-      section_badges_body:
-        'Chaque année, Travellers’ Choice met en lumière le top 1 % des lieux selon la communauté. La sélection est produite automatiquement à partir des avis de l’année écoulée — pas de pick éditorial, pas d’accord commercial. Les gagnants conservent le badge douze mois et la liste est republiée chaque hiver.',
-      section_money_title: 'Comment Tripote-visor gagne de l’argent',
-      section_money_body:
-        'Nous touchons une commission lorsqu’un voyageur passe par nos liens pour réserver chez un partenaire (hôtels, activités, restaurants). Ces partenariats n’influencent ni les avis, ni les classements. Les lieux peuvent par ailleurs acheter des emplacements sponsorisés, toujours clairement identifiés comme tels.',
-      section_report_title: 'Signaler un problème',
-      section_report_body:
-        'Chaque avis, photo et fiche comporte un lien « Signaler ». Si un contenu enfreint notre charte — faux avis, hors sujet, propos haineux, photo volée — signalez-le et notre équipe de modération l’examinera. La plupart des signalements sont traités en 24 à 48 heures.',
+        'Les listes ne se construisent pas toutes pareil selon le tri choisi. Pour les hôtels, le tri par défaut est « Rapport qualité-prix », bâti sur l’indice de popularité qui combine quantité, qualité et ancienneté des avis. Les restaurants s’affichent par défaut selon « Notre sélection » — qui intègre la rémunération versée par les partenaires en plus des signaux d’avis — tandis que « Note la plus élevée » repose sur l’indice de popularité. Les activités mettent en avant les « Favoris des voyageurs », à partir des avis et de la distance. Personne ne peut acheter une position précise, mais les accords commerciaux des partenaires peuvent influencer certaines listes éditoriales.',
+      section_tc_title: 'Travellers’ Choice',
+      section_tc_body:
+        'Chaque année, Travellers’ Choice distingue le top 1 % des lieux selon la communauté. Les gagnants conservent le badge douze mois et la liste est renouvelée chaque hiver. La sélection est produite automatiquement à partir des avis de l’année écoulée — aucun choix éditorial, aucun accord commercial n’influence le résultat.',
+      section_revenue_title: 'Comment Tripote-visor gagne de l’argent',
+      section_revenue_body:
+        'L’inscription est gratuite pour tous les établissements. Nous touchons une commission lorsqu’un voyageur réserve une activité, une visite ou une location de vacances via nos liens partenaires. Les offres d’hôtels passent par un système d’enchères au Coût par Clic (CPC) où les partenaires se disputent la visibilité du widget de réservation. Les résultats sponsorisés sont autorisés mais toujours signalés par la mention « Publicité » ou « Annonce ».',
+      section_moderation_title: 'Modération des avis',
+      section_moderation_body:
+        'Chaque contribution passe par un système automatisé qui traque les violations du règlement communautaire, puis par nos experts internes qui veillent 24h/24, 7j/7. Les signalements de la communauté sont également examinés. Nous pouvons vous contacter par e-mail pour confirmer les détails d’un avis avant publication.',
+      section_publication_title: 'Publication et durée de vie des avis',
+      section_publication_body:
+        'La plupart des avis sont publiés en moins de vingt-quatre heures. Une fois en ligne, un avis reste accessible indéfiniment. Nous ne le retirons que si son auteur le supprime, s’il échoue à une nouvelle validation, s’il enfreint la charte, si le lieu ferme, ou s’il change de propriétaire ou subit une rénovation majeure.',
+      section_incentives_title: 'Pas d’avis contre rémunération',
+      section_incentives_body:
+        'Rédiger — ou commander — un avis en échange d’argent, de réductions ou de cadeaux est strictement interdit et entraîne la suppression. Les établissements ne peuvent pas offrir d’avantages en échange d’avis sur des séjours en cours ou à venir. Si vous constatez de telles pratiques, signalez-les à incentives@tripote-visor.com.',
+      section_ai_title: 'Résumés par IA et traductions automatiques',
+      section_ai_body:
+        'Les synthèses d’avis sont produites par de grands modèles de langage qui en extraient les thèmes récurrents (propreté, emplacement, rapport qualité-prix). Les traductions sont assurées par Google et Phrase. Ni l’une ni l’autre n’est garantie d’une précision parfaite, et l’avis original reste affiché à côté de la sortie automatique sur demande.',
+      section_role_title: 'Notre rôle et comment signaler un problème',
+      section_role_body:
+        'Tripote-visor ne possède aucun des lieux répertoriés. Les prix, disponibilités et itinéraires de réservation viennent en temps réel de partenaires tiers et nous n’offrons aucune garantie commerciale. Chaque avis, photo et fiche comporte un lien « Signaler » — utilisez-le pour remonter les contenus qui enfreignent la charte, nos modérateurs les traitent généralement sous 24 à 48 heures.',
       parody_note:
         'Cette page est une parodie — Tripote-visor est une démo front uniquement, aucun des mécanismes décrits ici ne tourne réellement. Elle résume en mots simples la façon dont fonctionnent globalement les plateformes d’avis grand public.',
       back_home: 'Retour à l’accueil',

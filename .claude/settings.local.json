@@ -34,7 +34,8 @@
       "Bash(curl -s http://localhost:5173/src/i18n/store.js)",
       "Bash(curl -s http://localhost:5173/src/i18n/store.js -o /dev/null -w \"store.js: %{http_code}\\\\n\")",
       "Bash(curl -s http://localhost:5173/src/components/PreferencesModal.vue -o /dev/null -w \"modal: %{http_code}\\\\n\")",
-      "Bash(node --input-type=module -e ' *)"
+      "Bash(node --input-type=module -e ' *)",
+      "WebFetch(domain:www.tripadvisor.fr)"
     ],
     "additionalDirectories": [
       "/tmp"
