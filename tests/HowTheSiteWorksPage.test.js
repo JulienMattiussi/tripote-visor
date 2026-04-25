@@ -100,8 +100,8 @@ describe('Footer link to How the site works', () => {
     const aboutCol = wrapper.findAll('.footer-col').at(0);
     const items = aboutCol.findAll('li');
 
-    // Careers was removed — column now has 5 entries.
-    expect(items).toHaveLength(5);
+    // Careers + Investor Relations were removed — column now has 4 entries.
+    expect(items).toHaveLength(4);
     expect(items.at(-1).text()).toBe('How the site works');
 
     const link = items.at(-1).find('a');

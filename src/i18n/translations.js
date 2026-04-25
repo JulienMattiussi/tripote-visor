@@ -107,7 +107,6 @@ export const translations = {
       col_about_title: 'About Tripote-visor',
       col_about_1: 'About Us',
       col_about_2: 'Resources and Policies',
-      col_about_4: 'Investor Relations',
       col_about_5: 'Trust & Safety',
       col_about_6: 'How the site works',
       col_explore_title: 'Explore',
@@ -404,6 +403,49 @@ export const translations = {
       title: 'A serious note on prostitution and human trafficking',
       body: 'The site’s name leans on a crude pun, but the reality it evokes is not a joke. According to the International Labour Organization, millions of people worldwide are victims of trafficking for sexual exploitation, the overwhelming majority of them women and girls. Many people in prostitution were coerced, debt-bonded or recruited under false promises; their daily lives are shaped by physical violence, psychological harm and severe precarity. Demand — clients, intermediaries, online platforms — directly funds the criminal networks that make this exploitation possible. Paying for sexual services is therefore not a neutral act: it weighs on other lives. If you are a victim or witness to trafficking, support is available — in France: 119 (child endangerment) and the Ac.Sé network (+33 8 25 00 99 07); across the EU: 116 006 (victims of crime helpline).',
     },
+    safety_page: {
+      hero_title: 'Trust & Safety',
+      hero_subtitle: 'Our content integrity policy.',
+      intro_title: 'Our approach to content integrity',
+      intro_body:
+        'Tripote-visor exists so that clients can read each other’s experiences and book accordingly. As on any review platform, some try to game the system by posting fake reviews. In a spirit of transparency we publish here our principles, our policies and the concrete steps we take to identify, block and remove fraudulent content.',
+      belief_authenticity_title: 'Real experiences from real clients',
+      belief_authenticity_body:
+        'Only clients who actually met the person being reviewed are allowed to write. Across the (entirely fictional) operating history of this platform, hundreds of thousands of reviews have been collected this way.',
+      belief_voice_title: 'Every encounter deserves a voice',
+      belief_voice_body:
+        'Each client should be able to share their own experience, not only the one who handled the booking. That is the whole point of a review platform.',
+      belief_rules_title: 'The rules apply to every listing',
+      belief_rules_body:
+        'No listing can pay to outrank a competitor in the popularity index, no advertiser receives preferential treatment, and our moderation processes are applied identically across the catalogue. We have never given anyone a free pass and we will not start now.',
+      belief_fraud_title: 'A wide catalogue means stricter rules',
+      belief_fraud_body:
+        'The platform indexes a broad range of profiles and competences. The wider the catalogue, the more attractive it becomes for fake references — positive ones inflated by the listing itself, negative ones planted to harm a competitor. Posting fake reviews violates our terms of use as well as consumer-protection and fair-competition laws in many jurisdictions, and we devote significant resources to stopping it.',
+      detect_title: 'How we identify fraudulent content',
+      detect_intro:
+        'Years of operating a review system have taught us how authentic contributions and fraudulent ones differ in shape. We feed that signal into automated tooling and a human moderation team:',
+      detect_b1:
+        'Hundreds of data points per hour are recorded and fed into proprietary fraud-detection processes.',
+      detect_b2:
+        'Automated filters review every submission before publication, classifying contributions at scale and flagging anything that needs human review.',
+      detect_b3:
+        'A staffed in-house moderation team handles the flagged queue, identifies fraud patterns and removes confirmed fakes.',
+      detect_b4:
+        'Listed people and clients can report suspicious content; every report is read and investigated by the moderation team.',
+      detect_b5:
+        'We proactively pursue companies that recruit writers to fabricate positive reviews, and the listings that buy from them.',
+      sanction_title: 'How we sanction fraud',
+      sanction_b1: 'Confirmed fake reviews are blocked before publication or removed afterwards.',
+      sanction_b2: 'Each fraudulent post pushes the listing down in the popularity ranking.',
+      sanction_b3:
+        'Listings caught engaging in review fraud are disqualified from Travellers’ Choice and any other editorial distinction.',
+      sanction_b4:
+        'We do not silently delete the listing itself, because clients are entitled to read what others thought — but the listing carries the consequences of its behaviour.',
+      limits_title: 'What this platform does not do',
+      limits_body:
+        'Tripote-visor is an editorial platform, not a law-enforcement service. We do not partner with the police, we do not verify the legal status, identity, age or health of any person referenced, and we do not run background checks. Polished review-platform copy cannot create trust where there is none to extend in the first place — please read the note immediately below.',
+      back_home: 'Back to home',
+    },
     about_page: {
       hero_title: 'About Tripote-visor',
       hero_subtitle: 'A parody site that uses a polished UI to ask an uncomfortable question.',
@@ -542,7 +584,6 @@ export const translations = {
       col_about_title: 'À propos de Tripote-visor',
       col_about_1: 'À propos de Tripote-visor',
       col_about_2: 'Ressources et règlements',
-      col_about_4: 'Relations investisseurs',
       col_about_5: 'Confiance et sécurité',
       col_about_6: 'Fonctionnement du site',
       col_explore_title: 'Explorez',
@@ -842,6 +883,51 @@ export const translations = {
       label: 'À lire',
       title: 'Une note sérieuse sur la prostitution et la traite des êtres humains',
       body: 'Le nom du site joue sur un mot crû, mais la réalité qu’il évoque ne prête pas à rire. Selon l’Organisation internationale du travail, des millions de personnes dans le monde sont victimes de traite à des fins d’exploitation sexuelle ; les femmes et les jeunes filles en représentent l’écrasante majorité. Beaucoup de personnes prostituées ont été contraintes, endettées ou recrutées sous de fausses promesses ; leur quotidien est marqué par la violence physique, les dommages psychologiques et une grande précarité. La demande — clients, intermédiaires, plateformes en ligne — finance directement les réseaux criminels qui rendent cette exploitation possible. Recourir à des services sexuels payants n’est donc pas un acte neutre : c’est un choix qui pèse sur d’autres vies. Si vous êtes victime ou témoin de traite, des aides existent — en France : le 119 (enfance en danger) et le réseau Ac.Sé (08 25 00 99 07) ; dans l’Union européenne : le 116 006 (numéro européen d’aide aux victimes).',
+    },
+    safety_page: {
+      hero_title: 'Confiance et sécurité',
+      hero_subtitle: 'Notre politique d’intégrité des contenus.',
+      intro_title: 'Notre approche de l’intégrité des contenus',
+      intro_body:
+        'Tripote-visor existe pour que les clients puissent lire les expériences des autres clients et réserver en conséquence. Comme sur toute plateforme d’avis, certains cherchent à tromper le système en publiant de faux avis. Dans une logique de transparence, nous publions ici nos principes, nos politiques et les mesures concrètes que nous prenons pour identifier, bloquer et supprimer les contenus frauduleux.',
+      belief_authenticity_title: 'Des expériences vécues par de vrais clients',
+      belief_authenticity_body:
+        'Seuls les clients ayant effectivement rencontré la personne notée sont autorisés à écrire. Sur l’ensemble de l’historique (entièrement fictif) de cette plateforme, des centaines de milliers d’avis ont été recueillis ainsi.',
+      belief_voice_title: 'Chaque rencontre mérite d’être racontée',
+      belief_voice_body:
+        'Chaque client doit pouvoir partager sa propre expérience, pas seulement celui qui a réservé. C’est tout l’objet d’une plateforme d’avis.',
+      belief_rules_title: 'Les mêmes règles pour toutes et tous',
+      belief_rules_body:
+        'Aucune fiche ne peut payer pour gagner des places dans l’indice de popularité, aucun annonceur ne bénéficie de traitement préférentiel, et nos processus de modération s’appliquent à l’identique à tout le catalogue. Nous n’avons jamais réservé de passe-droit et nous ne le ferons pas.',
+      belief_fraud_title: 'Un large catalogue impose des règles plus strictes',
+      belief_fraud_body:
+        'La plateforme référence un large champ de profils et de compétences. Plus le catalogue est étendu, plus il devient attirant pour de fausses références — avis positifs gonflés par la fiche elle-même, avis négatifs plantés pour nuire à une concurrente. Publier de faux avis enfreint nos conditions générales d’utilisation ainsi que les lois sur la concurrence déloyale et la protection des consommateurs en vigueur dans de nombreux pays, et nous y consacrons des ressources importantes.',
+      detect_title: 'Comment nous identifions la fraude',
+      detect_intro:
+        'Des années d’exploitation d’un système d’avis nous ont appris à distinguer les contributions authentiques des contributions frauduleuses. Ce signal alimente un outillage automatisé et une équipe humaine de modération :',
+      detect_b1:
+        'Des centaines de points de données sont enregistrés chaque heure et injectés dans nos processus propriétaires de détection de la fraude.',
+      detect_b2:
+        'Des filtres automatiques examinent chaque soumission avant publication, classent les contributions à grande échelle et signalent tout ce qui nécessite une revue humaine.',
+      detect_b3:
+        'Une équipe interne de modération traite la file des signalements, identifie les motifs frauduleux et retire les faux confirmés.',
+      detect_b4:
+        'Les personnes référencées et les clients peuvent signaler tout contenu suspect ; chaque signalement est lu et instruit par l’équipe de modération.',
+      detect_b5:
+        'Nous prenons l’initiative de remonter aux entreprises qui recrutent des rédacteurs pour fabriquer de faux avis, ainsi qu’aux fiches qui achètent leurs services.',
+      sanction_title: 'Comment nous sanctionnons la fraude',
+      sanction_b1:
+        'Les faux avis confirmés sont bloqués avant publication ou retirés a posteriori.',
+      sanction_b2:
+        'Chaque publication frauduleuse fait reculer la fiche dans le classement par popularité.',
+      sanction_b3:
+        'Les fiches prises en flagrant délit de fraude aux avis sont disqualifiées du Travellers’ Choice et de toute autre distinction éditoriale.',
+      sanction_b4:
+        'Nous ne supprimons pas silencieusement la fiche elle-même, car les clients ont le droit de lire ce que d’autres ont pensé — mais la fiche assume les conséquences de son comportement.',
+      limits_title: 'Ce que cette plateforme ne fait pas',
+      limits_body:
+        'Tripote-visor est une plateforme éditoriale, pas un service de police. Nous n’avons aucun partenariat avec les forces de l’ordre, nous ne vérifions ni le statut légal, ni l’identité, ni l’âge, ni l’état de santé des personnes référencées, et nous ne réalisons pas d’enquête sur leur passé. Une copie soignée de plateforme d’avis ne peut pas créer une confiance qu’il n’y avait, de toute façon, pas lieu d’accorder — merci de lire la note qui suit immédiatement.',
+      back_home: 'Retour à l’accueil',
     },
     about_page: {
       hero_title: 'À propos de Tripote-visor',

@@ -14,8 +14,7 @@ import {
 const aboutLinks = computed(() => [
   { key: 'about_1', label: t('footer.col_about_1'), to: { name: 'about' } },
   { key: 'about_2', label: t('footer.col_about_2') },
-  { key: 'about_4', label: t('footer.col_about_4') },
-  { key: 'about_5', label: t('footer.col_about_5') },
+  { key: 'about_5', label: t('footer.col_about_5'), to: { name: 'safety' } },
   { key: 'about_6', label: t('footer.col_about_6'), to: { name: 'how-it-works' } },
 ]);
 
