@@ -6,10 +6,15 @@ import {
   setLocale,
   setCurrency,
   formatAmount,
+  formatLieu,
+  formatReviewDate,
+  reviewCountFor,
+  reviewAverageFor,
   locale,
   detectBrowserDefaults,
 } from '../src/i18n/store.js';
 import { setupRouter, withRouter } from './helpers/router.js';
+import advicesData from '../src/data/advices.json';
 
 describe('i18n store', () => {
   beforeEach(() => {
@@ -87,6 +92,58 @@ describe('detectBrowserDefaults', () => {
 
   it('handles missing navigator gracefully', () => {
     expect(detectBrowserDefaults(null)).toEqual({ locale: 'en', currency: 'USD' });
+  });
+});
+
+describe('formatLieu', () => {
+  it('joins ville and lieu with parens when both are present', () => {
+    expect(formatLieu({ ville: 'Paris', lieu: '11e' })).toBe('Paris (11e)');
+    expect(formatLieu({ ville: 'Marseille', lieu: 'Le Vieux-Port' })).toBe(
+      'Marseille (Le Vieux-Port)',
+    );
+  });
+
+  it('returns the ville alone when lieu is empty or missing', () => {
+    expect(formatLieu({ ville: 'Strasbourg', lieu: '' })).toBe('Strasbourg');
+    expect(formatLieu({ ville: 'Saint-Denis' })).toBe('Saint-Denis');
+  });
+
+  it('returns an empty string when fed null/undefined', () => {
+    expect(formatLieu(null)).toBe('');
+    expect(formatLieu(undefined)).toBe('');
+  });
+});
+
+describe('reviewCountFor / reviewAverageFor', () => {
+  it('reports 0 / 0 for an unknown fiche', () => {
+    expect(reviewCountFor('does-not-exist')).toBe(0);
+    expect(reviewAverageFor('does-not-exist')).toBe(0);
+  });
+
+  it('matches the seeded advices data for a fiche that has reviews', () => {
+    const id = Object.keys(advicesData).find((k) => advicesData[k].length > 0);
+    expect(id).toBeTruthy();
+    const list = advicesData[id];
+    const avg = list.reduce((acc, r) => acc + r.rating, 0) / list.length;
+    expect(reviewCountFor(id)).toBe(list.length);
+    expect(reviewAverageFor(id)).toBeCloseTo(avg, 6);
+  });
+});
+
+describe('formatReviewDate', () => {
+  beforeEach(() => setLocale('en'));
+
+  it('renders an ISO date with the active locale', () => {
+    setLocale('en');
+    expect(formatReviewDate('2025-08-12')).toBe('August 12, 2025');
+    setLocale('fr');
+    expect(formatReviewDate('2025-08-12')).toBe('12 août 2025');
+  });
+
+  it('returns an empty string for falsy or invalid input', () => {
+    expect(formatReviewDate('')).toBe('');
+    expect(formatReviewDate(null)).toBe('');
+    expect(formatReviewDate('not-a-date')).toBe('');
   });
 });
 

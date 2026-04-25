@@ -20,7 +20,7 @@ The site has a home page plus a small constellation of secondary pages reachable
 - `/accessibility` - hero with 3 shield SVGs + EAA/WCAG references
 - `/resources` - hub of brief policy summaries (no follow-up links)
 
-**Four modals** mounted at the App level: `PreferencesModal` (region/locale + currency), `SignInModal` (initial / email / forgot-password screens), `CookieConsentModal` (4 categories: 1 always-on, 3 "None"), `LoginRequiredModal` (gates fiche actions: site/menu/phone/email/save - opens `SignInModal` on confirm).
+**Four modals** mounted at the App level: `PreferencesModal` (region/locale + currency), `SignInModal` (initial / email / forgot-password screens), `CookieConsentModal` (4 categories: 1 always-on, 3 "None"), `LoginRequiredModal` (gates fiche actions and the three form-page submits - opens `SignInModal` on confirm). `LoginRequiredModal` recognises 5 targets: `save` and the contact actions (`site`/`menu`/`phone`/`email`) come from `FichePage`; `publish_review`, `publish_photos` and `add_place` come from the form pages on submit (no in-page success card any more).
 
 ## Architecture
 
@@ -61,19 +61,20 @@ src/
 │   ├── DestinationsGrid.vue
 │   ├── TravelersChoice.vue       # home promo strip; CTA navigates to /discover
 │   ├── CommunityBlurb.vue
+│   ├── PlaceSearchSelect.vue     # v-model fiche search-and-select (review / photo forms)
 │   ├── PreferencesModal.vue
 │   ├── SignInModal.vue
 │   ├── CookieConsentModal.vue
-│   ├── LoginRequiredModal.vue    # gates fiche actions behind sign-in
-│   └── SeriousNote.vue           # shared callout reused across pages
+│   ├── LoginRequiredModal.vue    # gates fiche actions + form submits behind sign-in
+│   └── SeriousNote.vue           # shared callout, optional `collapsed` prop
 ├── data/
 │   ├── travel-stories.js
 │   ├── fiches.json               # 100 profile entries (FR descriptif + descriptif_en + ville/lieu)
 │   ├── cities.json               # 50 villes ranked by fiche count, with optional photo URL
 │   ├── schedules.json            # 15 weekly schedule patterns referenced by fiches
-│   └── advices.json              # 1000 reviews keyed by fiche id (rating/title/body/lang)
+│   └── advices.json              # 1000 seeded reviews keyed by fiche id (rating/title/body/lang/date/author)
 ├── i18n/
-│   ├── store.js                  # locale/currency refs, t(), modal state, formatAmount, detectBrowserDefaults
+│   ├── store.js                  # locale/currency refs, t(), modal state, formatters (Amount/Lieu/ReviewDate), review helpers (reviewCountFor/reviewAverageFor), detectBrowserDefaults
 │   ├── translations.js           # { en: {...}, fr: {...} } - single source of truth
 │   ├── regions.js                # only US + FR enabled
 │   └── currencies.js             # only USD + EUR enabled
@@ -93,12 +94,15 @@ tests/
 ├── AppFooter.test.js             # 4-col + legal nav + currency/locale selects + cookie/signin triggers
 ├── HomeComponents.test.js        # CategoryGrid / ExperienceCards / Inspiration / Destinations / TravelersChoice (promo) / CommunityBlurb / ThingsToDoBanner
 ├── HeroSearch.test.js
+├── DestinationsHighlights.test.js
+├── DiscoverPage.test.js
+├── PlaceSearchSelect.test.js     # v-model contract + suggestions + clear button
 ├── PreferencesModal.test.js
 ├── SignInModal.test.js
 ├── CookieConsentModal.test.js
-├── LoginRequiredModal.test.js
+├── LoginRequiredModal.test.js    # all 5 message branches, EN+FR
 ├── TravelStoriesPage.test.js
-├── FormPages.test.js             # UserReview / PostPhotos / CreateListing
+├── FormPages.test.js             # UserReview / PostPhotos / CreateListing (all submit → LoginRequiredModal)
 ├── ListingsPages.test.js         # Hotels / Parks / Alleys
 ├── FichePage.test.js             # /p/:id - profile rendering, schedule, not-found
 ├── SearchResultsPage.test.js     # /search - grouping, filtering, HeroSearch submit
@@ -316,7 +320,7 @@ Every target is also available directly via `npm run <script>` - the Makefile is
 - **Internal navigation uses `<router-link>` or `router.push({ name })`.** Do not introduce new `<a href="#">` placeholders for internal pages; if a target route does not exist yet, build the route first.
 - **Theme values live in `main.css` only.** Components must use `var(--token)` - no hex or rgb in component `<style>` blocks. Inline SVGs inside Vue components must bind `fill`/`stroke` to `var(--brand)` etc., not raw hex.
 - **Favicons (`public/favicon.*`) are the sole hex exception** - they are standalone assets and embed the literal brand hex. Update them in sync with `main.css` when the brand color changes.
-- **No real network, no backend.** Placeholder interactions use `alert()`, local `ref()` state, or in-page success cards. External image URLs (Unsplash) are fine.
+- **No real network, no backend.** Placeholder interactions use `alert()`, local `ref()` state, or open `LoginRequiredModal` on form submit. External image URLs (Unsplash) are fine.
 - **`SeriousNote` is mandatory on any page that leans into the parody's substantive subject.** Mount `<SeriousNote />` outside the document card, near the bottom. The component is the moral counterweight to the polished UI.
 - **No new top-level dependencies** without a clear need. The point of the project is to stay a small, readable Vue 3 showcase.
 - **Tests cover behaviour, not markup churn.** Assert on landmark roles, visible text, link counts, route names, and the dictionary integrity contracts. Don't snapshot entire `<template>` trees - cosmetic edits would break every test.

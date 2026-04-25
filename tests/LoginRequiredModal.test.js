@@ -62,6 +62,45 @@ describe('LoginRequiredModal', () => {
     );
   });
 
+  it('renders the publish_review message in EN and FR', () => {
+    openLoginRequired({ target: 'publish_review', name: 'Mireille' });
+    const en = mount(LoginRequiredModal);
+    expect(en.find('.lr-message').text()).toBe(
+      'You must be signed in to publish a review for Mireille.',
+    );
+    setLocale('fr');
+    const fr = mount(LoginRequiredModal);
+    expect(fr.find('.lr-message').text()).toBe(
+      'Vous devez être connecté pour publier un avis sur Mireille.',
+    );
+  });
+
+  it('renders the publish_photos message in EN and FR', () => {
+    openLoginRequired({ target: 'publish_photos', name: 'Mehdi' });
+    const en = mount(LoginRequiredModal);
+    expect(en.find('.lr-message').text()).toBe(
+      'You must be signed in to publish photos for Mehdi.',
+    );
+    setLocale('fr');
+    const fr = mount(LoginRequiredModal);
+    expect(fr.find('.lr-message').text()).toBe(
+      'Vous devez être connecté pour publier des photos sur Mehdi.',
+    );
+  });
+
+  it('renders the add_place message in EN and FR', () => {
+    openLoginRequired({ target: 'add_place', name: 'Hôtel des Trois Lunes' });
+    const en = mount(LoginRequiredModal);
+    expect(en.find('.lr-message').text()).toBe(
+      'You must be signed in to submit “Hôtel des Trois Lunes” as a new listing.',
+    );
+    setLocale('fr');
+    const fr = mount(LoginRequiredModal);
+    expect(fr.find('.lr-message').text()).toBe(
+      'Vous devez être connecté pour soumettre « Hôtel des Trois Lunes » comme nouvelle fiche.',
+    );
+  });
+
   it('clicking Cancel closes the modal', async () => {
     openLoginRequired({ target: 'phone', name: 'Roger' });
     const wrapper = mount(LoginRequiredModal);

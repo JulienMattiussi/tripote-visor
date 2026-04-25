@@ -45,11 +45,7 @@ const toggleMenu = (key) => {
 
 const onMenuItemClick = (entry) => {
   openMenu.value = null;
-  if (entry.to) {
-    router.push(entry.to);
-    return;
-  }
-  alert(`${entry.label} ${t('common.sim_suffix')}`);
+  router.push(entry.to);
 };
 
 const onDocClick = (event) => {
