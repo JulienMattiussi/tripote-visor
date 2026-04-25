@@ -3,6 +3,7 @@ import { mount, flushPromises } from '@vue/test-utils';
 import FichePage from '../src/pages/FichePage.vue';
 import { setLocale } from '../src/i18n/store.js';
 import fiches from '../src/data/fiches.json';
+import advices from '../src/data/advices.json';
 import { setupRouter, withRouter } from './helpers/router.js';
 
 describe('FichePage - rendering for a known fiche', () => {
@@ -34,10 +35,26 @@ describe('FichePage - rendering for a known fiche', () => {
     expect(tags).toEqual(['Paris (11e)', 'hotel', '50 years old']);
   });
 
-  it('shows 0 reviews count and the empty-reviews message', () => {
+  it('renders the seeded review count from advices.json', () => {
     const wrapper = mount(FichePage, withRouter(router));
-    expect(wrapper.find('.fp-reviews-count').text()).toContain('0');
+    const expected = (advices.mireille ?? []).length;
+    expect(wrapper.find('.fp-reviews-count').text()).toContain(String(expected));
+    if (expected === 0) {
+      expect(wrapper.text()).toContain('No reviews yet.');
+      expect(wrapper.find('.fp-review').exists()).toBe(false);
+    } else {
+      expect(wrapper.find('.fp-review').exists()).toBe(true);
+      expect(wrapper.find('.fp-reviews-summary').exists()).toBe(true);
+    }
+  });
+
+  it('shows the empty-reviews message on a fiche without advices', async () => {
+    const emptyId = fiches.find((f) => !advices[f.id])?.id;
+    expect(emptyId).toBeTruthy();
+    const r = await setupRouter(`/p/${emptyId}`);
+    const wrapper = mount(FichePage, withRouter(r));
     expect(wrapper.text()).toContain('No reviews yet.');
+    expect(wrapper.find('.fp-review').exists()).toBe(false);
   });
 
   it('renders the photo placeholder when fiche.photo is empty', () => {

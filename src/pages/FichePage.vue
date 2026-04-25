@@ -1,10 +1,10 @@
 <script setup>
-import { computed } from 'vue';
+import { computed, ref } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
-import { t, locale, openLoginRequired, formatLieu } from '../i18n/store.js';
+import { t, locale, openLoginRequired, formatLieu, formatReviewDate } from '../i18n/store.js';
 import fichesData from '../data/fiches.json';
 import schedulesData from '../data/schedules.json';
-import reviewsData from '../data/reviews.json';
+import advicesData from '../data/advices.json';
 
 const route = useRoute();
 const router = useRouter();
@@ -14,8 +14,18 @@ const schedule = computed(() =>
   fiche.value ? schedulesData.find((s) => s.id === fiche.value.horaires_id) : null,
 );
 
-const reviews = computed(() => (fiche.value ? (reviewsData[fiche.value.id] ?? []) : []));
+const REVIEWS_PREVIEW = 5;
+const showAllReviews = ref(false);
+const reviews = computed(() => (fiche.value ? (advicesData[fiche.value.id] ?? []) : []));
 const reviewCount = computed(() => reviews.value.length);
+const visibleReviews = computed(() =>
+  showAllReviews.value ? reviews.value : reviews.value.slice(0, REVIEWS_PREVIEW),
+);
+const averageRating = computed(() => {
+  if (!reviewCount.value) return 0;
+  const sum = reviews.value.reduce((acc, r) => acc + r.rating, 0);
+  return sum / reviewCount.value;
+});
 
 const descriptifLines = computed(() => {
   if (!fiche.value) return [];
@@ -184,7 +194,14 @@ const goHome = () => router.push({ name: 'home' });
         <div class="fp-meta">
           <span class="fp-rating-stub" aria-hidden="true">
             <span class="fp-dots">
-              <span v-for="i in 5" :key="i" class="dot"></span>
+              <span
+                v-for="i in 5"
+                :key="i"
+                :class="['dot', { filled: i <= Math.round(averageRating) }]"
+              ></span>
+            </span>
+            <span v-if="reviewCount" class="fp-rating-num">
+              {{ averageRating.toFixed(1) }}
             </span>
             <span class="fp-reviews-count">({{ reviewCount }})</span>
           </span>
@@ -300,7 +317,51 @@ const goHome = () => router.push({ name: 'home' });
           <p v-if="reviewCount === 0" class="fp-empty">
             {{ t('fiche_page.no_reviews') }}
           </p>
-          <p v-else>{{ t('fiche_page.reviews_count', { count: reviewCount }) }}</p>
+          <template v-else>
+            <p class="fp-reviews-summary">
+              <span class="fp-reviews-avg">{{ averageRating.toFixed(1) }}</span>
+              <span class="fp-stars" aria-hidden="true">
+                <span
+                  v-for="n in 5"
+                  :key="n"
+                  :class="['dot', { filled: n <= Math.round(averageRating) }]"
+                ></span>
+              </span>
+              <span class="fp-reviews-total">
+                {{ t('fiche_page.reviews_count', { count: reviewCount }) }}
+              </span>
+            </p>
+            <ul class="fp-reviews-list">
+              <li v-for="(r, i) in visibleReviews" :key="i" class="fp-review" :lang="r.lang">
+                <div class="fp-review-head">
+                  <div class="fp-review-rating" aria-hidden="true">
+                    <span
+                      v-for="n in 5"
+                      :key="n"
+                      :class="['dot', { filled: n <= r.rating }]"
+                    ></span>
+                  </div>
+                  <span class="fp-review-meta">
+                    <span class="fp-review-author">{{ r.author }}</span>
+                    <span aria-hidden="true">·</span>
+                    <time class="fp-review-date" :datetime="r.date">
+                      {{ formatReviewDate(r.date) }}
+                    </time>
+                  </span>
+                </div>
+                <h3 class="fp-review-title">{{ r.title }}</h3>
+                <p class="fp-review-body">{{ r.body }}</p>
+              </li>
+            </ul>
+            <button
+              v-if="reviewCount > REVIEWS_PREVIEW && !showAllReviews"
+              type="button"
+              class="fp-reviews-more"
+              @click="showAllReviews = true"
+            >
+              {{ t('fiche_page.see_all_reviews', { count: reviewCount }) }}
+            </button>
+          </template>
         </section>
       </div>
 
@@ -434,6 +495,15 @@ const goHome = () => router.push({ name: 'home' });
   border-radius: 50%;
   background: var(--border);
   display: inline-block;
+}
+
+.fp-dots .dot.filled {
+  background: var(--brand);
+}
+
+.fp-rating-num {
+  font-weight: 700;
+  font-size: 14px;
 }
 
 .fp-reviews-count {
@@ -685,6 +755,136 @@ const goHome = () => router.push({ name: 'home' });
 
 .fp-reviews-header .fp-block-title {
   margin: 0;
+}
+
+.fp-reviews-summary {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 18px 0;
+  font-size: 14px;
+  color: var(--text);
+}
+
+.fp-reviews-avg {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--brand-dark);
+}
+
+.fp-stars {
+  display: inline-flex;
+  gap: 2px;
+}
+
+.fp-stars .dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--border);
+  display: inline-block;
+}
+
+.fp-stars .dot.filled {
+  background: var(--brand);
+}
+
+.fp-reviews-total {
+  color: var(--text-muted);
+}
+
+.fp-reviews-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.fp-review {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 14px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.fp-review-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.fp-review-rating {
+  display: inline-flex;
+  gap: 2px;
+}
+
+.fp-review-meta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.fp-review-author {
+  font-weight: 600;
+  color: var(--brand-dark);
+}
+
+.fp-review-date {
+  color: var(--text-muted);
+}
+
+.fp-review-rating .dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--border);
+  display: inline-block;
+}
+
+.fp-review-rating .dot.filled {
+  background: var(--brand);
+}
+
+.fp-review-title {
+  font-size: 15px;
+  font-weight: 800;
+  margin: 4px 0 0 0;
+  color: var(--text);
+  line-height: 1.3;
+}
+
+.fp-review-body {
+  font-size: 14px;
+  line-height: 1.55;
+  margin: 0;
+  color: var(--text);
+}
+
+.fp-reviews-more {
+  margin-top: 14px;
+  align-self: flex-start;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: var(--surface);
+  font-weight: 700;
+  font-size: 13px;
+  color: var(--brand-dark);
+  cursor: pointer;
+  font-family: inherit;
+  border: 1px solid var(--border);
+}
+
+.fp-reviews-more:hover {
+  background: var(--brand-tint);
+  border-color: var(--brand);
 }
 
 .fp-right {

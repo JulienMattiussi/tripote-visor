@@ -10,12 +10,7 @@ defineProps({
 </script>
 
 <template>
-  <aside
-    v-if="!collapsed"
-    class="serious-note"
-    role="note"
-    aria-labelledby="serious-note-title"
-  >
+  <aside v-if="!collapsed" class="serious-note" role="note" aria-labelledby="serious-note-title">
     <span class="serious-note-label">{{ t('serious_note.label') }}</span>
     <h2 id="serious-note-title" class="serious-note-title">{{ t('serious_note.title') }}</h2>
     <p class="serious-note-body">{{ t('serious_note.body') }}</p>

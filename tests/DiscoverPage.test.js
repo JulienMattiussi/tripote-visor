@@ -2,11 +2,20 @@ import { describe, it, expect, beforeEach } from 'vitest';
 import { mount, flushPromises } from '@vue/test-utils';
 import DiscoverPage from '../src/pages/DiscoverPage.vue';
 import fichesData from '../src/data/fiches.json';
+import advicesData from '../src/data/advices.json';
 import { setLocale, setCurrency } from '../src/i18n/store.js';
 import { setupRouter, withRouter } from './helpers/router.js';
 
+const avgOf = (id) => {
+  const list = advicesData[id] ?? [];
+  if (!list.length) return 0;
+  return list.reduce((acc, r) => acc + r.rating, 0) / list.length;
+};
+
 const expectedTop4 = () =>
-  [...fichesData].sort((a, b) => b.note - a.note || a.nom.localeCompare(b.nom)).slice(0, 4);
+  [...fichesData]
+    .sort((a, b) => avgOf(b.id) - avgOf(a.id) || a.nom.localeCompare(b.nom))
+    .slice(0, 4);
 
 beforeEach(() => {
   setLocale('en');
@@ -36,7 +45,9 @@ describe('DiscoverPage', () => {
       expect(card.find('.dp-name').text()).toBe(fiche.nom);
       const expectedLieu = fiche.lieu ? `${fiche.ville} (${fiche.lieu})` : fiche.ville;
       expect(card.find('.dp-loc').text()).toBe(expectedLieu);
-      expect(card.find('.dp-rating-num').text()).toBe(fiche.note.toFixed(1));
+      const avg = avgOf(fiche.id);
+      const expected = avg > 0 ? avg.toFixed(1) : '-';
+      expect(card.find('.dp-rating-num').text()).toBe(expected);
     });
   });
 

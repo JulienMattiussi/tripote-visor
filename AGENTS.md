@@ -68,9 +68,10 @@ src/
 │   └── SeriousNote.vue           # shared callout reused across pages
 ├── data/
 │   ├── travel-stories.js
-│   ├── fiches.json               # 100 profile entries used by FichePage and ListingsPage
+│   ├── fiches.json               # 100 profile entries (FR descriptif + descriptif_en + ville/lieu)
+│   ├── cities.json               # 50 villes ranked by fiche count, with optional photo URL
 │   ├── schedules.json            # 15 weekly schedule patterns referenced by fiches
-│   └── reviews.json              # map fiche-id to review array (empty for now)
+│   └── advices.json              # 1000 reviews keyed by fiche id (rating/title/body/lang)
 ├── i18n/
 │   ├── store.js                  # locale/currency refs, t(), modal state, formatAmount, detectBrowserDefaults
 │   ├── translations.js           # { en: {...}, fr: {...} } - single source of truth

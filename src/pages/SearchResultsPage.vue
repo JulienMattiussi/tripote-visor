@@ -1,7 +1,13 @@
 <script setup>
 import { computed } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
-import { t, openLoginRequired, formatLieu } from '../i18n/store.js';
+import {
+  t,
+  openLoginRequired,
+  formatLieu,
+  reviewCountFor,
+  reviewAverageFor,
+} from '../i18n/store.js';
 import fichesData from '../data/fiches.json';
 
 const route = useRoute();
@@ -111,7 +117,7 @@ const emptyText = computed(() =>
           @click="goFiche(f.id)"
           @keydown.enter="goFiche(f.id)"
         >
-          <div class="sr-photo" aria-hidden="true">
+          <div class="sr-photo">
             <button
               type="button"
               class="sr-heart"
@@ -120,6 +126,19 @@ const emptyText = computed(() =>
             >
               <span class="sr-heart-icon">♡</span>
             </button>
+            <div class="sr-rating-overlay" aria-hidden="true">
+              <span class="sr-stars">
+                <span
+                  v-for="i in 5"
+                  :key="i"
+                  :class="['dot', { filled: i <= Math.round(reviewAverageFor(f.id)) }]"
+                ></span>
+              </span>
+              <span class="sr-rating-num">
+                {{ reviewCountFor(f.id) ? reviewAverageFor(f.id).toFixed(1) : '-' }}
+              </span>
+              <span class="sr-reviews">({{ reviewCountFor(f.id) }})</span>
+            </div>
           </div>
           <h3 class="sr-card-name">{{ f.nom }}</h3>
           <p class="sr-card-loc">{{ formatLieu(f) }}</p>
@@ -267,6 +286,45 @@ const emptyText = computed(() =>
   font-size: 13px;
   color: var(--text);
   margin: 0;
+}
+
+.sr-rating-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 18px 10px 8px;
+  font-size: 12px;
+  color: var(--on-dark);
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
+}
+
+.sr-stars {
+  display: inline-flex;
+  gap: 2px;
+}
+
+.sr-rating-overlay .dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.45);
+  display: inline-block;
+}
+
+.sr-rating-overlay .dot.filled {
+  background: var(--brand);
+}
+
+.sr-rating-num {
+  font-weight: 700;
+}
+
+.sr-reviews {
+  opacity: 0.85;
 }
 
 .sr-card-meta {

@@ -1,5 +1,6 @@
 import { ref } from 'vue';
 import { translations } from './translations.js';
+import advicesData from '../data/advices.json';
 
 const STORAGE_LOCALE = 'tv_locale';
 const STORAGE_CURRENCY = 'tv_currency';
@@ -153,6 +154,25 @@ export function currencyFlag() {
 
 export function localeFlag() {
   return LOCALE_META[locale.value].flag;
+}
+
+export function reviewCountFor(id) {
+  const list = advicesData[id];
+  return Array.isArray(list) ? list.length : 0;
+}
+
+export function reviewAverageFor(id) {
+  const list = advicesData[id];
+  if (!Array.isArray(list) || !list.length) return 0;
+  return list.reduce((acc, r) => acc + r.rating, 0) / list.length;
+}
+
+export function formatReviewDate(iso) {
+  if (!iso) return '';
+  const d = new Date(iso);
+  if (Number.isNaN(d.getTime())) return '';
+  const tag = locale.value === 'fr' ? 'fr-FR' : 'en-US';
+  return d.toLocaleDateString(tag, { year: 'numeric', month: 'long', day: 'numeric' });
 }
 
 export function formatLieu(fiche) {

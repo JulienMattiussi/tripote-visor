@@ -31,8 +31,7 @@
     "payment_check": true,
     "payment_card": true,
     "payment_paypal": false,
-    "prix": 155,
-    "note": 4.3
+    "prix": 155
   },
   {
     "id": "mehdi",
@@ -66,8 +65,7 @@
     "payment_check": true,
     "payment_card": true,
     "payment_paypal": false,
-    "prix": 230,
-    "note": 4.8
+    "prix": 230
   },
   {
     "id": "lucia",
@@ -99,8 +97,7 @@
     "payment_check": false,
     "payment_card": true,
     "payment_paypal": false,
-    "prix": 265,
-    "note": 4.1
+    "prix": 265
   },
   {
     "id": "brigitte",
@@ -134,8 +131,7 @@
     "payment_check": false,
     "payment_card": false,
     "payment_paypal": false,
-    "prix": 150,
-    "note": 3.5
+    "prix": 150
   },
   {
     "id": "yacine",
@@ -167,8 +163,7 @@
     "payment_check": true,
     "payment_card": false,
     "payment_paypal": false,
-    "prix": 60,
-    "note": 4.4
+    "prix": 60
   },
   {
     "id": "carmen",
@@ -202,8 +197,7 @@
     "payment_check": false,
     "payment_card": true,
     "payment_paypal": true,
-    "prix": 175,
-    "note": 3.7
+    "prix": 175
   },
   {
     "id": "adam",
@@ -235,8 +229,7 @@
     "payment_check": true,
     "payment_card": false,
     "payment_paypal": false,
-    "prix": 190,
-    "note": 4.5
+    "prix": 190
   },
   {
     "id": "soraya",
@@ -270,8 +263,7 @@
     "payment_check": false,
     "payment_card": false,
     "payment_paypal": false,
-    "prix": 30,
-    "note": 4.5
+    "prix": 30
   },
   {
     "id": "esperanza",
@@ -303,8 +295,7 @@
     "payment_check": false,
     "payment_card": true,
     "payment_paypal": false,
-    "prix": 55,
-    "note": 4.4
+    "prix": 55
   },
   {
     "id": "ingrid",
@@ -338,8 +329,7 @@
     "payment_check": false,
     "payment_card": false,
     "payment_paypal": true,
-    "prix": 265,
-    "note": 4.5
+    "prix": 265
   },
   {
     "id": "wei",
@@ -373,8 +363,7 @@
     "payment_check": false,
     "payment_card": false,
     "payment_paypal": false,
-    "prix": 25,
-    "note": 3.6
+    "prix": 25
   },
   {
     "id": "murat",
@@ -406,8 +395,7 @@
     "payment_check": true,
     "payment_card": false,
     "payment_paypal": true,
-    "prix": 75,
-    "note": 4.4
+    "prix": 75
   },
   {
     "id": "solange",
@@ -441,8 +429,7 @@
     "payment_check": false,
     "payment_card": false,
     "payment_paypal": true,
-    "prix": 165,
-    "note": 4.3
+    "prix": 165
   },
   {
     "id": "andriy",
@@ -474,8 +461,7 @@
     "payment_check": true,
     "payment_card": false,
     "payment_paypal": false,
-    "prix": 80,
-    "note": 3.6
+    "prix": 80
   },
   {
     "id": "layla",
@@ -507,8 +493,7 @@
     "payment_check": false,
     "payment_card": false,
     "payment_paypal": false,
-    "prix": 175,
-    "note": 3.7
+    "prix": 175
   },
   {
     "id": "wilhelmine",
@@ -542,8 +527,7 @@
     "payment_check": true,
     "payment_card": true,
     "payment_paypal": false,
-    "prix": 400,
-    "note": 4.7
+    "prix": 400
   },
   {
     "id": "renata",
@@ -575,8 +559,7 @@
     "payment_check": false,
     "payment_card": true,
     "payment_paypal": false,
-    "prix": 350,
-    "note": 3.6
+    "prix": 350
   },
   {
     "id": "fatou",
@@ -610,8 +593,7 @@
     "payment_check": false,
     "payment_card": false,
     "payment_paypal": false,
-    "prix": 35,
-    "note": 3.6
+    "prix": 35
   },
   {
     "id": "tatiana",
@@ -645,8 +627,7 @@
     "payment_check": false,
     "payment_card": true,
     "payment_paypal": true,
-    "prix": 335,
-    "note": 4.9
+    "prix": 335
   },
   {
     "id": "adele",
@@ -678,8 +659,7 @@
     "payment_check": false,
     "payment_card": true,
     "payment_paypal": false,
-    "prix": 50,
-    "note": 3.7
+    "prix": 50
   },
   {
     "id": "issa",
@@ -711,8 +691,7 @@
     "payment_check": false,
     "payment_card": true,
     "payment_paypal": true,
-    "prix": 85,
-    "note": 4.7
+    "prix": 85
   },
   {
     "id": "despina",
@@ -744,8 +723,7 @@
     "payment_check": false,
     "payment_card": true,
     "payment_paypal": false,
-    "prix": 155,
-    "note": 4.5
+    "prix": 155
   },
   {
     "id": "klara",
@@ -777,8 +755,7 @@
     "payment_check": false,
     "payment_card": true,
     "payment_paypal": false,
-    "prix": 395,
-    "note": 4.2
+    "prix": 395
   },
   {
     "id": "bernadette",
@@ -812,8 +789,7 @@
     "payment_check": true,
     "payment_card": false,
     "payment_paypal": true,
-    "prix": 95,
-    "note": 4.6
+    "prix": 95
   },
   {
     "id": "anjali",
@@ -845,8 +821,7 @@
     "payment_check": true,
     "payment_card": false,
     "payment_paypal": false,
-    "prix": 125,
-    "note": 4.6
+    "prix": 125
   },
   {
     "id": "khadija",
@@ -878,8 +853,7 @@
     "payment_check": false,
     "payment_card": true,
     "payment_paypal": false,
-    "prix": 385,
-    "note": 4.7
+    "prix": 385
   },
   {
     "id": "olga",
@@ -911,8 +885,7 @@
     "payment_check": true,
     "payment_card": false,
     "payment_paypal": true,
-    "prix": 235,
-    "note": 4.7
+    "prix": 235
   },
   {
     "id": "esmeralda",
@@ -944,8 +917,7 @@
     "payment_check": false,
     "payment_card": false,
     "payment_paypal": false,
-    "prix": 55,
-    "note": 4.2
+    "prix": 55
   },
   {
     "id": "helga",
@@ -979,8 +951,7 @@
     "payment_check": false,
     "payment_card": true,
     "payment_paypal": true,
-    "prix": 330,
-    "note": 3.7
+    "prix": 330
   },
   {
     "id": "lupita",
@@ -1012,8 +983,7 @@
     "payment_check": false,
     "payment_card": false,
     "payment_paypal": false,
-    "prix": 225,
-    "note": 4.2
+    "prix": 225
   },
   {
     "id": "sigrid",
@@ -1045,8 +1015,7 @@
     "payment_check": false,
     "payment_card": false,
     "payment_paypal": false,
-    "prix": 90,
-    "note": 5
+    "prix": 90
   },
   {
     "id": "hiroko",
@@ -1078,8 +1047,7 @@
     "payment_check": false,
     "payment_card": true,
     "payment_paypal": true,
-    "prix": 375,
-    "note": 4.7
+    "prix": 375
   },
   {
     "id": "josephine",
@@ -1113,8 +1081,7 @@
     "payment_check": false,
     "payment_card": true,
     "payment_paypal": false,
-    "prix": 45,
-    "note": 3.9
+    "prix": 45
   },
   {
     "id": "latifa",
@@ -1146,8 +1113,7 @@
     "payment_check": false,
     "payment_card": true,
     "payment_paypal": false,
-    "prix": 35,
-    "note": 3.8
+    "prix": 35
   },
   {
     "id": "roger",
@@ -1181,8 +1147,7 @@
     "payment_check": false,
     "payment_card": true,
     "payment_paypal": true,
-    "prix": 105,
-    "note": 4.4
+    "prix": 105
   },
   {
     "id": "suzanne",
@@ -1216,8 +1181,7 @@
     "payment_check": false,
     "payment_card": false,
     "payment_paypal": false,
-    "prix": 180,
-    "note": 4.5
+    "prix": 180
   },
   {
     "id": "tariq",
@@ -1249,8 +1213,7 @@
     "payment_check": false,
     "payment_card": false,
     "payment_paypal": false,
-    "prix": 145,
-    "note": 3.9
+    "prix": 145
   },
   {
     "id": "yvette",
@@ -1284,8 +1247,7 @@
     "payment_check": true,
     "payment_card": true,
     "payment_paypal": false,
-    "prix": 200,
-    "note": 4.3
+    "prix": 200
   },
   {
     "id": "salma",
@@ -1317,8 +1279,7 @@
     "payment_check": true,
     "payment_card": false,
     "payment_paypal": false,
-    "prix": 390,
-    "note": 3.7
+    "prix": 390
   },
   {
     "id": "nadia",
@@ -1350,8 +1311,7 @@
     "payment_check": false,
     "payment_card": false,
     "payment_paypal": false,
-    "prix": 180,
-    "note": 3.7
+    "prix": 180
   },
   {
     "id": "giulia",
@@ -1383,8 +1343,7 @@
     "payment_check": false,
     "payment_card": false,
     "payment_paypal": false,
-    "prix": 65,
-    "note": 4.4
+    "prix": 65
   },
   {
     "id": "boris",
@@ -1416,8 +1375,7 @@
     "payment_check": false,
     "payment_card": false,
     "payment_paypal": false,
-    "prix": 230,
-    "note": 5
+    "prix": 230
   },
   {
     "id": "svetlana",
@@ -1449,8 +1407,7 @@
     "payment_check": false,
     "payment_card": true,
     "payment_paypal": true,
-    "prix": 65,
-    "note": 4.5
+    "prix": 65
   },
   {
     "id": "aylin",
@@ -1482,8 +1439,7 @@
     "payment_check": false,
     "payment_card": false,
     "payment_paypal": true,
-    "prix": 30,
-    "note": 3.7
+    "prix": 30
   },
   {
     "id": "niamh",
@@ -1515,8 +1471,7 @@
     "payment_check": false,
     "payment_card": false,
     "payment_paypal": false,
-    "prix": 185,
-    "note": 4.9
+    "prix": 185
   },
   {
     "id": "anatole",
@@ -1548,8 +1503,7 @@
     "payment_check": false,
     "payment_card": true,
     "payment_paypal": false,
-    "prix": 180,
-    "note": 4.4
+    "prix": 180
   },
   {
     "id": "awa",
@@ -1581,8 +1535,7 @@
     "payment_check": false,
     "payment_card": true,
     "payment_paypal": true,
-    "prix": 215,
-    "note": 4.9
+    "prix": 215
   },
   {
     "id": "pietro",
@@ -1614,8 +1567,7 @@
     "payment_check": false,
     "payment_card": false,
     "payment_paypal": true,
-    "prix": 375,
-    "note": 3.9
+    "prix": 375
   },
   {
     "id": "roya",
@@ -1647,8 +1599,7 @@
     "payment_check": false,
     "payment_card": false,
     "payment_paypal": false,
-    "prix": 290,
-    "note": 4.2
+    "prix": 290
   },
   {
     "id": "lucette",
@@ -1680,8 +1631,7 @@
     "payment_check": false,
     "payment_card": true,
     "payment_paypal": false,
-    "prix": 355,
-    "note": 4.5
+    "prix": 355
   },
   {
     "id": "mila",
@@ -1713,8 +1663,7 @@
     "payment_check": false,
     "payment_card": true,
     "payment_paypal": false,
-    "prix": 290,
-    "note": 4.5
+    "prix": 290
   },
   {
     "id": "margaret",
@@ -1748,8 +1697,7 @@
     "payment_check": false,
     "payment_card": false,
     "payment_paypal": false,
-    "prix": 340,
-    "note": 3.9
+    "prix": 340
   },
   {
     "id": "sofia",
@@ -1781,8 +1729,7 @@
     "payment_check": true,
     "payment_card": true,
     "payment_paypal": false,
-    "prix": 390,
-    "note": 5
+    "prix": 390
   },
   {
     "id": "zeynep",
@@ -1814,8 +1761,7 @@
     "payment_check": true,
     "payment_card": true,
     "payment_paypal": true,
-    "prix": 335,
-    "note": 4.6
+    "prix": 335
   },
   {
     "id": "bineta",
@@ -1847,8 +1793,7 @@
     "payment_check": false,
     "payment_card": false,
     "payment_paypal": true,
-    "prix": 375,
-    "note": 4
+    "prix": 375
   },
   {
     "id": "carla",
@@ -1882,8 +1827,7 @@
     "payment_check": false,
     "payment_card": true,
     "payment_paypal": true,
-    "prix": 345,
-    "note": 3.6
+    "prix": 345
   },
   {
     "id": "min-ji",
@@ -1915,8 +1859,7 @@
     "payment_check": false,
     "payment_card": true,
     "payment_paypal": true,
-    "prix": 150,
-    "note": 3.9
+    "prix": 150
   },
   {
     "id": "maialen",
@@ -1948,8 +1891,7 @@
     "payment_check": false,
     "payment_card": false,
     "payment_paypal": false,
-    "prix": 320,
-    "note": 4
+    "prix": 320
   },
   {
     "id": "henri",
@@ -1983,8 +1925,7 @@
     "payment_check": true,
     "payment_card": true,
     "payment_paypal": false,
-    "prix": 355,
-    "note": 3.6
+    "prix": 355
   },
   {
     "id": "priya",
@@ -2016,8 +1957,7 @@
     "payment_check": false,
     "payment_card": false,
     "payment_paypal": true,
-    "prix": 50,
-    "note": 3.7
+    "prix": 50
   },
   {
     "id": "larissa",
@@ -2049,8 +1989,7 @@
     "payment_check": true,
     "payment_card": true,
     "payment_paypal": false,
-    "prix": 270,
-    "note": 4.5
+    "prix": 270
   },
   {
     "id": "doris",
@@ -2082,8 +2021,7 @@
     "payment_check": false,
     "payment_card": false,
     "payment_paypal": false,
-    "prix": 210,
-    "note": 4.9
+    "prix": 210
   },
   {
     "id": "behnam",
@@ -2115,8 +2053,7 @@
     "payment_check": false,
     "payment_card": false,
     "payment_paypal": true,
-    "prix": 125,
-    "note": 4.5
+    "prix": 125
   },
   {
     "id": "linh",
@@ -2148,8 +2085,7 @@
     "payment_check": false,
     "payment_card": false,
     "payment_paypal": false,
-    "prix": 195,
-    "note": 3.6
+    "prix": 195
   },
   {
     "id": "astrid",
@@ -2181,8 +2117,7 @@
     "payment_check": false,
     "payment_card": false,
     "payment_paypal": true,
-    "prix": 95,
-    "note": 4.7
+    "prix": 95
   },
   {
     "id": "soledad",
@@ -2214,8 +2149,7 @@
     "payment_check": false,
     "payment_card": true,
     "payment_paypal": false,
-    "prix": 340,
-    "note": 4.6
+    "prix": 340
   },
   {
     "id": "colette",
@@ -2249,8 +2183,7 @@
     "payment_check": false,
     "payment_card": false,
     "payment_paypal": false,
-    "prix": 25,
-    "note": 4.7
+    "prix": 25
   },
   {
     "id": "aminata",
@@ -2282,8 +2215,7 @@
     "payment_check": false,
     "payment_card": true,
     "payment_paypal": false,
-    "prix": 145,
-    "note": 3.6
+    "prix": 145
   },
   {
     "id": "geraldine",
@@ -2315,8 +2247,7 @@
     "payment_check": false,
     "payment_card": false,
     "payment_paypal": false,
-    "prix": 275,
-    "note": 4.3
+    "prix": 275
   },
   {
     "id": "sabrina",
@@ -2348,8 +2279,7 @@
     "payment_check": false,
     "payment_card": true,
     "payment_paypal": false,
-    "prix": 380,
-    "note": 4.3
+    "prix": 380
   },
   {
     "id": "pilar",
@@ -2381,8 +2311,7 @@
     "payment_check": false,
     "payment_card": true,
     "payment_paypal": false,
-    "prix": 335,
-    "note": 4.5
+    "prix": 335
   },
   {
     "id": "ida",
@@ -2414,8 +2343,7 @@
     "payment_check": false,
     "payment_card": false,
     "payment_paypal": false,
-    "prix": 235,
-    "note": 3.9
+    "prix": 235
   },
   {
     "id": "marie-josee",
@@ -2449,8 +2377,7 @@
     "payment_check": false,
     "payment_card": false,
     "payment_paypal": false,
-    "prix": 170,
-    "note": 4.9
+    "prix": 170
   },
   {
     "id": "rania",
@@ -2482,8 +2409,7 @@
     "payment_check": false,
     "payment_card": true,
     "payment_paypal": false,
-    "prix": 125,
-    "note": 4.3
+    "prix": 125
   },
   {
     "id": "brigida",
@@ -2515,8 +2441,7 @@
     "payment_check": false,
     "payment_card": true,
     "payment_paypal": true,
-    "prix": 230,
-    "note": 5
+    "prix": 230
   },
   {
     "id": "gabriela",
@@ -2548,8 +2473,7 @@
     "payment_check": false,
     "payment_card": true,
     "payment_paypal": false,
-    "prix": 215,
-    "note": 3.7
+    "prix": 215
   },
   {
     "id": "anouk",
@@ -2581,8 +2505,7 @@
     "payment_check": true,
     "payment_card": true,
     "payment_paypal": false,
-    "prix": 210,
-    "note": 3.6
+    "prix": 210
   },
   {
     "id": "daria",
@@ -2614,8 +2537,7 @@
     "payment_check": false,
     "payment_card": true,
     "payment_paypal": false,
-    "prix": 90,
-    "note": 4.9
+    "prix": 90
   },
   {
     "id": "eleni",
@@ -2647,8 +2569,7 @@
     "payment_check": false,
     "payment_card": false,
     "payment_paypal": false,
-    "prix": 315,
-    "note": 4.5
+    "prix": 315
   },
   {
     "id": "fadila",
@@ -2680,8 +2601,7 @@
     "payment_check": false,
     "payment_card": false,
     "payment_paypal": false,
-    "prix": 250,
-    "note": 4.1
+    "prix": 250
   },
   {
     "id": "roxana",
@@ -2713,8 +2633,7 @@
     "payment_check": true,
     "payment_card": false,
     "payment_paypal": false,
-    "prix": 300,
-    "note": 4.6
+    "prix": 300
   },
   {
     "id": "yuki",
@@ -2746,8 +2665,7 @@
     "payment_check": true,
     "payment_card": true,
     "payment_paypal": false,
-    "prix": 60,
-    "note": 4.3
+    "prix": 60
   },
   {
     "id": "pierre-andre",
@@ -2779,8 +2697,7 @@
     "payment_check": false,
     "payment_card": false,
     "payment_paypal": false,
-    "prix": 305,
-    "note": 3.8
+    "prix": 305
   },
   {
     "id": "zeinab",
@@ -2812,8 +2729,7 @@
     "payment_check": false,
     "payment_card": false,
     "payment_paypal": false,
-    "prix": 215,
-    "note": 3.7
+    "prix": 215
   },
   {
     "id": "frieda",
@@ -2847,8 +2763,7 @@
     "payment_check": false,
     "payment_card": false,
     "payment_paypal": false,
-    "prix": 50,
-    "note": 4
+    "prix": 50
   },
   {
     "id": "bakary",
@@ -2880,8 +2795,7 @@
     "payment_check": false,
     "payment_card": true,
     "payment_paypal": true,
-    "prix": 280,
-    "note": 4.3
+    "prix": 280
   },
   {
     "id": "octavia",
@@ -2913,8 +2827,7 @@
     "payment_check": false,
     "payment_card": false,
     "payment_paypal": false,
-    "prix": 330,
-    "note": 4.4
+    "prix": 330
   },
   {
     "id": "souleymane",
@@ -2946,8 +2859,7 @@
     "payment_check": true,
     "payment_card": false,
     "payment_paypal": false,
-    "prix": 30,
-    "note": 3.8
+    "prix": 30
   },
   {
     "id": "maite",
@@ -2979,8 +2891,7 @@
     "payment_check": false,
     "payment_card": false,
     "payment_paypal": false,
-    "prix": 335,
-    "note": 3.6
+    "prix": 335
   },
   {
     "id": "helena",
@@ -3012,8 +2923,7 @@
     "payment_check": false,
     "payment_card": true,
     "payment_paypal": false,
-    "prix": 295,
-    "note": 4.1
+    "prix": 295
   },
   {
     "id": "paloma",
@@ -3045,8 +2955,7 @@
     "payment_check": true,
     "payment_card": false,
     "payment_paypal": false,
-    "prix": 355,
-    "note": 3.6
+    "prix": 355
   },
   {
     "id": "adetokunbo",
@@ -3078,8 +2987,7 @@
     "payment_check": false,
     "payment_card": true,
     "payment_paypal": false,
-    "prix": 340,
-    "note": 4.1
+    "prix": 340
   },
   {
     "id": "beata",
@@ -3111,8 +3019,7 @@
     "payment_check": false,
     "payment_card": true,
     "payment_paypal": true,
-    "prix": 285,
-    "note": 4.9
+    "prix": 285
   },
   {
     "id": "gennaro",
@@ -3146,8 +3053,7 @@
     "payment_check": false,
     "payment_card": true,
     "payment_paypal": false,
-    "prix": 165,
-    "note": 3.7
+    "prix": 165
   },
   {
     "id": "sonja",
@@ -3179,8 +3085,7 @@
     "payment_check": false,
     "payment_card": true,
     "payment_paypal": true,
-    "prix": 180,
-    "note": 4.5
+    "prix": 180
   },
   {
     "id": "jean-yves",
@@ -3212,8 +3117,7 @@
     "payment_check": false,
     "payment_card": true,
     "payment_paypal": false,
-    "prix": 170,
-    "note": 4.3
+    "prix": 170
   },
   {
     "id": "leontine",
@@ -3245,8 +3149,7 @@
     "payment_check": false,
     "payment_card": true,
     "payment_paypal": false,
-    "prix": 105,
-    "note": 5
+    "prix": 105
   },
   {
     "id": "hassan",
@@ -3278,8 +3181,7 @@
     "payment_check": false,
     "payment_card": true,
     "payment_paypal": true,
-    "prix": 110,
-    "note": 4.7
+    "prix": 110
   },
   {
     "id": "kavita",
@@ -3311,8 +3213,7 @@
     "payment_check": false,
     "payment_card": false,
     "payment_paypal": false,
-    "prix": 25,
-    "note": 3.6
+    "prix": 25
   },
   {
     "id": "wilma",
@@ -3346,7 +3247,6 @@
     "payment_check": false,
     "payment_card": false,
     "payment_paypal": false,
-    "prix": 335,
-    "note": 3.7
+    "prix": 335
   }
 ]

@@ -1,7 +1,14 @@
 <script setup>
 import { computed, ref, watch } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
-import { t, formatAmount, formatLieu, locale } from '../i18n/store.js';
+import {
+  t,
+  formatAmount,
+  formatLieu,
+  locale,
+  reviewCountFor,
+  reviewAverageFor,
+} from '../i18n/store.js';
 import fichesData from '../data/fiches.json';
 
 const props = defineProps({
@@ -18,7 +25,6 @@ const PER_PAGE_DEFAULT = 10;
 const router = useRouter();
 const route = useRoute();
 
-const isHotels = computed(() => props.listingType === 'hotels');
 const titleKey = computed(() => `listings.${props.listingType}_title`);
 const introKey = computed(() => `listings.${props.listingType}_intro`);
 
@@ -73,7 +79,9 @@ const sortedFiches = computed(() => {
   const list = filteredFiches.value;
   switch (sortBy.value) {
     case 'top_rated':
-      return [...list].sort((a, b) => b.note - a.note);
+      return [...list].sort(
+        (a, b) => reviewAverageFor(b.id) - reviewAverageFor(a.id) || a.nom.localeCompare(b.nom),
+      );
     case 'price_asc':
       return [...list].sort((a, b) => a.prix - b.prix);
     case 'price_desc':
@@ -158,19 +166,17 @@ const goFiche = (id) => {
               <span
                 v-for="i in 5"
                 :key="i"
-                :class="['dot', { filled: i <= Math.round(f.note) }]"
+                :class="['dot', { filled: i <= Math.round(reviewAverageFor(f.id)) }]"
               ></span>
             </span>
-            <span class="lst-rating-num">{{ f.note.toFixed(1) }}</span>
-            <span class="lst-reviews">({{ formatReviews(0) }})</span>
+            <span class="lst-rating-num">
+              {{ reviewCountFor(f.id) ? reviewAverageFor(f.id).toFixed(1) : '-' }}
+            </span>
+            <span class="lst-reviews">({{ formatReviews(reviewCountFor(f.id)) }})</span>
           </div>
           <div class="lst-card-foot">
             <span class="lst-price">
-              {{
-                isHotels
-                  ? t('listings.from_per_night', { amount: formatAmount(f.prix) })
-                  : t('listings.from_per_person', { amount: formatAmount(f.prix) })
-              }}
+              {{ t('listings.from_per_session', { amount: formatAmount(f.prix) }) }}
             </span>
           </div>
         </div>

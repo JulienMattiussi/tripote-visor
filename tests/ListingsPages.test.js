@@ -35,16 +35,16 @@ describe('HotelsPage - default view', () => {
     for (const name of visibleNames) expect(allowed.has(name)).toBe(true);
   });
 
-  it('formats price with the per-night suffix in EN/EUR', () => {
+  it('formats price with the per-appointment suffix in EN/EUR', () => {
     const wrapper = mount(HotelsPage, withRouter(router));
-    expect(wrapper.find('.lst-price').text()).toMatch(/from .*€.*\/ night/);
+    expect(wrapper.find('.lst-price').text()).toMatch(/from .*€.*\/ appointment/);
   });
 
-  it('renders in French and uses the FR per-night suffix', async () => {
+  it('renders in French and uses the FR per-appointment suffix', async () => {
     setLocale('fr');
     const wrapper = mount(HotelsPage, withRouter(router));
     expect(wrapper.find('.lst-hero-title').text()).toBe('Hôtels');
-    expect(wrapper.find('.lst-price').text()).toContain('/ nuit');
+    expect(wrapper.find('.lst-price').text()).toContain('/ prestation');
   });
 });
 
@@ -74,10 +74,14 @@ describe('ListingsPage - sort options', () => {
     expect(prices).toEqual([...prices].sort((a, b) => b - a));
   });
 
-  it('"top rated" sorts the visible cards by note descending', async () => {
+  it('"top rated" sorts the visible cards by review average descending', async () => {
     const wrapper = mount(HotelsPage, withRouter(router));
     await wrapper.find('.lst-sort select').setValue('top_rated');
-    const ratings = wrapper.findAll('.lst-rating-num').map((r) => parseFloat(r.text()));
+    // Fiches with 0 reviews render '-' (parseFloat -> NaN). Treat them as 0.
+    const ratings = wrapper.findAll('.lst-rating-num').map((r) => {
+      const n = parseFloat(r.text());
+      return Number.isNaN(n) ? 0 : n;
+    });
     expect(ratings).toEqual([...ratings].sort((a, b) => b - a));
   });
 
@@ -184,7 +188,7 @@ describe('ParksPage / AlleysPage - parity', () => {
     setCurrency('EUR');
   });
 
-  it('ParksPage shows park-only fiches with per-person pricing', async () => {
+  it('ParksPage shows park-only fiches with per-appointment pricing', async () => {
     router = await setupRouter('/parks');
     const wrapper = mount(ParksPage, withRouter(router));
     expect(wrapper.find('.lst-hero-title').text()).toBe('Parks');
@@ -193,7 +197,7 @@ describe('ParksPage / AlleysPage - parity', () => {
     for (const name of wrapper.findAll('.lst-card-name').map((n) => n.text())) {
       expect(allowed.has(name)).toBe(true);
     }
-    expect(wrapper.find('.lst-price').text()).toMatch(/from .*€.*\/ person/);
+    expect(wrapper.find('.lst-price').text()).toMatch(/from .*€.*\/ appointment/);
   });
 
   it('AlleysPage shows alley-only fiches', async () => {

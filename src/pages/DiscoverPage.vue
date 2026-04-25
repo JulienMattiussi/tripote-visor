@@ -1,14 +1,16 @@
 <script setup>
 import { computed, ref } from 'vue';
 import { useRouter } from 'vue-router';
-import { t, formatAmount, formatLieu } from '../i18n/store.js';
+import { t, formatAmount, formatLieu, reviewCountFor, reviewAverageFor } from '../i18n/store.js';
 import DestinationsHighlights from '../components/DestinationsHighlights.vue';
 import fichesData from '../data/fiches.json';
 
 const router = useRouter();
 
 const topFiches = computed(() =>
-  [...fichesData].sort((a, b) => b.note - a.note || a.nom.localeCompare(b.nom)).slice(0, 4),
+  [...fichesData]
+    .sort((a, b) => reviewAverageFor(b.id) - reviewAverageFor(a.id) || a.nom.localeCompare(b.nom))
+    .slice(0, 4),
 );
 
 const favorites = ref({});
@@ -77,10 +79,13 @@ const goHome = () => router.push({ name: 'home' });
             <span
               v-for="i in 5"
               :key="i"
-              :class="['dot', { filled: i <= Math.round(f.note) }]"
+              :class="['dot', { filled: i <= Math.round(reviewAverageFor(f.id)) }]"
             ></span>
           </span>
-          <span class="dp-rating-num">{{ f.note.toFixed(1) }}</span>
+          <span class="dp-rating-num">
+            {{ reviewCountFor(f.id) ? reviewAverageFor(f.id).toFixed(1) : '-' }}
+          </span>
+          <span class="dp-rating-count">({{ reviewCountFor(f.id) }})</span>
         </div>
         <div class="dp-price">
           {{ t('discover_page.from_price', { amount: formatAmount(f.prix) }) }}
@@ -270,6 +275,10 @@ const goHome = () => router.push({ name: 'home' });
 .dp-rating-num {
   font-weight: 700;
   color: var(--text);
+}
+
+.dp-rating-count {
+  color: var(--text-muted);
 }
 
 .dp-price {

@@ -2,11 +2,18 @@ import { describe, it, expect, beforeEach } from 'vitest';
 import { mount, flushPromises } from '@vue/test-utils';
 import DestinationsHighlights from '../src/components/DestinationsHighlights.vue';
 import fichesData from '../src/data/fiches.json';
+import advicesData from '../src/data/advices.json';
 import { setLocale, setCurrency } from '../src/i18n/store.js';
 import { setupRouter, withRouter } from './helpers/router.js';
 
 const TOP_CITIES = 6;
 const PER_CITY = 3;
+
+const avgOf = (id) => {
+  const list = advicesData[id] ?? [];
+  if (!list.length) return 0;
+  return list.reduce((acc, r) => acc + r.rating, 0) / list.length;
+};
 
 const expectedCities = () => {
   const groups = new Map();
@@ -23,7 +30,7 @@ const expectedCities = () => {
     .map(([ville, list]) => ({
       ville,
       fiches: [...list]
-        .sort((a, b) => b.note - a.note || a.nom.localeCompare(b.nom))
+        .sort((a, b) => avgOf(b.id) - avgOf(a.id) || a.nom.localeCompare(b.nom))
         .slice(0, PER_CITY),
     }));
 };

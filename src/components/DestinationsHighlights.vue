@@ -1,7 +1,7 @@
 <script setup>
 import { computed } from 'vue';
 import { useRouter } from 'vue-router';
-import { t } from '../i18n/store.js';
+import { t, reviewAverageFor } from '../i18n/store.js';
 import fichesData from '../data/fiches.json';
 import citiesData from '../data/cities.json';
 
@@ -35,7 +35,7 @@ const topCities = computed(() => {
     ville,
     photo: cityPhotoByName[ville] ?? '',
     fiches: [...list]
-      .sort((a, b) => b.note - a.note || a.nom.localeCompare(b.nom))
+      .sort((a, b) => reviewAverageFor(b.id) - reviewAverageFor(a.id) || a.nom.localeCompare(b.nom))
       .slice(0, PER_CITY),
   }));
 });
