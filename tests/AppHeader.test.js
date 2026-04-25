@@ -54,6 +54,31 @@ describe('AppHeader', () => {
     expect(html).not.toMatch(/#[0-9a-f]{3,8}\b/i);
     expect(html).toContain('var(--brand)');
   });
+
+  it('clicking the logo while already on the home page reloads the window', async () => {
+    const reloadSpy = vi.fn();
+    Object.defineProperty(window, 'location', {
+      configurable: true,
+      value: { ...window.location, reload: reloadSpy, pathname: '/' },
+    });
+    const wrapper = mountHeader();
+    await wrapper.find('.logo').trigger('click');
+    expect(reloadSpy).toHaveBeenCalledTimes(1);
+  });
+
+  it('clicking the logo from another page navigates back home (no reload)', async () => {
+    router = await setupRouter('/p/mireille');
+    const reloadSpy = vi.fn();
+    Object.defineProperty(window, 'location', {
+      configurable: true,
+      value: { ...window.location, reload: reloadSpy, pathname: '/p/mireille' },
+    });
+    const wrapper = mountHeader();
+    await wrapper.find('.logo').trigger('click');
+    await flushPromises();
+    expect(reloadSpy).not.toHaveBeenCalled();
+    expect(router.currentRoute.value.name).toBe('home');
+  });
 });
 
 describe('AppHeader scroll-triggered compact state', () => {

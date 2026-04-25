@@ -91,6 +91,8 @@ tests/
 │   └── router.js                 # setupRouter('/path'), withRouter(router)
 ├── App.test.js
 ├── AppHeader.test.js
+├── AppFooter.test.js             # 4-col + legal nav + currency/locale selects + cookie/signin triggers
+├── HomeComponents.test.js        # CategoryGrid / ExperienceCards / KivaBanner / Inspiration / Destinations / TravelersChoice (promo) / CommunityBlurb / ThingsToDoBanner
 ├── HeroSearch.test.js
 ├── PreferencesModal.test.js
 ├── SignInModal.test.js
