@@ -56,6 +56,8 @@ export const modalTab = ref('region');
 export const signinOpen = ref(false);
 export const signinScreen = ref('initial');
 export const cookieModalOpen = ref(false);
+export const loginRequiredOpen = ref(false);
+export const loginRequiredContext = ref({ target: null, name: null });
 
 if (typeof document !== 'undefined') {
   document.documentElement.lang = locale.value;
@@ -117,6 +119,16 @@ export function openCookieModal() {
 
 export function closeCookieModal() {
   cookieModalOpen.value = false;
+}
+
+export function openLoginRequired({ target, name }) {
+  loginRequiredContext.value = { target, name };
+  loginRequiredOpen.value = true;
+}
+
+export function closeLoginRequired() {
+  loginRequiredOpen.value = false;
+  loginRequiredContext.value = { target: null, name: null };
 }
 
 const CURRENCY_META = {

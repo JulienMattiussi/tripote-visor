@@ -109,17 +109,18 @@ describe('AppHeader scroll-triggered compact state', () => {
     expect(wrapper.find('.category-tabs-row').exists()).toBe(false);
   });
 
-  it('submits the compact search via alert only when non-empty', async () => {
+  it('compact-search submit ignores empty queries and pushes to /search?q=... otherwise', async () => {
     const wrapper = mountHeader();
     await setScroll(wrapper, 300);
 
     await wrapper.find('.compact-search').trigger('submit');
-    expect(window.alert).not.toHaveBeenCalled();
+    expect(router.currentRoute.value.name).not.toBe('search');
 
     await wrapper.find('.compact-search input').setValue('nancy');
     await wrapper.find('.compact-search').trigger('submit');
-    expect(window.alert).toHaveBeenCalledOnce();
-    expect(window.alert.mock.calls[0][0]).toContain('nancy');
+    await flushPromises();
+    expect(router.currentRoute.value.name).toBe('search');
+    expect(router.currentRoute.value.query.q).toBe('nancy');
   });
 
   it('shows the French placeholder and category labels when locale is fr', async () => {

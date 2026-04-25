@@ -21,7 +21,7 @@ The site has a home page plus a small constellation of secondary pages reachable
 - `/accessibility` - hero with 3 shield SVGs + EAA/WCAG references
 - `/resources` - hub of brief policy summaries (no follow-up links)
 
-**Three modals** mounted at the App level: `PreferencesModal` (region/locale + currency), `SignInModal` (initial / email / forgot-password screens), `CookieConsentModal` (4 categories: 1 always-on, 3 "None").
+**Four modals** mounted at the App level: `PreferencesModal` (region/locale + currency), `SignInModal` (initial / email / forgot-password screens), `CookieConsentModal` (4 categories: 1 always-on, 3 "None"), `LoginRequiredModal` (gates fiche actions: site/menu/phone/email/save - opens `SignInModal` on confirm).
 
 ## Architecture
 
@@ -40,6 +40,7 @@ src/
 │   ├── ParksPage.vue             # thin wrapper over ListingsPage
 │   ├── AlleysPage.vue            # thin wrapper over ListingsPage
 │   ├── FichePage.vue             # /p/:id - profile page (fiche layout)
+│   ├── SearchResultsPage.vue     # /search - global or category-filtered results
 │   ├── UserReviewPage.vue        # /write-review
 │   ├── PostPhotosPage.vue        # /post-photos
 │   ├── CreateListingPage.vue     # /add-place
@@ -64,6 +65,7 @@ src/
 │   ├── PreferencesModal.vue
 │   ├── SignInModal.vue
 │   ├── CookieConsentModal.vue
+│   ├── LoginRequiredModal.vue    # gates fiche actions behind sign-in
 │   └── SeriousNote.vue           # shared callout reused across pages
 ├── data/
 │   ├── travelers-choice.js
@@ -94,11 +96,13 @@ tests/
 ├── PreferencesModal.test.js
 ├── SignInModal.test.js
 ├── CookieConsentModal.test.js
+├── LoginRequiredModal.test.js
 ├── TravelersChoicePage.test.js
 ├── TravelStoriesPage.test.js
 ├── FormPages.test.js             # UserReview / PostPhotos / CreateListing
 ├── ListingsPages.test.js         # Hotels / Parks / Alleys
 ├── FichePage.test.js             # /p/:id - profile rendering, schedule, not-found
+├── SearchResultsPage.test.js     # /search - grouping, filtering, HeroSearch submit
 ├── HowTheSiteWorksPage.test.js
 ├── AboutPage.test.js
 ├── SafetyPage.test.js
@@ -115,25 +119,26 @@ The bust glyph in both favicons and in `AppHeader`'s inline SVG is the same shap
 
 All routes live in `src/router/index.js`. `createAppRouter({ history })` is a factory so tests can inject `createMemoryHistory()` (see `tests/helpers/router.js`). All internal navigation goes through `<router-link>` or `router.push({ name, params })` - never raw `<a href>` to internal URLs.
 
-| Path                          | Name                        | Page                                       |
-| ----------------------------- | --------------------------- | ------------------------------------------ |
-| `/`                           | `home`                      | `HomePage.vue`                             |
-| `/travelers-choice`           | `travelers-choice`          | `TravelersChoicePage.vue` (all)            |
-| `/travelers-choice/:category` | `travelers-choice-category` | filtered to `hotels` / `alleys` / `things` |
-| `/travel-stories`             | `travel-stories`            | `TravelStoriesPage.vue`                    |
-| `/hotels`                     | `hotels`                    | `HotelsPage.vue` (wraps `ListingsPage`)    |
-| `/parks`                      | `parks`                     | `ParksPage.vue` (wraps `ListingsPage`)     |
-| `/alleys`                     | `alleys`                    | `AlleysPage.vue` (wraps `ListingsPage`)    |
-| `/p/:id`                      | `fiche`                     | `FichePage.vue` (single profile)           |
-| `/write-review`               | `write-review`              | `UserReviewPage.vue`                       |
-| `/post-photos`                | `post-photos`               | `PostPhotosPage.vue`                       |
-| `/add-place`                  | `add-place`                 | `CreateListingPage.vue`                    |
-| `/how-it-works`               | `how-it-works`              | `HowTheSiteWorksPage.vue`                  |
-| `/about`                      | `about`                     | `AboutPage.vue`                            |
-| `/safety`                     | `safety`                    | `SafetyPage.vue`                           |
-| `/terms`                      | `terms`                     | `TermsPage.vue`                            |
-| `/accessibility`              | `accessibility`             | `AccessibilityPage.vue`                    |
-| `/resources`                  | `resources`                 | `ResourcesPage.vue`                        |
+| Path                          | Name                        | Page                                           |
+| ----------------------------- | --------------------------- | ---------------------------------------------- |
+| `/`                           | `home`                      | `HomePage.vue`                                 |
+| `/travelers-choice`           | `travelers-choice`          | `TravelersChoicePage.vue` (all)                |
+| `/travelers-choice/:category` | `travelers-choice-category` | filtered to `hotels` / `alleys` / `things`     |
+| `/travel-stories`             | `travel-stories`            | `TravelStoriesPage.vue`                        |
+| `/hotels`                     | `hotels`                    | `HotelsPage.vue` (wraps `ListingsPage`)        |
+| `/parks`                      | `parks`                     | `ParksPage.vue` (wraps `ListingsPage`)         |
+| `/alleys`                     | `alleys`                    | `AlleysPage.vue` (wraps `ListingsPage`)        |
+| `/p/:id`                      | `fiche`                     | `FichePage.vue` (single profile)               |
+| `/search`                     | `search`                    | `SearchResultsPage.vue` (`?q=`, `?categorie=`) |
+| `/write-review`               | `write-review`              | `UserReviewPage.vue`                           |
+| `/post-photos`                | `post-photos`               | `PostPhotosPage.vue`                           |
+| `/add-place`                  | `add-place`                 | `CreateListingPage.vue`                        |
+| `/how-it-works`               | `how-it-works`              | `HowTheSiteWorksPage.vue`                      |
+| `/about`                      | `about`                     | `AboutPage.vue`                                |
+| `/safety`                     | `safety`                    | `SafetyPage.vue`                               |
+| `/terms`                      | `terms`                     | `TermsPage.vue`                                |
+| `/accessibility`              | `accessibility`             | `AccessibilityPage.vue`                        |
+| `/resources`                  | `resources`                 | `ResourcesPage.vue`                            |
 
 ## Pages
 
@@ -163,7 +168,7 @@ Translation namespace per page: `<short>_page` (`tc_page`, `ts_page`, `ur_page`,
 
 ## Modals
 
-Three modals share the same shape:
+Four modals share the same shape:
 
 - **State lives in `i18n/store.js`** as a module-scoped `ref(false)` (`modalOpen`, `signinOpen`, `cookieModalOpen`) plus `openX()` / `closeX()` helpers, plus any sub-state (`modalTab`, `signinScreen`).
 - **Mounted once at the App level** (`App.vue`), never inside the component that triggers them. Triggers call `openX()` from anywhere via the store.

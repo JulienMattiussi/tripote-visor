@@ -13,7 +13,11 @@
       "Son \"coup du dentier\" est une expérience à vivre absolument.",
       "Vous accueille dans un cadre très coquet.",
       "Se donne à fond."
-    ]
+    ],
+    "has_site": true,
+    "has_menu": true,
+    "has_phone": true,
+    "has_email": true
   },
   {
     "id": "aicha",
@@ -29,7 +33,11 @@
       "Sa spécialité : le café à la cardamome offert à l'arrivée.",
       "Petit salon en mosaïque, lumière tamisée.",
       "Ne compte jamais son temps."
-    ]
+    ],
+    "has_site": false,
+    "has_menu": true,
+    "has_phone": false,
+    "has_email": true
   },
   {
     "id": "lucia",
@@ -44,7 +52,11 @@
       "Souriante, jamais pressée.",
       "Sa fameuse \"tournée du fado\" reste un rendez-vous incontournable.",
       "Reçoit dans un appartement haussmannien rénové avec goût."
-    ]
+    ],
+    "has_site": true,
+    "has_menu": true,
+    "has_phone": true,
+    "has_email": true
   },
   {
     "id": "brigitte",
@@ -60,7 +72,11 @@
       "Son crémant à minuit est une institution.",
       "Cadre cosy, boiseries d'époque.",
       "Met les petits plats dans les grands."
-    ]
+    ],
+    "has_site": true,
+    "has_menu": true,
+    "has_phone": true,
+    "has_email": true
   },
   {
     "id": "yasmina",
@@ -75,7 +91,11 @@
       "Charmante, parle quatre langues.",
       "On revient surtout pour son \"effet hammam\".",
       "Reçoit dans un loft épuré près des quais."
-    ]
+    ],
+    "has_site": true,
+    "has_menu": true,
+    "has_phone": false,
+    "has_email": true
   },
   {
     "id": "carmen",
@@ -91,7 +111,11 @@
       "Son fameux \"un dernier pour la route\" est légendaire.",
       "Petit appartement avec balcon sur la Méditerranée.",
       "Générosité débordante."
-    ]
+    ],
+    "has_site": false,
+    "has_menu": true,
+    "has_phone": true,
+    "has_email": true
   },
   {
     "id": "magdalena",
@@ -106,7 +130,11 @@
       "Calme, posée, à l'écoute.",
       "Sa technique de l'oreiller chauffant a fait sa réputation.",
       "Studio chaleureux dans un immeuble de briques rouges."
-    ]
+    ],
+    "has_site": false,
+    "has_menu": true,
+    "has_phone": true,
+    "has_email": true
   },
   {
     "id": "soraya",
@@ -122,7 +150,11 @@
       "Son \"numéro du tapis volant\" est unique en son genre.",
       "Petit nid douillet aux couleurs chaudes.",
       "Met une énergie folle dans tout ce qu'elle entreprend."
-    ]
+    ],
+    "has_site": false,
+    "has_menu": true,
+    "has_phone": false,
+    "has_email": false
   },
   {
     "id": "esperanza",
@@ -137,7 +169,11 @@
       "Maternelle, rassurante.",
       "Sa spécialité du dimanche : le bouillon revigorant.",
       "Reçoit chez elle, ambiance familiale assumée."
-    ]
+    ],
+    "has_site": true,
+    "has_menu": false,
+    "has_phone": true,
+    "has_email": true
   },
   {
     "id": "ingrid",
@@ -153,7 +189,11 @@
       "Son rituel de l'arrivée au champagne est une marque de fabrique.",
       "Cadre soigné, tapis épais, fauteuils en velours.",
       "Y va toujours de bon cœur."
-    ]
+    ],
+    "has_site": false,
+    "has_menu": true,
+    "has_phone": false,
+    "has_email": true
   },
   {
     "id": "mei-ling",
@@ -169,7 +209,11 @@
       "Son thé au jasmin de bienvenue est apprécié de tous.",
       "Reçoit dans un studio impeccable, esthétique épurée.",
       "Ne déçoit jamais."
-    ]
+    ],
+    "has_site": false,
+    "has_menu": true,
+    "has_phone": true,
+    "has_email": true
   },
   {
     "id": "ayse",
@@ -184,7 +228,11 @@
       "Énergique, prévenante.",
       "Son \"massage à la rose\" est devenu une référence locale.",
       "Petit appartement coloré, parfum d'encens."
-    ]
+    ],
+    "has_site": true,
+    "has_menu": true,
+    "has_phone": true,
+    "has_email": true
   },
   {
     "id": "solange",
@@ -200,7 +248,11 @@
       "Sert le ti-punch d'accueil avec une générosité légendaire.",
       "Maisonnette créole aux volets bleus.",
       "Donne tout, comme toujours."
-    ]
+    ],
+    "has_site": true,
+    "has_menu": true,
+    "has_phone": true,
+    "has_email": true
   },
   {
     "id": "kateryna",
@@ -215,7 +267,11 @@
       "Sportive, dynamique, rieuse.",
       "Connue pour sa fameuse \"prise du judoka\".",
       "Studio moderne près de l'Erdre."
-    ]
+    ],
+    "has_site": true,
+    "has_menu": false,
+    "has_phone": true,
+    "has_email": true
   },
   {
     "id": "layla",
@@ -230,7 +286,11 @@
       "Délicate, attentive aux détails.",
       "Son rituel du miel de lavande fait son charme.",
       "Petit cocon parfumé, draps en lin."
-    ]
+    ],
+    "has_site": true,
+    "has_menu": false,
+    "has_phone": true,
+    "has_email": true
   },
   {
     "id": "wilhelmine",
@@ -246,7 +306,11 @@
       "Sa \"méthode allemande\" est d'une efficacité redoutable.",
       "Cadre alsacien typique, géraniums aux fenêtres.",
       "Ne fait jamais les choses à moitié."
-    ]
+    ],
+    "has_site": false,
+    "has_menu": true,
+    "has_phone": true,
+    "has_email": true
   },
   {
     "id": "renata",
@@ -261,7 +325,11 @@
       "Solaire, attachante, fidèle.",
       "Son \"câlin du soir\" est devenu une référence du quartier.",
       "Studio cosy à Montmartre."
-    ]
+    ],
+    "has_site": false,
+    "has_menu": false,
+    "has_phone": true,
+    "has_email": true
   },
   {
     "id": "fatou",
@@ -277,7 +345,11 @@
       "Son repas mafé revigorant fait toute sa réputation.",
       "Reçoit dans un appartement décoré aux tissus wax.",
       "On en redemande."
-    ]
+    ],
+    "has_site": true,
+    "has_menu": true,
+    "has_phone": true,
+    "has_email": false
   },
   {
     "id": "tatiana",
@@ -293,7 +365,11 @@
       "Sa marque de fabrique : le cocktail signature.",
       "Suite avec vue sur la Croisette.",
       "Une vraie professionnelle."
-    ]
+    ],
+    "has_site": false,
+    "has_menu": true,
+    "has_phone": true,
+    "has_email": true
   },
   {
     "id": "adele",
@@ -308,7 +384,11 @@
       "Femme de tête.",
       "Son fameux \"goûter du dimanche\" rassemble les habitués.",
       "Maison de maître meublée d'antiquités."
-    ]
+    ],
+    "has_site": false,
+    "has_menu": true,
+    "has_phone": true,
+    "has_email": true
   },
   {
     "id": "mariama",
@@ -323,7 +403,11 @@
       "Pétillante, joyeuse, contagieuse.",
       "Son rituel du \"bisou normand\" séduit les visiteurs.",
       "Studio lumineux face au port."
-    ]
+    ],
+    "has_site": true,
+    "has_menu": true,
+    "has_phone": true,
+    "has_email": false
   },
   {
     "id": "despina",
@@ -338,7 +422,11 @@
       "Volubile, attachante.",
       "Sa \"danse syrtaki\" finit toujours par éclater de rire.",
       "Maisonnette dans une ruelle calme."
-    ]
+    ],
+    "has_site": true,
+    "has_menu": true,
+    "has_phone": false,
+    "has_email": true
   },
   {
     "id": "klara",
@@ -353,7 +441,11 @@
       "Sportive, douce, méthodique.",
       "Son massage du lac est une exclusivité.",
       "Chalet au bord de l'eau, ambiance scandinave."
-    ]
+    ],
+    "has_site": true,
+    "has_menu": true,
+    "has_phone": true,
+    "has_email": true
   },
   {
     "id": "bernadette",
@@ -369,7 +461,11 @@
       "Son rituel des eaux thermales reste sa signature.",
       "Pavillon Belle Époque, portes en bois sculpté.",
       "Y va toujours franchement."
-    ]
+    ],
+    "has_site": false,
+    "has_menu": true,
+    "has_phone": true,
+    "has_email": true
   },
   {
     "id": "anjali",
@@ -384,7 +480,11 @@
       "Souriante, parle l'anglais à la perfection.",
       "Son \"tour des chakras\" intrigue autant qu'il séduit.",
       "Petit salon parfumé au santal."
-    ]
+    ],
+    "has_site": false,
+    "has_menu": true,
+    "has_phone": false,
+    "has_email": false
   },
   {
     "id": "khadija",
@@ -399,7 +499,11 @@
       "Femme de caractère, voix douce.",
       "Sa célèbre \"cérémonie du henné\" se réserve des semaines à l'avance.",
       "Riad reconstitué, mosaïque et lanternes."
-    ]
+    ],
+    "has_site": true,
+    "has_menu": false,
+    "has_phone": true,
+    "has_email": true
   },
   {
     "id": "olga",
@@ -414,7 +518,11 @@
       "Implacable, mais drôle quand on la connaît.",
       "Sa spécialité : le verre de vodka glacée à l'arrivée.",
       "Petit appartement face à l'Atlantique."
-    ]
+    ],
+    "has_site": true,
+    "has_menu": true,
+    "has_phone": true,
+    "has_email": true
   },
   {
     "id": "esmeralda",
@@ -429,7 +537,11 @@
       "Fougueuse, espiègle.",
       "Sa fameuse \"danse du foulard\" laisse un souvenir.",
       "Studio bohème, tentures et coussins."
-    ]
+    ],
+    "has_site": true,
+    "has_menu": false,
+    "has_phone": false,
+    "has_email": true
   },
   {
     "id": "helga",
@@ -445,7 +557,11 @@
       "Sert un grog maison qui réchauffe les soirées de tempête.",
       "Maisonnette de granit aux vieilles poutres.",
       "Met du cœur à l'ouvrage."
-    ]
+    ],
+    "has_site": true,
+    "has_menu": true,
+    "has_phone": false,
+    "has_email": false
   },
   {
     "id": "lupita",
@@ -460,7 +576,11 @@
       "Lumineuse, attentive.",
       "Sa marinade façon Mexico fait sa renommée.",
       "Loft coloré avec patio fleuri."
-    ]
+    ],
+    "has_site": true,
+    "has_menu": true,
+    "has_phone": true,
+    "has_email": true
   },
   {
     "id": "sigrid",
@@ -475,7 +595,11 @@
       "Stoïque, professionnelle.",
       "Son rituel du sauna perso est devenu un must local.",
       "Pavillon en lisière de forêt."
-    ]
+    ],
+    "has_site": false,
+    "has_menu": true,
+    "has_phone": false,
+    "has_email": true
   },
   {
     "id": "hiroko",
@@ -490,7 +614,11 @@
       "Précise, attentive, d'une gentillesse rare.",
       "Sa cérémonie du thé à l'ancienne reste sa marque.",
       "Appartement style ryokan, tatamis et shojis."
-    ]
+    ],
+    "has_site": true,
+    "has_menu": true,
+    "has_phone": true,
+    "has_email": false
   },
   {
     "id": "josephine",
@@ -506,7 +634,11 @@
       "Sert encore aujourd'hui sa célèbre soupe à l'oignon.",
       "Pension de famille à l'ancienne, nappes blanches.",
       "Ne se ménage pas, jamais."
-    ]
+    ],
+    "has_site": false,
+    "has_menu": false,
+    "has_phone": true,
+    "has_email": true
   },
   {
     "id": "latifa",
@@ -521,7 +653,11 @@
       "Calme, ponctuelle, sérieuse.",
       "Sa spécialité du \"thé à la menthe brûlant\" est très réclamée.",
       "Studio simple, propre, accueillant."
-    ]
+    ],
+    "has_site": false,
+    "has_menu": false,
+    "has_phone": true,
+    "has_email": true
   },
   {
     "id": "roger",
@@ -537,7 +673,11 @@
       "Sa fameuse \"tournée des bistrots\" finit toujours par lui.",
       "Vous reçoit dans une cour pavée discrète.",
       "Toujours partant."
-    ]
+    ],
+    "has_site": true,
+    "has_menu": false,
+    "has_phone": false,
+    "has_email": true
   },
   {
     "id": "suzanne",
@@ -553,7 +693,11 @@
       "Son célèbre \"raccourci par la cour\" est connu des initiés.",
       "Vieille porte cochère, escalier en colimaçon.",
       "Y va de tout son cœur."
-    ]
+    ],
+    "has_site": true,
+    "has_menu": true,
+    "has_phone": true,
+    "has_email": false
   },
   {
     "id": "tariq",
@@ -568,7 +712,11 @@
       "Toujours souriant, toujours dispo.",
       "Sa réputation de \"l'impasse magique\" n'est plus à faire.",
       "Petit hall d'immeuble bien tenu."
-    ]
+    ],
+    "has_site": true,
+    "has_menu": true,
+    "has_phone": true,
+    "has_email": false
   },
   {
     "id": "yvette",
@@ -584,7 +732,11 @@
       "Sa visite-éclair façon \"raccourci canut\" est mythique.",
       "Hall d'immeuble en pierre dorée.",
       "Donne tout."
-    ]
+    ],
+    "has_site": true,
+    "has_menu": true,
+    "has_phone": false,
+    "has_email": true
   },
   {
     "id": "karim",
@@ -599,7 +751,11 @@
       "Solide, fiable, blagueur.",
       "Son célèbre \"détour par les marches\" mérite le déplacement.",
       "Vous reçoit dans une placette fleurie."
-    ]
+    ],
+    "has_site": true,
+    "has_menu": true,
+    "has_phone": true,
+    "has_email": true
   },
   {
     "id": "nadia",
@@ -614,7 +770,11 @@
       "Vive, drôle, imprévisible.",
       "Son raccourci par l'arrière-cour fait gagner du temps.",
       "Cour intérieure tranquille."
-    ]
+    ],
+    "has_site": true,
+    "has_menu": true,
+    "has_phone": true,
+    "has_email": true
   },
   {
     "id": "vincenzo",
@@ -629,7 +789,11 @@
       "Charme italien et gouaille niçoise.",
       "Sa pause au \"banc de marbre\" est une coutume locale.",
       "Petit hall décoré de fresques anciennes."
-    ]
+    ],
+    "has_site": true,
+    "has_menu": true,
+    "has_phone": true,
+    "has_email": false
   },
   {
     "id": "boris",
@@ -644,7 +808,11 @@
       "Bourru attachant.",
       "Son fameux \"détour par le pont\" est conseillé en soirée.",
       "Maison à colombages, escalier qui craque."
-    ]
+    ],
+    "has_site": false,
+    "has_menu": true,
+    "has_phone": true,
+    "has_email": true
   },
   {
     "id": "svetlana",
@@ -659,7 +827,11 @@
       "Distinguée, polie, terriblement pro.",
       "Son raccourci par la cour pavée a sauvé bien des soirées.",
       "Vieille porte en fer forgé, lierre grimpant."
-    ]
+    ],
+    "has_site": true,
+    "has_menu": true,
+    "has_phone": false,
+    "has_email": true
   },
   {
     "id": "mehmet",
@@ -674,7 +846,11 @@
       "Solide gaillard, malin.",
       "Sa visite des arrière-cours reste une de ses meilleures.",
       "Hall d'immeuble en briques."
-    ]
+    ],
+    "has_site": true,
+    "has_menu": false,
+    "has_phone": false,
+    "has_email": true
   },
   {
     "id": "niamh",
@@ -689,7 +865,11 @@
       "Pétillante, irlandaise jusqu'au bout des ongles.",
       "Son détour par le passage Pommeraye est devenu sa signature.",
       "Petit hall années 30, mosaïque au sol."
-    ]
+    ],
+    "has_site": true,
+    "has_menu": true,
+    "has_phone": true,
+    "has_email": true
   },
   {
     "id": "anatole",
@@ -704,7 +884,11 @@
       "Érudit, blagueur, connaît tous les recoins.",
       "Sa fameuse \"contre-allée du collège\" est un secret bien gardé.",
       "Cour de l'ancien hôtel particulier."
-    ]
+    ],
+    "has_site": false,
+    "has_menu": true,
+    "has_phone": false,
+    "has_email": true
   },
   {
     "id": "awa",
@@ -719,7 +903,11 @@
       "Sereine, accueillante, fidèle.",
       "Sa technique du portail est simple et efficace.",
       "Petit local en rez-de-cour."
-    ]
+    ],
+    "has_site": true,
+    "has_menu": true,
+    "has_phone": false,
+    "has_email": true
   },
   {
     "id": "pietro",
@@ -734,7 +922,11 @@
       "Italien jusqu'au bout des ongles, mais Parisien d'adoption.",
       "Sa promenade-éclair sous les arcades est un classique.",
       "Cour pavée, vieille glycine."
-    ]
+    ],
+    "has_site": true,
+    "has_menu": true,
+    "has_phone": true,
+    "has_email": true
   },
   {
     "id": "reza",
@@ -749,7 +941,11 @@
       "Calme, fiable, méticuleux.",
       "Son fameux \"raccourci du marché\" évite les regards.",
       "Hall propre et discret."
-    ]
+    ],
+    "has_site": true,
+    "has_menu": false,
+    "has_phone": true,
+    "has_email": false
   },
   {
     "id": "lucette",
@@ -764,7 +960,11 @@
       "Voix de stentor, cœur tendre.",
       "Son célèbre \"sous le manguier\" se transmet de génération en génération.",
       "Galerie en bois colorée, ventilateurs au plafond."
-    ]
+    ],
+    "has_site": true,
+    "has_menu": true,
+    "has_phone": false,
+    "has_email": false
   },
   {
     "id": "yanko",
@@ -779,7 +979,11 @@
       "Volubile, drôle, increvable.",
       "Sa balade-express au crépuscule a ses adeptes.",
       "Petit passage pavé, géraniums au mur."
-    ]
+    ],
+    "has_site": false,
+    "has_menu": false,
+    "has_phone": false,
+    "has_email": true
   },
   {
     "id": "margaret",
@@ -795,7 +999,11 @@
       "Son \"tea time imprévu\" surprend toujours.",
       "Petit hall victorien, bibliothèque encombrée.",
       "Ne ménage pas sa peine."
-    ]
+    ],
+    "has_site": true,
+    "has_menu": true,
+    "has_phone": true,
+    "has_email": true
   },
   {
     "id": "kostas",
@@ -810,7 +1018,11 @@
       "Voix qui porte, regard malicieux.",
       "Son fameux \"verre d'ouzo de bienvenue\" réchauffe d'emblée.",
       "Petit hall de pierre blanche."
-    ]
+    ],
+    "has_site": true,
+    "has_menu": false,
+    "has_phone": true,
+    "has_email": false
   },
   {
     "id": "zeynep",
@@ -825,7 +1037,11 @@
       "Jeune, vive, attentive.",
       "Son raccourci par le parking est devenu un classique.",
       "Local discret en rez-de-chaussée."
-    ]
+    ],
+    "has_site": true,
+    "has_menu": true,
+    "has_phone": false,
+    "has_email": false
   },
   {
     "id": "amadou",
@@ -840,7 +1056,11 @@
       "Patient, posé, fidèle.",
       "Sa visite à l'aube est rare mais inoubliable.",
       "Cour calme, bien tenue."
-    ]
+    ],
+    "has_site": true,
+    "has_menu": false,
+    "has_phone": true,
+    "has_email": true
   },
   {
     "id": "carla",
@@ -856,7 +1076,11 @@
       "Sa balade dans les venelles est une exclusivité.",
       "Vieille maison de pierre, escalier raide.",
       "Met du sien à chaque fois."
-    ]
+    ],
+    "has_site": false,
+    "has_menu": true,
+    "has_phone": true,
+    "has_email": false
   },
   {
     "id": "min-ji",
@@ -871,7 +1095,11 @@
       "Discrète, ponctuelle, soignée.",
       "Son passage par la cour intérieure est très demandé.",
       "Petit hall d'immeuble moderne."
-    ]
+    ],
+    "has_site": true,
+    "has_menu": true,
+    "has_phone": true,
+    "has_email": false
   },
   {
     "id": "joaquim",
@@ -886,7 +1114,11 @@
       "Voix grave, pas pressé.",
       "Son célèbre \"verre de patxaran à l'arrivée\" met dans l'ambiance.",
       "Petit hall basque, géraniums rouges."
-    ]
+    ],
+    "has_site": true,
+    "has_menu": false,
+    "has_phone": true,
+    "has_email": true
   },
   {
     "id": "henri",
@@ -902,7 +1134,11 @@
       "Son histoire du quartier vaut le détour.",
       "Petit hall d'immeuble ouvrier.",
       "Tient encore le coup, qu'on se le dise."
-    ]
+    ],
+    "has_site": true,
+    "has_menu": true,
+    "has_phone": true,
+    "has_email": true
   },
   {
     "id": "priya",
@@ -917,7 +1153,11 @@
       "Souriante, fluide, parfumée au jasmin.",
       "Son passage par le marché aux puces a son charme.",
       "Petit espace coloré, étoffes indiennes."
-    ]
+    ],
+    "has_site": false,
+    "has_menu": true,
+    "has_phone": true,
+    "has_email": true
   },
   {
     "id": "vladimir",
@@ -932,7 +1172,11 @@
       "Imposant, courtois, jamais à court.",
       "Sa fameuse \"montée d'escalier\" est plus longue qu'on croit.",
       "Hall d'immeuble austère, lumière jaune."
-    ]
+    ],
+    "has_site": true,
+    "has_menu": true,
+    "has_phone": true,
+    "has_email": false
   },
   {
     "id": "doris",
@@ -947,7 +1191,11 @@
       "Costaud, généreuse.",
       "Son apéro normand de bienvenue est une obligation.",
       "Maisonnette en granit, jardinet à l'arrière."
-    ]
+    ],
+    "has_site": true,
+    "has_menu": false,
+    "has_phone": true,
+    "has_email": true
   },
   {
     "id": "behnam",
@@ -962,7 +1210,11 @@
       "Posé, distingué, érudit.",
       "Son détour par la traboule offre un moment suspendu.",
       "Vieille cour aux pierres dorées."
-    ]
+    ],
+    "has_site": true,
+    "has_menu": true,
+    "has_phone": true,
+    "has_email": false
   },
   {
     "id": "linh",
@@ -977,7 +1229,11 @@
       "Délicate, douce, ponctuelle.",
       "Son raccourci par le passage couvert est précieux.",
       "Petit local discret derrière une boutique."
-    ]
+    ],
+    "has_site": true,
+    "has_menu": true,
+    "has_phone": false,
+    "has_email": false
   },
   {
     "id": "astrid",
@@ -992,7 +1248,11 @@
       "Stature imposante, sourire franc.",
       "Sa balade-express dans les pavés a fait sa réputation.",
       "Vieux hall en briques rouges, plafond bas."
-    ]
+    ],
+    "has_site": true,
+    "has_menu": true,
+    "has_phone": true,
+    "has_email": false
   },
   {
     "id": "soledad",
@@ -1007,7 +1267,11 @@
       "Réservée mais loyale.",
       "Son passage par la place du Marché est devenu un rituel.",
       "Petite cour pyrénéenne avec vue sur la chaîne."
-    ]
+    ],
+    "has_site": false,
+    "has_menu": false,
+    "has_phone": true,
+    "has_email": true
   },
   {
     "id": "colette",
@@ -1023,7 +1287,11 @@
       "Récite encore Rimbaud à qui veut bien l'entendre.",
       "Hall d'immeuble années 50, papier peint d'origine.",
       "Sait toujours y faire."
-    ]
+    ],
+    "has_site": false,
+    "has_menu": false,
+    "has_phone": true,
+    "has_email": false
   },
   {
     "id": "aminata",
@@ -1038,7 +1306,11 @@
       "Athlétique, souriante, marche vite.",
       "Sa fameuse \"pause au temple\" est une halte appréciée.",
       "Vous accompagne sous les marronniers, à la tombée du jour."
-    ]
+    ],
+    "has_site": true,
+    "has_menu": true,
+    "has_phone": false,
+    "has_email": true
   },
   {
     "id": "geraldine",
@@ -1053,7 +1325,11 @@
       "Distinguée, marcheuse infatigable.",
       "Son tour des cascades est devenu un rituel.",
       "Vous retrouve sur le banc en pierre, près de l'orangerie."
-    ]
+    ],
+    "has_site": true,
+    "has_menu": false,
+    "has_phone": true,
+    "has_email": true
   },
   {
     "id": "ahmed",
@@ -1068,7 +1344,11 @@
       "Marcheur méthodique, jamais essoufflé.",
       "Son fameux \"détour par le donjon\" est conseillé.",
       "Banc isolé, lumière rasante du soir."
-    ]
+    ],
+    "has_site": true,
+    "has_menu": true,
+    "has_phone": true,
+    "has_email": true
   },
   {
     "id": "pilar",
@@ -1083,7 +1363,11 @@
       "Élégante, ponctuelle, érudite.",
       "Sa pause aux statues mythologiques est un must.",
       "Bosquet du roi, pas un bruit."
-    ]
+    ],
+    "has_site": false,
+    "has_menu": true,
+    "has_phone": true,
+    "has_email": true
   },
   {
     "id": "magnus",
@@ -1098,7 +1382,11 @@
       "Grand, blond, rassurant.",
       "Sa balade au lac inférieur est une institution.",
       "Vous attend près du kiosque."
-    ]
+    ],
+    "has_site": true,
+    "has_menu": false,
+    "has_phone": false,
+    "has_email": true
   },
   {
     "id": "marie-josee",
@@ -1114,7 +1402,11 @@
       "Sa pause au lac Daumesnil est un classique.",
       "Banc à l'écart, sous les acacias.",
       "Y met du cœur."
-    ]
+    ],
+    "has_site": true,
+    "has_menu": true,
+    "has_phone": true,
+    "has_email": false
   },
   {
     "id": "jamal",
@@ -1129,7 +1421,11 @@
       "Jovial, fort en gueule, tendre.",
       "Sa fameuse \"halte à la roseraie\" est devenue un classique.",
       "Banc en bois, parfum des roses anciennes."
-    ]
+    ],
+    "has_site": true,
+    "has_menu": true,
+    "has_phone": false,
+    "has_email": true
   },
   {
     "id": "brigida",
@@ -1144,7 +1440,11 @@
       "Solide, sportive, discrète.",
       "Sa promenade autour du lac est très demandée.",
       "Petit kiosque proche de la roseraie."
-    ]
+    ],
+    "has_site": true,
+    "has_menu": true,
+    "has_phone": true,
+    "has_email": false
   },
   {
     "id": "ricardo",
@@ -1159,7 +1459,11 @@
       "Latin lover de service, mais vraiment professionnel.",
       "Son détour près du jardin japonais est mythique.",
       "Banc isolé, lanternes en pierre."
-    ]
+    ],
+    "has_site": false,
+    "has_menu": true,
+    "has_phone": false,
+    "has_email": true
   },
   {
     "id": "anouk",
@@ -1174,7 +1478,11 @@
       "Petite et vive, marcheuse rapide.",
       "Son tour des perspectives est une exclusivité.",
       "Sous les ifs taillés, à la tombée du soir."
-    ]
+    ],
+    "has_site": true,
+    "has_menu": true,
+    "has_phone": true,
+    "has_email": false
   },
   {
     "id": "dimitri",
@@ -1189,7 +1497,11 @@
       "Grand gabarit, voix posée.",
       "Sa pause au point de vue est devenue mythique.",
       "Banc en pierre, Paris au loin."
-    ]
+    ],
+    "has_site": false,
+    "has_menu": false,
+    "has_phone": false,
+    "has_email": true
   },
   {
     "id": "eleni",
@@ -1204,7 +1516,11 @@
       "Allure grecque, classe naturelle.",
       "Son rendez-vous \"sous le tempietto\" est un rituel.",
       "Banc à l'ombre, calme assuré."
-    ]
+    ],
+    "has_site": true,
+    "has_menu": true,
+    "has_phone": false,
+    "has_email": false
   },
   {
     "id": "fadila",
@@ -1219,7 +1535,11 @@
       "Pétillante, rieuse, sociable.",
       "Sa balade à la cascade est une signature.",
       "Pelouse calme, vue sur Paris."
-    ]
+    ],
+    "has_site": true,
+    "has_menu": true,
+    "has_phone": true,
+    "has_email": false
   },
   {
     "id": "roman",
@@ -1234,7 +1554,11 @@
       "Carré, sérieux, prévenant.",
       "Son arrêt près du kiosque est un classique.",
       "Banc face au plan d'eau, le soir tombant."
-    ]
+    ],
+    "has_site": false,
+    "has_menu": false,
+    "has_phone": false,
+    "has_email": false
   },
   {
     "id": "yuki",
@@ -1249,7 +1573,11 @@
       "Discrète, polie, organisée.",
       "Sa visite au verger est une exclusivité.",
       "Allée bordée de pommiers, lumière dorée."
-    ]
+    ],
+    "has_site": true,
+    "has_menu": false,
+    "has_phone": true,
+    "has_email": false
   },
   {
     "id": "pierre-andre",
@@ -1264,7 +1592,11 @@
       "Marcheur infatigable, sourire malicieux.",
       "Sa pause à la \"pâquerette d'or\" est mythique.",
       "Banc face au lac, montagnes en fond."
-    ]
+    ],
+    "has_site": false,
+    "has_menu": false,
+    "has_phone": false,
+    "has_email": true
   },
   {
     "id": "zeinab",
@@ -1279,7 +1611,11 @@
       "Solaire, énergique, rapide à la marche.",
       "Sa boucle autour du château fait son effet.",
       "Banc à l'ombre des pins."
-    ]
+    ],
+    "has_site": false,
+    "has_menu": true,
+    "has_phone": false,
+    "has_email": false
   },
   {
     "id": "frieda",
@@ -1295,7 +1631,11 @@
       "Son détour par la roseraie est un must.",
       "Banc proche du pavillon Joséphine.",
       "Met toujours le paquet."
-    ]
+    ],
+    "has_site": true,
+    "has_menu": false,
+    "has_phone": true,
+    "has_email": true
   },
   {
     "id": "bakary",
@@ -1310,7 +1650,11 @@
       "Costaud, gentil, ponctuel.",
       "Son tour des étangs est une référence.",
       "Banc isolé, derrière les saules."
-    ]
+    ],
+    "has_site": false,
+    "has_menu": true,
+    "has_phone": true,
+    "has_email": true
   },
   {
     "id": "octavia",
@@ -1325,7 +1669,11 @@
       "Sophistiquée, posée, efficace.",
       "Sa halte au pavillon est devenue un rituel.",
       "Banc en fer forgé, allée ombragée."
-    ]
+    ],
+    "has_site": true,
+    "has_menu": false,
+    "has_phone": false,
+    "has_email": true
   },
   {
     "id": "souleymane",
@@ -1340,7 +1688,11 @@
       "Allure droite, regard franc.",
       "Son passage par la roseraie est conseillé.",
       "Petit kiosque, fleurs en saison."
-    ]
+    ],
+    "has_site": true,
+    "has_menu": true,
+    "has_phone": false,
+    "has_email": true
   },
   {
     "id": "maite",
@@ -1355,7 +1707,11 @@
       "Démarche assurée, voix forte.",
       "Sa pause sous le grand cèdre est célèbre.",
       "Banc en marbre, vue sur les Pyrénées."
-    ]
+    ],
+    "has_site": false,
+    "has_menu": true,
+    "has_phone": false,
+    "has_email": true
   },
   {
     "id": "constantin",
@@ -1370,7 +1726,11 @@
       "Imposant, ténébreux, fiable.",
       "Sa fameuse balade au lac inférieur est inégalée.",
       "Banc à l'écart, sous les chênes."
-    ]
+    ],
+    "has_site": false,
+    "has_menu": true,
+    "has_phone": true,
+    "has_email": true
   },
   {
     "id": "paloma",
@@ -1385,7 +1745,11 @@
       "Vive, andalouse de cœur.",
       "Son tour du belvédère est très demandé.",
       "Banc face au Rhône, vue sur le Palais des Papes."
-    ]
+    ],
+    "has_site": false,
+    "has_menu": true,
+    "has_phone": true,
+    "has_email": true
   },
   {
     "id": "adetokunbo",
@@ -1400,7 +1764,11 @@
       "Grand, fin, athlétique.",
       "Sa fameuse \"montée du temple\" reste un classique.",
       "Banc tout en haut, panorama sur Paris."
-    ]
+    ],
+    "has_site": true,
+    "has_menu": true,
+    "has_phone": true,
+    "has_email": false
   },
   {
     "id": "beata",
@@ -1415,7 +1783,11 @@
       "Polonaise solide, énergique.",
       "Sa balade autour des remparts est un rituel.",
       "Banc à l'écart, allées d'arbres centenaires."
-    ]
+    ],
+    "has_site": true,
+    "has_menu": false,
+    "has_phone": true,
+    "has_email": false
   },
   {
     "id": "gennaro",
@@ -1431,7 +1803,11 @@
       "Son tour de la grande serre est une signature.",
       "Banc tropical, parfum de fleurs exotiques.",
       "Y va plein pot."
-    ]
+    ],
+    "has_site": false,
+    "has_menu": true,
+    "has_phone": true,
+    "has_email": true
   },
   {
     "id": "sonja",
@@ -1446,7 +1822,11 @@
       "Carrée, ponctuelle, alsacienne.",
       "Sa pause au saule pleureur est célèbre.",
       "Banc bordant l'étang, lumière du soir."
-    ]
+    ],
+    "has_site": true,
+    "has_menu": true,
+    "has_phone": true,
+    "has_email": false
   },
   {
     "id": "jean-yves",
@@ -1461,7 +1841,11 @@
       "Breton increvable.",
       "Son célèbre \"chant de marin\" résonne encore.",
       "Banc panoramique, vue sur la cathédrale."
-    ]
+    ],
+    "has_site": false,
+    "has_menu": true,
+    "has_phone": true,
+    "has_email": true
   },
   {
     "id": "leontine",
@@ -1476,7 +1860,11 @@
       "Discrète, méticuleuse, fidèle.",
       "Sa fréquentation du jardin est un classique.",
       "Banc face à la cathédrale Saint-Étienne."
-    ]
+    ],
+    "has_site": true,
+    "has_menu": true,
+    "has_phone": true,
+    "has_email": true
   },
   {
     "id": "hassan",
@@ -1491,7 +1879,11 @@
       "Calme, prévenant, ponctuel.",
       "Son tour des cerisiers en fleur est inoubliable.",
       "Banc isolé, sous une pergola."
-    ]
+    ],
+    "has_site": false,
+    "has_menu": true,
+    "has_phone": false,
+    "has_email": true
   },
   {
     "id": "kavita",
@@ -1506,7 +1898,11 @@
       "Souple, précise, parfumée à la rose.",
       "Sa fameuse \"pose au lac des Minimes\" se réserve longtemps à l'avance.",
       "Banc au bord de l'eau, canards en fond."
-    ]
+    ],
+    "has_site": true,
+    "has_menu": true,
+    "has_phone": true,
+    "has_email": true
   },
   {
     "id": "wilma",
@@ -1522,6 +1918,10 @@
       "Sa pause à la pataugeoire est devenue un must.",
       "Banc proche de la fontaine, ombre des platanes.",
       "Met du cœur à l'ouvrage."
-    ]
+    ],
+    "has_site": true,
+    "has_menu": true,
+    "has_phone": true,
+    "has_email": true
   }
 ]

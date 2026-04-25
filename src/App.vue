@@ -4,6 +4,7 @@ import AppFooter from './components/AppFooter.vue';
 import PreferencesModal from './components/PreferencesModal.vue';
 import SignInModal from './components/SignInModal.vue';
 import CookieConsentModal from './components/CookieConsentModal.vue';
+import LoginRequiredModal from './components/LoginRequiredModal.vue';
 </script>
 
 <template>
@@ -15,4 +16,5 @@ import CookieConsentModal from './components/CookieConsentModal.vue';
   <PreferencesModal />
   <SignInModal />
   <CookieConsentModal />
+  <LoginRequiredModal />
 </template>

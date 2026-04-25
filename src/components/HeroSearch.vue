@@ -1,6 +1,9 @@
 <script setup>
 import { ref, computed } from 'vue';
+import { useRouter } from 'vue-router';
 import { t } from '../i18n/store.js';
+
+const router = useRouter();
 
 const tabs = computed(() => [
   { id: 'all', label: t('hero.tab_all'), icon: '🔎' },
@@ -8,6 +11,8 @@ const tabs = computed(() => [
   { id: 'things', label: t('hero.tab_things'), icon: '🌳' },
   { id: 'alleys', label: t('hero.tab_alleys'), icon: '🛣️' },
 ]);
+
+const TAB_TO_CATEGORIE = { hotels: 'hotel', things: 'parc', alleys: 'ruelle' };
 
 const activeTab = ref('all');
 const query = ref('');
@@ -22,8 +27,12 @@ const placeholder = computed(() => t(placeholderKeyMap[activeTab.value]));
 
 const onSubmit = (e) => {
   e.preventDefault();
-  if (!query.value.trim()) return;
-  alert(`${t('hero.search_btn')} (${activeTab.value}): ${query.value}`);
+  const q = query.value.trim();
+  if (!q) return;
+  const params = { q };
+  const cat = TAB_TO_CATEGORIE[activeTab.value];
+  if (cat) params.categorie = cat;
+  router.push({ name: 'search', query: params });
 };
 </script>
 

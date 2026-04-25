@@ -65,8 +65,10 @@ const onScroll = () => {
 
 const onCompactSubmit = (e) => {
   e.preventDefault();
-  if (!compactQuery.value.trim()) return;
-  alert(`${t('hero.search_btn')}: ${compactQuery.value}`);
+  const q = compactQuery.value.trim();
+  if (!q) return;
+  router.push({ name: 'search', query: { q } });
+  compactQuery.value = '';
 };
 
 onMounted(() => {

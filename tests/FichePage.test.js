@@ -126,30 +126,63 @@ describe('FichePage - interactions', () => {
   });
   afterEach(() => vi.unstubAllGlobals());
 
-  it('toggles the sidebar Save button label between Save and Saved', async () => {
+  it('clicking the sidebar Save button opens the login-required modal', async () => {
+    const { loginRequiredOpen, loginRequiredContext, closeLoginRequired } =
+      await import('../src/i18n/store.js');
+    closeLoginRequired();
     const wrapper = mount(FichePage, withRouter(router));
-    const btn = wrapper.find('.fp-save-btn');
-    expect(btn.text()).toContain('Save');
-    await btn.trigger('click');
-    expect(btn.text()).toContain('Saved');
-    await btn.trigger('click');
-    expect(btn.text()).toContain('Save');
+    await wrapper.find('.fp-save-btn').trigger('click');
+    expect(loginRequiredOpen.value).toBe(true);
+    expect(loginRequiredContext.value).toEqual({ target: 'save', name: 'Mireille' });
+    closeLoginRequired();
   });
 
-  it('action chips fire the front-simulation alert', async () => {
+  it('clicking an action chip opens the login-required modal with the right target', async () => {
+    const { loginRequiredOpen, loginRequiredContext, closeLoginRequired } =
+      await import('../src/i18n/store.js');
+    closeLoginRequired();
     const wrapper = mount(FichePage, withRouter(router));
-    await wrapper.find('.fp-chip').trigger('click');
-    expect(window.alert).toHaveBeenCalled();
-    expect(window.alert.mock.calls[0][0]).toContain('front simulation only');
+    const chips = wrapper.findAll('.fp-chip');
+    await chips[1].trigger('click'); // "Card" chip
+    expect(loginRequiredOpen.value).toBe(true);
+    expect(loginRequiredContext.value).toEqual({ target: 'menu', name: 'Mireille' });
+    closeLoginRequired();
   });
 
-  it('expands the descriptif when "More" is clicked and shows hidden lines', async () => {
+  it('action chips display an icon next to their label (Mireille has all four)', () => {
+    const wrapper = mount(FichePage, withRouter(router));
+    const icons = wrapper.findAll('.fp-chip .fp-chip-icon');
+    expect(icons).toHaveLength(4);
+  });
+
+  it('only renders the chips whose has_* flag is true', async () => {
+    // Aïcha has has_menu and has_email but not has_site / has_phone.
+    const router2 = await setupRouter('/p/aicha');
+    const wrapper = mount(FichePage, withRouter(router2));
+    const labels = wrapper.findAll('.fp-chip').map((c) => c.text());
+    expect(labels.some((l) => l.includes('Card'))).toBe(true);
+    expect(labels.some((l) => l.includes('E-mail'))).toBe(true);
+    expect(labels.some((l) => l.includes('Website'))).toBe(false);
+    expect(labels.some((l) => l.includes('Phone'))).toBe(false);
+  });
+
+  it('hides the chip row entirely when no contact is available', async () => {
+    // Find a fiche with no link at all; if none exists in fixture, skip cleanly.
+    const noneFiche = fiches.find(
+      (f) => !f.has_site && !f.has_menu && !f.has_phone && !f.has_email,
+    );
+    if (!noneFiche) return;
+    const router2 = await setupRouter(`/p/${noneFiche.id}`);
+    const wrapper = mount(FichePage, withRouter(router2));
+    expect(wrapper.find('.fp-action-chips').exists()).toBe(false);
+  });
+
+  it('renders every descriptif line in full (no read-more truncation)', () => {
     const mireille = fiches.find((f) => f.id === 'mireille');
-    const lastLine = mireille.descriptif[mireille.descriptif.length - 1];
     const wrapper = mount(FichePage, withRouter(router));
-    expect(wrapper.text()).not.toContain(lastLine);
-    await wrapper.find('.fp-link-btn').trigger('click');
-    expect(wrapper.text()).toContain(lastLine);
+    for (const line of mireille.descriptif) {
+      expect(wrapper.text()).toContain(line);
+    }
   });
 });
 

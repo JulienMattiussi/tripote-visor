@@ -1,7 +1,7 @@
 <script setup>
-import { computed, ref } from 'vue';
+import { computed } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
-import { t } from '../i18n/store.js';
+import { t, openLoginRequired } from '../i18n/store.js';
 import fichesData from '../data/fiches.json';
 import schedulesData from '../data/schedules.json';
 import reviewsData from '../data/reviews.json';
@@ -65,23 +65,25 @@ const tags = computed(() => {
   ];
 });
 
-const saved = ref(false);
-const onSave = () => {
-  saved.value = !saved.value;
+const CONTACT_CHIPS = [
+  { target: 'site', flag: 'has_site', icon: '🌐', labelKey: 'action_site' },
+  { target: 'menu', flag: 'has_menu', icon: '📋', labelKey: 'action_menu' },
+  { target: 'phone', flag: 'has_phone', icon: '📞', labelKey: 'action_phone' },
+  { target: 'email', flag: 'has_email', icon: '✉️', labelKey: 'action_email' },
+];
+
+const availableChips = computed(() => {
+  if (!fiche.value) return [];
+  return CONTACT_CHIPS.filter((chip) => fiche.value[chip.flag] === true);
+});
+
+const requireLogin = (target) => {
+  openLoginRequired({ target, name: fiche.value?.nom });
 };
 const onPlaceholder = (key) => {
   alert(`${t(`fiche_page.${key}`)} ${t('common.sim_suffix')}`);
 };
 const goHome = () => router.push({ name: 'home' });
-
-const readMore = ref(false);
-const previewLength = 3;
-const visibleLines = computed(() => {
-  if (!fiche.value) return [];
-  const lines = fiche.value.descriptif ?? [];
-  return readMore.value ? lines : lines.slice(0, previewLength);
-});
-const hasMore = computed(() => (fiche.value?.descriptif?.length ?? 0) > previewLength);
 </script>
 
 <template>
@@ -103,9 +105,9 @@ const hasMore = computed(() => (fiche.value?.descriptif?.length ?? 0) > previewL
             >
           </div>
           <div class="fp-actions-top">
-            <button type="button" class="fp-top-btn" :aria-pressed="saved" @click="onSave">
-              <span class="fp-heart" :class="{ filled: saved }" aria-hidden="true">♡</span>
-              {{ saved ? t('fiche_page.saved_btn') : t('fiche_page.save_btn') }}
+            <button type="button" class="fp-top-btn" @click="requireLogin('save')">
+              <span class="fp-heart" aria-hidden="true">♡</span>
+              {{ t('fiche_page.save_btn') }}
             </button>
             <button type="button" class="fp-top-btn" @click="onPlaceholder('add_review')">
               + {{ t('fiche_page.add_review') }}
@@ -169,33 +171,25 @@ const hasMore = computed(() => (fiche.value?.descriptif?.length ?? 0) > previewL
           <p class="fp-address">
             <span class="fp-icon" aria-hidden="true">📍</span>{{ fiche.lieu }}
           </p>
-          <div class="fp-action-chips">
-            <button type="button" class="fp-chip" @click="onPlaceholder('action_site')">
-              {{ t('fiche_page.action_site') }}
-            </button>
-            <button type="button" class="fp-chip" @click="onPlaceholder('action_menu')">
-              {{ t('fiche_page.action_menu') }}
-            </button>
-            <button type="button" class="fp-chip" @click="onPlaceholder('action_phone')">
-              {{ t('fiche_page.action_phone') }}
-            </button>
-            <button type="button" class="fp-chip" @click="onPlaceholder('action_email')">
-              {{ t('fiche_page.action_email') }}
+          <div v-if="availableChips.length" class="fp-action-chips">
+            <button
+              v-for="chip in availableChips"
+              :key="chip.target"
+              type="button"
+              class="fp-chip"
+              @click="requireLogin(chip.target)"
+            >
+              <span class="fp-chip-icon" aria-hidden="true">{{ chip.icon }}</span>
+              {{ t(`fiche_page.${chip.labelKey}`) }}
             </button>
           </div>
-          <a class="fp-improve" href="#" @click.prevent="onPlaceholder('improve_page')">
-            {{ t('fiche_page.improve_page') }}
-          </a>
         </section>
 
         <section class="fp-block">
           <h2 class="fp-block-title">{{ t('fiche_page.about') }}</h2>
           <ul class="fp-descriptif">
-            <li v-for="(line, i) in visibleLines" :key="i">{{ line }}</li>
+            <li v-for="(line, i) in fiche.descriptif" :key="i">{{ line }}</li>
           </ul>
-          <button v-if="hasMore" type="button" class="fp-link-btn" @click="readMore = !readMore">
-            {{ readMore ? t('fiche_page.see_less') : t('fiche_page.see_more') }}
-          </button>
         </section>
 
         <section class="fp-block">
@@ -256,21 +250,15 @@ const hasMore = computed(() => (fiche.value?.descriptif?.length ?? 0) > previewL
           <button
             type="button"
             class="pill-btn pill-btn--light fp-save-btn"
-            :aria-pressed="saved"
-            @click="onSave"
+            @click="requireLogin('save')"
           >
-            <span class="fp-heart" :class="{ filled: saved }" aria-hidden="true">♡</span>
-            {{ saved ? t('fiche_page.saved_btn') : t('fiche_page.save_btn') }}
+            <span class="fp-heart" aria-hidden="true">♡</span>
+            {{ t('fiche_page.save_btn') }}
           </button>
         </div>
 
         <div id="horaires" class="fp-side-block">
-          <div class="fp-side-header">
-            <h3 class="fp-side-title">{{ t('fiche_page.hours_title') }}</h3>
-            <button type="button" class="fp-link-btn" @click="onPlaceholder('suggest_change')">
-              {{ t('fiche_page.suggest_change') }}
-            </button>
-          </div>
+          <h3 class="fp-side-title">{{ t('fiche_page.hours_title') }}</h3>
           <p :class="['fp-status-tag', todayStatus.open ? 'open' : 'closed']">
             {{ todayStatus.label }}
           </p>
@@ -358,10 +346,6 @@ const hasMore = computed(() => (fiche.value?.descriptif?.length ?? 0) > previewL
 .fp-heart {
   font-size: 14px;
   color: var(--text);
-}
-
-.fp-heart.filled {
-  color: var(--danger);
 }
 
 .fp-meta {
@@ -564,6 +548,9 @@ const hasMore = computed(() => (fiche.value?.descriptif?.length ?? 0) > previewL
 }
 
 .fp-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   padding: 8px 14px;
   border-radius: 999px;
   border: 1px solid var(--border);
@@ -573,17 +560,14 @@ const hasMore = computed(() => (fiche.value?.descriptif?.length ?? 0) > previewL
   color: var(--text);
 }
 
+.fp-chip-icon {
+  font-size: 14px;
+  line-height: 1;
+}
+
 .fp-chip:hover {
   background: var(--surface);
   border-color: var(--brand);
-}
-
-.fp-improve {
-  display: inline-block;
-  margin-top: 8px;
-  font-size: 13px;
-  color: var(--brand-dark);
-  text-decoration: underline;
 }
 
 .fp-descriptif {
@@ -594,19 +578,6 @@ const hasMore = computed(() => (fiche.value?.descriptif?.length ?? 0) > previewL
   gap: 6px;
   font-size: 15px;
   line-height: 1.5;
-}
-
-.fp-link-btn {
-  display: inline-block;
-  margin-top: 8px;
-  font-size: 13px;
-  color: var(--brand-dark);
-  font-weight: 700;
-  text-decoration: underline;
-  background: none;
-  border: none;
-  padding: 0;
-  font-family: inherit;
 }
 
 .fp-services {
@@ -689,18 +660,6 @@ const hasMore = computed(() => (fiche.value?.descriptif?.length ?? 0) > previewL
   font-weight: 800;
   margin: 0 0 12px 0;
   color: var(--text);
-}
-
-.fp-side-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  gap: 8px;
-  margin-bottom: 8px;
-}
-
-.fp-side-header .fp-side-title {
-  margin: 0;
 }
 
 .fp-save-btn {
