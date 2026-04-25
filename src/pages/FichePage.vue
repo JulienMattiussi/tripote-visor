@@ -42,14 +42,72 @@ const orderedDays = computed(() =>
 );
 
 const services = computed(() => {
+  const codes = fiche.value?.services ?? [];
+  return codes.map((c) => t(`fiche_page.service_${c}`));
+});
+
+const PAYMENT_METHODS = [
+  { flag: 'payment_cash', labelKey: 'payment_cash' },
+  { flag: 'payment_check', labelKey: 'payment_check' },
+  { flag: 'payment_card', labelKey: 'payment_card' },
+  { flag: 'payment_paypal', labelKey: 'payment_paypal' },
+];
+
+const paymentMethods = computed(() => {
   if (!fiche.value) return [];
-  const base = ['service_discreet', 'service_speak_en'];
-  const byCategory = {
-    hotel: ['service_air', 'service_wifi', 'service_central'],
-    ruelle: ['service_quiet', 'service_walking', 'service_central'],
-    parc: ['service_outdoor', 'service_walking', 'service_pet_friendly'],
-  };
-  return [...base, ...(byCategory[fiche.value.categorie] ?? [])].map((k) => t(`fiche_page.${k}`));
+  return PAYMENT_METHODS.filter((p) => fiche.value[p.flag] === true).map((p) =>
+    t(`fiche_page.${p.labelKey}`),
+  );
+});
+
+const PERIODS = [
+  { key: 'matin', ranges: [[360, 720]] },
+  { key: 'midi', ranges: [[720, 840]] },
+  {
+    key: 'apres_midi',
+    ranges: [[840, 1080]],
+  },
+  { key: 'soir', ranges: [[1080, 1320]] },
+  {
+    key: 'nuit',
+    ranges: [
+      [1320, 1440],
+      [0, 360],
+    ],
+  },
+];
+
+const parseTime = (str) => {
+  const [h, m] = str.split(':').map(Number);
+  return h * 60 + m;
+};
+
+const segmentsOf = (range) => {
+  const [s, e] = range.split('-').map(parseTime);
+  if (e <= s)
+    return [
+      [s, 1440],
+      [0, e],
+    ];
+  return [[s, e]];
+};
+
+const overlap = (a, b, c, d) => Math.max(a, c) < Math.min(b, d);
+
+const periods = computed(() => {
+  if (!schedule.value) return [];
+  const matched = new Set();
+  for (const time of Object.values(schedule.value.jours)) {
+    if (!time) continue;
+    const segs = segmentsOf(time);
+    for (const period of PERIODS) {
+      if (matched.has(period.key)) continue;
+      if (segs.some((s) => period.ranges.some((r) => overlap(s[0], s[1], r[0], r[1])))) {
+        matched.add(period.key);
+      }
+    }
+  }
+  return PERIODS.filter((p) => matched.has(p.key)).map((p) => t(`fiche_page.period_${p.key}`));
 });
 
 const categoryLabel = computed(() =>
@@ -194,20 +252,20 @@ const goHome = () => router.push({ name: 'home' });
 
         <section class="fp-block">
           <h3 class="fp-sub-title">{{ t('fiche_page.services_title') }}</h3>
-          <ul class="fp-services">
+          <ul v-if="services.length" class="fp-services">
             <li v-for="s in services" :key="s">
               <span class="fp-icon" aria-hidden="true">✓</span>{{ s }}
             </li>
           </ul>
-          <p class="fp-feature">
+          <p v-if="paymentMethods.length" class="fp-feature">
             <span class="fp-icon" aria-hidden="true">💳</span>
             <strong>{{ t('fiche_page.payment_title') }} :</strong>
-            {{ t('fiche_page.payment_value') }}
+            {{ paymentMethods.join(', ') }}
           </p>
-          <p class="fp-feature">
+          <p v-if="periods.length" class="fp-feature">
             <span class="fp-icon" aria-hidden="true">🕒</span>
             <strong>{{ t('fiche_page.meals_title') }} :</strong>
-            {{ t('fiche_page.meals_value') }}
+            {{ periods.join(', ') }}
           </p>
         </section>
 

@@ -1,9 +1,17 @@
 <script setup>
 import { computed, ref, onMounted, onUnmounted } from 'vue';
-import { useRouter } from 'vue-router';
+import { useRouter, useRoute } from 'vue-router';
 import { t, currency, currencyFlag, openPreferences, openSignin } from '../i18n/store.js';
 
 const router = useRouter();
+const route = useRoute();
+
+const onLogoClick = (event) => {
+  if (route.path === '/') {
+    event.preventDefault();
+    if (typeof window !== 'undefined') window.location.reload();
+  }
+};
 
 const SCROLL_THRESHOLD = 220;
 
@@ -90,7 +98,7 @@ onUnmounted(() => {
 <template>
   <header class="site-header" :class="{ scrolled }">
     <div class="container header-inner">
-      <router-link to="/" class="logo" :aria-label="t('nav.logo_aria')">
+      <router-link to="/" class="logo" :aria-label="t('nav.logo_aria')" @click="onLogoClick">
         <svg class="logo-owl" viewBox="0 0 32 32" fill="none" aria-hidden="true">
           <path
             d="M 2,13 C 3,3 13,13 13.5,1"

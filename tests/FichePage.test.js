@@ -239,29 +239,77 @@ describe('FichePage - locale switching', () => {
   });
 });
 
-describe('FichePage - services by category', () => {
+describe('FichePage - services / payment / periods', () => {
+  const SERVICE_LABELS = {
+    discreet: 'Discreet welcome',
+    speak_en: 'Speaks English',
+    pmr: 'Wheelchair access',
+    pet_friendly: 'Pet friendly',
+    air: 'Air conditioning',
+    wifi: 'Wi-Fi',
+    outdoor: 'Open air',
+    quiet: 'Quiet street',
+    walking: 'Walkable',
+    central: 'Central location',
+  };
+
   beforeEach(() => {
     setLocale('en');
     vi.stubGlobal('alert', vi.fn());
   });
   afterEach(() => vi.unstubAllGlobals());
 
-  it('shows hotel-specific services for an hotel fiche', async () => {
+  it('renders only the services listed in the fiche JSON', async () => {
+    const target = fiches.find((f) => f.services.length >= 4);
+    const router = await setupRouter(`/p/${target.id}`);
+    const wrapper = mount(FichePage, withRouter(router));
+    const items = wrapper.findAll('.fp-services li').map((li) => li.text());
+    expect(items.length).toBe(target.services.length);
+    for (const code of target.services) {
+      expect(items.some((text) => text.includes(SERVICE_LABELS[code]))).toBe(true);
+    }
+  });
+
+  it('hides the services list when the fiche has no service', async () => {
+    const target = fiches.find((f) => f.services.length === 0);
+    if (!target) return;
+    const router = await setupRouter(`/p/${target.id}`);
+    const wrapper = mount(FichePage, withRouter(router));
+    expect(wrapper.find('.fp-services').exists()).toBe(false);
+  });
+
+  it('renders payment methods from the fiche flags, comma-separated', async () => {
+    const target = fiches.find((f) => f.payment_cash && f.payment_card && f.payment_paypal);
+    if (!target) return;
+    const router = await setupRouter(`/p/${target.id}`);
+    const wrapper = mount(FichePage, withRouter(router));
+    const paymentLine = wrapper
+      .findAll('.fp-feature')
+      .find((p) => p.text().includes('Payment accepted'));
+    expect(paymentLine.text()).toContain('Cash');
+    expect(paymentLine.text()).toContain('Card');
+    expect(paymentLine.text()).toContain('PayPal');
+  });
+
+  it('derives the time-slot periods from the schedule (Mireille = Evening, Night)', async () => {
     const router = await setupRouter('/p/mireille');
     const wrapper = mount(FichePage, withRouter(router));
-    expect(wrapper.text()).toContain('Air conditioning');
-    expect(wrapper.text()).toContain('Wi-Fi');
+    const slotsLine = wrapper.findAll('.fp-feature').find((p) => p.text().includes('Time slots'));
+    expect(slotsLine.text()).toContain('Evening');
+    expect(slotsLine.text()).toContain('Night');
+    expect(slotsLine.text()).not.toContain('Morning');
+    expect(slotsLine.text()).not.toContain('Noon');
   });
 
-  it('shows alley-specific services for an alley fiche', async () => {
-    const router = await setupRouter('/p/roger');
+  it('derives "Morning, Noon" for a daytime-only schedule', async () => {
+    // Find any fiche with horaires_id = "matinee_et_midi" (09:00-14:00 weekdays)
+    const target = fiches.find((f) => f.horaires_id === 'matinee_et_midi');
+    if (!target) return;
+    const router = await setupRouter(`/p/${target.id}`);
     const wrapper = mount(FichePage, withRouter(router));
-    expect(wrapper.text()).toContain('Quiet street');
-  });
-
-  it('shows park-specific services for a park fiche', async () => {
-    const router = await setupRouter('/p/aminata');
-    const wrapper = mount(FichePage, withRouter(router));
-    expect(wrapper.text()).toContain('Open air');
+    const slotsLine = wrapper.findAll('.fp-feature').find((p) => p.text().includes('Time slots'));
+    expect(slotsLine.text()).toContain('Morning');
+    expect(slotsLine.text()).toContain('Noon');
+    expect(slotsLine.text()).not.toContain('Night');
   });
 });
