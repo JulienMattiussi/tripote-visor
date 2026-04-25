@@ -25,7 +25,7 @@ describe('App', () => {
     const wrapper = mountApp();
     const html = wrapper.html();
 
-    expect(html).toContain('Where to?'); // HeroSearch
+    expect(html).toContain('What environment?'); // HeroSearch
     expect(html).toContain('Find things to do by interest'); // CategoryGrid
     expect(html).toContain("Travelers' Choice"); // TravelersChoice (home promo section)
   });
@@ -38,7 +38,7 @@ describe('App', () => {
     expect(text).toContain('Discover experiences approved by users');
     expect(text).toContain('Trending destinations highlights');
     // Home section title is gone - the home page is no longer rendered.
-    expect(text).not.toContain('Where to?');
+    expect(text).not.toContain('What environment?');
     expect(text).not.toContain('Find things to do by interest');
   });
 });

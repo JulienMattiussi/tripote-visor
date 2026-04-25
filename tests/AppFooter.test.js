@@ -61,7 +61,7 @@ describe('AppFooter - Explore column', () => {
       '/write-review',
       '/add-sex-worker',
       '/discover',
-      '/travel-stories',
+      '/encounters',
     ]);
     const joinBtn = cols[1].find('button.link-like');
     expect(joinBtn.exists()).toBe(true);

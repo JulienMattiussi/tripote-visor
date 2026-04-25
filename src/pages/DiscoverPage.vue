@@ -29,8 +29,19 @@ const goHome = () => router.push({ name: 'home' });
 <template>
   <section class="dp-hero" :aria-label="t('discover_page.hero_aria')">
     <div class="dp-hero-overlay">
-      <div class="container">
+      <div class="container dp-hero-grid">
         <h1 class="dp-hero-title">{{ t('discover_page.hero_title') }}</h1>
+        <div class="dp-hero-art" aria-hidden="true">
+          <span class="dp-circle dp-circle--top">
+            <img src="/cities/paris.jpg" alt="" loading="lazy" />
+          </span>
+          <span class="dp-circle dp-circle--main">
+            <img src="/cities/nice.jpg" alt="" loading="lazy" />
+          </span>
+          <span class="dp-circle dp-circle--bottom">
+            <img src="/cities/lyon.jpg" alt="" loading="lazy" />
+          </span>
+        </div>
       </div>
     </div>
   </section>
@@ -104,7 +115,7 @@ const goHome = () => router.push({ name: 'home' });
 <style scoped>
 .dp-hero {
   position: relative;
-  min-height: 320px;
+  min-height: 360px;
   background: linear-gradient(135deg, var(--brand-dark), var(--brand-hover)) center/cover no-repeat;
   display: flex;
   align-items: center;
@@ -118,6 +129,13 @@ const goHome = () => router.push({ name: 'home' });
   padding: 72px 0;
 }
 
+.dp-hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 360px);
+  gap: 32px;
+  align-items: center;
+}
+
 .dp-hero-title {
   color: var(--on-dark);
   font-size: 40px;
@@ -125,7 +143,53 @@ const goHome = () => router.push({ name: 'home' });
   line-height: 1.15;
   letter-spacing: -0.01em;
   margin: 0;
-  max-width: 760px;
+  max-width: 560px;
+}
+
+.dp-hero-art {
+  position: relative;
+  width: 100%;
+  height: 320px;
+  justify-self: end;
+}
+
+.dp-circle {
+  position: absolute;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid rgba(255, 255, 255, 0.85);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+}
+
+.dp-circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.dp-circle--top {
+  width: 150px;
+  height: 150px;
+  top: 6%;
+  left: 8%;
+  z-index: 1;
+}
+
+.dp-circle--main {
+  width: 220px;
+  height: 220px;
+  top: 18%;
+  left: 32%;
+  z-index: 3;
+}
+
+.dp-circle--bottom {
+  width: 160px;
+  height: 160px;
+  bottom: 4%;
+  right: 4%;
+  z-index: 2;
 }
 
 .dp-main {
@@ -297,6 +361,26 @@ const goHome = () => router.push({ name: 'home' });
   }
   .dp-hero-title {
     font-size: 28px;
+  }
+  .dp-hero-grid {
+    grid-template-columns: 1fr;
+  }
+  .dp-hero-art {
+    height: 240px;
+    justify-self: center;
+    max-width: 360px;
+  }
+  .dp-circle--top {
+    width: 110px;
+    height: 110px;
+  }
+  .dp-circle--main {
+    width: 170px;
+    height: 170px;
+  }
+  .dp-circle--bottom {
+    width: 120px;
+    height: 120px;
   }
 }
 

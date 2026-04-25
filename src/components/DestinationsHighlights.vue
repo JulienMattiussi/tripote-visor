@@ -25,10 +25,18 @@ const groupedByCity = computed(() => {
   return groups;
 });
 
+const hasPhoto = (ville) => Boolean((cityPhotoByName[ville] ?? '').trim());
+
 const topCities = computed(() => {
   const entries = [...groupedByCity.value.entries()]
     .filter(([, list]) => list.length >= PER_CITY)
-    .sort((a, b) => b[1].length - a[1].length || a[0].localeCompare(b[0]))
+    .sort((a, b) => {
+      const byCount = b[1].length - a[1].length;
+      if (byCount !== 0) return byCount;
+      const byPhoto = (hasPhoto(b[0]) ? 1 : 0) - (hasPhoto(a[0]) ? 1 : 0);
+      if (byPhoto !== 0) return byPhoto;
+      return a[0].localeCompare(b[0]);
+    })
     .slice(0, TOP_CITIES);
 
   return entries.map(([ville, list]) => ({

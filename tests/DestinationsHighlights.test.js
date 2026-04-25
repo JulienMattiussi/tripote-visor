@@ -3,6 +3,7 @@ import { mount, flushPromises } from '@vue/test-utils';
 import DestinationsHighlights from '../src/components/DestinationsHighlights.vue';
 import fichesData from '../src/data/fiches.json';
 import advicesData from '../src/data/advices.json';
+import citiesData from '../src/data/cities.json';
 import { setLocale, setCurrency } from '../src/i18n/store.js';
 import { setupRouter, withRouter } from './helpers/router.js';
 
@@ -15,6 +16,11 @@ const avgOf = (id) => {
   return list.reduce((acc, r) => acc + r.rating, 0) / list.length;
 };
 
+const photoOf = (ville) => {
+  const entry = citiesData.find((c) => c.ville === ville);
+  return (entry?.photo ?? '').trim();
+};
+
 const expectedCities = () => {
   const groups = new Map();
   for (const f of fichesData) {
@@ -25,7 +31,13 @@ const expectedCities = () => {
   }
   return [...groups.entries()]
     .filter(([, list]) => list.length >= PER_CITY)
-    .sort((a, b) => b[1].length - a[1].length || a[0].localeCompare(b[0]))
+    .sort((a, b) => {
+      const byCount = b[1].length - a[1].length;
+      if (byCount !== 0) return byCount;
+      const byPhoto = (photoOf(b[0]) ? 1 : 0) - (photoOf(a[0]) ? 1 : 0);
+      if (byPhoto !== 0) return byPhoto;
+      return a[0].localeCompare(b[0]);
+    })
     .slice(0, TOP_CITIES)
     .map(([ville, list]) => ({
       ville,

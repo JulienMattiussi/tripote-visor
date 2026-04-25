@@ -13,10 +13,10 @@ export const translations = {
       review_add_place: 'Add a sex worker',
       discover_menu_aria: 'Discover options',
       discover_top: 'Top destinations',
-      discover_stories: 'Travel Stories',
+      discover_stories: 'Encounter Stories',
     },
     hero: {
-      title: 'Where to?',
+      title: 'What environment?',
       search_btn: 'Search',
       search_aria: 'Search',
       tab_all: 'Search All',
@@ -32,10 +32,10 @@ export const translations = {
     ttd: {
       aria: 'Things to do promo',
       alt_image: 'Kayaker on calm water',
-      headline_line1: 'Find things to do',
-      headline_line2: 'for everything',
-      headline_line3: "you're into",
-      subtitle: 'Browse 400,000+ experiences and discover with us.',
+      headline_line1: 'Find',
+      headline_line2: 'courtesans to suit',
+      headline_line3: 'your wishes',
+      subtitle: 'Browse 400,000+ experiences and discover them with us.',
       cta: 'Discover now',
     },
     discover_page: {
@@ -119,7 +119,7 @@ export const translations = {
       col_explore_2: 'Add a sex worker',
       col_explore_3: 'Join',
       col_explore_4: 'Top destinations',
-      col_explore_6: 'Travel Stories',
+      col_explore_6: 'Encounter Stories',
     },
     prefs: {
       title: 'Preferences',
@@ -157,7 +157,7 @@ export const translations = {
         'If that email is in our records, a reset link is on its way. Check your inbox.',
     },
     ts_page: {
-      hero_title: 'Travel Stories',
+      hero_title: 'Encounter Stories',
       hero_subtitle: 'Inspiration, tips, and unforgettable trips from the Tripote-visor community.',
       featured_label: 'Featured',
       read_article: 'Read article',
@@ -600,10 +600,10 @@ export const translations = {
       review_add_place: 'Ajouter une prostituée',
       discover_menu_aria: 'Options de découverte',
       discover_top: 'Top destinations',
-      discover_stories: 'Récits de voyage',
+      discover_stories: 'Récit de rencontres',
     },
     hero: {
-      title: 'Quelle destination ?',
+      title: 'Quel environnement ?',
       search_btn: 'Recherche',
       search_aria: 'Rechercher',
       tab_all: 'Tout rechercher',
@@ -620,9 +620,9 @@ export const translations = {
       aria: 'Promo activités',
       alt_image: 'Kayakiste sur eau calme',
       headline_line1: 'Trouvez des',
-      headline_line2: 'activités selon vos',
+      headline_line2: 'courtisanes selon vos',
       headline_line3: 'envies',
-      subtitle: 'Parcourez plus de 400 000 expériences et découvrez avec nous.',
+      subtitle: 'Parcourez plus de 400 000 expériences et découvrez les avec nous.',
       cta: 'Découvrez maintenant',
     },
     discover_page: {
@@ -707,7 +707,7 @@ export const translations = {
       col_explore_2: 'Ajouter une prostituée',
       col_explore_3: 'S’inscrire',
       col_explore_4: 'Top destinations',
-      col_explore_6: 'Récits de voyage',
+      col_explore_6: 'Récit de rencontres',
     },
     prefs: {
       title: 'Préférences',
@@ -745,7 +745,7 @@ export const translations = {
         'Si cette adresse est dans nos registres, un lien de réinitialisation est en route. Consultez votre boîte de réception.',
     },
     ts_page: {
-      hero_title: 'Récits de voyage',
+      hero_title: 'Récit de rencontres',
       hero_subtitle:
         'Inspiration, conseils et voyages inoubliables de la communauté Tripote-visor.',
       featured_label: 'À la une',

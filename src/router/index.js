@@ -19,7 +19,7 @@ import DiscoverPage from '../pages/DiscoverPage.vue';
 
 export const routes = [
   { path: '/', name: 'home', component: HomePage },
-  { path: '/travel-stories', name: 'travel-stories', component: TravelStoriesPage },
+  { path: '/encounters', name: 'encounters', component: TravelStoriesPage },
   { path: '/write-review', name: 'write-review', component: UserReviewPage },
   { path: '/post-photos', name: 'post-photos', component: PostPhotosPage },
   { path: '/add-sex-worker', name: 'add-sex-worker', component: CreateListingPage },

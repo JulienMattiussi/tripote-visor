@@ -12,7 +12,7 @@ describe('TravelStoriesPage', () => {
 
   beforeEach(async () => {
     setLocale('en');
-    router = await setupRouter('/travel-stories');
+    router = await setupRouter('/encounters');
     vi.stubGlobal('alert', vi.fn());
   });
 
@@ -31,7 +31,7 @@ describe('TravelStoriesPage', () => {
 
   it('renders the hero title, subtitle, and the Featured badge in English', () => {
     const wrapper = mount(TravelStoriesPage, withRouter(router));
-    expect(wrapper.find('.ts-hero-title').text()).toBe('Travel Stories');
+    expect(wrapper.find('.ts-hero-title').text()).toBe('Encounter Stories');
     expect(wrapper.text()).toContain('Inspiration, tips, and unforgettable trips');
     expect(wrapper.find('.ts-featured-label').text()).toBe('Featured');
   });
@@ -66,7 +66,7 @@ describe('TravelStoriesPage', () => {
     setLocale('fr');
     const wrapper = mount(TravelStoriesPage, withRouter(router));
 
-    expect(wrapper.find('.ts-hero-title').text()).toBe('Récits de voyage');
+    expect(wrapper.find('.ts-hero-title').text()).toBe('Récit de rencontres');
     expect(wrapper.find('.ts-featured-label').text()).toBe('À la une');
     expect(wrapper.find('.ts-featured-title').text()).toBe(
       'Sur les routes des Highlands : 7 jours d’aventure écossaise',
@@ -101,18 +101,18 @@ describe('Travel Stories navigation from the header', () => {
     await discoverTrigger.trigger('click');
 
     const items = wrapper.findAll('.nav-dropdown-item');
-    expect(items[1].text()).toBe('Travel Stories');
+    expect(items[1].text()).toBe('Encounter Stories');
     await items[1].trigger('click');
     await flushPromises();
 
-    expect(router.currentRoute.value.name).toBe('travel-stories');
+    expect(router.currentRoute.value.name).toBe('encounters');
     expect(window.alert).not.toHaveBeenCalled();
   });
 
   it('the App renders the Travel Stories page on /travel-stories', async () => {
-    router = await setupRouter('/travel-stories');
+    router = await setupRouter('/encounters');
     const wrapper = mount(App, withRouter(router));
-    expect(wrapper.text()).toContain('Travel Stories');
+    expect(wrapper.text()).toContain('Encounter Stories');
     expect(wrapper.text()).toContain('On the road in the Highlands');
   });
 });

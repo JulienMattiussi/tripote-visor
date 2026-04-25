@@ -182,7 +182,7 @@ describe('AppHeader Discover and Review dropdowns', () => {
 
     expect(discoverTrigger.attributes('aria-expanded')).toBe('true');
     const items = wrapper.findAll('.nav-dropdown-item');
-    expect(items.map((i) => i.text())).toEqual(['Top destinations', 'Travel Stories']);
+    expect(items.map((i) => i.text())).toEqual(['Top destinations', 'Encounter Stories']);
     expect(wrapper.find('.nav-dropdown').attributes('role')).toBe('menu');
     expect(wrapper.find('.nav-dropdown').attributes('aria-label')).toBe('Discover options');
   });
@@ -307,7 +307,7 @@ describe('AppHeader Discover and Review dropdowns', () => {
     await discoverTrigger.trigger('click');
     expect(wrapper.findAll('.nav-dropdown-item').map((i) => i.text())).toEqual([
       'Top destinations',
-      'Récits de voyage',
+      'Récit de rencontres',
     ]);
 
     const reviewTrigger = triggers.find((b) => b.text().trim() === 'Avis');

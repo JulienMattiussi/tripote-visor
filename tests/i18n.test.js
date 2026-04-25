@@ -24,13 +24,13 @@ describe('i18n store', () => {
 
   it('returns English strings by default', () => {
     expect(t('nav.discover')).toBe('Discover');
-    expect(t('hero.title')).toBe('Where to?');
+    expect(t('hero.title')).toBe('What environment?');
   });
 
   it('returns French strings after switching locale', () => {
     setLocale('fr');
     expect(t('nav.discover')).toBe('Découvrir');
-    expect(t('hero.title')).toBe('Quelle destination ?');
+    expect(t('hero.title')).toBe('Quel environnement ?');
   });
 
   it('falls back to English if a key is missing in the current locale', () => {

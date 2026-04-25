@@ -20,7 +20,7 @@ const compactQuery = ref('');
 
 const discoverMenuItems = computed(() => [
   { key: 'top', label: t('nav.discover_top'), to: { name: 'discover' } },
-  { key: 'stories', label: t('nav.discover_stories'), to: { name: 'travel-stories' } },
+  { key: 'stories', label: t('nav.discover_stories'), to: { name: 'encounters' } },
 ]);
 
 const reviewMenuItems = computed(() => [

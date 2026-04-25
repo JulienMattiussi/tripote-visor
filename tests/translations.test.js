@@ -133,7 +133,7 @@ describe('locale switching on the full App', () => {
   const EN_SAMPLES = [
     'Discover',
     'Sign in',
-    'Where to?',
+    'What environment?',
     'Search All',
     'Discover now',
     'Find things to do by interest',
@@ -149,7 +149,7 @@ describe('locale switching on the full App', () => {
   const FR_SAMPLES = [
     'Découvrir',
     'Se connecter',
-    'Quelle destination ?',
+    'Quel environnement ?',
     'Tout rechercher',
     'Découvrez maintenant',
     'Trouvez des activités par centre d’intérêt',

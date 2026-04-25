@@ -24,7 +24,7 @@ const exploreLinks = computed(() => [
   { key: 'add', label: t('footer.col_explore_2'), to: { name: 'add-sex-worker' } },
   { key: 'join', label: t('footer.col_explore_3'), onClick: openSignin },
   { key: 'tc', label: t('footer.col_explore_4'), to: { name: 'discover' } },
-  { key: 'stories', label: t('footer.col_explore_6'), to: { name: 'travel-stories' } },
+  { key: 'stories', label: t('footer.col_explore_6'), to: { name: 'encounters' } },
 ]);
 
 const githubUrl = 'https://github.com';

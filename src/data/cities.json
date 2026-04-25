@@ -2,27 +2,27 @@
   {
     "ville": "Paris",
     "count": 21,
-    "photo": ""
+    "photo": "/cities/paris.jpg"
   },
   {
     "ville": "Lyon",
     "count": 5,
-    "photo": ""
+    "photo": "/cities/lyon.jpg"
   },
   {
     "ville": "Marseille",
     "count": 4,
-    "photo": ""
+    "photo": "/cities/marseille.jpg"
   },
   {
     "ville": "Strasbourg",
     "count": 4,
-    "photo": ""
+    "photo": "/cities/strasbourg.jpg"
   },
   {
     "ville": "Bordeaux",
     "count": 3,
-    "photo": ""
+    "photo": "/cities/bordeaux.jpg"
   },
   {
     "ville": "Lille",
@@ -32,7 +32,7 @@
   {
     "ville": "Nice",
     "count": 3,
-    "photo": ""
+    "photo": "/cities/nice.jpg"
   },
   {
     "ville": "Saint-Denis",

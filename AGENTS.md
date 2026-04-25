@@ -10,7 +10,7 @@ The site has a home page plus a small constellation of secondary pages reachable
 
 **Secondary pages** (each reached from header or footer):
 
-- `/travel-stories` - 4 articles (1 featured + 3)
+- `/encounters` - 4 articles (1 featured + 3)
 - `/hotels`, `/parks`, `/alleys` - listings, share `ListingsPage.vue` via `listing-type` prop
 - `/write-review`, `/post-photos`, `/add-sex-worker` - parody form pages
 - `/how-it-works` - 9-section explainer page
@@ -125,7 +125,7 @@ All routes live in `src/router/index.js`. `createAppRouter({ history })` is a fa
 | Path              | Name             | Page                                                       |
 | ----------------- | ---------------- | ---------------------------------------------------------- |
 | `/`               | `home`           | `HomePage.vue`                                             |
-| `/travel-stories` | `travel-stories` | `TravelStoriesPage.vue`                                    |
+| `/encounters`     | `encounters`     | `TravelStoriesPage.vue`                                    |
 | `/hotels`         | `hotels`         | `HotelsPage.vue` (wraps `ListingsPage`)                    |
 | `/parks`          | `parks`          | `ParksPage.vue` (wraps `ListingsPage`)                     |
 | `/alleys`         | `alleys`         | `AlleysPage.vue` (wraps `ListingsPage`)                    |
@@ -148,7 +148,7 @@ Every secondary page follows the same anatomy:
 
 1. **Hero** - full-width strip, title + subtitle. Two color conventions:
    - `var(--brand-dark)` background with white text for serious / award pages (Terms, Safety).
-   - `var(--surface-alt)` background with brand-dark headings for lighter pages (About, Resources, Listings, How-it-works, Travel Stories).
+   - `var(--surface-alt)` background with brand-dark headings for lighter pages (About, Resources, Listings, How-it-works, Encounter Stories).
 2. **Document body** - one or more cards on `var(--bg)` with `var(--shadow)`, each holding an `<h2>` title and paragraphs/bullets.
 3. **Optional `<SeriousNote class="page-prefix-serious" />`** - mounted _outside_ the document, after it. Used on About, Safety, Terms. Mandatory on any page that leans into the parody's substantive subject.
 4. **Back-to-home button** - `pill-btn pill-btn--brand`, calls `router.push({ name: 'home' })`. Centered or left-aligned per page.
@@ -191,7 +191,7 @@ To add a new modal: declare its open ref + actions in `store.js`, create the com
 Currently:
 
 - **About column**: `About Us → /about`, `Resources and Policies → /resources`, `Trust & Safety → /safety`, `How the site works → /how-it-works`. (Placeholders no longer exist in this column.)
-- **Explore column**: `Write a review → /write-review`, `Add a sex worker → /add-sex-worker`, `Join → openSignin()`, `Top destinations → /discover`, `Travel Stories → /travel-stories`.
+- **Explore column**: `Write a review → /write-review`, `Add a sex worker → /add-sex-worker`, `Join → openSignin()`, `Top destinations → /discover`, `Encounter Stories → /encounters`.
 - **Settings column** (rightmost): currency `<select>`, locale `<select>` (both fall back to opening `PreferencesModal` when the user picks the `…` option), and the GitHub social pill, right-aligned.
 - **Legal nav** (bottom row): `Terms of Use → /terms`, `Cookie consent → openCookieModal()`, `Accessibility Statement → /accessibility`.
 
