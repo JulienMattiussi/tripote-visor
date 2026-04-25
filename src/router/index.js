@@ -22,7 +22,7 @@ export const routes = [
   { path: '/travel-stories', name: 'travel-stories', component: TravelStoriesPage },
   { path: '/write-review', name: 'write-review', component: UserReviewPage },
   { path: '/post-photos', name: 'post-photos', component: PostPhotosPage },
-  { path: '/add-place', name: 'add-place', component: CreateListingPage },
+  { path: '/add-sex-worker', name: 'add-sex-worker', component: CreateListingPage },
   { path: '/hotels', name: 'hotels', component: HotelsPage },
   { path: '/parks', name: 'parks', component: ParksPage },
   { path: '/alleys', name: 'alleys', component: AlleysPage },

@@ -195,7 +195,11 @@ describe('AppHeader Discover and Review dropdowns', () => {
     await reviewTrigger.trigger('click');
 
     const items = wrapper.findAll('.nav-dropdown-item');
-    expect(items.map((i) => i.text())).toEqual(['Write a review', 'Publish photos', 'Add a place']);
+    expect(items.map((i) => i.text())).toEqual([
+      'Write a review',
+      'Publish photos',
+      'Add a sex worker',
+    ]);
     expect(wrapper.find('.nav-dropdown').attributes('aria-label')).toBe('Review options');
   });
 
@@ -232,7 +236,7 @@ describe('AppHeader Discover and Review dropdowns', () => {
     const expected = [
       { label: 'Write a review', name: 'write-review' },
       { label: 'Publish photos', name: 'post-photos' },
-      { label: 'Add a place', name: 'add-place' },
+      { label: 'Add a sex worker', name: 'add-sex-worker' },
     ];
 
     for (const { label, name } of expected) {
@@ -311,7 +315,7 @@ describe('AppHeader Discover and Review dropdowns', () => {
     expect(wrapper.findAll('.nav-dropdown-item').map((i) => i.text())).toEqual([
       'Écrire un avis',
       'Publier des photos',
-      'Ajouter un lieu',
+      'Ajouter une prostituée',
     ]);
   });
 });

@@ -169,22 +169,20 @@ describe('PostPhotosPage (Publish photos)', () => {
   });
 });
 
-describe('CreateListingPage (Add a place)', () => {
+describe('CreateListingPage (Add a sex worker)', () => {
   beforeEach(async () => {
     setLocale('en');
     closeLoginRequired();
-    router = await setupRouter('/add-place');
+    router = await setupRouter('/add-sex-worker');
   });
 
   it('renders the hero, type chips, name + address fields, and relationship radios', () => {
     const wrapper = mount(CreateListingPage, withRouter(router));
-    expect(wrapper.find('.form-hero-title').text()).toBe('Add a place');
+    expect(wrapper.find('.form-hero-title').text()).toBe('Add a sex worker');
 
-    const typeChips = wrapper
-      .findAll('.chip')
-      .slice(0, 4)
-      .map((c) => c.text());
-    expect(typeChips).toEqual(['Hotel', 'Restaurant', 'Park', 'Vacation Rental']);
+    const allChips = wrapper.findAll('.chip').map((c) => c.text());
+    expect(allChips.slice(0, 3)).toEqual(['Female', 'Male', 'Indeterminate']);
+    expect(allChips.slice(3, 6)).toEqual(['Hotel', 'Park', 'Alley']);
 
     expect(wrapper.find('select').exists()).toBe(true); // country
     expect(wrapper.findAll('input[type="text"]').length).toBeGreaterThanOrEqual(4); // name, address, city, postal
@@ -195,7 +193,7 @@ describe('CreateListingPage (Add a place)', () => {
     const relationshipLabels = wrapper.findAll('.radio-row').map((r) => r.text());
     expect(relationshipLabels).toEqual([
       'I own or manage it',
-      'I work there',
+      'It’s me',
       'I’m a traveller who visited',
     ]);
   });
@@ -229,13 +227,10 @@ describe('CreateListingPage (Add a place)', () => {
   it('renders the page in French', () => {
     setLocale('fr');
     const wrapper = mount(CreateListingPage, withRouter(router));
-    expect(wrapper.find('.form-hero-title').text()).toBe('Ajouter un lieu');
+    expect(wrapper.find('.form-hero-title').text()).toBe('Ajouter une prostituée');
     expect(wrapper.find('.form-submit').text()).toBe('Soumettre la fiche');
-    expect(
-      wrapper
-        .findAll('.chip')
-        .slice(0, 4)
-        .map((c) => c.text()),
-    ).toEqual(['Hôtel', 'Restaurant', 'Parc', 'Location de vacances']);
+    const allChips = wrapper.findAll('.chip').map((c) => c.text());
+    expect(allChips.slice(0, 3)).toEqual(['Féminin', 'Masculin', 'Indéterminé']);
+    expect(allChips.slice(3, 6)).toEqual(['Hôtel', 'Parc', 'Ruelle']);
   });
 });

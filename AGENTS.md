@@ -12,7 +12,7 @@ The site has a home page plus a small constellation of secondary pages reachable
 
 - `/travel-stories` - 4 articles (1 featured + 3)
 - `/hotels`, `/parks`, `/alleys` - listings, share `ListingsPage.vue` via `listing-type` prop
-- `/write-review`, `/post-photos`, `/add-place` - parody form pages
+- `/write-review`, `/post-photos`, `/add-sex-worker` - parody form pages
 - `/how-it-works` - 9-section explainer page
 - `/about` - parody premise + shared `SeriousNote`
 - `/safety` - integrity policy, ends on a "what we don't do" pivot + shared `SeriousNote`
@@ -41,7 +41,7 @@ src/
 │   ├── SearchResultsPage.vue     # /search - global or category-filtered results
 │   ├── UserReviewPage.vue        # /write-review
 │   ├── PostPhotosPage.vue        # /post-photos
-│   ├── CreateListingPage.vue     # /add-place
+│   ├── CreateListingPage.vue     # /add-sex-worker
 │   ├── HowTheSiteWorksPage.vue
 │   ├── AboutPage.vue
 │   ├── SafetyPage.vue
@@ -128,7 +128,7 @@ All routes live in `src/router/index.js`. `createAppRouter({ history })` is a fa
 | `/search`         | `search`         | `SearchResultsPage.vue` (`?q=`, `?categorie=`)             |
 | `/write-review`   | `write-review`   | `UserReviewPage.vue`                                       |
 | `/post-photos`    | `post-photos`    | `PostPhotosPage.vue`                                       |
-| `/add-place`      | `add-place`      | `CreateListingPage.vue`                                    |
+| `/add-sex-worker` | `add-sex-worker` | `CreateListingPage.vue`                                    |
 | `/how-it-works`   | `how-it-works`   | `HowTheSiteWorksPage.vue`                                  |
 | `/about`          | `about`          | `AboutPage.vue`                                            |
 | `/safety`         | `safety`         | `SafetyPage.vue`                                           |
@@ -186,7 +186,7 @@ To add a new modal: declare its open ref + actions in `store.js`, create the com
 Currently:
 
 - **About column**: `About Us → /about`, `Resources and Policies → /resources`, `Trust & Safety → /safety`, `How the site works → /how-it-works`. (Placeholders no longer exist in this column.)
-- **Explore column**: `Write a review → /write-review`, `Add a Place → /add-place`, `Join → openSignin()`, `Top destinations → /discover`, `Travel Stories → /travel-stories`.
+- **Explore column**: `Write a review → /write-review`, `Add a sex worker → /add-sex-worker`, `Join → openSignin()`, `Top destinations → /discover`, `Travel Stories → /travel-stories`.
 - **Settings column** (rightmost): currency `<select>`, locale `<select>` (both fall back to opening `PreferencesModal` when the user picks the `…` option), and the GitHub social pill, right-aligned.
 - **Legal nav** (bottom row): `Terms of Use → /terms`, `Cookie consent → openCookieModal()`, `Accessibility Statement → /accessibility`.
 

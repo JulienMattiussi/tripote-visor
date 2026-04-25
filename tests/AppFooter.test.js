@@ -59,7 +59,7 @@ describe('AppFooter - Explore column', () => {
     const exploreLinks = cols[1].findAll('a');
     expect(exploreLinks.map((a) => a.attributes('href'))).toEqual([
       '/write-review',
-      '/add-place',
+      '/add-sex-worker',
       '/discover',
       '/travel-stories',
     ]);

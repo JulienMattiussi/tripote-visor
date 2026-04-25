@@ -26,7 +26,7 @@ const discoverMenuItems = computed(() => [
 const reviewMenuItems = computed(() => [
   { key: 'write', label: t('nav.review_write'), to: { name: 'write-review' } },
   { key: 'photos', label: t('nav.review_photos'), to: { name: 'post-photos' } },
-  { key: 'add_place', label: t('nav.review_add_place'), to: { name: 'add-place' } },
+  { key: 'add_sex_worker', label: t('nav.review_add_place'), to: { name: 'add-sex-worker' } },
 ]);
 
 const categoryTabs = computed(() => [

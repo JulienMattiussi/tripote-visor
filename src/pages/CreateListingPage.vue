@@ -1,8 +1,10 @@
 <script setup>
 import { ref, computed } from 'vue';
 import { t, openLoginRequired } from '../i18n/store.js';
+import SeriousNote from '../components/SeriousNote.vue';
 
-const TYPES = ['hotel', 'restaurant', 'attraction', 'rental'];
+const SEXES = ['female', 'male', 'indeterminate'];
+const TYPES = ['hotel', 'parc', 'ruelle'];
 const RELATIONSHIPS = ['owner', 'employee', 'traveller'];
 
 const COUNTRIES = [
@@ -18,6 +20,7 @@ const COUNTRIES = [
   { code: 'GB', label: 'United Kingdom' },
 ];
 
+const sex = ref('female');
 const type = ref('hotel');
 const name = ref('');
 const country = ref('FR');
@@ -65,7 +68,17 @@ const onSubmit = (e) => {
     <div class="form-card">
       <form @submit="onSubmit">
         <fieldset class="field">
-          <legend class="field-label">{{ t('cl_page.type_label') }} <em>*</em></legend>
+          <legend class="field-label">{{ t('cl_page.sex_label') }} <em>*</em></legend>
+          <div class="chip-group">
+            <label v-for="entry in SEXES" :key="entry" class="chip">
+              <input v-model="sex" type="radio" :value="entry" />
+              <span>{{ t(`cl_page.sex_${entry}`) }}</span>
+            </label>
+          </div>
+        </fieldset>
+
+        <fieldset class="field">
+          <legend class="field-label">{{ t(`cl_page.type_label_${sex}`) }} <em>*</em></legend>
           <div class="chip-group">
             <label v-for="entry in TYPES" :key="entry" class="chip">
               <input v-model="type" type="radio" :value="entry" />
@@ -75,7 +88,7 @@ const onSubmit = (e) => {
         </fieldset>
 
         <label class="field">
-          <span class="field-label">{{ t('cl_page.name_label') }} <em>*</em></span>
+          <span class="field-label">{{ t(`cl_page.name_label_${sex}`) }} <em>*</em></span>
           <input v-model="name" type="text" :placeholder="t('cl_page.name_placeholder')" required />
         </label>
 
@@ -157,6 +170,8 @@ const onSubmit = (e) => {
         </button>
       </form>
     </div>
+
+    <SeriousNote class="cl-serious" collapsed />
   </main>
 </template>
 
@@ -224,6 +239,10 @@ const onSubmit = (e) => {
   width: 18px;
   height: 18px;
   accent-color: var(--brand);
+}
+
+.cl-serious {
+  margin-top: 24px;
 }
 
 @media (max-width: 600px) {

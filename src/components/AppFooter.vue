@@ -21,7 +21,7 @@ const aboutLinks = computed(() => [
 // Several explore items point at real routes; the rest stay as placeholders.
 const exploreLinks = computed(() => [
   { key: 'write', label: t('footer.col_explore_1'), to: { name: 'write-review' } },
-  { key: 'add', label: t('footer.col_explore_2'), to: { name: 'add-place' } },
+  { key: 'add', label: t('footer.col_explore_2'), to: { name: 'add-sex-worker' } },
   { key: 'join', label: t('footer.col_explore_3'), onClick: openSignin },
   { key: 'tc', label: t('footer.col_explore_4'), to: { name: 'discover' } },
   { key: 'stories', label: t('footer.col_explore_6'), to: { name: 'travel-stories' } },
