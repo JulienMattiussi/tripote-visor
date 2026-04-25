@@ -57,40 +57,22 @@ describe('SearchResultsPage - global view', () => {
     closeLoginRequired();
   });
 
-  it('clicking "Show all" pushes to /search with categorie=hotel', async () => {
+  it('clicking "Show all" on the Hotels section navigates to /hotels', async () => {
     const wrapper = mount(SearchResultsPage, withRouter(router));
     await wrapper.find('.sr-show-all').trigger('click');
     await flushPromises();
-    expect(router.currentRoute.value.query.categorie).toBe('hotel');
-  });
-});
-
-describe('SearchResultsPage - filtered view', () => {
-  let router;
-  beforeEach(async () => {
-    setLocale('en');
-    router = await setupRouter('/search?categorie=hotel');
+    expect(router.currentRoute.value.name).toBe('hotels');
   });
 
-  it('renders only the requested category section', () => {
-    const wrapper = mount(SearchResultsPage, withRouter(router));
-    const titles = wrapper.findAll('.sr-section-title').map((t) => t.text());
-    expect(titles).toEqual(['Hotels']);
-  });
-
-  it('shows every fiche in the category (no 6-cap)', () => {
-    const wrapper = mount(SearchResultsPage, withRouter(router));
-    const expected = fiches.filter((f) => f.categorie === 'hotel').length;
-    expect(wrapper.findAll('.sr-card').length).toBe(expected);
-  });
-
-  it('renders a "Back to global search" button that drops the categorie filter', async () => {
-    const wrapper = mount(SearchResultsPage, withRouter(router));
-    const back = wrapper.find('.sr-back');
-    expect(back.exists()).toBe(true);
-    await back.trigger('click');
+  it('"Show all" forwards the active query to the listing page', async () => {
+    // "an" is a substring with > 6 hits in every category, so Hotels keeps its
+    // "Show all" link and the navigation reaches /hotels with q forwarded.
+    const r = await setupRouter('/search?q=an');
+    const wrapper = mount(SearchResultsPage, withRouter(r));
+    await wrapper.find('.sr-show-all').trigger('click');
     await flushPromises();
-    expect(router.currentRoute.value.query.categorie).toBeUndefined();
+    expect(r.currentRoute.value.name).toBe('hotels');
+    expect(r.currentRoute.value.query.q).toBe('an');
   });
 });
 
@@ -144,26 +126,26 @@ describe('HeroSearch submit', () => {
     await flushPromises();
     expect(router.currentRoute.value.name).toBe('search');
     expect(router.currentRoute.value.query.q).toBe('riad');
-    expect(router.currentRoute.value.query.categorie).toBeUndefined();
   });
 
-  it('adds categorie=hotel when submitting from the Hotels tab', async () => {
+  it('routes the Hotels tab directly to /hotels?q=...', async () => {
     const wrapper = mount(HeroSearch, withRouter(router));
     await wrapper.findAll('.tab')[1].trigger('click'); // Hotels
     await wrapper.find('input[type="text"]').setValue('paris');
     await wrapper.find('form').trigger('submit');
     await flushPromises();
+    expect(router.currentRoute.value.name).toBe('hotels');
     expect(router.currentRoute.value.query.q).toBe('paris');
-    expect(router.currentRoute.value.query.categorie).toBe('hotel');
   });
 
-  it('adds categorie=parc from the Parks tab and categorie=ruelle from Alleys', async () => {
+  it('routes the Parks tab to /parks and Alleys tab to /alleys', async () => {
     let wrapper = mount(HeroSearch, withRouter(router));
     await wrapper.findAll('.tab')[2].trigger('click'); // Parks
     await wrapper.find('input[type="text"]').setValue('vincennes');
     await wrapper.find('form').trigger('submit');
     await flushPromises();
-    expect(router.currentRoute.value.query.categorie).toBe('parc');
+    expect(router.currentRoute.value.name).toBe('parks');
+    expect(router.currentRoute.value.query.q).toBe('vincennes');
 
     router = await setupRouter('/');
     wrapper = mount(HeroSearch, withRouter(router));
@@ -171,7 +153,8 @@ describe('HeroSearch submit', () => {
     await wrapper.find('input[type="text"]').setValue('marais');
     await wrapper.find('form').trigger('submit');
     await flushPromises();
-    expect(router.currentRoute.value.query.categorie).toBe('ruelle');
+    expect(router.currentRoute.value.name).toBe('alleys');
+    expect(router.currentRoute.value.query.q).toBe('marais');
   });
 });
 

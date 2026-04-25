@@ -1,7 +1,8 @@
 <script setup>
-import { computed, ref } from 'vue';
+import { computed, ref, watch } from 'vue';
+import { useRoute, useRouter } from 'vue-router';
 import { t, formatAmount, locale } from '../i18n/store.js';
-import { LISTINGS_BY_TYPE } from '../data/listings.js';
+import fichesData from '../data/fiches.json';
 
 const props = defineProps({
   listingType: {
@@ -11,48 +12,89 @@ const props = defineProps({
   },
 });
 
-const isHotels = computed(() => props.listingType === 'hotels');
+const TYPE_TO_CAT = { hotels: 'hotel', parks: 'parc', alleys: 'ruelle' };
+const PER_PAGE_DEFAULT = 10;
 
+const router = useRouter();
+const route = useRoute();
+
+const isHotels = computed(() => props.listingType === 'hotels');
 const titleKey = computed(() => `listings.${props.listingType}_title`);
 const introKey = computed(() => `listings.${props.listingType}_intro`);
 
 const sortBy = ref('recommended');
-const query = ref('');
+const query = ref((route.query.q ?? '').toString());
 
-const baseListings = computed(() => LISTINGS_BY_TYPE[props.listingType] ?? []);
+watch(
+  () => route.query.q,
+  (q) => {
+    query.value = (q ?? '').toString();
+  },
+);
 
-const visibleListings = computed(() => {
-  const filtered = query.value.trim()
-    ? baseListings.value.filter((l) =>
-        l.location.toLowerCase().includes(query.value.trim().toLowerCase()),
-      )
-    : baseListings.value;
-  const priceOf = (l) => (isHotels.value ? l.pricePerNightEur : l.pricePerPersonEur);
+const baseFiches = computed(() => {
+  const cat = TYPE_TO_CAT[props.listingType];
+  return fichesData.filter((f) => f.categorie === cat);
+});
+
+const filteredFiches = computed(() => {
+  const q = query.value.trim().toLowerCase();
+  if (!q) return baseFiches.value;
+  return baseFiches.value.filter(
+    (f) =>
+      f.nom.toLowerCase().includes(q) ||
+      f.lieu.toLowerCase().includes(q) ||
+      (f.descriptif ?? []).some((line) => line.toLowerCase().includes(q)),
+  );
+});
+
+// Hour-stable PRNG (mulberry32). Seed = hours since epoch.
+const mulberry32 = (a) => () => {
+  a = (a + 0x6d2b79f5) | 0;
+  let t = Math.imul(a ^ (a >>> 15), 1 | a);
+  t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+  return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+};
+
+const shuffleStable = (arr, seed) => {
+  const out = [...arr];
+  const rng = mulberry32(seed);
+  for (let i = out.length - 1; i > 0; i--) {
+    const j = Math.floor(rng() * (i + 1));
+    [out[i], out[j]] = [out[j], out[i]];
+  }
+  return out;
+};
+
+const sortedFiches = computed(() => {
+  const list = filteredFiches.value;
   switch (sortBy.value) {
     case 'top_rated':
-      return [...filtered].sort((a, b) => b.rating - a.rating || b.reviews - a.reviews);
+      return [...list].sort((a, b) => b.note - a.note);
     case 'price_asc':
-      return [...filtered].sort((a, b) => priceOf(a) - priceOf(b));
+      return [...list].sort((a, b) => a.prix - b.prix);
     case 'price_desc':
-      return [...filtered].sort((a, b) => priceOf(b) - priceOf(a));
-    default:
-      return filtered;
+      return [...list].sort((a, b) => b.prix - a.prix);
+    default: {
+      const seed = Math.floor(Date.now() / 3_600_000);
+      return shuffleStable(list, seed);
+    }
   }
 });
 
-const formatReviews = (count) => count.toLocaleString(locale.value === 'fr' ? 'fr-FR' : 'en-US');
+const visibleFiches = computed(() => {
+  if (query.value.trim()) return sortedFiches.value;
+  return sortedFiches.value.slice(0, PER_PAGE_DEFAULT);
+});
 
-const formatDuration = (hours) =>
-  hours >= 24
-    ? t('listings.duration_days', { days: Math.round(hours / 24) })
-    : t('listings.duration', { hours });
+const formatReviews = (count) => count.toLocaleString(locale.value === 'fr' ? 'fr-FR' : 'en-US');
 
 const onSubmit = (e) => {
   e.preventDefault();
 };
 
-const onView = (listing) => {
-  alert(`${listing.name} ${t('common.sim_suffix')}`);
+const goFiche = (id) => {
+  router.push({ name: 'fiche', params: { id } });
 };
 </script>
 
@@ -78,9 +120,9 @@ const onView = (listing) => {
 
   <main class="container lst-main">
     <div class="lst-toolbar">
-      <span class="lst-count">{{
-        t('listings.results_count', { count: visibleListings.length })
-      }}</span>
+      <span class="lst-count">
+        {{ t('listings.results_count', { count: visibleFiches.length }) }}
+      </span>
       <label class="lst-sort">
         <span>{{ t('listings.sort_label') }}</span>
         <select v-model="sortBy">
@@ -92,42 +134,41 @@ const onView = (listing) => {
       </label>
     </div>
 
-    <p v-if="!visibleListings.length" class="lst-empty">{{ t('listings.empty_state') }}</p>
+    <p v-if="!visibleFiches.length" class="lst-empty">{{ t('listings.empty_state') }}</p>
 
     <ul v-else class="lst-grid">
-      <li v-for="listing in visibleListings" :key="listing.id" class="lst-card">
-        <div class="lst-card-thumb">
-          <img :src="listing.image" :alt="listing.name" loading="lazy" />
-        </div>
+      <li
+        v-for="f in visibleFiches"
+        :key="f.id"
+        class="lst-card"
+        tabindex="0"
+        role="link"
+        @click="goFiche(f.id)"
+        @keydown.enter="goFiche(f.id)"
+      >
+        <div class="lst-card-thumb" aria-hidden="true"></div>
         <div class="lst-card-body">
-          <h3 class="lst-card-name">{{ listing.name }}</h3>
-          <p class="lst-card-loc">{{ listing.location }}</p>
+          <h3 class="lst-card-name">{{ f.nom }}</h3>
+          <p class="lst-card-loc">{{ f.lieu }}</p>
           <div class="lst-card-rating">
             <span class="lst-stars" aria-hidden="true">
               <span
                 v-for="i in 5"
                 :key="i"
-                :class="['dot', { filled: i <= Math.round(listing.rating) }]"
+                :class="['dot', { filled: i <= Math.round(f.note) }]"
               ></span>
             </span>
-            <span class="lst-rating-num">{{ listing.rating.toFixed(1) }}</span>
-            <span class="lst-reviews">({{ formatReviews(listing.reviews) }})</span>
+            <span class="lst-rating-num">{{ f.note.toFixed(1) }}</span>
+            <span class="lst-reviews">({{ formatReviews(0) }})</span>
           </div>
           <div class="lst-card-foot">
-            <span v-if="isHotels" class="lst-price">
-              {{ t('listings.from_per_night', { amount: formatAmount(listing.pricePerNightEur) }) }}
+            <span class="lst-price">
+              {{
+                isHotels
+                  ? t('listings.from_per_night', { amount: formatAmount(f.prix) })
+                  : t('listings.from_per_person', { amount: formatAmount(f.prix) })
+              }}
             </span>
-            <template v-else>
-              <span class="lst-duration">{{ formatDuration(listing.durationHours) }}</span>
-              <span class="lst-price">
-                {{
-                  t('listings.from_per_person', { amount: formatAmount(listing.pricePerPersonEur) })
-                }}
-              </span>
-            </template>
-            <button type="button" class="lst-view-btn" @click="onView(listing)">
-              {{ t('listings.view_details') }}
-            </button>
           </div>
         </div>
       </li>
@@ -245,25 +286,22 @@ const onView = (listing) => {
   border: 1px solid var(--border);
   border-radius: var(--radius);
   overflow: hidden;
+  cursor: pointer;
   transition:
     box-shadow 0.2s ease,
     transform 0.2s ease;
 }
 
-.lst-card:hover {
+.lst-card:hover,
+.lst-card:focus-visible {
   box-shadow: var(--shadow-hover);
   transform: translateY(-2px);
+  outline: none;
 }
 
 .lst-card-thumb {
   aspect-ratio: 4 / 3;
-  overflow: hidden;
-}
-
-.lst-card-thumb img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  background: var(--surface);
 }
 
 .lst-card-body {
@@ -333,25 +371,6 @@ const onView = (listing) => {
   color: var(--brand-dark);
 }
 
-.lst-duration {
-  font-size: 13px;
-  color: var(--text-muted);
-}
-
-.lst-view-btn {
-  margin-left: auto;
-  padding: 8px 18px;
-  border-radius: 999px;
-  background: var(--brand);
-  color: var(--on-dark);
-  font-weight: 700;
-  font-size: 13px;
-}
-
-.lst-view-btn:hover {
-  background: var(--brand-hover);
-}
-
 @media (max-width: 700px) {
   .lst-card {
     grid-template-columns: 1fr;
@@ -362,9 +381,6 @@ const onView = (listing) => {
   .lst-card-foot {
     flex-direction: column;
     align-items: flex-start;
-  }
-  .lst-view-btn {
-    margin-left: 0;
   }
 }
 </style>

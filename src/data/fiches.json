@@ -1,7 +1,7 @@
 [
   {
     "id": "mireille",
-    "nom": "Mireille",
+    "nom": "Mireille la folle",
     "age": 50,
     "lieu": "Paris 11e",
     "categorie": "hotel",
@@ -22,11 +22,13 @@
     "payment_cash": true,
     "payment_check": true,
     "payment_card": true,
-    "payment_paypal": false
+    "payment_paypal": false,
+    "prix": 155,
+    "note": 4.3
   },
   {
-    "id": "aicha",
-    "nom": "Aïcha",
+    "id": "mehdi",
+    "nom": "Mehdi",
     "age": 42,
     "lieu": "Marseille (Le Vieux-Port)",
     "categorie": "hotel",
@@ -34,7 +36,7 @@
     "photo": "",
     "descriptif": [
       "Plus de quinze ans dans la maison.",
-      "Discrète, attentionnée.",
+      "Discret, attentionné.",
       "Sa spécialité : le café à la cardamome offert à l'arrivée.",
       "Petit salon en mosaïque, lumière tamisée.",
       "Ne compte jamais son temps."
@@ -47,7 +49,9 @@
     "payment_cash": true,
     "payment_check": true,
     "payment_card": true,
-    "payment_paypal": false
+    "payment_paypal": false,
+    "prix": 230,
+    "note": 4.8
   },
   {
     "id": "lucia",
@@ -71,11 +75,13 @@
     "payment_cash": false,
     "payment_check": false,
     "payment_card": true,
-    "payment_paypal": false
+    "payment_paypal": false,
+    "prix": 265,
+    "note": 4.1
   },
   {
     "id": "brigitte",
-    "nom": "Brigitte",
+    "nom": "La grande Brigitte",
     "age": 61,
     "lieu": "Strasbourg",
     "categorie": "hotel",
@@ -96,19 +102,21 @@
     "payment_cash": true,
     "payment_check": false,
     "payment_card": false,
-    "payment_paypal": false
+    "payment_paypal": false,
+    "prix": 150,
+    "note": 3.5
   },
   {
-    "id": "yasmina",
-    "nom": "Yasmina",
+    "id": "yacine",
+    "nom": "Yacine",
     "age": 33,
     "lieu": "Bordeaux",
     "categorie": "hotel",
     "horaires_id": "ouverture_tardive",
     "photo": "",
     "descriptif": [
-      "Jeune mais déjà très demandée.",
-      "Charmante, parle quatre langues.",
+      "Jeune mais déjà très demandé.",
+      "Charmant, parle quatre langues.",
       "On revient surtout pour son \"effet hammam\".",
       "Reçoit dans un loft épuré près des quais."
     ],
@@ -120,11 +128,13 @@
     "payment_cash": true,
     "payment_check": true,
     "payment_card": false,
-    "payment_paypal": false
+    "payment_paypal": false,
+    "prix": 60,
+    "note": 4.4
   },
   {
     "id": "carmen",
-    "nom": "Carmen",
+    "nom": "Carmen la diva",
     "age": 47,
     "lieu": "Nice (Vieux Nice)",
     "categorie": "hotel",
@@ -145,19 +155,21 @@
     "payment_cash": false,
     "payment_check": false,
     "payment_card": true,
-    "payment_paypal": true
+    "payment_paypal": true,
+    "prix": 175,
+    "note": 3.7
   },
   {
-    "id": "magdalena",
-    "nom": "Magdalena",
+    "id": "adam",
+    "nom": "Adam",
     "age": 29,
     "lieu": "Lille",
     "categorie": "hotel",
     "horaires_id": "week_end_nuit",
     "photo": "",
     "descriptif": [
-      "Récemment installée mais déjà fidélisée par sa clientèle.",
-      "Calme, posée, à l'écoute.",
+      "Récemment installé mais déjà fidélisé par sa clientèle.",
+      "Calme, posé, à l'écoute.",
       "Sa technique de l'oreiller chauffant a fait sa réputation.",
       "Studio chaleureux dans un immeuble de briques rouges."
     ],
@@ -169,7 +181,9 @@
     "payment_cash": true,
     "payment_check": true,
     "payment_card": false,
-    "payment_paypal": false
+    "payment_paypal": false,
+    "prix": 190,
+    "note": 4.5
   },
   {
     "id": "soraya",
@@ -194,7 +208,9 @@
     "payment_cash": true,
     "payment_check": false,
     "payment_card": false,
-    "payment_paypal": false
+    "payment_paypal": false,
+    "prix": 30,
+    "note": 4.5
   },
   {
     "id": "esperanza",
@@ -218,11 +234,13 @@
     "payment_cash": true,
     "payment_check": false,
     "payment_card": true,
-    "payment_paypal": false
+    "payment_paypal": false,
+    "prix": 55,
+    "note": 4.4
   },
   {
     "id": "ingrid",
-    "nom": "Ingrid",
+    "nom": "Ingrid la magnifique",
     "age": 56,
     "lieu": "Reims",
     "categorie": "hotel",
@@ -243,11 +261,13 @@
     "payment_cash": false,
     "payment_check": false,
     "payment_card": false,
-    "payment_paypal": true
+    "payment_paypal": true,
+    "prix": 265,
+    "note": 4.5
   },
   {
-    "id": "mei-ling",
-    "nom": "Mei-Ling",
+    "id": "wei",
+    "nom": "Wei",
     "age": 41,
     "lieu": "Paris 13e",
     "categorie": "hotel",
@@ -255,7 +275,7 @@
     "photo": "",
     "descriptif": [
       "Quinze ans dans le quartier.",
-      "Gracieuse, ponctuelle.",
+      "Élégant, ponctuel.",
       "Son thé au jasmin de bienvenue est apprécié de tous.",
       "Reçoit dans un studio impeccable, esthétique épurée.",
       "Ne déçoit jamais."
@@ -268,19 +288,21 @@
     "payment_cash": true,
     "payment_check": false,
     "payment_card": false,
-    "payment_paypal": false
+    "payment_paypal": false,
+    "prix": 25,
+    "note": 3.6
   },
   {
-    "id": "ayse",
-    "nom": "Ayşe",
+    "id": "murat",
+    "nom": "Murat",
     "age": 45,
     "lieu": "Mulhouse",
     "categorie": "hotel",
     "horaires_id": "permanence_nocturne",
     "photo": "",
     "descriptif": [
-      "Vingt ans qu'elle exerce.",
-      "Énergique, prévenante.",
+      "Vingt ans qu'il exerce.",
+      "Énergique, prévenant.",
       "Son \"massage à la rose\" est devenu une référence locale.",
       "Petit appartement coloré, parfum d'encens."
     ],
@@ -292,7 +314,9 @@
     "payment_cash": true,
     "payment_check": true,
     "payment_card": false,
-    "payment_paypal": true
+    "payment_paypal": true,
+    "prix": 75,
+    "note": 4.4
   },
   {
     "id": "solange",
@@ -317,20 +341,22 @@
     "payment_cash": true,
     "payment_check": false,
     "payment_card": false,
-    "payment_paypal": true
+    "payment_paypal": true,
+    "prix": 165,
+    "note": 4.3
   },
   {
-    "id": "kateryna",
-    "nom": "Kateryna",
+    "id": "andriy",
+    "nom": "Andriy",
     "age": 31,
     "lieu": "Nantes",
     "categorie": "hotel",
     "horaires_id": "crepuscule_aube",
     "photo": "",
     "descriptif": [
-      "Récemment arrivée mais s'est imposée vite.",
-      "Sportive, dynamique, rieuse.",
-      "Connue pour sa fameuse \"prise du judoka\".",
+      "Récemment arrivé mais s'est imposé vite.",
+      "Sportif, dynamique, rieur.",
+      "Connu pour sa fameuse \"prise du judoka\".",
       "Studio moderne près de l'Erdre."
     ],
     "has_site": true,
@@ -341,7 +367,9 @@
     "payment_cash": true,
     "payment_check": true,
     "payment_card": false,
-    "payment_paypal": false
+    "payment_paypal": false,
+    "prix": 80,
+    "note": 3.6
   },
   {
     "id": "layla",
@@ -365,11 +393,13 @@
     "payment_cash": true,
     "payment_check": false,
     "payment_card": false,
-    "payment_paypal": false
+    "payment_paypal": false,
+    "prix": 175,
+    "note": 3.7
   },
   {
     "id": "wilhelmine",
-    "nom": "Wilhelmine",
+    "nom": "Wilhelmine dite « Frau Wim »",
     "age": 62,
     "lieu": "Colmar",
     "categorie": "hotel",
@@ -390,7 +420,9 @@
     "payment_cash": true,
     "payment_check": true,
     "payment_card": true,
-    "payment_paypal": false
+    "payment_paypal": false,
+    "prix": 400,
+    "note": 4.7
   },
   {
     "id": "renata",
@@ -414,7 +446,9 @@
     "payment_cash": true,
     "payment_check": false,
     "payment_card": true,
-    "payment_paypal": false
+    "payment_paypal": false,
+    "prix": 350,
+    "note": 3.6
   },
   {
     "id": "fatou",
@@ -439,7 +473,9 @@
     "payment_cash": true,
     "payment_check": false,
     "payment_card": false,
-    "payment_paypal": false
+    "payment_paypal": false,
+    "prix": 35,
+    "note": 3.6
   },
   {
     "id": "tatiana",
@@ -464,7 +500,9 @@
     "payment_cash": true,
     "payment_check": false,
     "payment_card": true,
-    "payment_paypal": true
+    "payment_paypal": true,
+    "prix": 335,
+    "note": 4.9
   },
   {
     "id": "adele",
@@ -488,11 +526,13 @@
     "payment_cash": false,
     "payment_check": false,
     "payment_card": true,
-    "payment_paypal": false
+    "payment_paypal": false,
+    "prix": 50,
+    "note": 3.7
   },
   {
-    "id": "mariama",
-    "nom": "Mariama",
+    "id": "issa",
+    "nom": "Issa",
     "age": 28,
     "lieu": "Le Havre",
     "categorie": "hotel",
@@ -500,7 +540,7 @@
     "photo": "",
     "descriptif": [
       "Six ans de métier.",
-      "Pétillante, joyeuse, contagieuse.",
+      "Pétillant, joyeux, contagieux.",
       "Son rituel du \"bisou normand\" séduit les visiteurs.",
       "Studio lumineux face au port."
     ],
@@ -512,7 +552,9 @@
     "payment_cash": true,
     "payment_check": false,
     "payment_card": true,
-    "payment_paypal": true
+    "payment_paypal": true,
+    "prix": 85,
+    "note": 4.7
   },
   {
     "id": "despina",
@@ -536,7 +578,9 @@
     "payment_cash": true,
     "payment_check": false,
     "payment_card": true,
-    "payment_paypal": false
+    "payment_paypal": false,
+    "prix": 155,
+    "note": 4.5
   },
   {
     "id": "klara",
@@ -560,11 +604,13 @@
     "payment_cash": false,
     "payment_check": false,
     "payment_card": true,
-    "payment_paypal": false
+    "payment_paypal": false,
+    "prix": 395,
+    "note": 4.2
   },
   {
     "id": "bernadette",
-    "nom": "Bernadette",
+    "nom": "Tante Bernadette",
     "age": 71,
     "lieu": "Vichy",
     "categorie": "hotel",
@@ -585,7 +631,9 @@
     "payment_cash": true,
     "payment_check": true,
     "payment_card": false,
-    "payment_paypal": true
+    "payment_paypal": true,
+    "prix": 95,
+    "note": 4.6
   },
   {
     "id": "anjali",
@@ -609,7 +657,9 @@
     "payment_cash": true,
     "payment_check": true,
     "payment_card": false,
-    "payment_paypal": false
+    "payment_paypal": false,
+    "prix": 125,
+    "note": 4.6
   },
   {
     "id": "khadija",
@@ -633,11 +683,13 @@
     "payment_cash": true,
     "payment_check": false,
     "payment_card": true,
-    "payment_paypal": false
+    "payment_paypal": false,
+    "prix": 385,
+    "note": 4.7
   },
   {
     "id": "olga",
-    "nom": "Olga",
+    "nom": "Olga l'implacable",
     "age": 58,
     "lieu": "Brest",
     "categorie": "hotel",
@@ -657,11 +709,13 @@
     "payment_cash": true,
     "payment_check": true,
     "payment_card": false,
-    "payment_paypal": true
+    "payment_paypal": true,
+    "prix": 235,
+    "note": 4.7
   },
   {
     "id": "esmeralda",
-    "nom": "Esmeralda",
+    "nom": "Esmeralda la fougueuse",
     "age": 26,
     "lieu": "Perpignan",
     "categorie": "hotel",
@@ -681,11 +735,13 @@
     "payment_cash": true,
     "payment_check": false,
     "payment_card": false,
-    "payment_paypal": false
+    "payment_paypal": false,
+    "prix": 55,
+    "note": 4.2
   },
   {
     "id": "helga",
-    "nom": "Helga",
+    "nom": "Helga l'ours",
     "age": 64,
     "lieu": "Saint-Malo",
     "categorie": "hotel",
@@ -706,7 +762,9 @@
     "payment_cash": true,
     "payment_check": false,
     "payment_card": true,
-    "payment_paypal": true
+    "payment_paypal": true,
+    "prix": 330,
+    "note": 3.7
   },
   {
     "id": "lupita",
@@ -730,7 +788,9 @@
     "payment_cash": true,
     "payment_check": false,
     "payment_card": false,
-    "payment_paypal": false
+    "payment_paypal": false,
+    "prix": 225,
+    "note": 4.2
   },
   {
     "id": "sigrid",
@@ -754,7 +814,9 @@
     "payment_cash": true,
     "payment_check": false,
     "payment_card": false,
-    "payment_paypal": false
+    "payment_paypal": false,
+    "prix": 90,
+    "note": 5.0
   },
   {
     "id": "hiroko",
@@ -778,11 +840,13 @@
     "payment_cash": true,
     "payment_check": false,
     "payment_card": true,
-    "payment_paypal": true
+    "payment_paypal": true,
+    "prix": 375,
+    "note": 4.7
   },
   {
     "id": "josephine",
-    "nom": "Joséphine",
+    "nom": "Joséphine la doyenne",
     "age": 75,
     "lieu": "Limoges",
     "categorie": "hotel",
@@ -803,7 +867,9 @@
     "payment_cash": true,
     "payment_check": false,
     "payment_card": true,
-    "payment_paypal": false
+    "payment_paypal": false,
+    "prix": 45,
+    "note": 3.9
   },
   {
     "id": "latifa",
@@ -827,11 +893,13 @@
     "payment_cash": true,
     "payment_check": false,
     "payment_card": true,
-    "payment_paypal": false
+    "payment_paypal": false,
+    "prix": 35,
+    "note": 3.8
   },
   {
     "id": "roger",
-    "nom": "Roger",
+    "nom": "Roger le titi",
     "age": 68,
     "lieu": "Paris (Pigalle)",
     "categorie": "ruelle",
@@ -852,11 +920,13 @@
     "payment_cash": true,
     "payment_check": false,
     "payment_card": true,
-    "payment_paypal": true
+    "payment_paypal": true,
+    "prix": 105,
+    "note": 4.4
   },
   {
     "id": "suzanne",
-    "nom": "Suzanne",
+    "nom": "Suzanne dite « la Baronne »",
     "age": 73,
     "lieu": "Paris (Marais)",
     "categorie": "ruelle",
@@ -877,11 +947,13 @@
     "payment_cash": true,
     "payment_check": false,
     "payment_card": false,
-    "payment_paypal": false
+    "payment_paypal": false,
+    "prix": 180,
+    "note": 4.5
   },
   {
     "id": "tariq",
-    "nom": "Tariq",
+    "nom": "Tariq le passe-partout",
     "age": 35,
     "lieu": "Paris (Belleville)",
     "categorie": "ruelle",
@@ -901,11 +973,13 @@
     "payment_cash": true,
     "payment_check": false,
     "payment_card": false,
-    "payment_paypal": false
+    "payment_paypal": false,
+    "prix": 145,
+    "note": 3.9
   },
   {
     "id": "yvette",
-    "nom": "Yvette",
+    "nom": "Yvette la traboulière",
     "age": 54,
     "lieu": "Lyon (Croix-Rousse)",
     "categorie": "ruelle",
@@ -926,19 +1000,21 @@
     "payment_cash": true,
     "payment_check": true,
     "payment_card": true,
-    "payment_paypal": false
+    "payment_paypal": false,
+    "prix": 200,
+    "note": 4.3
   },
   {
-    "id": "karim",
-    "nom": "Karim",
+    "id": "salma",
+    "nom": "Salma",
     "age": 42,
     "lieu": "Marseille (Le Panier)",
     "categorie": "ruelle",
     "horaires_id": "ouverture_tardive",
     "photo": "",
     "descriptif": [
-      "Vingt ans qu'il tient le quartier.",
-      "Solide, fiable, blagueur.",
+      "Vingt ans qu'elle tient le quartier.",
+      "Solide, fiable, blagueuse.",
       "Son célèbre \"détour par les marches\" mérite le déplacement.",
       "Vous reçoit dans une placette fleurie."
     ],
@@ -950,7 +1026,9 @@
     "payment_cash": true,
     "payment_check": true,
     "payment_card": false,
-    "payment_paypal": false
+    "payment_paypal": false,
+    "prix": 390,
+    "note": 3.7
   },
   {
     "id": "nadia",
@@ -974,11 +1052,13 @@
     "payment_cash": true,
     "payment_check": false,
     "payment_card": false,
-    "payment_paypal": false
+    "payment_paypal": false,
+    "prix": 180,
+    "note": 3.7
   },
   {
-    "id": "vincenzo",
-    "nom": "Vincenzo",
+    "id": "giulia",
+    "nom": "Giulia",
     "age": 50,
     "lieu": "Nice (Vieux Nice)",
     "categorie": "ruelle",
@@ -998,11 +1078,13 @@
     "payment_cash": true,
     "payment_check": false,
     "payment_card": false,
-    "payment_paypal": false
+    "payment_paypal": false,
+    "prix": 65,
+    "note": 4.4
   },
   {
     "id": "boris",
-    "nom": "Boris",
+    "nom": "Boris le grognon",
     "age": 57,
     "lieu": "Strasbourg (Petite France)",
     "categorie": "ruelle",
@@ -1022,7 +1104,9 @@
     "payment_cash": true,
     "payment_check": false,
     "payment_card": false,
-    "payment_paypal": false
+    "payment_paypal": false,
+    "prix": 230,
+    "note": 5.0
   },
   {
     "id": "svetlana",
@@ -1046,11 +1130,13 @@
     "payment_cash": true,
     "payment_check": false,
     "payment_card": true,
-    "payment_paypal": true
+    "payment_paypal": true,
+    "prix": 65,
+    "note": 4.5
   },
   {
-    "id": "mehmet",
-    "nom": "Mehmet",
+    "id": "aylin",
+    "nom": "Aylin",
     "age": 46,
     "lieu": "Roubaix",
     "categorie": "ruelle",
@@ -1058,7 +1144,7 @@
     "photo": "",
     "descriptif": [
       "Vingt ans dans la rue.",
-      "Solide gaillard, malin.",
+      "Solide, maligne.",
       "Sa visite des arrière-cours reste une de ses meilleures.",
       "Hall d'immeuble en briques."
     ],
@@ -1070,7 +1156,9 @@
     "payment_cash": true,
     "payment_check": false,
     "payment_card": false,
-    "payment_paypal": true
+    "payment_paypal": true,
+    "prix": 30,
+    "note": 3.7
   },
   {
     "id": "niamh",
@@ -1094,11 +1182,13 @@
     "payment_cash": true,
     "payment_check": false,
     "payment_card": false,
-    "payment_paypal": false
+    "payment_paypal": false,
+    "prix": 185,
+    "note": 4.9
   },
   {
     "id": "anatole",
-    "nom": "Anatole",
+    "nom": "Anatole le philosophe",
     "age": 70,
     "lieu": "Paris 5e",
     "categorie": "ruelle",
@@ -1118,7 +1208,9 @@
     "payment_cash": false,
     "payment_check": false,
     "payment_card": true,
-    "payment_paypal": false
+    "payment_paypal": false,
+    "prix": 180,
+    "note": 4.4
   },
   {
     "id": "awa",
@@ -1142,11 +1234,13 @@
     "payment_cash": false,
     "payment_check": false,
     "payment_card": true,
-    "payment_paypal": true
+    "payment_paypal": true,
+    "prix": 215,
+    "note": 4.9
   },
   {
     "id": "pietro",
-    "nom": "Pietro",
+    "nom": "Pietro le gentleman",
     "age": 61,
     "lieu": "Paris 4e",
     "categorie": "ruelle",
@@ -1166,19 +1260,21 @@
     "payment_cash": true,
     "payment_check": false,
     "payment_card": false,
-    "payment_paypal": true
+    "payment_paypal": true,
+    "prix": 375,
+    "note": 3.9
   },
   {
-    "id": "reza",
-    "nom": "Reza",
+    "id": "roya",
+    "nom": "Roya",
     "age": 38,
     "lieu": "Paris 17e",
     "categorie": "ruelle",
     "horaires_id": "permanence_nocturne",
     "photo": "",
     "descriptif": [
-      "Treize ans qu'il tient ses quartiers.",
-      "Calme, fiable, méticuleux.",
+      "Treize ans qu'elle tient ses quartiers.",
+      "Calme, fiable, méticuleuse.",
       "Son fameux \"raccourci du marché\" évite les regards.",
       "Hall propre et discret."
     ],
@@ -1190,11 +1286,13 @@
     "payment_cash": true,
     "payment_check": false,
     "payment_card": false,
-    "payment_paypal": false
+    "payment_paypal": false,
+    "prix": 290,
+    "note": 4.2
   },
   {
     "id": "lucette",
-    "nom": "Lucette",
+    "nom": "Mère Lucette",
     "age": 64,
     "lieu": "Fort-de-France",
     "categorie": "ruelle",
@@ -1214,11 +1312,13 @@
     "payment_cash": true,
     "payment_check": false,
     "payment_card": true,
-    "payment_paypal": false
+    "payment_paypal": false,
+    "prix": 355,
+    "note": 4.5
   },
   {
-    "id": "yanko",
-    "nom": "Yanko",
+    "id": "mila",
+    "nom": "Mila",
     "age": 44,
     "lieu": "Toulouse",
     "categorie": "ruelle",
@@ -1238,7 +1338,9 @@
     "payment_cash": false,
     "payment_check": false,
     "payment_card": true,
-    "payment_paypal": false
+    "payment_paypal": false,
+    "prix": 290,
+    "note": 4.5
   },
   {
     "id": "margaret",
@@ -1263,11 +1365,13 @@
     "payment_cash": true,
     "payment_check": false,
     "payment_card": false,
-    "payment_paypal": false
+    "payment_paypal": false,
+    "prix": 340,
+    "note": 3.9
   },
   {
-    "id": "kostas",
-    "nom": "Kostas",
+    "id": "sofia",
+    "nom": "Sofia",
     "age": 53,
     "lieu": "Marseille",
     "categorie": "ruelle",
@@ -1287,7 +1391,9 @@
     "payment_cash": true,
     "payment_check": true,
     "payment_card": true,
-    "payment_paypal": false
+    "payment_paypal": false,
+    "prix": 390,
+    "note": 5.0
   },
   {
     "id": "zeynep",
@@ -1311,19 +1417,21 @@
     "payment_cash": true,
     "payment_check": true,
     "payment_card": true,
-    "payment_paypal": true
+    "payment_paypal": true,
+    "prix": 335,
+    "note": 4.6
   },
   {
-    "id": "amadou",
-    "nom": "Amadou",
+    "id": "bineta",
+    "nom": "Bineta",
     "age": 41,
     "lieu": "Pantin",
     "categorie": "ruelle",
     "horaires_id": "permanence_nocturne",
     "photo": "",
     "descriptif": [
-      "Quinze ans qu'il fait le coin.",
-      "Patient, posé, fidèle.",
+      "Quinze ans qu'elle fait le coin.",
+      "Patiente, posée, fidèle.",
       "Sa visite à l'aube est rare mais inoubliable.",
       "Cour calme, bien tenue."
     ],
@@ -1335,7 +1443,9 @@
     "payment_cash": true,
     "payment_check": false,
     "payment_card": false,
-    "payment_paypal": true
+    "payment_paypal": true,
+    "prix": 375,
+    "note": 4.0
   },
   {
     "id": "carla",
@@ -1360,7 +1470,9 @@
     "payment_cash": true,
     "payment_check": false,
     "payment_card": true,
-    "payment_paypal": true
+    "payment_paypal": true,
+    "prix": 345,
+    "note": 3.6
   },
   {
     "id": "min-ji",
@@ -1384,11 +1496,13 @@
     "payment_cash": false,
     "payment_check": false,
     "payment_card": true,
-    "payment_paypal": true
+    "payment_paypal": true,
+    "prix": 150,
+    "note": 3.9
   },
   {
-    "id": "joaquim",
-    "nom": "Joaquim",
+    "id": "maialen",
+    "nom": "Maialen",
     "age": 49,
     "lieu": "Bayonne",
     "categorie": "ruelle",
@@ -1396,7 +1510,7 @@
     "photo": "",
     "descriptif": [
       "Vingt-deux ans dans la vieille ville.",
-      "Voix grave, pas pressé.",
+      "Voix grave, jamais pressée.",
       "Son célèbre \"verre de patxaran à l'arrivée\" met dans l'ambiance.",
       "Petit hall basque, géraniums rouges."
     ],
@@ -1408,11 +1522,13 @@
     "payment_cash": true,
     "payment_check": false,
     "payment_card": false,
-    "payment_paypal": false
+    "payment_paypal": false,
+    "prix": 320,
+    "note": 4.0
   },
   {
     "id": "henri",
-    "nom": "Henri",
+    "nom": "Henri le vétéran",
     "age": 78,
     "lieu": "Saint-Étienne",
     "categorie": "ruelle",
@@ -1433,7 +1549,9 @@
     "payment_cash": false,
     "payment_check": true,
     "payment_card": true,
-    "payment_paypal": false
+    "payment_paypal": false,
+    "prix": 355,
+    "note": 3.6
   },
   {
     "id": "priya",
@@ -1457,11 +1575,13 @@
     "payment_cash": true,
     "payment_check": false,
     "payment_card": false,
-    "payment_paypal": true
+    "payment_paypal": true,
+    "prix": 50,
+    "note": 3.7
   },
   {
-    "id": "vladimir",
-    "nom": "Vladimir",
+    "id": "larissa",
+    "nom": "Larissa",
     "age": 55,
     "lieu": "Paris 19e",
     "categorie": "ruelle",
@@ -1469,7 +1589,7 @@
     "photo": "",
     "descriptif": [
       "Vingt-cinq ans dans le 19e.",
-      "Imposant, courtois, jamais à court.",
+      "Imposante, courtoise, jamais à court.",
       "Sa fameuse \"montée d'escalier\" est plus longue qu'on croit.",
       "Hall d'immeuble austère, lumière jaune."
     ],
@@ -1481,7 +1601,9 @@
     "payment_cash": true,
     "payment_check": true,
     "payment_card": true,
-    "payment_paypal": false
+    "payment_paypal": false,
+    "prix": 270,
+    "note": 4.5
   },
   {
     "id": "doris",
@@ -1505,7 +1627,9 @@
     "payment_cash": true,
     "payment_check": false,
     "payment_card": false,
-    "payment_paypal": false
+    "payment_paypal": false,
+    "prix": 210,
+    "note": 4.9
   },
   {
     "id": "behnam",
@@ -1529,7 +1653,9 @@
     "payment_cash": true,
     "payment_check": false,
     "payment_card": false,
-    "payment_paypal": true
+    "payment_paypal": true,
+    "prix": 125,
+    "note": 4.5
   },
   {
     "id": "linh",
@@ -1553,11 +1679,13 @@
     "payment_cash": true,
     "payment_check": false,
     "payment_card": false,
-    "payment_paypal": false
+    "payment_paypal": false,
+    "prix": 195,
+    "note": 3.6
   },
   {
     "id": "astrid",
-    "nom": "Astrid",
+    "nom": "Astrid la farceuse",
     "age": 60,
     "lieu": "Lille",
     "categorie": "ruelle",
@@ -1577,7 +1705,9 @@
     "payment_cash": false,
     "payment_check": false,
     "payment_card": false,
-    "payment_paypal": true
+    "payment_paypal": true,
+    "prix": 95,
+    "note": 4.7
   },
   {
     "id": "soledad",
@@ -1601,7 +1731,9 @@
     "payment_cash": true,
     "payment_check": false,
     "payment_card": true,
-    "payment_paypal": false
+    "payment_paypal": false,
+    "prix": 340,
+    "note": 4.6
   },
   {
     "id": "colette",
@@ -1626,7 +1758,9 @@
     "payment_cash": true,
     "payment_check": false,
     "payment_card": false,
-    "payment_paypal": false
+    "payment_paypal": false,
+    "prix": 25,
+    "note": 4.7
   },
   {
     "id": "aminata",
@@ -1650,7 +1784,9 @@
     "payment_cash": false,
     "payment_check": false,
     "payment_card": true,
-    "payment_paypal": false
+    "payment_paypal": false,
+    "prix": 145,
+    "note": 3.6
   },
   {
     "id": "geraldine",
@@ -1674,19 +1810,21 @@
     "payment_cash": true,
     "payment_check": false,
     "payment_card": false,
-    "payment_paypal": false
+    "payment_paypal": false,
+    "prix": 275,
+    "note": 4.3
   },
   {
-    "id": "ahmed",
-    "nom": "Ahmed",
+    "id": "sabrina",
+    "nom": "Sabrina",
     "age": 45,
     "lieu": "Vincennes",
     "categorie": "parc",
     "horaires_id": "fin_dapres_midi",
     "photo": "",
     "descriptif": [
-      "Vingt ans qu'il fait les allées du bois.",
-      "Marcheur méthodique, jamais essoufflé.",
+      "Vingt ans qu'elle fait les allées du bois.",
+      "Marcheuse méthodique, jamais essoufflée.",
       "Son fameux \"détour par le donjon\" est conseillé.",
       "Banc isolé, lumière rasante du soir."
     ],
@@ -1698,7 +1836,9 @@
     "payment_cash": true,
     "payment_check": false,
     "payment_card": true,
-    "payment_paypal": false
+    "payment_paypal": false,
+    "prix": 380,
+    "note": 4.3
   },
   {
     "id": "pilar",
@@ -1722,11 +1862,13 @@
     "payment_cash": false,
     "payment_check": false,
     "payment_card": true,
-    "payment_paypal": false
+    "payment_paypal": false,
+    "prix": 335,
+    "note": 4.5
   },
   {
-    "id": "magnus",
-    "nom": "Magnus",
+    "id": "ida",
+    "nom": "Ida",
     "age": 38,
     "lieu": "Boulogne (parc)",
     "categorie": "parc",
@@ -1734,7 +1876,7 @@
     "photo": "",
     "descriptif": [
       "Treize ans dans le bois.",
-      "Grand, blond, rassurant.",
+      "Grande, blonde, rassurante.",
       "Sa balade au lac inférieur est une institution.",
       "Vous attend près du kiosque."
     ],
@@ -1746,7 +1888,9 @@
     "payment_cash": true,
     "payment_check": false,
     "payment_card": false,
-    "payment_paypal": false
+    "payment_paypal": false,
+    "prix": 235,
+    "note": 3.9
   },
   {
     "id": "marie-josee",
@@ -1771,19 +1915,21 @@
     "payment_cash": true,
     "payment_check": false,
     "payment_card": false,
-    "payment_paypal": false
+    "payment_paypal": false,
+    "prix": 170,
+    "note": 4.9
   },
   {
-    "id": "jamal",
-    "nom": "Jamal",
+    "id": "rania",
+    "nom": "Rania",
     "age": 33,
     "lieu": "Bagatelle",
     "categorie": "parc",
     "horaires_id": "fin_dapres_midi",
     "photo": "",
     "descriptif": [
-      "Onze ans qu'il fréquente les allées.",
-      "Jovial, fort en gueule, tendre.",
+      "Onze ans qu'elle fréquente les allées.",
+      "Joviale, forte en gueule, tendre.",
       "Sa fameuse \"halte à la roseraie\" est devenue un classique.",
       "Banc en bois, parfum des roses anciennes."
     ],
@@ -1795,7 +1941,9 @@
     "payment_cash": false,
     "payment_check": false,
     "payment_card": true,
-    "payment_paypal": false
+    "payment_paypal": false,
+    "prix": 125,
+    "note": 4.3
   },
   {
     "id": "brigida",
@@ -1819,11 +1967,13 @@
     "payment_cash": true,
     "payment_check": false,
     "payment_card": true,
-    "payment_paypal": true
+    "payment_paypal": true,
+    "prix": 230,
+    "note": 5.0
   },
   {
-    "id": "ricardo",
-    "nom": "Ricardo",
+    "id": "gabriela",
+    "nom": "Gabriela",
     "age": 51,
     "lieu": "Toulouse (Compans-Caffarelli)",
     "categorie": "parc",
@@ -1831,7 +1981,7 @@
     "photo": "",
     "descriptif": [
       "Vingt ans dans le parc.",
-      "Latin lover de service, mais vraiment professionnel.",
+      "Tempérament latin, professionnelle jusqu'au bout des ongles.",
       "Son détour près du jardin japonais est mythique.",
       "Banc isolé, lanternes en pierre."
     ],
@@ -1843,7 +1993,9 @@
     "payment_cash": true,
     "payment_check": false,
     "payment_card": true,
-    "payment_paypal": false
+    "payment_paypal": false,
+    "prix": 215,
+    "note": 3.7
   },
   {
     "id": "anouk",
@@ -1867,19 +2019,21 @@
     "payment_cash": true,
     "payment_check": true,
     "payment_card": true,
-    "payment_paypal": false
+    "payment_paypal": false,
+    "prix": 210,
+    "note": 3.6
   },
   {
-    "id": "dimitri",
-    "nom": "Dimitri",
+    "id": "daria",
+    "nom": "Daria",
     "age": 42,
     "lieu": "Saint-Germain-en-Laye",
     "categorie": "parc",
     "horaires_id": "fin_dapres_midi",
     "photo": "",
     "descriptif": [
-      "Dix-huit ans qu'il connaît la grande terrasse.",
-      "Grand gabarit, voix posée.",
+      "Dix-huit ans qu'elle connaît la grande terrasse.",
+      "Grande stature, voix posée.",
       "Sa pause au point de vue est devenue mythique.",
       "Banc en pierre, Paris au loin."
     ],
@@ -1891,7 +2045,9 @@
     "payment_cash": false,
     "payment_check": false,
     "payment_card": true,
-    "payment_paypal": false
+    "payment_paypal": false,
+    "prix": 90,
+    "note": 4.9
   },
   {
     "id": "eleni",
@@ -1915,7 +2071,9 @@
     "payment_cash": true,
     "payment_check": false,
     "payment_card": false,
-    "payment_paypal": false
+    "payment_paypal": false,
+    "prix": 315,
+    "note": 4.5
   },
   {
     "id": "fadila",
@@ -1939,11 +2097,13 @@
     "payment_cash": true,
     "payment_check": false,
     "payment_card": false,
-    "payment_paypal": false
+    "payment_paypal": false,
+    "prix": 250,
+    "note": 4.1
   },
   {
-    "id": "roman",
-    "nom": "Roman",
+    "id": "roxana",
+    "nom": "Roxana",
     "age": 47,
     "lieu": "Bordeaux (Jardin Public)",
     "categorie": "parc",
@@ -1951,7 +2111,7 @@
     "photo": "",
     "descriptif": [
       "Vingt ans dans le jardin.",
-      "Carré, sérieux, prévenant.",
+      "Carrée, sérieuse, prévenante.",
       "Son arrêt près du kiosque est un classique.",
       "Banc face au plan d'eau, le soir tombant."
     ],
@@ -1963,7 +2123,9 @@
     "payment_cash": true,
     "payment_check": true,
     "payment_card": false,
-    "payment_paypal": false
+    "payment_paypal": false,
+    "prix": 300,
+    "note": 4.6
   },
   {
     "id": "yuki",
@@ -1987,11 +2149,13 @@
     "payment_cash": true,
     "payment_check": true,
     "payment_card": true,
-    "payment_paypal": false
+    "payment_paypal": false,
+    "prix": 60,
+    "note": 4.3
   },
   {
     "id": "pierre-andre",
-    "nom": "Pierre-André",
+    "nom": "Pierre-André l'increvable",
     "age": 73,
     "lieu": "Annecy (parc Charles-Bosson)",
     "categorie": "parc",
@@ -2011,7 +2175,9 @@
     "payment_cash": true,
     "payment_check": false,
     "payment_card": false,
-    "payment_paypal": false
+    "payment_paypal": false,
+    "prix": 305,
+    "note": 3.8
   },
   {
     "id": "zeinab",
@@ -2035,7 +2201,9 @@
     "payment_cash": true,
     "payment_check": false,
     "payment_card": false,
-    "payment_paypal": false
+    "payment_paypal": false,
+    "prix": 215,
+    "note": 3.7
   },
   {
     "id": "frieda",
@@ -2060,7 +2228,9 @@
     "payment_cash": true,
     "payment_check": false,
     "payment_card": false,
-    "payment_paypal": false
+    "payment_paypal": false,
+    "prix": 50,
+    "note": 4.0
   },
   {
     "id": "bakary",
@@ -2084,7 +2254,9 @@
     "payment_cash": true,
     "payment_check": false,
     "payment_card": true,
-    "payment_paypal": true
+    "payment_paypal": true,
+    "prix": 280,
+    "note": 4.3
   },
   {
     "id": "octavia",
@@ -2108,7 +2280,9 @@
     "payment_cash": true,
     "payment_check": false,
     "payment_card": false,
-    "payment_paypal": false
+    "payment_paypal": false,
+    "prix": 330,
+    "note": 4.4
   },
   {
     "id": "souleymane",
@@ -2132,7 +2306,9 @@
     "payment_cash": true,
     "payment_check": true,
     "payment_card": false,
-    "payment_paypal": false
+    "payment_paypal": false,
+    "prix": 30,
+    "note": 3.8
   },
   {
     "id": "maite",
@@ -2156,11 +2332,13 @@
     "payment_cash": true,
     "payment_check": false,
     "payment_card": false,
-    "payment_paypal": false
+    "payment_paypal": false,
+    "prix": 335,
+    "note": 3.6
   },
   {
-    "id": "constantin",
-    "nom": "Constantin",
+    "id": "helena",
+    "nom": "Helena",
     "age": 53,
     "lieu": "Bois de Boulogne",
     "categorie": "parc",
@@ -2168,7 +2346,7 @@
     "photo": "",
     "descriptif": [
       "Vingt-cinq ans dans le bois.",
-      "Imposant, ténébreux, fiable.",
+      "Imposante, mystérieuse, fiable.",
       "Sa fameuse balade au lac inférieur est inégalée.",
       "Banc à l'écart, sous les chênes."
     ],
@@ -2180,7 +2358,9 @@
     "payment_cash": true,
     "payment_check": false,
     "payment_card": true,
-    "payment_paypal": false
+    "payment_paypal": false,
+    "prix": 295,
+    "note": 4.1
   },
   {
     "id": "paloma",
@@ -2204,7 +2384,9 @@
     "payment_cash": true,
     "payment_check": true,
     "payment_card": false,
-    "payment_paypal": false
+    "payment_paypal": false,
+    "prix": 355,
+    "note": 3.6
   },
   {
     "id": "adetokunbo",
@@ -2228,7 +2410,9 @@
     "payment_cash": true,
     "payment_check": false,
     "payment_card": true,
-    "payment_paypal": false
+    "payment_paypal": false,
+    "prix": 340,
+    "note": 4.1
   },
   {
     "id": "beata",
@@ -2252,7 +2436,9 @@
     "payment_cash": true,
     "payment_check": false,
     "payment_card": true,
-    "payment_paypal": true
+    "payment_paypal": true,
+    "prix": 285,
+    "note": 4.9
   },
   {
     "id": "gennaro",
@@ -2277,7 +2463,9 @@
     "payment_cash": true,
     "payment_check": false,
     "payment_card": true,
-    "payment_paypal": false
+    "payment_paypal": false,
+    "prix": 165,
+    "note": 3.7
   },
   {
     "id": "sonja",
@@ -2301,7 +2489,9 @@
     "payment_cash": false,
     "payment_check": false,
     "payment_card": true,
-    "payment_paypal": true
+    "payment_paypal": true,
+    "prix": 180,
+    "note": 4.5
   },
   {
     "id": "jean-yves",
@@ -2325,7 +2515,9 @@
     "payment_cash": true,
     "payment_check": false,
     "payment_card": true,
-    "payment_paypal": false
+    "payment_paypal": false,
+    "prix": 170,
+    "note": 4.3
   },
   {
     "id": "leontine",
@@ -2349,7 +2541,9 @@
     "payment_cash": true,
     "payment_check": false,
     "payment_card": true,
-    "payment_paypal": false
+    "payment_paypal": false,
+    "prix": 105,
+    "note": 5.0
   },
   {
     "id": "hassan",
@@ -2373,7 +2567,9 @@
     "payment_cash": true,
     "payment_check": false,
     "payment_card": true,
-    "payment_paypal": true
+    "payment_paypal": true,
+    "prix": 110,
+    "note": 4.7
   },
   {
     "id": "kavita",
@@ -2397,7 +2593,9 @@
     "payment_cash": true,
     "payment_check": false,
     "payment_card": false,
-    "payment_paypal": false
+    "payment_paypal": false,
+    "prix": 25,
+    "note": 3.6
   },
   {
     "id": "wilma",
@@ -2422,6 +2620,8 @@
     "payment_cash": true,
     "payment_check": false,
     "payment_card": false,
-    "payment_paypal": false
+    "payment_paypal": false,
+    "prix": 335,
+    "note": 3.7
   }
 ]

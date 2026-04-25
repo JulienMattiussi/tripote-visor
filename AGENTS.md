@@ -70,8 +70,7 @@ src/
 ├── data/
 │   ├── travelers-choice.js
 │   ├── travel-stories.js
-│   ├── listings.js               # HOTELS, PARKS, ALLEYS, LISTINGS_BY_TYPE
-│   ├── fiches.json               # 100 profile entries used by FichePage
+│   ├── fiches.json               # 100 profile entries used by FichePage and ListingsPage
 │   ├── schedules.json            # 15 weekly schedule patterns referenced by fiches
 │   └── reviews.json              # map fiche-id to review array (empty for now)
 ├── i18n/

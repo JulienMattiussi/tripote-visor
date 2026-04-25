@@ -1,137 +1,206 @@
-import { describe, it, expect, beforeEach, vi, afterEach } from 'vitest';
+import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest';
 import { mount, flushPromises } from '@vue/test-utils';
 import App from '../src/App.vue';
 import HotelsPage from '../src/pages/HotelsPage.vue';
 import ParksPage from '../src/pages/ParksPage.vue';
 import AlleysPage from '../src/pages/AlleysPage.vue';
 import { setLocale, setCurrency } from '../src/i18n/store.js';
-import { HOTELS, PARKS, ALLEYS } from '../src/data/listings.js';
+import fiches from '../src/data/fiches.json';
 import { setupRouter, withRouter } from './helpers/router.js';
 
-describe('HotelsPage', () => {
+const PER_PAGE = 10;
+
+describe('HotelsPage - default view', () => {
   let router;
   beforeEach(async () => {
     setLocale('en');
     setCurrency('EUR');
     router = await setupRouter('/hotels');
-    vi.stubGlobal('alert', vi.fn());
   });
-  afterEach(() => vi.unstubAllGlobals());
 
-  it('renders the hero with the Hotels title and intro', () => {
+  it('renders the Hotels hero title', () => {
     const wrapper = mount(HotelsPage, withRouter(router));
     expect(wrapper.find('.lst-hero-title').text()).toBe('Hotels');
-    expect(wrapper.text()).toContain('Find a place to crash');
   });
 
-  it('renders one card per hotel in the data file with name, location and price', () => {
+  it('shows exactly 10 hotel cards by default', () => {
     const wrapper = mount(HotelsPage, withRouter(router));
-    expect(wrapper.findAll('.lst-card')).toHaveLength(HOTELS.length);
-    expect(wrapper.find('.lst-count').text()).toContain(String(HOTELS.length));
-
-    const firstCard = wrapper.find('.lst-card');
-    expect(firstCard.find('.lst-card-name').text()).toBe(HOTELS[0].name);
-    expect(firstCard.find('.lst-card-loc').text()).toBe(HOTELS[0].location);
-    expect(firstCard.find('.lst-price').text()).toContain('/ night');
+    expect(wrapper.findAll('.lst-card').length).toBe(PER_PAGE);
   });
 
-  it('typing a destination filters the visible hotels', async () => {
+  it('only renders fiches whose categorie is hotel', () => {
     const wrapper = mount(HotelsPage, withRouter(router));
-    await wrapper.find('.lst-search input').setValue('Paris');
-    expect(wrapper.findAll('.lst-card').length).toBe(
-      HOTELS.filter((h) => h.location.includes('Paris')).length,
-    );
+    const visibleNames = wrapper.findAll('.lst-card-name').map((n) => n.text());
+    const allowed = new Set(fiches.filter((f) => f.categorie === 'hotel').map((f) => f.nom));
+    for (const name of visibleNames) expect(allowed.has(name)).toBe(true);
   });
 
-  it('sort by price asc orders the cards from cheapest to most expensive', async () => {
+  it('formats price with the per-night suffix in EN/EUR', () => {
     const wrapper = mount(HotelsPage, withRouter(router));
-    await wrapper.find('.lst-sort select').setValue('price_asc');
-
-    const visiblePrices = wrapper.findAll('.lst-card').map((c) => {
-      const text = c.find('.lst-price').text();
-      return parseInt(text.replace(/[^0-9]/g, ''), 10);
-    });
-    const sorted = [...visiblePrices].sort((a, b) => a - b);
-    expect(visiblePrices).toEqual(sorted);
+    expect(wrapper.find('.lst-price').text()).toMatch(/from .*€.*\/ night/);
   });
 
-  it('renders in French and uses the FR-grouped EUR amounts', () => {
+  it('renders in French and uses the FR per-night suffix', async () => {
     setLocale('fr');
     const wrapper = mount(HotelsPage, withRouter(router));
     expect(wrapper.find('.lst-hero-title').text()).toBe('Hôtels');
-    expect(wrapper.find('.lst-search input').attributes('placeholder')).toBe('Où allez-vous ?');
-    expect(wrapper.find('.lst-price').text()).toContain('à partir de');
     expect(wrapper.find('.lst-price').text()).toContain('/ nuit');
   });
 });
 
-describe('ParksPage', () => {
+describe('ListingsPage - sort options', () => {
   let router;
   beforeEach(async () => {
     setLocale('en');
     setCurrency('EUR');
-    router = await setupRouter('/parks');
-    vi.stubGlobal('alert', vi.fn());
-  });
-  afterEach(() => vi.unstubAllGlobals());
-
-  it('renders the hero with the Parks title and intro', () => {
-    const wrapper = mount(ParksPage, withRouter(router));
-    expect(wrapper.find('.lst-hero-title').text()).toBe('Parks');
-    expect(wrapper.text()).toContain('Tours, tickets, dives, and treks');
+    router = await setupRouter('/hotels');
   });
 
-  it('renders one card per park with duration + per-person price', () => {
-    const wrapper = mount(ParksPage, withRouter(router));
-    expect(wrapper.findAll('.lst-card')).toHaveLength(PARKS.length);
-
-    const firstCard = wrapper.find('.lst-card');
-    expect(firstCard.find('.lst-card-name').text()).toBe(PARKS[0].name);
-    expect(firstCard.find('.lst-duration').exists()).toBe(true);
-    expect(firstCard.find('.lst-price').text()).toContain('/ person');
+  it('"price ascending" sorts the visible cards from cheapest to most expensive', async () => {
+    const wrapper = mount(HotelsPage, withRouter(router));
+    await wrapper.find('.lst-sort select').setValue('price_asc');
+    const prices = wrapper.findAll('.lst-price').map((p) => {
+      return parseInt(p.text().replace(/[^0-9]/g, ''), 10);
+    });
+    expect(prices).toEqual([...prices].sort((a, b) => a - b));
   });
 
-  it('multi-day parks render their duration in days, not hours', () => {
-    const wrapper = mount(ParksPage, withRouter(router));
-    const machu = PARKS.find((a) => a.id === 'machu-picchu');
-    const card = wrapper
-      .findAll('.lst-card')
-      .find((c) => c.find('.lst-card-name').text() === machu.name);
-    expect(card.find('.lst-duration').text()).toContain(`${Math.round(machu.durationHours / 24)}`);
-    expect(card.find('.lst-duration').text()).toContain('days');
+  it('"price descending" sorts the visible cards from most expensive to cheapest', async () => {
+    const wrapper = mount(HotelsPage, withRouter(router));
+    await wrapper.find('.lst-sort select').setValue('price_desc');
+    const prices = wrapper.findAll('.lst-price').map((p) => {
+      return parseInt(p.text().replace(/[^0-9]/g, ''), 10);
+    });
+    expect(prices).toEqual([...prices].sort((a, b) => b - a));
+  });
+
+  it('"top rated" sorts the visible cards by note descending', async () => {
+    const wrapper = mount(HotelsPage, withRouter(router));
+    await wrapper.find('.lst-sort select').setValue('top_rated');
+    const ratings = wrapper.findAll('.lst-rating-num').map((r) => parseFloat(r.text()));
+    expect(ratings).toEqual([...ratings].sort((a, b) => b - a));
+  });
+
+  it('"recommended" produces a stable order across re-renders within the same hour', async () => {
+    vi.useFakeTimers();
+    vi.setSystemTime(new Date('2026-04-25T12:30:00Z'));
+    const w1 = mount(HotelsPage, withRouter(router));
+    const order1 = w1.findAll('.lst-card-name').map((n) => n.text());
+    const w2 = mount(HotelsPage, withRouter(router));
+    const order2 = w2.findAll('.lst-card-name').map((n) => n.text());
+    expect(order1).toEqual(order2);
+    vi.useRealTimers();
+  });
+
+  it('"recommended" produces a different order at a different hour', async () => {
+    vi.useFakeTimers();
+    vi.setSystemTime(new Date('2026-04-25T12:30:00Z'));
+    const w1 = mount(HotelsPage, withRouter(router));
+    const order1 = w1.findAll('.lst-card-name').map((n) => n.text());
+    vi.setSystemTime(new Date('2026-04-25T15:30:00Z'));
+    const w2 = mount(HotelsPage, withRouter(router));
+    const order2 = w2.findAll('.lst-card-name').map((n) => n.text());
+    expect(order1).not.toEqual(order2);
+    vi.useRealTimers();
   });
 });
 
-describe('AlleysPage', () => {
+describe('ListingsPage - search', () => {
   let router;
   beforeEach(async () => {
     setLocale('en');
     setCurrency('EUR');
-    router = await setupRouter('/alleys');
-    vi.stubGlobal('alert', vi.fn());
+    router = await setupRouter('/hotels');
   });
-  afterEach(() => vi.unstubAllGlobals());
 
-  it('renders the hero with the Alleys title and intro', () => {
+  it('initialises the search input from the URL ?q= query param', async () => {
+    const r = await setupRouter('/hotels?q=Paris');
+    const wrapper = mount(HotelsPage, withRouter(r));
+    expect(wrapper.find('.lst-search input').element.value).toBe('Paris');
+    const expected = fiches.filter(
+      (f) =>
+        f.categorie === 'hotel' &&
+        (f.nom.toLowerCase().includes('paris') || f.lieu.toLowerCase().includes('paris')),
+    ).length;
+    expect(wrapper.findAll('.lst-card').length).toBe(expected);
+  });
+
+  it('typing a query reveals all matching fiches (no 10-cap)', async () => {
+    const wrapper = mount(HotelsPage, withRouter(router));
+    await wrapper.find('.lst-search input').setValue('Paris');
+    const expected = fiches.filter(
+      (f) =>
+        f.categorie === 'hotel' &&
+        (f.nom.toLowerCase().includes('paris') || f.lieu.toLowerCase().includes('paris')),
+    ).length;
+    expect(wrapper.findAll('.lst-card').length).toBe(expected);
+  });
+
+  it('shows the empty-state when no fiche matches', async () => {
+    const wrapper = mount(HotelsPage, withRouter(router));
+    await wrapper.find('.lst-search input').setValue('zzz-no-match');
+    expect(wrapper.findAll('.lst-card').length).toBe(0);
+    expect(wrapper.find('.lst-empty').exists()).toBe(true);
+  });
+
+  it('search results respect the chosen sort', async () => {
+    const wrapper = mount(HotelsPage, withRouter(router));
+    await wrapper.find('.lst-sort select').setValue('price_asc');
+    await wrapper.find('.lst-search input').setValue('Paris');
+    const prices = wrapper.findAll('.lst-price').map((p) => {
+      return parseInt(p.text().replace(/[^0-9]/g, ''), 10);
+    });
+    expect(prices).toEqual([...prices].sort((a, b) => a - b));
+  });
+});
+
+describe('ListingsPage - card click navigates to fiche', () => {
+  let router;
+  beforeEach(async () => {
+    setLocale('en');
+    setCurrency('EUR');
+    router = await setupRouter('/hotels');
+  });
+
+  it('clicking a card pushes to /p/:id', async () => {
+    const wrapper = mount(HotelsPage, withRouter(router));
+    const firstName = wrapper.find('.lst-card-name').text();
+    const expectedId = fiches.find((f) => f.nom === firstName).id;
+    await wrapper.find('.lst-card').trigger('click');
+    await flushPromises();
+    expect(router.currentRoute.value.name).toBe('fiche');
+    expect(router.currentRoute.value.params.id).toBe(expectedId);
+  });
+});
+
+describe('ParksPage / AlleysPage - parity', () => {
+  let router;
+  beforeEach(async () => {
+    setLocale('en');
+    setCurrency('EUR');
+  });
+
+  it('ParksPage shows park-only fiches with per-person pricing', async () => {
+    router = await setupRouter('/parks');
+    const wrapper = mount(ParksPage, withRouter(router));
+    expect(wrapper.find('.lst-hero-title').text()).toBe('Parks');
+    expect(wrapper.findAll('.lst-card').length).toBe(PER_PAGE);
+    const allowed = new Set(fiches.filter((f) => f.categorie === 'parc').map((f) => f.nom));
+    for (const name of wrapper.findAll('.lst-card-name').map((n) => n.text())) {
+      expect(allowed.has(name)).toBe(true);
+    }
+    expect(wrapper.find('.lst-price').text()).toMatch(/from .*€.*\/ person/);
+  });
+
+  it('AlleysPage shows alley-only fiches', async () => {
+    router = await setupRouter('/alleys');
     const wrapper = mount(AlleysPage, withRouter(router));
     expect(wrapper.find('.lst-hero-title').text()).toBe('Alleys');
-    expect(wrapper.text()).toContain('Cobblestone lanes');
-  });
-
-  it('renders one card per alley with duration + per-person price', () => {
-    const wrapper = mount(AlleysPage, withRouter(router));
-    expect(wrapper.findAll('.lst-card')).toHaveLength(ALLEYS.length);
-
-    const firstCard = wrapper.find('.lst-card');
-    expect(firstCard.find('.lst-card-name').text()).toBe(ALLEYS[0].name);
-    expect(firstCard.find('.lst-duration').exists()).toBe(true);
-    expect(firstCard.find('.lst-price').text()).toContain('/ person');
-  });
-
-  it('renders in French with the Ruelles title', () => {
-    setLocale('fr');
-    const wrapper = mount(AlleysPage, withRouter(router));
-    expect(wrapper.find('.lst-hero-title').text()).toBe('Ruelles');
+    expect(wrapper.findAll('.lst-card').length).toBe(PER_PAGE);
+    const allowed = new Set(fiches.filter((f) => f.categorie === 'ruelle').map((f) => f.nom));
+    for (const name of wrapper.findAll('.lst-card-name').map((n) => n.text())) {
+      expect(allowed.has(name)).toBe(true);
+    }
   });
 });
 

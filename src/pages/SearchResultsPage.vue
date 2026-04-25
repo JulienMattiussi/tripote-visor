@@ -9,12 +9,9 @@ const router = useRouter();
 
 const PER_SECTION = 6;
 const CATEGORIES = ['hotel', 'ruelle', 'parc'];
+const CATEGORIE_TO_ROUTE = { hotel: 'hotels', ruelle: 'alleys', parc: 'parks' };
 
 const query = computed(() => (route.query.q ?? '').toString());
-const filterCat = computed(() => {
-  const c = (route.query.categorie ?? '').toString();
-  return CATEGORIES.includes(c) ? c : null;
-});
 
 const matches = computed(() => {
   const q = query.value.trim().toLowerCase();
@@ -35,14 +32,8 @@ const matchesByCategory = computed(() => {
   return groups;
 });
 
-const sections = computed(() => {
-  if (filterCat.value) {
-    const items = matchesByCategory.value[filterCat.value] ?? [];
-    return items.length
-      ? [{ categorie: filterCat.value, items, totalCount: items.length, showAll: false }]
-      : [];
-  }
-  return CATEGORIES.map((cat) => {
+const sections = computed(() =>
+  CATEGORIES.map((cat) => {
     const all = matchesByCategory.value[cat] ?? [];
     return {
       categorie: cat,
@@ -50,8 +41,8 @@ const sections = computed(() => {
       totalCount: all.length,
       showAll: all.length > PER_SECTION,
     };
-  }).filter((s) => s.items.length > 0);
-});
+  }).filter((s) => s.items.length > 0),
+);
 
 const totalMatches = computed(() => matches.value.length);
 
@@ -59,12 +50,10 @@ const goFiche = (id) => {
   router.push({ name: 'fiche', params: { id } });
 };
 const goSection = (categorie) => {
-  router.push({ name: 'search', query: { ...route.query, categorie } });
-};
-const goGlobal = () => {
-  const q = { ...route.query };
-  delete q.categorie;
-  router.push({ name: 'search', query: q });
+  const name = CATEGORIE_TO_ROUTE[categorie];
+  if (!name) return;
+  const q = query.value ? { q: query.value } : {};
+  router.push({ name, query: q });
 };
 
 const onSaveClick = (fiche) => {
@@ -85,9 +74,6 @@ const emptyText = computed(() =>
     <header class="sr-head">
       <h1 class="sr-title">{{ titleText }}</h1>
       <p class="sr-count">{{ t('search_page.results_count', { count: totalMatches }) }}</p>
-      <button v-if="filterCat" type="button" class="sr-back" @click="goGlobal">
-        ← {{ t('search_page.back_to_global') }}
-      </button>
     </header>
 
     <p v-if="!sections.length" class="sr-empty">{{ emptyText }}</p>
@@ -169,21 +155,6 @@ const emptyText = computed(() =>
   font-size: 14px;
   color: var(--text-muted);
   margin: 0;
-}
-
-.sr-back {
-  align-self: flex-start;
-  margin-top: 8px;
-  padding: 8px 14px;
-  border-radius: 999px;
-  background: var(--surface);
-  font-size: 13px;
-  font-weight: 700;
-  color: var(--text);
-}
-
-.sr-back:hover {
-  background: var(--brand-tint);
 }
 
 .sr-empty {

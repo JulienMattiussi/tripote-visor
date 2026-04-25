@@ -19,7 +19,7 @@ describe('FichePage - rendering for a known fiche', () => {
 
   it('shows the fiche name and location', () => {
     const wrapper = mount(FichePage, withRouter(router));
-    expect(wrapper.find('.fp-title').text()).toBe('Mireille');
+    expect(wrapper.find('.fp-title').text()).toBe('Mireille la folle');
     expect(wrapper.text()).toContain('Paris 11e');
   });
 
@@ -55,12 +55,6 @@ describe('FichePage - rendering for a known fiche', () => {
       '#localisation',
       '#avis',
     ]);
-  });
-
-  it('renders the bottom recommendation question with three radio answers', () => {
-    const wrapper = mount(FichePage, withRouter(router));
-    expect(wrapper.text()).toContain('Would you recommend');
-    expect(wrapper.findAll('input[type="radio"][name="bottom-q"]')).toHaveLength(3);
   });
 });
 
@@ -133,7 +127,7 @@ describe('FichePage - interactions', () => {
     const wrapper = mount(FichePage, withRouter(router));
     await wrapper.find('.fp-save-btn').trigger('click');
     expect(loginRequiredOpen.value).toBe(true);
-    expect(loginRequiredContext.value).toEqual({ target: 'save', name: 'Mireille' });
+    expect(loginRequiredContext.value).toEqual({ target: 'save', name: 'Mireille la folle' });
     closeLoginRequired();
   });
 
@@ -145,7 +139,7 @@ describe('FichePage - interactions', () => {
     const chips = wrapper.findAll('.fp-chip');
     await chips[1].trigger('click'); // "Card" chip
     expect(loginRequiredOpen.value).toBe(true);
-    expect(loginRequiredContext.value).toEqual({ target: 'menu', name: 'Mireille' });
+    expect(loginRequiredContext.value).toEqual({ target: 'menu', name: 'Mireille la folle' });
     closeLoginRequired();
   });
 
@@ -156,8 +150,8 @@ describe('FichePage - interactions', () => {
   });
 
   it('only renders the chips whose has_* flag is true', async () => {
-    // Aïcha has has_menu and has_email but not has_site / has_phone.
-    const router2 = await setupRouter('/p/aicha');
+    // Mehdi has has_menu and has_email but not has_site / has_phone.
+    const router2 = await setupRouter('/p/mehdi');
     const wrapper = mount(FichePage, withRouter(router2));
     const labels = wrapper.findAll('.fp-chip').map((c) => c.text());
     expect(labels.some((l) => l.includes('Card'))).toBe(true);
@@ -222,7 +216,6 @@ describe('FichePage - locale switching', () => {
     const wrapper = mount(FichePage, withRouter(router));
     expect(wrapper.text()).toContain('Page vérifiée');
     expect(wrapper.text()).toContain('À propos');
-    expect(wrapper.text()).toContain('Recommanderiez-vous');
     expect(wrapper.findAll('.fp-tabs a').map((t) => t.text())).toEqual([
       'Présentation',
       'Horaires',

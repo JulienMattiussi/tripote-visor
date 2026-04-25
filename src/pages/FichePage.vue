@@ -289,17 +289,6 @@ const goHome = () => router.push({ name: 'home' });
           </p>
           <p v-else>{{ t('fiche_page.reviews_count', { count: reviewCount }) }}</p>
         </section>
-
-        <section class="fp-block fp-question">
-          <p class="fp-question-text">{{ t('fiche_page.bottom_question') }}</p>
-          <div class="fp-answers">
-            <label><input type="radio" name="bottom-q" /> {{ t('fiche_page.answer_yes') }}</label>
-            <label><input type="radio" name="bottom-q" /> {{ t('fiche_page.answer_no') }}</label>
-            <label
-              ><input type="radio" name="bottom-q" /> {{ t('fiche_page.answer_unknown') }}</label
-            >
-          </div>
-        </section>
       </div>
 
       <aside class="fp-right">
@@ -670,33 +659,6 @@ const goHome = () => router.push({ name: 'home' });
   color: var(--text-muted);
   font-style: italic;
   margin: 0;
-}
-
-.fp-question {
-  background: var(--surface);
-  border-radius: var(--radius);
-  padding: 18px;
-  border: 1px solid var(--border);
-}
-
-.fp-question-text {
-  font-size: 14px;
-  font-weight: 700;
-  margin: 0 0 10px 0;
-}
-
-.fp-answers {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
-  font-size: 14px;
-}
-
-.fp-answers label {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  cursor: pointer;
 }
 
 .fp-right {

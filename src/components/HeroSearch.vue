@@ -12,7 +12,7 @@ const tabs = computed(() => [
   { id: 'alleys', label: t('hero.tab_alleys'), icon: '🛣️' },
 ]);
 
-const TAB_TO_CATEGORIE = { hotels: 'hotel', things: 'parc', alleys: 'ruelle' };
+const TAB_TO_ROUTE_NAME = { hotels: 'hotels', things: 'parks', alleys: 'alleys' };
 
 const activeTab = ref('all');
 const query = ref('');
@@ -29,10 +29,8 @@ const onSubmit = (e) => {
   e.preventDefault();
   const q = query.value.trim();
   if (!q) return;
-  const params = { q };
-  const cat = TAB_TO_CATEGORIE[activeTab.value];
-  if (cat) params.categorie = cat;
-  router.push({ name: 'search', query: params });
+  const name = TAB_TO_ROUTE_NAME[activeTab.value] ?? 'search';
+  router.push({ name, query: { q } });
 };
 </script>
 
