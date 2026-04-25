@@ -27,16 +27,16 @@ describe('App', () => {
 
     expect(html).toContain('Where to?'); // HeroSearch
     expect(html).toContain('Find things to do by interest'); // CategoryGrid
-    expect(html).toContain("Travelers' Choice"); // TravelersChoice (home section)
+    expect(html).toContain("Travelers' Choice"); // TravelersChoice (home promo section)
   });
 
-  it('renders the Travelers’ Choice page when navigating to /travelers-choice', async () => {
-    router = await setupRouter('/travelers-choice');
+  it('renders the Discover page when navigating to /discover', async () => {
+    router = await setupRouter('/discover');
     const wrapper = mount(App, withRouter(router));
 
     const text = wrapper.text();
-    expect(text).toContain("Travellers' Choice Awards Best of the Best 2026");
-    expect(text).toContain('Hotels - Best of the Best');
+    expect(text).toContain('Discover experiences approved by users');
+    expect(text).toContain('Trending destinations highlights');
     // Home section title is gone - the home page is no longer rendered.
     expect(text).not.toContain('Where to?');
     expect(text).not.toContain('Find things to do by interest');

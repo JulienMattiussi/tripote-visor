@@ -76,7 +76,7 @@ describe('HowTheSiteWorksPage', () => {
     const text = wrapper.text();
     expect(text).toContain('Coût par Clic');
     expect(text).toContain('Notre sélection');
-    expect(text).toContain('Favoris des voyageurs');
+    expect(text).toContain('Favoris des utilisateurs');
     expect(text).toMatch(/24h\/24/);
     expect(wrapper.find('.how-back').text()).toBe('Retour à l’accueil');
   });

@@ -1,0 +1,252 @@
+[
+  {
+    "ville": "Paris",
+    "count": 21,
+    "photo": ""
+  },
+  {
+    "ville": "Lyon",
+    "count": 5,
+    "photo": ""
+  },
+  {
+    "ville": "Marseille",
+    "count": 4,
+    "photo": ""
+  },
+  {
+    "ville": "Strasbourg",
+    "count": 4,
+    "photo": ""
+  },
+  {
+    "ville": "Bordeaux",
+    "count": 3,
+    "photo": ""
+  },
+  {
+    "ville": "Lille",
+    "count": 3,
+    "photo": ""
+  },
+  {
+    "ville": "Nice",
+    "count": 3,
+    "photo": ""
+  },
+  {
+    "ville": "Saint-Denis",
+    "count": 3,
+    "photo": ""
+  },
+  {
+    "ville": "Toulouse",
+    "count": 3,
+    "photo": ""
+  },
+  {
+    "ville": "Vincennes",
+    "count": 3,
+    "photo": ""
+  },
+  {
+    "ville": "Annecy",
+    "count": 2,
+    "photo": ""
+  },
+  {
+    "ville": "Argenteuil",
+    "count": 2,
+    "photo": ""
+  },
+  {
+    "ville": "Avignon",
+    "count": 2,
+    "photo": ""
+  },
+  {
+    "ville": "Bourges",
+    "count": 2,
+    "photo": ""
+  },
+  {
+    "ville": "Mulhouse",
+    "count": 2,
+    "photo": ""
+  },
+  {
+    "ville": "Nantes",
+    "count": 2,
+    "photo": ""
+  },
+  {
+    "ville": "Pau",
+    "count": 2,
+    "photo": ""
+  },
+  {
+    "ville": "Reims",
+    "count": 2,
+    "photo": ""
+  },
+  {
+    "ville": "Aix-en-Provence",
+    "count": 1,
+    "photo": ""
+  },
+  {
+    "ville": "Aubervilliers",
+    "count": 1,
+    "photo": ""
+  },
+  {
+    "ville": "Bagatelle",
+    "count": 1,
+    "photo": ""
+  },
+  {
+    "ville": "Bastia",
+    "count": 1,
+    "photo": ""
+  },
+  {
+    "ville": "Bayonne",
+    "count": 1,
+    "photo": ""
+  },
+  {
+    "ville": "Bois de Boulogne",
+    "count": 1,
+    "photo": ""
+  },
+  {
+    "ville": "Boulogne",
+    "count": 1,
+    "photo": ""
+  },
+  {
+    "ville": "Brest",
+    "count": 1,
+    "photo": ""
+  },
+  {
+    "ville": "Caen",
+    "count": 1,
+    "photo": ""
+  },
+  {
+    "ville": "Cannes",
+    "count": 1,
+    "photo": ""
+  },
+  {
+    "ville": "Charleville",
+    "count": 1,
+    "photo": ""
+  },
+  {
+    "ville": "Colmar",
+    "count": 1,
+    "photo": ""
+  },
+  {
+    "ville": "Fort-de-France",
+    "count": 1,
+    "photo": ""
+  },
+  {
+    "ville": "La Courneuve",
+    "count": 1,
+    "photo": ""
+  },
+  {
+    "ville": "Le Havre",
+    "count": 1,
+    "photo": ""
+  },
+  {
+    "ville": "Limoges",
+    "count": 1,
+    "photo": ""
+  },
+  {
+    "ville": "Pantin",
+    "count": 1,
+    "photo": ""
+  },
+  {
+    "ville": "Perpignan",
+    "count": 1,
+    "photo": ""
+  },
+  {
+    "ville": "Pointe-à-Pitre",
+    "count": 1,
+    "photo": ""
+  },
+  {
+    "ville": "Quimper",
+    "count": 1,
+    "photo": ""
+  },
+  {
+    "ville": "Rennes",
+    "count": 1,
+    "photo": ""
+  },
+  {
+    "ville": "Roubaix",
+    "count": 1,
+    "photo": ""
+  },
+  {
+    "ville": "Saint-Cloud",
+    "count": 1,
+    "photo": ""
+  },
+  {
+    "ville": "Saint-Étienne",
+    "count": 1,
+    "photo": ""
+  },
+  {
+    "ville": "Saint-Germain-en-Laye",
+    "count": 1,
+    "photo": ""
+  },
+  {
+    "ville": "Saint-Malo",
+    "count": 1,
+    "photo": ""
+  },
+  {
+    "ville": "Saint-Ouen",
+    "count": 1,
+    "photo": ""
+  },
+  {
+    "ville": "Sarcelles",
+    "count": 1,
+    "photo": ""
+  },
+  {
+    "ville": "Sceaux",
+    "count": 1,
+    "photo": ""
+  },
+  {
+    "ville": "Tours",
+    "count": 1,
+    "photo": ""
+  },
+  {
+    "ville": "Versailles",
+    "count": 1,
+    "photo": ""
+  },
+  {
+    "ville": "Vichy",
+    "count": 1,
+    "photo": ""
+  }
+]

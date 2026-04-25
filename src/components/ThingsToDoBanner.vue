@@ -1,7 +1,9 @@
 <script setup>
+import { useRouter } from 'vue-router';
 import { t } from '../i18n/store.js';
 
-const onBook = () => alert(`${t('ttd.cta')} ${t('common.sim_suffix')}`);
+const router = useRouter();
+const onBook = () => router.push({ name: 'discover' });
 </script>
 
 <template>

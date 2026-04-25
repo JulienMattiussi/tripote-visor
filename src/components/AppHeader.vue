@@ -19,7 +19,7 @@ const scrolled = ref(false);
 const compactQuery = ref('');
 
 const discoverMenuItems = computed(() => [
-  { key: 'choice', label: t('nav.discover_choice'), to: { name: 'travelers-choice' } },
+  { key: 'top', label: t('nav.discover_top'), to: { name: 'discover' } },
   { key: 'stories', label: t('nav.discover_stories'), to: { name: 'travel-stories' } },
 ]);
 

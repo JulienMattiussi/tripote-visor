@@ -3,7 +3,7 @@ import { useRouter } from 'vue-router';
 import { t } from '../i18n/store.js';
 
 const router = useRouter();
-const onSeeWinners = () => router.push({ name: 'travelers-choice' });
+const onSeeWinners = () => router.push({ name: 'discover' });
 </script>
 
 <template>

@@ -1,7 +1,7 @@
 <script setup>
 import { computed, ref, watch } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
-import { t, formatAmount, locale } from '../i18n/store.js';
+import { t, formatAmount, formatLieu, locale } from '../i18n/store.js';
 import fichesData from '../data/fiches.json';
 
 const props = defineProps({
@@ -43,8 +43,11 @@ const filteredFiches = computed(() => {
   return baseFiches.value.filter(
     (f) =>
       f.nom.toLowerCase().includes(q) ||
-      f.lieu.toLowerCase().includes(q) ||
-      (f.descriptif ?? []).some((line) => line.toLowerCase().includes(q)),
+      (f.ville ?? '').toLowerCase().includes(q) ||
+      (f.lieu ?? '').toLowerCase().includes(q) ||
+      [...(f.descriptif ?? []), ...(f.descriptif_en ?? [])].some((line) =>
+        line.toLowerCase().includes(q),
+      ),
   );
 });
 
@@ -149,7 +152,7 @@ const goFiche = (id) => {
         <div class="lst-card-thumb" aria-hidden="true"></div>
         <div class="lst-card-body">
           <h3 class="lst-card-name">{{ f.nom }}</h3>
-          <p class="lst-card-loc">{{ f.lieu }}</p>
+          <p class="lst-card-loc">{{ formatLieu(f) }}</p>
           <div class="lst-card-rating">
             <span class="lst-stars" aria-hidden="true">
               <span

@@ -1,6 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import HomePage from '../pages/HomePage.vue';
-import TravelersChoicePage from '../pages/TravelersChoicePage.vue';
 import TravelStoriesPage from '../pages/TravelStoriesPage.vue';
 import UserReviewPage from '../pages/UserReviewPage.vue';
 import PostPhotosPage from '../pages/PostPhotosPage.vue';
@@ -16,16 +15,10 @@ import TermsPage from '../pages/TermsPage.vue';
 import AboutPage from '../pages/AboutPage.vue';
 import SafetyPage from '../pages/SafetyPage.vue';
 import ResourcesPage from '../pages/ResourcesPage.vue';
+import DiscoverPage from '../pages/DiscoverPage.vue';
 
 export const routes = [
   { path: '/', name: 'home', component: HomePage },
-  { path: '/travelers-choice', name: 'travelers-choice', component: TravelersChoicePage },
-  {
-    path: '/travelers-choice/:category',
-    name: 'travelers-choice-category',
-    component: TravelersChoicePage,
-    props: true,
-  },
   { path: '/travel-stories', name: 'travel-stories', component: TravelStoriesPage },
   { path: '/write-review', name: 'write-review', component: UserReviewPage },
   { path: '/post-photos', name: 'post-photos', component: PostPhotosPage },
@@ -41,6 +34,7 @@ export const routes = [
   { path: '/about', name: 'about', component: AboutPage },
   { path: '/safety', name: 'safety', component: SafetyPage },
   { path: '/resources', name: 'resources', component: ResourcesPage },
+  { path: '/discover', name: 'discover', component: DiscoverPage },
 ];
 
 export function createAppRouter({ history } = {}) {

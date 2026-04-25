@@ -1,7 +1,7 @@
 <script setup>
 import { computed } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
-import { t, openLoginRequired } from '../i18n/store.js';
+import { t, openLoginRequired, formatLieu } from '../i18n/store.js';
 import fichesData from '../data/fiches.json';
 
 const route = useRoute();
@@ -19,8 +19,11 @@ const matches = computed(() => {
   return fichesData.filter(
     (f) =>
       f.nom.toLowerCase().includes(q) ||
-      f.lieu.toLowerCase().includes(q) ||
-      (f.descriptif ?? []).some((line) => line.toLowerCase().includes(q)),
+      (f.ville ?? '').toLowerCase().includes(q) ||
+      (f.lieu ?? '').toLowerCase().includes(q) ||
+      [...(f.descriptif ?? []), ...(f.descriptif_en ?? [])].some((line) =>
+        line.toLowerCase().includes(q),
+      ),
   );
 });
 
@@ -119,7 +122,7 @@ const emptyText = computed(() =>
             </button>
           </div>
           <h3 class="sr-card-name">{{ f.nom }}</h3>
-          <p class="sr-card-loc">{{ f.lieu }}</p>
+          <p class="sr-card-loc">{{ formatLieu(f) }}</p>
           <p class="sr-card-meta">
             {{
               t('search_page.card_meta', { age: f.age, cat: t(`fiche_page.cat_${f.categorie}`) })

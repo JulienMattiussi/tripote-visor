@@ -1,7 +1,7 @@
 <script setup>
 import { computed } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
-import { t, openLoginRequired } from '../i18n/store.js';
+import { t, locale, openLoginRequired, formatLieu } from '../i18n/store.js';
 import fichesData from '../data/fiches.json';
 import schedulesData from '../data/schedules.json';
 import reviewsData from '../data/reviews.json';
@@ -16,6 +16,13 @@ const schedule = computed(() =>
 
 const reviews = computed(() => (fiche.value ? (reviewsData[fiche.value.id] ?? []) : []));
 const reviewCount = computed(() => reviews.value.length);
+
+const descriptifLines = computed(() => {
+  if (!fiche.value) return [];
+  const en = fiche.value.descriptif_en;
+  if (locale.value === 'en' && Array.isArray(en) && en.length) return en;
+  return fiche.value.descriptif ?? [];
+});
 
 const DAYS_ORDER = ['lundi', 'mardi', 'mercredi', 'jeudi', 'vendredi', 'samedi', 'dimanche'];
 const DAY_BY_INDEX = ['dimanche', 'lundi', 'mardi', 'mercredi', 'jeudi', 'vendredi', 'samedi'];
@@ -117,7 +124,7 @@ const categoryLabel = computed(() =>
 const tags = computed(() => {
   if (!fiche.value) return [];
   return [
-    fiche.value.lieu,
+    formatLieu(fiche.value),
     categoryLabel.value,
     t('fiche_page.age_label', { age: fiche.value.age }),
   ];
@@ -138,8 +145,9 @@ const availableChips = computed(() => {
 const requireLogin = (target) => {
   openLoginRequired({ target, name: fiche.value?.nom });
 };
-const onPlaceholder = (key) => {
-  alert(`${t(`fiche_page.${key}`)} ${t('common.sim_suffix')}`);
+const goWriteReview = () => {
+  if (!fiche.value) return;
+  router.push({ name: 'write-review', query: { fiche: fiche.value.id } });
 };
 const goHome = () => router.push({ name: 'home' });
 </script>
@@ -167,7 +175,7 @@ const goHome = () => router.push({ name: 'home' });
               <span class="fp-heart" aria-hidden="true">♡</span>
               {{ t('fiche_page.save_btn') }}
             </button>
-            <button type="button" class="fp-top-btn" @click="onPlaceholder('add_review')">
+            <button type="button" class="fp-top-btn" @click="goWriteReview">
               + {{ t('fiche_page.add_review') }}
             </button>
           </div>
@@ -227,7 +235,7 @@ const goHome = () => router.push({ name: 'home' });
             <a href="#horaires">{{ t('fiche_page.see_all_horaires') }}</a>
           </p>
           <p class="fp-address">
-            <span class="fp-icon" aria-hidden="true">📍</span>{{ fiche.lieu }}
+            <span class="fp-icon" aria-hidden="true">📍</span>{{ formatLieu(fiche) }}
           </p>
           <div v-if="availableChips.length" class="fp-action-chips">
             <button
@@ -246,7 +254,7 @@ const goHome = () => router.push({ name: 'home' });
         <section class="fp-block">
           <h2 class="fp-block-title">{{ t('fiche_page.about') }}</h2>
           <ul class="fp-descriptif">
-            <li v-for="(line, i) in fiche.descriptif" :key="i">{{ line }}</li>
+            <li v-for="(line, i) in descriptifLines" :key="i">{{ line }}</li>
           </ul>
         </section>
 
@@ -275,7 +283,7 @@ const goHome = () => router.push({ name: 'home' });
             <span>{{ t('fiche_page.map_placeholder') }}</span>
           </div>
           <p class="fp-address">
-            <span class="fp-icon" aria-hidden="true">📍</span>{{ fiche.lieu }}
+            <span class="fp-icon" aria-hidden="true">📍</span>{{ formatLieu(fiche) }}
           </p>
           <p class="fp-feature">
             <span class="fp-icon" aria-hidden="true">🅿️</span>{{ t('fiche_page.parking_info') }}
@@ -283,7 +291,12 @@ const goHome = () => router.push({ name: 'home' });
         </section>
 
         <section id="avis" class="fp-block">
-          <h2 class="fp-block-title">{{ t('fiche_page.reviews_title') }}</h2>
+          <div class="fp-reviews-header">
+            <h2 class="fp-block-title">{{ t('fiche_page.reviews_title') }}</h2>
+            <button type="button" class="fp-top-btn fp-reviews-add" @click="goWriteReview">
+              + {{ t('fiche_page.add_review') }}
+            </button>
+          </div>
           <p v-if="reviewCount === 0" class="fp-empty">
             {{ t('fiche_page.no_reviews') }}
           </p>
@@ -658,6 +671,19 @@ const goHome = () => router.push({ name: 'home' });
 .fp-empty {
   color: var(--text-muted);
   font-style: italic;
+  margin: 0;
+}
+
+.fp-reviews-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+.fp-reviews-header .fp-block-title {
   margin: 0;
 }
 

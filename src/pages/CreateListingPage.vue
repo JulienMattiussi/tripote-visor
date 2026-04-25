@@ -1,9 +1,6 @@
 <script setup>
 import { ref, computed } from 'vue';
-import { useRouter } from 'vue-router';
-import { t } from '../i18n/store.js';
-
-const router = useRouter();
+import { t, openLoginRequired } from '../i18n/store.js';
 
 const TYPES = ['hotel', 'restaurant', 'attraction', 'rental'];
 const RELATIONSHIPS = ['owner', 'employee', 'traveller'];
@@ -31,7 +28,6 @@ const phone = ref('');
 const website = ref('');
 const description = ref('');
 const relationship = ref('');
-const submitted = ref(false);
 const showError = ref(false);
 
 const isValid = computed(
@@ -52,11 +48,9 @@ const onSubmit = (e) => {
     showError.value = true;
     return;
   }
-  submitted.value = true;
   showError.value = false;
+  openLoginRequired({ target: 'add_place', name: name.value.trim() });
 };
-
-const goHome = () => router.push({ name: 'home' });
 </script>
 
 <template>
@@ -68,7 +62,7 @@ const goHome = () => router.push({ name: 'home' });
   </section>
 
   <main class="container form-main">
-    <div v-if="!submitted" class="form-card">
+    <div class="form-card">
       <form @submit="onSubmit">
         <fieldset class="field">
           <legend class="field-label">{{ t('cl_page.type_label') }} <em>*</em></legend>
@@ -162,15 +156,6 @@ const goHome = () => router.push({ name: 'home' });
           {{ t('cl_page.submit') }}
         </button>
       </form>
-    </div>
-
-    <div v-else class="form-success" role="status">
-      <span class="form-success-icon" aria-hidden="true">✓</span>
-      <h2>{{ t('cl_page.success_title') }}</h2>
-      <p>{{ t('cl_page.success_body') }}</p>
-      <button type="button" class="pill-btn pill-btn--dark" @click="goHome">
-        {{ t('cl_page.back_home') }}
-      </button>
     </div>
   </main>
 </template>

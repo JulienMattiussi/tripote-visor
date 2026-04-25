@@ -1,19 +1,25 @@
 <script setup>
 import { ref, computed } from 'vue';
-import { useRouter } from 'vue-router';
-import { t } from '../i18n/store.js';
+import { useRoute } from 'vue-router';
+import { t, openLoginRequired } from '../i18n/store.js';
+import fichesData from '../data/fiches.json';
+import PlaceSearchSelect from '../components/PlaceSearchSelect.vue';
 
-const router = useRouter();
+const route = useRoute();
 
-const place = ref('');
+const initialFiche = (() => {
+  const id = (route.query.fiche ?? '').toString();
+  return id ? (fichesData.find((f) => f.id === id) ?? null) : null;
+})();
+
+const selectedFiche = ref(initialFiche);
 const files = ref([]); // local-only File[]; never uploaded
 const caption = ref('');
 const consent = ref(false);
 const dragOver = ref(false);
-const submitted = ref(false);
 const showError = ref(false);
 
-const isValid = computed(() => place.value.trim() && files.value.length > 0 && consent.value);
+const isValid = computed(() => selectedFiche.value && files.value.length > 0 && consent.value);
 
 const acceptFiles = (list) => {
   const incoming = Array.from(list ?? []).filter((f) => /^image\//.test(f.type));
@@ -50,11 +56,9 @@ const onSubmit = (e) => {
     showError.value = true;
     return;
   }
-  submitted.value = true;
   showError.value = false;
+  openLoginRequired({ target: 'publish_photos', name: selectedFiche.value.nom });
 };
-
-const goHome = () => router.push({ name: 'home' });
 </script>
 
 <template>
@@ -66,17 +70,15 @@ const goHome = () => router.push({ name: 'home' });
   </section>
 
   <main class="container form-main">
-    <div v-if="!submitted" class="form-card">
+    <div class="form-card">
       <form @submit="onSubmit">
-        <label class="field">
+        <div class="field">
           <span class="field-label">{{ t('pp_page.place_label') }} <em>*</em></span>
-          <input
-            v-model="place"
-            type="text"
+          <PlaceSearchSelect
+            v-model="selectedFiche"
             :placeholder="t('pp_page.place_placeholder')"
-            required
           />
-        </label>
+        </div>
 
         <div class="field">
           <span class="field-label">{{ t('pp_page.drop_title') }} <em>*</em></span>
@@ -128,15 +130,6 @@ const goHome = () => router.push({ name: 'home' });
           {{ t('pp_page.submit') }}
         </button>
       </form>
-    </div>
-
-    <div v-else class="form-success" role="status">
-      <span class="form-success-icon" aria-hidden="true">✓</span>
-      <h2>{{ t('pp_page.success_title') }}</h2>
-      <p>{{ t('pp_page.success_body') }}</p>
-      <button type="button" class="pill-btn pill-btn--dark" @click="goHome">
-        {{ t('pp_page.back_home') }}
-      </button>
     </div>
   </main>
 </template>

@@ -1,9 +1,14 @@
 import { describe, it, expect, beforeEach } from 'vitest';
-import { mount, flushPromises } from '@vue/test-utils';
+import { mount } from '@vue/test-utils';
 import UserReviewPage from '../src/pages/UserReviewPage.vue';
 import PostPhotosPage from '../src/pages/PostPhotosPage.vue';
 import CreateListingPage from '../src/pages/CreateListingPage.vue';
-import { setLocale } from '../src/i18n/store.js';
+import {
+  setLocale,
+  loginRequiredOpen,
+  loginRequiredContext,
+  closeLoginRequired,
+} from '../src/i18n/store.js';
 import { setupRouter, withRouter } from './helpers/router.js';
 
 let router;
@@ -11,6 +16,7 @@ let router;
 describe('UserReviewPage (Write a review)', () => {
   beforeEach(async () => {
     setLocale('en');
+    closeLoginRequired();
     router = await setupRouter('/write-review');
   });
 
@@ -33,21 +39,53 @@ describe('UserReviewPage (Write a review)', () => {
     expect(wrapper.find('.form-success').exists()).toBe(false);
   });
 
-  it('submitting a fully filled form swaps the form for the success card', async () => {
+  it('pre-selects the fiche when /write-review?fiche=:id is provided', async () => {
+    const r = await setupRouter('/write-review?fiche=mireille');
+    const wrapper = mount(UserReviewPage, withRouter(r));
+    expect(wrapper.find('.ps-search').exists()).toBe(false);
+    expect(wrapper.find('.ps-selected').exists()).toBe(true);
+    expect(wrapper.find('.ps-selected-name').text()).toBe('Mireille la folle');
+  });
+
+  it('search reveals up to six fiche suggestions matching the keyword', async () => {
+    const wrapper = mount(UserReviewPage, withRouter(router));
+    await wrapper.find('.ps-search input').setValue('Paris');
+    const cards = wrapper.findAll('.ps-suggestion');
+    expect(cards.length).toBeGreaterThan(0);
+    expect(cards.length).toBeLessThanOrEqual(6);
+  });
+
+  it('selecting a suggestion replaces the search input with a removable selection card', async () => {
+    const wrapper = mount(UserReviewPage, withRouter(router));
+    await wrapper.find('.ps-search input').setValue('Mireille');
+    await wrapper.find('.ps-suggestion').trigger('click');
+    expect(wrapper.find('.ps-search').exists()).toBe(false);
+    expect(wrapper.find('.ps-selected').exists()).toBe(true);
+    expect(wrapper.find('.ps-selected-name').text()).toBe('Mireille la folle');
+
+    await wrapper.find('.ps-selected-clear').trigger('click');
+    expect(wrapper.find('.ps-selected').exists()).toBe(false);
+    expect(wrapper.find('.ps-search input').exists()).toBe(true);
+  });
+
+  it('submitting a fully filled form opens the login-required modal (publish_review)', async () => {
     const wrapper = mount(UserReviewPage, withRouter(router));
 
-    await wrapper.find('input[type="text"]').setValue('Hôtel Plaza Beaubourg');
+    await wrapper.find('.ps-search input').setValue('Mireille');
+    await wrapper.find('.ps-suggestion').trigger('click');
     await wrapper.findAll('.star-btn')[4].trigger('click'); // 5 stars
     await wrapper.find('input[type="date"]').setValue('2026-03-10');
     await wrapper.findAll('input[type="radio"]')[0].setValue(); // first trip type
-    await wrapper.findAll('input[type="text"]')[1].setValue('A perfect stay');
+    await wrapper.find('input[type="text"]').setValue('A perfect stay');
     await wrapper.find('textarea').setValue('Wonderful breakfast and warm staff.');
 
     await wrapper.find('form').trigger('submit');
 
-    expect(wrapper.find('.form-success').exists()).toBe(true);
-    expect(wrapper.find('.form-success h2').text()).toBe('Thanks - your review is in the queue!');
-    expect(wrapper.find('form').exists()).toBe(false);
+    expect(loginRequiredOpen.value).toBe(true);
+    expect(loginRequiredContext.value.target).toBe('publish_review');
+    expect(loginRequiredContext.value.name).toBe('Mireille la folle');
+    // The form stays mounted underneath the modal.
+    expect(wrapper.find('form').exists()).toBe(true);
   });
 
   it('star buttons toggle the rating and surface the matching label', async () => {
@@ -63,33 +101,19 @@ describe('UserReviewPage (Write a review)', () => {
     expect(wrapper.find('.form-hero-title').text()).toBe('Écrire un avis');
     expect(wrapper.find('.form-submit').text()).toBe('Publier mon avis');
   });
-
-  it('navigates back to / when "Back to home" is clicked from the success card', async () => {
-    const wrapper = mount(UserReviewPage, withRouter(router));
-    await wrapper.find('input[type="text"]').setValue('A place');
-    await wrapper.findAll('.star-btn')[4].trigger('click');
-    await wrapper.find('input[type="date"]').setValue('2026-03-10');
-    await wrapper.findAll('input[type="radio"]')[0].setValue();
-    await wrapper.findAll('input[type="text"]')[1].setValue('Title');
-    await wrapper.find('textarea').setValue('Body');
-    await wrapper.find('form').trigger('submit');
-
-    await wrapper.find('.form-success .pill-btn').trigger('click');
-    await flushPromises();
-    expect(router.currentRoute.value.name).toBe('home');
-  });
 });
 
 describe('PostPhotosPage (Publish photos)', () => {
   beforeEach(async () => {
     setLocale('en');
+    closeLoginRequired();
     router = await setupRouter('/post-photos');
   });
 
-  it('renders the hero, place input, drop zone, caption, and consent checkbox', () => {
+  it('renders the hero, place search, drop zone, caption, and consent checkbox', () => {
     const wrapper = mount(PostPhotosPage, withRouter(router));
     expect(wrapper.find('.form-hero-title').text()).toBe('Post photos');
-    expect(wrapper.find('input[type="text"]').exists()).toBe(true);
+    expect(wrapper.find('.ps-search input').exists()).toBe(true);
     expect(wrapper.find('.drop-zone').exists()).toBe(true);
     expect(wrapper.find('input[type="file"]').exists()).toBe(true);
     expect(wrapper.find('textarea').exists()).toBe(true);
@@ -100,7 +124,7 @@ describe('PostPhotosPage (Publish photos)', () => {
     const wrapper = mount(PostPhotosPage, withRouter(router));
     await wrapper.find('form').trigger('submit');
     expect(wrapper.find('.form-error').exists()).toBe(true);
-    expect(wrapper.find('.form-success').exists()).toBe(false);
+    expect(loginRequiredOpen.value).toBe(false);
   });
 
   it('staged files appear in the list and can be removed', async () => {
@@ -117,11 +141,17 @@ describe('PostPhotosPage (Publish photos)', () => {
     expect(wrapper.find('.file-row').exists()).toBe(false);
   });
 
-  it('successful submission swaps the form for the success card (FR locale)', async () => {
-    setLocale('fr');
+  it('pre-selects the fiche when /post-photos?fiche=:id is provided', async () => {
+    const r = await setupRouter('/post-photos?fiche=mireille');
+    const wrapper = mount(PostPhotosPage, withRouter(r));
+    expect(wrapper.find('.ps-selected-name').text()).toBe('Mireille la folle');
+  });
+
+  it('valid submission opens the login-required modal (publish_photos)', async () => {
     const wrapper = mount(PostPhotosPage, withRouter(router));
 
-    await wrapper.find('input[type="text"]').setValue('Hôtel des Trois Lunes');
+    await wrapper.find('.ps-search input').setValue('Mireille');
+    await wrapper.find('.ps-suggestion').trigger('click');
     const fileInput = wrapper.find('input[type="file"]').element;
     Object.defineProperty(fileInput, 'files', {
       value: [new File(['x'], 'a.jpg', { type: 'image/jpeg' })],
@@ -132,13 +162,17 @@ describe('PostPhotosPage (Publish photos)', () => {
 
     await wrapper.find('form').trigger('submit');
 
-    expect(wrapper.find('.form-success h2').text()).toBe('Merci - photos bien reçues !');
+    expect(loginRequiredOpen.value).toBe(true);
+    expect(loginRequiredContext.value.target).toBe('publish_photos');
+    expect(loginRequiredContext.value.name).toBe('Mireille la folle');
+    expect(wrapper.find('form').exists()).toBe(true);
   });
 });
 
 describe('CreateListingPage (Add a place)', () => {
   beforeEach(async () => {
     setLocale('en');
+    closeLoginRequired();
     router = await setupRouter('/add-place');
   });
 
@@ -173,7 +207,7 @@ describe('CreateListingPage (Add a place)', () => {
     expect(wrapper.find('.form-error').exists()).toBe(true);
   });
 
-  it('fully filled submission shows the success card', async () => {
+  it('valid submission opens the login-required modal (add_place)', async () => {
     const wrapper = mount(CreateListingPage, withRouter(router));
 
     const textInputs = wrapper.findAll('input[type="text"]');
@@ -186,8 +220,10 @@ describe('CreateListingPage (Add a place)', () => {
 
     await wrapper.find('form').trigger('submit');
 
-    expect(wrapper.find('.form-success').exists()).toBe(true);
-    expect(wrapper.find('.form-success h2').text()).toBe('Thanks - listing submitted!');
+    expect(loginRequiredOpen.value).toBe(true);
+    expect(loginRequiredContext.value.target).toBe('add_place');
+    expect(loginRequiredContext.value.name).toBe('Hôtel des Trois Lunes');
+    expect(wrapper.find('form').exists()).toBe(true);
   });
 
   it('renders the page in French', () => {

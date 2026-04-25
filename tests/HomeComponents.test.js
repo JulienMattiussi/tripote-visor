@@ -2,7 +2,6 @@ import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest';
 import { mount, flushPromises } from '@vue/test-utils';
 import CategoryGrid from '../src/components/CategoryGrid.vue';
 import ExperienceCards from '../src/components/ExperienceCards.vue';
-import KivaBanner from '../src/components/KivaBanner.vue';
 import InspirationCards from '../src/components/InspirationCards.vue';
 import DestinationsGrid from '../src/components/DestinationsGrid.vue';
 import TravelersChoice from '../src/components/TravelersChoice.vue';
@@ -51,20 +50,6 @@ describe('ExperienceCards', () => {
   });
 });
 
-describe('KivaBanner', () => {
-  it('renders the title and the Donate CTA', () => {
-    const wrapper = mount(KivaBanner);
-    expect(wrapper.text()).toContain('Donate now');
-  });
-
-  it('clicking Donate fires the front-simulation alert', async () => {
-    const wrapper = mount(KivaBanner);
-    await wrapper.find('button.pill-btn').trigger('click');
-    expect(window.alert).toHaveBeenCalledOnce();
-    expect(window.alert.mock.calls[0][0]).toContain('front simulation only');
-  });
-});
-
 describe('InspirationCards', () => {
   it('renders three inspiration cards', () => {
     const wrapper = mount(InspirationCards);
@@ -100,12 +85,12 @@ describe('DestinationsGrid', () => {
 });
 
 describe('TravelersChoice (home promo)', () => {
-  it('CTA navigates to /travelers-choice', async () => {
+  it('CTA navigates to /discover', async () => {
     const router = await setupRouter('/');
     const wrapper = mount(TravelersChoice, withRouter(router));
     await wrapper.find('button.pill-btn').trigger('click');
     await flushPromises();
-    expect(router.currentRoute.value.name).toBe('travelers-choice');
+    expect(router.currentRoute.value.name).toBe('discover');
   });
 });
 
@@ -119,15 +104,17 @@ describe('CommunityBlurb', () => {
 });
 
 describe('ThingsToDoBanner', () => {
-  it('renders the headline and the Book now CTA', () => {
-    const wrapper = mount(ThingsToDoBanner);
-    expect(wrapper.text()).toContain('Book now');
+  it('renders the headline and the Discover now CTA', async () => {
+    const router = await setupRouter('/');
+    const wrapper = mount(ThingsToDoBanner, withRouter(router));
+    expect(wrapper.text()).toContain('Discover now');
   });
 
-  it('clicking Book now fires the front-simulation alert', async () => {
-    const wrapper = mount(ThingsToDoBanner);
+  it('clicking Discover now navigates to /discover', async () => {
+    const router = await setupRouter('/');
+    const wrapper = mount(ThingsToDoBanner, withRouter(router));
     await wrapper.find('button.pill-btn').trigger('click');
-    expect(window.alert).toHaveBeenCalledOnce();
-    expect(window.alert.mock.calls[0][0]).toContain('front simulation only');
+    await flushPromises();
+    expect(router.currentRoute.value.name).toBe('discover');
   });
 });

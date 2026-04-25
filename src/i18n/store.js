@@ -155,6 +155,14 @@ export function localeFlag() {
   return LOCALE_META[locale.value].flag;
 }
 
+export function formatLieu(fiche) {
+  if (!fiche) return '';
+  const ville = fiche.ville ?? '';
+  const lieu = fiche.lieu ?? '';
+  if (ville && lieu) return `${ville} (${lieu})`;
+  return ville || lieu;
+}
+
 export function formatAmount(usdAmount) {
   const isEuro = currency.value === 'EUR';
   const value = isEuro ? Math.round(usdAmount * USD_TO_EUR) : usdAmount;

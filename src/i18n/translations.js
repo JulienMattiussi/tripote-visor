@@ -12,7 +12,7 @@ export const translations = {
       review_photos: 'Publish photos',
       review_add_place: 'Add a place',
       discover_menu_aria: 'Discover options',
-      discover_choice: "Travellers' Choice",
+      discover_top: 'Top destinations',
       discover_stories: 'Travel Stories',
     },
     hero: {
@@ -35,8 +35,21 @@ export const translations = {
       headline_line1: 'Find things to do',
       headline_line2: 'for everything',
       headline_line3: "you're into",
-      subtitle: 'Browse 400,000+ experiences and book with us.',
-      cta: 'Book now',
+      subtitle: 'Browse 400,000+ experiences and discover with us.',
+      cta: 'Discover now',
+    },
+    discover_page: {
+      hero_aria: 'Discover experiences',
+      hero_title: 'Discover experiences approved by users',
+      disclaimer:
+        'Generated revenue and your browsing history influence how experiences are displayed on this page.',
+      section_title: 'Must-try experiences',
+      from_price: 'from {amount}',
+      back_home: 'Back to home',
+    },
+    dest_top: {
+      aria: 'Trending destinations highlights',
+      title: 'Trending destinations highlights',
     },
     categories: {
       title: 'Find things to do by interest',
@@ -60,14 +73,6 @@ export const translations = {
       item_3_price: 'from {amount} per adult',
       item_4_title: 'Nancy Private Walking Tour With a Professional Guide',
       item_4_price: 'from {amount} per group',
-    },
-    kiva: {
-      aria: 'Foundation promo',
-      alt_image: 'Small business owner',
-      foundation: 'Tripote-visor Foundation',
-      title: 'Show some love to small businesses',
-      body: 'Donate to our partner today to provide loans to local entrepreneurs and the Tripote-visor Foundation will match it, up to {amount} collectively. Terms apply.',
-      cta: 'Donate now',
     },
     inspiration: {
       title: 'Inspiration to get you going',
@@ -113,7 +118,7 @@ export const translations = {
       col_explore_1: 'Write a review',
       col_explore_2: 'Add a Place',
       col_explore_3: 'Join',
-      col_explore_4: "Travelers' Choice",
+      col_explore_4: 'Top destinations',
       col_explore_6: 'Travel Stories',
     },
     prefs: {
@@ -150,30 +155,6 @@ export const translations = {
       forgot_submit: 'Send a link',
       forgot_success:
         'If that email is in our records, a reset link is on its way. Check your inbox.',
-    },
-    tc_page: {
-      hero_title: "Travellers' Choice Awards Best of the Best {year}",
-      hero_subtitle: 'Among our top 1% of places, stays, eats, and experiences - decided by you.',
-      intro:
-        'These are the most loved hotels, restaurants, things to do, and destinations of the year, picked by millions of travellers like you. Browse the categories below for the very best of {year}.',
-      tab_all: 'All',
-      tab_hotels: 'Hotels',
-      tab_alleys: 'Alleys',
-      tab_things: 'Parks',
-      cat_hotels_title: 'Hotels - Best of the Best',
-      cat_hotels_desc:
-        'The most-loved stays of the year, from boutique riads to mountain retreats.',
-      cat_alleys_title: 'Alleys - Best of the Best',
-      cat_alleys_desc:
-        "The narrow lanes travellers can't stop wandering - cobblestone mews, sunlit passages and secret courtyards.",
-      cat_things_title: 'Parks - Best of the Best',
-      cat_things_desc:
-        'The experiences that turned trips into stories worth telling - tours, dives, treks, and hot-air rides.',
-      reviews_count: '{count} reviews',
-      see_more: 'See all winners',
-      back_to_top: 'Back to top',
-      footer_note:
-        'Rankings reflect placeholder data for front-end demo purposes only - Tripote-visor is a parody site.',
     },
     ts_page: {
       hero_title: 'Travel Stories',
@@ -230,11 +211,7 @@ export const translations = {
       photos_label: 'Add photos (optional)',
       photos_hint: 'JPG or PNG, up to 5 files.',
       submit: 'Publish my review',
-      success_title: 'Thanks - your review is in the queue!',
-      success_body:
-        'Front-only demo: nothing was actually saved. On a real platform the review would now be moderated and published.',
       error_required: 'Please fill in every required field before publishing.',
-      back_home: 'Back to home',
     },
     pp_page: {
       hero_title: 'Post photos',
@@ -250,12 +227,8 @@ export const translations = {
       consent_label:
         'I confirm I took these photos myself and agree that Tripote-visor can display them.',
       submit: 'Upload photos',
-      success_title: 'Thanks - photos received!',
-      success_body:
-        'Front-only demo: nothing was actually uploaded. On a real platform the photos would now be processed and shown on the listing.',
       file_count: '{count} file(s) staged',
       remove: 'Remove',
-      back_home: 'Back to home',
       error_required: 'Pick a place, attach at least one file, and confirm the box.',
     },
     cl_page: {
@@ -289,11 +262,7 @@ export const translations = {
       relationship_employee: 'I work there',
       relationship_traveller: 'I’m a traveller who visited',
       submit: 'Submit listing',
-      success_title: 'Thanks - listing submitted!',
-      success_body:
-        'Front-only demo: nothing was actually saved. On a real platform the listing would now be queued for moderation.',
       error_required: 'Please fill in every required field before submitting.',
-      back_home: 'Back to home',
     },
     how_page: {
       hero_title: 'How the site works',
@@ -500,10 +469,17 @@ export const translations = {
       wcag_link: 'WCAG 2.1 AA standard',
       back_home: 'Back to home',
     },
+    place_search: {
+      no_match: 'No place matches your search.',
+      change_selection: 'Change place',
+    },
     login_required_modal: {
       title: 'Sign in required',
       message: 'You must be signed in to access {target} of {name}.',
       message_save: 'You must be signed in to save {name}’s profile.',
+      message_publish_review: 'You must be signed in to publish a review for {name}.',
+      message_publish_photos: 'You must be signed in to publish photos for {name}.',
+      message_add_place: 'You must be signed in to submit “{name}” as a new listing.',
       target_site: 'the website',
       target_menu: 'the pricing card',
       target_phone: 'the phone number',
@@ -616,7 +592,7 @@ export const translations = {
       review_photos: 'Publier des photos',
       review_add_place: 'Ajouter un lieu',
       discover_menu_aria: 'Options de découverte',
-      discover_choice: 'Travellers’ Choice',
+      discover_top: 'Top destinations',
       discover_stories: 'Récits de voyage',
     },
     hero: {
@@ -639,8 +615,21 @@ export const translations = {
       headline_line1: 'Trouvez des',
       headline_line2: 'activités selon vos',
       headline_line3: 'envies',
-      subtitle: 'Parcourez plus de 400 000 expériences et réservez avec nous.',
-      cta: 'Réserver maintenant',
+      subtitle: 'Parcourez plus de 400 000 expériences et découvrez avec nous.',
+      cta: 'Découvrez maintenant',
+    },
+    discover_page: {
+      hero_aria: 'Découvrir des expériences',
+      hero_title: 'Découvrez des expériences approuvées par les utilisateurs',
+      disclaimer:
+        'Les revenus générés et votre historique de navigation influencent l’affichage des expériences sur cette page.',
+      section_title: 'Expériences incontournables',
+      from_price: 'à partir de {amount}',
+      back_home: 'Retour à l’accueil',
+    },
+    dest_top: {
+      aria: 'Les incontournables des destinations tendance',
+      title: 'Les incontournables des destinations tendance',
     },
     categories: {
       title: 'Trouvez des activités par centre d’intérêt',
@@ -665,14 +654,6 @@ export const translations = {
       item_4_title: 'Visite privée de Nancy avec un guide professionnel',
       item_4_price: 'à partir de {amount} par groupe',
     },
-    kiva: {
-      aria: 'Promo fondation',
-      alt_image: 'Propriétaire de petite entreprise',
-      foundation: 'Fondation Tripote-visor',
-      title: 'Soutenez les petites entreprises',
-      body: 'Faites un don à notre partenaire aujourd’hui pour financer des prêts à des entrepreneurs locaux ; la Fondation Tripote-visor doublera votre contribution, jusqu’à {amount} au total. Conditions applicables.',
-      cta: 'Faire un don',
-    },
     inspiration: {
       title: 'Des idées pour vous inspirer',
       item_1_title: '6 superblooms spectaculaires qui valent le voyage',
@@ -690,8 +671,8 @@ export const translations = {
       cta: 'Découvrez les gagnants',
     },
     community: {
-      title: 'Tripote-visor : rejoignez la plus grande communauté de voyageurs',
-      body: 'Première plateforme mondiale de guidance voyage, Tripote-visor vous aide à mieux voyager. Et planifier, réserver et laisser un avis chez nous paie : rejoignez Récompenses dès aujourd’hui et obtenez {amount} de réduction sur les Activités. Découvrez aussi des hôtels, des restaurants et plus encore sur notre site, le tout soutenu par plus d’un milliard d’avis et d’opinions de voyageurs qui y sont allés.',
+      title: 'Tripote-visor : rejoignez la plus grande communauté d’utilisateurs',
+      body: 'Première plateforme mondiale de guidance voyage, Tripote-visor vous aide à mieux voyager. Et planifier, réserver et laisser un avis chez nous paie : rejoignez Récompenses dès aujourd’hui et obtenez {amount} de réduction sur les Activités. Découvrez aussi des hôtels, des restaurants et plus encore sur notre site, le tout soutenu par plus d’un milliard d’avis et d’opinions d’utilisateurs qui y sont allés.',
     },
     footer: {
       currency_aria: 'Devise',
@@ -718,7 +699,7 @@ export const translations = {
       col_explore_1: 'Écrire un avis',
       col_explore_2: 'Ajouter un lieu',
       col_explore_3: 'S’inscrire',
-      col_explore_4: 'Travellers’ Choice',
+      col_explore_4: 'Top destinations',
       col_explore_6: 'Récits de voyage',
     },
     prefs: {
@@ -756,31 +737,6 @@ export const translations = {
       forgot_success:
         'Si cette adresse est dans nos registres, un lien de réinitialisation est en route. Consultez votre boîte de réception.',
     },
-    tc_page: {
-      hero_title: 'Prix Travellers’ Choice Best of the Best {year}',
-      hero_subtitle:
-        'Le top 1 % des destinations, séjours, expériences et restaurants les mieux notés, et choisis par vous.',
-      intro:
-        'Voici les hôtels, restaurants, activités et destinations les plus appréciés de l’année, choisis par des millions de voyageurs comme vous. Parcourez les catégories ci-dessous pour découvrir le meilleur de {year}.',
-      tab_all: 'Tous',
-      tab_hotels: 'Hôtels',
-      tab_alleys: 'Ruelles',
-      tab_things: 'Parcs',
-      cat_hotels_title: 'Hôtels - Best of the Best',
-      cat_hotels_desc:
-        'Les séjours les plus appréciés de l’année, des riads de charme aux refuges de montagne.',
-      cat_alleys_title: 'Ruelles - Best of the Best',
-      cat_alleys_desc:
-        'Les ruelles où les voyageurs ne se lassent pas de flâner : pavés, passages baignés de soleil et cours secrètes.',
-      cat_things_title: 'Parcs - Best of the Best',
-      cat_things_desc:
-        'Les expériences qui transforment un voyage en récit inoubliable : visites, plongées, treks et vols en montgolfière.',
-      reviews_count: '{count} avis',
-      see_more: 'Voir tous les gagnants',
-      back_to_top: 'Retour en haut',
-      footer_note:
-        'Le classement repose sur des données factices pour la démo front-end uniquement - Tripote-visor est un site parodique.',
-    },
     ts_page: {
       hero_title: 'Récits de voyage',
       hero_subtitle:
@@ -811,7 +767,7 @@ export const translations = {
     ur_page: {
       hero_title: 'Écrire un avis',
       hero_subtitle:
-        'Partagez votre expérience avec des millions de voyageurs - chaque avis aide la communauté à mieux choisir.',
+        'Partagez votre expérience avec des millions d’utilisateurs - chaque avis aide la communauté à mieux choisir.',
       step_label: 'Étape {n} sur 4',
       place_label: 'Où êtes-vous allé(e) ?',
       place_placeholder: 'Rechercher un lieu par son nom…',
@@ -833,15 +789,11 @@ export const translations = {
       title_placeholder: 'Résumez votre visite en une phrase',
       body_label: 'Racontez-nous',
       body_placeholder:
-        'Qu’avez-vous adoré ? Que pourrait-on améliorer ? Les autres voyageurs veulent un retour honnête.',
+        'Qu’avez-vous adoré ? Que pourrait-on améliorer ? Les autres utilisateurs veulent un retour honnête.',
       photos_label: 'Ajouter des photos (facultatif)',
       photos_hint: 'JPG ou PNG, jusqu’à 5 fichiers.',
       submit: 'Publier mon avis',
-      success_title: 'Merci - votre avis est en file d’attente !',
-      success_body:
-        'Démo front uniquement : rien n’a réellement été enregistré. Sur une vraie plateforme, l’avis serait modéré puis publié.',
       error_required: 'Merci de remplir chaque champ obligatoire avant de publier.',
-      back_home: 'Retour à l’accueil',
     },
     pp_page: {
       hero_title: 'Publier des photos',
@@ -858,19 +810,15 @@ export const translations = {
       consent_label:
         'Je confirme avoir pris ces photos moi-même et accepte que Tripote-visor les affiche.',
       submit: 'Envoyer les photos',
-      success_title: 'Merci - photos bien reçues !',
-      success_body:
-        'Démo front uniquement : rien n’a réellement été envoyé. Sur une vraie plateforme, les photos seraient traitées puis affichées sur la fiche.',
       file_count: '{count} fichier(s) prêt(s)',
       remove: 'Retirer',
-      back_home: 'Retour à l’accueil',
       error_required:
         'Choisissez un lieu, ajoutez au moins un fichier et cochez la case de consentement.',
     },
     cl_page: {
       hero_title: 'Ajouter un lieu',
       hero_subtitle:
-        'Aidez les voyageurs à découvrir de nouveaux endroits en proposant un hôtel, un restaurant, une attraction ou une location de vacances.',
+        'Aidez les utilisateurs à découvrir de nouveaux endroits en proposant un hôtel, un restaurant, une attraction ou une location de vacances.',
       type_label: 'De quel type de lieu s’agit-il ?',
       type_hotel: 'Hôtel',
       type_restaurant: 'Restaurant',
@@ -892,17 +840,13 @@ export const translations = {
       website_placeholder: 'https://…',
       description_label: 'Brève description',
       description_placeholder:
-        'Une phrase ou deux que les voyageurs verront en arrivant sur la fiche.',
+        'Une phrase ou deux que les utilisateurs verront en arrivant sur la fiche.',
       relationship_label: 'Quel est votre lien avec ce lieu ?',
       relationship_owner: 'Je le possède ou le gère',
       relationship_employee: 'J’y travaille',
-      relationship_traveller: 'Je suis un voyageur qui l’a visité',
+      relationship_traveller: 'Je suis un utilisateur qui l’a visité',
       submit: 'Soumettre la fiche',
-      success_title: 'Merci - fiche soumise !',
-      success_body:
-        'Démo front uniquement : rien n’a réellement été enregistré. Sur une vraie plateforme, la fiche serait mise en file de modération.',
       error_required: 'Merci de remplir chaque champ obligatoire avant de soumettre.',
-      back_home: 'Retour à l’accueil',
     },
     how_page: {
       hero_title: 'Fonctionnement du site',
@@ -913,13 +857,13 @@ export const translations = {
         'Chaque catégorie a ses propres minimums. Les hôtels doivent proposer une réception 24h/24, des salles de bain privatives et le ménage. Les restaurants servent des plats préparés sur place à des horaires fixes, au moins douze semaines par an. Les activités présentent un intérêt touristique et tournent au moins douze semaines (vingt-quatre pour les spectacles). Les compagnies aériennes doivent opérer un service commercial régulier avec au moins soixante jours d’activité. Une adresse permanente ouverte à plusieurs groupes distincts est attendue partout.',
       section_ranking_title: 'Comment les lieux sont classés',
       section_ranking_body:
-        'Les listes ne se construisent pas toutes pareil selon le tri choisi. Pour les hôtels, le tri par défaut est « Rapport qualité-prix », bâti sur l’indice de popularité qui combine quantité, qualité et ancienneté des avis. Les restaurants s’affichent par défaut selon « Notre sélection » - qui intègre la rémunération versée par les partenaires en plus des signaux d’avis - tandis que « Note la plus élevée » repose sur l’indice de popularité. Les activités mettent en avant les « Favoris des voyageurs », à partir des avis et de la distance. Personne ne peut acheter une position précise, mais les accords commerciaux des partenaires peuvent influencer certaines listes éditoriales.',
+        'Les listes ne se construisent pas toutes pareil selon le tri choisi. Pour les hôtels, le tri par défaut est « Rapport qualité-prix », bâti sur l’indice de popularité qui combine quantité, qualité et ancienneté des avis. Les restaurants s’affichent par défaut selon « Notre sélection » - qui intègre la rémunération versée par les partenaires en plus des signaux d’avis - tandis que « Note la plus élevée » repose sur l’indice de popularité. Les activités mettent en avant les « Favoris des utilisateurs », à partir des avis et de la distance. Personne ne peut acheter une position précise, mais les accords commerciaux des partenaires peuvent influencer certaines listes éditoriales.',
       section_tc_title: 'Travellers’ Choice',
       section_tc_body:
         'Chaque année, Travellers’ Choice distingue le top 1 % des lieux selon la communauté. Les gagnants conservent le badge douze mois et la liste est renouvelée chaque hiver. La sélection est produite automatiquement à partir des avis de l’année écoulée - aucun choix éditorial, aucun accord commercial n’influence le résultat.',
       section_revenue_title: 'Comment Tripote-visor gagne de l’argent',
       section_revenue_body:
-        'L’inscription est gratuite pour tous les établissements. Nous touchons une commission lorsqu’un voyageur réserve une activité, une visite ou une location de vacances via nos liens partenaires. Les offres d’hôtels passent par un système d’enchères au Coût par Clic (CPC) où les partenaires se disputent la visibilité du widget de réservation. Les résultats sponsorisés sont autorisés mais toujours signalés par la mention « Publicité » ou « Annonce ».',
+        'L’inscription est gratuite pour tous les établissements. Nous touchons une commission lorsqu’un utilisateur réserve une activité, une visite ou une location de vacances via nos liens partenaires. Les offres d’hôtels passent par un système d’enchères au Coût par Clic (CPC) où les partenaires se disputent la visibilité du widget de réservation. Les résultats sponsorisés sont autorisés mais toujours signalés par la mention « Publicité » ou « Annonce ».',
       section_moderation_title: 'Modération des avis',
       section_moderation_body:
         'Chaque contribution passe par un système automatisé qui traque les violations du règlement communautaire, puis par nos experts internes qui veillent 24h/24, 7j/7. Les signalements de la communauté sont également examinés. Nous pouvons vous contacter par e-mail pour confirmer les détails d’un avis avant publication.',
@@ -942,13 +886,13 @@ export const translations = {
     listings: {
       hotels_title: 'Hôtels',
       hotels_intro:
-        'Trouvez où poser vos valises, des riads de charme aux refuges de montagne - lisez les avis sincères des voyageurs avant de réserver.',
+        'Trouvez où poser vos valises, des riads de charme aux refuges de montagne - lisez les avis sincères des utilisateurs avant de réserver.',
       parks_title: 'Parcs',
       parks_intro:
-        'Visites guidées, billets coupe-file, plongées et treks plébiscités par les voyageurs. Évitez les files, trouvez les pépites locales et réservez en un clic.',
+        'Visites guidées, billets coupe-file, plongées et treks plébiscités par les utilisateurs. Évitez les files, trouvez les pépites locales et réservez en un clic.',
       alleys_title: 'Ruelles',
       alleys_intro:
-        'Pavés, passages couverts et venelles cachées. Flânez dans les ruelles que les voyageurs s’arrachent : balades guidées ou en solo.',
+        'Pavés, passages couverts et venelles cachées. Flânez dans les ruelles que les utilisateurs s’arrachent : balades guidées ou en solo.',
       search_placeholder: 'Où allez-vous ?',
       search_aria: 'Rechercher par destination',
       search_btn: 'Rechercher',
@@ -994,7 +938,7 @@ export const translations = {
         'Vous pouvez librement consulter, partager des captures d’écran, forker ou réutiliser ce site, en tout ou partie. Aucun frais, aucun quota, aucune licence à accepter, aucune condition générale à honorer au-delà de ce qui est raisonnable au regard du droit applicable.',
       section_4_title: '4. Contenu fictif',
       section_4_body:
-        'L’ensemble des hôtels, restaurants, activités, destinations, photographies de personnes, noms de voyageurs, avis, notes, prix et itinéraires présentés sur Tripote-visor est entièrement fictif ou utilisé comme placeholder. Toute ressemblance avec des établissements, personnes, lieux ou événements réels est fortuite et non intentionnelle. Les photographies proviennent de banques d’images libres de droits et ne valent pas recommandation.',
+        'L’ensemble des hôtels, restaurants, activités, destinations, photographies de personnes, noms d’utilisateurs, avis, notes, prix et itinéraires présentés sur Tripote-visor est entièrement fictif ou utilisé comme placeholder. Toute ressemblance avec des établissements, personnes, lieux ou événements réels est fortuite et non intentionnelle. Les photographies proviennent de banques d’images libres de droits et ne valent pas recommandation.',
       section_5_title: '5. Aucune garantie',
       section_5_body:
         'Le site est fourni « en l’état », sans garantie d’aucune sorte. Il n’a pas pour but de planifier, réserver ou orienter des décisions de voyage réelles, et son exploitant ne saurait être tenu responsable d’une décision prise sur la base de son contenu.',
@@ -1106,17 +1050,24 @@ export const translations = {
       intro:
         'Chez Tripote-visor, nous voulons que le voyage soit ouvert à toutes et à tous. Nous nous engageons à ce que notre site soit utilisable par le plus grand nombre, et nous itérons en continu sur la conception inclusive du site.',
       progress:
-        'Depuis juin 2025, nous avons revu et amélioré le tunnel de réservation de nos activités - c’est-à-dire les parcours sur lesquels les voyageurs effectuent réellement une transaction. La majeure partie de cette expérience répond désormais aux dernières exigences e-commerce de l’Acte législatif européen sur l’accessibilité (EAA), qui impose aux sites consultés par les consommateurs européens de respecter au minimum la norme WCAG 2.1 AA lorsqu’ils proposent certains services spécifiques.',
+        'Depuis juin 2025, nous avons revu et amélioré le tunnel de réservation de nos activités - c’est-à-dire les parcours sur lesquels les utilisateurs effectuent réellement une transaction. La majeure partie de cette expérience répond désormais aux dernières exigences e-commerce de l’Acte législatif européen sur l’accessibilité (EAA), qui impose aux sites consultés par les consommateurs européens de respecter au minimum la norme WCAG 2.1 AA lorsqu’ils proposent certains services spécifiques.',
       ongoing:
-        'Le travail n’est pas terminé. Aux côtés d’autres acteurs qui font avancer l’accessibilité numérique, nous continuerons d’itérer pour offrir la meilleure expérience possible à chaque voyageur. Si vous repérez quelque chose à améliorer, écrivez-nous à accessibility@tripote-visor.com - nous l’intégrerons dans la prochaine itération.',
+        'Le travail n’est pas terminé. Aux côtés d’autres acteurs qui font avancer l’accessibilité numérique, nous continuerons d’itérer pour offrir la meilleure expérience possible à chaque utilisateur. Si vous repérez quelque chose à améliorer, écrivez-nous à accessibility@tripote-visor.com - nous l’intégrerons dans la prochaine itération.',
       eaa_link: 'Acte législatif européen sur l’accessibilité (EAA)',
       wcag_link: 'norme WCAG 2.1 AA',
       back_home: 'Retour à l’accueil',
+    },
+    place_search: {
+      no_match: 'Aucun lieu ne correspond à votre recherche.',
+      change_selection: 'Changer de lieu',
     },
     login_required_modal: {
       title: 'Connexion requise',
       message: 'Vous devez être connecté pour accéder {target} de {name}.',
       message_save: 'Vous devez être connecté pour enregistrer la fiche de {name}.',
+      message_publish_review: 'Vous devez être connecté pour publier un avis sur {name}.',
+      message_publish_photos: 'Vous devez être connecté pour publier des photos sur {name}.',
+      message_add_place: 'Vous devez être connecté pour soumettre « {name} » comme nouvelle fiche.',
       target_site: 'au site web',
       target_menu: 'à la carte tarifaire',
       target_phone: 'au numéro de téléphone',
@@ -1197,7 +1148,7 @@ export const translations = {
       localization_title: 'Localisation',
       map_placeholder: 'Carte (placeholder)',
       parking_info: 'Stationnement dans la rue',
-      reviews_title: 'Avis des voyageurs',
+      reviews_title: 'Avis des utilisateurs',
       reviews_count: '{count} avis',
       no_reviews: 'Aucun avis pour le moment.',
       thumb_main: 'Principale',

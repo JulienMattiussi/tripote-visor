@@ -60,7 +60,7 @@ describe('AppFooter - Explore column', () => {
     expect(exploreLinks.map((a) => a.attributes('href'))).toEqual([
       '/write-review',
       '/add-place',
-      '/travelers-choice',
+      '/discover',
       '/travel-stories',
     ]);
     const joinBtn = cols[1].find('button.link-like');

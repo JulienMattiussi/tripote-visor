@@ -97,8 +97,9 @@ describe('translation dictionary integrity', () => {
       'experiences.title',
       'experiences.subtitle',
       'experiences.item_1_price',
-      'kiva.title',
-      'kiva.cta',
+      'discover_page.hero_title',
+      'discover_page.section_title',
+      'dest_top.title',
       'inspiration.title',
       'tc.cta',
       'community.title',
@@ -134,10 +135,9 @@ describe('locale switching on the full App', () => {
     'Sign in',
     'Where to?',
     'Search All',
-    'Book now',
+    'Discover now',
     'Find things to do by interest',
     "Can't-miss picks near you",
-    'Donate now',
     'Inspiration to get you going',
     'Popular destinations',
     "Travelers' Choice Awards Best of the Best",
@@ -151,10 +151,9 @@ describe('locale switching on the full App', () => {
     'Se connecter',
     'Quelle destination ?',
     'Tout rechercher',
-    'Réserver maintenant',
+    'Découvrez maintenant',
     'Trouvez des activités par centre d’intérêt',
     'Des expériences qui devraient vous plaire',
-    'Faire un don',
     'Des idées pour vous inspirer',
     'Destinations populaires',
     'Prix Travellers’ Choice Best of the Best',
@@ -214,9 +213,7 @@ describe('locale switching on the full App', () => {
     await wrapper.vm.$nextTick();
 
     const ttdImg = wrapper.find('.ttd-image img');
-    const kivaImg = wrapper.find('.kiva-image img');
     expect(ttdImg.attributes('alt')).toBe(translations.fr.ttd.alt_image);
-    expect(kivaImg.attributes('alt')).toBe(translations.fr.kiva.alt_image);
 
     const socials = wrapper.find('.socials');
     expect(socials.attributes('aria-label')).toBe(translations.fr.footer.socials_aria);
@@ -272,7 +269,7 @@ describe('no hardcoded UI string leaks in components', () => {
   });
   const mountApp = () => mount(App, withRouter(router));
 
-  it('does not leave a literal "Book now" or "Sign in" label anywhere when locale is fr', async () => {
+  it('does not leave a literal "Discover now" or "Sign in" label anywhere when locale is fr', async () => {
     setLocale('fr');
     const wrapper = mountApp();
     await wrapper.vm.$nextTick();
@@ -280,7 +277,7 @@ describe('no hardcoded UI string leaks in components', () => {
 
     // Strings that used to be hardcoded in templates or alerts - would slip
     // through to FR mode if someone ever adds a literal again.
-    expect(text).not.toContain('Book now');
+    expect(text).not.toContain('Discover now');
     expect(text).not.toContain('Sign in');
     expect(text).not.toContain('Donate now');
     expect(text).not.toContain('See the winners');

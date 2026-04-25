@@ -6,11 +6,10 @@ Multi-page Vue 3 front simulation of a major review platform. Pure visual mockup
 
 The site has a home page plus a small constellation of secondary pages reachable from the header dropdowns and the footer.
 
-**Home page** stacks: header (logo, Discover dropdown, Review dropdown, currency pill, Sign-in), tabbed `HeroSearch` (Search All / Hotels / Parks / Alleys), `ThingsToDoBanner`, `CategoryGrid`, `ExperienceCards`, `KivaBanner`, `InspirationCards`, `DestinationsGrid`, `TravelersChoice` promo, `CommunityBlurb`, `AppFooter`. All client-side: `alert()` or local `ref()` for any user action; no network calls.
+**Home page** stacks: header (logo, Discover dropdown, Review dropdown, currency pill, Sign-in), tabbed `HeroSearch` (Search All / Hotels / Parks / Alleys), `ThingsToDoBanner`, `CategoryGrid`, `ExperienceCards`, `DestinationsHighlights`, `InspirationCards`, `DestinationsGrid`, `TravelersChoice` promo, `CommunityBlurb`, `AppFooter`. All client-side: `alert()` or local `ref()` for any user action; no network calls.
 
 **Secondary pages** (each reached from header or footer):
 
-- `/travelers-choice[/:category]` - awards landing, 3 verticals
 - `/travel-stories` - 4 articles (1 featured + 3)
 - `/hotels`, `/parks`, `/alleys` - listings, share `ListingsPage.vue` via `listing-type` prop
 - `/write-review`, `/post-photos`, `/add-place` - parody form pages
@@ -33,7 +32,6 @@ src/
 │   └── index.js                  # createAppRouter({ history }) factory
 ├── pages/
 │   ├── HomePage.vue
-│   ├── TravelersChoicePage.vue   # /travelers-choice[/:category]
 │   ├── TravelStoriesPage.vue
 │   ├── ListingsPage.vue          # generic, fed by listing-type prop
 │   ├── HotelsPage.vue            # thin wrapper over ListingsPage
@@ -49,7 +47,8 @@ src/
 │   ├── SafetyPage.vue
 │   ├── TermsPage.vue
 │   ├── AccessibilityPage.vue
-│   └── ResourcesPage.vue
+│   ├── ResourcesPage.vue
+│   └── DiscoverPage.vue          # /discover - top-4 fiches by rating + DestinationsHighlights
 ├── components/
 │   ├── AppHeader.vue             # Sticky nav, scroll-compact mode, Discover/Review dropdowns
 │   ├── AppFooter.vue             # 3-col grid + legal nav, GitHub social
@@ -57,10 +56,10 @@ src/
 │   ├── ThingsToDoBanner.vue
 │   ├── CategoryGrid.vue
 │   ├── ExperienceCards.vue
-│   ├── KivaBanner.vue
+│   ├── DestinationsHighlights.vue # top villes × 3 fiches each (home + discover)
 │   ├── InspirationCards.vue
 │   ├── DestinationsGrid.vue
-│   ├── TravelersChoice.vue       # home promo strip; CTA navigates to the page
+│   ├── TravelersChoice.vue       # home promo strip; CTA navigates to /discover
 │   ├── CommunityBlurb.vue
 │   ├── PreferencesModal.vue
 │   ├── SignInModal.vue
@@ -68,7 +67,6 @@ src/
 │   ├── LoginRequiredModal.vue    # gates fiche actions behind sign-in
 │   └── SeriousNote.vue           # shared callout reused across pages
 ├── data/
-│   ├── travelers-choice.js
 │   ├── travel-stories.js
 │   ├── fiches.json               # 100 profile entries used by FichePage and ListingsPage
 │   ├── schedules.json            # 15 weekly schedule patterns referenced by fiches
@@ -92,13 +90,12 @@ tests/
 ├── App.test.js
 ├── AppHeader.test.js
 ├── AppFooter.test.js             # 4-col + legal nav + currency/locale selects + cookie/signin triggers
-├── HomeComponents.test.js        # CategoryGrid / ExperienceCards / KivaBanner / Inspiration / Destinations / TravelersChoice (promo) / CommunityBlurb / ThingsToDoBanner
+├── HomeComponents.test.js        # CategoryGrid / ExperienceCards / Inspiration / Destinations / TravelersChoice (promo) / CommunityBlurb / ThingsToDoBanner
 ├── HeroSearch.test.js
 ├── PreferencesModal.test.js
 ├── SignInModal.test.js
 ├── CookieConsentModal.test.js
 ├── LoginRequiredModal.test.js
-├── TravelersChoicePage.test.js
 ├── TravelStoriesPage.test.js
 ├── FormPages.test.js             # UserReview / PostPhotos / CreateListing
 ├── ListingsPages.test.js         # Hotels / Parks / Alleys
@@ -120,33 +117,32 @@ The bust glyph in both favicons and in `AppHeader`'s inline SVG is the same shap
 
 All routes live in `src/router/index.js`. `createAppRouter({ history })` is a factory so tests can inject `createMemoryHistory()` (see `tests/helpers/router.js`). All internal navigation goes through `<router-link>` or `router.push({ name, params })` - never raw `<a href>` to internal URLs.
 
-| Path                          | Name                        | Page                                           |
-| ----------------------------- | --------------------------- | ---------------------------------------------- |
-| `/`                           | `home`                      | `HomePage.vue`                                 |
-| `/travelers-choice`           | `travelers-choice`          | `TravelersChoicePage.vue` (all)                |
-| `/travelers-choice/:category` | `travelers-choice-category` | filtered to `hotels` / `alleys` / `things`     |
-| `/travel-stories`             | `travel-stories`            | `TravelStoriesPage.vue`                        |
-| `/hotels`                     | `hotels`                    | `HotelsPage.vue` (wraps `ListingsPage`)        |
-| `/parks`                      | `parks`                     | `ParksPage.vue` (wraps `ListingsPage`)         |
-| `/alleys`                     | `alleys`                    | `AlleysPage.vue` (wraps `ListingsPage`)        |
-| `/p/:id`                      | `fiche`                     | `FichePage.vue` (single profile)               |
-| `/search`                     | `search`                    | `SearchResultsPage.vue` (`?q=`, `?categorie=`) |
-| `/write-review`               | `write-review`              | `UserReviewPage.vue`                           |
-| `/post-photos`                | `post-photos`               | `PostPhotosPage.vue`                           |
-| `/add-place`                  | `add-place`                 | `CreateListingPage.vue`                        |
-| `/how-it-works`               | `how-it-works`              | `HowTheSiteWorksPage.vue`                      |
-| `/about`                      | `about`                     | `AboutPage.vue`                                |
-| `/safety`                     | `safety`                    | `SafetyPage.vue`                               |
-| `/terms`                      | `terms`                     | `TermsPage.vue`                                |
-| `/accessibility`              | `accessibility`             | `AccessibilityPage.vue`                        |
-| `/resources`                  | `resources`                 | `ResourcesPage.vue`                            |
+| Path              | Name             | Page                                                       |
+| ----------------- | ---------------- | ---------------------------------------------------------- |
+| `/`               | `home`           | `HomePage.vue`                                             |
+| `/travel-stories` | `travel-stories` | `TravelStoriesPage.vue`                                    |
+| `/hotels`         | `hotels`         | `HotelsPage.vue` (wraps `ListingsPage`)                    |
+| `/parks`          | `parks`          | `ParksPage.vue` (wraps `ListingsPage`)                     |
+| `/alleys`         | `alleys`         | `AlleysPage.vue` (wraps `ListingsPage`)                    |
+| `/p/:id`          | `fiche`          | `FichePage.vue` (single profile)                           |
+| `/search`         | `search`         | `SearchResultsPage.vue` (`?q=`, `?categorie=`)             |
+| `/write-review`   | `write-review`   | `UserReviewPage.vue`                                       |
+| `/post-photos`    | `post-photos`    | `PostPhotosPage.vue`                                       |
+| `/add-place`      | `add-place`      | `CreateListingPage.vue`                                    |
+| `/how-it-works`   | `how-it-works`   | `HowTheSiteWorksPage.vue`                                  |
+| `/about`          | `about`          | `AboutPage.vue`                                            |
+| `/safety`         | `safety`         | `SafetyPage.vue`                                           |
+| `/terms`          | `terms`          | `TermsPage.vue`                                            |
+| `/accessibility`  | `accessibility`  | `AccessibilityPage.vue`                                    |
+| `/resources`      | `resources`      | `ResourcesPage.vue`                                        |
+| `/discover`       | `discover`       | `DiscoverPage.vue` (top-4 fiches + DestinationsHighlights) |
 
 ## Pages
 
 Every secondary page follows the same anatomy:
 
 1. **Hero** - full-width strip, title + subtitle. Two color conventions:
-   - `var(--brand-dark)` background with white text for serious / award pages (Terms, Safety, TravelersChoice).
+   - `var(--brand-dark)` background with white text for serious / award pages (Terms, Safety).
    - `var(--surface-alt)` background with brand-dark headings for lighter pages (About, Resources, Listings, How-it-works, Travel Stories).
 2. **Document body** - one or more cards on `var(--bg)` with `var(--shadow)`, each holding an `<h2>` title and paragraphs/bullets.
 3. **Optional `<SeriousNote class="page-prefix-serious" />`** - mounted _outside_ the document, after it. Used on About, Safety, Terms. Mandatory on any page that leans into the parody's substantive subject.
@@ -190,7 +186,7 @@ To add a new modal: declare its open ref + actions in `store.js`, create the com
 Currently:
 
 - **About column**: `About Us → /about`, `Resources and Policies → /resources`, `Trust & Safety → /safety`, `How the site works → /how-it-works`. (Placeholders no longer exist in this column.)
-- **Explore column**: `Write a review → /write-review`, `Add a Place → /add-place`, `Join → openSignin()`, `Travelers' Choice → /travelers-choice`, `Travel Stories → /travel-stories`.
+- **Explore column**: `Write a review → /write-review`, `Add a Place → /add-place`, `Join → openSignin()`, `Top destinations → /discover`, `Travel Stories → /travel-stories`.
 - **Settings column** (rightmost): currency `<select>`, locale `<select>` (both fall back to opening `PreferencesModal` when the user picks the `…` option), and the GitHub social pill, right-aligned.
 - **Legal nav** (bottom row): `Terms of Use → /terms`, `Cookie consent → openCookieModal()`, `Accessibility Statement → /accessibility`.
 

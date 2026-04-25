@@ -120,7 +120,9 @@ describe('ListingsPage - search', () => {
     const expected = fiches.filter(
       (f) =>
         f.categorie === 'hotel' &&
-        (f.nom.toLowerCase().includes('paris') || f.lieu.toLowerCase().includes('paris')),
+        (f.nom.toLowerCase().includes('paris') ||
+          (f.ville ?? '').toLowerCase().includes('paris') ||
+          (f.lieu ?? '').toLowerCase().includes('paris')),
     ).length;
     expect(wrapper.findAll('.lst-card').length).toBe(expected);
   });
@@ -131,7 +133,9 @@ describe('ListingsPage - search', () => {
     const expected = fiches.filter(
       (f) =>
         f.categorie === 'hotel' &&
-        (f.nom.toLowerCase().includes('paris') || f.lieu.toLowerCase().includes('paris')),
+        (f.nom.toLowerCase().includes('paris') ||
+          (f.ville ?? '').toLowerCase().includes('paris') ||
+          (f.lieu ?? '').toLowerCase().includes('paris')),
     ).length;
     expect(wrapper.findAll('.lst-card').length).toBe(expected);
   });

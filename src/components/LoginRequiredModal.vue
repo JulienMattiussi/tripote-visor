@@ -14,6 +14,15 @@ const message = computed(() => {
   if (ctx.target === 'save') {
     return t('login_required_modal.message_save', { name });
   }
+  if (ctx.target === 'publish_review') {
+    return t('login_required_modal.message_publish_review', { name });
+  }
+  if (ctx.target === 'publish_photos') {
+    return t('login_required_modal.message_publish_photos', { name });
+  }
+  if (ctx.target === 'add_place') {
+    return t('login_required_modal.message_add_place', { name });
+  }
   if (!ctx.target) return '';
   const target = t(`login_required_modal.target_${ctx.target}`);
   return t('login_required_modal.message', { target, name });

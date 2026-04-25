@@ -1,17 +1,30 @@
 <script setup>
 import { ref, computed } from 'vue';
-import { useRouter } from 'vue-router';
-import { t } from '../i18n/store.js';
+import { useRoute } from 'vue-router';
+import { t, openLoginRequired } from '../i18n/store.js';
+import fichesData from '../data/fiches.json';
+import PlaceSearchSelect from '../components/PlaceSearchSelect.vue';
 
-const router = useRouter();
+const route = useRoute();
 
-const place = ref('');
+const initialFiche = (() => {
+  const id = (route.query.fiche ?? '').toString();
+  return id ? (fichesData.find((f) => f.id === id) ?? null) : null;
+})();
+
+const todayIso = () => {
+  const d = new Date();
+  const mm = String(d.getMonth() + 1).padStart(2, '0');
+  const dd = String(d.getDate()).padStart(2, '0');
+  return `${d.getFullYear()}-${mm}-${dd}`;
+};
+
+const selectedFiche = ref(initialFiche);
 const rating = ref(0);
-const visitDate = ref('');
+const visitDate = ref(todayIso());
 const tripType = ref('');
 const title = ref('');
 const body = ref('');
-const submitted = ref(false);
 const showError = ref(false);
 
 const RATING_LABELS = [
@@ -30,7 +43,7 @@ const ratingLabel = computed(() =>
 
 const isValid = computed(
   () =>
-    place.value.trim() &&
+    selectedFiche.value &&
     rating.value > 0 &&
     visitDate.value &&
     tripType.value &&
@@ -44,11 +57,9 @@ const onSubmit = (e) => {
     showError.value = true;
     return;
   }
-  submitted.value = true;
   showError.value = false;
+  openLoginRequired({ target: 'publish_review', name: selectedFiche.value.nom });
 };
-
-const goHome = () => router.push({ name: 'home' });
 </script>
 
 <template>
@@ -60,17 +71,15 @@ const goHome = () => router.push({ name: 'home' });
   </section>
 
   <main class="container form-main">
-    <div v-if="!submitted" class="form-card">
+    <div class="form-card">
       <form @submit="onSubmit">
-        <label class="field">
+        <div class="field">
           <span class="field-label">{{ t('ur_page.place_label') }} <em>*</em></span>
-          <input
-            v-model="place"
-            type="text"
+          <PlaceSearchSelect
+            v-model="selectedFiche"
             :placeholder="t('ur_page.place_placeholder')"
-            required
           />
-        </label>
+        </div>
 
         <fieldset class="field rating-field">
           <legend class="field-label">{{ t('ur_page.rating_label') }} <em>*</em></legend>
@@ -140,15 +149,6 @@ const goHome = () => router.push({ name: 'home' });
           {{ t('ur_page.submit') }}
         </button>
       </form>
-    </div>
-
-    <div v-else class="form-success" role="status">
-      <span class="form-success-icon" aria-hidden="true">✓</span>
-      <h2>{{ t('ur_page.success_title') }}</h2>
-      <p>{{ t('ur_page.success_body') }}</p>
-      <button type="button" class="pill-btn pill-btn--dark" @click="goHome">
-        {{ t('ur_page.back_home') }}
-      </button>
     </div>
   </main>
 </template>

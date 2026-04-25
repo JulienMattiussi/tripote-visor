@@ -20,7 +20,7 @@ describe('FichePage - rendering for a known fiche', () => {
   it('shows the fiche name and location', () => {
     const wrapper = mount(FichePage, withRouter(router));
     expect(wrapper.find('.fp-title').text()).toBe('Mireille la folle');
-    expect(wrapper.text()).toContain('Paris 11e');
+    expect(wrapper.text()).toContain('Paris (11e)');
   });
 
   it('renders the verified-page badge', () => {
@@ -31,7 +31,7 @@ describe('FichePage - rendering for a known fiche', () => {
   it('shows the three meta tags (lieu, catégorie, age)', () => {
     const wrapper = mount(FichePage, withRouter(router));
     const tags = wrapper.findAll('.fp-tag').map((t) => t.text());
-    expect(tags).toEqual(['Paris 11e', 'hotel', '50 years old']);
+    expect(tags).toEqual(['Paris (11e)', 'hotel', '50 years old']);
   });
 
   it('shows 0 reviews count and the empty-reviews message', () => {
@@ -174,9 +174,31 @@ describe('FichePage - interactions', () => {
   it('renders every descriptif line in full (no read-more truncation)', () => {
     const mireille = fiches.find((f) => f.id === 'mireille');
     const wrapper = mount(FichePage, withRouter(router));
+    // Default test locale is 'en', so descriptif_en is shown.
+    for (const line of mireille.descriptif_en) {
+      expect(wrapper.text()).toContain(line);
+    }
+  });
+
+  it('renders the French descriptif when locale is fr', () => {
+    setLocale('fr');
+    const mireille = fiches.find((f) => f.id === 'mireille');
+    const wrapper = mount(FichePage, withRouter(router));
     for (const line of mireille.descriptif) {
       expect(wrapper.text()).toContain(line);
     }
+    // The English copy should not be shown when in French.
+    expect(wrapper.text()).not.toContain(mireille.descriptif_en[0]);
+  });
+
+  it('the "+ Add a review" buttons navigate to /write-review with the fiche query', async () => {
+    const wrapper = mount(FichePage, withRouter(router));
+    const addBtns = wrapper.findAll('button').filter((b) => b.text().includes('Write a review'));
+    expect(addBtns.length).toBeGreaterThanOrEqual(2);
+    await addBtns[0].trigger('click');
+    await flushPromises();
+    expect(router.currentRoute.value.name).toBe('write-review');
+    expect(router.currentRoute.value.query.fiche).toBe('mireille');
   });
 });
 

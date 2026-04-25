@@ -172,7 +172,7 @@ describe('AppHeader Discover and Review dropdowns', () => {
     vi.unstubAllGlobals();
   });
 
-  it('clicking Discover opens its dropdown with Travellers’ Choice and Travel Stories', async () => {
+  it('clicking Discover opens its dropdown with Top destinations and Travel Stories', async () => {
     const wrapper = mountHeader();
     expect(wrapper.find('.nav-dropdown').exists()).toBe(false);
 
@@ -182,7 +182,7 @@ describe('AppHeader Discover and Review dropdowns', () => {
 
     expect(discoverTrigger.attributes('aria-expanded')).toBe('true');
     const items = wrapper.findAll('.nav-dropdown-item');
-    expect(items.map((i) => i.text())).toEqual(["Travellers' Choice", 'Travel Stories']);
+    expect(items.map((i) => i.text())).toEqual(['Top destinations', 'Travel Stories']);
     expect(wrapper.find('.nav-dropdown').attributes('role')).toBe('menu');
     expect(wrapper.find('.nav-dropdown').attributes('aria-label')).toBe('Discover options');
   });
@@ -254,7 +254,7 @@ describe('AppHeader Discover and Review dropdowns', () => {
     }
   });
 
-  it('clicking the Travellers’ Choice item navigates to /travelers-choice (no alert)', async () => {
+  it('clicking the Top destinations item navigates to /discover (no alert)', async () => {
     const wrapper = mountHeader();
     const discoverTrigger = wrapper
       .findAll('.nav-menu-trigger')
@@ -264,7 +264,7 @@ describe('AppHeader Discover and Review dropdowns', () => {
     await wrapper.findAll('.nav-dropdown-item')[0].trigger('click');
     await flushPromises();
 
-    expect(router.currentRoute.value.name).toBe('travelers-choice');
+    expect(router.currentRoute.value.name).toBe('discover');
     expect(window.alert).not.toHaveBeenCalled();
   });
 
@@ -302,7 +302,7 @@ describe('AppHeader Discover and Review dropdowns', () => {
 
     await discoverTrigger.trigger('click');
     expect(wrapper.findAll('.nav-dropdown-item').map((i) => i.text())).toEqual([
-      'Travellers’ Choice',
+      'Top destinations',
       'Récits de voyage',
     ]);
 
