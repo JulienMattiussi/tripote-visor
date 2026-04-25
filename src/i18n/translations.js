@@ -129,7 +129,6 @@ export const translations = {
         'Any changes to the preferences are optional, and will persist through your user session.',
     },
     signin: {
-      logo_alt: 'Tripote-visor',
       close: 'Close',
       back: 'Back',
       initial_title: 'Log in to enjoy the full Tripote-visor experience.',
@@ -231,7 +230,6 @@ export const translations = {
       photos_label: 'Add photos (optional)',
       photos_hint: 'JPG or PNG, up to 5 files.',
       submit: 'Publish my review',
-      submitting: 'Publishing…',
       success_title: 'Thanks - your review is in the queue!',
       success_body:
         'Front-only demo: nothing was actually saved. On a real platform the review would now be moderated and published.',
@@ -252,7 +250,6 @@ export const translations = {
       consent_label:
         'I confirm I took these photos myself and agree that Tripote-visor can display them.',
       submit: 'Upload photos',
-      submitting: 'Uploading…',
       success_title: 'Thanks - photos received!',
       success_body:
         'Front-only demo: nothing was actually uploaded. On a real platform the photos would now be processed and shown on the listing.',
@@ -292,7 +289,6 @@ export const translations = {
       relationship_employee: 'I work there',
       relationship_traveller: 'I’m a traveller who visited',
       submit: 'Submit listing',
-      submitting: 'Submitting…',
       success_title: 'Thanks - listing submitted!',
       success_body:
         'Front-only demo: nothing was actually saved. On a real platform the listing would now be queued for moderation.',
@@ -506,7 +502,6 @@ export const translations = {
     },
     common: {
       sim_suffix: '- front simulation only',
-      required: 'Required',
     },
   },
 
@@ -641,7 +636,6 @@ export const translations = {
         'Toute modification des préférences est facultative et sera conservée le temps de la session.',
     },
     signin: {
-      logo_alt: 'Tripote-visor',
       close: 'Fermer',
       back: 'Retour',
       initial_title: 'Connectez-vous pour profiter pleinement de Tripote-visor.',
@@ -745,7 +739,6 @@ export const translations = {
       photos_label: 'Ajouter des photos (facultatif)',
       photos_hint: 'JPG ou PNG, jusqu’à 5 fichiers.',
       submit: 'Publier mon avis',
-      submitting: 'Publication…',
       success_title: 'Merci - votre avis est en file d’attente !',
       success_body:
         'Démo front uniquement : rien n’a réellement été enregistré. Sur une vraie plateforme, l’avis serait modéré puis publié.',
@@ -767,7 +760,6 @@ export const translations = {
       consent_label:
         'Je confirme avoir pris ces photos moi-même et accepte que Tripote-visor les affiche.',
       submit: 'Envoyer les photos',
-      submitting: 'Envoi…',
       success_title: 'Merci - photos bien reçues !',
       success_body:
         'Démo front uniquement : rien n’a réellement été envoyé. Sur une vraie plateforme, les photos seraient traitées puis affichées sur la fiche.',
@@ -808,7 +800,6 @@ export const translations = {
       relationship_employee: 'J’y travaille',
       relationship_traveller: 'Je suis un voyageur qui l’a visité',
       submit: 'Soumettre la fiche',
-      submitting: 'Envoi…',
       success_title: 'Merci - fiche soumise !',
       success_body:
         'Démo front uniquement : rien n’a réellement été enregistré. Sur une vraie plateforme, la fiche serait mise en file de modération.',
@@ -1026,7 +1017,6 @@ export const translations = {
     },
     common: {
       sim_suffix: '- simulation front seulement',
-      required: 'Obligatoire',
     },
   },
 };

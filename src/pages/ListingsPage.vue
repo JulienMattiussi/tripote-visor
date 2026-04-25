@@ -343,7 +343,7 @@ const onView = (listing) => {
   padding: 8px 18px;
   border-radius: 999px;
   background: var(--brand);
-  color: #fff;
+  color: var(--on-dark);
   font-weight: 700;
   font-size: 13px;
 }

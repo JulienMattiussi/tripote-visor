@@ -12,9 +12,14 @@
   --border: #d9d9d9;
   --accent-yellow: #ffe85c;
   --danger: #d32f2f;
+  --danger-tint: rgba(211, 47, 47, 0.08);
+  --on-dark: #fff;
+  --scrim: rgba(0, 0, 0, 0.55);
   --radius: 12px;
   --shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   --shadow-hover: 0 4px 16px rgba(0, 0, 0, 0.12);
+  --shadow-popover: 0 6px 24px rgba(0, 0, 0, 0.15);
+  --shadow-modal: 0 10px 40px rgba(0, 0, 0, 0.25);
   --container: 1136px;
 }
 
@@ -71,24 +76,24 @@ img {
 }
 
 .pill-btn--dark {
-  background: #000;
-  color: #fff;
+  background: var(--text);
+  color: var(--on-dark);
 }
 .pill-btn--dark:hover {
   background: #222;
 }
 
 .pill-btn--light {
-  background: #fff;
-  color: #000;
+  background: var(--bg);
+  color: var(--text);
 }
 .pill-btn--light:hover {
-  background: #f2f2f2;
+  background: var(--surface);
 }
 
 .pill-btn--brand {
   background: var(--brand);
-  color: #fff;
+  color: var(--on-dark);
 }
 .pill-btn--brand:hover {
   background: var(--brand-hover);

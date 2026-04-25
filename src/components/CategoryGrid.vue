@@ -76,7 +76,7 @@ const categories = computed(() => [
   position: absolute;
   left: 16px;
   bottom: 14px;
-  color: #fff;
+  color: var(--on-dark);
   font-size: 22px;
   font-weight: 800;
   text-shadow: 0 1px 6px rgba(0, 0, 0, 0.4);

@@ -49,7 +49,7 @@ const sections = computed(() =>
 <style scoped>
 .tos-hero {
   background: var(--brand-dark);
-  color: #fff;
+  color: var(--on-dark);
   padding: 72px 0 48px;
 }
 

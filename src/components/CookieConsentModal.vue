@@ -115,7 +115,7 @@ watch(cookieModalOpen, (open) => {
 .cm-backdrop {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.55);
+  background: var(--scrim);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -132,7 +132,7 @@ watch(cookieModalOpen, (open) => {
   display: flex;
   flex-direction: column;
   position: relative;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+  box-shadow: var(--shadow-modal);
   overflow: hidden;
 }
 
@@ -187,7 +187,7 @@ watch(cookieModalOpen, (open) => {
   padding: 12px 18px;
   border-radius: 999px;
   background: var(--brand-dark);
-  color: #fff;
+  color: var(--on-dark);
   font-weight: 700;
   font-size: 14px;
   margin-bottom: 24px;
@@ -261,7 +261,7 @@ watch(cookieModalOpen, (open) => {
 
 .cm-btn--reject {
   background: var(--brand-dark);
-  color: #fff;
+  color: var(--on-dark);
 }
 
 .cm-btn--reject:hover {
@@ -270,7 +270,7 @@ watch(cookieModalOpen, (open) => {
 
 .cm-btn--confirm {
   background: var(--brand-dark);
-  color: #fff;
+  color: var(--on-dark);
 }
 
 .cm-btn--confirm:hover {

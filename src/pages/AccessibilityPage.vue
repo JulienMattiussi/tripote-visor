@@ -14,19 +14,24 @@ const SHIELD_OUTLINE = 'M10 4 H70 V40 C70 56 50 70 40 76 C30 70 10 56 10 40 Z';
   <section class="acc-hero" aria-hidden="true">
     <div class="acc-shields">
       <svg viewBox="0 0 80 80" class="acc-shield" :aria-label="t('acc_page.hero_aria_lock')">
-        <path :d="SHIELD_OUTLINE" fill="none" stroke="#fff" stroke-width="2" />
-        <circle cx="40" cy="38" r="11" fill="none" stroke="#fff" stroke-width="2" />
-        <rect x="35" y="34" width="10" height="9" rx="1.5" fill="#fff" />
-        <path d="M37 34 V31 a3 3 0 0 1 6 0 V34" fill="none" stroke="#fff" stroke-width="2" />
+        <path :d="SHIELD_OUTLINE" fill="none" stroke="var(--on-dark)" stroke-width="2" />
+        <circle cx="40" cy="38" r="11" fill="none" stroke="var(--on-dark)" stroke-width="2" />
+        <rect x="35" y="34" width="10" height="9" rx="1.5" fill="var(--on-dark)" />
+        <path
+          d="M37 34 V31 a3 3 0 0 1 6 0 V34"
+          fill="none"
+          stroke="var(--on-dark)"
+          stroke-width="2"
+        />
       </svg>
 
       <svg viewBox="0 0 80 80" class="acc-shield" :aria-label="t('acc_page.hero_aria_check')">
-        <path :d="SHIELD_OUTLINE" fill="none" stroke="#fff" stroke-width="2" />
-        <circle cx="40" cy="38" r="11" fill="none" stroke="#fff" stroke-width="2" />
+        <path :d="SHIELD_OUTLINE" fill="none" stroke="var(--on-dark)" stroke-width="2" />
+        <circle cx="40" cy="38" r="11" fill="none" stroke="var(--on-dark)" stroke-width="2" />
         <path
           d="M34 38 L39 43 L47 33"
           fill="none"
-          stroke="#fff"
+          stroke="var(--on-dark)"
           stroke-width="2.5"
           stroke-linecap="round"
           stroke-linejoin="round"
@@ -34,13 +39,13 @@ const SHIELD_OUTLINE = 'M10 4 H70 V40 C70 56 50 70 40 76 C30 70 10 56 10 40 Z';
       </svg>
 
       <svg viewBox="0 0 80 80" class="acc-shield" :aria-label="t('acc_page.hero_aria_user')">
-        <path :d="SHIELD_OUTLINE" fill="none" stroke="#fff" stroke-width="2" />
-        <circle cx="40" cy="38" r="11" fill="none" stroke="#fff" stroke-width="2" />
-        <circle cx="40" cy="35" r="3" fill="#fff" />
+        <path :d="SHIELD_OUTLINE" fill="none" stroke="var(--on-dark)" stroke-width="2" />
+        <circle cx="40" cy="38" r="11" fill="none" stroke="var(--on-dark)" stroke-width="2" />
+        <circle cx="40" cy="35" r="3" fill="var(--on-dark)" />
         <path
           d="M33 44 a7 7 0 0 1 14 0"
           fill="none"
-          stroke="#fff"
+          stroke="var(--on-dark)"
           stroke-width="2"
           stroke-linecap="round"
         />

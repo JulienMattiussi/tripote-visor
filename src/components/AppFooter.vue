@@ -28,6 +28,7 @@ const exploreLinks = computed(() => [
 ]);
 
 const githubUrl = 'https://github.com';
+const currentYear = new Date().getFullYear();
 
 const readMore = ref(false);
 
@@ -60,8 +61,7 @@ const onLocaleChange = (e) => {
           <h3>{{ t('footer.col_about_title') }}</h3>
           <ul>
             <li v-for="l in aboutLinks" :key="l.key">
-              <router-link v-if="l.to" :to="l.to">{{ l.label }}</router-link>
-              <a v-else href="#">{{ l.label }}</a>
+              <router-link :to="l.to">{{ l.label }}</router-link>
             </li>
           </ul>
         </div>
@@ -71,10 +71,9 @@ const onLocaleChange = (e) => {
           <ul>
             <li v-for="l in exploreLinks" :key="l.key">
               <router-link v-if="l.to" :to="l.to">{{ l.label }}</router-link>
-              <button v-else-if="l.onClick" type="button" class="link-like" @click="l.onClick">
+              <button v-else type="button" class="link-like" @click="l.onClick">
                 {{ l.label }}
               </button>
-              <a v-else href="#">{{ l.label }}</a>
             </li>
           </ul>
         </div>
@@ -152,7 +151,7 @@ const onLocaleChange = (e) => {
             <circle cx="22.532" cy="17.336" r="2.34" fill="var(--brand)" />
             <circle cx="16" cy="29.5" r="0.6" fill="var(--brand)" />
           </svg>
-          <span class="copyright">{{ t('footer.copyright', { year: 2026 }) }}</span>
+          <span class="copyright">{{ t('footer.copyright', { year: currentYear }) }}</span>
         </div>
 
         <nav class="legal">
@@ -256,7 +255,7 @@ const onLocaleChange = (e) => {
   padding: 8px 12px;
   border-radius: 8px;
   border: 1px solid var(--border);
-  background: #fff;
+  background: var(--bg);
   font-size: 13px;
   font-family: inherit;
 }
@@ -272,7 +271,7 @@ const onLocaleChange = (e) => {
   height: 28px;
   border-radius: 50%;
   background: var(--brand-dark);
-  color: #fff;
+  color: var(--on-dark);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -283,7 +282,7 @@ const onLocaleChange = (e) => {
 .social-icon {
   width: 16px;
   height: 16px;
-  fill: #fff;
+  fill: var(--on-dark);
 }
 
 .social:hover {

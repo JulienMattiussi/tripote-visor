@@ -256,11 +256,12 @@ describe('locale switching on the full App', () => {
     setLocale('en');
     setCurrency('USD');
     const wrapper = mountApp();
-    expect(wrapper.text()).toContain('© 2026 Tripote-visor LLC All rights reserved.');
+    const year = new Date().getFullYear();
+    expect(wrapper.text()).toContain(`© ${year} Tripote-visor LLC All rights reserved.`);
 
     setLocale('fr');
     await wrapper.vm.$nextTick();
-    expect(wrapper.text()).toContain('© 2026 Tripote-visor LLC Tous droits réservés.');
+    expect(wrapper.text()).toContain(`© ${year} Tripote-visor LLC Tous droits réservés.`);
   });
 });
 

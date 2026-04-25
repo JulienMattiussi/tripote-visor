@@ -77,7 +77,7 @@ const sanctionBullets = computed(() => SANCTION_BULLETS.map((k) => t(`safety_pag
 <style scoped>
 .sf-hero {
   background: var(--brand-dark);
-  color: #fff;
+  color: var(--on-dark);
   padding: 64px 0 40px;
 }
 

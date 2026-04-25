@@ -54,8 +54,8 @@ const onBook = () => alert(`${t('ttd.cta')} ${t('common.sim_suffix')}`);
   position: absolute;
   left: 16px;
   bottom: 16px;
-  background: rgba(0, 0, 0, 0.55);
-  color: #fff;
+  background: var(--scrim);
+  color: var(--on-dark);
   font-size: 12px;
   padding: 4px 10px;
   border-radius: 999px;
@@ -76,12 +76,12 @@ const onBook = () => alert(`${t('ttd.cta')} ${t('common.sim_suffix')}`);
   font-weight: 800;
   line-height: 1.1;
   letter-spacing: -0.01em;
-  color: #000;
+  color: var(--text);
 }
 
 .ttd-text p {
   font-size: 15px;
-  color: #000;
+  color: var(--text);
   margin: 0;
 }
 

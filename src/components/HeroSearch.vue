@@ -67,7 +67,7 @@ const onSubmit = (e) => {
 <style scoped>
 .hero {
   padding: 48px 0 24px;
-  background: #fff;
+  background: var(--bg);
 }
 
 .hero-title {
@@ -104,7 +104,7 @@ const onSubmit = (e) => {
 }
 
 .tab.active {
-  background: #fff;
+  background: var(--bg);
   border-bottom: 3px solid var(--brand-dark);
   border-radius: 0;
   padding-bottom: 7px;
@@ -120,10 +120,10 @@ const onSubmit = (e) => {
   gap: 8px;
   max-width: 760px;
   margin: 0 auto;
-  border: 1.5px solid #000;
+  border: 1.5px solid var(--text);
   border-radius: 999px;
   padding: 6px 6px 6px 18px;
-  background: #fff;
+  background: var(--bg);
   box-shadow: var(--shadow);
 }
 

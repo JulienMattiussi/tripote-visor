@@ -128,7 +128,7 @@ const scrollToTop = () => {
 .tc-hero {
   position: relative;
   background: var(--brand-dark);
-  color: #fff;
+  color: var(--on-dark);
   padding: 64px 0 80px;
   overflow: hidden;
 }
@@ -340,7 +340,7 @@ const scrollToTop = () => {
   top: 10px;
   left: 10px;
   background: var(--brand);
-  color: #fff;
+  color: var(--on-dark);
   font-weight: 900;
   font-size: 14px;
   padding: 4px 10px;

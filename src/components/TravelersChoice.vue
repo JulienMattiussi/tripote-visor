@@ -38,7 +38,7 @@ const onSeeWinners = () => router.push({ name: 'travelers-choice' });
 <style scoped>
 .tc {
   background: var(--brand-dark);
-  color: #fff;
+  color: var(--on-dark);
   padding: 64px 0;
   margin-top: 32px;
 }

@@ -145,7 +145,7 @@ const onRead = (story) => {
   top: 16px;
   left: 16px;
   background: var(--brand);
-  color: #fff;
+  color: var(--on-dark);
   font-size: 12px;
   font-weight: 800;
   text-transform: uppercase;

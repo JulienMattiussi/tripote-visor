@@ -244,7 +244,7 @@ watch(signinScreen, (screen) => {
 .si-backdrop {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.55);
+  background: var(--scrim);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -261,7 +261,7 @@ watch(signinScreen, (screen) => {
   overflow-y: auto;
   position: relative;
   padding: 40px 36px 28px 36px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+  box-shadow: var(--shadow-modal);
 }
 
 .si-close,
@@ -412,7 +412,7 @@ watch(signinScreen, (screen) => {
   gap: 8px;
   padding: 10px 12px;
   border-radius: 8px;
-  background: rgba(211, 47, 47, 0.08);
+  background: var(--danger-tint);
   color: var(--danger);
   font-size: 14px;
   font-weight: 600;
@@ -453,7 +453,7 @@ input[aria-invalid='true'] {
   padding: 14px 18px;
   border-radius: 999px;
   background: var(--brand-dark);
-  color: #fff;
+  color: var(--on-dark);
   font-weight: 700;
   font-size: 15px;
 }

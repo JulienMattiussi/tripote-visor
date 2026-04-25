@@ -10,11 +10,6 @@ const SCROLL_THRESHOLD = 220;
 const scrolled = ref(false);
 const compactQuery = ref('');
 
-// "Discover" and "Review" each own a dropdown - those are the only top-nav
-// entries. There are no plain link items today, but `topNavItems` is kept as
-// a hook for future shortcut links.
-const topNavItems = computed(() => []);
-
 const discoverMenuItems = computed(() => [
   { key: 'choice', label: t('nav.discover_choice'), to: { name: 'travelers-choice' } },
   { key: 'stories', label: t('nav.discover_stories'), to: { name: 'travel-stories' } },
@@ -144,12 +139,6 @@ onUnmounted(() => {
 
       <nav class="main-nav" :aria-label="t('nav.primary_aria')">
         <ul>
-          <li v-for="item in topNavItems" :key="item.key" :class="{ highlight: item.highlight }">
-            <a href="#">
-              <span v-if="item.highlight" class="sparkle" aria-hidden="true">✦</span>
-              {{ item.label }}
-            </a>
-          </li>
           <li ref="discoverMenuRef" class="nav-menu-item">
             <button
               type="button"
@@ -245,7 +234,7 @@ onUnmounted(() => {
 <style scoped>
 .site-header {
   border-bottom: 1px solid var(--border);
-  background: #fff;
+  background: var(--bg);
   position: sticky;
   top: 0;
   z-index: 100;
@@ -298,35 +287,6 @@ onUnmounted(() => {
   justify-content: center;
 }
 
-.main-nav li a {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 8px 14px;
-  border-radius: 999px;
-  font-weight: 600;
-  font-size: 14px;
-  transition: background 0.15s ease;
-}
-
-.main-nav li a:hover {
-  background: var(--surface);
-}
-
-.main-nav li.highlight a {
-  border: 1.5px solid var(--brand);
-  color: var(--brand-dark);
-}
-
-.main-nav li.highlight a:hover {
-  background: var(--brand-tint);
-}
-
-.sparkle {
-  color: var(--brand);
-  font-size: 12px;
-}
-
 .nav-menu-item {
   position: relative;
 }
@@ -356,7 +316,7 @@ onUnmounted(() => {
   min-width: 220px;
   background: var(--bg);
   border-radius: var(--radius);
-  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.15);
+  box-shadow: var(--shadow-popover);
   padding: 8px 0;
   display: flex;
   flex-direction: column;

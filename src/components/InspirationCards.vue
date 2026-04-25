@@ -109,7 +109,7 @@ const toggleFav = (id) => {
   width: 18px;
   height: 18px;
   fill: none;
-  stroke: #000;
+  stroke: var(--text);
   stroke-width: 2;
 }
 

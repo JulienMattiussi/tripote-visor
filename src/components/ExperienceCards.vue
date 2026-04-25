@@ -157,14 +157,14 @@ const toggleFav = (id) => {
 }
 
 .fav-btn:hover {
-  background: #fff;
+  background: var(--bg);
 }
 
 .heart {
   width: 18px;
   height: 18px;
   fill: none;
-  stroke: #000;
+  stroke: var(--text);
   stroke-width: 2;
 }
 
@@ -228,7 +228,7 @@ const toggleFav = (id) => {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: #fff;
+  background: var(--bg);
   box-shadow: var(--shadow-hover);
   font-size: 22px;
   font-weight: 700;

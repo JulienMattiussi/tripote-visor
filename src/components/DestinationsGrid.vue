@@ -89,7 +89,7 @@ const destinations = computed(() => [
   position: absolute;
   left: 16px;
   bottom: 16px;
-  color: #fff;
+  color: var(--on-dark);
   font-weight: 800;
   font-size: 18px;
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
