@@ -1,6 +1,6 @@
 // Placeholder articles for the Travel Stories page. Author names are proper
 // nouns and stay untranslated. Title, excerpt and category labels live in
-// translations.ts_page.story_<key>_* — they switch with the active locale.
+// translations.ts_page.story_<key>_* - they switch with the active locale.
 
 const photo = (id, q = 70, w = 900) =>
   `https://images.unsplash.com/${id}?w=${w}&q=${q}&auto=format&fit=crop`;

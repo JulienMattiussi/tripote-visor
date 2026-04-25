@@ -184,7 +184,7 @@ export const TC_CATEGORIES = [
       },
       {
         rank: 5,
-        name: 'Trek du Machu Picchu — 4 jours',
+        name: 'Trek du Machu Picchu - 4 jours',
         location: 'Cusco, Pérou',
         image: photo('photo-1526392060635-9d6019884377'),
         rating: 4.9,

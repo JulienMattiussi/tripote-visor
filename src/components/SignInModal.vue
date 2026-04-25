@@ -32,7 +32,7 @@ const onBackdrop = (event) => {
 const onSubmit = (e) => {
   e.preventDefault();
   if (!email.value.trim() || !password.value.trim()) return;
-  // Demo: no backend — every credential pair fails.
+  // Demo: no backend - every credential pair fails.
   error.value = true;
 };
 

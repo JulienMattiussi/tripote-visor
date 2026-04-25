@@ -1,7 +1,7 @@
 import { createMemoryHistory } from 'vue-router';
 import { createAppRouter } from '../../src/router/index.js';
 
-// jsdom doesn't implement window.scrollTo — Vue Router's scrollBehavior calls
+// jsdom doesn't implement window.scrollTo - Vue Router's scrollBehavior calls
 // it on every navigation, which spams the console. Stub it once.
 if (typeof window !== 'undefined' && typeof window.scrollTo !== 'function') {
   window.scrollTo = () => {};

@@ -10,7 +10,7 @@ const SCROLL_THRESHOLD = 220;
 const scrolled = ref(false);
 const compactQuery = ref('');
 
-// "Discover" and "Review" each own a dropdown — those are the only top-nav
+// "Discover" and "Review" each own a dropdown - those are the only top-nav
 // entries. There are no plain link items today, but `topNavItems` is kept as
 // a hook for future shortcut links.
 const topNavItems = computed(() => []);

@@ -12,6 +12,7 @@ import AccessibilityPage from '../pages/AccessibilityPage.vue';
 import TermsPage from '../pages/TermsPage.vue';
 import AboutPage from '../pages/AboutPage.vue';
 import SafetyPage from '../pages/SafetyPage.vue';
+import ResourcesPage from '../pages/ResourcesPage.vue';
 
 export const routes = [
   { path: '/', name: 'home', component: HomePage },
@@ -33,6 +34,7 @@ export const routes = [
   { path: '/terms', name: 'terms', component: TermsPage },
   { path: '/about', name: 'about', component: AboutPage },
   { path: '/safety', name: 'safety', component: SafetyPage },
+  { path: '/resources', name: 'resources', component: ResourcesPage },
 ];
 
 export function createAppRouter({ history } = {}) {

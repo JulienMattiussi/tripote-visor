@@ -61,9 +61,9 @@ describe('TravelersChoicePage', () => {
 
     const sections = wrapper.findAll('.tc-cat');
     expect(sections).toHaveLength(1);
-    expect(wrapper.find('.tc-cat-title').text()).toBe('Hotels — Best of the Best');
+    expect(wrapper.find('.tc-cat-title').text()).toBe('Hotels - Best of the Best');
     expect(wrapper.find('.tc-tab.active').text()).toBe('Hotels');
-    expect(wrapper.text()).not.toContain('Restaurants — Best of the Best');
+    expect(wrapper.text()).not.toContain('Restaurants - Best of the Best');
   });
 
   it('clicking a tab pushes the matching route and filters the visible sections', async () => {
@@ -78,7 +78,7 @@ describe('TravelersChoicePage', () => {
 
     const sections = wrapper.findAll('.tc-cat');
     expect(sections).toHaveLength(1);
-    expect(wrapper.find('.tc-cat-title').text()).toBe('Alleys — Best of the Best');
+    expect(wrapper.find('.tc-cat-title').text()).toBe('Alleys - Best of the Best');
   });
 
   it('clicking the All tab from a sub-route returns to the unfiltered page', async () => {
@@ -110,7 +110,7 @@ describe('TravelersChoicePage', () => {
     );
     const tabs = wrapper.findAll('.tc-tab').map((b) => b.text());
     expect(tabs).toEqual(['Tous', 'Hôtels', 'Ruelles', 'Activités']);
-    expect(wrapper.text()).toContain('Hôtels — Best of the Best');
+    expect(wrapper.text()).toContain('Hôtels - Best of the Best');
     expect(wrapper.find('.tc-disclaimer').text()).toContain('site parodique');
   });
 });

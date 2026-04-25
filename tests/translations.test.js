@@ -50,6 +50,15 @@ describe('translation dictionary integrity', () => {
     }
   });
 
+  it('no translation contains the em-dash character (U+2014); use a regular hyphen instead', () => {
+    for (const [loc, dict] of Object.entries(translations)) {
+      for (const key of flattenKeys(dict)) {
+        const value = getByPath(dict, key);
+        expect(value.includes('—'), `${loc}.${key} contains an em-dash`).toBe(false);
+      }
+    }
+  });
+
   it('placeholders in en and fr use the same set of {name} tokens per key', () => {
     const extractTokens = (s) => {
       const tokens = new Set();
@@ -268,7 +277,7 @@ describe('no hardcoded UI string leaks in components', () => {
     await wrapper.vm.$nextTick();
     const text = wrapper.text();
 
-    // Strings that used to be hardcoded in templates or alerts — would slip
+    // Strings that used to be hardcoded in templates or alerts - would slip
     // through to FR mode if someone ever adds a literal again.
     expect(text).not.toContain('Book now');
     expect(text).not.toContain('Sign in');
@@ -283,7 +292,7 @@ describe('no hardcoded UI string leaks in components', () => {
         const value = t(key);
         expect(typeof value, `${loc}/${key}`).toBe('string');
         expect(value.length, `${loc}/${key}`).toBeGreaterThan(0);
-        // t() must not return the raw key — that would mean a lookup miss.
+        // t() must not return the raw key - that would mean a lookup miss.
         expect(value, `${loc}/${key}`).not.toBe(key);
       }
     }

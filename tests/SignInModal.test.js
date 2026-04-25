@@ -69,7 +69,7 @@ describe('SignInModal', () => {
     expect(wrapper.find('.si-submit').text()).toBe('Log in');
     expect(wrapper.text()).toContain('Forgot password?');
 
-    // Signup CTA and the Terms/Privacy legal blurb were removed — guard
+    // Signup CTA and the Terms/Privacy legal blurb were removed - guard
     // against regressions that would re-introduce them.
     expect(wrapper.text()).not.toContain('Not a member yet?');
     expect(wrapper.text()).not.toContain('Sign up');
@@ -190,7 +190,7 @@ describe('SignInModal', () => {
 
     await wrapper.find('.si-back').trigger('click');
     await wrapper.vm.$nextTick();
-    // Return to email screen — error must not persist across screen trips
+    // Return to email screen - error must not persist across screen trips
     signinScreen.value = 'email';
     await wrapper.vm.$nextTick();
     expect(wrapper.find('.si-error').exists()).toBe(false);
@@ -230,7 +230,7 @@ describe('SignInModal', () => {
   });
 });
 
-describe('SignInModal — forgot password flow', () => {
+describe('SignInModal - forgot password flow', () => {
   beforeEach(() => {
     setLocale('en');
     closeSignin();

@@ -46,7 +46,7 @@ describe('UserReviewPage (Write a review)', () => {
     await wrapper.find('form').trigger('submit');
 
     expect(wrapper.find('.form-success').exists()).toBe(true);
-    expect(wrapper.find('.form-success h2').text()).toBe('Thanks — your review is in the queue!');
+    expect(wrapper.find('.form-success h2').text()).toBe('Thanks - your review is in the queue!');
     expect(wrapper.find('form').exists()).toBe(false);
   });
 
@@ -132,7 +132,7 @@ describe('PostPhotosPage (Publish photos)', () => {
 
     await wrapper.find('form').trigger('submit');
 
-    expect(wrapper.find('.form-success h2').text()).toBe('Merci — photos bien reçues !');
+    expect(wrapper.find('.form-success h2').text()).toBe('Merci - photos bien reçues !');
   });
 });
 
@@ -187,7 +187,7 @@ describe('CreateListingPage (Add a place)', () => {
     await wrapper.find('form').trigger('submit');
 
     expect(wrapper.find('.form-success').exists()).toBe(true);
-    expect(wrapper.find('.form-success h2').text()).toBe('Thanks — listing submitted!');
+    expect(wrapper.find('.form-success h2').text()).toBe('Thanks - listing submitted!');
   });
 
   it('renders the page in French', () => {

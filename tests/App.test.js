@@ -36,8 +36,8 @@ describe('App', () => {
 
     const text = wrapper.text();
     expect(text).toContain("Travellers' Choice Awards Best of the Best 2026");
-    expect(text).toContain('Hotels — Best of the Best');
-    // Home section title is gone — the home page is no longer rendered.
+    expect(text).toContain('Hotels - Best of the Best');
+    // Home section title is gone - the home page is no longer rendered.
     expect(text).not.toContain('Where to?');
     expect(text).not.toContain('Find things to do by interest');
   });
