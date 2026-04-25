@@ -6,13 +6,13 @@ Multi-page Vue 3 front simulation of a major review platform. Pure visual mockup
 
 The site has a home page plus a small constellation of secondary pages reachable from the header dropdowns and the footer.
 
-**Home page** stacks: header (logo, Discover dropdown, Review dropdown, currency pill, Sign-in), tabbed `HeroSearch` (Search All / Hotels / Things to Do / Alleys), `ThingsToDoBanner`, `CategoryGrid`, `ExperienceCards`, `KivaBanner`, `InspirationCards`, `DestinationsGrid`, `TravelersChoice` promo, `CommunityBlurb`, `AppFooter`. All client-side: `alert()` or local `ref()` for any user action; no network calls.
+**Home page** stacks: header (logo, Discover dropdown, Review dropdown, currency pill, Sign-in), tabbed `HeroSearch` (Search All / Hotels / Parks / Alleys), `ThingsToDoBanner`, `CategoryGrid`, `ExperienceCards`, `KivaBanner`, `InspirationCards`, `DestinationsGrid`, `TravelersChoice` promo, `CommunityBlurb`, `AppFooter`. All client-side: `alert()` or local `ref()` for any user action; no network calls.
 
 **Secondary pages** (each reached from header or footer):
 
 - `/travelers-choice[/:category]` - awards landing, 3 verticals
 - `/travel-stories` - 4 articles (1 featured + 3)
-- `/hotels`, `/attractions` - listings, share `ListingsPage.vue` via `listing-type` prop
+- `/hotels`, `/parks`, `/alleys` - listings, share `ListingsPage.vue` via `listing-type` prop
 - `/write-review`, `/post-photos`, `/add-place` - parody form pages
 - `/how-it-works` - 9-section explainer page
 - `/about` - parody premise + shared `SeriousNote`
@@ -37,7 +37,8 @@ src/
 │   ├── TravelStoriesPage.vue
 │   ├── ListingsPage.vue          # generic, fed by listing-type prop
 │   ├── HotelsPage.vue            # thin wrapper over ListingsPage
-│   ├── AttractionsPage.vue       # thin wrapper over ListingsPage
+│   ├── ParksPage.vue             # thin wrapper over ListingsPage
+│   ├── AlleysPage.vue            # thin wrapper over ListingsPage
 │   ├── UserReviewPage.vue        # /write-review
 │   ├── PostPhotosPage.vue        # /post-photos
 │   ├── CreateListingPage.vue     # /add-place
@@ -66,7 +67,7 @@ src/
 ├── data/
 │   ├── travelers-choice.js
 │   ├── travel-stories.js
-│   └── listings.js               # HOTELS, ATTRACTIONS, LISTINGS_BY_TYPE
+│   └── listings.js               # HOTELS, PARKS, ALLEYS, LISTINGS_BY_TYPE
 ├── i18n/
 │   ├── store.js                  # locale/currency refs, t(), modal state, formatAmount, detectBrowserDefaults
 │   ├── translations.js           # { en: {...}, fr: {...} } - single source of truth
@@ -92,7 +93,7 @@ tests/
 ├── TravelersChoicePage.test.js
 ├── TravelStoriesPage.test.js
 ├── FormPages.test.js             # UserReview / PostPhotos / CreateListing
-├── ListingsPages.test.js         # Hotels / Attractions
+├── ListingsPages.test.js         # Hotels / Parks / Alleys
 ├── HowTheSiteWorksPage.test.js
 ├── AboutPage.test.js
 ├── SafetyPage.test.js
@@ -109,23 +110,24 @@ The bust glyph in both favicons and in `AppHeader`'s inline SVG is the same shap
 
 All routes live in `src/router/index.js`. `createAppRouter({ history })` is a factory so tests can inject `createMemoryHistory()` (see `tests/helpers/router.js`). All internal navigation goes through `<router-link>` or `router.push({ name, params })` - never raw `<a href>` to internal URLs.
 
-| Path                          | Name                        | Page                                            |
-| ----------------------------- | --------------------------- | ----------------------------------------------- |
-| `/`                           | `home`                      | `HomePage.vue`                                  |
-| `/travelers-choice`           | `travelers-choice`          | `TravelersChoicePage.vue` (all)                 |
-| `/travelers-choice/:category` | `travelers-choice-category` | filtered to `hotels` / `restaurants` / `things` |
-| `/travel-stories`             | `travel-stories`            | `TravelStoriesPage.vue`                         |
-| `/hotels`                     | `hotels`                    | `HotelsPage.vue` (wraps `ListingsPage`)         |
-| `/attractions`                | `attractions`               | `AttractionsPage.vue` (wraps `ListingsPage`)    |
-| `/write-review`               | `write-review`              | `UserReviewPage.vue`                            |
-| `/post-photos`                | `post-photos`               | `PostPhotosPage.vue`                            |
-| `/add-place`                  | `add-place`                 | `CreateListingPage.vue`                         |
-| `/how-it-works`               | `how-it-works`              | `HowTheSiteWorksPage.vue`                       |
-| `/about`                      | `about`                     | `AboutPage.vue`                                 |
-| `/safety`                     | `safety`                    | `SafetyPage.vue`                                |
-| `/terms`                      | `terms`                     | `TermsPage.vue`                                 |
-| `/accessibility`              | `accessibility`             | `AccessibilityPage.vue`                         |
-| `/resources`                  | `resources`                 | `ResourcesPage.vue`                             |
+| Path                          | Name                        | Page                                       |
+| ----------------------------- | --------------------------- | ------------------------------------------ |
+| `/`                           | `home`                      | `HomePage.vue`                             |
+| `/travelers-choice`           | `travelers-choice`          | `TravelersChoicePage.vue` (all)            |
+| `/travelers-choice/:category` | `travelers-choice-category` | filtered to `hotels` / `alleys` / `things` |
+| `/travel-stories`             | `travel-stories`            | `TravelStoriesPage.vue`                    |
+| `/hotels`                     | `hotels`                    | `HotelsPage.vue` (wraps `ListingsPage`)    |
+| `/parks`                      | `parks`                     | `ParksPage.vue` (wraps `ListingsPage`)     |
+| `/alleys`                     | `alleys`                    | `AlleysPage.vue` (wraps `ListingsPage`)    |
+| `/write-review`               | `write-review`              | `UserReviewPage.vue`                       |
+| `/post-photos`                | `post-photos`               | `PostPhotosPage.vue`                       |
+| `/add-place`                  | `add-place`                 | `CreateListingPage.vue`                    |
+| `/how-it-works`               | `how-it-works`              | `HowTheSiteWorksPage.vue`                  |
+| `/about`                      | `about`                     | `AboutPage.vue`                            |
+| `/safety`                     | `safety`                    | `SafetyPage.vue`                           |
+| `/terms`                      | `terms`                     | `TermsPage.vue`                            |
+| `/accessibility`              | `accessibility`             | `AccessibilityPage.vue`                    |
+| `/resources`                  | `resources`                 | `ResourcesPage.vue`                        |
 
 ## Pages
 

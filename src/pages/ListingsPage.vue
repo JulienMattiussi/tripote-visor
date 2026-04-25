@@ -7,7 +7,7 @@ const props = defineProps({
   listingType: {
     type: String,
     required: true,
-    validator: (v) => ['hotels', 'attractions'].includes(v),
+    validator: (v) => ['hotels', 'parks', 'alleys'].includes(v),
   },
 });
 

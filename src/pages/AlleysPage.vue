@@ -3,5 +3,5 @@ import ListingsPage from './ListingsPage.vue';
 </script>
 
 <template>
-  <ListingsPage listing-type="attractions" />
+  <ListingsPage listing-type="alleys" />
 </template>

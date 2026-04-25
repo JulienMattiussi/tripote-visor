@@ -27,7 +27,7 @@ describe('TravelersChoicePage', () => {
   it('renders the 4 category tabs in order (Destinations / Beaches / Rentals removed)', () => {
     const wrapper = mount(TravelersChoicePage, withRouter(router));
     const tabs = wrapper.findAll('.tc-tab').map((b) => b.text());
-    expect(tabs).toEqual(['All', 'Hotels', 'Alleys', 'Things to Do']);
+    expect(tabs).toEqual(['All', 'Hotels', 'Alleys', 'Parks']);
     expect(wrapper.find('.tc-tab.active').text()).toBe('All');
   });
 
@@ -74,7 +74,7 @@ describe('TravelersChoicePage', () => {
     await flushPromises();
 
     expect(router.currentRoute.value.name).toBe('travelers-choice-category');
-    expect(router.currentRoute.value.params.category).toBe('restaurants');
+    expect(router.currentRoute.value.params.category).toBe('alleys');
 
     const sections = wrapper.findAll('.tc-cat');
     expect(sections).toHaveLength(1);
@@ -109,7 +109,7 @@ describe('TravelersChoicePage', () => {
       'Prix Travellers’ Choice Best of the Best 2026',
     );
     const tabs = wrapper.findAll('.tc-tab').map((b) => b.text());
-    expect(tabs).toEqual(['Tous', 'Hôtels', 'Ruelles', 'Activités']);
+    expect(tabs).toEqual(['Tous', 'Hôtels', 'Ruelles', 'Parcs']);
     expect(wrapper.text()).toContain('Hôtels - Best of the Best');
     expect(wrapper.find('.tc-disclaimer').text()).toContain('site parodique');
   });

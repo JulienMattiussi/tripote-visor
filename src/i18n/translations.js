@@ -21,12 +21,12 @@ export const translations = {
       search_aria: 'Search',
       tab_all: 'Search All',
       tab_hotels: 'Hotels',
-      tab_things: 'Things to Do',
-      tab_restaurants: 'Alleys',
+      tab_things: 'Parks',
+      tab_alleys: 'Alleys',
       placeholder_all: 'Places to go, things to do, hotels…',
       placeholder_hotels: 'Where are you going?',
       placeholder_things: 'Things to do, attractions, tours…',
-      placeholder_restaurants: 'Find alleys, cobblestone lanes, hidden passages…',
+      placeholder_alleys: 'Find alleys, cobblestone lanes, hidden passages…',
       compact_placeholder: 'Search',
     },
     ttd: {
@@ -158,15 +158,15 @@ export const translations = {
         'These are the most loved hotels, restaurants, things to do, and destinations of the year, picked by millions of travellers like you. Browse the categories below for the very best of {year}.',
       tab_all: 'All',
       tab_hotels: 'Hotels',
-      tab_restaurants: 'Alleys',
-      tab_things: 'Things to Do',
+      tab_alleys: 'Alleys',
+      tab_things: 'Parks',
       cat_hotels_title: 'Hotels - Best of the Best',
       cat_hotels_desc:
         'The most-loved stays of the year, from boutique riads to mountain retreats.',
-      cat_restaurants_title: 'Alleys - Best of the Best',
-      cat_restaurants_desc:
+      cat_alleys_title: 'Alleys - Best of the Best',
+      cat_alleys_desc:
         "The narrow lanes travellers can't stop wandering - cobblestone mews, sunlit passages and secret courtyards.",
-      cat_things_title: 'Things to Do - Best of the Best',
+      cat_things_title: 'Parks - Best of the Best',
       cat_things_desc:
         'The experiences that turned trips into stories worth telling - tours, dives, treks, and hot-air rides.',
       reviews_count: '{count} reviews',
@@ -265,7 +265,7 @@ export const translations = {
       type_label: 'What kind of place is it?',
       type_hotel: 'Hotel',
       type_restaurant: 'Restaurant',
-      type_attraction: 'Things to Do',
+      type_attraction: 'Park',
       type_rental: 'Vacation Rental',
       name_label: 'Business name',
       name_placeholder: 'e.g. Hôtel des Trois Lunes',
@@ -334,9 +334,12 @@ export const translations = {
       hotels_title: 'Hotels',
       hotels_intro:
         'Find a place to crash, from boutique riads to mountain lodges - read travellers’ honest opinions before you book.',
-      attractions_title: 'Things to Do',
-      attractions_intro:
+      parks_title: 'Parks',
+      parks_intro:
         'Tours, tickets, dives, and treks loved by travellers. Skip the lines, find the local gems, and book in a click.',
+      alleys_title: 'Alleys',
+      alleys_intro:
+        'Cobblestone lanes, covered passages and hidden mews. Wander the narrow ways travellers swear by - guided walks or solo strolls.',
       search_placeholder: 'Where are you going?',
       search_aria: 'Search by destination',
       search_btn: 'Search',
@@ -527,12 +530,12 @@ export const translations = {
       search_aria: 'Rechercher',
       tab_all: 'Tout rechercher',
       tab_hotels: 'Hôtels',
-      tab_things: 'Activités',
-      tab_restaurants: 'Ruelles',
+      tab_things: 'Parcs',
+      tab_alleys: 'Ruelles',
       placeholder_all: 'Des endroits à visiter, des activités, des hôtels…',
       placeholder_hotels: 'Où allez-vous ?',
       placeholder_things: 'Activités, attractions, excursions…',
-      placeholder_restaurants: 'Trouvez des ruelles, des passages, des venelles…',
+      placeholder_alleys: 'Trouvez des ruelles, des passages, des venelles…',
       compact_placeholder: 'Rechercher',
     },
     ttd: {
@@ -666,15 +669,15 @@ export const translations = {
         'Voici les hôtels, restaurants, activités et destinations les plus appréciés de l’année, choisis par des millions de voyageurs comme vous. Parcourez les catégories ci-dessous pour découvrir le meilleur de {year}.',
       tab_all: 'Tous',
       tab_hotels: 'Hôtels',
-      tab_restaurants: 'Ruelles',
-      tab_things: 'Activités',
+      tab_alleys: 'Ruelles',
+      tab_things: 'Parcs',
       cat_hotels_title: 'Hôtels - Best of the Best',
       cat_hotels_desc:
         'Les séjours les plus appréciés de l’année, des riads de charme aux refuges de montagne.',
-      cat_restaurants_title: 'Ruelles - Best of the Best',
-      cat_restaurants_desc:
+      cat_alleys_title: 'Ruelles - Best of the Best',
+      cat_alleys_desc:
         'Les ruelles où les voyageurs ne se lassent pas de flâner : pavés, passages baignés de soleil et cours secrètes.',
-      cat_things_title: 'Activités - Best of the Best',
+      cat_things_title: 'Parcs - Best of the Best',
       cat_things_desc:
         'Les expériences qui transforment un voyage en récit inoubliable : visites, plongées, treks et vols en montgolfière.',
       reviews_count: '{count} avis',
@@ -776,7 +779,7 @@ export const translations = {
       type_label: 'De quel type de lieu s’agit-il ?',
       type_hotel: 'Hôtel',
       type_restaurant: 'Restaurant',
-      type_attraction: 'Activité',
+      type_attraction: 'Parc',
       type_rental: 'Location de vacances',
       name_label: 'Nom de l’établissement',
       name_placeholder: 'ex. Hôtel des Trois Lunes',
@@ -845,9 +848,12 @@ export const translations = {
       hotels_title: 'Hôtels',
       hotels_intro:
         'Trouvez où poser vos valises, des riads de charme aux refuges de montagne - lisez les avis sincères des voyageurs avant de réserver.',
-      attractions_title: 'Activités',
-      attractions_intro:
+      parks_title: 'Parcs',
+      parks_intro:
         'Visites guidées, billets coupe-file, plongées et treks plébiscités par les voyageurs. Évitez les files, trouvez les pépites locales et réservez en un clic.',
+      alleys_title: 'Ruelles',
+      alleys_intro:
+        'Pavés, passages couverts et venelles cachées. Flânez dans les ruelles que les voyageurs s’arrachent : balades guidées ou en solo.',
       search_placeholder: 'Où allez-vous ?',
       search_aria: 'Rechercher par destination',
       search_btn: 'Rechercher',

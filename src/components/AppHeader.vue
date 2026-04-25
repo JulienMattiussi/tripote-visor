@@ -23,8 +23,8 @@ const reviewMenuItems = computed(() => [
 
 const categoryTabs = computed(() => [
   { key: 'hotels', label: t('hero.tab_hotels'), to: { name: 'hotels' } },
-  { key: 'things', label: t('hero.tab_things'), to: { name: 'attractions' } },
-  { key: 'restaurants', label: t('hero.tab_restaurants') },
+  { key: 'things', label: t('hero.tab_things'), to: { name: 'parks' } },
+  { key: 'alleys', label: t('hero.tab_alleys'), to: { name: 'alleys' } },
 ]);
 
 const openMenu = ref(null);
@@ -221,8 +221,7 @@ onUnmounted(() => {
         <nav class="category-nav" :aria-label="t('nav.primary_aria')">
           <ul>
             <li v-for="tab in categoryTabs" :key="tab.key">
-              <router-link v-if="tab.to" :to="tab.to">{{ tab.label }}</router-link>
-              <a v-else href="#">{{ tab.label }}</a>
+              <router-link :to="tab.to">{{ tab.label }}</router-link>
             </li>
           </ul>
         </nav>

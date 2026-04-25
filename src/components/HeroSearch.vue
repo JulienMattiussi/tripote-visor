@@ -4,9 +4,9 @@ import { t } from '../i18n/store.js';
 
 const tabs = computed(() => [
   { id: 'all', label: t('hero.tab_all'), icon: '🔎' },
-  { id: 'hotels', label: t('hero.tab_hotels'), icon: '🏨' },
-  { id: 'things', label: t('hero.tab_things'), icon: '🎡' },
-  { id: 'restaurants', label: t('hero.tab_restaurants'), icon: '🛣️' },
+  { id: 'hotels', label: t('hero.tab_hotels'), icon: '🛏️' },
+  { id: 'things', label: t('hero.tab_things'), icon: '🌳' },
+  { id: 'alleys', label: t('hero.tab_alleys'), icon: '🛣️' },
 ]);
 
 const activeTab = ref('all');
@@ -16,7 +16,7 @@ const placeholderKeyMap = {
   all: 'hero.placeholder_all',
   hotels: 'hero.placeholder_hotels',
   things: 'hero.placeholder_things',
-  restaurants: 'hero.placeholder_restaurants',
+  alleys: 'hero.placeholder_alleys',
 };
 const placeholder = computed(() => t(placeholderKeyMap[activeTab.value]));
 

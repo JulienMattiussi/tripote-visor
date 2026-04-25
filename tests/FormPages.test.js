@@ -150,7 +150,7 @@ describe('CreateListingPage (Add a place)', () => {
       .findAll('.chip')
       .slice(0, 4)
       .map((c) => c.text());
-    expect(typeChips).toEqual(['Hotel', 'Restaurant', 'Things to Do', 'Vacation Rental']);
+    expect(typeChips).toEqual(['Hotel', 'Restaurant', 'Park', 'Vacation Rental']);
 
     expect(wrapper.find('select').exists()).toBe(true); // country
     expect(wrapper.findAll('input[type="text"]').length).toBeGreaterThanOrEqual(4); // name, address, city, postal
@@ -200,6 +200,6 @@ describe('CreateListingPage (Add a place)', () => {
         .findAll('.chip')
         .slice(0, 4)
         .map((c) => c.text()),
-    ).toEqual(['Hôtel', 'Restaurant', 'Activité', 'Location de vacances']);
+    ).toEqual(['Hôtel', 'Restaurant', 'Parc', 'Location de vacances']);
   });
 });

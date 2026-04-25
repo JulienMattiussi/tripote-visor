@@ -1,4 +1,4 @@
-// Placeholder listings for the Hotels and Attractions pages.
+// Placeholder listings for the Hotels, Parks and Alleys pages.
 // Names + locations are proper nouns and are not translated.
 const photo = (id, q = 70, w = 600) =>
   `https://images.unsplash.com/${id}?w=${w}&q=${q}&auto=format&fit=crop`;
@@ -106,7 +106,7 @@ export const HOTELS = [
   },
 ];
 
-export const ATTRACTIONS = [
+export const PARKS = [
   {
     id: 'louvre-tour',
     name: 'Visite guidée du Musée du Louvre',
@@ -219,7 +219,121 @@ export const ATTRACTIONS = [
   },
 ];
 
+export const ALLEYS = [
+  {
+    id: 'passage-panoramas',
+    name: 'Passage des Panoramas',
+    location: 'Paris, France',
+    image: photo('photo-1499856871958-5b9627545d1a'),
+    rating: 4.9,
+    reviews: 6840,
+    pricePerPersonEur: 22,
+    durationHours: 1.5,
+    tags: ['covered', 'historic'],
+  },
+  {
+    id: 'shambles-york',
+    name: 'The Shambles',
+    location: 'York, Royaume-Uni',
+    image: photo('photo-1502602898657-3e91760cbb34'),
+    rating: 4.8,
+    reviews: 9215,
+    pricePerPersonEur: 18,
+    durationHours: 1,
+    tags: ['cobblestone', 'medieval'],
+  },
+  {
+    id: 'omoide-yokocho',
+    name: 'Omoide Yokocho',
+    location: 'Tokyo, Japon',
+    image: photo('photo-1541779408-c6a7d1b8a9b1'),
+    rating: 4.9,
+    reviews: 7430,
+    pricePerPersonEur: 35,
+    durationHours: 2,
+    tags: ['food', 'evening'],
+  },
+  {
+    id: 'carrer-bisbe',
+    name: 'Carrer del Bisbe',
+    location: 'Barcelone, Espagne',
+    image: photo('photo-1539635278303-d4002c07eae3'),
+    rating: 4.7,
+    reviews: 5621,
+    pricePerPersonEur: 20,
+    durationHours: 1.5,
+    tags: ['gothic', 'photo-spot'],
+  },
+  {
+    id: 'hosier-lane',
+    name: 'Hosier Lane',
+    location: 'Melbourne, Australie',
+    image: photo('photo-1583212292454-1fe6229603b7'),
+    rating: 4.8,
+    reviews: 4810,
+    pricePerPersonEur: 28,
+    durationHours: 2,
+    tags: ['street-art'],
+  },
+  {
+    id: 'calle-sierpes',
+    name: 'Calle Sierpes',
+    location: 'Séville, Espagne',
+    image: photo('photo-1526392060635-9d6019884377'),
+    rating: 4.6,
+    reviews: 3402,
+    pricePerPersonEur: 15,
+    durationHours: 1,
+    tags: ['shopping', 'pedestrian'],
+  },
+  {
+    id: 'pasaje-comercio',
+    name: 'Pasaje del Comercio',
+    location: 'Lima, Pérou',
+    image: photo('photo-1547471080-7cc2caa01a7e'),
+    rating: 4.7,
+    reviews: 2197,
+    pricePerPersonEur: 19,
+    durationHours: 1.5,
+    tags: ['colonial'],
+  },
+  {
+    id: 'vico-pellicce',
+    name: 'Vico delle Pellicce',
+    location: 'Naples, Italie',
+    image: photo('photo-1483347756197-71ef80e95f73'),
+    rating: 4.7,
+    reviews: 2870,
+    pricePerPersonEur: 24,
+    durationHours: 2,
+    tags: ['food', 'local'],
+  },
+  {
+    id: 'via-margutta',
+    name: 'Via Margutta',
+    location: 'Rome, Italie',
+    image: photo('photo-1518495973542-4542c06a5843'),
+    rating: 4.8,
+    reviews: 4143,
+    pricePerPersonEur: 26,
+    durationHours: 1.5,
+    tags: ['quiet', 'galleries'],
+  },
+  {
+    id: 'souk-babouches',
+    name: 'Souk des Babouches',
+    location: 'Marrakech, Maroc',
+    image: photo('photo-1518105779142-d975f22f1b0a'),
+    rating: 4.8,
+    reviews: 5061,
+    pricePerPersonEur: 32,
+    durationHours: 2.5,
+    tags: ['market', 'colours'],
+  },
+];
+
 export const LISTINGS_BY_TYPE = {
   hotels: HOTELS,
-  attractions: ATTRACTIONS,
+  parks: PARKS,
+  alleys: ALLEYS,
 };

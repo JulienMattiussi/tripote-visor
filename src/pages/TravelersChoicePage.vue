@@ -8,7 +8,7 @@ const route = useRoute();
 const router = useRouter();
 const year = 2026;
 
-const TABS = [{ key: 'all' }, { key: 'hotels' }, { key: 'restaurants' }, { key: 'things' }];
+const TABS = [{ key: 'all' }, { key: 'hotels' }, { key: 'alleys' }, { key: 'things' }];
 const TAB_KEYS = new Set(TABS.map((t) => t.key));
 
 const activeTab = ref('all');

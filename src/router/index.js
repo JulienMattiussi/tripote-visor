@@ -6,7 +6,8 @@ import UserReviewPage from '../pages/UserReviewPage.vue';
 import PostPhotosPage from '../pages/PostPhotosPage.vue';
 import CreateListingPage from '../pages/CreateListingPage.vue';
 import HotelsPage from '../pages/HotelsPage.vue';
-import AttractionsPage from '../pages/AttractionsPage.vue';
+import ParksPage from '../pages/ParksPage.vue';
+import AlleysPage from '../pages/AlleysPage.vue';
 import HowTheSiteWorksPage from '../pages/HowTheSiteWorksPage.vue';
 import AccessibilityPage from '../pages/AccessibilityPage.vue';
 import TermsPage from '../pages/TermsPage.vue';
@@ -28,7 +29,8 @@ export const routes = [
   { path: '/post-photos', name: 'post-photos', component: PostPhotosPage },
   { path: '/add-place', name: 'add-place', component: CreateListingPage },
   { path: '/hotels', name: 'hotels', component: HotelsPage },
-  { path: '/attractions', name: 'attractions', component: AttractionsPage },
+  { path: '/parks', name: 'parks', component: ParksPage },
+  { path: '/alleys', name: 'alleys', component: AlleysPage },
   { path: '/how-it-works', name: 'how-it-works', component: HowTheSiteWorksPage },
   { path: '/accessibility', name: 'accessibility', component: AccessibilityPage },
   { path: '/terms', name: 'terms', component: TermsPage },
