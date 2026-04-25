@@ -96,10 +96,7 @@ export const translations = {
       socials_aria: 'Social links',
       copyright: '© {year} Tripote-visor LLC All rights reserved.',
       legal_terms: 'Terms of Use',
-      legal_privacy: 'Privacy and Cookies Statement',
       legal_cookies: 'Cookie consent',
-      legal_how: 'How the site works',
-      legal_contact: 'Contact us',
       legal_accessibility: 'Accessibility Statement',
       disclaimer_short:
         'This is a parody website for educational/front-end demonstration purposes only. Tripote-visor is not affiliated with any real travel platform.',
@@ -110,7 +107,6 @@ export const translations = {
       col_about_title: 'About Tripote-visor',
       col_about_1: 'About Us',
       col_about_2: 'Resources and Policies',
-      col_about_3: 'Careers',
       col_about_4: 'Investor Relations',
       col_about_5: 'Trust & Safety',
       col_about_6: 'How the site works',
@@ -119,7 +115,6 @@ export const translations = {
       col_explore_2: 'Add a Place',
       col_explore_3: 'Join',
       col_explore_4: "Travelers' Choice",
-      col_explore_5: 'Help Center',
       col_explore_6: 'Travel Stories',
     },
     prefs: {
@@ -348,6 +343,7 @@ export const translations = {
       attractions_intro:
         'Tours, tickets, dives, and treks loved by travellers. Skip the lines, find the local gems, and book in a click.',
       search_placeholder: 'Where are you going?',
+      search_aria: 'Search by destination',
       search_btn: 'Search',
       results_count: '{count} place(s)',
       sort_label: 'Sort by',
@@ -361,6 +357,75 @@ export const translations = {
       duration_days: '{days} days',
       view_details: 'View details',
       empty_state: 'No place matches your search yet — try a different city.',
+    },
+    cookie_modal: {
+      title: 'Learn more about how we protect your data',
+      body: 'We process your data to serve content and ads, and to draw insights about visits to our site. We share these insights with our partners on the basis of consent or legitimate interest. You can grant or withdraw your consent below for each purpose, or for individual partners listed in this notice. Your choices are passed to our partners through the Transparency and Consent Framework, and stored locally on your device for up to one year.',
+      allow_all: 'Allow all',
+      manage_title: 'Manage consent preferences',
+      cat_strict: 'Strictly necessary cookies',
+      state_always: 'Always active',
+      cat_advertising: 'Targeted advertising cookies',
+      cat_performance: 'Performance cookies',
+      cat_functional: 'Functional cookies',
+      state_none: 'None',
+      reject_all: 'Reject all',
+      confirm: 'Confirm selection',
+      close: 'Close',
+    },
+    terms_page: {
+      hero_title: 'Terms of Use',
+      hero_effective: 'Effective date: 25 April 2026',
+      hero_subtitle:
+        'Please read the notice below before using Tripote-visor. Browsing the site amounts to acceptance of every point that follows.',
+      parody_badge: 'Parody notice',
+      section_1_title: '1. About this website',
+      section_1_body:
+        'Tripote-visor is a parody of well-known travel review platforms, built as a front-end demonstration project. It is not a commercial service, no business operations sit behind it, and it is not affiliated with — nor endorsed by — any of the travel platforms it references.',
+      section_2_title: '2. No real data processing',
+      section_2_body:
+        "Tripote-visor does not collect, store, or transmit personal data. There is no backend service, no analytics pipeline, no user-account database and no payment processor. The forms — sign-in, sign-up, write-a-review, post-photos, add-a-place — run entirely in your browser: submitting them sends nothing, nowhere. The browser's local storage is used only to remember your language and currency preferences between page loads.",
+      section_3_title: '3. No restrictions on use',
+      section_3_body:
+        'You may freely browse the site, share screenshots, fork its source code, or otherwise reuse all or part of it. No fee, no quota, no licence to accept, and no terms of service to honour beyond what is reasonable under applicable law.',
+      section_4_title: '4. Fictional content',
+      section_4_body:
+        'All hotels, restaurants, activities, destinations, photographs of people, traveller names, reviews, ratings, prices and itineraries shown on Tripote-visor are entirely fictional or used as placeholders. Any resemblance to real establishments, persons, places or events is coincidental and unintended. Photographs come from royalty-free stock libraries and do not constitute an endorsement.',
+      section_5_title: '5. No warranty',
+      section_5_body:
+        'The site is provided "as is", without warranty of any kind. It is not intended to plan, book, or otherwise inform real travel decisions, and its operator cannot be held liable for any decision taken on the basis of its content.',
+      section_6_title: '6. In short',
+      section_6_body:
+        'This page exists for clarity, not to assert any rights — there is nothing to enforce. If anything above is unclear, treat it as: Tripote-visor is a parody site with no real moving parts. Have fun.',
+      back_home: 'Back to home',
+    },
+    serious_note: {
+      label: 'Please read',
+      title: 'A serious note on prostitution and human trafficking',
+      body: 'The site’s name leans on a crude pun, but the reality it evokes is not a joke. According to the International Labour Organization, millions of people worldwide are victims of trafficking for sexual exploitation, the overwhelming majority of them women and girls. Many people in prostitution were coerced, debt-bonded or recruited under false promises; their daily lives are shaped by physical violence, psychological harm and severe precarity. Demand — clients, intermediaries, online platforms — directly funds the criminal networks that make this exploitation possible. Paying for sexual services is therefore not a neutral act: it weighs on other lives. If you are a victim or witness to trafficking, support is available — in France: 119 (child endangerment) and the Ac.Sé network (+33 8 25 00 99 07); across the EU: 116 006 (victims of crime helpline).',
+    },
+    about_page: {
+      hero_title: 'About Tripote-visor',
+      hero_subtitle: 'A parody site that uses a polished UI to ask an uncomfortable question.',
+      parody_title: 'The parody',
+      parody_body:
+        'Tripote-visor is a parody of well-known travel review platforms. Its premise is deliberately uncomfortable: it imagines what such a site would look like if, instead of hotels and restaurants, it claimed to list sex workers with client-facing reviews and rankings. There are no real listings, no real reviews, no platform behind it. Whatever discomfort the name produces is intentional: the gap between a polished interface and the topic it claims to organise is the point.',
+      back_home: 'Back to home',
+    },
+    acc_page: {
+      hero_title: 'Accessibility statement',
+      hero_aria_lock: 'Privacy',
+      hero_aria_check: 'Standards',
+      hero_aria_user: 'Inclusive',
+      intro:
+        'At Tripote-visor we want travel to be open to everyone. We are committed to making our website and our app usable for as many people as possible, and we keep working on inclusive design across our products.',
+      progress:
+        'Since June 2025 we have reviewed and improved the booking flow for our activities — the parts of the platform travellers actually transact through. The bulk of that experience now meets the latest e-commerce expectations of the European Accessibility Act (EAA), which requires consumer-facing sites in the EU to comply with at least the WCAG 2.1 AA standard when they offer specific in-scope services.',
+      ongoing:
+        'We are far from done. Alongside other companies pushing digital accessibility forward, we will keep iterating to give every traveller the best experience we can. If you spot something we can do better, write to us at accessibility@tripote-visor.com and we will fold it into the next pass.',
+      eaa_link: 'European Accessibility Act (EAA)',
+      wcag_link: 'WCAG 2.1 AA standard',
+      back_home: 'Back to home',
     },
     common: {
       sim_suffix: '— front simulation only',
@@ -466,10 +531,7 @@ export const translations = {
       socials_aria: 'Réseaux sociaux',
       copyright: '© {year} Tripote-visor LLC Tous droits réservés.',
       legal_terms: 'Conditions d’utilisation',
-      legal_privacy: 'Confidentialité et utilisation des cookies',
       legal_cookies: 'Accord d’utilisation des cookies',
-      legal_how: 'Fonctionnement du site',
-      legal_contact: 'Contactez-nous',
       legal_accessibility: 'Politique d’accessibilité',
       disclaimer_short:
         'Ceci est un site parodique à des fins éducatives et de démonstration front-end uniquement. Tripote-visor n’est affilié à aucune plateforme de voyage réelle.',
@@ -480,7 +542,6 @@ export const translations = {
       col_about_title: 'À propos de Tripote-visor',
       col_about_1: 'À propos de Tripote-visor',
       col_about_2: 'Ressources et règlements',
-      col_about_3: 'Emplois',
       col_about_4: 'Relations investisseurs',
       col_about_5: 'Confiance et sécurité',
       col_about_6: 'Fonctionnement du site',
@@ -489,7 +550,6 @@ export const translations = {
       col_explore_2: 'Ajouter un lieu',
       col_explore_3: 'S’inscrire',
       col_explore_4: 'Travellers’ Choice',
-      col_explore_5: 'Assistance',
       col_explore_6: 'Récits de voyage',
     },
     prefs: {
@@ -722,6 +782,7 @@ export const translations = {
       attractions_intro:
         'Visites guidées, billets coupe-file, plongées et treks plébiscités par les voyageurs. Évitez les files, trouvez les pépites locales et réservez en un clic.',
       search_placeholder: 'Où allez-vous ?',
+      search_aria: 'Rechercher par destination',
       search_btn: 'Rechercher',
       results_count: '{count} lieu(x)',
       sort_label: 'Trier par',
@@ -735,6 +796,76 @@ export const translations = {
       duration_days: '{days} jours',
       view_details: 'Voir les détails',
       empty_state: 'Aucun lieu ne correspond pour le moment — essayez une autre ville.',
+    },
+    cookie_modal: {
+      title: 'En savoir plus sur la protection de vos données',
+      body: 'Nous traitons vos données pour vous proposer du contenu et de la publicité, et pour analyser la fréquentation de notre site. Nous partageons ces analyses avec nos partenaires sur la base du consentement ou de l’intérêt légitime. Vous pouvez accepter ou retirer votre consentement ci-dessous pour chaque finalité, ou ajuster votre choix pour chaque partenaire listé dans cet avis. Vos choix sont transmis à nos partenaires via le Transparency and Consent Framework, et conservés localement sur votre appareil pendant un an au maximum.',
+      allow_all: 'Tout autoriser',
+      manage_title: 'Gérer les préférences de consentement',
+      cat_strict: 'Cookies strictement nécessaires',
+      state_always: 'Toujours actif',
+      cat_advertising: 'Cookies pour une publicité ciblée',
+      cat_performance: 'Cookies de performance',
+      cat_functional: 'Cookies de fonctionnalité',
+      state_none: 'Aucun',
+      reject_all: 'Tout refuser',
+      confirm: 'Confirmer la sélection',
+      close: 'Fermer',
+    },
+    terms_page: {
+      hero_title: 'Conditions d’utilisation',
+      hero_effective: 'Date d’entrée en vigueur : 25 avril 2026',
+      hero_subtitle:
+        'Merci de lire l’avis ci-dessous avant d’utiliser Tripote-visor. La consultation du site vaut acceptation de chacun des points qui suivent.',
+      parody_badge: 'Avis de parodie',
+      section_1_title: '1. À propos du site',
+      section_1_body:
+        'Tripote-visor est une parodie de plateformes connues d’avis de voyage, conçue comme un projet de démonstration front-end. Il ne s’agit pas d’un service commercial, aucune activité d’exploitation ne se trouve derrière, et le site n’est ni affilié ni cautionné par les plateformes de voyage qu’il évoque.',
+      section_2_title: '2. Aucun traitement de données réel',
+      section_2_body:
+        'Tripote-visor ne collecte, ne stocke et ne transmet aucune donnée personnelle. Il n’y a ni serveur applicatif, ni outil d’analyse, ni base de comptes utilisateurs, ni processeur de paiement. Les formulaires — connexion, inscription, écrire un avis, publier des photos, ajouter un lieu — sont intégralement côté client : leur soumission n’envoie rien, nulle part. Le stockage local du navigateur est uniquement utilisé pour mémoriser vos préférences de langue et de devise entre deux rechargements de page.',
+      section_3_title: '3. Aucune restriction d’usage',
+      section_3_body:
+        'Vous pouvez librement consulter, partager des captures d’écran, forker ou réutiliser ce site, en tout ou partie. Aucun frais, aucun quota, aucune licence à accepter, aucune condition générale à honorer au-delà de ce qui est raisonnable au regard du droit applicable.',
+      section_4_title: '4. Contenu fictif',
+      section_4_body:
+        'L’ensemble des hôtels, restaurants, activités, destinations, photographies de personnes, noms de voyageurs, avis, notes, prix et itinéraires présentés sur Tripote-visor est entièrement fictif ou utilisé comme placeholder. Toute ressemblance avec des établissements, personnes, lieux ou événements réels est fortuite et non intentionnelle. Les photographies proviennent de banques d’images libres de droits et ne valent pas recommandation.',
+      section_5_title: '5. Aucune garantie',
+      section_5_body:
+        'Le site est fourni « en l’état », sans garantie d’aucune sorte. Il n’a pas pour but de planifier, réserver ou orienter des décisions de voyage réelles, et son exploitant ne saurait être tenu responsable d’une décision prise sur la base de son contenu.',
+      section_6_title: '6. En résumé',
+      section_6_body:
+        'Cette page est là pour la clarté, pas pour faire valoir des droits — il n’y a rien à faire respecter. Si un point reste obscur, retenez ceci : Tripote-visor est un site parodique sans aucune mécanique réelle. Amusez-vous bien.',
+      back_home: 'Retour à l’accueil',
+    },
+    serious_note: {
+      label: 'À lire',
+      title: 'Une note sérieuse sur la prostitution et la traite des êtres humains',
+      body: 'Le nom du site joue sur un mot crû, mais la réalité qu’il évoque ne prête pas à rire. Selon l’Organisation internationale du travail, des millions de personnes dans le monde sont victimes de traite à des fins d’exploitation sexuelle ; les femmes et les jeunes filles en représentent l’écrasante majorité. Beaucoup de personnes prostituées ont été contraintes, endettées ou recrutées sous de fausses promesses ; leur quotidien est marqué par la violence physique, les dommages psychologiques et une grande précarité. La demande — clients, intermédiaires, plateformes en ligne — finance directement les réseaux criminels qui rendent cette exploitation possible. Recourir à des services sexuels payants n’est donc pas un acte neutre : c’est un choix qui pèse sur d’autres vies. Si vous êtes victime ou témoin de traite, des aides existent — en France : le 119 (enfance en danger) et le réseau Ac.Sé (08 25 00 99 07) ; dans l’Union européenne : le 116 006 (numéro européen d’aide aux victimes).',
+    },
+    about_page: {
+      hero_title: 'À propos de Tripote-visor',
+      hero_subtitle:
+        'Un site parodique qui utilise une interface soignée pour poser une question dérangeante.',
+      parody_title: 'La parodie',
+      parody_body:
+        'Tripote-visor est une parodie des grandes plateformes d’avis de voyage. Son postulat est volontairement dérangeant : il imagine à quoi ressemblerait un tel site si, au lieu d’hôtels et de restaurants, il prétendait référencer des personnes prostituées avec des avis et des classements pour les clients. Il n’y a aucun référencement réel, aucun avis, aucune plateforme derrière. Le malaise que provoque le nom est intentionnel : c’est précisément l’écart entre une interface soignée et le sujet qu’elle prétend ordonner qui fait le propos.',
+      back_home: 'Retour à l’accueil',
+    },
+    acc_page: {
+      hero_title: 'Politique d’accessibilité',
+      hero_aria_lock: 'Confidentialité',
+      hero_aria_check: 'Standards',
+      hero_aria_user: 'Inclusion',
+      intro:
+        'Chez Tripote-visor, nous voulons que le voyage soit ouvert à toutes et à tous. Nous nous engageons à ce que notre site et notre application soient utilisables par le plus grand nombre, et nous itérons en continu sur la conception inclusive de nos produits.',
+      progress:
+        'Depuis juin 2025, nous avons revu et amélioré le tunnel de réservation de nos activités — c’est-à-dire les parcours sur lesquels les voyageurs effectuent réellement une transaction. La majeure partie de cette expérience répond désormais aux dernières exigences e-commerce de l’Acte législatif européen sur l’accessibilité (EAA), qui impose aux sites consultés par les consommateurs européens de respecter au minimum la norme WCAG 2.1 AA lorsqu’ils proposent certains services spécifiques.',
+      ongoing:
+        'Le travail n’est pas terminé. Aux côtés d’autres acteurs qui font avancer l’accessibilité numérique, nous continuerons d’itérer pour offrir la meilleure expérience possible à chaque voyageur. Si vous repérez quelque chose à améliorer, écrivez-nous à accessibility@tripote-visor.com — nous l’intégrerons dans la prochaine itération.',
+      eaa_link: 'Acte législatif européen sur l’accessibilité (EAA)',
+      wcag_link: 'norme WCAG 2.1 AA',
+      back_home: 'Retour à l’accueil',
     },
     common: {
       sim_suffix: '— simulation front seulement',

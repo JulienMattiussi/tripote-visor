@@ -8,12 +8,12 @@ import {
   setLocale,
   openPreferences,
   openSignin,
+  openCookieModal,
 } from '../i18n/store.js';
 
 const aboutLinks = computed(() => [
-  { key: 'about_1', label: t('footer.col_about_1') },
+  { key: 'about_1', label: t('footer.col_about_1'), to: { name: 'about' } },
   { key: 'about_2', label: t('footer.col_about_2') },
-  { key: 'about_3', label: t('footer.col_about_3') },
   { key: 'about_4', label: t('footer.col_about_4') },
   { key: 'about_5', label: t('footer.col_about_5') },
   { key: 'about_6', label: t('footer.col_about_6'), to: { name: 'how-it-works' } },
@@ -25,18 +25,10 @@ const exploreLinks = computed(() => [
   { key: 'add', label: t('footer.col_explore_2'), to: { name: 'add-place' } },
   { key: 'join', label: t('footer.col_explore_3'), onClick: openSignin },
   { key: 'tc', label: t('footer.col_explore_4'), to: { name: 'travelers-choice' } },
-  { key: 'help', label: t('footer.col_explore_5') },
   { key: 'stories', label: t('footer.col_explore_6'), to: { name: 'travel-stories' } },
 ]);
 
-const socials = [
-  { id: 'fb', label: 'Facebook' },
-  { id: 'x', label: 'X' },
-  { id: 'pi', label: 'Pinterest' },
-  { id: 'ig', label: 'Instagram' },
-  { id: 'yt', label: 'YouTube' },
-  { id: 'tt', label: 'TikTok' },
-];
+const githubUrl = 'https://github.com';
 
 const readMore = ref(false);
 
@@ -107,8 +99,18 @@ const onLocaleChange = (e) => {
           </div>
 
           <div class="socials" :aria-label="t('footer.socials_aria')">
-            <a v-for="s in socials" :key="s.id" href="#" :aria-label="s.label" class="social">
-              <span class="social-dot">{{ s.label[0] }}</span>
+            <a
+              :href="githubUrl"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub"
+              class="social"
+            >
+              <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path
+                  d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.56 0-.27-.01-1-.02-1.96-3.2.69-3.87-1.54-3.87-1.54-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.68 1.24 3.34.95.1-.74.4-1.24.73-1.53-2.55-.29-5.24-1.27-5.24-5.66 0-1.25.45-2.27 1.18-3.07-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.16 1.17a10.97 10.97 0 0 1 5.76 0c2.2-1.48 3.16-1.17 3.16-1.17.62 1.58.23 2.75.11 3.04.74.8 1.18 1.82 1.18 3.07 0 4.4-2.7 5.36-5.27 5.65.41.35.78 1.05.78 2.12 0 1.53-.02 2.76-.02 3.13 0 .31.21.66.8.55C20.21 21.39 23.5 17.08 23.5 12 23.5 5.65 18.35.5 12 .5z"
+                />
+              </svg>
             </a>
           </div>
         </div>
@@ -155,12 +157,13 @@ const onLocaleChange = (e) => {
         </div>
 
         <nav class="legal">
-          <a href="#">{{ t('footer.legal_terms') }}</a>
-          <a href="#">{{ t('footer.legal_privacy') }}</a>
-          <a href="#">{{ t('footer.legal_cookies') }}</a>
-          <router-link :to="{ name: 'how-it-works' }">{{ t('footer.legal_how') }}</router-link>
-          <a href="#">{{ t('footer.legal_contact') }}</a>
-          <a href="#">{{ t('footer.legal_accessibility') }}</a>
+          <router-link :to="{ name: 'terms' }">{{ t('footer.legal_terms') }}</router-link>
+          <button type="button" class="link-like legal-link" @click="openCookieModal">
+            {{ t('footer.legal_cookies') }}
+          </button>
+          <router-link :to="{ name: 'accessibility' }">
+            {{ t('footer.legal_accessibility') }}
+          </router-link>
         </nav>
 
         <p class="disclaimer">
@@ -262,6 +265,7 @@ const onLocaleChange = (e) => {
 .socials {
   display: flex;
   gap: 12px;
+  justify-content: flex-end;
 }
 
 .social {
@@ -277,8 +281,14 @@ const onLocaleChange = (e) => {
   font-size: 12px;
 }
 
-.social-dot {
-  color: #fff;
+.social-icon {
+  width: 16px;
+  height: 16px;
+  fill: #fff;
+}
+
+.social:hover {
+  background: var(--brand);
 }
 
 .footer-bottom {

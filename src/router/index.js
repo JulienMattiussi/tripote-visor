@@ -8,6 +8,9 @@ import CreateListingPage from '../pages/CreateListingPage.vue';
 import HotelsPage from '../pages/HotelsPage.vue';
 import AttractionsPage from '../pages/AttractionsPage.vue';
 import HowTheSiteWorksPage from '../pages/HowTheSiteWorksPage.vue';
+import AccessibilityPage from '../pages/AccessibilityPage.vue';
+import TermsPage from '../pages/TermsPage.vue';
+import AboutPage from '../pages/AboutPage.vue';
 
 export const routes = [
   { path: '/', name: 'home', component: HomePage },
@@ -25,6 +28,9 @@ export const routes = [
   { path: '/hotels', name: 'hotels', component: HotelsPage },
   { path: '/attractions', name: 'attractions', component: AttractionsPage },
   { path: '/how-it-works', name: 'how-it-works', component: HowTheSiteWorksPage },
+  { path: '/accessibility', name: 'accessibility', component: AccessibilityPage },
+  { path: '/terms', name: 'terms', component: TermsPage },
+  { path: '/about', name: 'about', component: AboutPage },
 ];
 
 export function createAppRouter({ history } = {}) {

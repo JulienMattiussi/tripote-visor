@@ -67,7 +67,7 @@ const onView = (listing) => {
           v-model="query"
           type="text"
           :placeholder="t('listings.search_placeholder')"
-          aria-label="Search by destination"
+          :aria-label="t('listings.search_aria')"
         />
         <button type="submit" class="pill-btn pill-btn--brand">
           {{ t('listings.search_btn') }}

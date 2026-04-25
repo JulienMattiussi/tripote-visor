@@ -55,6 +55,7 @@ export const modalOpen = ref(false);
 export const modalTab = ref('region');
 export const signinOpen = ref(false);
 export const signinScreen = ref('initial');
+export const cookieModalOpen = ref(false);
 
 if (typeof document !== 'undefined') {
   document.documentElement.lang = locale.value;
@@ -108,6 +109,14 @@ export function goToSigninEmail() {
 
 export function goBackToSigninInitial() {
   signinScreen.value = 'initial';
+}
+
+export function openCookieModal() {
+  cookieModalOpen.value = true;
+}
+
+export function closeCookieModal() {
+  cookieModalOpen.value = false;
 }
 
 const CURRENCY_META = {

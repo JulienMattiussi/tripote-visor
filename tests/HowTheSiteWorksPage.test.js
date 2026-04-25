@@ -89,11 +89,10 @@ describe('Footer link to How the site works', () => {
     router = await setupRouter('/');
   });
 
-  it('clicking the "How the site works" link in the legal nav navigates to /how-it-works', async () => {
+  it('the legal nav no longer exposes a "How the site works" link (only the About column does)', () => {
     const wrapper = mount(App, withRouter(router));
-    const link = wrapper.findAll('.legal a').find((a) => a.text() === 'How the site works');
-    expect(link).toBeDefined();
-    expect(link.attributes('href')).toBe('/how-it-works');
+    const labels = wrapper.findAll('.legal a').map((a) => a.text());
+    expect(labels).not.toContain('How the site works');
   });
 
   it('the About column exposes "How the site works" as the last link, wired to /how-it-works', () => {
@@ -101,7 +100,8 @@ describe('Footer link to How the site works', () => {
     const aboutCol = wrapper.findAll('.footer-col').at(0);
     const items = aboutCol.findAll('li');
 
-    expect(items).toHaveLength(6);
+    // Careers was removed — column now has 5 entries.
+    expect(items).toHaveLength(5);
     expect(items.at(-1).text()).toBe('How the site works');
 
     const link = items.at(-1).find('a');
