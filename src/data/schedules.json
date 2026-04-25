@@ -1,0 +1,197 @@
+[
+  {
+    "id": "soir_classique",
+    "label": "Soirée classique",
+    "jours": {
+      "lundi": "18:00-02:00",
+      "mardi": "18:00-02:00",
+      "mercredi": "18:00-02:00",
+      "jeudi": "18:00-02:00",
+      "vendredi": "18:00-02:00",
+      "samedi": "18:00-02:00",
+      "dimanche": null
+    }
+  },
+  {
+    "id": "nuit_profonde",
+    "label": "Nuit profonde",
+    "jours": {
+      "lundi": null,
+      "mardi": "22:00-06:00",
+      "mercredi": "22:00-06:00",
+      "jeudi": "22:00-06:00",
+      "vendredi": "22:00-06:00",
+      "samedi": "22:00-06:00",
+      "dimanche": null
+    }
+  },
+  {
+    "id": "apero_et_nuit",
+    "label": "Apéro et nuit",
+    "jours": {
+      "lundi": "17:00-01:00",
+      "mardi": "17:00-01:00",
+      "mercredi": "17:00-01:00",
+      "jeudi": "17:00-01:00",
+      "vendredi": "17:00-01:00",
+      "samedi": "17:00-01:00",
+      "dimanche": null
+    }
+  },
+  {
+    "id": "ouverture_tardive",
+    "label": "Ouverture tardive",
+    "jours": {
+      "lundi": "20:00-03:00",
+      "mardi": "20:00-03:00",
+      "mercredi": "20:00-03:00",
+      "jeudi": "20:00-03:00",
+      "vendredi": "20:00-03:00",
+      "samedi": "20:00-03:00",
+      "dimanche": "20:00-03:00"
+    }
+  },
+  {
+    "id": "fin_dapres_midi",
+    "label": "Fin d'après-midi",
+    "jours": {
+      "lundi": null,
+      "mardi": "16:00-22:00",
+      "mercredi": "16:00-22:00",
+      "jeudi": "16:00-22:00",
+      "vendredi": "16:00-22:00",
+      "samedi": "16:00-22:00",
+      "dimanche": "16:00-22:00"
+    }
+  },
+  {
+    "id": "week_end_nuit",
+    "label": "Nuits du week-end",
+    "jours": {
+      "lundi": null,
+      "mardi": null,
+      "mercredi": null,
+      "jeudi": null,
+      "vendredi": "21:00-05:00",
+      "samedi": "21:00-05:00",
+      "dimanche": null
+    }
+  },
+  {
+    "id": "du_soir_au_matin",
+    "label": "Du soir au matin",
+    "jours": {
+      "lundi": "19:00-07:00",
+      "mardi": "19:00-07:00",
+      "mercredi": "19:00-07:00",
+      "jeudi": "19:00-07:00",
+      "vendredi": "19:00-07:00",
+      "samedi": "19:00-07:00",
+      "dimanche": "19:00-07:00"
+    }
+  },
+  {
+    "id": "petite_soiree",
+    "label": "Petite soirée",
+    "jours": {
+      "lundi": null,
+      "mardi": null,
+      "mercredi": "19:00-23:00",
+      "jeudi": "19:00-23:00",
+      "vendredi": "19:00-23:00",
+      "samedi": "19:00-23:00",
+      "dimanche": "19:00-23:00"
+    }
+  },
+  {
+    "id": "permanence_nocturne",
+    "label": "Permanence nocturne",
+    "jours": {
+      "lundi": "20:00-04:00",
+      "mardi": "20:00-04:00",
+      "mercredi": "20:00-04:00",
+      "jeudi": "20:00-04:00",
+      "vendredi": "20:00-04:00",
+      "samedi": "20:00-04:00",
+      "dimanche": "20:00-04:00"
+    }
+  },
+  {
+    "id": "double_service",
+    "label": "Soir et brunch",
+    "jours": {
+      "lundi": "18:00-02:00",
+      "mardi": "18:00-02:00",
+      "mercredi": "18:00-02:00",
+      "jeudi": "18:00-02:00",
+      "vendredi": "18:00-02:00",
+      "samedi": "18:00-02:00",
+      "dimanche": "11:00-15:00"
+    }
+  },
+  {
+    "id": "heures_bureau_soir",
+    "label": "Heures de bureau prolongées",
+    "jours": {
+      "lundi": "17:00-21:00",
+      "mardi": "17:00-21:00",
+      "mercredi": "17:00-21:00",
+      "jeudi": "17:00-21:00",
+      "vendredi": "17:00-21:00",
+      "samedi": null,
+      "dimanche": null
+    }
+  },
+  {
+    "id": "journee_continue",
+    "label": "Journée continue",
+    "jours": {
+      "lundi": "10:00-22:00",
+      "mardi": "10:00-22:00",
+      "mercredi": "10:00-22:00",
+      "jeudi": "10:00-22:00",
+      "vendredi": "10:00-22:00",
+      "samedi": "10:00-22:00",
+      "dimanche": "10:00-22:00"
+    }
+  },
+  {
+    "id": "matinee_et_midi",
+    "label": "Matinée et midi",
+    "jours": {
+      "lundi": "09:00-14:00",
+      "mardi": "09:00-14:00",
+      "mercredi": "09:00-14:00",
+      "jeudi": "09:00-14:00",
+      "vendredi": "09:00-14:00",
+      "samedi": null,
+      "dimanche": null
+    }
+  },
+  {
+    "id": "crepuscule_aube",
+    "label": "Du crépuscule à l'aube",
+    "jours": {
+      "lundi": "19:00-05:00",
+      "mardi": "19:00-05:00",
+      "mercredi": "19:00-05:00",
+      "jeudi": "19:00-05:00",
+      "vendredi": "19:00-05:00",
+      "samedi": "19:00-05:00",
+      "dimanche": "19:00-05:00"
+    }
+  },
+  {
+    "id": "apres_midi_etendu",
+    "label": "Après-midi étendu",
+    "jours": {
+      "lundi": null,
+      "mardi": "14:00-23:00",
+      "mercredi": "14:00-23:00",
+      "jeudi": "14:00-23:00",
+      "vendredi": "14:00-23:00",
+      "samedi": "14:00-23:00",
+      "dimanche": null
+    }
+  }
+]

@@ -39,6 +39,7 @@ src/
 │   ├── HotelsPage.vue            # thin wrapper over ListingsPage
 │   ├── ParksPage.vue             # thin wrapper over ListingsPage
 │   ├── AlleysPage.vue            # thin wrapper over ListingsPage
+│   ├── FichePage.vue             # /p/:id - profile page (fiche layout)
 │   ├── UserReviewPage.vue        # /write-review
 │   ├── PostPhotosPage.vue        # /post-photos
 │   ├── CreateListingPage.vue     # /add-place
@@ -67,7 +68,10 @@ src/
 ├── data/
 │   ├── travelers-choice.js
 │   ├── travel-stories.js
-│   └── listings.js               # HOTELS, PARKS, ALLEYS, LISTINGS_BY_TYPE
+│   ├── listings.js               # HOTELS, PARKS, ALLEYS, LISTINGS_BY_TYPE
+│   ├── fiches.json               # 100 profile entries used by FichePage
+│   ├── schedules.json            # 15 weekly schedule patterns referenced by fiches
+│   └── reviews.json              # map fiche-id to review array (empty for now)
 ├── i18n/
 │   ├── store.js                  # locale/currency refs, t(), modal state, formatAmount, detectBrowserDefaults
 │   ├── translations.js           # { en: {...}, fr: {...} } - single source of truth
@@ -94,6 +98,7 @@ tests/
 ├── TravelStoriesPage.test.js
 ├── FormPages.test.js             # UserReview / PostPhotos / CreateListing
 ├── ListingsPages.test.js         # Hotels / Parks / Alleys
+├── FichePage.test.js             # /p/:id - profile rendering, schedule, not-found
 ├── HowTheSiteWorksPage.test.js
 ├── AboutPage.test.js
 ├── SafetyPage.test.js
@@ -119,6 +124,7 @@ All routes live in `src/router/index.js`. `createAppRouter({ history })` is a fa
 | `/hotels`                     | `hotels`                    | `HotelsPage.vue` (wraps `ListingsPage`)    |
 | `/parks`                      | `parks`                     | `ParksPage.vue` (wraps `ListingsPage`)     |
 | `/alleys`                     | `alleys`                    | `AlleysPage.vue` (wraps `ListingsPage`)    |
+| `/p/:id`                      | `fiche`                     | `FichePage.vue` (single profile)           |
 | `/write-review`               | `write-review`              | `UserReviewPage.vue`                       |
 | `/post-photos`                | `post-photos`               | `PostPhotosPage.vue`                       |
 | `/add-place`                  | `add-place`                 | `CreateListingPage.vue`                    |
