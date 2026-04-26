@@ -18,7 +18,7 @@ const exploreLinks = computed(() => [
   { key: 'stories', label: t('footer.col_explore_6'), to: { name: 'encounters' } },
 ]);
 
-const githubUrl = 'https://github.com';
+const githubUrl = 'https://github.com/JulienMattiussi/tripote-visor';
 const currentYear = new Date().getFullYear();
 
 const readMore = ref(false);
