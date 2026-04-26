@@ -398,7 +398,7 @@
     "district": "13e",
     "category": "hotel",
     "schedule_id": "aperitif_and_night",
-    "photo": "",
+    "photo": "/profiles/wei/main.jpg",
     "description": {
       "fr": [
         "Quinze ans dans le quartier.",
@@ -1198,7 +1198,7 @@
     "district": "16e",
     "category": "hotel",
     "schedule_id": "extended_afternoon",
-    "photo": "",
+    "photo": "/profiles/hiroko/main.jpg",
     "description": {
       "fr": [
         "Vingt ans à Paris.",
@@ -1392,7 +1392,7 @@
     "district": "Belleville",
     "category": "alley",
     "schedule_id": "aperitif_and_night",
-    "photo": "",
+    "photo": "/profiles/tariq/main.jpg",
     "description": {
       "fr": [
         "Douze ans qu'il anime la rue.",
@@ -1579,7 +1579,7 @@
     "district": "Petite France",
     "category": "alley",
     "schedule_id": "evening_to_morning",
-    "photo": "",
+    "photo": "/profiles/boris/main.jpg",
     "description": {
       "fr": [
         "Trente ans à arpenter les passages.",
@@ -2253,7 +2253,7 @@
     "district": "",
     "category": "alley",
     "schedule_id": "aperitif_and_night",
-    "photo": "",
+    "photo": "/profiles/priya/main.jpg",
     "description": {
       "fr": [
         "Huit ans dans le coin.",
@@ -2364,7 +2364,7 @@
     "district": "",
     "category": "alley",
     "schedule_id": "classic_evening",
-    "photo": "",
+    "photo": "/profiles/behnam/main.jpg",
     "description": {
       "fr": [
         "Vingt-deux ans dans les pentes.",

@@ -10,9 +10,9 @@ and are not tracked here.
 | Category | Total | With photo | Without photo |
 | -------- | ----- | ---------- | ------------- |
 | park     | 33    | 33         | 0             |
-| hotel    | 34    | 20         | 14            |
-| alley    | 33    | 19         | 14            |
-| **all**  | 100   | 72         | 28            |
+| hotel    | 34    | 23         | 11            |
+| alley    | 33    | 23         | 10            |
+| **all**  | 100   | 79         | 21            |
 
 ## What was placed
 
@@ -54,7 +54,7 @@ and are not tracked here.
 | marie-andree | 73  | Marie-Andrée l'increvable | parc.zip          |
 | marie-yvonne | 76  | Marie-Yvonne              | parc.zip          |
 
-### hotel (20)
+### hotel (23)
 
 | id         | age | name                     | source            |
 | ---------- | --- | ------------------------ | ----------------- |
@@ -63,13 +63,16 @@ and are not tracked here.
 | issa       | 28  | Issa                     | suite.zip         |
 | adam       | 29  | Adam                     | suite.zip         |
 | latifa     | 30  | Latifa                   | recycled          |
+| soraya     | 30  | Soraya (rejuvenated)     | recycled (rue)    |
 | andriy     | 31  | Andriy                   | suite.zip         |
 | anjali     | 32  | Anjali                   | recycled          |
 | yacine     | 33  | Yacine                   | suite.zip         |
 | renata     | 34  | Renata                   | 2026-04-24T225109 |
 | klara      | 35  | Klara                    | 2026-04-24T225053 |
 | fatou      | 39  | Fatou                    | 2026-04-25T125421 |
+| wei        | 41  | Wei                      | suite 2.zip       |
 | mehdi      | 42  | Mehdi                    | suite.zip         |
+| hiroko     | 43  | Hiroko                   | suite 2.zip       |
 | murat      | 45  | Murat                    | suite.zip         |
 | sigrid     | 51  | Sigrid                   | 2026-04-24T224052 |
 | ingrid     | 56  | Ingrid la magnifique     | 2026-04-24T225036 |
@@ -79,21 +82,25 @@ and are not tracked here.
 | bernadette | 71  | Tante Bernadette         | 2026-04-24T225045 |
 | josephine  | 75  | Joséphine la doyenne     | 2026-04-26T181017 |
 
-### alley (19)
+### alley (23)
 
 | id       | age | name                    | source            |
 | -------- | --- | ----------------------- | ----------------- |
 | niamh    | 28  | Niamh                   | 2026-04-24T214756 |
 | zeynep   | 29  | Zeynep                  | 2026-04-25T145650 |
 | nadia    | 31  | Nadia                   | 2026-04-24T224230 |
+| priya    | 32  | Priya                   | suite 2.zip       |
 | awa      | 33  | Awa                     | 2026-04-24T230822 |
+| tariq    | 35  | Tariq le passe-partout  | suite 2.zip       |
 | carla    | 36  | Carla                   | 2026-04-25T150342 |
 | roya     | 38  | Roya                    | 2026-04-25T150701 |
 | svetlana | 39  | Svetlana                | 2026-04-25T153147 |
 | salma    | 42  | Salma                   | suite.zip         |
+| behnam   | 47  | Behnam                  | suite 2.zip       |
 | giulia   | 50  | Giulia                  | 2026-04-25T154406 |
 | yvette   | 54  | Yvette la traboulière   | 2026-04-24T224632 |
 | larissa  | 55  | Larissa                 | 2026-04-25T154209 |
+| boris    | 57  | Boris le grognon        | suite 2.zip       |
 | astrid   | 60  | Astrid la farceuse      | 2026-04-24T224624 |
 | pietro   | 61  | Pietro le gentleman     | suite.zip         |
 | lucette  | 64  | Mère Lucette            | 2026-04-24T225004 |
@@ -110,28 +117,26 @@ inferred from the first name. `M` = male profile, `F` = female profile.
 
 ### park — complete
 
-### hotel — 14 missing
+### hotel — 11 missing
 
-- **mid** : `soraya(36, F, IR)`, `lupita(37, F, MX)`, `lucia(38, F, IT/ES)`, `khadija(40, F, NA)`, `wei(41, F, CN)`, `hiroko(43, F, JP)`, `tatiana(44, F, RU)`, `carmen(47, F, ES)`, `despina(48, F, GR)`, `mireille(50, F, FR)`, `adele(52, F, FR)`, `esperanza(53, F, ES)`
+- **mid** : `lupita(37, F, MX)`, `lucia(38, F, IT/ES)`, `khadija(40, F, NA)`, `tatiana(44, F, RU)`, `carmen(47, F, ES)`, `despina(48, F, GR)`, `mireille(50, F, FR)`, `adele(52, F, FR)`, `esperanza(53, F, ES)`
 - **older** : `brigitte(61, F, FR)`, `solange(67, F, FR)`
 
-### alley — 14 missing
+### alley — 10 missing
 
-- **young** : `min-ji(25, F, KR)`, `priya(32, F, IN)`, `linh(34, F, VN)`
-- **mid** : `bineta(41, F, WAF)`, `soledad(43, F, ES)`, `mila(44, F, EE)`, `aylin(46, F, TR)`, `maialen(49, F, BQ)`, `sofia(53, F, any)`, `tariq(35, M, AR)`, `behnam(47, M, IR)`
-- **older** : `boris(57, M, RU)`
+- **young** : `min-ji(25, F, KR)`, `linh(34, F, VN)`
+- **mid** : `bineta(41, F, WAF)`, `soledad(43, F, ES)`, `mila(44, F, EE)`, `aylin(46, F, TR)`, `maialen(49, F, BQ)`, `sofia(53, F, any)`
 - **very old** : `anatoline(70, F, FR)`, `stella(78, F, IT/FR)`
 
 ## What to source for the next batch
 
 Aggregated by characteristic (in order of need):
 
-- **men** — 3 profiles still without an image, all in alley:
-  `tariq(35, AR)`, `behnam(47, IR)`, `boris(57, RU)`.
-- **Asian women** — 5 profiles uncovered: `wei(41)`, `hiroko(43)` (hotel);
-  `min-ji(25)`, `priya(32)`, `linh(34)` (alley).
-- **Arab / North-African / Middle-Eastern women** — 3 profiles uncovered:
-  `soraya(36)`, `khadija(40)` (hotel); `aylin(46)` (alley).
+- **men** — 0 profiles still uncovered. ✓
+- **Asian women** — 2 profiles uncovered: `min-ji(25, KR)` (alley) and
+  `linh(34, VN)` (alley).
+- **Arab / North-African / Middle-Eastern women** — 2 profiles uncovered:
+  `khadija(40)` (hotel); `aylin(46)` (alley).
 - **Mediterranean / Hispanic women** — `lupita(37)`, `lucia(38)`,
   `carmen(47)`, `despina(48)`, `esperanza(53)` (hotel); `soledad(43)`,
   `maialen(49)` (alley).
@@ -140,14 +145,12 @@ Aggregated by characteristic (in order of need):
 
 ## Unused images from the first batch
 
-8 of the 9 originally-unused Black-women images have been recycled. The
-profiles `anjali`, `kavita`, `latifa`, `layla` keep their names and got a
-recycled image; `zeinab`, `fadila`, `pilar` were rejuvenated to ages 27 /
-28 / 29 to match their new images. 2 images remain in
-`/home/julien/Téléchargements/to_check/`:
+9 of the 9 originally-unused Black-women images have been processed. The
+profiles `anjali`, `kavita`, `latifa`, `layla` kept their names and got a
+recycled image; `zeinab`, `fadila`, `pilar`, `soraya` were rejuvenated to
+ages 27 / 28 / 29 / 30 to match their new images (`rue.jpg` went to
+`soraya`). 1 image still remains in `/home/julien/Téléchargements/to_check/`:
 
-- `rue.jpg` (Black, ~30, fur + lace) — was T231532, age too low for the
-  only remaining Black-female alley slot (`bineta`, 41).
 - `téléchargement - 2026-04-24T231221` (park, Black, ~27, red dress).
 
-These can be reused if more Black-named profiles are added.
+It can be reused if a new Black-named profile is added.
