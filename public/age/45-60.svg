@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="45 to 60">
+  <rect width="240" height="240" fill="#d946ef"/>
+  <g fill="#f5d0fe">
+    <!-- Hair cap (neat) -->
+    <path d="M 102,55 Q 105,40 120,38 Q 135,40 138,55 L 138,72 L 102,72 Z"/>
+    <!-- Low chignon (visible behind head, on the right) -->
+    <ellipse cx="146" cy="68" rx="10" ry="11"/>
+    <!-- Head -->
+    <circle cx="120" cy="65" r="14"/>
+    <!-- Neck -->
+    <rect x="114" y="79" width="12" height="9"/>
+    <!-- Torso -->
+    <path d="M 98,88 L 142,88 Q 152,100 148,118 L 144,138 L 96,138 L 92,118 Q 88,100 98,88 Z"/>
+    <!-- A-line midi dress (flared) -->
+    <path d="M 94,138 L 146,138 L 168,202 L 72,202 Z"/>
+    <!-- Calves -->
+    <path d="M 102,202 L 110,220 L 119,220 L 119,202 Z"/>
+    <path d="M 121,202 L 121,220 L 130,220 L 138,202 Z"/>
+  </g>
+</svg>

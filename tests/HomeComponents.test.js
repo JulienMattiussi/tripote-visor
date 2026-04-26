@@ -1,6 +1,6 @@
 import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest';
 import { mount, flushPromises } from '@vue/test-utils';
-import CategoryGrid from '../src/components/CategoryGrid.vue';
+import AgeGrid from '../src/components/AgeGrid.vue';
 import ExperienceCards from '../src/components/ExperienceCards.vue';
 import InspirationCards from '../src/components/InspirationCards.vue';
 import DestinationsGrid from '../src/components/DestinationsGrid.vue';
@@ -17,20 +17,30 @@ beforeEach(() => {
 });
 afterEach(() => vi.unstubAllGlobals());
 
-describe('CategoryGrid', () => {
-  it('renders four category cards with translated labels', () => {
-    const wrapper = mount(CategoryGrid);
-    expect(wrapper.findAll('.cat-card')).toHaveLength(4);
-    const labels = wrapper.findAll('.cat-label').map((l) => l.text());
-    expect(labels).toHaveLength(4);
-    expect(labels.every((l) => l.length > 0)).toBe(true);
+describe('AgeGrid', () => {
+  it('renders four age-bucket cards with translated labels', async () => {
+    const router = await setupRouter('/');
+    const wrapper = mount(AgeGrid, withRouter(router));
+    expect(wrapper.findAll('.age-card')).toHaveLength(4);
+    const labels = wrapper.findAll('.age-label').map((l) => l.text());
+    expect(labels).toEqual(['Under 30', '30 to 45', '45 to 60', 'Over 60']);
   });
 
-  it('switches labels to French when locale is fr', () => {
+  it('switches labels to French when locale is fr', async () => {
     setLocale('fr');
-    const wrapper = mount(CategoryGrid);
-    const labels = wrapper.findAll('.cat-label').map((l) => l.text());
-    expect(labels.some((l) => l.includes('plein air'))).toBe(true);
+    const router = await setupRouter('/');
+    const wrapper = mount(AgeGrid, withRouter(router));
+    const labels = wrapper.findAll('.age-label').map((l) => l.text());
+    expect(labels).toEqual(['Moins de 30 ans', '30 à 45 ans', '45 à 60 ans', 'Plus de 60 ans']);
+  });
+
+  it('clicking a card navigates to /search with the matching age query', async () => {
+    const router = await setupRouter('/');
+    const wrapper = mount(AgeGrid, withRouter(router));
+    await wrapper.findAll('.age-card')[2].trigger('click');
+    await flushPromises();
+    expect(router.currentRoute.value.name).toBe('search');
+    expect(router.currentRoute.value.query.age).toBe('45-60');
   });
 });
 
@@ -85,21 +95,20 @@ describe('DestinationsGrid', () => {
 });
 
 describe('TravelersChoice (home promo)', () => {
-  it('CTA navigates to /discover', async () => {
+  it('CTA navigates to /encounters', async () => {
     const router = await setupRouter('/');
     const wrapper = mount(TravelersChoice, withRouter(router));
     await wrapper.find('button.pill-btn').trigger('click');
     await flushPromises();
-    expect(router.currentRoute.value.name).toBe('discover');
+    expect(router.currentRoute.value.name).toBe('encounters');
   });
 });
 
 describe('CommunityBlurb', () => {
-  it('renders the community section with formatted amount', () => {
+  it('renders the community section with the closing tagline', () => {
     const wrapper = mount(CommunityBlurb);
     expect(wrapper.find('h2').exists()).toBe(true);
-    // formatAmount(30) in EN/USD renders as "$30"
-    expect(wrapper.text()).toMatch(/\$30|30\s*\$/);
+    expect(wrapper.text()).toContain("We're here to take a load off");
   });
 });
 

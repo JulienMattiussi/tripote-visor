@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="Under 30">
+  <rect width="240" height="240" fill="#d946ef"/>
+  <g fill="#f5d0fe">
+    <!-- Hair cap (smooth, gathered to the right) -->
+    <path d="M 100,56 Q 102,38 120,36 Q 138,38 144,52 Q 146,62 144,72 L 100,72 Z"/>
+    <!-- Side ponytail (couette) hanging off the right of the head down past the shoulder -->
+    <path d="M 144,62 Q 162,68 168,92 Q 168,124 156,142 Q 146,144 142,134 Q 152,118 150,96 Q 146,78 140,68 Z"/>
+    <!-- Hair tie (small band where the couette is gathered) -->
+    <rect x="142" y="64" width="8" height="5" rx="1.5" fill="#d946ef"/>
+    <!-- Head -->
+    <circle cx="120" cy="66" r="14"/>
+    <!-- Neck -->
+    <rect x="114" y="80" width="12" height="9"/>
+    <!-- Sleeveless tank top -->
+    <path d="M 96,89 L 144,89 Q 154,101 150,119 L 146,140 L 94,140 L 90,119 Q 86,101 96,89 Z"/>
+    <!-- Mini-skirt (short, slightly flared) -->
+    <path d="M 94,140 L 146,140 L 158,170 L 82,170 Z"/>
+    <!-- Bare legs -->
+    <path d="M 102,170 L 110,222 L 119,222 L 119,170 Z"/>
+    <path d="M 121,170 L 121,222 L 130,222 L 138,170 Z"/>
+  </g>
+</svg>

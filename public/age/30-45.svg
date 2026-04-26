@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="30 to 45">
+  <rect width="240" height="240" fill="#d946ef"/>
+  <g fill="#f5d0fe">
+    <!-- Bob hair: shoulder-length, framing face -->
+    <path d="M 100,55 Q 102,38 120,36 Q 138,38 140,55 L 144,92 L 96,92 Z"/>
+    <!-- Head -->
+    <circle cx="120" cy="65" r="14"/>
+    <!-- Neck -->
+    <rect x="114" y="79" width="12" height="9"/>
+    <!-- Torso (fitted blouse) -->
+    <path d="M 98,88 L 142,88 Q 152,100 148,118 L 144,140 L 96,140 L 92,118 Q 88,100 98,88 Z"/>
+    <!-- Knee-length dress -->
+    <path d="M 96,140 L 144,140 L 152,194 L 88,194 Z"/>
+    <!-- Lower legs -->
+    <path d="M 104,194 L 112,220 L 120,220 L 120,194 Z"/>
+    <path d="M 120,194 L 120,220 L 128,220 L 136,194 Z"/>
+  </g>
+</svg>

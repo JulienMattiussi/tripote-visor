@@ -3,16 +3,13 @@ import { useRouter } from 'vue-router';
 import { t } from '../i18n/store.js';
 
 const router = useRouter();
-const onSeeWinners = () => router.push({ name: 'discover' });
+const onSeeWinners = () => router.push({ name: 'encounters' });
 </script>
 
 <template>
   <section class="tc">
     <div class="container tc-inner">
       <div class="tc-copy">
-        <div class="tc-badge" aria-hidden="true">
-          <span class="tc-badge-year">{{ t('tc.year') }}</span>
-        </div>
         <h2 class="tc-title">{{ t('tc.title') }}</h2>
         <p class="tc-sub">{{ t('tc.subtitle') }}</p>
         <button class="pill-btn pill-btn--light" type="button" @click="onSeeWinners">
@@ -21,15 +18,15 @@ const onSeeWinners = () => router.push({ name: 'discover' });
       </div>
 
       <div class="tc-art" aria-hidden="true">
-        <div class="shape shape-yellow"></div>
-        <div class="shape shape-photo">
-          <img
-            src="https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?w=600&q=60"
-            alt=""
-            loading="lazy"
-          />
+        <div class="shape shape--top">
+          <img src="/articles/boulogne.jpg" alt="" loading="lazy" />
         </div>
-        <div class="shape shape-accent"></div>
+        <div class="shape shape--main">
+          <img src="/articles/mimi.jpg" alt="" loading="lazy" />
+        </div>
+        <div class="shape shape--bottom">
+          <img src="/articles/moules.jpg" alt="" loading="lazy" />
+        </div>
       </div>
     </div>
   </section>
@@ -48,24 +45,6 @@ const onSeeWinners = () => router.push({ name: 'discover' });
   grid-template-columns: 1fr 1fr;
   gap: 32px;
   align-items: center;
-}
-
-.tc-badge {
-  width: 60px;
-  height: 80px;
-  background: var(--accent-yellow);
-  border-radius: 8px 8px 30px 30px;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  padding-bottom: 10px;
-  margin-bottom: 18px;
-}
-
-.tc-badge-year {
-  color: var(--brand-dark);
-  font-weight: 900;
-  font-size: 14px;
 }
 
 .tc-title {
@@ -92,39 +71,40 @@ const onSeeWinners = () => router.push({ name: 'discover' });
 .shape {
   position: absolute;
   border-radius: 50%;
-}
-
-.shape-yellow {
-  width: 180px;
-  height: 180px;
-  background: var(--accent-yellow);
-  top: 0;
-  left: 20%;
-  z-index: 1;
-}
-
-.shape-photo {
-  width: 280px;
-  height: 280px;
-  top: 50px;
-  left: 35%;
   overflow: hidden;
-  z-index: 2;
+  border: 4px solid rgba(255, 255, 255, 0.85);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
 }
 
-.shape-photo img {
+.shape img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
 }
 
-.shape-accent {
+.shape--top {
+  width: 180px;
+  height: 180px;
+  top: 0;
+  left: 12%;
+  z-index: 1;
+}
+
+.shape--main {
+  width: 260px;
+  height: 260px;
+  top: 50px;
+  left: 32%;
+  z-index: 3;
+}
+
+.shape--bottom {
   width: 150px;
   height: 150px;
-  background: var(--brand-light);
   bottom: 20px;
-  right: 10%;
-  z-index: 1;
+  right: 8%;
+  z-index: 2;
 }
 
 @media (max-width: 800px) {
@@ -137,17 +117,17 @@ const onSeeWinners = () => router.push({ name: 'discover' });
   .tc-art {
     height: 260px;
   }
-  .shape-yellow {
+  .shape--top {
     width: 120px;
     height: 120px;
   }
-  .shape-photo {
-    width: 200px;
-    height: 200px;
+  .shape--main {
+    width: 190px;
+    height: 190px;
     left: 28%;
     top: 30px;
   }
-  .shape-accent {
+  .shape--bottom {
     width: 110px;
     height: 110px;
   }

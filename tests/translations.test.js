@@ -91,9 +91,10 @@ describe('translation dictionary integrity', () => {
       'hero.tab_things',
       'ttd.cta',
       'ttd.subtitle',
-      'categories.title',
-      'categories.outdoors',
-      'categories.water',
+      'age_groups.title',
+      'age_groups.subtitle',
+      'age_groups.under_30',
+      'age_groups.over_60',
       'experiences.title',
       'experiences.subtitle',
       'experiences.item_1_price',
@@ -136,12 +137,12 @@ describe('locale switching on the full App', () => {
     'What environment?',
     'Search All',
     'Discover now',
-    'Find things to do by interest',
+    'Pick the age range that suits you',
     "Can't-miss picks near you",
     'Inspiration to get you going',
     'Popular destinations',
-    "Travelers' Choice Awards Best of the Best",
-    'See the winners',
+    'Four stories you won’t forget',
+    'Read the stories',
     'About Tripote-visor',
     'Read more ▾',
   ];
@@ -152,12 +153,12 @@ describe('locale switching on the full App', () => {
     'Quel environnement ?',
     'Tout rechercher',
     'Découvrez maintenant',
-    'Trouvez des activités par centre d’intérêt',
+    'Choisissez selon l’âge qui vous convient',
     'Des expériences qui devraient vous plaire',
     'Des idées pour vous inspirer',
     'Destinations populaires',
-    'Prix Travellers’ Choice Best of the Best',
-    'Découvrez les gagnants',
+    'Quatre histoires qu’on n’oublie pas',
+    'Lire les récits',
     'À propos de Tripote-visor',
     'Voir plus ▾',
   ];
@@ -280,7 +281,7 @@ describe('no hardcoded UI string leaks in components', () => {
     expect(text).not.toContain('Discover now');
     expect(text).not.toContain('Sign in');
     expect(text).not.toContain('Donate now');
-    expect(text).not.toContain('See the winners');
+    expect(text).not.toContain('Read the stories');
   });
 
   it('t() applied to every currently known key yields a string for both locales', () => {

@@ -26,8 +26,8 @@ describe('App', () => {
     const html = wrapper.html();
 
     expect(html).toContain('What environment?'); // HeroSearch
-    expect(html).toContain('Find things to do by interest'); // CategoryGrid
-    expect(html).toContain("Travelers' Choice"); // TravelersChoice (home promo section)
+    expect(html).toContain('Pick the age range that suits you'); // AgeGrid
+    expect(html).toContain('Four stories you won’t forget'); // TravelersChoice (home promo section)
   });
 
   it('renders the Discover page when navigating to /discover', async () => {

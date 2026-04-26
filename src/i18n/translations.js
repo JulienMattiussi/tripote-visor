@@ -51,13 +51,13 @@ export const translations = {
       aria: 'Trending destinations highlights',
       title: 'Trending destinations highlights',
     },
-    categories: {
-      title: 'Find things to do by interest',
-      subtitle: "Whatever you're into, we've got it",
-      outdoors: 'Outdoors',
-      food: 'Food',
-      culture: 'Culture',
-      water: 'Water',
+    age_groups: {
+      title: 'Pick the age range that suits you',
+      subtitle: 'Four brackets, one click. To each their own taste.',
+      under_30: 'Under 30',
+      b30_45: '30 to 45',
+      b45_60: '45 to 60',
+      over_60: 'Over 60',
     },
     experiences: {
       title: 'Explore experiences near Nancy',
@@ -84,14 +84,14 @@ export const translations = {
       title: 'Popular destinations',
     },
     tc: {
-      year: '2026',
-      title: "Travelers' Choice Awards Best of the Best",
-      subtitle: 'Among our top 1% of places, stays, eats, and experiences - decided by you.',
-      cta: 'See the winners',
+      title: 'Four stories you won’t forget',
+      subtitle:
+        'From midnight in the Bois to mussels at the Vieux-Port, through Mimi and the minivan girls. Our most memorable encounters of the year.',
+      cta: 'Read the stories',
     },
     community: {
       title: 'Tripote-visor: join the largest travel community',
-      body: "As the world's largest travel guidance platform, Tripote-visor helps you take better trips. And now it pays to plan, book, and review with us: Join Rewards today and get {amount} off Things to Do. Plus, you can check out hotels, restaurants, and more on our site - they're all backed by more than a billion reviews and opinions from travelers who have been there.",
+      body: "As the world's leading platform for fieldwork-grade encounter reports, Tripote-visor helps you plan your evenings with the same care others put into a Sunday brunch. No more wandering the streets: book, rate, repeat. Browse hotels, parks, and alleys backed by more than a billion opinions from users who, take our word for it, really have been there. We're here to take a load off.",
     },
     footer: {
       currency_aria: 'Currency',
@@ -485,6 +485,7 @@ export const translations = {
     search_page: {
       title_all: 'Browse all profiles',
       title_with_query: 'Search · "{q}"',
+      title_with_age: 'Browse · {age}',
       empty: 'No matches.',
       empty_for_query: 'No matches for "{q}".',
       show_all: 'Show all',
@@ -625,13 +626,13 @@ export const translations = {
       aria: 'Les incontournables des destinations tendance',
       title: 'Les incontournables des destinations tendance',
     },
-    categories: {
-      title: 'Trouvez des activités par centre d’intérêt',
-      subtitle: 'Nous avons de quoi répondre à toutes vos envies',
-      outdoors: 'Activités de plein air',
-      food: 'Cuisine',
-      culture: 'Culture',
-      water: 'Activités nautiques',
+    age_groups: {
+      title: 'Choisissez selon l’âge qui vous convient',
+      subtitle: 'Quatre tranches, un clic. À chacun ses goûts.',
+      under_30: 'Moins de 30 ans',
+      b30_45: '30 à 45 ans',
+      b45_60: '45 à 60 ans',
+      over_60: 'Plus de 60 ans',
     },
     experiences: {
       title: 'Les incontournables dans des lieux incroyables',
@@ -658,15 +659,14 @@ export const translations = {
       title: 'Destinations populaires',
     },
     tc: {
-      year: '2026',
-      title: 'Prix Travellers’ Choice Best of the Best',
+      title: 'Quatre histoires qu’on n’oublie pas',
       subtitle:
-        'Le top 1 % des destinations, séjours, expériences et restaurants les mieux notés, et choisis par vous.',
-      cta: 'Découvrez les gagnants',
+        'Du Bois à minuit aux moules du Vieux-Port, en passant par Mimi et les filles en minivan. Nos rencontres marquantes de l’année.',
+      cta: 'Lire les récits',
     },
     community: {
       title: 'Tripote-visor : rejoignez la plus grande communauté d’utilisateurs',
-      body: 'Première plateforme mondiale de guidance voyage, Tripote-visor vous aide à mieux voyager. Et planifier, réserver et laisser un avis chez nous paie : rejoignez Récompenses dès aujourd’hui et obtenez {amount} de réduction sur les Activités. Découvrez aussi des hôtels, des restaurants et plus encore sur notre site, le tout soutenu par plus d’un milliard d’avis et d’opinions d’utilisateurs qui y sont allés.',
+      body: 'Première plateforme mondiale d’avis de terrain en conditions réelles, Tripote-visor vous aide à organiser vos soirées avec autant de sérieux qu’un brunch dominical. Plus besoin d’errer dans les rues : réservez, notez, recommencez. Parcourez hôtels, parcs et ruelles, le tout soutenu par plus d’un milliard d’avis d’utilisateurs qui, croyez-nous, y sont vraiment allés. Nous sommes là pour vous soulager.',
     },
     footer: {
       currency_aria: 'Devise',
@@ -1069,6 +1069,7 @@ export const translations = {
     search_page: {
       title_all: 'Toutes les fiches',
       title_with_query: 'Recherche · « {q} »',
+      title_with_age: 'Sélection · {age}',
       empty: 'Aucun résultat.',
       empty_for_query: 'Aucun résultat pour « {q} ».',
       show_all: 'Tout afficher',

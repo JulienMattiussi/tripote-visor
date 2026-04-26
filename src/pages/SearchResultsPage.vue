@@ -18,19 +18,31 @@ const CATEGORIES = ['hotel', 'ruelle', 'parc'];
 const CATEGORIE_TO_ROUTE = { hotel: 'hotels', ruelle: 'alleys', parc: 'parks' };
 
 const query = computed(() => (route.query.q ?? '').toString());
+const ageBucket = computed(() => (route.query.age ?? '').toString());
+
+const inBucket = (age, bucket) => {
+  if (bucket === 'under-30') return age < 30;
+  if (bucket === '30-45') return age >= 30 && age < 45;
+  if (bucket === '45-60') return age >= 45 && age < 60;
+  if (bucket === 'over-60') return age >= 60;
+  return true;
+};
 
 const matches = computed(() => {
   const q = query.value.trim().toLowerCase();
-  if (!q) return fichesData;
-  return fichesData.filter(
-    (f) =>
+  const bucket = ageBucket.value;
+  return fichesData.filter((f) => {
+    if (bucket && !inBucket(f.age, bucket)) return false;
+    if (!q) return true;
+    return (
       f.nom.toLowerCase().includes(q) ||
       (f.ville ?? '').toLowerCase().includes(q) ||
       (f.lieu ?? '').toLowerCase().includes(q) ||
       [...(f.descriptif ?? []), ...(f.descriptif_en ?? [])].some((line) =>
         line.toLowerCase().includes(q),
-      ),
-  );
+      )
+    );
+  });
 });
 
 const matchesByCategory = computed(() => {
@@ -69,9 +81,21 @@ const onSaveClick = (fiche) => {
   openLoginRequired({ target: 'save', name: fiche.nom });
 };
 
-const titleText = computed(() =>
-  query.value ? t('search_page.title_with_query', { q: query.value }) : t('search_page.title_all'),
-);
+const ageLabel = computed(() => {
+  const map = {
+    'under-30': t('age_groups.under_30'),
+    '30-45': t('age_groups.b30_45'),
+    '45-60': t('age_groups.b45_60'),
+    'over-60': t('age_groups.over_60'),
+  };
+  return map[ageBucket.value] ?? '';
+});
+
+const titleText = computed(() => {
+  if (query.value) return t('search_page.title_with_query', { q: query.value });
+  if (ageLabel.value) return t('search_page.title_with_age', { age: ageLabel.value });
+  return t('search_page.title_all');
+});
 
 const emptyText = computed(() =>
   query.value ? t('search_page.empty_for_query', { q: query.value }) : t('search_page.empty'),

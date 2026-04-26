@@ -1,11 +1,11 @@
 <script setup>
-import { t, formatAmount } from '../i18n/store.js';
+import { t } from '../i18n/store.js';
 </script>
 
 <template>
   <section class="blurb">
     <h2>{{ t('community.title') }}</h2>
-    <p>{{ t('community.body', { amount: formatAmount(30) }) }}</p>
+    <p>{{ t('community.body') }}</p>
   </section>
 </template>
 

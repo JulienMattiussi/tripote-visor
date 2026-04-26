@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="Over 60">
+  <rect width="240" height="240" fill="#d946ef"/>
+  <g fill="#f5d0fe">
+    <!-- Top bun (small ball on top of head) -->
+    <circle cx="116" cy="38" r="9"/>
+    <!-- Hair cap -->
+    <path d="M 100,55 Q 102,44 116,42 Q 132,44 134,55 L 134,72 L 100,72 Z"/>
+    <!-- Head (slightly forward / left of center) -->
+    <circle cx="116" cy="68" r="14"/>
+    <!-- Neck -->
+    <rect x="110" y="82" width="12" height="9"/>
+    <!-- Torso (slight stoop) -->
+    <path d="M 94,90 L 138,90 Q 148,102 146,120 L 142,138 L 92,138 L 88,120 Q 84,102 94,90 Z"/>
+    <!-- Long dress / robe (single piece down to ankles) -->
+    <path d="M 90,138 L 144,138 L 156,206 L 80,206 Z"/>
+    <!-- Lower legs / shoes -->
+    <path d="M 96,206 L 104,222 L 116,222 L 118,206 Z"/>
+    <path d="M 120,206 L 120,222 L 132,222 L 138,206 Z"/>
+    <!-- Cane: vertical pole on the right -->
+    <rect x="174" y="120" width="4" height="100" rx="2"/>
+    <!-- Cane handle (curl on top) -->
+    <path d="M 176,120 Q 176,112 184,112 Q 192,112 192,120 L 188,120 Q 188,116 184,116 Q 180,116 180,120 Z"/>
+    <!-- Hand gripping cane -->
+    <ellipse cx="176" cy="128" rx="6" ry="5"/>
+    <!-- Arm extending to cane -->
+    <path d="M 138,118 L 172,126 L 172,132 L 138,124 Z"/>
+  </g>
+</svg>
