@@ -12,8 +12,8 @@ const days = computed(() => orderedDays(props.schedule, t));
 </script>
 
 <template>
-  <div id="horaires" class="fp-side-block">
-    <h3 class="fp-side-title">{{ t('fiche_page.hours_title') }}</h3>
+  <div id="schedule" class="fp-side-block">
+    <h3 class="fp-side-title">{{ t('profile_page.hours_title') }}</h3>
     <p :class="['fp-status-tag', status.open ? 'open' : 'closed']">
       {{ status.label }}
     </p>
@@ -22,7 +22,7 @@ const days = computed(() => orderedDays(props.schedule, t));
         <tr v-for="d in days" :key="d.key" :class="{ today: d.isToday }">
           <th scope="row">{{ d.label }}</th>
           <td v-if="d.time">{{ d.time }}</td>
-          <td v-else class="fp-closed-cell">{{ t('fiche_page.closed') }}</td>
+          <td v-else class="fp-closed-cell">{{ t('profile_page.closed') }}</td>
         </tr>
       </tbody>
     </table>

@@ -58,7 +58,7 @@ describe('LoginRequiredModal', () => {
     openLoginRequired({ target: 'save', name: 'Aïcha' });
     const wrapper = mount(LoginRequiredModal);
     expect(wrapper.find('.lr-message').text()).toBe(
-      'Vous devez être connecté pour enregistrer la fiche de Aïcha.',
+      'Vous devez être connecté pour enregistrer la profile de Aïcha.',
     );
   });
 
@@ -97,7 +97,7 @@ describe('LoginRequiredModal', () => {
     setLocale('fr');
     const fr = mount(LoginRequiredModal);
     expect(fr.find('.lr-message').text()).toBe(
-      'Vous devez être connecté pour soumettre « Hôtel des Trois Lunes » comme nouvelle fiche.',
+      'Vous devez être connecté pour soumettre « Hôtel des Trois Lunes » comme nouvelle profile.',
     );
   });
 

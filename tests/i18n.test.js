@@ -10,7 +10,7 @@ import {
   locale,
   detectBrowserDefaults,
 } from '../src/i18n/store.js';
-import { formatLieu, reviewCountFor, reviewAverageFor } from '../src/data/fiches.js';
+import { formatLocation, reviewCountFor, reviewAverageFor } from '../src/data/profiles.js';
 import { setupRouter, withRouter } from './helpers/router.js';
 import advicesData from '../src/data/advices.json';
 
@@ -93,32 +93,32 @@ describe('detectBrowserDefaults', () => {
   });
 });
 
-describe('formatLieu', () => {
-  it('joins ville and lieu with parens when both are present', () => {
-    expect(formatLieu({ ville: 'Paris', lieu: '11e' })).toBe('Paris (11e)');
-    expect(formatLieu({ ville: 'Marseille', lieu: 'Le Vieux-Port' })).toBe(
+describe('formatLocation', () => {
+  it('joins city and district with parens when both are present', () => {
+    expect(formatLocation({ city: 'Paris', district: '11e' })).toBe('Paris (11e)');
+    expect(formatLocation({ city: 'Marseille', district: 'Le Vieux-Port' })).toBe(
       'Marseille (Le Vieux-Port)',
     );
   });
 
-  it('returns the ville alone when lieu is empty or missing', () => {
-    expect(formatLieu({ ville: 'Strasbourg', lieu: '' })).toBe('Strasbourg');
-    expect(formatLieu({ ville: 'Saint-Denis' })).toBe('Saint-Denis');
+  it('returns the city alone when district is empty or missing', () => {
+    expect(formatLocation({ city: 'Strasbourg', district: '' })).toBe('Strasbourg');
+    expect(formatLocation({ city: 'Saint-Denis' })).toBe('Saint-Denis');
   });
 
   it('returns an empty string when fed null/undefined', () => {
-    expect(formatLieu(null)).toBe('');
-    expect(formatLieu(undefined)).toBe('');
+    expect(formatLocation(null)).toBe('');
+    expect(formatLocation(undefined)).toBe('');
   });
 });
 
 describe('reviewCountFor / reviewAverageFor', () => {
-  it('reports 0 / 0 for an unknown fiche', () => {
+  it('reports 0 / 0 for an unknown profile', () => {
     expect(reviewCountFor('does-not-exist')).toBe(0);
     expect(reviewAverageFor('does-not-exist')).toBe(0);
   });
 
-  it('matches the seeded advices data for a fiche that has reviews', () => {
+  it('matches the seeded advices data for a profile that has reviews', () => {
     const id = Object.keys(advicesData).find((k) => advicesData[k].length > 0);
     expect(id).toBeTruthy();
     const list = advicesData[id];

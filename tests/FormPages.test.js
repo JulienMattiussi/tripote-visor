@@ -38,15 +38,15 @@ describe('UserReviewPage (Write a review)', () => {
     expect(wrapper.find('.form-success').exists()).toBe(false);
   });
 
-  it('pre-selects the fiche when /write-review?fiche=:id is provided', async () => {
-    const r = await setupRouter('/write-review?fiche=mireille');
+  it('pre-selects the profile when /write-review?profile=:id is provided', async () => {
+    const r = await setupRouter('/write-review?profile=mireille');
     const wrapper = mount(UserReviewPage, withRouter(r));
     expect(wrapper.find('.ps-search').exists()).toBe(false);
     expect(wrapper.find('.ps-selected').exists()).toBe(true);
     expect(wrapper.find('.ps-selected-name').text()).toBe('Mireille la folle');
   });
 
-  it('search reveals up to six fiche suggestions matching the keyword', async () => {
+  it('search reveals up to six profile suggestions matching the keyword', async () => {
     const wrapper = mount(UserReviewPage, withRouter(router));
     await wrapper.find('.ps-search input').setValue('Paris');
     const cards = wrapper.findAll('.ps-suggestion');
@@ -139,8 +139,8 @@ describe('PostPhotosPage (Publish photos)', () => {
     expect(wrapper.find('.file-row').exists()).toBe(false);
   });
 
-  it('pre-selects the fiche when /post-photos?fiche=:id is provided', async () => {
-    const r = await setupRouter('/post-photos?fiche=mireille');
+  it('pre-selects the profile when /post-photos?profile=:id is provided', async () => {
+    const r = await setupRouter('/post-photos?profile=mireille');
     const wrapper = mount(PostPhotosPage, withRouter(r));
     expect(wrapper.find('.ps-selected-name').text()).toBe('Mireille la folle');
   });
@@ -226,7 +226,7 @@ describe('CreateListingPage (Add a sex worker)', () => {
     setLocale('fr');
     const wrapper = mount(CreateListingPage, withRouter(router));
     expect(wrapper.find('.form-hero-title').text()).toBe('Ajouter une prostituée');
-    expect(wrapper.find('.form-submit').text()).toBe('Soumettre la fiche');
+    expect(wrapper.find('.form-submit').text()).toBe('Soumettre la profile');
     const allChips = wrapper.findAll('.chip').map((c) => c.text());
     expect(allChips.slice(0, 3)).toEqual(['Féminin', 'Masculin', 'Indéterminé']);
     expect(allChips.slice(3, 6)).toEqual(['Hôtel', 'Parc', 'Ruelle']);

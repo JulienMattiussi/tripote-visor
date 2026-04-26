@@ -2,8 +2,8 @@
 import { computed } from 'vue';
 import { useRouter } from 'vue-router';
 import { t, formatAmount } from '../i18n/store.js';
-import { reviewCountFor, reviewAverageFor } from '../data/fiches.js';
-import fichesData from '../data/fiches.json';
+import { reviewCountFor, reviewAverageFor } from '../data/profiles.js';
+import profilesData from '../data/profiles.json';
 
 const router = useRouter();
 
@@ -19,23 +19,23 @@ const mulberry32 = (seed) => () => {
 
 const picks = computed(() => {
   const rng = mulberry32(Math.floor(Date.now() / HOUR_MS));
-  const byVille = new Map();
-  for (const f of fichesData) {
-    if (!byVille.has(f.ville)) byVille.set(f.ville, []);
-    byVille.get(f.ville).push(f);
+  const byCity = new Map();
+  for (const f of profilesData) {
+    if (!byCity.has(f.city)) byCity.set(f.city, []);
+    byCity.get(f.city).push(f);
   }
-  const villes = [...byVille.keys()];
-  for (let i = villes.length - 1; i > 0; i--) {
+  const cities = [...byCity.keys()];
+  for (let i = cities.length - 1; i > 0; i--) {
     const j = Math.floor(rng() * (i + 1));
-    [villes[i], villes[j]] = [villes[j], villes[i]];
+    [cities[i], cities[j]] = [cities[j], cities[i]];
   }
-  return villes.slice(0, 4).map((ville) => {
-    const list = byVille.get(ville);
+  return cities.slice(0, 4).map((city) => {
+    const list = byCity.get(city);
     return list[Math.floor(rng() * list.length)];
   });
 });
 
-const goFiche = (id) => router.push({ name: 'fiche', params: { id } });
+const goFiche = (id) => router.push({ name: 'profile', params: { id } });
 </script>
 
 <template>
@@ -54,7 +54,7 @@ const goFiche = (id) => router.push({ name: 'fiche', params: { id } });
         @keydown.enter="goFiche(f.id)"
       >
         <div class="exp-thumb">
-          <span class="exp-city-tag">{{ f.ville }}</span>
+          <span class="exp-city-tag">{{ f.city }}</span>
           <div class="exp-rating-overlay" aria-hidden="true">
             <span class="exp-stars">
               <span
@@ -69,9 +69,9 @@ const goFiche = (id) => router.push({ name: 'fiche', params: { id } });
             <span class="exp-rating-count">({{ reviewCountFor(f.id) }})</span>
           </div>
         </div>
-        <h3 class="exp-name">{{ f.nom }}</h3>
+        <h3 class="exp-name">{{ f.name }}</h3>
         <div class="exp-price">
-          {{ t('experiences.from_price', { amount: formatAmount(f.prix) }) }}
+          {{ t('experiences.from_price', { amount: formatAmount(f.price) }) }}
         </div>
       </li>
     </ul>

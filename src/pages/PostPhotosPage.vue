@@ -3,24 +3,24 @@ import { ref, computed } from 'vue';
 import { useRoute } from 'vue-router';
 import { t } from '../i18n/store.js';
 import { openLoginRequired } from '../state/modals.js';
-import fichesData from '../data/fiches.json';
+import profilesData from '../data/profiles.json';
 import PlaceSearchSelect from '../components/PlaceSearchSelect.vue';
 
 const route = useRoute();
 
 const initialFiche = (() => {
-  const id = (route.query.fiche ?? '').toString();
-  return id ? (fichesData.find((f) => f.id === id) ?? null) : null;
+  const id = (route.query.profile ?? '').toString();
+  return id ? (profilesData.find((f) => f.id === id) ?? null) : null;
 })();
 
-const selectedFiche = ref(initialFiche);
+const selectedProfile = ref(initialFiche);
 const files = ref([]); // local-only File[]; never uploaded
 const caption = ref('');
 const consent = ref(false);
 const dragOver = ref(false);
 const showError = ref(false);
 
-const isValid = computed(() => selectedFiche.value && files.value.length > 0 && consent.value);
+const isValid = computed(() => selectedProfile.value && files.value.length > 0 && consent.value);
 
 const acceptFiles = (list) => {
   const incoming = Array.from(list ?? []).filter((f) => /^image\//.test(f.type));
@@ -58,7 +58,7 @@ const onSubmit = (e) => {
     return;
   }
   showError.value = false;
-  openLoginRequired({ target: 'publish_photos', name: selectedFiche.value.nom });
+  openLoginRequired({ target: 'publish_photos', name: selectedProfile.value.name });
 };
 </script>
 
@@ -76,7 +76,7 @@ const onSubmit = (e) => {
         <div class="field">
           <span class="field-label">{{ t('pp_page.place_label') }} <em>*</em></span>
           <PlaceSearchSelect
-            v-model="selectedFiche"
+            v-model="selectedProfile"
             :placeholder="t('pp_page.place_placeholder')"
           />
         </div>

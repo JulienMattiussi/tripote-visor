@@ -6,7 +6,7 @@ Multi-page Vue 3 front simulation of a major review platform. Pure visual mockup
 
 The site has a home page plus a small constellation of secondary pages reachable from the header dropdowns and the footer.
 
-**Home page** stacks: header (logo, Discover dropdown, Review dropdown, currency pill, Sign-in), tabbed `HeroSearch` (Search All / Hotels / Parks / Alleys), `ThingsToDoBanner` (4-image slideshow), `ExperienceCards` (4 fiches from 4 distinct cities, deterministic hourly rotation), `AgeGrid` (4 age-bucket vignettes linking to `/search?age=...`), `DestinationsHighlights`, `TravelersChoice` promo (links to `/encounters`), `CommunityBlurb`, `AppFooter`. All client-side: `alert()` or local `ref()` for any user action; no network calls.
+**Home page** stacks: header (logo, Discover dropdown, Review dropdown, currency pill, Sign-in), tabbed `HeroSearch` (Search All / Hotels / Parks / Alleys), `ThingsToDoBanner` (4-image slideshow), `ExperienceCards` (4 profiles from 4 distinct cities, deterministic hourly rotation), `AgeGrid` (4 age-bucket vignettes linking to `/search?age=...`), `DestinationsHighlights`, `TravelersChoice` promo (links to `/encounters`), `CommunityBlurb`, `AppFooter`. All client-side: `alert()` or local `ref()` for any user action; no network calls.
 
 **Secondary pages** (each reached from header or footer):
 
@@ -19,7 +19,7 @@ The site has a home page plus a small constellation of secondary pages reachable
 - `/terms` - 6 numbered sections + shared `SeriousNote` aside
 - `/resources` - hub of brief policy summaries (no follow-up links)
 
-**Four modals** mounted at the App level: `PreferencesModal` (region/locale + currency), `SignInModal` (initial / email / forgot-password screens), `CookieConsentModal` (4 categories: 1 always-on, 3 "None"), `LoginRequiredModal` (gates fiche actions and the three form-page submits - opens `SignInModal` on confirm). `LoginRequiredModal` recognises 5 targets: `save` and the contact actions (`site`/`menu`/`phone`/`email`) come from `FichePage`; `publish_review`, `publish_photos` and `add_place` come from the form pages on submit (no in-page success card any more).
+**Four modals** mounted at the App level: `PreferencesModal` (region/locale + currency), `SignInModal` (initial / email / forgot-password screens), `CookieConsentModal` (4 categories: 1 always-on, 3 "None"), `LoginRequiredModal` (gates profile actions and the three form-page submits - opens `SignInModal` on confirm). `LoginRequiredModal` recognises 5 targets: `save` and the contact actions (`site`/`menu`/`phone`/`email`) come from `ProfilePage`; `publish_review`, `publish_photos` and `add_place` come from the form pages on submit (no in-page success card any more).
 
 ## Architecture
 
@@ -37,7 +37,7 @@ src/
 │   ├── HotelsPage.vue            # thin wrapper over ListingsPage
 │   ├── ParksPage.vue             # thin wrapper over ListingsPage
 │   ├── AlleysPage.vue            # thin wrapper over ListingsPage
-│   ├── FichePage.vue             # /p/:id - composes FicheGallery + FicheReviews + FicheSchedule
+│   ├── ProfilePage.vue             # /p/:id - composes ProfileGallery + ProfileReviews + ProfileSchedule
 │   ├── SearchResultsPage.vue     # /search - filters by ?q= and ?age=
 │   ├── UserReviewPage.vue        # /write-review
 │   ├── PostPhotosPage.vue        # /post-photos
@@ -46,34 +46,34 @@ src/
 │   ├── SafetyPage.vue
 │   ├── TermsPage.vue
 │   ├── ResourcesPage.vue
-│   └── DiscoverPage.vue          # /discover - top-4 fiches by rating + DestinationsHighlights
+│   └── DiscoverPage.vue          # /discover - top-4 profiles by rating + DestinationsHighlights
 ├── components/
 │   ├── AppHeader.vue             # Sticky nav, scroll-compact mode, Discover/Review dropdowns
 │   ├── AppFooter.vue             # 3-col grid (About / Explore / Settings) + legal nav, GitHub social
 │   ├── HeroSearch.vue            # home only
 │   ├── ThingsToDoBanner.vue      # CSS-only 4-image slideshow (5s/slide, slide-left)
 │   ├── AgeGrid.vue               # 4 age-bucket vignettes; click navigates to /search?age=<id>
-│   ├── ExperienceCards.vue       # 4 fiches from 4 distinct cities, hourly-deterministic random pick
-│   ├── DestinationsHighlights.vue # top villes × 3 fiches each (home + discover)
+│   ├── ExperienceCards.vue       # 4 profiles from 4 distinct cities, hourly-deterministic random pick
+│   ├── DestinationsHighlights.vue # top cities × 3 profiles each (home + discover)
 │   ├── TravelersChoice.vue       # home promo strip; CTA navigates to /encounters
 │   ├── CommunityBlurb.vue
-│   ├── FicheGallery.vue          # FichePage: photo + 3 thumbs + alt-empty placeholder
-│   ├── FicheSchedule.vue         # FichePage: weekly hours table + open/closed today badge
-│   ├── FicheReviews.vue          # FichePage: empty state, summary, list, "see all" toggle
-│   ├── PlaceSearchSelect.vue     # v-model fiche search-and-select (review / photo forms)
+│   ├── ProfileGallery.vue          # ProfilePage: photo + 3 thumbs + alt-empty placeholder
+│   ├── ProfileSchedule.vue         # ProfilePage: weekly hours table + open/closed today badge
+│   ├── ProfileReviews.vue          # ProfilePage: empty state, summary, list, "see all" toggle
+│   ├── PlaceSearchSelect.vue     # v-model profile search-and-select (review / photo forms)
 │   ├── PreferencesModal.vue
 │   ├── SignInModal.vue
 │   ├── CookieConsentModal.vue
-│   ├── LoginRequiredModal.vue    # gates fiche actions + form submits behind sign-in
+│   ├── LoginRequiredModal.vue    # gates profile actions + form submits behind sign-in
 │   └── SeriousNote.vue           # shared callout, optional `collapsed` prop
 ├── data/
 │   ├── articles.json             # 4 press articles (per-locale title/excerpt/lead/body)
-│   ├── fiches.json               # 100 profile entries (FR descriptif + descriptif_en + ville/lieu)
-│   ├── cities.json               # 50 villes ranked by fiche count, with optional photo URL
-│   ├── schedules.json            # 15 weekly schedule patterns referenced by fiches
-│   ├── advices.json              # 1000 seeded reviews keyed by fiche id (rating/title/body/lang/date/author)
+│   ├── profiles.json               # 100 profile entries (name, age, city, district, category, schedule_id, description: { fr, en }, services, payment, price)
+│   ├── cities.json               # 50 cities ranked by profile count, with optional photo URL
+│   ├── schedules.json            # 15 weekly schedule patterns referenced by profiles
+│   ├── advices.json              # 1000 seeded reviews keyed by profile id (rating/title/body/lang/date/author)
 │   ├── ageBuckets.js             # AGE_BUCKETS array (id + labelKey + img + predicate) + ageInBucket / ageBucketLabelKey
-│   ├── fiches.js                 # formatLieu, reviewCountFor, reviewAverageFor (consume advices.json)
+│   ├── profiles.js                 # formatLocation, reviewCountFor, reviewAverageFor (consume advices.json)
 │   └── schedule.js               # todayName / todayStatus / orderedDays / periodsOf
 ├── state/
 │   └── modals.js                 # 4 modals: open refs (preferences/signin/cookie/loginRequired) + open*/close* actions
@@ -90,7 +90,7 @@ public/
 ├── favicon.ico                   # multi-size ICO, white bust on pink
 ├── favicon.svg                   # SVG bust on transparent
 ├── articles/                     # 4 hero photos for press articles
-├── cities/                       # ville hero photos for DestinationsHighlights
+├── cities/                       # city hero photos for DestinationsHighlights
 ├── age/                          # 4 silhouette SVGs for AgeGrid (under-30, 30-45, 45-60, over-60)
 └── ttd/                          # 4 slides for the ThingsToDoBanner slideshow
 
@@ -110,14 +110,14 @@ tests/
 ├── CookieConsentModal.test.js
 ├── LoginRequiredModal.test.js    # all 5 message branches, EN+FR
 ├── SeriousNote.test.js           # default vs collapsed mode + EN/FR copy
-├── FicheGallery.test.js          # photo placeholder, image alt, thumb count, locale switch
-├── FicheSchedule.test.js         # weekday order, today badge, open/closed status
-├── FicheReviews.test.js          # empty state, summary, 5-cap + "see all", add-review emit
+├── ProfileGallery.test.js          # photo placeholder, image alt, thumb count, locale switch
+├── ProfileSchedule.test.js         # weekday order, today badge, open/closed status
+├── ProfileReviews.test.js          # empty state, summary, 5-cap + "see all", add-review emit
 ├── TravelStoriesPage.test.js
 ├── ArticlePage.test.js           # /encounters/:key - press-style article rendering
 ├── FormPages.test.js             # UserReview / PostPhotos / CreateListing (all submit → LoginRequiredModal)
 ├── ListingsPages.test.js         # Hotels / Parks / Alleys
-├── FichePage.test.js             # /p/:id - profile rendering, schedule, not-found, transitive Fiche* coverage
+├── ProfilePage.test.js             # /p/:id - profile rendering, schedule, not-found, transitive Profile* coverage
 ├── SearchResultsPage.test.js     # /search - grouping, filtering by ?q= and ?age=, HeroSearch submit
 ├── AboutPage.test.js
 ├── SafetyPage.test.js
@@ -133,24 +133,24 @@ The bust glyph in both favicons and in `AppHeader`'s inline SVG is the same shap
 
 All routes live in `src/router/index.js`. `createAppRouter({ history })` is a factory so tests can inject `createMemoryHistory()` (see `tests/helpers/router.js`). All internal navigation goes through `<router-link>` or `router.push({ name, params })` - never raw `<a href>` to internal URLs.
 
-| Path               | Name             | Page                                                       |
-| ------------------ | ---------------- | ---------------------------------------------------------- |
-| `/`                | `home`           | `HomePage.vue`                                             |
-| `/encounters`      | `encounters`     | `TravelStoriesPage.vue`                                    |
-| `/encounters/:key` | `article`        | `ArticlePage.vue` (press-style article view)               |
-| `/hotels`          | `hotels`         | `HotelsPage.vue` (wraps `ListingsPage`)                    |
-| `/parks`           | `parks`          | `ParksPage.vue` (wraps `ListingsPage`)                     |
-| `/alleys`          | `alleys`         | `AlleysPage.vue` (wraps `ListingsPage`)                    |
-| `/p/:id`           | `fiche`          | `FichePage.vue` (single profile)                           |
-| `/search`          | `search`         | `SearchResultsPage.vue` (`?q=` text, `?age=<bucket>`)      |
-| `/write-review`    | `write-review`   | `UserReviewPage.vue`                                       |
-| `/post-photos`     | `post-photos`    | `PostPhotosPage.vue`                                       |
-| `/add-sex-worker`  | `add-sex-worker` | `CreateListingPage.vue`                                    |
-| `/about`           | `about`          | `AboutPage.vue`                                            |
-| `/safety`          | `safety`         | `SafetyPage.vue`                                           |
-| `/terms`           | `terms`          | `TermsPage.vue`                                            |
-| `/resources`       | `resources`      | `ResourcesPage.vue`                                        |
-| `/discover`        | `discover`       | `DiscoverPage.vue` (top-4 fiches + DestinationsHighlights) |
+| Path               | Name             | Page                                                         |
+| ------------------ | ---------------- | ------------------------------------------------------------ |
+| `/`                | `home`           | `HomePage.vue`                                               |
+| `/encounters`      | `encounters`     | `TravelStoriesPage.vue`                                      |
+| `/encounters/:key` | `article`        | `ArticlePage.vue` (press-style article view)                 |
+| `/hotels`          | `hotels`         | `HotelsPage.vue` (wraps `ListingsPage`)                      |
+| `/parks`           | `parks`          | `ParksPage.vue` (wraps `ListingsPage`)                       |
+| `/alleys`          | `alleys`         | `AlleysPage.vue` (wraps `ListingsPage`)                      |
+| `/p/:id`           | `profile`        | `ProfilePage.vue` (single profile)                           |
+| `/search`          | `search`         | `SearchResultsPage.vue` (`?q=` text, `?age=<bucket>`)        |
+| `/write-review`    | `write-review`   | `UserReviewPage.vue`                                         |
+| `/post-photos`     | `post-photos`    | `PostPhotosPage.vue`                                         |
+| `/add-sex-worker`  | `add-sex-worker` | `CreateListingPage.vue`                                      |
+| `/about`           | `about`          | `AboutPage.vue`                                              |
+| `/safety`          | `safety`         | `SafetyPage.vue`                                             |
+| `/terms`           | `terms`          | `TermsPage.vue`                                              |
+| `/resources`       | `resources`      | `ResourcesPage.vue`                                          |
+| `/discover`        | `discover`       | `DiscoverPage.vue` (top-4 profiles + DestinationsHighlights) |
 
 ## Pages
 
@@ -233,7 +233,7 @@ To re-skin the site, edit only `main.css`. There is no other source of truth for
 
 Two locales (`en`, `fr`) and two currencies (`USD`, `EUR`). Everything else in the Preferences modal is grayed out with an "Unavailable now" / "Indisponible actuellement" sub-label.
 
-- **State** - `src/i18n/store.js` exports module-scoped `locale` and `currency` refs (purely i18n + currency formatting; modal state lives in `src/state/modals.js`, fiche-data accessors in `src/data/fiches.js`). Both refs persist to `localStorage` (`tv_locale`, `tv_currency`) and are restored on load. `setLocale`/`setCurrency` reject unknown values.
+- **State** - `src/i18n/store.js` exports module-scoped `locale` and `currency` refs (purely i18n + currency formatting; modal state lives in `src/state/modals.js`, profile-data accessors in `src/data/profiles.js`). Both refs persist to `localStorage` (`tv_locale`, `tv_currency`) and are restored on load. `setLocale`/`setCurrency` reject unknown values.
 - **Browser detection** - `detectBrowserDefaults()` returns `fr/EUR` when `navigator.language` starts with `fr`, `en/USD` for English, falls back to `en/USD` otherwise. Stored prefs always win.
 - **Translation** - `t('section.key', params?)` walks the dotted key in `translations[locale.value]`, falls back to `translations.en`, finally returns the raw key. `{name}` tokens are replaced from `params`. Because `t()` reads `locale.value`, any template or `computed()` calling it re-evaluates automatically when the locale changes.
 - **Currency formatting** - `formatAmount(usdAmount)` converts to EUR when needed (fixed 0.92 rate), formats with `toLocaleString(locale)`, places the symbol correctly (`$` prefix / `€` suffix). Components hand in a canonical USD figure.
@@ -306,7 +306,7 @@ The parody premise is that **nothing user-generated can ever be persisted, and t
   - `/write-review` → `publish_review`
   - `/post-photos` → `publish_photos`
   - `/add-sex-worker` → `add_place`
-- Pre-fill via `?fiche=:id` works on `/write-review` and `/post-photos` (consumed by `PlaceSearchSelect`), purely to ergonomically open the modal with the right context.
+- Pre-fill via `?profile=:id` works on `/write-review` and `/post-photos` (consumed by `PlaceSearchSelect`), purely to ergonomically open the modal with the right context.
 - `CookieConsentModal`'s Allow / Reject / Confirm only close the modal. There are no cookies to accept or refuse - the site sets none. The modal is the cosmetic mirror of mainstream review platforms' consent banner.
 
 ## Stack

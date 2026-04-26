@@ -8,7 +8,7 @@ import CreateListingPage from '../pages/CreateListingPage.vue';
 import HotelsPage from '../pages/HotelsPage.vue';
 import ParksPage from '../pages/ParksPage.vue';
 import AlleysPage from '../pages/AlleysPage.vue';
-import FichePage from '../pages/FichePage.vue';
+import ProfilePage from '../pages/ProfilePage.vue';
 import SearchResultsPage from '../pages/SearchResultsPage.vue';
 import TermsPage from '../pages/TermsPage.vue';
 import AboutPage from '../pages/AboutPage.vue';
@@ -26,7 +26,7 @@ export const routes = [
   { path: '/hotels', name: 'hotels', component: HotelsPage },
   { path: '/parks', name: 'parks', component: ParksPage },
   { path: '/alleys', name: 'alleys', component: AlleysPage },
-  { path: '/p/:id', name: 'fiche', component: FichePage, props: true },
+  { path: '/p/:id', name: 'profile', component: ProfilePage, props: true },
   { path: '/search', name: 'search', component: SearchResultsPage },
   { path: '/terms', name: 'terms', component: TermsPage },
   { path: '/about', name: 'about', component: AboutPage },

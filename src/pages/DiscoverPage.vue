@@ -2,20 +2,20 @@
 import { computed } from 'vue';
 import { useRouter } from 'vue-router';
 import { t, formatAmount } from '../i18n/store.js';
-import { formatLieu, reviewCountFor, reviewAverageFor } from '../data/fiches.js';
+import { formatLocation, reviewCountFor, reviewAverageFor } from '../data/profiles.js';
 import DestinationsHighlights from '../components/DestinationsHighlights.vue';
-import fichesData from '../data/fiches.json';
+import profilesData from '../data/profiles.json';
 
 const router = useRouter();
 
 const topFiches = computed(() =>
-  [...fichesData]
-    .sort((a, b) => reviewAverageFor(b.id) - reviewAverageFor(a.id) || a.nom.localeCompare(b.nom))
+  [...profilesData]
+    .sort((a, b) => reviewAverageFor(b.id) - reviewAverageFor(a.id) || a.name.localeCompare(b.name))
     .slice(0, 4),
 );
 
 const goFiche = (id) => {
-  router.push({ name: 'fiche', params: { id } });
+  router.push({ name: 'profile', params: { id } });
 };
 
 const goHome = () => router.push({ name: 'home' });
@@ -73,11 +73,11 @@ const goHome = () => router.push({ name: 'home' });
         </div>
         <div class="dp-rank-row">
           <span class="dp-rank">{{ idx + 1 }}</span>
-          <span class="dp-loc">{{ formatLieu(f) }}</span>
+          <span class="dp-loc">{{ formatLocation(f) }}</span>
         </div>
-        <h3 class="dp-name">{{ f.nom }}</h3>
+        <h3 class="dp-name">{{ f.name }}</h3>
         <div class="dp-price">
-          {{ t('discover_page.from_price', { amount: formatAmount(f.prix) }) }}
+          {{ t('discover_page.from_price', { amount: formatAmount(f.price) }) }}
         </div>
       </li>
     </ul>

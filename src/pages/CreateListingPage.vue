@@ -5,7 +5,7 @@ import { openLoginRequired } from '../state/modals.js';
 import SeriousNote from '../components/SeriousNote.vue';
 
 const SEXES = ['female', 'male', 'indeterminate'];
-const TYPES = ['hotel', 'parc', 'ruelle'];
+const TYPES = ['hotel', 'park', 'alley'];
 const RELATIONSHIPS = ['owner', 'employee', 'traveller'];
 
 const COUNTRIES = [

@@ -1,197 +1,197 @@
 [
   {
-    "id": "soir_classique",
+    "id": "classic_evening",
     "label": "Soirée classique",
-    "jours": {
-      "lundi": "18:00-02:00",
-      "mardi": "18:00-02:00",
-      "mercredi": "18:00-02:00",
-      "jeudi": "18:00-02:00",
-      "vendredi": "18:00-02:00",
-      "samedi": "18:00-02:00",
-      "dimanche": null
+    "days": {
+      "monday": "18:00-02:00",
+      "tuesday": "18:00-02:00",
+      "wednesday": "18:00-02:00",
+      "thursday": "18:00-02:00",
+      "friday": "18:00-02:00",
+      "saturday": "18:00-02:00",
+      "sunday": null
     }
   },
   {
-    "id": "nuit_profonde",
+    "id": "deep_night",
     "label": "Nuit profonde",
-    "jours": {
-      "lundi": null,
-      "mardi": "22:00-06:00",
-      "mercredi": "22:00-06:00",
-      "jeudi": "22:00-06:00",
-      "vendredi": "22:00-06:00",
-      "samedi": "22:00-06:00",
-      "dimanche": null
+    "days": {
+      "monday": null,
+      "tuesday": "22:00-06:00",
+      "wednesday": "22:00-06:00",
+      "thursday": "22:00-06:00",
+      "friday": "22:00-06:00",
+      "saturday": "22:00-06:00",
+      "sunday": null
     }
   },
   {
-    "id": "apero_et_nuit",
+    "id": "aperitif_and_night",
     "label": "Apéro et nuit",
-    "jours": {
-      "lundi": "17:00-01:00",
-      "mardi": "17:00-01:00",
-      "mercredi": "17:00-01:00",
-      "jeudi": "17:00-01:00",
-      "vendredi": "17:00-01:00",
-      "samedi": "17:00-01:00",
-      "dimanche": null
+    "days": {
+      "monday": "17:00-01:00",
+      "tuesday": "17:00-01:00",
+      "wednesday": "17:00-01:00",
+      "thursday": "17:00-01:00",
+      "friday": "17:00-01:00",
+      "saturday": "17:00-01:00",
+      "sunday": null
     }
   },
   {
-    "id": "ouverture_tardive",
+    "id": "late_opening",
     "label": "Ouverture tardive",
-    "jours": {
-      "lundi": "20:00-03:00",
-      "mardi": "20:00-03:00",
-      "mercredi": "20:00-03:00",
-      "jeudi": "20:00-03:00",
-      "vendredi": "20:00-03:00",
-      "samedi": "20:00-03:00",
-      "dimanche": "20:00-03:00"
+    "days": {
+      "monday": "20:00-03:00",
+      "tuesday": "20:00-03:00",
+      "wednesday": "20:00-03:00",
+      "thursday": "20:00-03:00",
+      "friday": "20:00-03:00",
+      "saturday": "20:00-03:00",
+      "sunday": "20:00-03:00"
     }
   },
   {
-    "id": "fin_dapres_midi",
+    "id": "late_afternoon",
     "label": "Fin d'après-midi",
-    "jours": {
-      "lundi": null,
-      "mardi": "16:00-22:00",
-      "mercredi": "16:00-22:00",
-      "jeudi": "16:00-22:00",
-      "vendredi": "16:00-22:00",
-      "samedi": "16:00-22:00",
-      "dimanche": "16:00-22:00"
+    "days": {
+      "monday": null,
+      "tuesday": "16:00-22:00",
+      "wednesday": "16:00-22:00",
+      "thursday": "16:00-22:00",
+      "friday": "16:00-22:00",
+      "saturday": "16:00-22:00",
+      "sunday": "16:00-22:00"
     }
   },
   {
-    "id": "week_end_nuit",
+    "id": "weekend_night",
     "label": "Nuits du week-end",
-    "jours": {
-      "lundi": null,
-      "mardi": null,
-      "mercredi": null,
-      "jeudi": null,
-      "vendredi": "21:00-05:00",
-      "samedi": "21:00-05:00",
-      "dimanche": null
+    "days": {
+      "monday": null,
+      "tuesday": null,
+      "wednesday": null,
+      "thursday": null,
+      "friday": "21:00-05:00",
+      "saturday": "21:00-05:00",
+      "sunday": null
     }
   },
   {
-    "id": "du_soir_au_matin",
+    "id": "evening_to_morning",
     "label": "Du soir au matin",
-    "jours": {
-      "lundi": "19:00-07:00",
-      "mardi": "19:00-07:00",
-      "mercredi": "19:00-07:00",
-      "jeudi": "19:00-07:00",
-      "vendredi": "19:00-07:00",
-      "samedi": "19:00-07:00",
-      "dimanche": "19:00-07:00"
+    "days": {
+      "monday": "19:00-07:00",
+      "tuesday": "19:00-07:00",
+      "wednesday": "19:00-07:00",
+      "thursday": "19:00-07:00",
+      "friday": "19:00-07:00",
+      "saturday": "19:00-07:00",
+      "sunday": "19:00-07:00"
     }
   },
   {
-    "id": "petite_soiree",
+    "id": "short_evening",
     "label": "Petite soirée",
-    "jours": {
-      "lundi": null,
-      "mardi": null,
-      "mercredi": "19:00-23:00",
-      "jeudi": "19:00-23:00",
-      "vendredi": "19:00-23:00",
-      "samedi": "19:00-23:00",
-      "dimanche": "19:00-23:00"
+    "days": {
+      "monday": null,
+      "tuesday": null,
+      "wednesday": "19:00-23:00",
+      "thursday": "19:00-23:00",
+      "friday": "19:00-23:00",
+      "saturday": "19:00-23:00",
+      "sunday": "19:00-23:00"
     }
   },
   {
-    "id": "permanence_nocturne",
+    "id": "night_duty",
     "label": "Permanence nocturne",
-    "jours": {
-      "lundi": "20:00-04:00",
-      "mardi": "20:00-04:00",
-      "mercredi": "20:00-04:00",
-      "jeudi": "20:00-04:00",
-      "vendredi": "20:00-04:00",
-      "samedi": "20:00-04:00",
-      "dimanche": "20:00-04:00"
+    "days": {
+      "monday": "20:00-04:00",
+      "tuesday": "20:00-04:00",
+      "wednesday": "20:00-04:00",
+      "thursday": "20:00-04:00",
+      "friday": "20:00-04:00",
+      "saturday": "20:00-04:00",
+      "sunday": "20:00-04:00"
     }
   },
   {
-    "id": "double_service",
+    "id": "double_shift",
     "label": "Soir et brunch",
-    "jours": {
-      "lundi": "18:00-02:00",
-      "mardi": "18:00-02:00",
-      "mercredi": "18:00-02:00",
-      "jeudi": "18:00-02:00",
-      "vendredi": "18:00-02:00",
-      "samedi": "18:00-02:00",
-      "dimanche": "11:00-15:00"
+    "days": {
+      "monday": "18:00-02:00",
+      "tuesday": "18:00-02:00",
+      "wednesday": "18:00-02:00",
+      "thursday": "18:00-02:00",
+      "friday": "18:00-02:00",
+      "saturday": "18:00-02:00",
+      "sunday": "11:00-15:00"
     }
   },
   {
-    "id": "heures_bureau_soir",
+    "id": "office_hours_evening",
     "label": "Heures de bureau prolongées",
-    "jours": {
-      "lundi": "17:00-21:00",
-      "mardi": "17:00-21:00",
-      "mercredi": "17:00-21:00",
-      "jeudi": "17:00-21:00",
-      "vendredi": "17:00-21:00",
-      "samedi": null,
-      "dimanche": null
+    "days": {
+      "monday": "17:00-21:00",
+      "tuesday": "17:00-21:00",
+      "wednesday": "17:00-21:00",
+      "thursday": "17:00-21:00",
+      "friday": "17:00-21:00",
+      "saturday": null,
+      "sunday": null
     }
   },
   {
-    "id": "journee_continue",
+    "id": "all_day",
     "label": "Journée continue",
-    "jours": {
-      "lundi": "10:00-22:00",
-      "mardi": "10:00-22:00",
-      "mercredi": "10:00-22:00",
-      "jeudi": "10:00-22:00",
-      "vendredi": "10:00-22:00",
-      "samedi": "10:00-22:00",
-      "dimanche": "10:00-22:00"
+    "days": {
+      "monday": "10:00-22:00",
+      "tuesday": "10:00-22:00",
+      "wednesday": "10:00-22:00",
+      "thursday": "10:00-22:00",
+      "friday": "10:00-22:00",
+      "saturday": "10:00-22:00",
+      "sunday": "10:00-22:00"
     }
   },
   {
-    "id": "matinee_et_midi",
+    "id": "morning_and_noon",
     "label": "Matinée et midi",
-    "jours": {
-      "lundi": "09:00-14:00",
-      "mardi": "09:00-14:00",
-      "mercredi": "09:00-14:00",
-      "jeudi": "09:00-14:00",
-      "vendredi": "09:00-14:00",
-      "samedi": null,
-      "dimanche": null
+    "days": {
+      "monday": "09:00-14:00",
+      "tuesday": "09:00-14:00",
+      "wednesday": "09:00-14:00",
+      "thursday": "09:00-14:00",
+      "friday": "09:00-14:00",
+      "saturday": null,
+      "sunday": null
     }
   },
   {
-    "id": "crepuscule_aube",
+    "id": "dusk_to_dawn",
     "label": "Du crépuscule à l'aube",
-    "jours": {
-      "lundi": "19:00-05:00",
-      "mardi": "19:00-05:00",
-      "mercredi": "19:00-05:00",
-      "jeudi": "19:00-05:00",
-      "vendredi": "19:00-05:00",
-      "samedi": "19:00-05:00",
-      "dimanche": "19:00-05:00"
+    "days": {
+      "monday": "19:00-05:00",
+      "tuesday": "19:00-05:00",
+      "wednesday": "19:00-05:00",
+      "thursday": "19:00-05:00",
+      "friday": "19:00-05:00",
+      "saturday": "19:00-05:00",
+      "sunday": "19:00-05:00"
     }
   },
   {
-    "id": "apres_midi_etendu",
+    "id": "extended_afternoon",
     "label": "Après-midi étendu",
-    "jours": {
-      "lundi": null,
-      "mardi": "14:00-23:00",
-      "mercredi": "14:00-23:00",
-      "jeudi": "14:00-23:00",
-      "vendredi": "14:00-23:00",
-      "samedi": "14:00-23:00",
-      "dimanche": null
+    "days": {
+      "monday": null,
+      "tuesday": "14:00-23:00",
+      "wednesday": "14:00-23:00",
+      "thursday": "14:00-23:00",
+      "friday": "14:00-23:00",
+      "saturday": "14:00-23:00",
+      "sunday": null
     }
   }
 ]

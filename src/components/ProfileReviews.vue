@@ -22,15 +22,15 @@ const visible = computed(() =>
 </script>
 
 <template>
-  <section id="avis" class="fp-block">
+  <section id="reviews" class="fp-block">
     <div class="fp-reviews-header">
-      <h2 class="fp-block-title">{{ t('fiche_page.reviews_title') }}</h2>
+      <h2 class="fp-block-title">{{ t('profile_page.reviews_title') }}</h2>
       <button type="button" class="fp-top-btn fp-reviews-add" @click="emit('add-review')">
-        + {{ t('fiche_page.add_review') }}
+        + {{ t('profile_page.add_review') }}
       </button>
     </div>
     <p v-if="reviewCount === 0" class="fp-empty">
-      {{ t('fiche_page.no_reviews') }}
+      {{ t('profile_page.no_reviews') }}
     </p>
     <template v-else>
       <p class="fp-reviews-summary">
@@ -43,7 +43,7 @@ const visible = computed(() =>
           ></span>
         </span>
         <span class="fp-reviews-total">
-          {{ t('fiche_page.reviews_count', { count: reviewCount }) }}
+          {{ t('profile_page.reviews_count', { count: reviewCount }) }}
         </span>
       </p>
       <ul class="fp-reviews-list">
@@ -70,7 +70,7 @@ const visible = computed(() =>
         class="fp-reviews-more"
         @click="showAll = true"
       >
-        {{ t('fiche_page.see_all_reviews', { count: reviewCount }) }}
+        {{ t('profile_page.see_all_reviews', { count: reviewCount }) }}
       </button>
     </template>
   </section>

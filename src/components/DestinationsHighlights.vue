@@ -2,8 +2,8 @@
 import { computed } from 'vue';
 import { useRouter } from 'vue-router';
 import { t } from '../i18n/store.js';
-import { reviewAverageFor } from '../data/fiches.js';
-import fichesData from '../data/fiches.json';
+import { reviewAverageFor } from '../data/profiles.js';
+import profilesData from '../data/profiles.json';
 import citiesData from '../data/cities.json';
 
 const TOP_CITIES = 6;
@@ -11,22 +11,20 @@ const PER_CITY = 3;
 
 const router = useRouter();
 
-const cityPhotoByName = Object.fromEntries(
-  citiesData.map((c) => [c.ville, (c.photo ?? '').trim()]),
-);
+const cityPhotoByName = Object.fromEntries(citiesData.map((c) => [c.name, (c.photo ?? '').trim()]));
 
 const groupedByCity = computed(() => {
   const groups = new Map();
-  for (const f of fichesData) {
-    const ville = (f.ville ?? '').trim();
-    if (!ville) continue;
-    if (!groups.has(ville)) groups.set(ville, []);
-    groups.get(ville).push(f);
+  for (const f of profilesData) {
+    const city = (f.city ?? '').trim();
+    if (!city) continue;
+    if (!groups.has(city)) groups.set(city, []);
+    groups.get(city).push(f);
   }
   return groups;
 });
 
-const hasPhoto = (ville) => Boolean((cityPhotoByName[ville] ?? '').trim());
+const hasPhoto = (city) => Boolean((cityPhotoByName[city] ?? '').trim());
 
 const topCities = computed(() => {
   const entries = [...groupedByCity.value.entries()]
@@ -40,17 +38,19 @@ const topCities = computed(() => {
     })
     .slice(0, TOP_CITIES);
 
-  return entries.map(([ville, list]) => ({
-    ville,
-    photo: cityPhotoByName[ville] ?? '',
+  return entries.map(([name, list]) => ({
+    name,
+    photo: cityPhotoByName[name] ?? '',
     fiches: [...list]
-      .sort((a, b) => reviewAverageFor(b.id) - reviewAverageFor(a.id) || a.nom.localeCompare(b.nom))
+      .sort(
+        (a, b) => reviewAverageFor(b.id) - reviewAverageFor(a.id) || a.name.localeCompare(b.name),
+      )
       .slice(0, PER_CITY),
   }));
 });
 
 const goFiche = (id) => {
-  router.push({ name: 'fiche', params: { id } });
+  router.push({ name: 'profile', params: { id } });
 };
 </script>
 
@@ -58,16 +58,16 @@ const goFiche = (id) => {
   <section v-if="topCities.length" class="dh" :aria-label="t('dest_top.aria')">
     <h2 class="dh-title">{{ t('dest_top.title') }}</h2>
     <ul class="dh-grid">
-      <li v-for="city in topCities" :key="city.ville" class="dh-card">
+      <li v-for="city in topCities" :key="city.name" class="dh-card">
         <div class="dh-thumb">
-          <img v-if="city.photo" :src="city.photo" :alt="city.ville" loading="lazy" />
+          <img v-if="city.photo" :src="city.photo" :alt="city.name" loading="lazy" />
         </div>
         <div class="dh-body">
-          <h3 class="dh-city">{{ city.ville }}</h3>
+          <h3 class="dh-city">{{ city.name }}</h3>
           <ul class="dh-fiches">
             <li v-for="f in city.fiches" :key="f.id">
               <button type="button" class="dh-chip" @click="goFiche(f.id)">
-                {{ f.nom }}
+                {{ f.name }}
               </button>
             </li>
           </ul>

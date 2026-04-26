@@ -1,251 +1,251 @@
 [
   {
-    "ville": "Paris",
+    "name": "Paris",
     "count": 21,
     "photo": "/cities/paris.jpg"
   },
   {
-    "ville": "Lyon",
+    "name": "Lyon",
     "count": 5,
     "photo": "/cities/lyon.jpg"
   },
   {
-    "ville": "Marseille",
+    "name": "Marseille",
     "count": 4,
     "photo": "/cities/marseille.jpg"
   },
   {
-    "ville": "Strasbourg",
+    "name": "Strasbourg",
     "count": 4,
     "photo": "/cities/strasbourg.jpg"
   },
   {
-    "ville": "Bordeaux",
+    "name": "Bordeaux",
     "count": 3,
     "photo": "/cities/bordeaux.jpg"
   },
   {
-    "ville": "Lille",
+    "name": "Lille",
     "count": 3,
     "photo": "/cities/lille.jpg"
   },
   {
-    "ville": "Nice",
+    "name": "Nice",
     "count": 3,
     "photo": "/cities/nice.jpg"
   },
   {
-    "ville": "Saint-Denis",
+    "name": "Saint-Denis",
     "count": 3,
     "photo": ""
   },
   {
-    "ville": "Toulouse",
+    "name": "Toulouse",
     "count": 3,
     "photo": ""
   },
   {
-    "ville": "Vincennes",
+    "name": "Vincennes",
     "count": 3,
     "photo": ""
   },
   {
-    "ville": "Annecy",
+    "name": "Annecy",
     "count": 2,
     "photo": ""
   },
   {
-    "ville": "Argenteuil",
+    "name": "Argenteuil",
     "count": 2,
     "photo": ""
   },
   {
-    "ville": "Avignon",
+    "name": "Avignon",
     "count": 2,
     "photo": ""
   },
   {
-    "ville": "Bourges",
+    "name": "Bourges",
     "count": 2,
     "photo": ""
   },
   {
-    "ville": "Mulhouse",
+    "name": "Mulhouse",
     "count": 2,
     "photo": ""
   },
   {
-    "ville": "Nantes",
+    "name": "Nantes",
     "count": 2,
     "photo": ""
   },
   {
-    "ville": "Pau",
+    "name": "Pau",
     "count": 2,
     "photo": ""
   },
   {
-    "ville": "Reims",
+    "name": "Reims",
     "count": 2,
     "photo": ""
   },
   {
-    "ville": "Aix-en-Provence",
+    "name": "Aix-en-Provence",
     "count": 1,
     "photo": ""
   },
   {
-    "ville": "Aubervilliers",
+    "name": "Aubervilliers",
     "count": 1,
     "photo": ""
   },
   {
-    "ville": "Bagatelle",
+    "name": "Bagatelle",
     "count": 1,
     "photo": ""
   },
   {
-    "ville": "Bastia",
+    "name": "Bastia",
     "count": 1,
     "photo": ""
   },
   {
-    "ville": "Bayonne",
+    "name": "Bayonne",
     "count": 1,
     "photo": ""
   },
   {
-    "ville": "Bois de Boulogne",
+    "name": "Bois de Boulogne",
     "count": 1,
     "photo": ""
   },
   {
-    "ville": "Boulogne",
+    "name": "Boulogne",
     "count": 1,
     "photo": ""
   },
   {
-    "ville": "Brest",
+    "name": "Brest",
     "count": 1,
     "photo": ""
   },
   {
-    "ville": "Caen",
+    "name": "Caen",
     "count": 1,
     "photo": ""
   },
   {
-    "ville": "Cannes",
+    "name": "Cannes",
     "count": 1,
     "photo": ""
   },
   {
-    "ville": "Charleville",
+    "name": "Charleville",
     "count": 1,
     "photo": ""
   },
   {
-    "ville": "Colmar",
+    "name": "Colmar",
     "count": 1,
     "photo": ""
   },
   {
-    "ville": "Fort-de-France",
+    "name": "Fort-de-France",
     "count": 1,
     "photo": ""
   },
   {
-    "ville": "La Courneuve",
+    "name": "La Courneuve",
     "count": 1,
     "photo": ""
   },
   {
-    "ville": "Le Havre",
+    "name": "Le Havre",
     "count": 1,
     "photo": ""
   },
   {
-    "ville": "Limoges",
+    "name": "Limoges",
     "count": 1,
     "photo": ""
   },
   {
-    "ville": "Pantin",
+    "name": "Pantin",
     "count": 1,
     "photo": ""
   },
   {
-    "ville": "Perpignan",
+    "name": "Perpignan",
     "count": 1,
     "photo": ""
   },
   {
-    "ville": "Pointe-à-Pitre",
+    "name": "Pointe-à-Pitre",
     "count": 1,
     "photo": ""
   },
   {
-    "ville": "Quimper",
+    "name": "Quimper",
     "count": 1,
     "photo": ""
   },
   {
-    "ville": "Rennes",
+    "name": "Rennes",
     "count": 1,
     "photo": ""
   },
   {
-    "ville": "Roubaix",
+    "name": "Roubaix",
     "count": 1,
     "photo": ""
   },
   {
-    "ville": "Saint-Cloud",
+    "name": "Saint-Cloud",
     "count": 1,
     "photo": ""
   },
   {
-    "ville": "Saint-Étienne",
+    "name": "Saint-Étienne",
     "count": 1,
     "photo": ""
   },
   {
-    "ville": "Saint-Germain-en-Laye",
+    "name": "Saint-Germain-en-Laye",
     "count": 1,
     "photo": ""
   },
   {
-    "ville": "Saint-Malo",
+    "name": "Saint-Malo",
     "count": 1,
     "photo": ""
   },
   {
-    "ville": "Saint-Ouen",
+    "name": "Saint-Ouen",
     "count": 1,
     "photo": ""
   },
   {
-    "ville": "Sarcelles",
+    "name": "Sarcelles",
     "count": 1,
     "photo": ""
   },
   {
-    "ville": "Sceaux",
+    "name": "Sceaux",
     "count": 1,
     "photo": ""
   },
   {
-    "ville": "Tours",
+    "name": "Tours",
     "count": 1,
     "photo": ""
   },
   {
-    "ville": "Versailles",
+    "name": "Versailles",
     "count": 1,
     "photo": ""
   },
   {
-    "ville": "Vichy",
+    "name": "Vichy",
     "count": 1,
     "photo": ""
   }

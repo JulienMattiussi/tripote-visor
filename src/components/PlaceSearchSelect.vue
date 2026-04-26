@@ -1,8 +1,8 @@
 <script setup>
 import { ref, computed } from 'vue';
 import { t } from '../i18n/store.js';
-import { formatLieu } from '../data/fiches.js';
-import fichesData from '../data/fiches.json';
+import { formatLocation } from '../data/profiles.js';
+import profilesData from '../data/profiles.json';
 
 const SUGGESTION_LIMIT = 6;
 
@@ -25,14 +25,14 @@ const suggestions = computed(() => {
   if (props.modelValue) return [];
   const q = placeQuery.value.trim().toLowerCase();
   if (!q) return [];
-  return fichesData
+  return profilesData
     .filter((f) => {
       const haystack = [
-        f.nom,
-        f.ville ?? '',
-        f.lieu ?? '',
-        ...(f.descriptif ?? []),
-        ...(f.descriptif_en ?? []),
+        f.name,
+        f.city ?? '',
+        f.district ?? '',
+        ...(f.description.fr ?? []),
+        ...(f.description.en ?? []),
       ]
         .join(' ')
         .toLowerCase();
@@ -41,8 +41,8 @@ const suggestions = computed(() => {
     .slice(0, SUGGESTION_LIMIT);
 });
 
-const selectFiche = (fiche) => {
-  emit('update:modelValue', fiche);
+const selectFiche = (profile) => {
+  emit('update:modelValue', profile);
   placeQuery.value = '';
 };
 
@@ -59,8 +59,8 @@ const clearSelection = () => {
         <li v-for="f in suggestions" :key="f.id">
           <button type="button" class="ps-suggestion" @click="selectFiche(f)">
             <span class="ps-thumb" aria-hidden="true"></span>
-            <span class="ps-suggestion-name">{{ f.nom }}</span>
-            <span class="ps-suggestion-loc">{{ formatLieu(f) }}</span>
+            <span class="ps-suggestion-name">{{ f.name }}</span>
+            <span class="ps-suggestion-loc">{{ formatLocation(f) }}</span>
           </button>
         </li>
       </ul>
@@ -72,8 +72,8 @@ const clearSelection = () => {
     <div v-else class="ps-selected">
       <span class="ps-selected-thumb" aria-hidden="true"></span>
       <span class="ps-selected-body">
-        <span class="ps-selected-name">{{ modelValue.nom }}</span>
-        <span class="ps-selected-loc">{{ formatLieu(modelValue) }}</span>
+        <span class="ps-selected-name">{{ modelValue.name }}</span>
+        <span class="ps-selected-loc">{{ formatLocation(modelValue) }}</span>
       </span>
       <button
         type="button"

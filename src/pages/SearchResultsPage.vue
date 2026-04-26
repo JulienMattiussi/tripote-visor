@@ -3,16 +3,16 @@ import { computed } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 import { t } from '../i18n/store.js';
 import { openLoginRequired } from '../state/modals.js';
-import { formatLieu, reviewCountFor, reviewAverageFor } from '../data/fiches.js';
-import fichesData from '../data/fiches.json';
+import { formatLocation, reviewCountFor, reviewAverageFor } from '../data/profiles.js';
+import profilesData from '../data/profiles.json';
 import { ageInBucket, ageBucketLabelKey } from '../data/ageBuckets.js';
 
 const route = useRoute();
 const router = useRouter();
 
 const PER_SECTION = 6;
-const CATEGORIES = ['hotel', 'ruelle', 'parc'];
-const CATEGORIE_TO_ROUTE = { hotel: 'hotels', ruelle: 'alleys', parc: 'parks' };
+const CATEGORIES = ['hotel', 'alley', 'park'];
+const CATEGORY_TO_ROUTE = { hotel: 'hotels', alley: 'alleys', park: 'parks' };
 
 const query = computed(() => (route.query.q ?? '').toString());
 const ageBucket = computed(() => (route.query.age ?? '').toString());
@@ -20,14 +20,14 @@ const ageBucket = computed(() => (route.query.age ?? '').toString());
 const matches = computed(() => {
   const q = query.value.trim().toLowerCase();
   const bucket = ageBucket.value;
-  return fichesData.filter((f) => {
+  return profilesData.filter((f) => {
     if (bucket && !ageInBucket(f.age, bucket)) return false;
     if (!q) return true;
     return (
-      f.nom.toLowerCase().includes(q) ||
-      (f.ville ?? '').toLowerCase().includes(q) ||
-      (f.lieu ?? '').toLowerCase().includes(q) ||
-      [...(f.descriptif ?? []), ...(f.descriptif_en ?? [])].some((line) =>
+      f.name.toLowerCase().includes(q) ||
+      (f.city ?? '').toLowerCase().includes(q) ||
+      (f.district ?? '').toLowerCase().includes(q) ||
+      [...(f.description.fr ?? []), ...(f.description.en ?? [])].some((line) =>
         line.toLowerCase().includes(q),
       )
     );
@@ -35,9 +35,9 @@ const matches = computed(() => {
 });
 
 const matchesByCategory = computed(() => {
-  const groups = { hotel: [], ruelle: [], parc: [] };
+  const groups = { hotel: [], alley: [], park: [] };
   for (const f of matches.value) {
-    if (groups[f.categorie]) groups[f.categorie].push(f);
+    if (groups[f.category]) groups[f.category].push(f);
   }
   return groups;
 });
@@ -46,7 +46,7 @@ const sections = computed(() =>
   CATEGORIES.map((cat) => {
     const all = matchesByCategory.value[cat] ?? [];
     return {
-      categorie: cat,
+      category: cat,
       items: all.slice(0, PER_SECTION),
       totalCount: all.length,
       showAll: all.length > PER_SECTION,
@@ -57,17 +57,17 @@ const sections = computed(() =>
 const totalMatches = computed(() => matches.value.length);
 
 const goFiche = (id) => {
-  router.push({ name: 'fiche', params: { id } });
+  router.push({ name: 'profile', params: { id } });
 };
-const goSection = (categorie) => {
-  const name = CATEGORIE_TO_ROUTE[categorie];
+const goSection = (category) => {
+  const name = CATEGORY_TO_ROUTE[category];
   if (!name) return;
   const q = query.value ? { q: query.value } : {};
   router.push({ name, query: q });
 };
 
-const onSaveClick = (fiche) => {
-  openLoginRequired({ target: 'save', name: fiche.nom });
+const onSaveClick = (profile) => {
+  openLoginRequired({ target: 'save', name: profile.name });
 };
 
 const ageLabel = computed(() => {
@@ -97,19 +97,19 @@ const emptyText = computed(() =>
 
     <section
       v-for="section in sections"
-      :key="section.categorie"
+      :key="section.category"
       class="sr-section"
-      :aria-label="t(`search_page.section_${section.categorie}`)"
+      :aria-label="t(`search_page.section_${section.category}`)"
     >
       <header class="sr-section-head">
         <h2 class="sr-section-title">
-          {{ t(`search_page.section_${section.categorie}`) }}
+          {{ t(`search_page.section_${section.category}`) }}
         </h2>
         <button
           v-if="section.showAll"
           type="button"
           class="sr-show-all"
-          @click="goSection(section.categorie)"
+          @click="goSection(section.category)"
         >
           {{ t('search_page.show_all') }}
         </button>
@@ -148,11 +148,11 @@ const emptyText = computed(() =>
               <span class="sr-reviews">({{ reviewCountFor(f.id) }})</span>
             </div>
           </div>
-          <h3 class="sr-card-name">{{ f.nom }}</h3>
-          <p class="sr-card-loc">{{ formatLieu(f) }}</p>
+          <h3 class="sr-card-name">{{ f.name }}</h3>
+          <p class="sr-card-loc">{{ formatLocation(f) }}</p>
           <p class="sr-card-meta">
             {{
-              t('search_page.card_meta', { age: f.age, cat: t(`fiche_page.cat_${f.categorie}`) })
+              t('search_page.card_meta', { age: f.age, cat: t(`profile_page.cat_${f.category}`) })
             }}
           </p>
         </li>

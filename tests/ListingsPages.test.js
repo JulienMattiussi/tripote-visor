@@ -5,7 +5,7 @@ import HotelsPage from '../src/pages/HotelsPage.vue';
 import ParksPage from '../src/pages/ParksPage.vue';
 import AlleysPage from '../src/pages/AlleysPage.vue';
 import { setLocale, setCurrency } from '../src/i18n/store.js';
-import fiches from '../src/data/fiches.json';
+import fiches from '../src/data/profiles.json';
 import { setupRouter, withRouter } from './helpers/router.js';
 
 const PER_PAGE = 10;
@@ -28,10 +28,10 @@ describe('HotelsPage - default view', () => {
     expect(wrapper.findAll('.lst-card').length).toBe(PER_PAGE);
   });
 
-  it('only renders fiches whose categorie is hotel', () => {
+  it('only renders profiles whose category is hotel', () => {
     const wrapper = mount(HotelsPage, withRouter(router));
     const visibleNames = wrapper.findAll('.lst-card-name').map((n) => n.text());
-    const allowed = new Set(fiches.filter((f) => f.categorie === 'hotel').map((f) => f.nom));
+    const allowed = new Set(fiches.filter((f) => f.category === 'hotel').map((f) => f.name));
     for (const name of visibleNames) expect(allowed.has(name)).toBe(true);
   });
 
@@ -123,10 +123,10 @@ describe('ListingsPage - search', () => {
     expect(wrapper.find('.lst-search input').element.value).toBe('Paris');
     const expected = fiches.filter(
       (f) =>
-        f.categorie === 'hotel' &&
-        (f.nom.toLowerCase().includes('paris') ||
-          (f.ville ?? '').toLowerCase().includes('paris') ||
-          (f.lieu ?? '').toLowerCase().includes('paris')),
+        f.category === 'hotel' &&
+        (f.name.toLowerCase().includes('paris') ||
+          (f.city ?? '').toLowerCase().includes('paris') ||
+          (f.district ?? '').toLowerCase().includes('paris')),
     ).length;
     expect(wrapper.findAll('.lst-card').length).toBe(expected);
   });
@@ -136,15 +136,15 @@ describe('ListingsPage - search', () => {
     await wrapper.find('.lst-search input').setValue('Paris');
     const expected = fiches.filter(
       (f) =>
-        f.categorie === 'hotel' &&
-        (f.nom.toLowerCase().includes('paris') ||
-          (f.ville ?? '').toLowerCase().includes('paris') ||
-          (f.lieu ?? '').toLowerCase().includes('paris')),
+        f.category === 'hotel' &&
+        (f.name.toLowerCase().includes('paris') ||
+          (f.city ?? '').toLowerCase().includes('paris') ||
+          (f.district ?? '').toLowerCase().includes('paris')),
     ).length;
     expect(wrapper.findAll('.lst-card').length).toBe(expected);
   });
 
-  it('shows the empty-state when no fiche matches', async () => {
+  it('shows the empty-state when no profile matches', async () => {
     const wrapper = mount(HotelsPage, withRouter(router));
     await wrapper.find('.lst-search input').setValue('zzz-no-match');
     expect(wrapper.findAll('.lst-card').length).toBe(0);
@@ -162,7 +162,7 @@ describe('ListingsPage - search', () => {
   });
 });
 
-describe('ListingsPage - card click navigates to fiche', () => {
+describe('ListingsPage - card click navigates to profile', () => {
   let router;
   beforeEach(async () => {
     setLocale('en');
@@ -173,10 +173,10 @@ describe('ListingsPage - card click navigates to fiche', () => {
   it('clicking a card pushes to /p/:id', async () => {
     const wrapper = mount(HotelsPage, withRouter(router));
     const firstName = wrapper.find('.lst-card-name').text();
-    const expectedId = fiches.find((f) => f.nom === firstName).id;
+    const expectedId = fiches.find((f) => f.name === firstName).id;
     await wrapper.find('.lst-card').trigger('click');
     await flushPromises();
-    expect(router.currentRoute.value.name).toBe('fiche');
+    expect(router.currentRoute.value.name).toBe('profile');
     expect(router.currentRoute.value.params.id).toBe(expectedId);
   });
 });
@@ -193,7 +193,7 @@ describe('ParksPage / AlleysPage - parity', () => {
     const wrapper = mount(ParksPage, withRouter(router));
     expect(wrapper.find('.lst-hero-title').text()).toBe('Parks');
     expect(wrapper.findAll('.lst-card').length).toBe(PER_PAGE);
-    const allowed = new Set(fiches.filter((f) => f.categorie === 'parc').map((f) => f.nom));
+    const allowed = new Set(fiches.filter((f) => f.category === 'park').map((f) => f.name));
     for (const name of wrapper.findAll('.lst-card-name').map((n) => n.text())) {
       expect(allowed.has(name)).toBe(true);
     }
@@ -205,7 +205,7 @@ describe('ParksPage / AlleysPage - parity', () => {
     const wrapper = mount(AlleysPage, withRouter(router));
     expect(wrapper.find('.lst-hero-title').text()).toBe('Alleys');
     expect(wrapper.findAll('.lst-card').length).toBe(PER_PAGE);
-    const allowed = new Set(fiches.filter((f) => f.categorie === 'ruelle').map((f) => f.nom));
+    const allowed = new Set(fiches.filter((f) => f.category === 'alley').map((f) => f.name));
     for (const name of wrapper.findAll('.lst-card-name').map((n) => n.text())) {
       expect(allowed.has(name)).toBe(true);
     }

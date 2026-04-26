@@ -1,7 +1,7 @@
 import { describe, it, expect, beforeEach } from 'vitest';
 import { mount, flushPromises } from '@vue/test-utils';
 import DiscoverPage from '../src/pages/DiscoverPage.vue';
-import fichesData from '../src/data/fiches.json';
+import profilesData from '../src/data/profiles.json';
 import advicesData from '../src/data/advices.json';
 import { setLocale, setCurrency } from '../src/i18n/store.js';
 import { setupRouter, withRouter } from './helpers/router.js';
@@ -13,8 +13,8 @@ const avgOf = (id) => {
 };
 
 const expectedTop4 = () =>
-  [...fichesData]
-    .sort((a, b) => avgOf(b.id) - avgOf(a.id) || a.nom.localeCompare(b.nom))
+  [...profilesData]
+    .sort((a, b) => avgOf(b.id) - avgOf(a.id) || a.name.localeCompare(b.name))
     .slice(0, 4);
 
 beforeEach(() => {
@@ -40,23 +40,25 @@ describe('DiscoverPage', () => {
 
     const top4 = expectedTop4();
     cards.forEach((card, idx) => {
-      const fiche = top4[idx];
+      const profile = top4[idx];
       expect(card.find('.dp-rank').text()).toBe(String(idx + 1));
-      expect(card.find('.dp-name').text()).toBe(fiche.nom);
-      const expectedLieu = fiche.lieu ? `${fiche.ville} (${fiche.lieu})` : fiche.ville;
+      expect(card.find('.dp-name').text()).toBe(profile.name);
+      const expectedLieu = profile.district
+        ? `${profile.city} (${profile.district})`
+        : profile.city;
       expect(card.find('.dp-loc').text()).toBe(expectedLieu);
-      const avg = avgOf(fiche.id);
+      const avg = avgOf(profile.id);
       const expected = avg > 0 ? avg.toFixed(1) : '-';
       expect(card.find('.dp-rating-num').text()).toBe(expected);
     });
   });
 
-  it('clicking a card navigates to the matching fiche', async () => {
+  it('clicking a card navigates to the matching profile', async () => {
     const router = await setupRouter('/discover');
     const wrapper = mount(DiscoverPage, withRouter(router));
     await wrapper.findAll('.dp-card')[0].trigger('click');
     await flushPromises();
-    expect(router.currentRoute.value.name).toBe('fiche');
+    expect(router.currentRoute.value.name).toBe('profile');
     expect(router.currentRoute.value.params.id).toBe(expectedTop4()[0].id);
   });
 

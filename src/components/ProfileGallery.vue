@@ -2,26 +2,26 @@
 import { t } from '../i18n/store.js';
 
 defineProps({
-  fiche: { type: Object, required: true },
+  profile: { type: Object, required: true },
 });
 </script>
 
 <template>
   <section class="fp-gallery">
     <div class="container fp-gallery-grid">
-      <div class="fp-photo-main" aria-label="Photo principale">
-        <img v-if="fiche.photo" :src="fiche.photo" :alt="fiche.nom" />
-        <span v-else class="fp-photo-empty">{{ t('fiche_page.thumb_main') }}</span>
+      <div class="fp-photo-main" :aria-label="t('profile_page.thumb_main')">
+        <img v-if="profile.photo" :src="profile.photo" :alt="profile.name" />
+        <span v-else class="fp-photo-empty">{{ t('profile_page.thumb_main') }}</span>
       </div>
       <div class="fp-photo-thumbs">
         <div class="fp-thumb">
-          <span>{{ t('fiche_page.thumb_interior') }}</span>
+          <span>{{ t('profile_page.thumb_interior') }}</span>
         </div>
         <div class="fp-thumb">
-          <span>{{ t('fiche_page.thumb_ambiance') }}</span>
+          <span>{{ t('profile_page.thumb_ambiance') }}</span>
         </div>
         <div class="fp-thumb">
-          <span>{{ t('fiche_page.thumb_more') }}</span>
+          <span>{{ t('profile_page.thumb_more') }}</span>
         </div>
       </div>
     </div>

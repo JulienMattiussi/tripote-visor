@@ -1,0 +1,3452 @@
+[
+  {
+    "id": "mireille",
+    "name": "Mireille la folle",
+    "age": 50,
+    "city": "Paris",
+    "district": "11e",
+    "category": "hotel",
+    "schedule_id": "classic_evening",
+    "photo": "",
+    "description": {
+      "fr": [
+        "Grande expérience du métier.",
+        "Très chaleureuse.",
+        "Son \"coup du dentier\" est une expérience à vivre absolument.",
+        "Vous accueille dans un cadre très coquet.",
+        "Se donne à fond."
+      ],
+      "en": [
+        "Long experience in the trade.",
+        "Very warm.",
+        "Her famous \"denture trick\" is a must-try experience.",
+        "Greets you in a lovely, cozy setting.",
+        "Gives it her all."
+      ]
+    },
+    "has_site": true,
+    "has_menu": true,
+    "has_phone": true,
+    "has_email": true,
+    "services": ["discreet", "pmr", "pet_friendly", "central"],
+    "payment_cash": true,
+    "payment_check": true,
+    "payment_card": true,
+    "payment_paypal": false,
+    "price": 155
+  },
+  {
+    "id": "mehdi",
+    "name": "Mehdi",
+    "age": 42,
+    "city": "Marseille",
+    "district": "Le Vieux-Port",
+    "category": "hotel",
+    "schedule_id": "night_duty",
+    "photo": "",
+    "description": {
+      "fr": [
+        "Plus de quinze ans dans la maison.",
+        "Discret, attentionné.",
+        "Sa spécialité : le café à la cardamome offert à l'arrivée.",
+        "Petit salon en mosaïque, lumière tamisée.",
+        "Ne compte jamais son temps."
+      ],
+      "en": [
+        "Over fifteen years in the house.",
+        "Discreet, attentive.",
+        "His signature touch: a cardamom coffee on arrival.",
+        "Small mosaic-tiled lounge, soft lighting.",
+        "Never watches the clock."
+      ]
+    },
+    "has_site": false,
+    "has_menu": true,
+    "has_phone": false,
+    "has_email": true,
+    "services": ["speak_en", "pet_friendly", "air"],
+    "payment_cash": true,
+    "payment_check": true,
+    "payment_card": true,
+    "payment_paypal": false,
+    "price": 230
+  },
+  {
+    "id": "lucia",
+    "name": "Lúcia",
+    "age": 38,
+    "city": "Lyon",
+    "district": "Croix-Rousse",
+    "category": "hotel",
+    "schedule_id": "evening_to_morning",
+    "photo": "",
+    "description": {
+      "fr": [
+        "Tient l'établissement depuis l'âge de vingt-cinq ans.",
+        "Souriante, jamais pressée.",
+        "Sa fameuse \"tournée du fado\" reste un rendez-vous incontournable.",
+        "Reçoit dans un appartement haussmannien rénové avec goût."
+      ],
+      "en": [
+        "Has run the place since the age of twenty-five.",
+        "Smiling, never in a rush.",
+        "Her famous \"fado round\" remains a must-do ritual.",
+        "Welcomes guests in a tastefully renovated Haussmannian apartment."
+      ]
+    },
+    "has_site": true,
+    "has_menu": true,
+    "has_phone": true,
+    "has_email": true,
+    "services": ["pmr", "air", "wifi", "central"],
+    "payment_cash": false,
+    "payment_check": false,
+    "payment_card": true,
+    "payment_paypal": false,
+    "price": 265
+  },
+  {
+    "id": "brigitte",
+    "name": "La grande Brigitte",
+    "age": 61,
+    "city": "Strasbourg",
+    "district": "",
+    "category": "hotel",
+    "schedule_id": "aperitif_and_night",
+    "photo": "",
+    "description": {
+      "fr": [
+        "Plus de trente ans d'expérience.",
+        "Tempérament direct, on l'aime pour ça.",
+        "Son crémant à minuit est une institution.",
+        "Cadre cosy, boiseries d'époque.",
+        "Met les petits plats dans les grands."
+      ],
+      "en": [
+        "Over thirty years of experience.",
+        "Straightforward temperament, that's what we love about her.",
+        "Her midnight crémant is an institution.",
+        "Cozy setting, period woodwork.",
+        "Pulls out all the stops."
+      ]
+    },
+    "has_site": true,
+    "has_menu": true,
+    "has_phone": true,
+    "has_email": true,
+    "services": ["discreet", "speak_en", "central"],
+    "payment_cash": true,
+    "payment_check": false,
+    "payment_card": false,
+    "payment_paypal": false,
+    "price": 150
+  },
+  {
+    "id": "yacine",
+    "name": "Yacine",
+    "age": 33,
+    "city": "Bordeaux",
+    "district": "",
+    "category": "hotel",
+    "schedule_id": "late_opening",
+    "photo": "",
+    "description": {
+      "fr": [
+        "Jeune mais déjà très demandé.",
+        "Charmant, parle quatre langues.",
+        "On revient surtout pour son \"effet hammam\".",
+        "Reçoit dans un loft épuré près des quais."
+      ],
+      "en": [
+        "Young but already in high demand.",
+        "Charming, speaks four languages.",
+        "People come back mainly for his \"hammam effect\".",
+        "Hosts in a minimalist loft near the waterfront."
+      ]
+    },
+    "has_site": true,
+    "has_menu": true,
+    "has_phone": false,
+    "has_email": true,
+    "services": ["discreet", "pmr", "wifi"],
+    "payment_cash": true,
+    "payment_check": true,
+    "payment_card": false,
+    "payment_paypal": false,
+    "price": 60
+  },
+  {
+    "id": "carmen",
+    "name": "Carmen la diva",
+    "age": 47,
+    "city": "Nice",
+    "district": "Vieux Nice",
+    "category": "hotel",
+    "schedule_id": "classic_evening",
+    "photo": "",
+    "description": {
+      "fr": [
+        "Trente ans qu'elle tient sa pension.",
+        "Verbe haut, cœur tendre.",
+        "Son fameux \"un dernier pour la route\" est légendaire.",
+        "Petit appartement avec balcon sur la Méditerranée.",
+        "Générosité débordante."
+      ],
+      "en": [
+        "Thirty years running her boarding house.",
+        "Loud voice, soft heart.",
+        "Her famous \"one for the road\" is legendary.",
+        "Small apartment with a balcony over the Mediterranean.",
+        "Boundless generosity."
+      ]
+    },
+    "has_site": false,
+    "has_menu": true,
+    "has_phone": true,
+    "has_email": true,
+    "services": ["speak_en", "pmr", "central"],
+    "payment_cash": false,
+    "payment_check": false,
+    "payment_card": true,
+    "payment_paypal": true,
+    "price": 175
+  },
+  {
+    "id": "adam",
+    "name": "Adam",
+    "age": 29,
+    "city": "Lille",
+    "district": "",
+    "category": "hotel",
+    "schedule_id": "weekend_night",
+    "photo": "",
+    "description": {
+      "fr": [
+        "Récemment installé mais déjà fidélisé par sa clientèle.",
+        "Calme, posé, à l'écoute.",
+        "Sa technique de l'oreiller chauffant a fait sa réputation.",
+        "Studio chaleureux dans un immeuble de briques rouges."
+      ],
+      "en": [
+        "Recently set up but already with a loyal following.",
+        "Calm, composed, attentive.",
+        "His warm-pillow technique built his reputation.",
+        "Warm studio in a red-brick building."
+      ]
+    },
+    "has_site": false,
+    "has_menu": true,
+    "has_phone": true,
+    "has_email": true,
+    "services": ["discreet", "pmr", "air", "wifi", "central"],
+    "payment_cash": true,
+    "payment_check": true,
+    "payment_card": false,
+    "payment_paypal": false,
+    "price": 190
+  },
+  {
+    "id": "soraya",
+    "name": "Soraya",
+    "age": 36,
+    "city": "Toulouse",
+    "district": "",
+    "category": "hotel",
+    "schedule_id": "evening_to_morning",
+    "photo": "",
+    "description": {
+      "fr": [
+        "Dix ans d'expérience à son actif.",
+        "Pétillante, drôle, jamais de fausse note.",
+        "Son \"numéro du tapis volant\" est unique en son genre.",
+        "Petit nid douillet aux couleurs chaudes.",
+        "Met une énergie folle dans tout ce qu'elle entreprend."
+      ],
+      "en": [
+        "Ten years of experience under her belt.",
+        "Bubbly, funny, never a false note.",
+        "Her \"magic carpet number\" is one of a kind.",
+        "Cozy little nest in warm colors.",
+        "Throws boundless energy into everything she does."
+      ]
+    },
+    "has_site": false,
+    "has_menu": true,
+    "has_phone": false,
+    "has_email": false,
+    "services": ["discreet", "wifi"],
+    "payment_cash": true,
+    "payment_check": false,
+    "payment_card": false,
+    "payment_paypal": false,
+    "price": 30
+  },
+  {
+    "id": "esperanza",
+    "name": "Esperanza",
+    "age": 53,
+    "city": "Rennes",
+    "district": "",
+    "category": "hotel",
+    "schedule_id": "office_hours_evening",
+    "photo": "",
+    "description": {
+      "fr": [
+        "Trente et un ans qu'elle tient maison.",
+        "Maternelle, rassurante.",
+        "Sa spécialité du dimanche : le bouillon revigorant.",
+        "Reçoit chez elle, ambiance familiale assumée."
+      ],
+      "en": [
+        "Thirty-one years keeping house.",
+        "Motherly, reassuring.",
+        "Her Sunday specialty: a revitalizing broth.",
+        "Hosts at home, unapologetically family vibes."
+      ]
+    },
+    "has_site": true,
+    "has_menu": false,
+    "has_phone": true,
+    "has_email": true,
+    "services": ["speak_en", "pet_friendly", "air", "central"],
+    "payment_cash": true,
+    "payment_check": false,
+    "payment_card": true,
+    "payment_paypal": false,
+    "price": 55
+  },
+  {
+    "id": "ingrid",
+    "name": "Ingrid la magnifique",
+    "age": 56,
+    "city": "Reims",
+    "district": "",
+    "category": "hotel",
+    "schedule_id": "classic_evening",
+    "photo": "",
+    "description": {
+      "fr": [
+        "Une figure du métier dans la région.",
+        "Élégante, raffinée.",
+        "Son rituel de l'arrivée au champagne est une marque de fabrique.",
+        "Cadre soigné, tapis épais, fauteuils en velours.",
+        "Y va toujours de bon cœur."
+      ],
+      "en": [
+        "A regional fixture in the trade.",
+        "Elegant, refined.",
+        "Her champagne welcome ritual is a signature.",
+        "Polished setting, plush rugs, velvet armchairs.",
+        "Always gives it her all."
+      ]
+    },
+    "has_site": false,
+    "has_menu": true,
+    "has_phone": false,
+    "has_email": true,
+    "services": ["speak_en", "pmr", "pet_friendly", "air"],
+    "payment_cash": false,
+    "payment_check": false,
+    "payment_card": false,
+    "payment_paypal": true,
+    "price": 265
+  },
+  {
+    "id": "wei",
+    "name": "Wei",
+    "age": 41,
+    "city": "Paris",
+    "district": "13e",
+    "category": "hotel",
+    "schedule_id": "aperitif_and_night",
+    "photo": "",
+    "description": {
+      "fr": [
+        "Quinze ans dans le quartier.",
+        "Élégant, ponctuel.",
+        "Son thé au jasmin de bienvenue est apprécié de tous.",
+        "Reçoit dans un studio impeccable, esthétique épurée.",
+        "Ne déçoit jamais."
+      ],
+      "en": [
+        "Fifteen years in the neighborhood.",
+        "Elegant, punctual.",
+        "His welcome jasmine tea is loved by everyone.",
+        "Hosts in an immaculate studio with a minimalist aesthetic.",
+        "Never disappoints."
+      ]
+    },
+    "has_site": false,
+    "has_menu": true,
+    "has_phone": true,
+    "has_email": true,
+    "services": ["discreet", "speak_en", "pmr", "air", "wifi", "central"],
+    "payment_cash": true,
+    "payment_check": false,
+    "payment_card": false,
+    "payment_paypal": false,
+    "price": 25
+  },
+  {
+    "id": "murat",
+    "name": "Murat",
+    "age": 45,
+    "city": "Mulhouse",
+    "district": "",
+    "category": "hotel",
+    "schedule_id": "night_duty",
+    "photo": "",
+    "description": {
+      "fr": [
+        "Vingt ans qu'il exerce.",
+        "Énergique, prévenant.",
+        "Son \"massage à la rose\" est devenu une référence locale.",
+        "Petit appartement coloré, parfum d'encens."
+      ],
+      "en": [
+        "Twenty years in the trade.",
+        "Energetic, considerate.",
+        "His \"rose massage\" has become a local benchmark.",
+        "Small colorful apartment, scent of incense."
+      ]
+    },
+    "has_site": true,
+    "has_menu": true,
+    "has_phone": true,
+    "has_email": true,
+    "services": ["air", "wifi"],
+    "payment_cash": true,
+    "payment_check": true,
+    "payment_card": false,
+    "payment_paypal": true,
+    "price": 75
+  },
+  {
+    "id": "solange",
+    "name": "Solange",
+    "age": 67,
+    "city": "Pointe-à-Pitre",
+    "district": "",
+    "category": "hotel",
+    "schedule_id": "late_opening",
+    "photo": "",
+    "description": {
+      "fr": [
+        "Une institution de l'île.",
+        "Son rire qu'on reconnaît à des kilomètres.",
+        "Sert le ti-punch d'accueil avec une générosité légendaire.",
+        "Maisonnette créole aux volets bleus.",
+        "Donne tout, comme toujours."
+      ],
+      "en": [
+        "An island institution.",
+        "Her laugh you can hear a mile away.",
+        "Serves the welcome ti-punch with legendary generosity.",
+        "Creole cottage with blue shutters.",
+        "Gives it all, as always."
+      ]
+    },
+    "has_site": true,
+    "has_menu": true,
+    "has_phone": true,
+    "has_email": true,
+    "services": ["speak_en", "pmr", "pet_friendly", "air", "wifi", "central"],
+    "payment_cash": true,
+    "payment_check": false,
+    "payment_card": false,
+    "payment_paypal": true,
+    "price": 165
+  },
+  {
+    "id": "andriy",
+    "name": "Andriy",
+    "age": 31,
+    "city": "Nantes",
+    "district": "",
+    "category": "hotel",
+    "schedule_id": "dusk_to_dawn",
+    "photo": "",
+    "description": {
+      "fr": [
+        "Récemment arrivé mais s'est imposé vite.",
+        "Sportif, dynamique, rieur.",
+        "Connu pour sa fameuse \"prise du judoka\".",
+        "Studio moderne près de l'Erdre."
+      ],
+      "en": [
+        "Recently arrived but quickly made his mark.",
+        "Athletic, dynamic, cheerful.",
+        "Known for his famous \"judoka grip\".",
+        "Modern studio near the Erdre river."
+      ]
+    },
+    "has_site": true,
+    "has_menu": false,
+    "has_phone": true,
+    "has_email": true,
+    "services": ["discreet", "speak_en", "pet_friendly", "wifi"],
+    "payment_cash": true,
+    "payment_check": true,
+    "payment_card": false,
+    "payment_paypal": false,
+    "price": 80
+  },
+  {
+    "id": "layla",
+    "name": "Layla",
+    "age": 27,
+    "city": "Aix-en-Provence",
+    "district": "",
+    "category": "hotel",
+    "schedule_id": "deep_night",
+    "photo": "",
+    "description": {
+      "fr": [
+        "Jeune professionnelle déjà très recommandée.",
+        "Délicate, attentive aux détails.",
+        "Son rituel du miel de lavande fait son charme.",
+        "Petit cocon parfumé, draps en lin."
+      ],
+      "en": [
+        "Young professional already widely recommended.",
+        "Delicate, attentive to detail.",
+        "Her lavender-honey ritual is part of her charm.",
+        "Small scented cocoon, linen sheets."
+      ]
+    },
+    "has_site": true,
+    "has_menu": false,
+    "has_phone": true,
+    "has_email": true,
+    "services": ["speak_en", "pet_friendly", "air", "wifi"],
+    "payment_cash": true,
+    "payment_check": false,
+    "payment_card": false,
+    "payment_paypal": false,
+    "price": 175
+  },
+  {
+    "id": "wilhelmine",
+    "name": "Wilhelmine dite « Frau Wim »",
+    "age": 62,
+    "city": "Colmar",
+    "district": "",
+    "category": "hotel",
+    "schedule_id": "office_hours_evening",
+    "photo": "",
+    "description": {
+      "fr": [
+        "Plus de vingt-cinq ans à recevoir.",
+        "Sévère mais juste.",
+        "Sa \"méthode allemande\" est d'une efficacité redoutable.",
+        "Cadre alsacien typique, géraniums aux fenêtres.",
+        "Ne fait jamais les choses à moitié."
+      ],
+      "en": [
+        "Over twenty-five years welcoming guests.",
+        "Strict but fair.",
+        "Her \"German method\" is fearsomely effective.",
+        "Typical Alsatian setting, geraniums in the windows.",
+        "Never does things by halves."
+      ]
+    },
+    "has_site": false,
+    "has_menu": true,
+    "has_phone": true,
+    "has_email": true,
+    "services": ["speak_en", "pet_friendly"],
+    "payment_cash": true,
+    "payment_check": true,
+    "payment_card": true,
+    "payment_paypal": false,
+    "price": 400
+  },
+  {
+    "id": "renata",
+    "name": "Renata",
+    "age": 34,
+    "city": "Paris",
+    "district": "18e",
+    "category": "hotel",
+    "schedule_id": "evening_to_morning",
+    "photo": "",
+    "description": {
+      "fr": [
+        "Onze ans de métier.",
+        "Solaire, attachante, fidèle.",
+        "Son \"câlin du soir\" est devenu une référence du quartier.",
+        "Studio cosy à Montmartre."
+      ],
+      "en": [
+        "Eleven years in the trade.",
+        "Sunny, endearing, loyal.",
+        "Her \"evening cuddle\" has become a neighborhood favorite.",
+        "Cozy studio in Montmartre."
+      ]
+    },
+    "has_site": false,
+    "has_menu": false,
+    "has_phone": true,
+    "has_email": true,
+    "services": ["pet_friendly"],
+    "payment_cash": true,
+    "payment_check": false,
+    "payment_card": true,
+    "payment_paypal": false,
+    "price": 350
+  },
+  {
+    "id": "fatou",
+    "name": "Fatou",
+    "age": 39,
+    "city": "Saint-Denis",
+    "district": "",
+    "category": "hotel",
+    "schedule_id": "aperitif_and_night",
+    "photo": "",
+    "description": {
+      "fr": [
+        "Plus de quinze ans d'expérience.",
+        "Maternelle et chaleureuse.",
+        "Son repas mafé revigorant fait toute sa réputation.",
+        "Reçoit dans un appartement décoré aux tissus wax.",
+        "On en redemande."
+      ],
+      "en": [
+        "Over fifteen years of experience.",
+        "Motherly and warm.",
+        "Her hearty mafé meal is her claim to fame.",
+        "Hosts in an apartment decorated with wax fabrics.",
+        "You'll come back for more."
+      ]
+    },
+    "has_site": true,
+    "has_menu": true,
+    "has_phone": true,
+    "has_email": false,
+    "services": ["discreet", "speak_en", "pmr", "pet_friendly", "air", "central"],
+    "payment_cash": true,
+    "payment_check": false,
+    "payment_card": false,
+    "payment_paypal": false,
+    "price": 35
+  },
+  {
+    "id": "tatiana",
+    "name": "Tatiana",
+    "age": 44,
+    "city": "Cannes",
+    "district": "",
+    "category": "hotel",
+    "schedule_id": "weekend_night",
+    "photo": "",
+    "description": {
+      "fr": [
+        "Vingt ans dans le métier.",
+        "Glamour, posée, sans chichi.",
+        "Sa marque de fabrique : le cocktail signature.",
+        "Suite avec vue sur la Croisette.",
+        "Une vraie professionnelle."
+      ],
+      "en": [
+        "Twenty years in the trade.",
+        "Glamorous, composed, no fuss.",
+        "Her trademark: the signature cocktail.",
+        "Suite with a view over the Croisette.",
+        "A true professional."
+      ]
+    },
+    "has_site": false,
+    "has_menu": true,
+    "has_phone": true,
+    "has_email": true,
+    "services": ["discreet", "pmr", "pet_friendly", "air", "central"],
+    "payment_cash": true,
+    "payment_check": false,
+    "payment_card": true,
+    "payment_paypal": true,
+    "price": 335
+  },
+  {
+    "id": "adele",
+    "name": "Adèle",
+    "age": 52,
+    "city": "Tours",
+    "district": "",
+    "category": "hotel",
+    "schedule_id": "classic_evening",
+    "photo": "",
+    "description": {
+      "fr": [
+        "Trente ans qu'elle tient ses quartiers.",
+        "Femme de tête.",
+        "Son fameux \"goûter du dimanche\" rassemble les habitués.",
+        "Maison de maître meublée d'antiquités."
+      ],
+      "en": [
+        "Thirty years holding her ground.",
+        "A woman with a strong head.",
+        "Her famous \"Sunday tea\" brings the regulars together.",
+        "Master's house furnished with antiques."
+      ]
+    },
+    "has_site": false,
+    "has_menu": true,
+    "has_phone": true,
+    "has_email": true,
+    "services": ["pmr", "pet_friendly"],
+    "payment_cash": false,
+    "payment_check": false,
+    "payment_card": true,
+    "payment_paypal": false,
+    "price": 50
+  },
+  {
+    "id": "issa",
+    "name": "Issa",
+    "age": 28,
+    "city": "Le Havre",
+    "district": "",
+    "category": "hotel",
+    "schedule_id": "short_evening",
+    "photo": "",
+    "description": {
+      "fr": [
+        "Six ans de métier.",
+        "Pétillant, joyeux, contagieux.",
+        "Son rituel du \"bisou normand\" séduit les visiteurs.",
+        "Studio lumineux face au port."
+      ],
+      "en": [
+        "Six years in the trade.",
+        "Bubbly, cheerful, contagious.",
+        "His \"Norman kiss\" ritual charms visitors.",
+        "Bright studio facing the harbor."
+      ]
+    },
+    "has_site": true,
+    "has_menu": true,
+    "has_phone": true,
+    "has_email": false,
+    "services": ["discreet", "speak_en", "air", "wifi"],
+    "payment_cash": true,
+    "payment_check": false,
+    "payment_card": true,
+    "payment_paypal": true,
+    "price": 85
+  },
+  {
+    "id": "despina",
+    "name": "Despina",
+    "age": 48,
+    "city": "Avignon",
+    "district": "",
+    "category": "hotel",
+    "schedule_id": "classic_evening",
+    "photo": "",
+    "description": {
+      "fr": [
+        "Vingt-deux ans dans le métier.",
+        "Volubile, attachante.",
+        "Sa \"danse syrtaki\" finit toujours par éclater de rire.",
+        "Maisonnette dans une ruelle calme."
+      ],
+      "en": [
+        "Twenty-two years in the trade.",
+        "Talkative, endearing.",
+        "Her \"syrtaki dance\" always ends in laughter.",
+        "Small cottage on a quiet alley."
+      ]
+    },
+    "has_site": true,
+    "has_menu": true,
+    "has_phone": false,
+    "has_email": true,
+    "services": ["speak_en", "pmr", "pet_friendly", "air", "wifi"],
+    "payment_cash": true,
+    "payment_check": false,
+    "payment_card": true,
+    "payment_paypal": false,
+    "price": 155
+  },
+  {
+    "id": "klara",
+    "name": "Klara",
+    "age": 35,
+    "city": "Annecy",
+    "district": "",
+    "category": "hotel",
+    "schedule_id": "office_hours_evening",
+    "photo": "",
+    "description": {
+      "fr": [
+        "Treize ans qu'elle exerce.",
+        "Sportive, douce, méthodique.",
+        "Son massage du lac est une exclusivité.",
+        "Chalet au bord de l'eau, ambiance scandinave."
+      ],
+      "en": [
+        "Thirteen years in the trade.",
+        "Athletic, gentle, methodical.",
+        "Her lakeside massage is an exclusivity.",
+        "Lakeside chalet, Scandinavian vibes."
+      ]
+    },
+    "has_site": true,
+    "has_menu": true,
+    "has_phone": true,
+    "has_email": true,
+    "services": ["discreet", "pmr", "wifi", "central"],
+    "payment_cash": false,
+    "payment_check": false,
+    "payment_card": true,
+    "payment_paypal": false,
+    "price": 395
+  },
+  {
+    "id": "bernadette",
+    "name": "Tante Bernadette",
+    "age": 71,
+    "city": "Vichy",
+    "district": "",
+    "category": "hotel",
+    "schedule_id": "morning_and_noon",
+    "photo": "",
+    "description": {
+      "fr": [
+        "Plus de quarante ans à servir.",
+        "Vieille école, mais quel professionnalisme.",
+        "Son rituel des eaux thermales reste sa signature.",
+        "Pavillon Belle Époque, portes en bois sculpté.",
+        "Y va toujours franchement."
+      ],
+      "en": [
+        "Over forty years of service.",
+        "Old school, but what professionalism.",
+        "Her thermal-bath ritual remains her signature.",
+        "Belle Époque pavilion, carved wooden doors.",
+        "Always goes at it wholeheartedly."
+      ]
+    },
+    "has_site": false,
+    "has_menu": true,
+    "has_phone": true,
+    "has_email": true,
+    "services": ["discreet", "pet_friendly", "wifi"],
+    "payment_cash": true,
+    "payment_check": true,
+    "payment_card": false,
+    "payment_paypal": true,
+    "price": 95
+  },
+  {
+    "id": "anjali",
+    "name": "Anjali",
+    "age": 32,
+    "city": "Paris",
+    "district": "9e",
+    "category": "hotel",
+    "schedule_id": "extended_afternoon",
+    "photo": "",
+    "description": {
+      "fr": [
+        "Neuf ans dans la maison.",
+        "Souriante, parle l'anglais à la perfection.",
+        "Son \"tour des chakras\" intrigue autant qu'il séduit.",
+        "Petit salon parfumé au santal."
+      ],
+      "en": [
+        "Nine years in the house.",
+        "Smiling, speaks perfect English.",
+        "Her \"chakra tour\" intrigues as much as it charms.",
+        "Small lounge scented with sandalwood."
+      ]
+    },
+    "has_site": false,
+    "has_menu": true,
+    "has_phone": false,
+    "has_email": false,
+    "services": ["pet_friendly", "wifi", "central"],
+    "payment_cash": true,
+    "payment_check": true,
+    "payment_card": false,
+    "payment_paypal": false,
+    "price": 125
+  },
+  {
+    "id": "khadija",
+    "name": "Khadija",
+    "age": 40,
+    "city": "Lyon",
+    "district": "",
+    "category": "hotel",
+    "schedule_id": "night_duty",
+    "photo": "",
+    "description": {
+      "fr": [
+        "Quinze ans qu'elle reçoit.",
+        "Femme de caractère, voix douce.",
+        "Sa célèbre \"cérémonie du henné\" se réserve des semaines à l'avance.",
+        "Riad reconstitué, mosaïque et lanternes."
+      ],
+      "en": [
+        "Fifteen years welcoming guests.",
+        "Strong-willed woman, soft voice.",
+        "Her famous \"henna ceremony\" books up weeks in advance.",
+        "Reconstructed riad, mosaic and lanterns."
+      ]
+    },
+    "has_site": true,
+    "has_menu": false,
+    "has_phone": true,
+    "has_email": true,
+    "services": ["pmr", "pet_friendly"],
+    "payment_cash": true,
+    "payment_check": false,
+    "payment_card": true,
+    "payment_paypal": false,
+    "price": 385
+  },
+  {
+    "id": "olga",
+    "name": "Olga l'implacable",
+    "age": 58,
+    "city": "Brest",
+    "district": "",
+    "category": "hotel",
+    "schedule_id": "aperitif_and_night",
+    "photo": "",
+    "description": {
+      "fr": [
+        "Trente ans dans le métier, elle a tout vu.",
+        "Implacable, mais drôle quand on la connaît.",
+        "Sa spécialité : le verre de vodka glacée à l'arrivée.",
+        "Petit appartement face à l'Atlantique."
+      ],
+      "en": [
+        "Thirty years in the trade, she's seen it all.",
+        "Stern, but funny once you know her.",
+        "Her specialty: a glass of iced vodka on arrival.",
+        "Small apartment facing the Atlantic."
+      ]
+    },
+    "has_site": true,
+    "has_menu": true,
+    "has_phone": true,
+    "has_email": true,
+    "services": ["pmr", "air", "wifi"],
+    "payment_cash": true,
+    "payment_check": true,
+    "payment_card": false,
+    "payment_paypal": true,
+    "price": 235
+  },
+  {
+    "id": "esmeralda",
+    "name": "Esmeralda la fougueuse",
+    "age": 26,
+    "city": "Perpignan",
+    "district": "",
+    "category": "hotel",
+    "schedule_id": "weekend_night",
+    "photo": "",
+    "description": {
+      "fr": [
+        "Cinq ans déjà mais l'air d'en avoir trente d'expérience.",
+        "Fougueuse, espiègle.",
+        "Sa fameuse \"danse du foulard\" laisse un souvenir.",
+        "Studio bohème, tentures et coussins."
+      ],
+      "en": [
+        "Only five years in but seems to have thirty.",
+        "Fiery, mischievous.",
+        "Her famous \"scarf dance\" leaves a lasting memory.",
+        "Bohemian studio, drapes and cushions."
+      ]
+    },
+    "has_site": true,
+    "has_menu": false,
+    "has_phone": false,
+    "has_email": true,
+    "services": ["discreet", "pet_friendly", "air", "wifi", "central"],
+    "payment_cash": true,
+    "payment_check": false,
+    "payment_card": false,
+    "payment_paypal": false,
+    "price": 55
+  },
+  {
+    "id": "helga",
+    "name": "Helga l'ours",
+    "age": 64,
+    "city": "Saint-Malo",
+    "district": "",
+    "category": "hotel",
+    "schedule_id": "evening_to_morning",
+    "photo": "",
+    "description": {
+      "fr": [
+        "Trente-cinq ans à recevoir les marins.",
+        "Bourrue mais juste.",
+        "Sert un grog maison qui réchauffe les soirées de tempête.",
+        "Maisonnette de granit aux vieilles poutres.",
+        "Met du cœur à l'ouvrage."
+      ],
+      "en": [
+        "Thirty-five years welcoming sailors.",
+        "Gruff but fair.",
+        "Serves a homemade grog that warms stormy evenings.",
+        "Granite cottage with old beams.",
+        "Puts heart into the work."
+      ]
+    },
+    "has_site": true,
+    "has_menu": true,
+    "has_phone": false,
+    "has_email": false,
+    "services": ["discreet", "speak_en", "pet_friendly", "air", "wifi", "central"],
+    "payment_cash": true,
+    "payment_check": false,
+    "payment_card": true,
+    "payment_paypal": true,
+    "price": 330
+  },
+  {
+    "id": "lupita",
+    "name": "Lupita",
+    "age": 37,
+    "city": "Bordeaux",
+    "district": "",
+    "category": "hotel",
+    "schedule_id": "classic_evening",
+    "photo": "",
+    "description": {
+      "fr": [
+        "Onze ans dans le métier.",
+        "Lumineuse, attentive.",
+        "Sa marinade façon Mexico fait sa renommée.",
+        "Loft coloré avec patio fleuri."
+      ],
+      "en": [
+        "Eleven years in the trade.",
+        "Radiant, attentive.",
+        "Her Mexico-style marinade is her claim to fame.",
+        "Colorful loft with a flowered patio."
+      ]
+    },
+    "has_site": true,
+    "has_menu": true,
+    "has_phone": true,
+    "has_email": true,
+    "services": ["discreet", "pmr"],
+    "payment_cash": true,
+    "payment_check": false,
+    "payment_card": false,
+    "payment_paypal": false,
+    "price": 225
+  },
+  {
+    "id": "sigrid",
+    "name": "Sigrid",
+    "age": 51,
+    "city": "Bourges",
+    "district": "",
+    "category": "hotel",
+    "schedule_id": "short_evening",
+    "photo": "",
+    "description": {
+      "fr": [
+        "Vingt-cinq ans qu'elle officie.",
+        "Stoïque, professionnelle.",
+        "Son rituel du sauna perso est devenu un must local.",
+        "Pavillon en lisière de forêt."
+      ],
+      "en": [
+        "Twenty-five years on the job.",
+        "Stoic, professional.",
+        "Her private-sauna ritual has become a local must.",
+        "Pavilion at the edge of the forest."
+      ]
+    },
+    "has_site": false,
+    "has_menu": true,
+    "has_phone": false,
+    "has_email": true,
+    "services": ["discreet", "speak_en", "pmr", "air", "central"],
+    "payment_cash": true,
+    "payment_check": false,
+    "payment_card": false,
+    "payment_paypal": false,
+    "price": 90
+  },
+  {
+    "id": "hiroko",
+    "name": "Hiroko",
+    "age": 43,
+    "city": "Paris",
+    "district": "16e",
+    "category": "hotel",
+    "schedule_id": "extended_afternoon",
+    "photo": "",
+    "description": {
+      "fr": [
+        "Vingt ans à Paris.",
+        "Précise, attentive, d'une gentillesse rare.",
+        "Sa cérémonie du thé à l'ancienne reste sa marque.",
+        "Appartement style ryokan, tatamis et shojis."
+      ],
+      "en": [
+        "Twenty years in Paris.",
+        "Precise, attentive, of rare kindness.",
+        "Her old-style tea ceremony remains her trademark.",
+        "Ryokan-style apartment, tatamis and shojis."
+      ]
+    },
+    "has_site": true,
+    "has_menu": true,
+    "has_phone": true,
+    "has_email": false,
+    "services": ["discreet", "speak_en", "pmr", "air", "wifi", "central"],
+    "payment_cash": true,
+    "payment_check": false,
+    "payment_card": true,
+    "payment_paypal": true,
+    "price": 375
+  },
+  {
+    "id": "josephine",
+    "name": "Joséphine la doyenne",
+    "age": 75,
+    "city": "Limoges",
+    "district": "",
+    "category": "hotel",
+    "schedule_id": "all_day",
+    "photo": "",
+    "description": {
+      "fr": [
+        "Cinquante ans dans la maison.",
+        "Une vraie patronne.",
+        "Sert encore aujourd'hui sa célèbre soupe à l'oignon.",
+        "Pension de famille à l'ancienne, nappes blanches.",
+        "Ne se ménage pas, jamais."
+      ],
+      "en": [
+        "Fifty years in the house.",
+        "A true matron.",
+        "Still serves her famous onion soup today.",
+        "Old-fashioned guesthouse, white tablecloths.",
+        "Never spares herself, ever."
+      ]
+    },
+    "has_site": false,
+    "has_menu": false,
+    "has_phone": true,
+    "has_email": true,
+    "services": ["discreet", "pmr", "pet_friendly", "air"],
+    "payment_cash": true,
+    "payment_check": false,
+    "payment_card": true,
+    "payment_paypal": false,
+    "price": 45
+  },
+  {
+    "id": "latifa",
+    "name": "Latifa",
+    "age": 30,
+    "city": "Argenteuil",
+    "district": "",
+    "category": "hotel",
+    "schedule_id": "dusk_to_dawn",
+    "photo": "",
+    "description": {
+      "fr": [
+        "Sept ans dans le métier.",
+        "Calme, ponctuelle, sérieuse.",
+        "Sa spécialité du \"thé à la menthe brûlant\" est très réclamée.",
+        "Studio simple, propre, accueillant."
+      ],
+      "en": [
+        "Seven years in the trade.",
+        "Calm, punctual, serious.",
+        "Her \"scalding mint tea\" specialty is much in demand.",
+        "Simple studio, clean and welcoming."
+      ]
+    },
+    "has_site": false,
+    "has_menu": false,
+    "has_phone": true,
+    "has_email": true,
+    "services": ["speak_en", "pet_friendly", "air", "wifi"],
+    "payment_cash": true,
+    "payment_check": false,
+    "payment_card": true,
+    "payment_paypal": false,
+    "price": 35
+  },
+  {
+    "id": "roger",
+    "name": "Roger le titi",
+    "age": 68,
+    "city": "Paris",
+    "district": "Pigalle",
+    "category": "alley",
+    "schedule_id": "night_duty",
+    "photo": "",
+    "description": {
+      "fr": [
+        "Quarante ans qu'il fait les nuits du quartier.",
+        "Personnage du coin, connu de tous.",
+        "Sa fameuse \"tournée des bistrots\" finit toujours par lui.",
+        "Vous reçoit dans une cour pavée discrète.",
+        "Toujours partant."
+      ],
+      "en": [
+        "Forty years working the neighborhood nights.",
+        "A neighborhood character, known by all.",
+        "His famous \"bistro round\" always ends at his place.",
+        "Welcomes you in a discreet cobbled courtyard.",
+        "Always game."
+      ]
+    },
+    "has_site": true,
+    "has_menu": false,
+    "has_phone": false,
+    "has_email": true,
+    "services": ["discreet", "speak_en", "quiet", "walking"],
+    "payment_cash": true,
+    "payment_check": false,
+    "payment_card": true,
+    "payment_paypal": true,
+    "price": 105
+  },
+  {
+    "id": "suzanne",
+    "name": "Suzanne dite « la Baronne »",
+    "age": 73,
+    "city": "Paris",
+    "district": "Marais",
+    "category": "alley",
+    "schedule_id": "extended_afternoon",
+    "photo": "",
+    "description": {
+      "fr": [
+        "Une figure du Marais depuis cinquante ans.",
+        "Verve incomparable.",
+        "Son célèbre \"raccourci par la cour\" est connu des initiés.",
+        "Vieille porte cochère, escalier en colimaçon.",
+        "Y va de tout son cœur."
+      ],
+      "en": [
+        "A Marais figure for fifty years.",
+        "Incomparable wit.",
+        "Her famous \"courtyard shortcut\" is known to insiders.",
+        "Old carriage gate, spiral staircase.",
+        "Goes at it with all her heart."
+      ]
+    },
+    "has_site": true,
+    "has_menu": true,
+    "has_phone": true,
+    "has_email": false,
+    "services": ["discreet", "pmr", "pet_friendly", "quiet"],
+    "payment_cash": true,
+    "payment_check": false,
+    "payment_card": false,
+    "payment_paypal": false,
+    "price": 180
+  },
+  {
+    "id": "tariq",
+    "name": "Tariq le passe-partout",
+    "age": 35,
+    "city": "Paris",
+    "district": "Belleville",
+    "category": "alley",
+    "schedule_id": "aperitif_and_night",
+    "photo": "",
+    "description": {
+      "fr": [
+        "Douze ans qu'il anime la rue.",
+        "Toujours souriant, toujours dispo.",
+        "Sa réputation de \"l'impasse magique\" n'est plus à faire.",
+        "Petit hall d'immeuble bien tenu."
+      ],
+      "en": [
+        "Twelve years bringing the street to life.",
+        "Always smiling, always available.",
+        "His \"magical dead-end\" reputation needs no introduction.",
+        "Small, well-kept building lobby."
+      ]
+    },
+    "has_site": true,
+    "has_menu": true,
+    "has_phone": true,
+    "has_email": false,
+    "services": ["speak_en", "quiet", "central"],
+    "payment_cash": true,
+    "payment_check": false,
+    "payment_card": false,
+    "payment_paypal": false,
+    "price": 145
+  },
+  {
+    "id": "yvette",
+    "name": "Yvette la traboulière",
+    "age": 54,
+    "city": "Lyon",
+    "district": "Croix-Rousse",
+    "category": "alley",
+    "schedule_id": "classic_evening",
+    "photo": "",
+    "description": {
+      "fr": [
+        "Trente ans dans les traboules.",
+        "Connaît tous les passages secrets.",
+        "Sa visite-éclair façon \"raccourci canut\" est mythique.",
+        "Hall d'immeuble en pierre dorée.",
+        "Donne tout."
+      ],
+      "en": [
+        "Thirty years in the traboules.",
+        "Knows every secret passage.",
+        "Her \"Canut shortcut\" flash visit is legendary.",
+        "Golden-stone building lobby.",
+        "Gives it all."
+      ]
+    },
+    "has_site": true,
+    "has_menu": true,
+    "has_phone": false,
+    "has_email": true,
+    "services": ["speak_en", "pet_friendly", "quiet", "walking", "central"],
+    "payment_cash": true,
+    "payment_check": true,
+    "payment_card": true,
+    "payment_paypal": false,
+    "price": 200
+  },
+  {
+    "id": "salma",
+    "name": "Salma",
+    "age": 42,
+    "city": "Marseille",
+    "district": "Le Panier",
+    "category": "alley",
+    "schedule_id": "late_opening",
+    "photo": "",
+    "description": {
+      "fr": [
+        "Vingt ans qu'elle tient le quartier.",
+        "Solide, fiable, blagueuse.",
+        "Son célèbre \"détour par les marches\" mérite le déplacement.",
+        "Vous reçoit dans une placette fleurie."
+      ],
+      "en": [
+        "Twenty years holding down the neighborhood.",
+        "Solid, reliable, full of jokes.",
+        "Her famous \"stairway detour\" is worth the trip.",
+        "Welcomes you in a flowered little square."
+      ]
+    },
+    "has_site": true,
+    "has_menu": true,
+    "has_phone": true,
+    "has_email": true,
+    "services": ["speak_en", "pet_friendly", "walking", "central"],
+    "payment_cash": true,
+    "payment_check": true,
+    "payment_card": false,
+    "payment_paypal": false,
+    "price": 390
+  },
+  {
+    "id": "nadia",
+    "name": "Nadia",
+    "age": 31,
+    "city": "Saint-Denis",
+    "district": "",
+    "category": "alley",
+    "schedule_id": "weekend_night",
+    "photo": "",
+    "description": {
+      "fr": [
+        "Sept ans dans le coin.",
+        "Vive, drôle, imprévisible.",
+        "Son raccourci par l'arrière-cour fait gagner du temps.",
+        "Cour intérieure tranquille."
+      ],
+      "en": [
+        "Seven years in the area.",
+        "Lively, funny, unpredictable.",
+        "Her backyard shortcut saves time.",
+        "Quiet inner courtyard."
+      ]
+    },
+    "has_site": true,
+    "has_menu": true,
+    "has_phone": true,
+    "has_email": true,
+    "services": ["speak_en", "pmr", "pet_friendly", "quiet", "walking"],
+    "payment_cash": true,
+    "payment_check": false,
+    "payment_card": false,
+    "payment_paypal": false,
+    "price": 180
+  },
+  {
+    "id": "giulia",
+    "name": "Giulia",
+    "age": 50,
+    "city": "Nice",
+    "district": "Vieux Nice",
+    "category": "alley",
+    "schedule_id": "classic_evening",
+    "photo": "",
+    "description": {
+      "fr": [
+        "Vingt-cinq ans dans les ruelles génoises.",
+        "Charme italien et gouaille niçoise.",
+        "Sa pause au \"banc de marbre\" est une coutume locale.",
+        "Petit hall décoré de fresques anciennes."
+      ],
+      "en": [
+        "Twenty-five years in the Genoese alleys.",
+        "Italian charm and Niçoise sass.",
+        "Her \"marble bench break\" is a local custom.",
+        "Small lobby decorated with old frescoes."
+      ]
+    },
+    "has_site": true,
+    "has_menu": true,
+    "has_phone": true,
+    "has_email": false,
+    "services": ["pet_friendly", "central"],
+    "payment_cash": true,
+    "payment_check": false,
+    "payment_card": false,
+    "payment_paypal": false,
+    "price": 65
+  },
+  {
+    "id": "boris",
+    "name": "Boris le grognon",
+    "age": 57,
+    "city": "Strasbourg",
+    "district": "Petite France",
+    "category": "alley",
+    "schedule_id": "evening_to_morning",
+    "photo": "",
+    "description": {
+      "fr": [
+        "Trente ans à arpenter les passages.",
+        "Bourru attachant.",
+        "Son fameux \"détour par le pont\" est conseillé en soirée.",
+        "Maison à colombages, escalier qui craque."
+      ],
+      "en": [
+        "Thirty years walking the passages.",
+        "Endearingly gruff.",
+        "His famous \"bridge detour\" is recommended in the evening.",
+        "Half-timbered house, creaky staircase."
+      ]
+    },
+    "has_site": false,
+    "has_menu": true,
+    "has_phone": true,
+    "has_email": true,
+    "services": ["pmr", "quiet", "central"],
+    "payment_cash": true,
+    "payment_check": false,
+    "payment_card": false,
+    "payment_paypal": false,
+    "price": 230
+  },
+  {
+    "id": "svetlana",
+    "name": "Svetlana",
+    "age": 39,
+    "city": "Paris",
+    "district": "10e",
+    "category": "alley",
+    "schedule_id": "aperitif_and_night",
+    "photo": "",
+    "description": {
+      "fr": [
+        "Quinze ans dans le 10e.",
+        "Distinguée, polie, terriblement pro.",
+        "Son raccourci par la cour pavée a sauvé bien des soirées.",
+        "Vieille porte en fer forgé, lierre grimpant."
+      ],
+      "en": [
+        "Fifteen years in the 10th.",
+        "Distinguished, polite, terribly professional.",
+        "Her cobbled-courtyard shortcut has saved many an evening.",
+        "Old wrought-iron gate, climbing ivy."
+      ]
+    },
+    "has_site": true,
+    "has_menu": true,
+    "has_phone": false,
+    "has_email": true,
+    "services": ["discreet", "pmr", "pet_friendly", "quiet", "walking", "central"],
+    "payment_cash": true,
+    "payment_check": false,
+    "payment_card": true,
+    "payment_paypal": true,
+    "price": 65
+  },
+  {
+    "id": "aylin",
+    "name": "Aylin",
+    "age": 46,
+    "city": "Roubaix",
+    "district": "",
+    "category": "alley",
+    "schedule_id": "extended_afternoon",
+    "photo": "",
+    "description": {
+      "fr": [
+        "Vingt ans dans la rue.",
+        "Solide, maligne.",
+        "Sa visite des arrière-cours reste une de ses meilleures.",
+        "Hall d'immeuble en briques."
+      ],
+      "en": [
+        "Twenty years on the street.",
+        "Solid, sharp.",
+        "Her backyard tour remains one of her best.",
+        "Brick building lobby."
+      ]
+    },
+    "has_site": true,
+    "has_menu": false,
+    "has_phone": false,
+    "has_email": true,
+    "services": ["speak_en", "pmr", "quiet"],
+    "payment_cash": true,
+    "payment_check": false,
+    "payment_card": false,
+    "payment_paypal": true,
+    "price": 30
+  },
+  {
+    "id": "niamh",
+    "name": "Niamh",
+    "age": 28,
+    "city": "Nantes",
+    "district": "",
+    "category": "alley",
+    "schedule_id": "short_evening",
+    "photo": "",
+    "description": {
+      "fr": [
+        "Six ans dans le métier.",
+        "Pétillante, irlandaise jusqu'au bout des ongles.",
+        "Son détour par le passage Pommeraye est devenu sa signature.",
+        "Petit hall années 30, mosaïque au sol."
+      ],
+      "en": [
+        "Six years in the trade.",
+        "Bubbly, Irish to her fingertips.",
+        "Her Passage Pommeraye detour has become her signature.",
+        "Small 1930s lobby, mosaic floor."
+      ]
+    },
+    "has_site": true,
+    "has_menu": true,
+    "has_phone": true,
+    "has_email": true,
+    "services": ["discreet", "speak_en", "quiet", "walking"],
+    "payment_cash": true,
+    "payment_check": false,
+    "payment_card": false,
+    "payment_paypal": false,
+    "price": 185
+  },
+  {
+    "id": "anatole",
+    "name": "Anatole le philosophe",
+    "age": 70,
+    "city": "Paris",
+    "district": "5e",
+    "category": "alley",
+    "schedule_id": "office_hours_evening",
+    "photo": "",
+    "description": {
+      "fr": [
+        "Quarante ans dans le Quartier Latin.",
+        "Érudit, blagueur, connaît tous les recoins.",
+        "Sa fameuse \"contre-allée du collège\" est un secret bien gardé.",
+        "Cour de l'ancien hôtel particulier."
+      ],
+      "en": [
+        "Forty years in the Latin Quarter.",
+        "Scholarly, joker, knows every nook.",
+        "His famous \"college side-alley\" is a well-kept secret.",
+        "Courtyard of the old townhouse."
+      ]
+    },
+    "has_site": false,
+    "has_menu": true,
+    "has_phone": false,
+    "has_email": true,
+    "services": ["speak_en"],
+    "payment_cash": false,
+    "payment_check": false,
+    "payment_card": true,
+    "payment_paypal": false,
+    "price": 180
+  },
+  {
+    "id": "awa",
+    "name": "Awa",
+    "age": 33,
+    "city": "Aubervilliers",
+    "district": "",
+    "category": "alley",
+    "schedule_id": "aperitif_and_night",
+    "photo": "",
+    "description": {
+      "fr": [
+        "Dix ans dans le quartier.",
+        "Sereine, accueillante, fidèle.",
+        "Sa technique du portail est simple et efficace.",
+        "Petit local en rez-de-cour."
+      ],
+      "en": [
+        "Ten years in the neighborhood.",
+        "Serene, welcoming, loyal.",
+        "Her gate technique is simple and effective.",
+        "Small ground-floor space at the back."
+      ]
+    },
+    "has_site": true,
+    "has_menu": true,
+    "has_phone": false,
+    "has_email": true,
+    "services": ["discreet", "speak_en", "pet_friendly", "quiet", "central"],
+    "payment_cash": false,
+    "payment_check": false,
+    "payment_card": true,
+    "payment_paypal": true,
+    "price": 215
+  },
+  {
+    "id": "pietro",
+    "name": "Pietro le gentleman",
+    "age": 61,
+    "city": "Paris",
+    "district": "4e",
+    "category": "alley",
+    "schedule_id": "classic_evening",
+    "photo": "",
+    "description": {
+      "fr": [
+        "Trente-cinq ans dans le Marais.",
+        "Italien jusqu'au bout des ongles, mais Parisien d'adoption.",
+        "Sa promenade-éclair sous les arcades est un classique.",
+        "Cour pavée, vieille glycine."
+      ],
+      "en": [
+        "Thirty-five years in the Marais.",
+        "Italian to his fingertips, but Parisian by adoption.",
+        "His quick stroll under the arcades is a classic.",
+        "Cobbled courtyard, old wisteria."
+      ]
+    },
+    "has_site": true,
+    "has_menu": true,
+    "has_phone": true,
+    "has_email": true,
+    "services": ["discreet", "speak_en", "central"],
+    "payment_cash": true,
+    "payment_check": false,
+    "payment_card": false,
+    "payment_paypal": true,
+    "price": 375
+  },
+  {
+    "id": "roya",
+    "name": "Roya",
+    "age": 38,
+    "city": "Paris",
+    "district": "17e",
+    "category": "alley",
+    "schedule_id": "night_duty",
+    "photo": "",
+    "description": {
+      "fr": [
+        "Treize ans qu'elle tient ses quartiers.",
+        "Calme, fiable, méticuleuse.",
+        "Son fameux \"raccourci du marché\" évite les regards.",
+        "Hall propre et discret."
+      ],
+      "en": [
+        "Thirteen years holding her ground.",
+        "Calm, reliable, meticulous.",
+        "Her famous \"market shortcut\" dodges prying eyes.",
+        "Clean and discreet lobby."
+      ]
+    },
+    "has_site": true,
+    "has_menu": false,
+    "has_phone": true,
+    "has_email": false,
+    "services": ["discreet", "speak_en", "pmr", "pet_friendly", "quiet", "walking", "central"],
+    "payment_cash": true,
+    "payment_check": false,
+    "payment_card": false,
+    "payment_paypal": false,
+    "price": 290
+  },
+  {
+    "id": "lucette",
+    "name": "Mère Lucette",
+    "age": 64,
+    "city": "Fort-de-France",
+    "district": "",
+    "category": "alley",
+    "schedule_id": "evening_to_morning",
+    "photo": "",
+    "description": {
+      "fr": [
+        "Trente-huit ans dans la rue.",
+        "Voix de stentor, cœur tendre.",
+        "Son célèbre \"sous le manguier\" se transmet de génération en génération.",
+        "Galerie en bois colorée, ventilateurs au plafond."
+      ],
+      "en": [
+        "Thirty-eight years on the street.",
+        "Booming voice, soft heart.",
+        "Her famous \"under the mango tree\" gets passed down through generations.",
+        "Colorful wooden gallery, ceiling fans."
+      ]
+    },
+    "has_site": true,
+    "has_menu": true,
+    "has_phone": false,
+    "has_email": false,
+    "services": ["quiet", "walking"],
+    "payment_cash": true,
+    "payment_check": false,
+    "payment_card": true,
+    "payment_paypal": false,
+    "price": 355
+  },
+  {
+    "id": "mila",
+    "name": "Mila",
+    "age": 44,
+    "city": "Toulouse",
+    "district": "",
+    "category": "alley",
+    "schedule_id": "dusk_to_dawn",
+    "photo": "",
+    "description": {
+      "fr": [
+        "Vingt ans dans les ruelles de la ville rose.",
+        "Volubile, drôle, increvable.",
+        "Sa balade-express au crépuscule a ses adeptes.",
+        "Petit passage pavé, géraniums au mur."
+      ],
+      "en": [
+        "Twenty years in the alleys of the Pink City.",
+        "Talkative, funny, indefatigable.",
+        "Her express twilight stroll has its devotees.",
+        "Small cobbled passage, geraniums on the wall."
+      ]
+    },
+    "has_site": false,
+    "has_menu": false,
+    "has_phone": false,
+    "has_email": true,
+    "services": ["speak_en", "quiet", "walking"],
+    "payment_cash": false,
+    "payment_check": false,
+    "payment_card": true,
+    "payment_paypal": false,
+    "price": 290
+  },
+  {
+    "id": "margaret",
+    "name": "Margaret",
+    "age": 66,
+    "city": "Paris",
+    "district": "20e",
+    "category": "alley",
+    "schedule_id": "morning_and_noon",
+    "photo": "",
+    "description": {
+      "fr": [
+        "Quarante ans dans le 20e.",
+        "Anglaise raffinée, accent qu'on remarque.",
+        "Son \"tea time imprévu\" surprend toujours.",
+        "Petit hall victorien, bibliothèque encombrée.",
+        "Ne ménage pas sa peine."
+      ],
+      "en": [
+        "Forty years in the 20th.",
+        "Refined Englishwoman, noticeable accent.",
+        "Her \"unexpected tea time\" always surprises.",
+        "Small Victorian lobby, cluttered library.",
+        "Spares no effort."
+      ]
+    },
+    "has_site": true,
+    "has_menu": true,
+    "has_phone": true,
+    "has_email": true,
+    "services": ["discreet", "speak_en", "pet_friendly"],
+    "payment_cash": true,
+    "payment_check": false,
+    "payment_card": false,
+    "payment_paypal": false,
+    "price": 340
+  },
+  {
+    "id": "sofia",
+    "name": "Sofia",
+    "age": 53,
+    "city": "Marseille",
+    "district": "",
+    "category": "alley",
+    "schedule_id": "late_opening",
+    "photo": "",
+    "description": {
+      "fr": [
+        "Vingt-cinq ans dans les ruelles du quartier.",
+        "Voix qui porte, regard malicieux.",
+        "Son fameux \"verre d'ouzo de bienvenue\" réchauffe d'emblée.",
+        "Petit hall de pierre blanche."
+      ],
+      "en": [
+        "Twenty-five years in the neighborhood alleys.",
+        "Voice that carries, mischievous gaze.",
+        "Her famous \"welcome ouzo glass\" warms you up right away.",
+        "Small white-stone lobby."
+      ]
+    },
+    "has_site": true,
+    "has_menu": false,
+    "has_phone": true,
+    "has_email": false,
+    "services": ["discreet", "speak_en", "pmr", "pet_friendly", "walking"],
+    "payment_cash": true,
+    "payment_check": true,
+    "payment_card": true,
+    "payment_paypal": false,
+    "price": 390
+  },
+  {
+    "id": "zeynep",
+    "name": "Zeynep",
+    "age": 29,
+    "city": "Sarcelles",
+    "district": "",
+    "category": "alley",
+    "schedule_id": "weekend_night",
+    "photo": "",
+    "description": {
+      "fr": [
+        "Six ans dans le quartier.",
+        "Jeune, vive, attentive.",
+        "Son raccourci par le parking est devenu un classique.",
+        "Local discret en rez-de-chaussée."
+      ],
+      "en": [
+        "Six years in the neighborhood.",
+        "Young, lively, attentive.",
+        "Her parking-lot shortcut has become a classic.",
+        "Discreet ground-floor space."
+      ]
+    },
+    "has_site": true,
+    "has_menu": true,
+    "has_phone": false,
+    "has_email": false,
+    "services": ["discreet", "speak_en", "pet_friendly", "walking", "central"],
+    "payment_cash": true,
+    "payment_check": true,
+    "payment_card": true,
+    "payment_paypal": true,
+    "price": 335
+  },
+  {
+    "id": "bineta",
+    "name": "Bineta",
+    "age": 41,
+    "city": "Pantin",
+    "district": "",
+    "category": "alley",
+    "schedule_id": "night_duty",
+    "photo": "",
+    "description": {
+      "fr": [
+        "Quinze ans qu'elle fait le coin.",
+        "Patiente, posée, fidèle.",
+        "Sa visite à l'aube est rare mais inoubliable.",
+        "Cour calme, bien tenue."
+      ],
+      "en": [
+        "Fifteen years working the corner.",
+        "Patient, composed, loyal.",
+        "Her dawn visit is rare but unforgettable.",
+        "Quiet, well-kept courtyard."
+      ]
+    },
+    "has_site": true,
+    "has_menu": false,
+    "has_phone": true,
+    "has_email": true,
+    "services": ["quiet"],
+    "payment_cash": true,
+    "payment_check": false,
+    "payment_card": false,
+    "payment_paypal": true,
+    "price": 375
+  },
+  {
+    "id": "carla",
+    "name": "Carla",
+    "age": 36,
+    "city": "Bastia",
+    "district": "",
+    "category": "alley",
+    "schedule_id": "classic_evening",
+    "photo": "",
+    "description": {
+      "fr": [
+        "Quinze ans dans la haute-ville.",
+        "Tempérament corse, voix de mezzo.",
+        "Sa balade dans les venelles est une exclusivité.",
+        "Vieille maison de pierre, escalier raide.",
+        "Met du sien à chaque fois."
+      ],
+      "en": [
+        "Fifteen years in the upper town.",
+        "Corsican temperament, mezzo voice.",
+        "Her stroll through the lanes is an exclusivity.",
+        "Old stone house, steep staircase.",
+        "Puts in the effort every time."
+      ]
+    },
+    "has_site": false,
+    "has_menu": true,
+    "has_phone": true,
+    "has_email": false,
+    "services": ["discreet", "pmr", "walking", "central"],
+    "payment_cash": true,
+    "payment_check": false,
+    "payment_card": true,
+    "payment_paypal": true,
+    "price": 345
+  },
+  {
+    "id": "min-ji",
+    "name": "Min-ji",
+    "age": 25,
+    "city": "Paris",
+    "district": "13e",
+    "category": "alley",
+    "schedule_id": "short_evening",
+    "photo": "",
+    "description": {
+      "fr": [
+        "Cinq ans à peine, déjà très réclamée.",
+        "Discrète, ponctuelle, soignée.",
+        "Son passage par la cour intérieure est très demandé.",
+        "Petit hall d'immeuble moderne."
+      ],
+      "en": [
+        "Barely five years in, already in high demand.",
+        "Discreet, punctual, well-groomed.",
+        "Her trip through the inner courtyard is much requested.",
+        "Small modern building lobby."
+      ]
+    },
+    "has_site": true,
+    "has_menu": true,
+    "has_phone": true,
+    "has_email": false,
+    "services": ["pmr", "pet_friendly", "quiet", "central"],
+    "payment_cash": false,
+    "payment_check": false,
+    "payment_card": true,
+    "payment_paypal": true,
+    "price": 150
+  },
+  {
+    "id": "maialen",
+    "name": "Maialen",
+    "age": 49,
+    "city": "Bayonne",
+    "district": "",
+    "category": "alley",
+    "schedule_id": "extended_afternoon",
+    "photo": "",
+    "description": {
+      "fr": [
+        "Vingt-deux ans dans la vieille ville.",
+        "Voix grave, jamais pressée.",
+        "Son célèbre \"verre de patxaran à l'arrivée\" met dans l'ambiance.",
+        "Petit hall basque, géraniums rouges."
+      ],
+      "en": [
+        "Twenty-two years in the old town.",
+        "Deep voice, never in a rush.",
+        "Her famous \"welcome patxaran glass\" sets the mood.",
+        "Small Basque lobby, red geraniums."
+      ]
+    },
+    "has_site": true,
+    "has_menu": false,
+    "has_phone": true,
+    "has_email": true,
+    "services": ["speak_en", "pmr", "pet_friendly", "walking"],
+    "payment_cash": true,
+    "payment_check": false,
+    "payment_card": false,
+    "payment_paypal": false,
+    "price": 320
+  },
+  {
+    "id": "henri",
+    "name": "Henri le vétéran",
+    "age": 78,
+    "city": "Saint-Étienne",
+    "district": "",
+    "category": "alley",
+    "schedule_id": "all_day",
+    "photo": "",
+    "description": {
+      "fr": [
+        "Cinquante-cinq ans qu'il arpente sa rue.",
+        "Doyen incontesté.",
+        "Son histoire du quartier vaut le détour.",
+        "Petit hall d'immeuble ouvrier.",
+        "Tient encore le coup, qu'on se le dise."
+      ],
+      "en": [
+        "Fifty-five years walking his street.",
+        "Undisputed dean.",
+        "His neighborhood history is worth the trip.",
+        "Small working-class building lobby.",
+        "Still going strong, make no mistake."
+      ]
+    },
+    "has_site": true,
+    "has_menu": true,
+    "has_phone": true,
+    "has_email": true,
+    "services": ["pmr", "pet_friendly", "quiet", "central"],
+    "payment_cash": false,
+    "payment_check": true,
+    "payment_card": true,
+    "payment_paypal": false,
+    "price": 355
+  },
+  {
+    "id": "priya",
+    "name": "Priya",
+    "age": 32,
+    "city": "Saint-Ouen",
+    "district": "",
+    "category": "alley",
+    "schedule_id": "aperitif_and_night",
+    "photo": "",
+    "description": {
+      "fr": [
+        "Huit ans dans le coin.",
+        "Souriante, fluide, parfumée au jasmin.",
+        "Son passage par le marché aux puces a son charme.",
+        "Petit espace coloré, étoffes indiennes."
+      ],
+      "en": [
+        "Eight years in the area.",
+        "Smiling, fluid, scented with jasmine.",
+        "Her trip through the flea market has its charm.",
+        "Small colorful space, Indian fabrics."
+      ]
+    },
+    "has_site": false,
+    "has_menu": true,
+    "has_phone": true,
+    "has_email": true,
+    "services": ["pmr", "walking", "central"],
+    "payment_cash": true,
+    "payment_check": false,
+    "payment_card": false,
+    "payment_paypal": true,
+    "price": 50
+  },
+  {
+    "id": "larissa",
+    "name": "Larissa",
+    "age": 55,
+    "city": "Paris",
+    "district": "19e",
+    "category": "alley",
+    "schedule_id": "night_duty",
+    "photo": "",
+    "description": {
+      "fr": [
+        "Vingt-cinq ans dans le 19e.",
+        "Imposante, courtoise, jamais à court.",
+        "Sa fameuse \"montée d'escalier\" est plus longue qu'on croit.",
+        "Hall d'immeuble austère, lumière jaune."
+      ],
+      "en": [
+        "Twenty-five years in the 19th.",
+        "Imposing, courteous, never short on resources.",
+        "Her famous \"staircase climb\" is longer than you'd think.",
+        "Austere building lobby, yellow light."
+      ]
+    },
+    "has_site": true,
+    "has_menu": true,
+    "has_phone": true,
+    "has_email": false,
+    "services": ["pet_friendly", "central"],
+    "payment_cash": true,
+    "payment_check": true,
+    "payment_card": true,
+    "payment_paypal": false,
+    "price": 270
+  },
+  {
+    "id": "doris",
+    "name": "Doris",
+    "age": 69,
+    "city": "Caen",
+    "district": "",
+    "category": "alley",
+    "schedule_id": "office_hours_evening",
+    "photo": "",
+    "description": {
+      "fr": [
+        "Quarante ans dans la rue.",
+        "Costaud, généreuse.",
+        "Son apéro normand de bienvenue est une obligation.",
+        "Maisonnette en granit, jardinet à l'arrière."
+      ],
+      "en": [
+        "Forty years on the street.",
+        "Sturdy, generous.",
+        "Her Norman welcome aperitif is mandatory.",
+        "Granite cottage, small garden in the back."
+      ]
+    },
+    "has_site": true,
+    "has_menu": false,
+    "has_phone": true,
+    "has_email": true,
+    "services": ["pmr", "quiet", "walking", "central"],
+    "payment_cash": true,
+    "payment_check": false,
+    "payment_card": false,
+    "payment_paypal": false,
+    "price": 210
+  },
+  {
+    "id": "behnam",
+    "name": "Behnam",
+    "age": 47,
+    "city": "Lyon",
+    "district": "",
+    "category": "alley",
+    "schedule_id": "classic_evening",
+    "photo": "",
+    "description": {
+      "fr": [
+        "Vingt-deux ans dans les pentes.",
+        "Posé, distingué, érudit.",
+        "Son détour par la traboule offre un moment suspendu.",
+        "Vieille cour aux pierres dorées."
+      ],
+      "en": [
+        "Twenty-two years on the slopes.",
+        "Composed, distinguished, scholarly.",
+        "His traboule detour offers a suspended moment.",
+        "Old courtyard with golden stones."
+      ]
+    },
+    "has_site": true,
+    "has_menu": true,
+    "has_phone": true,
+    "has_email": false,
+    "services": ["pmr", "pet_friendly", "quiet", "walking", "central"],
+    "payment_cash": true,
+    "payment_check": false,
+    "payment_card": false,
+    "payment_paypal": true,
+    "price": 125
+  },
+  {
+    "id": "linh",
+    "name": "Linh",
+    "age": 34,
+    "city": "Paris",
+    "district": "13e",
+    "category": "alley",
+    "schedule_id": "evening_to_morning",
+    "photo": "",
+    "description": {
+      "fr": [
+        "Onze ans dans le quartier.",
+        "Délicate, douce, ponctuelle.",
+        "Son raccourci par le passage couvert est précieux.",
+        "Petit local discret derrière une boutique."
+      ],
+      "en": [
+        "Eleven years in the neighborhood.",
+        "Delicate, gentle, punctual.",
+        "Her covered-passage shortcut is invaluable.",
+        "Small discreet space behind a shop."
+      ]
+    },
+    "has_site": true,
+    "has_menu": true,
+    "has_phone": false,
+    "has_email": false,
+    "services": ["discreet", "speak_en", "pmr", "walking"],
+    "payment_cash": true,
+    "payment_check": false,
+    "payment_card": false,
+    "payment_paypal": false,
+    "price": 195
+  },
+  {
+    "id": "astrid",
+    "name": "Astrid la farceuse",
+    "age": 60,
+    "city": "Lille",
+    "district": "",
+    "category": "alley",
+    "schedule_id": "night_duty",
+    "photo": "",
+    "description": {
+      "fr": [
+        "Trente ans dans le Vieux-Lille.",
+        "Stature imposante, sourire franc.",
+        "Sa balade-express dans les pavés a fait sa réputation.",
+        "Vieux hall en briques rouges, plafond bas."
+      ],
+      "en": [
+        "Thirty years in Vieux-Lille.",
+        "Imposing stature, frank smile.",
+        "Her express stroll on the cobblestones built her reputation.",
+        "Old red-brick lobby, low ceiling."
+      ]
+    },
+    "has_site": true,
+    "has_menu": true,
+    "has_phone": true,
+    "has_email": false,
+    "services": ["discreet", "quiet", "walking", "central"],
+    "payment_cash": false,
+    "payment_check": false,
+    "payment_card": false,
+    "payment_paypal": true,
+    "price": 95
+  },
+  {
+    "id": "soledad",
+    "name": "Soledad",
+    "age": 43,
+    "city": "Pau",
+    "district": "",
+    "category": "alley",
+    "schedule_id": "weekend_night",
+    "photo": "",
+    "description": {
+      "fr": [
+        "Vingt ans dans le quartier.",
+        "Réservée mais loyale.",
+        "Son passage par la place du Marché est devenu un rituel.",
+        "Petite cour pyrénéenne avec vue sur la chaîne."
+      ],
+      "en": [
+        "Twenty years in the neighborhood.",
+        "Reserved but loyal.",
+        "Her trip through the market square has become a ritual.",
+        "Small Pyrenean courtyard with a view of the range."
+      ]
+    },
+    "has_site": false,
+    "has_menu": false,
+    "has_phone": true,
+    "has_email": true,
+    "services": ["discreet", "pmr", "pet_friendly", "walking", "central"],
+    "payment_cash": true,
+    "payment_check": false,
+    "payment_card": true,
+    "payment_paypal": false,
+    "price": 340
+  },
+  {
+    "id": "colette",
+    "name": "Colette",
+    "age": 72,
+    "city": "Charleville",
+    "district": "",
+    "category": "alley",
+    "schedule_id": "aperitif_and_night",
+    "photo": "",
+    "description": {
+      "fr": [
+        "Cinquante ans dans la rue.",
+        "Voix éraillée, mémoire intacte.",
+        "Récite encore Rimbaud à qui veut bien l'entendre.",
+        "Hall d'immeuble années 50, papier peint d'origine.",
+        "Sait toujours y faire."
+      ],
+      "en": [
+        "Fifty years on the street.",
+        "Raspy voice, intact memory.",
+        "Still recites Rimbaud to anyone willing to listen.",
+        "1950s building lobby, original wallpaper.",
+        "Still knows the ropes."
+      ]
+    },
+    "has_site": false,
+    "has_menu": false,
+    "has_phone": true,
+    "has_email": false,
+    "services": ["pet_friendly", "quiet", "walking", "central"],
+    "payment_cash": true,
+    "payment_check": false,
+    "payment_card": false,
+    "payment_paypal": false,
+    "price": 25
+  },
+  {
+    "id": "aminata",
+    "name": "Aminata",
+    "age": 30,
+    "city": "Paris",
+    "district": "Buttes-Chaumont",
+    "category": "park",
+    "schedule_id": "late_afternoon",
+    "photo": "",
+    "description": {
+      "fr": [
+        "Sept ans qu'elle hante les allées.",
+        "Athlétique, souriante, marche vite.",
+        "Sa fameuse \"pause au temple\" est une halte appréciée.",
+        "Vous accompagne sous les marronniers, à la tombée du jour."
+      ],
+      "en": [
+        "Seven years haunting the alleys.",
+        "Athletic, smiling, fast walker.",
+        "Her famous \"temple stop\" is a beloved pause.",
+        "Walks with you under the chestnut trees at dusk."
+      ]
+    },
+    "has_site": true,
+    "has_menu": true,
+    "has_phone": false,
+    "has_email": true,
+    "services": [],
+    "payment_cash": false,
+    "payment_check": false,
+    "payment_card": true,
+    "payment_paypal": false,
+    "price": 145
+  },
+  {
+    "id": "geraldine",
+    "name": "Géraldine",
+    "age": 56,
+    "city": "Saint-Cloud",
+    "district": "",
+    "category": "park",
+    "schedule_id": "morning_and_noon",
+    "photo": "",
+    "description": {
+      "fr": [
+        "Vingt-huit ans qu'elle arpente le parc.",
+        "Distinguée, marcheuse infatigable.",
+        "Son tour des cascades est devenu un rituel.",
+        "Vous retrouve sur le banc en pierre, près de l'orangerie."
+      ],
+      "en": [
+        "Twenty-eight years walking the park.",
+        "Distinguished, tireless walker.",
+        "Her waterfalls tour has become a ritual.",
+        "Meets you on the stone bench near the orangery."
+      ]
+    },
+    "has_site": true,
+    "has_menu": false,
+    "has_phone": true,
+    "has_email": true,
+    "services": ["speak_en", "pmr", "outdoor", "central"],
+    "payment_cash": true,
+    "payment_check": false,
+    "payment_card": false,
+    "payment_paypal": false,
+    "price": 275
+  },
+  {
+    "id": "sabrina",
+    "name": "Sabrina",
+    "age": 45,
+    "city": "Vincennes",
+    "district": "",
+    "category": "park",
+    "schedule_id": "late_afternoon",
+    "photo": "",
+    "description": {
+      "fr": [
+        "Vingt ans qu'elle fait les allées du bois.",
+        "Marcheuse méthodique, jamais essoufflée.",
+        "Son fameux \"détour par le donjon\" est conseillé.",
+        "Banc isolé, lumière rasante du soir."
+      ],
+      "en": [
+        "Twenty years walking the wood's paths.",
+        "Methodical walker, never out of breath.",
+        "Her famous \"donjon detour\" is recommended.",
+        "Isolated bench, low evening light."
+      ]
+    },
+    "has_site": true,
+    "has_menu": true,
+    "has_phone": true,
+    "has_email": true,
+    "services": ["discreet", "speak_en", "pmr"],
+    "payment_cash": true,
+    "payment_check": false,
+    "payment_card": true,
+    "payment_paypal": false,
+    "price": 380
+  },
+  {
+    "id": "pilar",
+    "name": "Pilar",
+    "age": 40,
+    "city": "Versailles",
+    "district": "",
+    "category": "park",
+    "schedule_id": "all_day",
+    "photo": "",
+    "description": {
+      "fr": [
+        "Quinze ans qu'elle fréquente les jardins.",
+        "Élégante, ponctuelle, érudite.",
+        "Sa pause aux statues mythologiques est un must.",
+        "Bosquet du roi, pas un bruit."
+      ],
+      "en": [
+        "Fifteen years frequenting the gardens.",
+        "Elegant, punctual, scholarly.",
+        "Her break by the mythological statues is a must.",
+        "King's grove, not a sound."
+      ]
+    },
+    "has_site": false,
+    "has_menu": true,
+    "has_phone": true,
+    "has_email": true,
+    "services": ["discreet", "speak_en", "pmr", "pet_friendly", "central"],
+    "payment_cash": false,
+    "payment_check": false,
+    "payment_card": true,
+    "payment_paypal": false,
+    "price": 335
+  },
+  {
+    "id": "ida",
+    "name": "Ida",
+    "age": 38,
+    "city": "Boulogne",
+    "district": "parc",
+    "category": "park",
+    "schedule_id": "late_afternoon",
+    "photo": "",
+    "description": {
+      "fr": [
+        "Treize ans dans le bois.",
+        "Grande, blonde, rassurante.",
+        "Sa balade au lac inférieur est une institution.",
+        "Vous attend près du kiosque."
+      ],
+      "en": [
+        "Thirteen years in the wood.",
+        "Tall, blonde, reassuring.",
+        "Her lower-lake stroll is an institution.",
+        "Waits for you near the kiosk."
+      ]
+    },
+    "has_site": true,
+    "has_menu": false,
+    "has_phone": false,
+    "has_email": true,
+    "services": ["discreet", "speak_en", "pmr", "outdoor", "central"],
+    "payment_cash": true,
+    "payment_check": false,
+    "payment_card": false,
+    "payment_paypal": false,
+    "price": 235
+  },
+  {
+    "id": "marie-josee",
+    "name": "Marie-Josée",
+    "age": 65,
+    "city": "Vincennes",
+    "district": "",
+    "category": "park",
+    "schedule_id": "morning_and_noon",
+    "photo": "",
+    "description": {
+      "fr": [
+        "Quarante ans dans le bois.",
+        "Démarche assurée, regard franc.",
+        "Sa pause au lac Daumesnil est un classique.",
+        "Banc à l'écart, sous les acacias.",
+        "Y met du cœur."
+      ],
+      "en": [
+        "Forty years in the wood.",
+        "Assured walk, frank gaze.",
+        "Her Daumesnil-lake break is a classic.",
+        "Out-of-the-way bench, under the acacias.",
+        "Puts heart into it."
+      ]
+    },
+    "has_site": true,
+    "has_menu": true,
+    "has_phone": true,
+    "has_email": false,
+    "services": ["discreet", "speak_en", "pet_friendly", "outdoor", "walking", "central"],
+    "payment_cash": true,
+    "payment_check": false,
+    "payment_card": false,
+    "payment_paypal": false,
+    "price": 170
+  },
+  {
+    "id": "rania",
+    "name": "Rania",
+    "age": 33,
+    "city": "Bagatelle",
+    "district": "",
+    "category": "park",
+    "schedule_id": "late_afternoon",
+    "photo": "",
+    "description": {
+      "fr": [
+        "Onze ans qu'elle fréquente les allées.",
+        "Joviale, forte en gueule, tendre.",
+        "Sa fameuse \"halte à la roseraie\" est devenue un classique.",
+        "Banc en bois, parfum des roses anciennes."
+      ],
+      "en": [
+        "Eleven years frequenting the paths.",
+        "Jovial, loud-mouthed, tender.",
+        "Her famous \"rose-garden stop\" has become a classic.",
+        "Wooden bench, scent of old roses."
+      ]
+    },
+    "has_site": true,
+    "has_menu": true,
+    "has_phone": false,
+    "has_email": true,
+    "services": ["discreet", "speak_en", "pmr", "pet_friendly", "walking", "central"],
+    "payment_cash": false,
+    "payment_check": false,
+    "payment_card": true,
+    "payment_paypal": false,
+    "price": 125
+  },
+  {
+    "id": "brigida",
+    "name": "Brigida",
+    "age": 48,
+    "city": "Lyon",
+    "district": "Tête d'Or",
+    "category": "park",
+    "schedule_id": "all_day",
+    "photo": "",
+    "description": {
+      "fr": [
+        "Vingt-cinq ans dans le parc.",
+        "Solide, sportive, discrète.",
+        "Sa promenade autour du lac est très demandée.",
+        "Petit kiosque proche de la roseraie."
+      ],
+      "en": [
+        "Twenty-five years in the park.",
+        "Solid, athletic, discreet.",
+        "Her walk around the lake is in great demand.",
+        "Small kiosk near the rose garden."
+      ]
+    },
+    "has_site": true,
+    "has_menu": true,
+    "has_phone": true,
+    "has_email": false,
+    "services": ["pmr", "pet_friendly", "outdoor"],
+    "payment_cash": true,
+    "payment_check": false,
+    "payment_card": true,
+    "payment_paypal": true,
+    "price": 230
+  },
+  {
+    "id": "gabriela",
+    "name": "Gabriela",
+    "age": 51,
+    "city": "Toulouse",
+    "district": "Compans-Caffarelli",
+    "category": "park",
+    "schedule_id": "extended_afternoon",
+    "photo": "",
+    "description": {
+      "fr": [
+        "Vingt ans dans le parc.",
+        "Tempérament latin, professionnelle jusqu'au bout des ongles.",
+        "Son détour près du jardin japonais est mythique.",
+        "Banc isolé, lanternes en pierre."
+      ],
+      "en": [
+        "Twenty years in the park.",
+        "Latin temperament, professional to her fingertips.",
+        "Her detour near the Japanese garden is legendary.",
+        "Isolated bench, stone lanterns."
+      ]
+    },
+    "has_site": false,
+    "has_menu": true,
+    "has_phone": false,
+    "has_email": true,
+    "services": ["discreet", "pet_friendly", "central"],
+    "payment_cash": true,
+    "payment_check": false,
+    "payment_card": true,
+    "payment_paypal": false,
+    "price": 215
+  },
+  {
+    "id": "anouk",
+    "name": "Anouk",
+    "age": 25,
+    "city": "Sceaux",
+    "district": "",
+    "category": "park",
+    "schedule_id": "morning_and_noon",
+    "photo": "",
+    "description": {
+      "fr": [
+        "Cinq ans dans les jardins.",
+        "Petite et vive, marcheuse rapide.",
+        "Son tour des perspectives est une exclusivité.",
+        "Sous les ifs taillés, à la tombée du soir."
+      ],
+      "en": [
+        "Five years in the gardens.",
+        "Small and lively, fast walker.",
+        "Her tour of the vistas is an exclusivity.",
+        "Under the trimmed yews at nightfall."
+      ]
+    },
+    "has_site": true,
+    "has_menu": true,
+    "has_phone": true,
+    "has_email": false,
+    "services": ["speak_en", "pet_friendly", "outdoor", "walking", "central"],
+    "payment_cash": true,
+    "payment_check": true,
+    "payment_card": true,
+    "payment_paypal": false,
+    "price": 210
+  },
+  {
+    "id": "daria",
+    "name": "Daria",
+    "age": 42,
+    "city": "Saint-Germain-en-Laye",
+    "district": "",
+    "category": "park",
+    "schedule_id": "late_afternoon",
+    "photo": "",
+    "description": {
+      "fr": [
+        "Dix-huit ans qu'elle connaît la grande terrasse.",
+        "Grande stature, voix posée.",
+        "Sa pause au point de vue est devenue mythique.",
+        "Banc en pierre, Paris au loin."
+      ],
+      "en": [
+        "Eighteen years familiar with the grand terrace.",
+        "Tall stature, calm voice.",
+        "Her viewpoint break has become legendary.",
+        "Stone bench, Paris in the distance."
+      ]
+    },
+    "has_site": false,
+    "has_menu": false,
+    "has_phone": false,
+    "has_email": true,
+    "services": ["discreet", "speak_en", "outdoor", "walking", "central"],
+    "payment_cash": false,
+    "payment_check": false,
+    "payment_card": true,
+    "payment_paypal": false,
+    "price": 90
+  },
+  {
+    "id": "eleni",
+    "name": "Eleni",
+    "age": 59,
+    "city": "Paris",
+    "district": "Monceau",
+    "category": "park",
+    "schedule_id": "all_day",
+    "photo": "",
+    "description": {
+      "fr": [
+        "Trente ans dans le parc Monceau.",
+        "Allure grecque, classe naturelle.",
+        "Son rendez-vous \"sous le tempietto\" est un rituel.",
+        "Banc à l'ombre, calme assuré."
+      ],
+      "en": [
+        "Thirty years in Parc Monceau.",
+        "Greek bearing, natural class.",
+        "Her \"under the tempietto\" rendezvous is a ritual.",
+        "Shaded bench, guaranteed quiet."
+      ]
+    },
+    "has_site": true,
+    "has_menu": true,
+    "has_phone": false,
+    "has_email": false,
+    "services": ["pmr", "pet_friendly", "outdoor", "central"],
+    "payment_cash": true,
+    "payment_check": false,
+    "payment_card": false,
+    "payment_paypal": false,
+    "price": 315
+  },
+  {
+    "id": "fadila",
+    "name": "Fadila",
+    "age": 37,
+    "city": "Paris",
+    "district": "Belleville",
+    "category": "park",
+    "schedule_id": "extended_afternoon",
+    "photo": "",
+    "description": {
+      "fr": [
+        "Onze ans dans le parc.",
+        "Pétillante, rieuse, sociable.",
+        "Sa balade à la cascade est une signature.",
+        "Pelouse calme, vue sur Paris."
+      ],
+      "en": [
+        "Eleven years in the park.",
+        "Bubbly, laughing, sociable.",
+        "Her waterfall stroll is a signature.",
+        "Quiet lawn, view over Paris."
+      ]
+    },
+    "has_site": true,
+    "has_menu": true,
+    "has_phone": true,
+    "has_email": false,
+    "services": ["discreet", "speak_en", "pet_friendly", "outdoor"],
+    "payment_cash": true,
+    "payment_check": false,
+    "payment_card": false,
+    "payment_paypal": false,
+    "price": 250
+  },
+  {
+    "id": "roxana",
+    "name": "Roxana",
+    "age": 47,
+    "city": "Bordeaux",
+    "district": "Jardin Public",
+    "category": "park",
+    "schedule_id": "late_afternoon",
+    "photo": "",
+    "description": {
+      "fr": [
+        "Vingt ans dans le jardin.",
+        "Carrée, sérieuse, prévenante.",
+        "Son arrêt près du kiosque est un classique.",
+        "Banc face au plan d'eau, le soir tombant."
+      ],
+      "en": [
+        "Twenty years in the garden.",
+        "Straightforward, serious, considerate.",
+        "Her kiosk stop is a classic.",
+        "Bench facing the water as evening falls."
+      ]
+    },
+    "has_site": false,
+    "has_menu": false,
+    "has_phone": false,
+    "has_email": false,
+    "services": ["discreet", "pet_friendly", "outdoor", "walking"],
+    "payment_cash": true,
+    "payment_check": true,
+    "payment_card": false,
+    "payment_paypal": false,
+    "price": 300
+  },
+  {
+    "id": "yuki",
+    "name": "Yuki",
+    "age": 28,
+    "city": "Paris",
+    "district": "Luxembourg",
+    "category": "park",
+    "schedule_id": "morning_and_noon",
+    "photo": "",
+    "description": {
+      "fr": [
+        "Six ans dans les allées.",
+        "Discrète, polie, organisée.",
+        "Sa visite au verger est une exclusivité.",
+        "Allée bordée de pommiers, lumière dorée."
+      ],
+      "en": [
+        "Six years on the paths.",
+        "Discreet, polite, organized.",
+        "Her orchard visit is an exclusivity.",
+        "Path lined with apple trees, golden light."
+      ]
+    },
+    "has_site": true,
+    "has_menu": false,
+    "has_phone": true,
+    "has_email": false,
+    "services": ["speak_en", "pmr", "outdoor", "walking", "central"],
+    "payment_cash": true,
+    "payment_check": true,
+    "payment_card": true,
+    "payment_paypal": false,
+    "price": 60
+  },
+  {
+    "id": "pierre-andre",
+    "name": "Pierre-André l'increvable",
+    "age": 73,
+    "city": "Annecy",
+    "district": "parc Charles-Bosson",
+    "category": "park",
+    "schedule_id": "all_day",
+    "photo": "",
+    "description": {
+      "fr": [
+        "Cinquante ans qu'il connaît le parc.",
+        "Marcheur infatigable, sourire malicieux.",
+        "Sa pause à la \"pâquerette d'or\" est mythique.",
+        "Banc face au lac, montagnes en fond."
+      ],
+      "en": [
+        "Fifty years acquainted with the park.",
+        "Tireless walker, mischievous smile.",
+        "His \"golden daisy\" break is legendary.",
+        "Bench facing the lake, mountains in the background."
+      ]
+    },
+    "has_site": false,
+    "has_menu": false,
+    "has_phone": false,
+    "has_email": true,
+    "services": ["discreet", "speak_en", "pmr", "pet_friendly", "central"],
+    "payment_cash": true,
+    "payment_check": false,
+    "payment_card": false,
+    "payment_paypal": false,
+    "price": 305
+  },
+  {
+    "id": "zeinab",
+    "name": "Zeinab",
+    "age": 36,
+    "city": "Marseille",
+    "district": "Borély",
+    "category": "park",
+    "schedule_id": "late_afternoon",
+    "photo": "",
+    "description": {
+      "fr": [
+        "Treize ans dans le parc.",
+        "Solaire, énergique, rapide à la marche.",
+        "Sa boucle autour du château fait son effet.",
+        "Banc à l'ombre des pins."
+      ],
+      "en": [
+        "Thirteen years in the park.",
+        "Sunny, energetic, fast walker.",
+        "Her loop around the château makes its mark.",
+        "Bench in the shade of the pines."
+      ]
+    },
+    "has_site": false,
+    "has_menu": true,
+    "has_phone": false,
+    "has_email": false,
+    "services": ["discreet", "speak_en", "walking"],
+    "payment_cash": true,
+    "payment_check": false,
+    "payment_card": false,
+    "payment_paypal": false,
+    "price": 215
+  },
+  {
+    "id": "frieda",
+    "name": "Frieda",
+    "age": 67,
+    "city": "Strasbourg",
+    "district": "Orangerie",
+    "category": "park",
+    "schedule_id": "morning_and_noon",
+    "photo": "",
+    "description": {
+      "fr": [
+        "Quarante ans dans le parc.",
+        "Élégante, alsacienne pure souche.",
+        "Son détour par la roseraie est un must.",
+        "Banc proche du pavillon Joséphine.",
+        "Met toujours le paquet."
+      ],
+      "en": [
+        "Forty years in the park.",
+        "Elegant, pure Alsatian stock.",
+        "Her rose-garden detour is a must.",
+        "Bench near the Joséphine pavilion.",
+        "Always pulls out all the stops."
+      ]
+    },
+    "has_site": true,
+    "has_menu": false,
+    "has_phone": true,
+    "has_email": true,
+    "services": ["discreet", "speak_en", "pmr", "pet_friendly", "outdoor", "central"],
+    "payment_cash": true,
+    "payment_check": false,
+    "payment_card": false,
+    "payment_paypal": false,
+    "price": 50
+  },
+  {
+    "id": "bakary",
+    "name": "Bakary",
+    "age": 31,
+    "city": "La Courneuve",
+    "district": "parc",
+    "category": "park",
+    "schedule_id": "late_afternoon",
+    "photo": "",
+    "description": {
+      "fr": [
+        "Sept ans dans le parc.",
+        "Costaud, gentil, ponctuel.",
+        "Son tour des étangs est une référence.",
+        "Banc isolé, derrière les saules."
+      ],
+      "en": [
+        "Seven years in the park.",
+        "Sturdy, kind, punctual.",
+        "His pond tour is a benchmark.",
+        "Isolated bench, behind the willows."
+      ]
+    },
+    "has_site": false,
+    "has_menu": true,
+    "has_phone": true,
+    "has_email": true,
+    "services": ["discreet", "pmr", "pet_friendly", "outdoor"],
+    "payment_cash": true,
+    "payment_check": false,
+    "payment_card": true,
+    "payment_paypal": true,
+    "price": 280
+  },
+  {
+    "id": "octavia",
+    "name": "Octavia",
+    "age": 44,
+    "city": "Reims",
+    "district": "parc Pommery",
+    "category": "park",
+    "schedule_id": "all_day",
+    "photo": "",
+    "description": {
+      "fr": [
+        "Vingt ans qu'elle fréquente le parc.",
+        "Sophistiquée, posée, efficace.",
+        "Sa halte au pavillon est devenue un rituel.",
+        "Banc en fer forgé, allée ombragée."
+      ],
+      "en": [
+        "Twenty years frequenting the park.",
+        "Sophisticated, composed, efficient.",
+        "Her pavilion stop has become a ritual.",
+        "Wrought-iron bench, shaded path."
+      ]
+    },
+    "has_site": true,
+    "has_menu": false,
+    "has_phone": false,
+    "has_email": true,
+    "services": ["discreet", "speak_en", "outdoor", "central"],
+    "payment_cash": true,
+    "payment_check": false,
+    "payment_card": false,
+    "payment_paypal": false,
+    "price": 330
+  },
+  {
+    "id": "souleymane",
+    "name": "Souleymane",
+    "age": 39,
+    "city": "Saint-Denis",
+    "district": "parc",
+    "category": "park",
+    "schedule_id": "extended_afternoon",
+    "photo": "",
+    "description": {
+      "fr": [
+        "Quatorze ans dans le parc.",
+        "Allure droite, regard franc.",
+        "Son passage par la roseraie est conseillé.",
+        "Petit kiosque, fleurs en saison."
+      ],
+      "en": [
+        "Fourteen years in the park.",
+        "Upright bearing, frank gaze.",
+        "His trip through the rose garden is recommended.",
+        "Small kiosk, seasonal flowers."
+      ]
+    },
+    "has_site": true,
+    "has_menu": true,
+    "has_phone": false,
+    "has_email": true,
+    "services": ["discreet", "speak_en", "pet_friendly"],
+    "payment_cash": true,
+    "payment_check": true,
+    "payment_card": false,
+    "payment_paypal": false,
+    "price": 30
+  },
+  {
+    "id": "maite",
+    "name": "Maïté",
+    "age": 70,
+    "city": "Pau",
+    "district": "Beaumont",
+    "category": "park",
+    "schedule_id": "morning_and_noon",
+    "photo": "",
+    "description": {
+      "fr": [
+        "Quarante-cinq ans dans le parc.",
+        "Démarche assurée, voix forte.",
+        "Sa pause sous le grand cèdre est célèbre.",
+        "Banc en marbre, vue sur les Pyrénées."
+      ],
+      "en": [
+        "Forty-five years in the park.",
+        "Assured walk, strong voice.",
+        "Her break under the great cedar is famous.",
+        "Marble bench, view of the Pyrenees."
+      ]
+    },
+    "has_site": false,
+    "has_menu": true,
+    "has_phone": false,
+    "has_email": true,
+    "services": ["speak_en", "pmr", "outdoor", "walking", "central"],
+    "payment_cash": true,
+    "payment_check": false,
+    "payment_card": false,
+    "payment_paypal": false,
+    "price": 335
+  },
+  {
+    "id": "helena",
+    "name": "Helena",
+    "age": 53,
+    "city": "Bois de Boulogne",
+    "district": "",
+    "category": "park",
+    "schedule_id": "extended_afternoon",
+    "photo": "",
+    "description": {
+      "fr": [
+        "Vingt-cinq ans dans le bois.",
+        "Imposante, mystérieuse, fiable.",
+        "Sa fameuse balade au lac inférieur est inégalée.",
+        "Banc à l'écart, sous les chênes."
+      ],
+      "en": [
+        "Twenty-five years in the wood.",
+        "Imposing, mysterious, reliable.",
+        "Her famous lower-lake walk is unmatched.",
+        "Out-of-the-way bench, under the oaks."
+      ]
+    },
+    "has_site": false,
+    "has_menu": true,
+    "has_phone": true,
+    "has_email": true,
+    "services": ["discreet", "outdoor", "walking", "central"],
+    "payment_cash": true,
+    "payment_check": false,
+    "payment_card": true,
+    "payment_paypal": false,
+    "price": 295
+  },
+  {
+    "id": "paloma",
+    "name": "Paloma",
+    "age": 27,
+    "city": "Avignon",
+    "district": "Rocher des Doms",
+    "category": "park",
+    "schedule_id": "all_day",
+    "photo": "",
+    "description": {
+      "fr": [
+        "Cinq ans dans le jardin.",
+        "Vive, andalouse de cœur.",
+        "Son tour du belvédère est très demandé.",
+        "Banc face au Rhône, vue sur le Palais des Papes."
+      ],
+      "en": [
+        "Five years in the garden.",
+        "Lively, Andalusian at heart.",
+        "Her belvedere tour is much in demand.",
+        "Bench facing the Rhône, view of the Palais des Papes."
+      ]
+    },
+    "has_site": false,
+    "has_menu": true,
+    "has_phone": true,
+    "has_email": true,
+    "services": ["discreet", "speak_en", "pmr", "outdoor"],
+    "payment_cash": true,
+    "payment_check": true,
+    "payment_card": false,
+    "payment_paypal": false,
+    "price": 355
+  },
+  {
+    "id": "adetokunbo",
+    "name": "Adetokunbo",
+    "age": 34,
+    "city": "Paris",
+    "district": "Buttes-Chaumont",
+    "category": "park",
+    "schedule_id": "late_afternoon",
+    "photo": "",
+    "description": {
+      "fr": [
+        "Dix ans dans le parc.",
+        "Grand, fin, athlétique.",
+        "Sa fameuse \"montée du temple\" reste un classique.",
+        "Banc tout en haut, panorama sur Paris."
+      ],
+      "en": [
+        "Ten years in the park.",
+        "Tall, slim, athletic.",
+        "His famous \"temple climb\" remains a classic.",
+        "Bench at the top, panorama over Paris."
+      ]
+    },
+    "has_site": true,
+    "has_menu": true,
+    "has_phone": true,
+    "has_email": false,
+    "services": ["discreet", "pet_friendly", "outdoor", "walking"],
+    "payment_cash": true,
+    "payment_check": false,
+    "payment_card": true,
+    "payment_paypal": false,
+    "price": 340
+  },
+  {
+    "id": "beata",
+    "name": "Beata",
+    "age": 49,
+    "city": "Lille",
+    "district": "Citadelle",
+    "category": "park",
+    "schedule_id": "morning_and_noon",
+    "photo": "",
+    "description": {
+      "fr": [
+        "Vingt-deux ans dans le parc.",
+        "Polonaise solide, énergique.",
+        "Sa balade autour des remparts est un rituel.",
+        "Banc à l'écart, allées d'arbres centenaires."
+      ],
+      "en": [
+        "Twenty-two years in the park.",
+        "Solid Polish, energetic.",
+        "Her walk around the ramparts is a ritual.",
+        "Out-of-the-way bench, paths of century-old trees."
+      ]
+    },
+    "has_site": true,
+    "has_menu": false,
+    "has_phone": true,
+    "has_email": false,
+    "services": ["discreet", "pmr", "pet_friendly", "walking", "central"],
+    "payment_cash": true,
+    "payment_check": false,
+    "payment_card": true,
+    "payment_paypal": true,
+    "price": 285
+  },
+  {
+    "id": "gennaro",
+    "name": "Gennaro",
+    "age": 62,
+    "city": "Nice",
+    "district": "Phoenix",
+    "category": "park",
+    "schedule_id": "all_day",
+    "photo": "",
+    "description": {
+      "fr": [
+        "Trente-cinq ans dans le parc Phoenix.",
+        "Volubile, italien-niçois assumé.",
+        "Son tour de la grande serre est une signature.",
+        "Banc tropical, parfum de fleurs exotiques.",
+        "Y va plein pot."
+      ],
+      "en": [
+        "Thirty-five years in Phoenix Park.",
+        "Talkative, unapologetically Italian-Niçois.",
+        "His tour of the great greenhouse is a signature.",
+        "Tropical bench, scent of exotic flowers.",
+        "Goes all in."
+      ]
+    },
+    "has_site": false,
+    "has_menu": true,
+    "has_phone": true,
+    "has_email": true,
+    "services": ["discreet", "pmr", "outdoor", "central"],
+    "payment_cash": true,
+    "payment_check": false,
+    "payment_card": true,
+    "payment_paypal": false,
+    "price": 165
+  },
+  {
+    "id": "sonja",
+    "name": "Sonja",
+    "age": 41,
+    "city": "Strasbourg",
+    "district": "parc de la Citadelle",
+    "category": "park",
+    "schedule_id": "extended_afternoon",
+    "photo": "",
+    "description": {
+      "fr": [
+        "Quinze ans dans le parc.",
+        "Carrée, ponctuelle, alsacienne.",
+        "Sa pause au saule pleureur est célèbre.",
+        "Banc bordant l'étang, lumière du soir."
+      ],
+      "en": [
+        "Fifteen years in the park.",
+        "Straightforward, punctual, Alsatian.",
+        "Her weeping-willow break is famous.",
+        "Bench by the pond, evening light."
+      ]
+    },
+    "has_site": true,
+    "has_menu": true,
+    "has_phone": true,
+    "has_email": false,
+    "services": ["discreet", "speak_en", "outdoor", "central"],
+    "payment_cash": false,
+    "payment_check": false,
+    "payment_card": true,
+    "payment_paypal": true,
+    "price": 180
+  },
+  {
+    "id": "jean-yves",
+    "name": "Jean-Yves",
+    "age": 76,
+    "city": "Quimper",
+    "district": "parc Frugy",
+    "category": "park",
+    "schedule_id": "morning_and_noon",
+    "photo": "",
+    "description": {
+      "fr": [
+        "Cinquante ans dans le parc.",
+        "Breton increvable.",
+        "Son célèbre \"chant de marin\" résonne encore.",
+        "Banc panoramique, vue sur la cathédrale."
+      ],
+      "en": [
+        "Fifty years in the park.",
+        "Indestructible Breton.",
+        "His famous \"sailor's song\" still echoes.",
+        "Panoramic bench, view of the cathedral."
+      ]
+    },
+    "has_site": false,
+    "has_menu": true,
+    "has_phone": true,
+    "has_email": true,
+    "services": ["pmr", "walking", "central"],
+    "payment_cash": true,
+    "payment_check": false,
+    "payment_card": true,
+    "payment_paypal": false,
+    "price": 170
+  },
+  {
+    "id": "leontine",
+    "name": "Léontine",
+    "age": 56,
+    "city": "Bourges",
+    "district": "jardin de l'Archevêché",
+    "category": "park",
+    "schedule_id": "extended_afternoon",
+    "photo": "",
+    "description": {
+      "fr": [
+        "Trente ans dans le jardin.",
+        "Discrète, méticuleuse, fidèle.",
+        "Sa fréquentation du jardin est un classique.",
+        "Banc face à la cathédrale Saint-Étienne."
+      ],
+      "en": [
+        "Thirty years in the garden.",
+        "Discreet, meticulous, loyal.",
+        "Her presence in the garden is a classic.",
+        "Bench facing Saint-Étienne cathedral."
+      ]
+    },
+    "has_site": true,
+    "has_menu": true,
+    "has_phone": true,
+    "has_email": true,
+    "services": ["speak_en", "pmr", "pet_friendly", "outdoor", "central"],
+    "payment_cash": true,
+    "payment_check": false,
+    "payment_card": true,
+    "payment_paypal": false,
+    "price": 105
+  },
+  {
+    "id": "hassan",
+    "name": "Hassan",
+    "age": 46,
+    "city": "Argenteuil",
+    "district": "parc",
+    "category": "park",
+    "schedule_id": "all_day",
+    "photo": "",
+    "description": {
+      "fr": [
+        "Vingt ans dans le parc.",
+        "Calme, prévenant, ponctuel.",
+        "Son tour des cerisiers en fleur est inoubliable.",
+        "Banc isolé, sous une pergola."
+      ],
+      "en": [
+        "Twenty years in the park.",
+        "Calm, considerate, punctual.",
+        "His cherry-blossom tour is unforgettable.",
+        "Isolated bench, under a pergola."
+      ]
+    },
+    "has_site": false,
+    "has_menu": true,
+    "has_phone": false,
+    "has_email": true,
+    "services": ["speak_en", "outdoor"],
+    "payment_cash": true,
+    "payment_check": false,
+    "payment_card": true,
+    "payment_paypal": true,
+    "price": 110
+  },
+  {
+    "id": "kavita",
+    "name": "Kavita",
+    "age": 35,
+    "city": "Vincennes",
+    "district": "",
+    "category": "park",
+    "schedule_id": "late_afternoon",
+    "photo": "",
+    "description": {
+      "fr": [
+        "Onze ans dans le bois de Vincennes.",
+        "Souple, précise, parfumée à la rose.",
+        "Sa fameuse \"pose au lac des Minimes\" se réserve longtemps à l'avance.",
+        "Banc au bord de l'eau, canards en fond."
+      ],
+      "en": [
+        "Eleven years in the Bois de Vincennes.",
+        "Supple, precise, scented with rose.",
+        "Her famous \"Minimes-lake pose\" books up far in advance.",
+        "Bench by the water, ducks in the background."
+      ]
+    },
+    "has_site": true,
+    "has_menu": true,
+    "has_phone": true,
+    "has_email": true,
+    "services": ["discreet", "speak_en", "pet_friendly", "walking"],
+    "payment_cash": true,
+    "payment_check": false,
+    "payment_card": false,
+    "payment_paypal": false,
+    "price": 25
+  },
+  {
+    "id": "wilma",
+    "name": "Wilma",
+    "age": 64,
+    "city": "Mulhouse",
+    "district": "parc Salvator",
+    "category": "park",
+    "schedule_id": "extended_afternoon",
+    "photo": "",
+    "description": {
+      "fr": [
+        "Trente-cinq ans dans le parc.",
+        "Allemande de naissance, alsacienne d'adoption.",
+        "Sa pause à la pataugeoire est devenue un must.",
+        "Banc proche de la fontaine, ombre des platanes.",
+        "Met du cœur à l'ouvrage."
+      ],
+      "en": [
+        "Thirty-five years in the park.",
+        "German by birth, Alsatian by adoption.",
+        "Her paddling-pool break has become a must.",
+        "Bench near the fountain, plane-tree shade.",
+        "Puts heart into the work."
+      ]
+    },
+    "has_site": true,
+    "has_menu": true,
+    "has_phone": true,
+    "has_email": true,
+    "services": ["speak_en", "pet_friendly", "outdoor", "walking", "central"],
+    "payment_cash": true,
+    "payment_check": false,
+    "payment_card": false,
+    "payment_paypal": false,
+    "price": 335
+  }
+]

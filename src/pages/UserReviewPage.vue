@@ -3,14 +3,14 @@ import { ref, computed } from 'vue';
 import { useRoute } from 'vue-router';
 import { t } from '../i18n/store.js';
 import { openLoginRequired } from '../state/modals.js';
-import fichesData from '../data/fiches.json';
+import profilesData from '../data/profiles.json';
 import PlaceSearchSelect from '../components/PlaceSearchSelect.vue';
 
 const route = useRoute();
 
 const initialFiche = (() => {
-  const id = (route.query.fiche ?? '').toString();
-  return id ? (fichesData.find((f) => f.id === id) ?? null) : null;
+  const id = (route.query.profile ?? '').toString();
+  return id ? (profilesData.find((f) => f.id === id) ?? null) : null;
 })();
 
 const todayIso = () => {
@@ -20,7 +20,7 @@ const todayIso = () => {
   return `${d.getFullYear()}-${mm}-${dd}`;
 };
 
-const selectedFiche = ref(initialFiche);
+const selectedProfile = ref(initialFiche);
 const rating = ref(0);
 const visitDate = ref(todayIso());
 const title = ref('');
@@ -42,7 +42,7 @@ const ratingLabel = computed(() =>
 
 const isValid = computed(
   () =>
-    selectedFiche.value &&
+    selectedProfile.value &&
     rating.value > 0 &&
     visitDate.value &&
     title.value.trim() &&
@@ -56,7 +56,7 @@ const onSubmit = (e) => {
     return;
   }
   showError.value = false;
-  openLoginRequired({ target: 'publish_review', name: selectedFiche.value.nom });
+  openLoginRequired({ target: 'publish_review', name: selectedProfile.value.name });
 };
 </script>
 
@@ -74,7 +74,7 @@ const onSubmit = (e) => {
         <div class="field">
           <span class="field-label">{{ t('ur_page.place_label') }} <em>*</em></span>
           <PlaceSearchSelect
-            v-model="selectedFiche"
+            v-model="selectedProfile"
             :placeholder="t('ur_page.place_placeholder')"
           />
         </div>

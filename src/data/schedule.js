@@ -1,33 +1,33 @@
-const DAYS_ORDER = ['lundi', 'mardi', 'mercredi', 'jeudi', 'vendredi', 'samedi', 'dimanche'];
-const DAY_BY_INDEX = ['dimanche', 'lundi', 'mardi', 'mercredi', 'jeudi', 'vendredi', 'samedi'];
+const DAYS_ORDER = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'];
+const DAY_BY_INDEX = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
 
 const todayName = () => DAY_BY_INDEX[new Date().getDay()];
 
 export function todayStatus(schedule, t) {
   if (!schedule) return { open: false, label: '' };
-  const todaySched = schedule.jours[todayName()];
-  if (!todaySched) return { open: false, label: t('fiche_page.status_closed_today') };
+  const todaySched = schedule.days[todayName()];
+  if (!todaySched) return { open: false, label: t('profile_page.status_closed_today') };
   const [, end] = todaySched.split('-');
-  return { open: true, label: t('fiche_page.status_open', { time: end }) };
+  return { open: true, label: t('profile_page.status_open', { time: end }) };
 }
 
 export function orderedDays(schedule, t) {
   const today = todayName();
   return DAYS_ORDER.map((day) => ({
     key: day,
-    label: t(`fiche_page.day_${day}`),
-    time: schedule?.jours?.[day] ?? null,
+    label: t(`profile_page.day_${day}`),
+    time: schedule?.days?.[day] ?? null,
     isToday: day === today,
   }));
 }
 
 const PERIODS = [
-  { key: 'matin', ranges: [[360, 720]] },
-  { key: 'midi', ranges: [[720, 840]] },
-  { key: 'apres_midi', ranges: [[840, 1080]] },
-  { key: 'soir', ranges: [[1080, 1320]] },
+  { key: 'morning', ranges: [[360, 720]] },
+  { key: 'noon', ranges: [[720, 840]] },
+  { key: 'afternoon', ranges: [[840, 1080]] },
+  { key: 'evening', ranges: [[1080, 1320]] },
   {
-    key: 'nuit',
+    key: 'night',
     ranges: [
       [1320, 1440],
       [0, 360],
@@ -55,7 +55,7 @@ const overlap = (a, b, c, d) => Math.max(a, c) < Math.min(b, d);
 export function periodsOf(schedule, t) {
   if (!schedule) return [];
   const matched = new Set();
-  for (const time of Object.values(schedule.jours)) {
+  for (const time of Object.values(schedule.days)) {
     if (!time) continue;
     const segs = segmentsOf(time);
     for (const period of PERIODS) {
@@ -65,5 +65,5 @@ export function periodsOf(schedule, t) {
       }
     }
   }
-  return PERIODS.filter((p) => matched.has(p.key)).map((p) => t(`fiche_page.period_${p.key}`));
+  return PERIODS.filter((p) => matched.has(p.key)).map((p) => t(`profile_page.period_${p.key}`));
 }

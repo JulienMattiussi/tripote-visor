@@ -3,41 +3,41 @@ import { computed } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 import { t, locale } from '../i18n/store.js';
 import { openLoginRequired } from '../state/modals.js';
-import { formatLieu } from '../data/fiches.js';
+import { formatLocation } from '../data/profiles.js';
 import { todayStatus, periodsOf } from '../data/schedule.js';
-import fichesData from '../data/fiches.json';
+import profilesData from '../data/profiles.json';
 import schedulesData from '../data/schedules.json';
 import advicesData from '../data/advices.json';
-import FicheGallery from '../components/FicheGallery.vue';
-import FicheSchedule from '../components/FicheSchedule.vue';
-import FicheReviews from '../components/FicheReviews.vue';
+import ProfileGallery from '../components/ProfileGallery.vue';
+import ProfileSchedule from '../components/ProfileSchedule.vue';
+import ProfileReviews from '../components/ProfileReviews.vue';
 
 const route = useRoute();
 const router = useRouter();
 
-const fiche = computed(() => fichesData.find((f) => f.id === route.params.id));
+const profile = computed(() => profilesData.find((f) => f.id === route.params.id));
 const schedule = computed(() =>
-  fiche.value ? schedulesData.find((s) => s.id === fiche.value.horaires_id) : null,
+  profile.value ? schedulesData.find((s) => s.id === profile.value.schedule_id) : null,
 );
-const reviews = computed(() => (fiche.value ? (advicesData[fiche.value.id] ?? []) : []));
+const reviews = computed(() => (profile.value ? (advicesData[profile.value.id] ?? []) : []));
 const reviewCount = computed(() => reviews.value.length);
 const averageRating = computed(() => {
   if (!reviewCount.value) return 0;
   return reviews.value.reduce((acc, r) => acc + r.rating, 0) / reviewCount.value;
 });
 
-const descriptifLines = computed(() => {
-  if (!fiche.value) return [];
-  const en = fiche.value.descriptif_en;
+const descriptionLines = computed(() => {
+  if (!profile.value) return [];
+  const en = profile.value.description.en;
   if (locale.value === 'en' && Array.isArray(en) && en.length) return en;
-  return fiche.value.descriptif ?? [];
+  return profile.value.description.fr ?? [];
 });
 
 const status = computed(() => todayStatus(schedule.value, t));
 
 const services = computed(() => {
-  const codes = fiche.value?.services ?? [];
-  return codes.map((c) => t(`fiche_page.service_${c}`));
+  const codes = profile.value?.services ?? [];
+  return codes.map((c) => t(`profile_page.service_${c}`));
 });
 
 const PAYMENT_METHODS = [
@@ -48,24 +48,24 @@ const PAYMENT_METHODS = [
 ];
 
 const paymentMethods = computed(() => {
-  if (!fiche.value) return [];
-  return PAYMENT_METHODS.filter((p) => fiche.value[p.flag] === true).map((p) =>
-    t(`fiche_page.${p.labelKey}`),
+  if (!profile.value) return [];
+  return PAYMENT_METHODS.filter((p) => profile.value[p.flag] === true).map((p) =>
+    t(`profile_page.${p.labelKey}`),
   );
 });
 
 const periods = computed(() => periodsOf(schedule.value, t));
 
 const categoryLabel = computed(() =>
-  fiche.value ? t(`fiche_page.cat_${fiche.value.categorie}`) : '',
+  profile.value ? t(`profile_page.cat_${profile.value.category}`) : '',
 );
 
 const tags = computed(() => {
-  if (!fiche.value) return [];
+  if (!profile.value) return [];
   return [
-    formatLieu(fiche.value),
+    formatLocation(profile.value),
     categoryLabel.value,
-    t('fiche_page.age_label', { age: fiche.value.age }),
+    t('profile_page.age_label', { age: profile.value.age }),
   ];
 });
 
@@ -77,25 +77,25 @@ const CONTACT_CHIPS = [
 ];
 
 const availableChips = computed(() => {
-  if (!fiche.value) return [];
-  return CONTACT_CHIPS.filter((chip) => fiche.value[chip.flag] === true);
+  if (!profile.value) return [];
+  return CONTACT_CHIPS.filter((chip) => profile.value[chip.flag] === true);
 });
 
 const requireLogin = (target) => {
-  openLoginRequired({ target, name: fiche.value?.nom });
+  openLoginRequired({ target, name: profile.value?.name });
 };
 const goWriteReview = () => {
-  if (!fiche.value) return;
-  router.push({ name: 'write-review', query: { fiche: fiche.value.id } });
+  if (!profile.value) return;
+  router.push({ name: 'write-review', query: { profile: profile.value.id } });
 };
 const goHome = () => router.push({ name: 'home' });
 </script>
 
 <template>
-  <section v-if="!fiche" class="fp-not-found container">
-    <p>{{ t('fiche_page.not_found') }}</p>
+  <section v-if="!profile" class="fp-not-found container">
+    <p>{{ t('profile_page.not_found') }}</p>
     <button type="button" class="pill-btn pill-btn--brand" @click="goHome">
-      {{ t('fiche_page.back_home') }}
+      {{ t('profile_page.back_home') }}
     </button>
   </section>
 
@@ -104,18 +104,18 @@ const goHome = () => router.push({ name: 'home' });
       <div class="container">
         <div class="fp-title-row">
           <div class="fp-title-block">
-            <h1 class="fp-title">{{ fiche.nom }}</h1>
+            <h1 class="fp-title">{{ profile.name }}</h1>
             <span class="fp-verified" aria-hidden="true"
-              >✓ {{ t('fiche_page.verified_page') }}</span
+              >✓ {{ t('profile_page.verified_page') }}</span
             >
           </div>
           <div class="fp-actions-top">
             <button type="button" class="fp-top-btn" @click="requireLogin('save')">
               <span class="fp-heart" aria-hidden="true">♡</span>
-              {{ t('fiche_page.save_btn') }}
+              {{ t('profile_page.save_btn') }}
             </button>
             <button type="button" class="fp-top-btn" @click="goWriteReview">
-              + {{ t('fiche_page.add_review') }}
+              + {{ t('profile_page.add_review') }}
             </button>
           </div>
         </div>
@@ -141,29 +141,29 @@ const goHome = () => router.push({ name: 'home' });
       </div>
     </header>
 
-    <FicheGallery :fiche="fiche" />
+    <ProfileGallery :profile="profile" />
 
-    <nav class="fp-tabs" :aria-label="t('fiche_page.tab_presentation')">
+    <nav class="fp-tabs" :aria-label="t('profile_page.tab_presentation')">
       <div class="container fp-tabs-inner">
-        <a href="#presentation">{{ t('fiche_page.tab_presentation') }}</a>
-        <a href="#horaires">{{ t('fiche_page.tab_horaires') }}</a>
-        <a href="#localisation">{{ t('fiche_page.tab_localisation') }}</a>
-        <a href="#avis">{{ t('fiche_page.tab_avis') }}</a>
+        <a href="#presentation">{{ t('profile_page.tab_presentation') }}</a>
+        <a href="#schedule">{{ t('profile_page.tab_schedule') }}</a>
+        <a href="#location">{{ t('profile_page.tab_location') }}</a>
+        <a href="#reviews">{{ t('profile_page.tab_reviews') }}</a>
       </div>
     </nav>
 
     <main class="container fp-main">
       <div class="fp-left">
         <section id="presentation" class="fp-block">
-          <h2 class="fp-block-title">{{ t('fiche_page.glance_title') }}</h2>
+          <h2 class="fp-block-title">{{ t('profile_page.glance_title') }}</h2>
           <p class="fp-status">
             <span :class="['fp-status-tag', status.open ? 'open' : 'closed']">
               {{ status.label }}
             </span>
-            <a href="#horaires">{{ t('fiche_page.see_all_horaires') }}</a>
+            <a href="#schedule">{{ t('profile_page.see_all_schedule') }}</a>
           </p>
           <p class="fp-address">
-            <span class="fp-icon" aria-hidden="true">📍</span>{{ formatLieu(fiche) }}
+            <span class="fp-icon" aria-hidden="true">📍</span>{{ formatLocation(profile) }}
           </p>
           <div v-if="availableChips.length" class="fp-action-chips">
             <button
@@ -174,20 +174,20 @@ const goHome = () => router.push({ name: 'home' });
               @click="requireLogin(chip.target)"
             >
               <span class="fp-chip-icon" aria-hidden="true">{{ chip.icon }}</span>
-              {{ t(`fiche_page.${chip.labelKey}`) }}
+              {{ t(`profile_page.${chip.labelKey}`) }}
             </button>
           </div>
         </section>
 
         <section class="fp-block">
-          <h2 class="fp-block-title">{{ t('fiche_page.about') }}</h2>
-          <ul class="fp-descriptif">
-            <li v-for="(line, i) in descriptifLines" :key="i">{{ line }}</li>
+          <h2 class="fp-block-title">{{ t('profile_page.about') }}</h2>
+          <ul class="fp-description">
+            <li v-for="(line, i) in descriptionLines" :key="i">{{ line }}</li>
           </ul>
         </section>
 
         <section class="fp-block">
-          <h3 class="fp-sub-title">{{ t('fiche_page.services_title') }}</h3>
+          <h3 class="fp-sub-title">{{ t('profile_page.services_title') }}</h3>
           <ul v-if="services.length" class="fp-services">
             <li v-for="s in services" :key="s">
               <span class="fp-icon" aria-hidden="true">✓</span>{{ s }}
@@ -195,46 +195,46 @@ const goHome = () => router.push({ name: 'home' });
           </ul>
           <p v-if="paymentMethods.length" class="fp-feature">
             <span class="fp-icon" aria-hidden="true">💳</span>
-            <strong>{{ t('fiche_page.payment_title') }} :</strong>
+            <strong>{{ t('profile_page.payment_title') }} :</strong>
             {{ paymentMethods.join(', ') }}
           </p>
           <p v-if="periods.length" class="fp-feature">
             <span class="fp-icon" aria-hidden="true">🕒</span>
-            <strong>{{ t('fiche_page.meals_title') }} :</strong>
+            <strong>{{ t('profile_page.meals_title') }} :</strong>
             {{ periods.join(', ') }}
           </p>
         </section>
 
-        <section id="localisation" class="fp-block">
-          <h2 class="fp-block-title">{{ t('fiche_page.localization_title') }}</h2>
+        <section id="location" class="fp-block">
+          <h2 class="fp-block-title">{{ t('profile_page.localization_title') }}</h2>
           <div class="fp-map" aria-hidden="true">
-            <span>{{ t('fiche_page.map_placeholder') }}</span>
+            <span>{{ t('profile_page.map_placeholder') }}</span>
           </div>
           <p class="fp-address">
-            <span class="fp-icon" aria-hidden="true">📍</span>{{ formatLieu(fiche) }}
+            <span class="fp-icon" aria-hidden="true">📍</span>{{ formatLocation(profile) }}
           </p>
           <p class="fp-feature">
-            <span class="fp-icon" aria-hidden="true">🅿️</span>{{ t('fiche_page.parking_info') }}
+            <span class="fp-icon" aria-hidden="true">🅿️</span>{{ t('profile_page.parking_info') }}
           </p>
         </section>
 
-        <FicheReviews :reviews="reviews" @add-review="goWriteReview" />
+        <ProfileReviews :reviews="reviews" @add-review="goWriteReview" />
       </div>
 
       <aside class="fp-right">
         <div class="fp-side-block">
-          <h3 class="fp-side-title">{{ t('fiche_page.save_title') }}</h3>
+          <h3 class="fp-side-title">{{ t('profile_page.save_title') }}</h3>
           <button
             type="button"
             class="pill-btn pill-btn--light fp-save-btn"
             @click="requireLogin('save')"
           >
             <span class="fp-heart" aria-hidden="true">♡</span>
-            {{ t('fiche_page.save_btn') }}
+            {{ t('profile_page.save_btn') }}
           </button>
         </div>
 
-        <FicheSchedule :schedule="schedule" />
+        <ProfileSchedule :schedule="schedule" />
       </aside>
     </main>
   </article>
@@ -498,7 +498,7 @@ const goHome = () => router.push({ name: 'home' });
   border-color: var(--brand);
 }
 
-.fp-descriptif {
+.fp-description {
   margin: 0;
   padding-left: 18px;
   display: flex;

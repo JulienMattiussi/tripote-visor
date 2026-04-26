@@ -53,12 +53,12 @@ describe('ExperienceCards', () => {
     expect(new Set(cities).size).toBe(4);
   });
 
-  it('clicking a card navigates to that fiche', async () => {
+  it('clicking a card navigates to that profile', async () => {
     const router = await setupRouter('/');
     const wrapper = mount(ExperienceCards, withRouter(router));
     await wrapper.findAll('.exp-card')[0].trigger('click');
     await flushPromises();
-    expect(router.currentRoute.value.name).toBe('fiche');
+    expect(router.currentRoute.value.name).toBe('profile');
     expect(typeof router.currentRoute.value.params.id).toBe('string');
   });
 

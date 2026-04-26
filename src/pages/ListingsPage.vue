@@ -2,8 +2,8 @@
 import { computed, ref, watch } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 import { t, formatAmount, locale } from '../i18n/store.js';
-import { formatLieu, reviewCountFor, reviewAverageFor } from '../data/fiches.js';
-import fichesData from '../data/fiches.json';
+import { formatLocation, reviewCountFor, reviewAverageFor } from '../data/profiles.js';
+import profilesData from '../data/profiles.json';
 
 const props = defineProps({
   listingType: {
@@ -13,7 +13,7 @@ const props = defineProps({
   },
 });
 
-const TYPE_TO_CAT = { hotels: 'hotel', parks: 'parc', alleys: 'ruelle' };
+const TYPE_TO_CAT = { hotels: 'hotel', parks: 'park', alleys: 'alley' };
 const PER_PAGE_DEFAULT = 10;
 
 const router = useRouter();
@@ -34,7 +34,7 @@ watch(
 
 const baseFiches = computed(() => {
   const cat = TYPE_TO_CAT[props.listingType];
-  return fichesData.filter((f) => f.categorie === cat);
+  return profilesData.filter((f) => f.category === cat);
 });
 
 const filteredFiches = computed(() => {
@@ -42,10 +42,10 @@ const filteredFiches = computed(() => {
   if (!q) return baseFiches.value;
   return baseFiches.value.filter(
     (f) =>
-      f.nom.toLowerCase().includes(q) ||
-      (f.ville ?? '').toLowerCase().includes(q) ||
-      (f.lieu ?? '').toLowerCase().includes(q) ||
-      [...(f.descriptif ?? []), ...(f.descriptif_en ?? [])].some((line) =>
+      f.name.toLowerCase().includes(q) ||
+      (f.city ?? '').toLowerCase().includes(q) ||
+      (f.district ?? '').toLowerCase().includes(q) ||
+      [...(f.description.fr ?? []), ...(f.description.en ?? [])].some((line) =>
         line.toLowerCase().includes(q),
       ),
   );
@@ -74,12 +74,12 @@ const sortedFiches = computed(() => {
   switch (sortBy.value) {
     case 'top_rated':
       return [...list].sort(
-        (a, b) => reviewAverageFor(b.id) - reviewAverageFor(a.id) || a.nom.localeCompare(b.nom),
+        (a, b) => reviewAverageFor(b.id) - reviewAverageFor(a.id) || a.name.localeCompare(b.name),
       );
     case 'price_asc':
-      return [...list].sort((a, b) => a.prix - b.prix);
+      return [...list].sort((a, b) => a.price - b.price);
     case 'price_desc':
-      return [...list].sort((a, b) => b.prix - a.prix);
+      return [...list].sort((a, b) => b.price - a.price);
     default: {
       const seed = Math.floor(Date.now() / 3_600_000);
       return shuffleStable(list, seed);
@@ -99,7 +99,7 @@ const onSubmit = (e) => {
 };
 
 const goFiche = (id) => {
-  router.push({ name: 'fiche', params: { id } });
+  router.push({ name: 'profile', params: { id } });
 };
 </script>
 
@@ -153,8 +153,8 @@ const goFiche = (id) => {
       >
         <div class="lst-card-thumb" aria-hidden="true"></div>
         <div class="lst-card-body">
-          <h3 class="lst-card-name">{{ f.nom }}</h3>
-          <p class="lst-card-loc">{{ formatLieu(f) }}</p>
+          <h3 class="lst-card-name">{{ f.name }}</h3>
+          <p class="lst-card-loc">{{ formatLocation(f) }}</p>
           <div class="lst-card-rating">
             <span class="lst-stars" aria-hidden="true">
               <span
@@ -170,7 +170,7 @@ const goFiche = (id) => {
           </div>
           <div class="lst-card-foot">
             <span class="lst-price">
-              {{ t('listings.from_per_session', { amount: formatAmount(f.prix) }) }}
+              {{ t('listings.from_per_session', { amount: formatAmount(f.price) }) }}
             </span>
           </div>
         </div>

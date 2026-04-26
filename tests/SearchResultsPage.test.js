@@ -2,7 +2,7 @@ import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest';
 import { mount, flushPromises } from '@vue/test-utils';
 import SearchResultsPage from '../src/pages/SearchResultsPage.vue';
 import HeroSearch from '../src/components/HeroSearch.vue';
-import fiches from '../src/data/fiches.json';
+import fiches from '../src/data/profiles.json';
 import { setLocale } from '../src/i18n/store.js';
 import { setupRouter, withRouter } from './helpers/router.js';
 
@@ -33,13 +33,13 @@ describe('SearchResultsPage - global view', () => {
     expect(showAllButtons.length).toBe(3);
   });
 
-  it('clicking a card navigates to the corresponding fiche page', async () => {
+  it('clicking a card navigates to the corresponding profile page', async () => {
     const wrapper = mount(SearchResultsPage, withRouter(router));
     const firstCard = wrapper.find('.sr-card');
-    const expectedId = fiches.find((f) => f.categorie === 'hotel').id;
+    const expectedId = fiches.find((f) => f.category === 'hotel').id;
     await firstCard.trigger('click');
     await flushPromises();
-    expect(router.currentRoute.value.name).toBe('fiche');
+    expect(router.currentRoute.value.name).toBe('profile');
     expect(router.currentRoute.value.params.id).toBe(expectedId);
   });
 

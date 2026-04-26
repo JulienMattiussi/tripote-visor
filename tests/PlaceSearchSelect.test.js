@@ -1,10 +1,10 @@
 import { describe, it, expect, beforeEach } from 'vitest';
 import { mount } from '@vue/test-utils';
 import PlaceSearchSelect from '../src/components/PlaceSearchSelect.vue';
-import fichesData from '../src/data/fiches.json';
+import profilesData from '../src/data/profiles.json';
 import { setLocale } from '../src/i18n/store.js';
 
-const mireille = fichesData.find((f) => f.id === 'mireille');
+const mireille = profilesData.find((f) => f.id === 'mireille');
 
 beforeEach(() => setLocale('en'));
 
@@ -37,7 +37,7 @@ describe('PlaceSearchSelect', () => {
     expect(wrapper.find('.ps-no-match').text()).toBe('No place matches your search.');
   });
 
-  it('emits update:modelValue with the picked fiche on suggestion click', async () => {
+  it('emits update:modelValue with the picked profile on suggestion click', async () => {
     const wrapper = mount(PlaceSearchSelect, {
       props: { modelValue: null, placeholder: '' },
     });
@@ -48,7 +48,7 @@ describe('PlaceSearchSelect', () => {
     expect(emitted[0][0].id).toBe('mireille');
   });
 
-  it('renders the selected card when modelValue is a fiche, and × emits null', async () => {
+  it('renders the selected card when modelValue is a profile, and × emits null', async () => {
     const wrapper = mount(PlaceSearchSelect, {
       props: { modelValue: mireille, placeholder: '' },
     });
