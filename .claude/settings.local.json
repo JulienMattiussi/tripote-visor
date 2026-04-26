@@ -9,8 +9,11 @@
       "Bash(node --input-type=module -e ' *)",
       "Bash(node -e ' *)",
       "Bash(awk:*)",
-      "WebSearch"
+      "WebSearch",
+      "Bash(curl -s http://localhost:5173/)"
     ],
-    "additionalDirectories": ["/tmp"]
+    "additionalDirectories": [
+      "/tmp"
+    ]
   }
 }

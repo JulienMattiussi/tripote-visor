@@ -163,3 +163,16 @@
     font-size: 28px;
   }
 }
+
+@media (max-width: 380px) {
+  .form-card {
+    padding: 20px 16px;
+  }
+  .form-hero-title {
+    font-size: 22px;
+  }
+  .form-submit {
+    align-self: stretch;
+    text-align: center;
+  }
+}

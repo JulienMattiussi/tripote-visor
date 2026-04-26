@@ -160,4 +160,38 @@ const onSubmit = (e) => {
   padding: 12px 28px;
   font-size: 15px;
 }
+
+@media (max-width: 600px) {
+  .hero {
+    padding: 32px 0 18px;
+  }
+  .hero-title {
+    font-size: 26px;
+    margin-bottom: 18px;
+  }
+  .search-form {
+    padding: 4px 4px 4px 14px;
+  }
+  .search-input-wrap {
+    min-width: 0;
+  }
+  .search-form input {
+    min-width: 0;
+    font-size: 14px;
+  }
+  .search-btn {
+    padding: 10px 18px;
+    font-size: 14px;
+    flex-shrink: 0;
+  }
+}
+
+@media (max-width: 380px) {
+  .hero-title {
+    font-size: 22px;
+  }
+  .search-btn {
+    padding: 10px 14px;
+  }
+}
 </style>

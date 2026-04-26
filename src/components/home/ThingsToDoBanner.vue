@@ -119,6 +119,10 @@ const slides = ['/ttd/slide-1.jpg', '/ttd/slide-2.jpg', '/ttd/slide-3.jpg', '/tt
 @media (max-width: 700px) {
   .ttd-banner {
     grid-template-columns: 1fr;
+    min-height: 0;
+  }
+  .ttd-image {
+    aspect-ratio: 16 / 9;
   }
   .ttd-text {
     padding: 28px 24px;

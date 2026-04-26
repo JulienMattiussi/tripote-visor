@@ -89,4 +89,14 @@ const days = computed(() => orderedDays(props.schedule, t));
 .fp-closed-cell {
   color: var(--danger);
 }
+
+@media (max-width: 480px) {
+  .fp-hours {
+    font-size: 13px;
+  }
+  .fp-hours th,
+  .fp-hours td {
+    padding: 6px 0;
+  }
+}
 </style>

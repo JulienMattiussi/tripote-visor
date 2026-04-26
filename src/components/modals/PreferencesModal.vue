@@ -319,4 +319,32 @@ watch(modalOpen, (open) => {
     padding: 12px 20px;
   }
 }
+
+@media (max-width: 480px) {
+  .prefs-modal {
+    padding: 12px;
+  }
+  .prefs-grid,
+  .prefs-grid.suggested {
+    grid-template-columns: 1fr;
+  }
+  .prefs-title {
+    margin: 16px 44px 0 16px;
+    font-size: 18px;
+  }
+  .prefs-tabs {
+    margin: 12px 16px 0 16px;
+    gap: 16px;
+  }
+  .prefs-tab {
+    font-size: 14px;
+  }
+  .prefs-scroll {
+    padding: 16px 16px 8px 16px;
+  }
+  .prefs-footer {
+    padding: 10px 16px;
+    font-size: 12px;
+  }
+}
 </style>

@@ -600,4 +600,25 @@ const mapUrl = computed(() => {
     position: static;
   }
 }
+
+@media (max-width: 600px) {
+  .fp-title {
+    font-size: 24px;
+  }
+  .fp-block-title {
+    font-size: 18px;
+  }
+  .fp-chip {
+    padding: 12px 16px;
+    font-size: 14px;
+  }
+  .fp-tabs-inner {
+    gap: 18px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .fp-tabs a {
+    white-space: nowrap;
+  }
+}
 </style>

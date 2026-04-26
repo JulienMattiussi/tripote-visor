@@ -107,6 +107,7 @@ const goFiche = (id) => {
   border-radius: var(--radius);
   padding: 12px;
   align-items: stretch;
+  overflow: hidden;
 }
 
 .dh-thumb {
@@ -115,6 +116,7 @@ const goFiche = (id) => {
   background: linear-gradient(135deg, var(--brand-light), var(--surface-alt));
   overflow: hidden;
   box-shadow: var(--shadow);
+  min-width: 0;
 }
 
 .dh-thumb img {
@@ -184,6 +186,35 @@ const goFiche = (id) => {
 @media (max-width: 500px) {
   .dh-card {
     grid-template-columns: 110px 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .dh-card {
+    grid-template-columns: 1fr;
+    padding: 0;
+  }
+  .dh-thumb {
+    aspect-ratio: 16 / 9;
+    border-radius: 0;
+    box-shadow: none;
+  }
+  .dh-body {
+    position: relative;
+    padding: 16px;
+    gap: 8px;
+  }
+  .dh-city {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    right: 0;
+    margin: 0;
+    padding: 32px 16px 12px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
+    color: var(--on-dark);
+    font-size: 22px;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
   }
 }
 </style>
