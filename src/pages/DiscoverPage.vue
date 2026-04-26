@@ -1,5 +1,5 @@
 <script setup>
-import { computed, ref } from 'vue';
+import { computed } from 'vue';
 import { useRouter } from 'vue-router';
 import { t, formatAmount, formatLieu, reviewCountFor, reviewAverageFor } from '../i18n/store.js';
 import DestinationsHighlights from '../components/DestinationsHighlights.vue';
@@ -12,12 +12,6 @@ const topFiches = computed(() =>
     .sort((a, b) => reviewAverageFor(b.id) - reviewAverageFor(a.id) || a.nom.localeCompare(b.nom))
     .slice(0, 4),
 );
-
-const favorites = ref({});
-
-const toggleFav = (id) => {
-  favorites.value[id] = !favorites.value[id];
-};
 
 const goFiche = (id) => {
   router.push({ name: 'fiche', params: { id } });
@@ -61,43 +55,26 @@ const goHome = () => router.push({ name: 'home' });
         @click="goFiche(f.id)"
         @keydown.enter="goFiche(f.id)"
       >
-        <div class="dp-thumb" aria-hidden="true">
-          <button
-            class="dp-fav"
-            type="button"
-            :aria-pressed="favorites[f.id] || false"
-            :aria-label="favorites[f.id] ? t('experiences.fav_remove') : t('experiences.fav_add')"
-            @click.stop="toggleFav(f.id)"
-          >
-            <svg
-              viewBox="0 0 24 24"
-              :class="['heart', { filled: favorites[f.id] }]"
-              aria-hidden="true"
-            >
-              <path
-                d="M12 21s-7-4.5-9.5-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.5 6C19 16.5 12 21 12 21z"
-              />
-            </svg>
-          </button>
+        <div class="dp-thumb">
+          <div class="dp-rating-overlay" aria-hidden="true">
+            <span class="dp-stars">
+              <span
+                v-for="i in 5"
+                :key="i"
+                :class="['dot', { filled: i <= Math.round(reviewAverageFor(f.id)) }]"
+              ></span>
+            </span>
+            <span class="dp-rating-num">
+              {{ reviewCountFor(f.id) ? reviewAverageFor(f.id).toFixed(1) : '-' }}
+            </span>
+            <span class="dp-rating-count">({{ reviewCountFor(f.id) }})</span>
+          </div>
         </div>
         <div class="dp-rank-row">
           <span class="dp-rank">{{ idx + 1 }}</span>
           <span class="dp-loc">{{ formatLieu(f) }}</span>
         </div>
         <h3 class="dp-name">{{ f.nom }}</h3>
-        <div class="dp-rating">
-          <span class="dp-stars" aria-hidden="true">
-            <span
-              v-for="i in 5"
-              :key="i"
-              :class="['dot', { filled: i <= Math.round(reviewAverageFor(f.id)) }]"
-            ></span>
-          </span>
-          <span class="dp-rating-num">
-            {{ reviewCountFor(f.id) ? reviewAverageFor(f.id).toFixed(1) : '-' }}
-          </span>
-          <span class="dp-rating-count">({{ reviewCountFor(f.id) }})</span>
-        </div>
         <div class="dp-price">
           {{ t('discover_page.from_price', { amount: formatAmount(f.prix) }) }}
         </div>
@@ -250,35 +227,30 @@ const goHome = () => router.push({ name: 'home' });
   box-shadow: var(--shadow);
 }
 
-.dp-fav {
+.dp-rating-overlay {
   position: absolute;
-  top: 10px;
-  right: 10px;
-  width: 32px;
-  height: 32px;
+  bottom: 0;
+  left: 0;
+  right: 0;
   display: flex;
   align-items: center;
-  justify-content: center;
-  background: rgba(255, 255, 255, 0.85);
+  gap: 6px;
+  padding: 18px 10px 8px;
+  font-size: 12px;
+  color: var(--on-dark);
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
+}
+
+.dp-rating-overlay .dot {
+  width: 9px;
+  height: 9px;
   border-radius: 50%;
-  backdrop-filter: blur(2px);
+  background: rgba(255, 255, 255, 0.45);
+  display: inline-block;
 }
 
-.dp-fav:hover {
-  background: var(--bg);
-}
-
-.heart {
-  width: 18px;
-  height: 18px;
-  fill: none;
-  stroke: var(--text);
-  stroke-width: 2;
-}
-
-.heart.filled {
-  fill: var(--danger);
-  stroke: var(--danger);
+.dp-rating-overlay .dot.filled {
+  background: var(--brand);
 }
 
 .dp-rank-row {
@@ -312,37 +284,17 @@ const goHome = () => router.push({ name: 'home' });
   overflow: hidden;
 }
 
-.dp-rating {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 13px;
-}
-
 .dp-stars {
   display: inline-flex;
   gap: 2px;
 }
 
-.dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: var(--border);
-  display: inline-block;
-}
-
-.dot.filled {
-  background: var(--brand);
-}
-
 .dp-rating-num {
   font-weight: 700;
-  color: var(--text);
 }
 
 .dp-rating-count {
-  color: var(--text-muted);
+  opacity: 0.85;
 }
 
 .dp-price {

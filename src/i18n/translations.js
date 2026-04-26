@@ -217,7 +217,7 @@ export const translations = {
       hero_title: 'Post photos',
       hero_subtitle:
         'Add a few shots to bring a place to life - the community loves real pictures more than glossy stock.',
-      place_label: 'Which place are these photos for?',
+      place_label: 'Which listing are these photos for?',
       place_placeholder: 'Search someone',
       drop_title: 'Drop your photos here',
       drop_hint: 'or click to pick files (JPG / PNG, up to 5 files, 10 MB each)',
@@ -233,8 +233,7 @@ export const translations = {
     },
     cl_page: {
       hero_title: 'Add a sex worker',
-      hero_subtitle:
-        'Help travellers discover new spots by submitting a hotel, restaurant, attraction or vacation rental.',
+      hero_subtitle: 'Help users discover new fantasies by listing a new spot near you.',
       sex_label: 'Sex',
       sex_female: 'Female',
       sex_male: 'Male',
@@ -308,14 +307,11 @@ export const translations = {
     },
     listings: {
       hotels_title: 'Hotels',
-      hotels_intro:
-        'Find a place to crash, from boutique riads to mountain lodges - read travellers’ honest opinions before you book.',
+      hotels_intro: 'Do you prefer the cozy, intimate ambiance of a hotel room?',
       parks_title: 'Parks',
-      parks_intro:
-        'Tours, tickets, dives, and treks loved by travellers. Skip the lines, find the local gems, and book in a click.',
+      parks_intro: 'Do you love nature and open spaces? Need fresh air to feel fully satisfied?',
       alleys_title: 'Alleys',
-      alleys_intro:
-        'Cobblestone lanes, covered passages and hidden mews. Wander the narrow ways travellers swear by - guided walks or solo strolls.',
+      alleys_intro: 'A true city dweller? Think you’ll find your match out on the street?',
       search_placeholder: 'A name, a city, a fancy…',
       search_aria: 'Search by destination',
       search_btn: 'Search',
@@ -806,7 +802,7 @@ export const translations = {
       hero_title: 'Publier des photos',
       hero_subtitle:
         'Ajoutez quelques clichés pour faire vivre un lieu - la communauté préfère les vraies photos aux images de stock.',
-      place_label: 'À quel lieu ces photos sont-elles destinées ?',
+      place_label: 'À quelle fiche ces photos sont-elles destinées ?',
       place_placeholder: 'Rechercher quelqu’un',
       drop_title: 'Déposez vos photos ici',
       drop_hint:
@@ -825,7 +821,7 @@ export const translations = {
     cl_page: {
       hero_title: 'Ajouter une prostituée',
       hero_subtitle:
-        'Aidez les utilisateurs à découvrir de nouveaux endroits en proposant un hôtel, un restaurant, une attraction ou une location de vacances.',
+        'Aidez les utilisateurs à découvrir de nouveaux fantasmes en référençant un nouveau bon plan près de chez vous.',
       sex_label: 'Sexe',
       sex_female: 'Féminin',
       sex_male: 'Masculin',
@@ -899,14 +895,13 @@ export const translations = {
     },
     listings: {
       hotels_title: 'Hôtels',
-      hotels_intro:
-        'Trouvez où poser vos valises, des riads de charme aux refuges de montagne - lisez les avis sincères des utilisateurs avant de réserver.',
+      hotels_intro: 'Vous préférez l’ambiance cosy et intimiste d’une chambre d’hôtel ?',
       parks_title: 'Parcs',
       parks_intro:
-        'Visites guidées, billets coupe-file, plongées et treks plébiscités par les utilisateurs. Évitez les files, trouvez les pépites locales et réservez en un clic.',
+        'Vous aimez la nature, l’espace ? Vous avez besoin d’air pour être pleinement satisfait ?',
       alleys_title: 'Ruelles',
       alleys_intro:
-        'Pavés, passages couverts et venelles cachées. Flânez dans les ruelles que les utilisateurs s’arrachent : balades guidées ou en solo.',
+        'En vrai citadin, c’est dans la rue que vous pensez trouver chaussure à votre pied ?',
       search_placeholder: 'Un nom, une ville, une envie…',
       search_aria: 'Rechercher par destination',
       search_btn: 'Rechercher',

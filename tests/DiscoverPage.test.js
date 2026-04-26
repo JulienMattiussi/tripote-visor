@@ -60,14 +60,11 @@ describe('DiscoverPage', () => {
     expect(router.currentRoute.value.params.id).toBe(expectedTop4()[0].id);
   });
 
-  it('toggling a heart on a card does not trigger card navigation', async () => {
+  it('does not render heart icons on the top-4 cards', async () => {
     const router = await setupRouter('/discover');
     const wrapper = mount(DiscoverPage, withRouter(router));
-    const firstCard = wrapper.findAll('.dp-card')[0];
-    await firstCard.find('.dp-fav').trigger('click');
-    await flushPromises();
-    expect(router.currentRoute.value.name).toBe('discover');
-    expect(firstCard.find('.heart').classes()).toContain('filled');
+    expect(wrapper.find('.dp-fav').exists()).toBe(false);
+    expect(wrapper.find('.heart').exists()).toBe(false);
   });
 
   it('does not render a SeriousNote callout', async () => {
