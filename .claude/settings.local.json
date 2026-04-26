@@ -38,7 +38,15 @@
       "WebFetch(domain:www.tripadvisor.fr)",
       "Bash(awk '{print $1}')",
       "Bash(uniq -d echo \"--- hotel zip ---\" md5sum /tmp/hotel/*.jpg)",
-      "Bash(unzip -l /home/julien/Téléchargements/rues.zip)"
+      "Bash(unzip -l /home/julien/Téléchargements/rues.zip)",
+      "Read(//home/julien/**)",
+      "Bash(node -e ' *)",
+      "Bash(node /tmp/place-primary.mjs)",
+      "Bash(node /tmp/rename-profiles.mjs)",
+      "Bash(unzip -l /home/julien/Téléchargements/parc.zip)",
+      "Bash(node /tmp/place-park-batch2.mjs)",
+      "Bash(node /tmp/place-recycled.mjs)",
+      "Bash(node /tmp/rejuvenate-and-place.mjs)"
     ],
     "additionalDirectories": [
       "/tmp"

@@ -825,160 +825,6 @@
       "author": "LunaireLecteur"
     }
   ],
-  "jean-yves": [
-    {
-      "rating": 5,
-      "title": "Comme à la maison",
-      "body": "On se sent comme à la maison, en mieux. L'attention, la chaleur, l'envie de bien faire. Je n'oublierai pas de sitôt.",
-      "lang": "fr",
-      "date": "2026-03-23",
-      "author": "Esthete_Eclaire"
-    },
-    {
-      "rating": 4,
-      "title": "Almost perfect",
-      "body": "Almost perfect. Will probably come back to give it another shot.",
-      "lang": "en",
-      "date": "2026-03-13",
-      "author": "DapperHeron"
-    },
-    {
-      "rating": 2,
-      "title": "Pas top",
-      "body": "Pas top du tout. L'établissement aurait besoin d'un sérieux coup de neuf.",
-      "lang": "fr",
-      "date": "2026-02-13",
-      "author": "PoseObservateur"
-    },
-    {
-      "rating": 1,
-      "title": "Arnaque",
-      "body": "Arnaque pure et simple. La prresta n'a rin a voir avec ce qui est annonce.",
-      "lang": "fr",
-      "date": "2026-01-23",
-      "author": "Esthete742"
-    },
-    {
-      "rating": 4,
-      "title": "Conforme aux attentes",
-      "body": "Tout s'est bien passé, le rapport qualité-prix est correct.",
-      "lang": "fr",
-      "date": "2025-12-31",
-      "author": "Inspecteur852"
-    },
-    {
-      "rating": 4,
-      "title": "Quasi perfetto",
-      "body": "Quasi perfetto. Manca poco per le cinque stelle.",
-      "lang": "it",
-      "date": "2025-12-02",
-      "author": "Giovanni_F"
-    },
-    {
-      "rating": 1,
-      "title": "Worst ever",
-      "body": "Wort experiencce I've ever had. Period.",
-      "lang": "en",
-      "date": "2025-11-21",
-      "author": "Mason_E"
-    },
-    {
-      "rating": 1,
-      "title": "Una vergüenza",
-      "body": "Una vergüenza. Pedir ese precio para esto.",
-      "lang": "es",
-      "date": "2025-11-19",
-      "author": "Forastero_Atrevido"
-    },
-    {
-      "rating": 5,
-      "title": "Above and beyond",
-      "body": "Went above and beyond what I expected. Truly memorable.",
-      "lang": "en",
-      "date": "2025-10-11",
-      "author": "Scribe1264"
-    },
-    {
-      "rating": 3,
-      "title": "Pas marquant",
-      "body": "Pas maquant. Je n'en garderai pas grand souvenir dans un mois.",
-      "lang": "fr",
-      "date": "2025-09-30",
-      "author": "Ecureuil_Maladroit"
-    },
-    {
-      "rating": 3,
-      "title": "Moyen",
-      "body": "Très moyen. Ni bon ni mauvais.",
-      "lang": "fr",
-      "date": "2025-09-23",
-      "author": "Beatrice_B"
-    },
-    {
-      "rating": 1,
-      "title": "Schlimmste Erfahrung",
-      "body": "Schlimmste Erfahrung meines Lebens. Punkt.",
-      "lang": "de",
-      "date": "2025-08-19",
-      "author": "VerspieltGlobetrotter"
-    },
-    {
-      "rating": 1,
-      "title": "Worst ever",
-      "body": "Worst experience I've ever had. Period.",
-      "lang": "en",
-      "date": "2025-05-20",
-      "author": "Kate_A"
-    },
-    {
-      "rating": 3,
-      "title": "Décevant côté service",
-      "body": "L'accueil était sympa mais le reste laisse à désirer. Pas catastrophique non plus.",
-      "lang": "fr",
-      "date": "2025-05-15",
-      "author": "Vincent_K"
-    },
-    {
-      "rating": 4,
-      "title": "Pleasantly surprised",
-      "body": "Pleasantly surprised. I'd had lower expectations after the price.",
-      "lang": "en",
-      "date": "2025-03-26",
-      "author": "MellowWolf"
-    },
-    {
-      "rating": 1,
-      "title": "Schlimmste Erfahrung",
-      "body": "Schlimmste Erfahrung meines Lebens. Punkt.",
-      "lang": "de",
-      "date": "2025-03-12",
-      "author": "Hannah_G"
-    },
-    {
-      "rating": 3,
-      "title": "Migliorabile",
-      "body": "Migliorabile. C'è potenziale ma non basta.",
-      "lang": "it",
-      "date": "2025-01-06",
-      "author": "Osservatore_Sincero"
-    },
-    {
-      "rating": 4,
-      "title": "Très chaleureux",
-      "body": "Rencontre chaleureuse, on se sent à l'aise. Le cadre est joli, l'attention sincère. Une étoile en moins parce que c'était trop court à mon goût.",
-      "lang": "fr",
-      "date": "2024-12-06",
-      "author": "LunaireLecteur"
-    },
-    {
-      "rating": 2,
-      "title": "Caro e insipido",
-      "body": "Caro e insipido. Sconsigliato.",
-      "lang": "it",
-      "date": "2024-12-04",
-      "author": "SolitarioCorvo"
-    }
-  ],
   "wilhelmine": [
     {
       "rating": 1,
@@ -8087,40 +7933,6 @@
       "author": "Inspecteur_Solitaire"
     }
   ],
-  "pierre-andre": [
-    {
-      "rating": 4,
-      "title": "Très bon moment",
-      "body": "Très bon moment, suorire garanti.",
-      "lang": "fr",
-      "date": "2026-03-09",
-      "author": "Lucie_H"
-    },
-    {
-      "rating": 4,
-      "title": "Müde aber zufrieden",
-      "body": "Bin müde aber sehr zufrieden nach Hause gekommn. Komme bestimmt nochhmal.",
-      "lang": "de",
-      "date": "2024-10-23",
-      "author": "Nachbar_Stoisch"
-    },
-    {
-      "rating": 4,
-      "title": "Recomendable",
-      "body": "Recomendable. Repetiré seugro.",
-      "lang": "es",
-      "date": "2024-08-27",
-      "author": "Gata_Despierto"
-    },
-    {
-      "rating": 1,
-      "title": "Orribile",
-      "body": "Orribile. Quasi vomitavo.",
-      "lang": "it",
-      "date": "2024-08-06",
-      "author": "Alessandro_B"
-    }
-  ],
   "solange": [
     {
       "rating": 2,
@@ -8189,6 +8001,194 @@
       "lang": "fr",
       "date": "2025-09-16",
       "author": "TimideCritique"
+    }
+  ],
+  "marie-andree": [
+    {
+      "rating": 4,
+      "title": "Très bon moment",
+      "body": "Très bon moment, suorire garanti.",
+      "lang": "fr",
+      "date": "2026-03-09",
+      "author": "Lucie_H"
+    },
+    {
+      "rating": 4,
+      "title": "Müde aber zufrieden",
+      "body": "Bin müde aber sehr zufrieden nach Hause gekommn. Komme bestimmt nochhmal.",
+      "lang": "de",
+      "date": "2024-10-23",
+      "author": "Nachbar_Stoisch"
+    },
+    {
+      "rating": 4,
+      "title": "Recomendable",
+      "body": "Recomendable. Repetiré seugro.",
+      "lang": "es",
+      "date": "2024-08-27",
+      "author": "Gata_Despierto"
+    },
+    {
+      "rating": 1,
+      "title": "Orribile",
+      "body": "Orribile. Quasi vomitavo.",
+      "lang": "it",
+      "date": "2024-08-06",
+      "author": "Alessandro_B"
+    }
+  ],
+  "marie-yvonne": [
+    {
+      "rating": 5,
+      "title": "Comme à la maison",
+      "body": "On se sent comme à la maison, en mieux. L'attention, la chaleur, l'envie de bien faire. Je n'oublierai pas de sitôt.",
+      "lang": "fr",
+      "date": "2026-03-23",
+      "author": "Esthete_Eclaire"
+    },
+    {
+      "rating": 4,
+      "title": "Almost perfect",
+      "body": "Almost perfect. Will probably come back to give it another shot.",
+      "lang": "en",
+      "date": "2026-03-13",
+      "author": "DapperHeron"
+    },
+    {
+      "rating": 2,
+      "title": "Pas top",
+      "body": "Pas top du tout. L'établissement aurait besoin d'un sérieux coup de neuf.",
+      "lang": "fr",
+      "date": "2026-02-13",
+      "author": "PoseObservateur"
+    },
+    {
+      "rating": 1,
+      "title": "Arnaque",
+      "body": "Arnaque pure et simple. La prresta n'a rin a voir avec ce qui est annonce.",
+      "lang": "fr",
+      "date": "2026-01-23",
+      "author": "Esthete742"
+    },
+    {
+      "rating": 4,
+      "title": "Conforme aux attentes",
+      "body": "Tout s'est bien passé, le rapport qualité-prix est correct.",
+      "lang": "fr",
+      "date": "2025-12-31",
+      "author": "Inspecteur852"
+    },
+    {
+      "rating": 4,
+      "title": "Quasi perfetto",
+      "body": "Quasi perfetto. Manca poco per le cinque stelle.",
+      "lang": "it",
+      "date": "2025-12-02",
+      "author": "Giovanni_F"
+    },
+    {
+      "rating": 1,
+      "title": "Worst ever",
+      "body": "Wort experiencce I've ever had. Period.",
+      "lang": "en",
+      "date": "2025-11-21",
+      "author": "Mason_E"
+    },
+    {
+      "rating": 1,
+      "title": "Una vergüenza",
+      "body": "Una vergüenza. Pedir ese precio para esto.",
+      "lang": "es",
+      "date": "2025-11-19",
+      "author": "Forastero_Atrevido"
+    },
+    {
+      "rating": 5,
+      "title": "Above and beyond",
+      "body": "Went above and beyond what I expected. Truly memorable.",
+      "lang": "en",
+      "date": "2025-10-11",
+      "author": "Scribe1264"
+    },
+    {
+      "rating": 3,
+      "title": "Pas marquant",
+      "body": "Pas maquant. Je n'en garderai pas grand souvenir dans un mois.",
+      "lang": "fr",
+      "date": "2025-09-30",
+      "author": "Ecureuil_Maladroit"
+    },
+    {
+      "rating": 3,
+      "title": "Moyen",
+      "body": "Très moyen. Ni bon ni mauvais.",
+      "lang": "fr",
+      "date": "2025-09-23",
+      "author": "Beatrice_B"
+    },
+    {
+      "rating": 1,
+      "title": "Schlimmste Erfahrung",
+      "body": "Schlimmste Erfahrung meines Lebens. Punkt.",
+      "lang": "de",
+      "date": "2025-08-19",
+      "author": "VerspieltGlobetrotter"
+    },
+    {
+      "rating": 1,
+      "title": "Worst ever",
+      "body": "Worst experience I've ever had. Period.",
+      "lang": "en",
+      "date": "2025-05-20",
+      "author": "Kate_A"
+    },
+    {
+      "rating": 3,
+      "title": "Décevant côté service",
+      "body": "L'accueil était sympa mais le reste laisse à désirer. Pas catastrophique non plus.",
+      "lang": "fr",
+      "date": "2025-05-15",
+      "author": "Vincent_K"
+    },
+    {
+      "rating": 4,
+      "title": "Pleasantly surprised",
+      "body": "Pleasantly surprised. I'd had lower expectations after the price.",
+      "lang": "en",
+      "date": "2025-03-26",
+      "author": "MellowWolf"
+    },
+    {
+      "rating": 1,
+      "title": "Schlimmste Erfahrung",
+      "body": "Schlimmste Erfahrung meines Lebens. Punkt.",
+      "lang": "de",
+      "date": "2025-03-12",
+      "author": "Hannah_G"
+    },
+    {
+      "rating": 3,
+      "title": "Migliorabile",
+      "body": "Migliorabile. C'è potenziale ma non basta.",
+      "lang": "it",
+      "date": "2025-01-06",
+      "author": "Osservatore_Sincero"
+    },
+    {
+      "rating": 4,
+      "title": "Très chaleureux",
+      "body": "Rencontre chaleureuse, on se sent à l'aise. Le cadre est joli, l'attention sincère. Une étoile en moins parce que c'était trop court à mon goût.",
+      "lang": "fr",
+      "date": "2024-12-06",
+      "author": "LunaireLecteur"
+    },
+    {
+      "rating": 2,
+      "title": "Caro e insipido",
+      "body": "Caro e insipido. Sconsigliato.",
+      "lang": "it",
+      "date": "2024-12-04",
+      "author": "SolitarioCorvo"
     }
   ]
 }
