@@ -14,11 +14,9 @@ The site has a home page plus a small constellation of secondary pages reachable
 - `/encounters/:key` - press-style full article view
 - `/hotels`, `/parks`, `/alleys` - listings, share `ListingsPage.vue` via `listing-type` prop
 - `/write-review`, `/post-photos`, `/add-sex-worker` - parody form pages
-- `/how-it-works` - 9-section explainer page
 - `/about` - parody premise + shared `SeriousNote`
 - `/safety` - integrity policy, ends on a "what we don't do" pivot + shared `SeriousNote`
 - `/terms` - 6 numbered sections + shared `SeriousNote` aside
-- `/accessibility` - hero with 3 shield SVGs + EAA/WCAG references
 - `/resources` - hub of brief policy summaries (no follow-up links)
 
 **Four modals** mounted at the App level: `PreferencesModal` (region/locale + currency), `SignInModal` (initial / email / forgot-password screens), `CookieConsentModal` (4 categories: 1 always-on, 3 "None"), `LoginRequiredModal` (gates fiche actions and the three form-page submits - opens `SignInModal` on confirm). `LoginRequiredModal` recognises 5 targets: `save` and the contact actions (`site`/`menu`/`phone`/`email`) come from `FichePage`; `publish_review`, `publish_photos` and `add_place` come from the form pages on submit (no in-page success card any more).
@@ -44,11 +42,9 @@ src/
 │   ├── UserReviewPage.vue        # /write-review
 │   ├── PostPhotosPage.vue        # /post-photos
 │   ├── CreateListingPage.vue     # /add-sex-worker
-│   ├── HowTheSiteWorksPage.vue
 │   ├── AboutPage.vue
 │   ├── SafetyPage.vue
 │   ├── TermsPage.vue
-│   ├── AccessibilityPage.vue
 │   ├── ResourcesPage.vue
 │   └── DiscoverPage.vue          # /discover - top-4 fiches by rating + DestinationsHighlights
 ├── components/
@@ -123,11 +119,9 @@ tests/
 ├── ListingsPages.test.js         # Hotels / Parks / Alleys
 ├── FichePage.test.js             # /p/:id - profile rendering, schedule, not-found, transitive Fiche* coverage
 ├── SearchResultsPage.test.js     # /search - grouping, filtering by ?q= and ?age=, HeroSearch submit
-├── HowTheSiteWorksPage.test.js
 ├── AboutPage.test.js
 ├── SafetyPage.test.js
 ├── TermsPage.test.js
-├── AccessibilityPage.test.js
 ├── ResourcesPage.test.js
 ├── translations.test.js          # dictionary integrity + locale switching guards
 └── i18n.test.js                  # store API + browser default detection
@@ -152,11 +146,9 @@ All routes live in `src/router/index.js`. `createAppRouter({ history })` is a fa
 | `/write-review`    | `write-review`   | `UserReviewPage.vue`                                       |
 | `/post-photos`     | `post-photos`    | `PostPhotosPage.vue`                                       |
 | `/add-sex-worker`  | `add-sex-worker` | `CreateListingPage.vue`                                    |
-| `/how-it-works`    | `how-it-works`   | `HowTheSiteWorksPage.vue`                                  |
 | `/about`           | `about`          | `AboutPage.vue`                                            |
 | `/safety`          | `safety`         | `SafetyPage.vue`                                           |
 | `/terms`           | `terms`          | `TermsPage.vue`                                            |
-| `/accessibility`   | `accessibility`  | `AccessibilityPage.vue`                                    |
 | `/resources`       | `resources`      | `ResourcesPage.vue`                                        |
 | `/discover`        | `discover`       | `DiscoverPage.vue` (top-4 fiches + DestinationsHighlights) |
 
@@ -184,7 +176,7 @@ const sections = computed(() =>
 );
 ```
 
-Translation namespace per page: `<short>_page` (`tc_page`, `ts_page`, `ur_page`, `pp_page`, `cl_page`, `how_page`, `about_page`, `safety_page`, `terms_page`, `acc_page`, `resources_page`, `listings`).
+Translation namespace per page: `<short>_page` (`tc_page`, `ts_page`, `ur_page`, `pp_page`, `cl_page`, `about_page`, `safety_page`, `terms_page`, `resources_page`, `listings`).
 
 ## Modals
 
@@ -208,10 +200,10 @@ To add a new modal: declare its open ref + actions in `state/modals.js`, create 
 
 Currently:
 
-- **About column**: `About Us → /about`, `Resources and Policies → /resources`, `Trust & Safety → /safety`, `How the site works → /how-it-works`. (Placeholders no longer exist in this column.)
+- **About column**: `About Us → /about`, `Resources and Policies → /resources`, `Trust & Safety → /safety`. (Placeholders no longer exist in this column.)
 - **Explore column**: `Write a review → /write-review`, `Add a sex worker → /add-sex-worker`, `Join → openSignin()`, `Top destinations → /discover`, `Encounter Stories → /encounters`.
 - **Settings column** (rightmost): currency `<select>`, locale `<select>` (both fall back to opening `PreferencesModal` when the user picks the `…` option), and the GitHub social pill, right-aligned.
-- **Legal nav** (bottom row): `Terms of Use → /terms`, `Cookie consent → openCookieModal()`, `Accessibility Statement → /accessibility`.
+- **Legal nav** (bottom row): `Terms of Use → /terms`, `Cookie consent → openCookieModal()`.
 
 ## Theme
 

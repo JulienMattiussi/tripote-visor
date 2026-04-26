@@ -23,7 +23,6 @@ const todayIso = () => {
 const selectedFiche = ref(initialFiche);
 const rating = ref(0);
 const visitDate = ref(todayIso());
-const tripType = ref('');
 const title = ref('');
 const body = ref('');
 const showError = ref(false);
@@ -36,7 +35,6 @@ const RATING_LABELS = [
   'rating_very_good',
   'rating_excellent',
 ];
-const TRIP_TYPES = ['couples', 'family', 'friends', 'business', 'solo'];
 
 const ratingLabel = computed(() =>
   rating.value > 0 ? t(`ur_page.${RATING_LABELS[rating.value]}`) : '',
@@ -47,7 +45,6 @@ const isValid = computed(
     selectedFiche.value &&
     rating.value > 0 &&
     visitDate.value &&
-    tripType.value &&
     title.value.trim() &&
     body.value.trim(),
 );
@@ -110,16 +107,6 @@ const onSubmit = (e) => {
             required
           />
         </label>
-
-        <fieldset class="field">
-          <legend class="field-label">{{ t('ur_page.trip_type_label') }} <em>*</em></legend>
-          <div class="chip-group">
-            <label v-for="type in TRIP_TYPES" :key="type" class="chip">
-              <input v-model="tripType" type="radio" :value="type" />
-              <span>{{ t(`ur_page.trip_${type}`) }}</span>
-            </label>
-          </div>
-        </fieldset>
 
         <label class="field">
           <span class="field-label">{{ t('ur_page.title_label') }} <em>*</em></span>

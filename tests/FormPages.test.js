@@ -26,7 +26,6 @@ describe('UserReviewPage (Write a review)', () => {
     expect(wrapper.find('input[type="text"]').exists()).toBe(true); // place
     expect(wrapper.find('input[type="date"]').exists()).toBe(true);
     expect(wrapper.findAll('.star-btn')).toHaveLength(5);
-    expect(wrapper.findAll('input[type="radio"]')).toHaveLength(5); // trip types
     expect(wrapper.find('textarea').exists()).toBe(true);
     expect(wrapper.find('.form-submit').text()).toBe('Publish my review');
   });
@@ -75,7 +74,6 @@ describe('UserReviewPage (Write a review)', () => {
     await wrapper.find('.ps-suggestion').trigger('click');
     await wrapper.findAll('.star-btn')[4].trigger('click'); // 5 stars
     await wrapper.find('input[type="date"]').setValue('2026-03-10');
-    await wrapper.findAll('input[type="radio"]')[0].setValue(); // first trip type
     await wrapper.find('input[type="text"]').setValue('A perfect stay');
     await wrapper.find('textarea').setValue('Wonderful breakfast and warm staff.');
 

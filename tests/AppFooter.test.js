@@ -38,7 +38,6 @@ describe('AppFooter - About column', () => {
       '/about',
       '/resources',
       '/safety',
-      '/how-it-works',
     ]);
   });
 });
@@ -134,10 +133,10 @@ describe('AppFooter - Legal nav', () => {
   });
   afterEach(() => resetState());
 
-  it('renders Terms and Accessibility router-links plus a Cookie consent button', () => {
+  it('renders the Terms router-link plus a Cookie consent button', () => {
     const wrapper = mountFooter();
     const legalLinks = wrapper.findAll('.legal a');
-    expect(legalLinks.map((a) => a.attributes('href'))).toEqual(['/terms', '/accessibility']);
+    expect(legalLinks.map((a) => a.attributes('href'))).toEqual(['/terms']);
     expect(wrapper.find('.legal button.link-like').exists()).toBe(true);
   });
 

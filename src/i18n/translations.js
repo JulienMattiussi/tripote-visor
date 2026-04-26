@@ -71,7 +71,7 @@ export const translations = {
       cta: 'Read the stories',
     },
     community: {
-      title: 'Tripote-visor: join the largest travel community',
+      title: 'Tripote-visor: join the largest user community',
       body: "As the world's leading platform for fieldwork-grade encounter reports, Tripote-visor helps you plan your evenings with the same care others put into a Sunday brunch. No more wandering the streets: book, rate, repeat. Browse hotels, parks, and alleys backed by more than a billion opinions from users who, take our word for it, really have been there. We're here to take a load off.",
     },
     footer: {
@@ -83,7 +83,6 @@ export const translations = {
       copyright: '© {year} Tripote-visor LLC All rights reserved.',
       legal_terms: 'Terms of Use',
       legal_cookies: 'Cookie consent',
-      legal_accessibility: 'Accessibility Statement',
       disclaimer_short:
         'This is a parody website for educational/front-end demonstration purposes only. Tripote-visor is not affiliated with any real travel platform.',
       disclaimer_long:
@@ -95,7 +94,6 @@ export const translations = {
       col_about_1: 'About Us',
       col_about_2: 'Resources and Policies',
       col_about_5: 'Trust & Safety',
-      col_about_6: 'How the site works',
       col_explore_title: 'Explore',
       col_explore_1: 'Write a review',
       col_explore_2: 'Add a sex worker',
@@ -170,12 +168,6 @@ export const translations = {
       rating_terrible: 'Terrible',
       visit_date_label: 'When did you visit?',
       visit_date_placeholder: 'Pick a date',
-      trip_type_label: 'What kind of trip was this?',
-      trip_couples: 'Couples',
-      trip_family: 'Family',
-      trip_friends: 'Friends',
-      trip_business: 'Business',
-      trip_solo: 'Solo',
       title_label: 'A title for your review',
       title_placeholder: 'Sum up your visit in one line',
       body_label: 'Tell us about it',
@@ -241,41 +233,6 @@ export const translations = {
       relationship_traveller: 'I’m a traveller who visited',
       submit: 'Submit listing',
       error_required: 'Please fill in every required field before submitting.',
-    },
-    how_page: {
-      hero_title: 'How the site works',
-      hero_subtitle:
-        'The short version of how Tripote-visor lists places, ranks them, shows reviews, and stays funded.',
-      section_listing_title: 'Who can be listed',
-      section_listing_body:
-        'Each vertical has its own minimum requirements. Hotels need a 24/7 front desk, private bathrooms and housekeeping. Restaurants serve meals prepared on site, keep fixed hours, and operate at least twelve weeks a year. Things to Do must have a tourist interest and run at least twelve weeks (shows: twenty-four). Airlines need scheduled commercial service with at least sixty days of activity. A permanent address open to several distinct groups is expected across the board.',
-      section_ranking_title: 'How places are ranked',
-      section_ranking_body:
-        'Lists are built differently depending on the sort you pick. Hotels default to "Value for money", driven by the Popularity Ranking - an index weighing the quantity, quality and recency of reviews. Restaurants default to "Our Selection", which factors in compensation from partners alongside review signals, while "Highest Rated" uses the Popularity Ranking. Things to Do surface "Travellers\' Favourites", based on reviews and distance. Nobody can pay to buy a specific position, but partners\' commercial arrangements can influence some editorial lists.',
-      section_tc_title: 'Travellers’ Choice',
-      section_tc_body:
-        'Each year, Travellers’ Choice awards the top 1% of places according to the community. Winners keep the badge for twelve months and the list is refreshed every winter. The selection is produced automatically from the previous year’s reviews - no editors, no commercial deals can influence it.',
-      section_revenue_title: 'How Tripote-visor makes money',
-      section_revenue_body:
-        'Being listed is free for every business. We earn a commission when a traveller books an activity, tour or vacation rental through one of our partner links. Hotel offers run through a Cost Per Click (CPC) auction where partners bid for visibility on the booking widget. Sponsored results are allowed but always clearly labelled "Advertisement" or "Ad".',
-      section_moderation_title: 'How reviews are moderated',
-      section_moderation_body:
-        'Each submission runs through an automated system that looks for violations of our community guidelines, and our in-house experts review content 24/7. Reports from the community are examined too. We may email the author to confirm the details of a review before publishing it.',
-      section_publication_title: 'When reviews appear and how long they stay',
-      section_publication_body:
-        'Most reviews go live in under twenty-four hours. Once published, they stay online indefinitely. We only remove them if the author deletes them, they fail re-validation, they break our guidelines, the place closes, or it changes owner or undergoes a major renovation.',
-      section_incentives_title: 'No paid reviews',
-      section_incentives_body:
-        'Writing - or commissioning - a review in exchange for money, discounts or gifts is strictly forbidden and leads to removal. Businesses cannot offer perks for reviews of current or future stays. If you suspect this happens, tell us at incentives@tripote-visor.com.',
-      section_ai_title: 'AI summaries and machine translations',
-      section_ai_body:
-        'Review summaries are produced by large language models that extract common themes (cleanliness, location, value for money). Translations are powered by Google and Phrase. Neither is guaranteed to be perfectly accurate, and the original review is always shown alongside the machine output on request.',
-      section_role_title: 'Our role, and how to report a problem',
-      section_role_body:
-        'Tripote-visor does not own any of the places listed. Booking prices, availability and itineraries come from third-party partners in real time, and we offer no commercial warranty on them. Every review, photo and listing has a "Report" link - use it to flag content that breaks our guidelines, and our moderators will usually handle it within 24 to 48 hours.',
-      parody_note:
-        'This page is a parody - Tripote-visor is a front-only demo, so none of the mechanisms described here actually run. It summarises in plain words how mainstream review platforms typically operate.',
-      back_home: 'Back to home',
     },
     listings: {
       hotels_title: 'Hotels',
@@ -426,21 +383,6 @@ export const translations = {
       parody_title: 'The parody',
       parody_body:
         'Tripote-visor is a parody of well-known travel review platforms. Its premise is deliberately uncomfortable: it imagines what such a site would look like if, instead of hotels and restaurants, it claimed to list sex workers with client-facing reviews and rankings. There are no real listings, no real reviews, no platform behind it. Whatever discomfort the name produces is intentional: the gap between a polished interface and the topic it claims to organise is the point.',
-      back_home: 'Back to home',
-    },
-    acc_page: {
-      hero_title: 'Accessibility statement',
-      hero_aria_lock: 'Privacy',
-      hero_aria_check: 'Standards',
-      hero_aria_user: 'Inclusive',
-      intro:
-        'At Tripote-visor we want travel to be open to everyone. We are committed to making our website usable for as many people as possible, and we keep working on inclusive design across the site.',
-      progress:
-        'Since June 2025 we have reviewed and improved the booking flow for our activities - the parts of the platform travellers actually transact through. The bulk of that experience now meets the latest e-commerce expectations of the European Accessibility Act (EAA), which requires consumer-facing sites in the EU to comply with at least the WCAG 2.1 AA standard when they offer specific in-scope services.',
-      ongoing:
-        'We are far from done. Alongside other companies pushing digital accessibility forward, we will keep iterating to give every traveller the best experience we can. If you spot something we can do better, write to us at accessibility@tripote-visor.com and we will fold it into the next pass.',
-      eaa_link: 'European Accessibility Act (EAA)',
-      wcag_link: 'WCAG 2.1 AA standard',
       back_home: 'Back to home',
     },
     place_search: {
@@ -635,7 +577,6 @@ export const translations = {
       copyright: '© {year} Tripote-visor LLC Tous droits réservés.',
       legal_terms: 'Conditions d’utilisation',
       legal_cookies: 'Accord d’utilisation des cookies',
-      legal_accessibility: 'Politique d’accessibilité',
       disclaimer_short:
         'Ceci est un site parodique à des fins éducatives et de démonstration front-end uniquement. Tripote-visor n’est affilié à aucune plateforme de voyage réelle.',
       disclaimer_long:
@@ -647,7 +588,6 @@ export const translations = {
       col_about_1: 'À propos de Tripote-visor',
       col_about_2: 'Ressources et règlements',
       col_about_5: 'Confiance et sécurité',
-      col_about_6: 'Fonctionnement du site',
       col_explore_title: 'Explorez',
       col_explore_1: 'Écrire un avis',
       col_explore_2: 'Ajouter une prostituée',
@@ -722,12 +662,6 @@ export const translations = {
       rating_terrible: 'Horrible',
       visit_date_label: 'Quand y êtes-vous allé(e) ?',
       visit_date_placeholder: 'Choisissez une date',
-      trip_type_label: 'Quel type de voyage était-ce ?',
-      trip_couples: 'En couple',
-      trip_family: 'En famille',
-      trip_friends: 'Entre amis',
-      trip_business: 'Affaires',
-      trip_solo: 'Solo',
       title_label: 'Un titre pour votre avis',
       title_placeholder: 'Résumez votre visite en une phrase',
       body_label: 'Racontez-nous',
@@ -796,41 +730,6 @@ export const translations = {
       relationship_traveller: 'Je suis un utilisateur qui l’a visité',
       submit: 'Soumettre la fiche',
       error_required: 'Merci de remplir chaque champ obligatoire avant de soumettre.',
-    },
-    how_page: {
-      hero_title: 'Fonctionnement du site',
-      hero_subtitle:
-        'En version courte : comment Tripote-visor répertorie les lieux, les classe, affiche les avis et se finance.',
-      section_listing_title: 'Qui peut être répertorié',
-      section_listing_body:
-        'Chaque catégorie a ses propres minimums. Les hôtels doivent proposer une réception 24h/24, des salles de bain privatives et le ménage. Les restaurants servent des plats préparés sur place à des horaires fixes, au moins douze semaines par an. Les activités présentent un intérêt touristique et tournent au moins douze semaines (vingt-quatre pour les spectacles). Les compagnies aériennes doivent opérer un service commercial régulier avec au moins soixante jours d’activité. Une adresse permanente ouverte à plusieurs groupes distincts est attendue partout.',
-      section_ranking_title: 'Comment les lieux sont classés',
-      section_ranking_body:
-        'Les listes ne se construisent pas toutes pareil selon le tri choisi. Pour les hôtels, le tri par défaut est « Rapport qualité-prix », bâti sur l’indice de popularité qui combine quantité, qualité et ancienneté des avis. Les restaurants s’affichent par défaut selon « Notre sélection » - qui intègre la rémunération versée par les partenaires en plus des signaux d’avis - tandis que « Note la plus élevée » repose sur l’indice de popularité. Les activités mettent en avant les « Favoris des utilisateurs », à partir des avis et de la distance. Personne ne peut acheter une position précise, mais les accords commerciaux des partenaires peuvent influencer certaines listes éditoriales.',
-      section_tc_title: 'Travellers’ Choice',
-      section_tc_body:
-        'Chaque année, Travellers’ Choice distingue le top 1 % des lieux selon la communauté. Les gagnants conservent le badge douze mois et la liste est renouvelée chaque hiver. La sélection est produite automatiquement à partir des avis de l’année écoulée - aucun choix éditorial, aucun accord commercial n’influence le résultat.',
-      section_revenue_title: 'Comment Tripote-visor gagne de l’argent',
-      section_revenue_body:
-        'L’inscription est gratuite pour tous les établissements. Nous touchons une commission lorsqu’un utilisateur réserve une activité, une visite ou une location de vacances via nos liens partenaires. Les offres d’hôtels passent par un système d’enchères au Coût par Clic (CPC) où les partenaires se disputent la visibilité du widget de réservation. Les résultats sponsorisés sont autorisés mais toujours signalés par la mention « Publicité » ou « Annonce ».',
-      section_moderation_title: 'Modération des avis',
-      section_moderation_body:
-        'Chaque contribution passe par un système automatisé qui traque les violations du règlement communautaire, puis par nos experts internes qui veillent 24h/24, 7j/7. Les signalements de la communauté sont également examinés. Nous pouvons vous contacter par e-mail pour confirmer les détails d’un avis avant publication.',
-      section_publication_title: 'Publication et durée de vie des avis',
-      section_publication_body:
-        'La plupart des avis sont publiés en moins de vingt-quatre heures. Une fois en ligne, un avis reste accessible indéfiniment. Nous ne le retirons que si son auteur le supprime, s’il échoue à une nouvelle validation, s’il enfreint la charte, si le lieu ferme, ou s’il change de propriétaire ou subit une rénovation majeure.',
-      section_incentives_title: 'Pas d’avis contre rémunération',
-      section_incentives_body:
-        'Rédiger - ou commander - un avis en échange d’argent, de réductions ou de cadeaux est strictement interdit et entraîne la suppression. Les établissements ne peuvent pas offrir d’avantages en échange d’avis sur des séjours en cours ou à venir. Si vous constatez de telles pratiques, signalez-les à incentives@tripote-visor.com.',
-      section_ai_title: 'Résumés par IA et traductions automatiques',
-      section_ai_body:
-        'Les synthèses d’avis sont produites par de grands modèles de langage qui en extraient les thèmes récurrents (propreté, emplacement, rapport qualité-prix). Les traductions sont assurées par Google et Phrase. Ni l’une ni l’autre n’est garantie d’une précision parfaite, et l’avis original reste affiché à côté de la sortie automatique sur demande.',
-      section_role_title: 'Notre rôle et comment signaler un problème',
-      section_role_body:
-        'Tripote-visor ne possède aucun des lieux répertoriés. Les prix, disponibilités et itinéraires de réservation viennent en temps réel de partenaires tiers et nous n’offrons aucune garantie commerciale. Chaque avis, photo et fiche comporte un lien « Signaler » - utilisez-le pour remonter les contenus qui enfreignent la charte, nos modérateurs les traitent généralement sous 24 à 48 heures.',
-      parody_note:
-        'Cette page est une parodie - Tripote-visor est une démo front uniquement, aucun des mécanismes décrits ici ne tourne réellement. Elle résume en mots simples la façon dont fonctionnent globalement les plateformes d’avis grand public.',
-      back_home: 'Retour à l’accueil',
     },
     listings: {
       hotels_title: 'Hôtels',
@@ -987,21 +886,6 @@ export const translations = {
       parody_title: 'La parodie',
       parody_body:
         'Tripote-visor est une parodie des grandes plateformes d’avis de voyage. Son postulat est volontairement dérangeant : il imagine à quoi ressemblerait un tel site si, au lieu d’hôtels et de restaurants, il prétendait référencer des personnes prostituées avec des avis et des classements pour les clients. Il n’y a aucun référencement réel, aucun avis, aucune plateforme derrière. Le malaise que provoque le nom est intentionnel : c’est précisément l’écart entre une interface soignée et le sujet qu’elle prétend ordonner qui fait le propos.',
-      back_home: 'Retour à l’accueil',
-    },
-    acc_page: {
-      hero_title: 'Politique d’accessibilité',
-      hero_aria_lock: 'Confidentialité',
-      hero_aria_check: 'Standards',
-      hero_aria_user: 'Inclusion',
-      intro:
-        'Chez Tripote-visor, nous voulons que le voyage soit ouvert à toutes et à tous. Nous nous engageons à ce que notre site soit utilisable par le plus grand nombre, et nous itérons en continu sur la conception inclusive du site.',
-      progress:
-        'Depuis juin 2025, nous avons revu et amélioré le tunnel de réservation de nos activités - c’est-à-dire les parcours sur lesquels les utilisateurs effectuent réellement une transaction. La majeure partie de cette expérience répond désormais aux dernières exigences e-commerce de l’Acte législatif européen sur l’accessibilité (EAA), qui impose aux sites consultés par les consommateurs européens de respecter au minimum la norme WCAG 2.1 AA lorsqu’ils proposent certains services spécifiques.',
-      ongoing:
-        'Le travail n’est pas terminé. Aux côtés d’autres acteurs qui font avancer l’accessibilité numérique, nous continuerons d’itérer pour offrir la meilleure expérience possible à chaque utilisateur. Si vous repérez quelque chose à améliorer, écrivez-nous à accessibility@tripote-visor.com - nous l’intégrerons dans la prochaine itération.',
-      eaa_link: 'Acte législatif européen sur l’accessibilité (EAA)',
-      wcag_link: 'norme WCAG 2.1 AA',
       back_home: 'Retour à l’accueil',
     },
     place_search: {
