@@ -10,7 +10,8 @@
       "Bash(node -e ' *)",
       "Bash(awk:*)",
       "WebSearch",
-      "Bash(curl -s http://localhost:5173/)"
+      "Bash(curl -s http://localhost:5173/)",
+      "Bash(fc-list)"
     ],
     "additionalDirectories": [
       "/tmp"
