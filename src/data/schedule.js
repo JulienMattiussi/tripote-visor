@@ -1,7 +1,7 @@
-export const DAYS_ORDER = ['lundi', 'mardi', 'mercredi', 'jeudi', 'vendredi', 'samedi', 'dimanche'];
+const DAYS_ORDER = ['lundi', 'mardi', 'mercredi', 'jeudi', 'vendredi', 'samedi', 'dimanche'];
 const DAY_BY_INDEX = ['dimanche', 'lundi', 'mardi', 'mercredi', 'jeudi', 'vendredi', 'samedi'];
 
-export const todayName = () => DAY_BY_INDEX[new Date().getDay()];
+const todayName = () => DAY_BY_INDEX[new Date().getDay()];
 
 export function todayStatus(schedule, t) {
   if (!schedule) return { open: false, label: '' };

@@ -31,10 +31,6 @@ export function goToSigninEmail() {
   signinScreen.value = 'email';
 }
 
-export function goBackToSigninInitial() {
-  signinScreen.value = 'initial';
-}
-
 export function openCookieModal() {
   cookieModalOpen.value = true;
 }

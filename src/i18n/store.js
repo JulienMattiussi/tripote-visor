@@ -84,23 +84,10 @@ const CURRENCY_META = {
   EUR: { symbol: '€', position: 'suffix', flag: '🇫🇷' },
 };
 
-const LOCALE_META = {
-  en: { flag: '🇺🇸' },
-  fr: { flag: '🇫🇷' },
-};
-
 const USD_TO_EUR = 0.92;
-
-export function currencySymbol() {
-  return CURRENCY_META[currency.value].symbol;
-}
 
 export function currencyFlag() {
   return CURRENCY_META[currency.value].flag;
-}
-
-export function localeFlag() {
-  return LOCALE_META[locale.value].flag;
 }
 
 export function formatReviewDate(iso) {

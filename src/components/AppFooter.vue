@@ -163,6 +163,8 @@ const onLocaleChange = (e) => {
             {{ readMore ? t('footer.read_less') : t('footer.read_more') }}
           </button>
         </p>
+
+        <p class="signature">{{ t('footer.signature') }}</p>
       </div>
     </div>
   </footer>
@@ -327,6 +329,14 @@ const onLocaleChange = (e) => {
   font-weight: 700;
   padding: 0 4px;
   font-size: 12px;
+}
+
+.signature {
+  margin: 16px 0 0;
+  text-align: center;
+  font-size: 12px;
+  color: var(--text-muted);
+  font-weight: 600;
 }
 
 @media (max-width: 900px) {
