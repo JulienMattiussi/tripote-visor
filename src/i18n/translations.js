@@ -86,7 +86,7 @@ export const translations = {
       disclaimer_short:
         'This is a parody website for educational/front-end demonstration purposes only. Tripote-visor is not affiliated with any real travel platform.',
       disclaimer_long:
-        'All content, logos, and layouts shown here are placeholders. No actual bookings, reviews, or user data are handled. Images are sourced from free stock photo services.',
+        'All content, logos, and layouts shown here are placeholders. No actual bookings, reviews, or user data are handled. All images are fictional and AI-generated.',
       read_more: 'Read more ▾',
       read_less: 'Read less ▴',
       signature: 'with ❤️ by YavaDeus',
@@ -285,7 +285,7 @@ export const translations = {
         'You may freely browse the site, share screenshots, fork its source code, or otherwise reuse all or part of it. No fee, no quota, no licence to accept, and no terms of service to honour beyond what is reasonable under applicable law.',
       section_4_title: '4. Fictional content',
       section_4_body:
-        'All hotels, restaurants, activities, destinations, photographs of people, traveller names, reviews, ratings, prices and itineraries shown on Tripote-visor are entirely fictional or used as placeholders. Any resemblance to real establishments, persons, places or events is coincidental and unintended. Photographs come from royalty-free stock libraries and do not constitute an endorsement.',
+        'All hotels, restaurants, activities, destinations, photographs of people, traveller names, reviews, ratings, prices and itineraries shown on Tripote-visor are entirely fictional or used as placeholders. Any resemblance to real establishments, persons, places or events is coincidental and unintended. All images are fictional and AI-generated, and do not constitute an endorsement.',
       section_5_title: '5. No warranty',
       section_5_body:
         'The site is provided "as is", without warranty of any kind. It is not intended to plan, book, or otherwise inform real travel decisions, and its operator cannot be held liable for any decision taken on the basis of its content.',
@@ -579,7 +579,7 @@ export const translations = {
       disclaimer_short:
         'Ceci est un site parodique à des fins éducatives et de démonstration front-end uniquement. Tripote-visor n’est affilié à aucune plateforme de voyage réelle.',
       disclaimer_long:
-        'Tous les contenus, logos et maquettes affichés ici sont des placeholders. Aucune réservation, avis ou donnée utilisateur n’est réellement traité. Les images proviennent de banques d’images gratuites.',
+        'Tous les contenus, logos et maquettes affichés ici sont des placeholders. Aucune réservation, avis ou donnée utilisateur n’est réellement traité. Toutes les images sont fictives et générées par IA.',
       read_more: 'Voir plus ▾',
       read_less: 'Voir moins ▴',
       signature: 'avec ❤️ par YavaDeus',
@@ -783,7 +783,7 @@ export const translations = {
         'Vous pouvez librement consulter, partager des captures d’écran, forker ou réutiliser ce site, en tout ou partie. Aucun frais, aucun quota, aucune licence à accepter, aucune condition générale à honorer au-delà de ce qui est raisonnable au regard du droit applicable.',
       section_4_title: '4. Contenu fictif',
       section_4_body:
-        'L’ensemble des hôtels, restaurants, activités, destinations, photographies de personnes, noms d’utilisateurs, avis, notes, prix et itinéraires présentés sur Tripote-visor est entièrement fictif ou utilisé comme placeholder. Toute ressemblance avec des établissements, personnes, lieux ou événements réels est fortuite et non intentionnelle. Les photographies proviennent de banques d’images libres de droits et ne valent pas recommandation.',
+        'L’ensemble des hôtels, restaurants, activités, destinations, photographies de personnes, noms d’utilisateurs, avis, notes, prix et itinéraires présentés sur Tripote-visor est entièrement fictif ou utilisé comme placeholder. Toute ressemblance avec des établissements, personnes, lieux ou événements réels est fortuite et non intentionnelle. Toutes les images sont fictives et générées par IA, et ne valent pas recommandation.',
       section_5_title: '5. Aucune garantie',
       section_5_body:
         'Le site est fourni « en l’état », sans garantie d’aucune sorte. Il n’a pas pour but de planifier, réserver ou orienter des décisions de voyage réelles, et son exploitant ne saurait être tenu responsable d’une décision prise sur la base de son contenu.',

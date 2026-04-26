@@ -1,6 +1,6 @@
 # Tripote-visor
 
-Multi-page Vue 3 front simulation of a major review platform. Pure visual mockup - placeholder copy, placeholder imagery, no backend, no real bookings. Theme is pink/mauve. The site's premise is deliberately uncomfortable: it imagines a polished review platform applied to sex work, and uses the gap between the polished UI and that subject as a critique. A `SeriousNote` callout (see below) carries the moral weight wherever the parody's substantive subject is acknowledged.
+Multi-page Vue 3 front simulation of a major review platform. Pure visual mockup - placeholder copy, AI-generated imagery, no backend, no real bookings. Theme is pink/mauve. The site's premise is deliberately uncomfortable: it imagines a polished review platform applied to sex work, and uses the gap between the polished UI and that subject as a critique. A `SeriousNote` callout (see below) carries the moral weight wherever the parody's substantive subject is acknowledged.
 
 ## Product
 
