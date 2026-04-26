@@ -1,22 +1,18 @@
 <script setup>
 import { computed } from 'vue';
-import { t, locale } from '../i18n/store.js';
-import { STORIES } from '../data/travel-stories.js';
+import { useRouter } from 'vue-router';
+import { t, locale, formatReviewDate } from '../i18n/store.js';
+import articlesData from '../data/articles.json';
 
-const featured = computed(() => STORIES.find((s) => s.featured));
-const others = computed(() => STORIES.filter((s) => !s.featured));
+const router = useRouter();
 
-const formatDate = (iso) => {
-  const date = new Date(iso);
-  return date.toLocaleDateString(locale.value === 'fr' ? 'fr-FR' : 'en-US', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-  });
-};
+const featured = computed(() => articlesData.find((a) => a.featured));
+const others = computed(() => articlesData.filter((a) => !a.featured));
 
-const onRead = (story) => {
-  alert(`${t(`ts_page.story_${story.key}_title`)} ${t('common.sim_suffix')}`);
+const localized = (article, field) => article[field][locale.value] ?? article[field].en;
+
+const onRead = (article) => {
+  router.push({ name: 'article', params: { key: article.key } });
 };
 </script>
 
@@ -31,21 +27,17 @@ const onRead = (story) => {
   <main class="container ts-main">
     <article v-if="featured" class="ts-featured" @click="onRead(featured)">
       <div class="ts-featured-image">
-        <img :src="featured.image" :alt="t(`ts_page.story_${featured.key}_title`)" />
+        <img :src="featured.image" :alt="localized(featured, 'title')" />
         <span class="ts-featured-label">{{ t('ts_page.featured_label') }}</span>
       </div>
       <div class="ts-featured-body">
-        <span class="ts-cat">{{ t(`ts_page.cat_${featured.category_key}`) }}</span>
-        <h2 class="ts-featured-title">
-          {{ t(`ts_page.story_${featured.key}_title`) }}
-        </h2>
-        <p class="ts-featured-excerpt">
-          {{ t(`ts_page.story_${featured.key}_excerpt`) }}
-        </p>
+        <span class="ts-cat">{{ t(`ts_page.cat_${featured.category}`) }}</span>
+        <h2 class="ts-featured-title">{{ localized(featured, 'title') }}</h2>
+        <p class="ts-featured-excerpt">{{ localized(featured, 'excerpt') }}</p>
         <div class="ts-meta">
           <span>{{ t('ts_page.by_author', { author: featured.author }) }}</span>
           <span class="ts-meta-sep" aria-hidden="true">·</span>
-          <span>{{ formatDate(featured.date_iso) }}</span>
+          <span>{{ formatReviewDate(featured.date) }}</span>
           <span class="ts-meta-sep" aria-hidden="true">·</span>
           <span>{{ t('ts_page.read_time', { minutes: featured.read_minutes }) }}</span>
         </div>
@@ -60,22 +52,20 @@ const onRead = (story) => {
     </article>
 
     <ul class="ts-grid">
-      <li v-for="story in others" :key="story.key" class="ts-card" @click="onRead(story)">
+      <li v-for="article in others" :key="article.key" class="ts-card" @click="onRead(article)">
         <div class="ts-card-thumb">
-          <img :src="story.image" :alt="t(`ts_page.story_${story.key}_title`)" loading="lazy" />
+          <img :src="article.image" :alt="localized(article, 'title')" loading="lazy" />
         </div>
-        <span class="ts-cat">{{ t(`ts_page.cat_${story.category_key}`) }}</span>
-        <h3 class="ts-card-title">{{ t(`ts_page.story_${story.key}_title`) }}</h3>
-        <p class="ts-card-excerpt">{{ t(`ts_page.story_${story.key}_excerpt`) }}</p>
+        <span class="ts-cat">{{ t(`ts_page.cat_${article.category}`) }}</span>
+        <h3 class="ts-card-title">{{ localized(article, 'title') }}</h3>
+        <p class="ts-card-excerpt">{{ localized(article, 'excerpt') }}</p>
         <div class="ts-meta">
-          <span>{{ t('ts_page.by_author', { author: story.author }) }}</span>
+          <span>{{ t('ts_page.by_author', { author: article.author }) }}</span>
           <span class="ts-meta-sep" aria-hidden="true">·</span>
-          <span>{{ t('ts_page.read_time', { minutes: story.read_minutes }) }}</span>
+          <span>{{ t('ts_page.read_time', { minutes: article.read_minutes }) }}</span>
         </div>
       </li>
     </ul>
-
-    <p class="ts-disclaimer">{{ t('ts_page.footer_note') }}</p>
   </main>
 </template>
 
@@ -261,14 +251,6 @@ const onRead = (story) => {
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
-}
-
-.ts-disclaimer {
-  font-size: 12px;
-  color: var(--text-muted);
-  text-align: center;
-  margin: 32px 0 0 0;
-  line-height: 1.5;
 }
 
 @media (max-width: 900px) {

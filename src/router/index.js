@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import HomePage from '../pages/HomePage.vue';
 import TravelStoriesPage from '../pages/TravelStoriesPage.vue';
+import ArticlePage from '../pages/ArticlePage.vue';
 import UserReviewPage from '../pages/UserReviewPage.vue';
 import PostPhotosPage from '../pages/PostPhotosPage.vue';
 import CreateListingPage from '../pages/CreateListingPage.vue';
@@ -20,6 +21,7 @@ import DiscoverPage from '../pages/DiscoverPage.vue';
 export const routes = [
   { path: '/', name: 'home', component: HomePage },
   { path: '/encounters', name: 'encounters', component: TravelStoriesPage },
+  { path: '/encounters/:key', name: 'article', component: ArticlePage, props: true },
   { path: '/write-review', name: 'write-review', component: UserReviewPage },
   { path: '/post-photos', name: 'post-photos', component: PostPhotosPage },
   { path: '/add-sex-worker', name: 'add-sex-worker', component: CreateListingPage },

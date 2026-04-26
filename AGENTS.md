@@ -10,7 +10,8 @@ The site has a home page plus a small constellation of secondary pages reachable
 
 **Secondary pages** (each reached from header or footer):
 
-- `/encounters` - 4 articles (1 featured + 3)
+- `/encounters` - 4 article previews (1 featured + 3) linking to `/encounters/:key`
+- `/encounters/:key` - press-style full article view
 - `/hotels`, `/parks`, `/alleys` - listings, share `ListingsPage.vue` via `listing-type` prop
 - `/write-review`, `/post-photos`, `/add-sex-worker` - parody form pages
 - `/how-it-works` - 9-section explainer page
@@ -32,7 +33,8 @@ src/
 │   └── index.js                  # createAppRouter({ history }) factory
 ├── pages/
 │   ├── HomePage.vue
-│   ├── TravelStoriesPage.vue
+│   ├── TravelStoriesPage.vue     # /encounters - 4 article previews
+│   ├── ArticlePage.vue           # /encounters/:key - press-style article
 │   ├── ListingsPage.vue          # generic, fed by listing-type prop
 │   ├── HotelsPage.vue            # thin wrapper over ListingsPage
 │   ├── ParksPage.vue             # thin wrapper over ListingsPage
@@ -68,7 +70,7 @@ src/
 │   ├── LoginRequiredModal.vue    # gates fiche actions + form submits behind sign-in
 │   └── SeriousNote.vue           # shared callout, optional `collapsed` prop
 ├── data/
-│   ├── travel-stories.js
+│   ├── articles.json             # 4 press articles (per-locale title/excerpt/lead/body)
 │   ├── fiches.json               # 100 profile entries (FR descriptif + descriptif_en + ville/lieu)
 │   ├── cities.json               # 50 villes ranked by fiche count, with optional photo URL
 │   ├── schedules.json            # 15 weekly schedule patterns referenced by fiches
@@ -102,6 +104,7 @@ tests/
 ├── CookieConsentModal.test.js
 ├── LoginRequiredModal.test.js    # all 5 message branches, EN+FR
 ├── TravelStoriesPage.test.js
+├── ArticlePage.test.js           # /encounters/:key - press-style article rendering
 ├── FormPages.test.js             # UserReview / PostPhotos / CreateListing (all submit → LoginRequiredModal)
 ├── ListingsPages.test.js         # Hotels / Parks / Alleys
 ├── FichePage.test.js             # /p/:id - profile rendering, schedule, not-found
@@ -122,25 +125,26 @@ The bust glyph in both favicons and in `AppHeader`'s inline SVG is the same shap
 
 All routes live in `src/router/index.js`. `createAppRouter({ history })` is a factory so tests can inject `createMemoryHistory()` (see `tests/helpers/router.js`). All internal navigation goes through `<router-link>` or `router.push({ name, params })` - never raw `<a href>` to internal URLs.
 
-| Path              | Name             | Page                                                       |
-| ----------------- | ---------------- | ---------------------------------------------------------- |
-| `/`               | `home`           | `HomePage.vue`                                             |
-| `/encounters`     | `encounters`     | `TravelStoriesPage.vue`                                    |
-| `/hotels`         | `hotels`         | `HotelsPage.vue` (wraps `ListingsPage`)                    |
-| `/parks`          | `parks`          | `ParksPage.vue` (wraps `ListingsPage`)                     |
-| `/alleys`         | `alleys`         | `AlleysPage.vue` (wraps `ListingsPage`)                    |
-| `/p/:id`          | `fiche`          | `FichePage.vue` (single profile)                           |
-| `/search`         | `search`         | `SearchResultsPage.vue` (`?q=`, `?categorie=`)             |
-| `/write-review`   | `write-review`   | `UserReviewPage.vue`                                       |
-| `/post-photos`    | `post-photos`    | `PostPhotosPage.vue`                                       |
-| `/add-sex-worker` | `add-sex-worker` | `CreateListingPage.vue`                                    |
-| `/how-it-works`   | `how-it-works`   | `HowTheSiteWorksPage.vue`                                  |
-| `/about`          | `about`          | `AboutPage.vue`                                            |
-| `/safety`         | `safety`         | `SafetyPage.vue`                                           |
-| `/terms`          | `terms`          | `TermsPage.vue`                                            |
-| `/accessibility`  | `accessibility`  | `AccessibilityPage.vue`                                    |
-| `/resources`      | `resources`      | `ResourcesPage.vue`                                        |
-| `/discover`       | `discover`       | `DiscoverPage.vue` (top-4 fiches + DestinationsHighlights) |
+| Path               | Name             | Page                                                       |
+| ------------------ | ---------------- | ---------------------------------------------------------- |
+| `/`                | `home`           | `HomePage.vue`                                             |
+| `/encounters`      | `encounters`     | `TravelStoriesPage.vue`                                    |
+| `/encounters/:key` | `article`        | `ArticlePage.vue` (press-style article view)               |
+| `/hotels`          | `hotels`         | `HotelsPage.vue` (wraps `ListingsPage`)                    |
+| `/parks`           | `parks`          | `ParksPage.vue` (wraps `ListingsPage`)                     |
+| `/alleys`          | `alleys`         | `AlleysPage.vue` (wraps `ListingsPage`)                    |
+| `/p/:id`           | `fiche`          | `FichePage.vue` (single profile)                           |
+| `/search`          | `search`         | `SearchResultsPage.vue` (`?q=`, `?categorie=`)             |
+| `/write-review`    | `write-review`   | `UserReviewPage.vue`                                       |
+| `/post-photos`     | `post-photos`    | `PostPhotosPage.vue`                                       |
+| `/add-sex-worker`  | `add-sex-worker` | `CreateListingPage.vue`                                    |
+| `/how-it-works`    | `how-it-works`   | `HowTheSiteWorksPage.vue`                                  |
+| `/about`           | `about`          | `AboutPage.vue`                                            |
+| `/safety`          | `safety`         | `SafetyPage.vue`                                           |
+| `/terms`           | `terms`          | `TermsPage.vue`                                            |
+| `/accessibility`   | `accessibility`  | `AccessibilityPage.vue`                                    |
+| `/resources`       | `resources`      | `ResourcesPage.vue`                                        |
+| `/discover`        | `discover`       | `DiscoverPage.vue` (top-4 fiches + DestinationsHighlights) |
 
 ## Pages
 

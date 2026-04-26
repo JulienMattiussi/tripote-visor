@@ -1,0 +1,170 @@
+[
+  {
+    "key": "boulogne",
+    "category": "adventure",
+    "featured": true,
+    "image": "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=1200&q=70&auto=format&fit=crop",
+    "author": "Tintin Morane",
+    "date": "2026-03-12",
+    "read_minutes": 10,
+    "title": {
+      "fr": "Une nuit de folie au bois de Boulogne",
+      "en": "A wild night in the Bois de Boulogne"
+    },
+    "excerpt": {
+      "fr": "Elles et ils s’appellent Tacoma, Brigitte, Félicité ou encore Momo, et passent leur vie au milieu d’une forêt urbaine. Et ils savent s’amuser.",
+      "en": "They go by Tacoma, Brigitte, Félicité or Momo, and they spend their lives in the middle of an urban forest. They sure know how to have fun."
+    },
+    "lead": {
+      "fr": "Au cœur de l’ouest parisien, une faune singulière fait vibrer les allées dès la tombée du jour. Reportage en immersion.",
+      "en": "Deep in west Paris, a singular crowd brings the lanes to life as soon as the sun goes down. An immersive report."
+    },
+    "body": {
+      "fr": [
+        "Il est presque vingt-deux heures lorsque je gare ma voiture porte Dauphine. Le bois s’étend, immense, troué de halos jaunes par les lampadaires anciens. À peine ai-je posé un pied sur le bitume que Tacoma, dans son blouson en faux croco, m’interpelle d’un signe de tête.",
+        "Tacoma habite, comme elle dit, “entre deux marronniers” depuis quinze ans. Elle connaît chaque sentier, chaque banc, chaque habitué. Elle me présente Brigitte, qui tient ses quartiers près du chalet, et Félicité, dont la silhouette élancée se découpe à l’orée des Pré-Catelan.",
+        "Brigitte est la doyenne du secteur. Vingt-deux ans sur la même portion d’allée, sur un banc en fer forgé que personne n’oserait lui contester. Elle reconnaît chaque voiture qui ralentit, chaque démarche dans la pénombre. “Y’en a qui passent juste pour discuter. Tu les connais à force, ils s’arrêtent cinq minutes, ils racontent leur journée, ils repartent. C’est presque mieux que rien.”",
+        "Félicité, quarante ans à peine, est la cadette du groupe. Elle a débarqué du Pré-Catelan il y a trois saisons, après une mauvaise expérience à Pigalle dont elle préfère ne rien dire. Ici, dit-elle, l’air est plus respirable. “Le bois, c’est un grand salon ouvert. Quand la lune est pleine, tu te crois en vacances.”",
+        "Ce qui surprend le visiteur, c’est moins le décor que la convivialité. Les rivalités professionnelles s’effacent à mesure que la nuit avance, remplacées par des fous rires, des cigarettes partagées et une solidarité de quartier qu’on ne soupçonne pas en plein jour. Une vieille thermos circule, on s’échange un briquet, on prête un foulard contre la fraîcheur.",
+        "Vers minuit trente, une voiture de police passe lentement sur l’allée. Tacoma fait un signe de la main, le passager lui rend son salut. Routine. “On les connaît, ils nous connaissent. Tant qu’on fait pas de bruit, ils nous laissent travailler. C’est un équilibre fragile, mais ça tient depuis longtemps.”",
+        "Le bois la nuit a sa propre bande-son. Les pneus mouillés sur le bitume, le crissement des graviers, le hululement régulier d’une chouette du côté de la cascade, le rire de Momo qui porte loin. Et toujours, en fond, le ronron du périphérique qui rappelle qu’on est encore à Paris.",
+        "Plus loin, sous un pin parasol, Momo accueille ses visiteurs avec un thermos de café turc et le rire le plus communicatif de l’allée. “On n’est pas ici pour faire la gueule”, résume-t-elle. À deux heures du matin, je quitte les lieux avec l’étrange impression d’avoir assisté à un cocktail de quartier, version forêt urbaine."
+      ],
+      "en": [
+        "It is nearly ten in the evening when I park near Porte Dauphine. The wood stretches out, vast, dotted with yellow halos cast by old streetlamps. I have barely stepped onto the asphalt before Tacoma, in her faux-croc jacket, nods me over.",
+        "Tacoma lives, as she puts it, “between two chestnut trees” and has done so for fifteen years. She knows every path, every bench, every regular. She introduces me to Brigitte, who holds court near the wooden chalet, and to Félicité, whose tall silhouette cuts through the edge of the Pré-Catelan.",
+        "Brigitte is the senior of the sector. Twenty-two years on the same stretch of path, on a wrought-iron bench nobody would dare contest. She recognises every car that slows down, every footstep in the gloom. “Some come just to talk. You learn them after a while, they stop for five minutes, they tell you about their day, they leave. It’s almost better than nothing.”",
+        "Félicité, barely forty, is the youngest of the group. She landed at the Pré-Catelan three seasons ago, after a bad experience in Pigalle she prefers not to talk about. Here, she says, the air is easier to breathe. “The wood is one big open-air parlour. When the moon is full, you feel like you’re on holiday.”",
+        "What strikes a visitor is not the setting so much as the camaraderie. Professional rivalries fade as the night wears on, replaced by laughter, shared cigarettes and a neighbourhood-style solidarity you would never suspect in broad daylight. An old thermos goes around, a lighter is passed along, a scarf is loaned against the chill.",
+        "Around half past midnight, a police car drifts slowly along the lane. Tacoma waves, the passenger waves back. Routine. “We know them, they know us. As long as we don’t make noise, they let us work. It’s a fragile balance, but it’s held for a long time.”",
+        "The wood at night has its own soundtrack. Wet tyres on asphalt, the crunch of gravel, the regular hoot of an owl over by the waterfall, Momo’s laughter carrying across the lanes. And always, underneath, the murmur of the périphérique reminding you that you are still in Paris.",
+        "Further along, under a parasol pine, Momo welcomes her guests with a thermos of Turkish coffee and the most contagious laugh on the path. “We are not here to be miserable”, she sums up. By two in the morning I leave with the strange feeling of having attended a local cocktail party, urban-forest edition."
+      ]
+    }
+  },
+  {
+    "key": "marseille",
+    "category": "culture",
+    "featured": false,
+    "image": "https://images.unsplash.com/photo-1528127269322-539801943592?w=900&q=70&auto=format&fit=crop",
+    "author": "Mafalda Tournesol",
+    "date": "2026-02-28",
+    "read_minutes": 3,
+    "title": {
+      "fr": "Rencontres à Marseille",
+      "en": "Encounters in Marseille"
+    },
+    "excerpt": {
+      "fr": "Dégustez les moules marinière sur le vieux port, un rêve qui devient réalité.",
+      "en": "Savour mussels marinière on the Vieux-Port, a dream come true."
+    },
+    "lead": {
+      "fr": "Au Vieux-Port, on déguste les moules avec une lenteur qui n’a pas de prix. Carnet de bord d’une soirée au bord du quai.",
+      "en": "At the Vieux-Port, mussels are savoured with a slowness that has no price. Field notes from one evening by the quay."
+    },
+    "body": {
+      "fr": [
+        "Marseille, sept heures du soir. La marée monte sur les nappes blanches du Vieux-Port. Le serveur dépose entre nous un plateau qui fume encore, et l’air s’emplit aussitôt d’un parfum d’iode et de vin blanc. On n’attend pas qu’il soit reparti pour commencer. “Faut pas hésiter. Tu te mouilles les doigts, tu prends ton temps, tu suces le jus avant la chair. C’est la règle du Vieux-Port.”",
+        "L’art de la moule, à Marseille, ne souffre aucune précipitation. Chaque coquille s’écarte avec une délicatesse complice. On y plonge la mie de pain, on aspire le bouillon, on rit beaucoup. Une vraie séance peut durer deux heures, parfois plus. “Y’en a qui mangent debout, en cinq minutes. Ceux-là je les regarde même pas. Une moule, ça se savoure assis, en silence, avec quelqu’un qu’on aime.”",
+        "On repart à pied, vers la Canebière, avec un sourire que les terrasses voisines ne s’expliquent pas. Le sel reste sur les doigts. Il faudra revenir."
+      ],
+      "en": [
+        "Marseille, seven in the evening. The tide rises over the white tablecloths of the Vieux-Port. The waiter lays a steaming platter between us, and the air fills at once with brine and white wine. We don’t wait for him to leave before we start. “You can’t hesitate. You wet your fingers, you take your time, you suck the juice before the flesh. That’s the rule of the Vieux-Port.”",
+        "The art of mussels, in Marseille, brooks no rushing. Each shell parts with knowing delicacy. You dip in the bread, you draw out the broth, you laugh a lot. A proper session can last two hours, sometimes more. “Some people eat standing up, in five minutes. Those ones I don’t even look at. A mussel is meant to be savoured sitting down, in silence, with someone you love.”",
+        "We walk back toward the Canebière with a smile the neighbouring terraces can’t quite read. Salt stays on the fingers. We’ll have to come back."
+      ]
+    }
+  },
+  {
+    "key": "minivans",
+    "category": "mechanical",
+    "featured": false,
+    "image": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=900&q=70&auto=format&fit=crop",
+    "author": "Lucky Lagaffe",
+    "date": "2026-02-14",
+    "read_minutes": 8,
+    "title": {
+      "fr": "Les filles en minivan",
+      "en": "The minivan girls"
+    },
+    "excerpt": {
+      "fr": "Mercedes, Renaud, Volkswagen, ces filles savent tout de leurs véhicules, leur vie en dépend.",
+      "en": "Mercedes, Renaud, Volkswagen, these girls know everything about their vehicles, their lives depend on it."
+    },
+    "lead": {
+      "fr": "Sur les aires d’autoroute du sud-est, une communauté de routières partage plus de cambouis que de discours. Reportage autour de trois fourgons increvables — ou presque.",
+      "en": "On the south-east motorway rest stops, a community of road-women shares more grease than chatter. A field report around three indestructible vans — well, almost."
+    },
+    "body": {
+      "fr": [
+        "Aire de Montélimar, six heures du matin. Brigitte essuie ses mains sur un chiffon imbibé d’huile moteur tandis que la lumière rasante éclaire le bitume encore humide. À côté d’elle, deux autres fourgons sont garés en triangle, capots ouverts, propriétaires accroupies dessous. Bienvenue chez les filles en minivan.",
+        "Brigitte, 58 ans, conduit la même Mercedes Sprinter depuis 2014. Elle a baptisé son fourgon « Coquette » et lui parle comme à une vieille amie. Cette année, ce sont trois pannes qui l’ont mise à genoux : un démarreur, une pompe à eau, et une fuite au joint de culasse. “Coquette m’a lâchée trois fois, et toujours sur les nationales, jamais en ville. T’allumes le moteur, ça fait clac-clac-clac, et après c’est mort. Faut connaître la chanson.”",
+        "Brigitte a appris la mécanique au comptoir d’un garage de Vienne et sur les forums du soir. Elle change ses bougies elle-même, vidange tous les 10 000 et garde une bougie de rechange dans la boîte à gants. “Le diesel, c’est traître. Tu lui mets pas de bonne huile, il fait la gueule.”",
+        "Quelques places plus loin, Mauricette, 62 ans, finit de remonter son carter. Elle roule en Renault Trafic depuis 2009, 380 000 kilomètres au compteur. “Mon Trafic, faut le caresser dans le sens du poil. Je lui mets de la 10W40 minérale, pas de synthèse, sinon il boude. La courroie de distri, je l’ai changée à 250 000, et depuis nickel chrome.”",
+        "Mauricette dit reconnaître chaque bruit du moteur comme on reconnaît la voix d’un proche. “Le jour où le soufflet de cardan fait un ploc-ploc à droite, je sais qu’il faut s’arrêter avant la prochaine sortie. C’est pas la mécanique qui me parle, c’est mon Trafic. Et lui, je l’écoute mieux que mon ex.”",
+        "À l’autre bout de l’aire, Jacqueline, 55 ans, ouvre la porte latérale de son Volkswagen T4 Transporter de 1997. Sous le matelas, deux caisses en bois pleines de clés à pipe, jeux de douilles et bombes de dégrippant. C’est sa quatrième restauration. “Mon T4, il a la rouille au châssis comme une vieille casserole. Mais on s’en fout, c’est l’âme qui compte. Le turbo a clamsé en 2022, j’en ai trouvé un d’occase à Saintes pour 380 balles. Tu paies un bras pour les pièces neuves.”",
+        "Jacqueline ricane en évoquant son joint de culasse refait l’an dernier au camping. “Trois jours sous la pluie, à plat ventre, à serrer au couple comme une dingue. Pas de cric hydraulique, juste une rampe et de la prière. Mon T4 m’a remerciée à sa façon : il démarre au quart de tour depuis. Y’a que la graisse qui tient, je te dis.”",
+        "Quand on leur demande si elles compteraient un jour échanger leur fourgon pour quelque chose de plus moderne, les trois éclatent de rire en chœur. Mauricette résume pour tout le monde, en allumant une rouleuse : “Mon mari, je l’ai quitté en 96. Mon Trafic, je le quitterai jamais. C’est lui mon mec.” Coquette, le Trafic et le T4 ronronnent tour à tour, et on jurerait qu’ils acquiescent."
+      ],
+      "en": [
+        "Montélimar service area, six in the morning. Brigitte wipes her hands on a rag soaked in engine oil while the low light hits the still-damp asphalt. Two other vans are parked in a triangle nearby, hoods open, owners crouched underneath. Welcome to the minivan girls.",
+        "Brigitte, 58, has driven the same Mercedes Sprinter since 2014. She named her van « Coquette » and talks to it like an old friend. This year three breakdowns have brought her to her knees: a starter, a water pump, and a leak at the head gasket. “Coquette dropped me three times, always on the back roads, never in town. You turn the key, it goes click-click-click, then nothing. You learn the tune.”",
+        "Brigitte learned her mechanics at the counter of a garage in Vienne and on late-night forums. She changes her own spark plugs, oil every 10,000, and keeps a spare glow plug in the glovebox. “Diesel is a traitor. Wrong oil and it sulks.”",
+        "A few spaces away, Mauricette, 62, is bolting her sump back on. She has been driving a Renault Trafic since 2009, 380,000 km on the clock. “My Trafic, you’ve got to stroke it the right way. I give it 10W40 mineral, no synthetic, or it sulks. Timing belt changed at 250,000, smooth as silk ever since.”",
+        "Mauricette claims she recognises every engine sound the way you recognise a relative’s voice. “The day the right CV-joint boot goes plop-plop, I know we stop before the next exit. It’s not the mechanics talking, it’s my Trafic. And I listen to him better than I ever listened to my ex.”",
+        "At the other end of the rest stop, Jacqueline, 55, opens the side door of her 1997 Volkswagen T4 Transporter. Under the mattress, two wooden crates full of socket wrenches, ratchet sets and cans of penetrating oil. It is her fourth restoration. “My T4 has rust on the chassis like an old saucepan. But who cares, what matters is the soul. The turbo packed up in 2022, I found a used one in Saintes for 380 quid. New parts cost an arm and a leg.”",
+        "Jacqueline cackles while telling the story of her head-gasket job, redone last year at a campsite. “Three days in the rain, flat on my belly, torque-wrenching like a maniac. No hydraulic jack, just a ramp and a prayer. My T4 thanked me in his own way: starts on the first turn ever since. Only the grease holds it together, I’m telling you.”",
+        "When asked whether they would ever trade their van for something more modern, the three burst out laughing in unison. Mauricette sums it up for everyone while rolling a cigarette: “I left my husband in ’96. My Trafic, I’ll never leave him. He’s my man.” Coquette, the Trafic and the T4 each purr in turn, and you could swear they nod in agreement."
+      ]
+    }
+  },
+  {
+    "key": "micheline",
+    "category": "portrait",
+    "featured": false,
+    "image": "https://images.unsplash.com/photo-1490650404312-a2175773bbf5?w=900&q=70&auto=format&fit=crop",
+    "author": "Spirou Lupin",
+    "date": "2026-01-30",
+    "read_minutes": 10,
+    "title": {
+      "fr": "Micheline, une histoire d’amour",
+      "en": "Micheline, a love story"
+    },
+    "excerpt": {
+      "fr": "Retour sur le parcours émouvant de Micheline dite Mimi la blonde qui fête cette année ses 60 ans dans le métier.",
+      "en": "A look back at the moving career of Micheline, aka Mimi la blonde, celebrating 60 years on the job this year."
+    },
+    "lead": {
+      "fr": "Soixante ans dans la même ruelle. Trois mille saisons. Une silhouette devenue légende. Portrait d’une figure que tout un quartier appelle simplement Mimi.",
+      "en": "Sixty years on the same alley. Three thousand seasons. A silhouette that became a legend. Portrait of a figure a whole neighbourhood simply calls Mimi."
+    },
+    "body": {
+      "fr": [
+        "Quand Micheline ouvre la porte de son salon, on remarque d’abord les photos. Cadres dorés, noir et blanc, posters jaunis : une fresque chronologique qui démarre dans les années cinquante et n’a jamais cessé de s’enrichir. Au-dessus de la caisse, un calendrier fatigué affiche encore février 2018. “J’aime bien ce mois-là”, explique-t-elle sans plus de détail.",
+        "Micheline a commencé à treize ans, en aidant sa mère qui tenait l’établissement avant elle. À l’époque, le quartier portait encore les stigmates de la guerre, et le métier se transmettait, comme tant d’autres, de mère en fille. “À l’époque on disait ‘aller au feu’, et pas autrement. Le feu, c’était le four, le poste, le service du soir. T’as compris ? On allait pas se vanter.”",
+        "Soixante ans plus tard, elle reçoit toujours, deux après-midis par semaine, sur rendez-vous. Sa clientèle a vieilli avec elle. Certains viennent depuis quarante ans. “Je connais leurs petits-enfants, leurs problèmes de dos, leurs blagues qui ne font plus rire personne.”",
+        "Ce qui frappe, c’est la mémoire. Mimi se souvient de chaque visage difficile, de chaque caractère, de chaque drame familial confié au comptoir. “Y’a toujours un client qui se plaint du service. T’as beau soigner ta présentation, choisir tes meilleurs morceaux, lui il te dira ‘c’était bien, mais vite fait’. Ces gens-là je les renvoie chez maman.”",
+        "Le métier, dit-elle, c’est avant tout une question de mesure. “Faut savoir doser. Trop chaud trop vite, ça brûle, ça dessèche. Quand la viande chauffe trop vite, elle est toute sèche, et c’est vraiment pas agréable pour le client. Une bonne réduction prend son temps. Faut faire monter la sauce gentiment, en remuant avec patience.”",
+        "Sur un rayon à hauteur d’épaule trône une photo encadrée d’un chat tigré. C’est « Caramel », adopté en 1990 sur un coup de tête, après une grosse tempête qui avait inondé le sous-sol. “Caramel, c’était mon collègue à plein temps. Il dormait sur la machine à café, il accueillait les habitués, il levait jamais les yeux quand y’avait du chambard à côté.” Caramel est mort en 2007, un coup de chaud en plein juillet. “J’ai pleuré trois jours derrière le comptoir. Mes habitués apportaient des fleurs, ils savaient pas quoi faire.”",
+        "Tous les caractères ne sont pas tendres, raconte-t-elle. “Je compte plus les mains au cul que j’ai reçues. Y’en a qui prennent ça pour un dessert offert. Au début je rigolais. Aujourd’hui je leur file une tape sèche avec le torchon, ça les calme.”",
+        "Les soirées sont longues. Mimi parle de quinze, parfois dix-huit heures debout, sans s’asseoir. “Quand tu rentres, tu te jettes pas dans le bain. Tu t’écroules. Les pieds dans une bassine, et basta. Le lendemain tu recommences.”",
+        "La solidarité du quartier, elle en parle avec une tendresse sans détour. “On forme une vraie famille, les filles du quartier. On se prête le sucre, le sel, les habits propres. Sans ça, on tiendrait pas une saison.” Quand elle évoque celles qui sont parties — Solange en 2003, Bernadette en 2017 — sa voix se voile un instant.",
+        "Les années 2000 ont été dures. “Les jeunes voulaient du nouveau, du flashy, de la nouvelle cuisine, des cocktails à la mode. Moi je faisais toujours pareil, à la papa, sans chichis. La vieille école, ça plaît plus à tout le monde.” Elle a tenu bon, en serrant les dents et en gardant le sourire.",
+        "Aujourd’hui, à soixante-treize ans, elle ne pense pas une seconde à arrêter. “Le jour où mes pieds ne suivront plus. Pas avant.” À l’entrée du salon, un vase de tulipes fraîches porte une carte manuscrite : « Joyeux 60e ! Les filles. » Mimi sourit. Soixante ans dans le métier, et toujours la première à éclater de rire."
+      ],
+      "en": [
+        "When Micheline opens the door to her parlour, the photos catch your eye first. Gilded frames, black and white prints, yellowed posters: a chronological fresco that starts in the fifties and has never stopped growing. Above the till, a tired calendar still shows February 2018. “I like that month”, she says, without elaborating.",
+        "Micheline started at thirteen, helping her mother who ran the place before her. At the time the neighbourhood still bore the scars of the war, and the trade was handed down, like so many others, from mother to daughter. “Back then we used to say ‘going to the fire’, and nothing else. The fire was the oven, the station, the evening shift. You get it? We didn’t go around bragging.”",
+        "Sixty years later, she still receives guests, two afternoons a week, by appointment. Her clientele has aged with her. Some have been coming for forty years. “I know their grandchildren, their bad backs, their jokes that nobody finds funny any more.”",
+        "What strikes you is the memory. Mimi remembers every difficult face, every temperament, every family drama whispered at the counter. “There’s always a customer who complains about the service. You can polish your presentation, pick your best cuts, and they’ll still say ‘it was nice, but a bit quick’. Those ones I send back to mama.”",
+        "The trade, she says, is above all a question of measure. “You’ve got to know how to dose. Too hot too fast, it burns, it dries out. When the meat heats up too quickly, it’s all dry, and that’s really not pleasant for the customer. A good reduction takes its time. You have to bring the sauce up gently, stirring with patience.”",
+        "On a shelf at shoulder height, a framed photo of a tabby cat takes pride of place. That’s « Caramel », adopted on impulse in 1990 after a big storm flooded the basement. “Caramel was my full-time colleague. He slept on the coffee machine, welcomed the regulars, never raised his eyes when there was a row next door.” Caramel died in 2007, a heatstroke in mid-July. “I cried for three days behind the counter. My regulars brought flowers, they didn’t know what to do.”",
+        "Not every character is gentle, she says. “I’ve lost count of the hands on my backside. Some take it for a dessert on the house. At first I laughed it off. Today I give them a sharp slap with the cloth, that calms them down.”",
+        "The evenings are long. Mimi talks of fifteen, sometimes eighteen hours on her feet, without sitting down. “When you get home, you don’t run a bath. You collapse. Feet in a basin, and that’s that. Next day you start again.”",
+        "She speaks of neighbourhood solidarity with unguarded tenderness. “We’re a real family, the girls of the area. We lend each other sugar, salt, clean clothes. Without that, we wouldn’t last a season.” When she mentions those who have left — Solange in 2003, Bernadette in 2017 — her voice clouds for a moment.",
+        "The two thousands were rough. “The young ones wanted new things, flashy stuff, nouvelle cuisine, fashionable cocktails. I kept doing the same, the old way, no fuss. The old school doesn’t please everyone any more.” She held on, gritting her teeth and keeping her smile.",
+        "Today, at seventy-three, she has no thought of stopping. “The day my feet stop following me. Not before.” At the entrance to the parlour, a vase of fresh tulips carries a handwritten card: « Happy 60th! From the girls. » Mimi smiles. Sixty years in the trade, and still the first to burst out laughing."
+      ]
+    }
+  }
+]

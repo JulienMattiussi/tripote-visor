@@ -158,29 +158,20 @@ export const translations = {
     },
     ts_page: {
       hero_title: 'Encounter Stories',
-      hero_subtitle: 'Inspiration, tips, and unforgettable trips from the Tripote-visor community.',
+      hero_subtitle:
+        'Inspiration, tips, and unforgettable experiences from the Tripote-visor community.',
       featured_label: 'Featured',
       read_article: 'Read article',
       read_time: '{minutes} min read',
       by_author: 'By {author}',
       cat_adventure: 'Adventure',
       cat_culture: 'Culture',
-      cat_food: 'Food & Drink',
-      cat_tips: 'Travel Tips',
-      story_highlands_title: 'On the road in the Highlands: a 7-day Scottish adventure',
-      story_highlands_excerpt:
-        'A solo loop through Glencoe, Skye and the North Coast 500 - what to pack, where to sleep, and which lochs to actually stop at.',
-      story_hanoi_title: 'What we learned from a month in Hanoi',
-      story_hanoi_excerpt:
-        'Rented bikes, grilled bun cha, and very strong coffee - a slow tour of the Old Quarter and what it taught us about Vietnamese hospitality.',
-      story_paris_bistros_title: '12 hidden bistros in Paris locals love',
-      story_paris_bistros_excerpt:
-        'Forget the tourist haunts. These tiny rooms in the 11th, 18th and 5th serve the kind of meals you’ll still talk about a year later.',
-      story_iceland_budget_title: 'How to plan a low-budget trip to Iceland',
-      story_iceland_budget_excerpt:
-        'Iceland doesn’t have to drain your savings. A tested itinerary that hits the South Coast and the Golden Circle for under €900 a week.',
-      footer_note:
-        'Articles are placeholders for front-end demo purposes only - Tripote-visor is a parody site.',
+      cat_mechanical: 'Mechanical',
+      cat_portrait: 'Portrait',
+    },
+    article_page: {
+      not_found: 'This article could not be found.',
+      back_to_encounters: 'Back to Encounter Stories',
     },
     ur_page: {
       hero_title: 'Write a review',
@@ -743,29 +734,19 @@ export const translations = {
     ts_page: {
       hero_title: 'Récit de rencontres',
       hero_subtitle:
-        'Inspiration, conseils et voyages inoubliables de la communauté Tripote-visor.',
+        'Inspiration, conseils et expériences inoubliables de la communauté Tripote-visor.',
       featured_label: 'À la une',
       read_article: 'Lire l’article',
       read_time: '{minutes} min de lecture',
       by_author: 'Par {author}',
       cat_adventure: 'Aventure',
       cat_culture: 'Culture',
-      cat_food: 'Gastronomie',
-      cat_tips: 'Conseils voyage',
-      story_highlands_title: 'Sur les routes des Highlands : 7 jours d’aventure écossaise',
-      story_highlands_excerpt:
-        'Une boucle en solo par Glencoe, Skye et la North Coast 500 - quoi emporter, où dormir et devant quels lochs vraiment s’arrêter.',
-      story_hanoi_title: 'Ce que nous avons appris d’un mois à Hanoï',
-      story_hanoi_excerpt:
-        'Vélos loués, bun cha grillé et café très corsé - un tour lent du Vieux Quartier et ce qu’il nous a appris sur l’hospitalité vietnamienne.',
-      story_paris_bistros_title: '12 bistrots parisiens cachés que les locaux adorent',
-      story_paris_bistros_excerpt:
-        'Oubliez les coins à touristes. Ces petites salles du 11e, du 18e et du 5e servent le genre de plats dont on parle encore un an plus tard.',
-      story_iceland_budget_title: 'Comment planifier un voyage en Islande à petit budget',
-      story_iceland_budget_excerpt:
-        'L’Islande n’oblige pas à vider votre épargne. Un itinéraire éprouvé qui couvre la côte sud et le Cercle d’or pour moins de 900 € la semaine.',
-      footer_note:
-        'Les articles sont des placeholders pour la démo front-end uniquement - Tripote-visor est un site parodique.',
+      cat_mechanical: 'Mécanique',
+      cat_portrait: 'Portrait',
+    },
+    article_page: {
+      not_found: 'Cet article est introuvable.',
+      back_to_encounters: 'Retour aux Récit de rencontres',
     },
     ur_page: {
       hero_title: 'Écrire un avis',
