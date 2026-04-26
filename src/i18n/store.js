@@ -6,7 +6,7 @@ const STORAGE_CURRENCY = 'tv_currency';
 
 const readStorage = (key) => {
   try {
-    return typeof localStorage !== 'undefined' ? localStorage.getItem(key) : null;
+    return typeof sessionStorage !== 'undefined' ? sessionStorage.getItem(key) : null;
   } catch {
     return null;
   }
@@ -14,7 +14,7 @@ const readStorage = (key) => {
 
 const writeStorage = (key, value) => {
   try {
-    if (typeof localStorage !== 'undefined') localStorage.setItem(key, value);
+    if (typeof sessionStorage !== 'undefined') sessionStorage.setItem(key, value);
   } catch {
     /* ignore quota / privacy-mode errors */
   }
