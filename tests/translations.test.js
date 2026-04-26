@@ -109,7 +109,6 @@ describe('translation dictionary integrity', () => {
       'footer.read_more',
       'prefs.title',
       'prefs.unavailable',
-      'common.sim_suffix',
     ];
     for (const key of mustDiffer) {
       expect(getByPath(translations.en, key), key).not.toBe(getByPath(translations.fr, key));

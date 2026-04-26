@@ -6,7 +6,7 @@ Multi-page Vue 3 front simulation of a major review platform. Pure visual mockup
 
 The site has a home page plus a small constellation of secondary pages reachable from the header dropdowns and the footer.
 
-**Home page** stacks: header (logo, Discover dropdown, Review dropdown, currency pill, Sign-in), tabbed `HeroSearch` (Search All / Hotels / Parks / Alleys), `ThingsToDoBanner`, `CategoryGrid`, `ExperienceCards`, `DestinationsHighlights`, `InspirationCards`, `DestinationsGrid`, `TravelersChoice` promo, `CommunityBlurb`, `AppFooter`. All client-side: `alert()` or local `ref()` for any user action; no network calls.
+**Home page** stacks: header (logo, Discover dropdown, Review dropdown, currency pill, Sign-in), tabbed `HeroSearch` (Search All / Hotels / Parks / Alleys), `ThingsToDoBanner` (4-image slideshow), `ExperienceCards` (4 fiches from 4 distinct cities, deterministic hourly rotation), `AgeGrid` (4 age-bucket vignettes linking to `/search?age=...`), `DestinationsHighlights`, `TravelersChoice` promo (links to `/encounters`), `CommunityBlurb`, `AppFooter`. All client-side: `alert()` or local `ref()` for any user action; no network calls.
 
 **Secondary pages** (each reached from header or footer):
 
@@ -27,7 +27,7 @@ The site has a home page plus a small constellation of secondary pages reachable
 
 ```
 src/
-├── App.vue                       # Header + <router-view> + Footer + 3 modals
+├── App.vue                       # Header + <router-view> + Footer + 4 modals
 ├── main.js                       # createApp + router + global CSS
 ├── router/
 │   └── index.js                  # createAppRouter({ history }) factory
@@ -39,8 +39,8 @@ src/
 │   ├── HotelsPage.vue            # thin wrapper over ListingsPage
 │   ├── ParksPage.vue             # thin wrapper over ListingsPage
 │   ├── AlleysPage.vue            # thin wrapper over ListingsPage
-│   ├── FichePage.vue             # /p/:id - profile page (fiche layout)
-│   ├── SearchResultsPage.vue     # /search - global or category-filtered results
+│   ├── FichePage.vue             # /p/:id - composes FicheGallery + FicheReviews + FicheSchedule
+│   ├── SearchResultsPage.vue     # /search - filters by ?q= and ?age=
 │   ├── UserReviewPage.vue        # /write-review
 │   ├── PostPhotosPage.vue        # /post-photos
 │   ├── CreateListingPage.vue     # /add-sex-worker
@@ -53,16 +53,17 @@ src/
 │   └── DiscoverPage.vue          # /discover - top-4 fiches by rating + DestinationsHighlights
 ├── components/
 │   ├── AppHeader.vue             # Sticky nav, scroll-compact mode, Discover/Review dropdowns
-│   ├── AppFooter.vue             # 3-col grid + legal nav, GitHub social
+│   ├── AppFooter.vue             # 3-col grid (About / Explore / Settings) + legal nav, GitHub social
 │   ├── HeroSearch.vue            # home only
-│   ├── ThingsToDoBanner.vue
-│   ├── CategoryGrid.vue
-│   ├── ExperienceCards.vue
+│   ├── ThingsToDoBanner.vue      # CSS-only 4-image slideshow (5s/slide, slide-left)
+│   ├── AgeGrid.vue               # 4 age-bucket vignettes; click navigates to /search?age=<id>
+│   ├── ExperienceCards.vue       # 4 fiches from 4 distinct cities, hourly-deterministic random pick
 │   ├── DestinationsHighlights.vue # top villes × 3 fiches each (home + discover)
-│   ├── InspirationCards.vue
-│   ├── DestinationsGrid.vue
-│   ├── TravelersChoice.vue       # home promo strip; CTA navigates to /discover
+│   ├── TravelersChoice.vue       # home promo strip; CTA navigates to /encounters
 │   ├── CommunityBlurb.vue
+│   ├── FicheGallery.vue          # FichePage: photo + 3 thumbs + alt-empty placeholder
+│   ├── FicheSchedule.vue         # FichePage: weekly hours table + open/closed today badge
+│   ├── FicheReviews.vue          # FichePage: empty state, summary, list, "see all" toggle
 │   ├── PlaceSearchSelect.vue     # v-model fiche search-and-select (review / photo forms)
 │   ├── PreferencesModal.vue
 │   ├── SignInModal.vue
@@ -74,9 +75,14 @@ src/
 │   ├── fiches.json               # 100 profile entries (FR descriptif + descriptif_en + ville/lieu)
 │   ├── cities.json               # 50 villes ranked by fiche count, with optional photo URL
 │   ├── schedules.json            # 15 weekly schedule patterns referenced by fiches
-│   └── advices.json              # 1000 seeded reviews keyed by fiche id (rating/title/body/lang/date/author)
+│   ├── advices.json              # 1000 seeded reviews keyed by fiche id (rating/title/body/lang/date/author)
+│   ├── ageBuckets.js             # AGE_BUCKETS array (id + labelKey + img + predicate) + ageInBucket / ageBucketLabelKey
+│   ├── fiches.js                 # formatLieu, reviewCountFor, reviewAverageFor (consume advices.json)
+│   └── schedule.js               # todayName / todayStatus / orderedDays / periodsOf
+├── state/
+│   └── modals.js                 # 4 modals: open refs (preferences/signin/cookie/loginRequired) + open*/close* actions
 ├── i18n/
-│   ├── store.js                  # locale/currency refs, t(), modal state, formatters (Amount/Lieu/ReviewDate), review helpers (reviewCountFor/reviewAverageFor), detectBrowserDefaults
+│   ├── store.js                  # locale/currency refs, t(), formatAmount, formatReviewDate, currency/locale flags, detectBrowserDefaults
 │   ├── translations.js           # { en: {...}, fr: {...} } - single source of truth
 │   ├── regions.js                # only US + FR enabled
 │   └── currencies.js             # only USD + EUR enabled
@@ -86,15 +92,19 @@ src/
 
 public/
 ├── favicon.ico                   # multi-size ICO, white bust on pink
-└── favicon.svg                   # SVG bust on transparent
+├── favicon.svg                   # SVG bust on transparent
+├── articles/                     # 4 hero photos for press articles
+├── cities/                       # ville hero photos for DestinationsHighlights
+├── age/                          # 4 silhouette SVGs for AgeGrid (under-30, 30-45, 45-60, over-60)
+└── ttd/                          # 4 slides for the ThingsToDoBanner slideshow
 
 tests/
 ├── helpers/
 │   └── router.js                 # setupRouter('/path'), withRouter(router)
 ├── App.test.js
 ├── AppHeader.test.js
-├── AppFooter.test.js             # 4-col + legal nav + currency/locale selects + cookie/signin triggers
-├── HomeComponents.test.js        # CategoryGrid / ExperienceCards / Inspiration / Destinations / TravelersChoice (promo) / CommunityBlurb / ThingsToDoBanner
+├── AppFooter.test.js             # 3 columns + legal nav + currency/locale selects + cookie/signin triggers
+├── HomeComponents.test.js        # AgeGrid / ExperienceCards / TravelersChoice (promo) / CommunityBlurb / ThingsToDoBanner
 ├── HeroSearch.test.js
 ├── DestinationsHighlights.test.js
 ├── DiscoverPage.test.js
@@ -103,12 +113,16 @@ tests/
 ├── SignInModal.test.js
 ├── CookieConsentModal.test.js
 ├── LoginRequiredModal.test.js    # all 5 message branches, EN+FR
+├── SeriousNote.test.js           # default vs collapsed mode + EN/FR copy
+├── FicheGallery.test.js          # photo placeholder, image alt, thumb count, locale switch
+├── FicheSchedule.test.js         # weekday order, today badge, open/closed status
+├── FicheReviews.test.js          # empty state, summary, 5-cap + "see all", add-review emit
 ├── TravelStoriesPage.test.js
 ├── ArticlePage.test.js           # /encounters/:key - press-style article rendering
 ├── FormPages.test.js             # UserReview / PostPhotos / CreateListing (all submit → LoginRequiredModal)
 ├── ListingsPages.test.js         # Hotels / Parks / Alleys
-├── FichePage.test.js             # /p/:id - profile rendering, schedule, not-found
-├── SearchResultsPage.test.js     # /search - grouping, filtering, HeroSearch submit
+├── FichePage.test.js             # /p/:id - profile rendering, schedule, not-found, transitive Fiche* coverage
+├── SearchResultsPage.test.js     # /search - grouping, filtering by ?q= and ?age=, HeroSearch submit
 ├── HowTheSiteWorksPage.test.js
 ├── AboutPage.test.js
 ├── SafetyPage.test.js
@@ -134,7 +148,7 @@ All routes live in `src/router/index.js`. `createAppRouter({ history })` is a fa
 | `/parks`           | `parks`          | `ParksPage.vue` (wraps `ListingsPage`)                     |
 | `/alleys`          | `alleys`         | `AlleysPage.vue` (wraps `ListingsPage`)                    |
 | `/p/:id`           | `fiche`          | `FichePage.vue` (single profile)                           |
-| `/search`          | `search`         | `SearchResultsPage.vue` (`?q=`, `?categorie=`)             |
+| `/search`          | `search`         | `SearchResultsPage.vue` (`?q=` text, `?age=<bucket>`)      |
 | `/write-review`    | `write-review`   | `UserReviewPage.vue`                                       |
 | `/post-photos`     | `post-photos`    | `PostPhotosPage.vue`                                       |
 | `/add-sex-worker`  | `add-sex-worker` | `CreateListingPage.vue`                                    |
@@ -176,13 +190,13 @@ Translation namespace per page: `<short>_page` (`tc_page`, `ts_page`, `ur_page`,
 
 Four modals share the same shape:
 
-- **State lives in `i18n/store.js`** as a module-scoped `ref(false)` (`modalOpen`, `signinOpen`, `cookieModalOpen`) plus `openX()` / `closeX()` helpers, plus any sub-state (`modalTab`, `signinScreen`).
-- **Mounted once at the App level** (`App.vue`), never inside the component that triggers them. Triggers call `openX()` from anywhere via the store.
+- **State lives in `state/modals.js`** as module-scoped `ref(false)` (`modalOpen`, `signinOpen`, `cookieModalOpen`, `loginRequiredOpen`) plus `openX()` / `closeX()` helpers, plus any sub-state (`modalTab`, `signinScreen`, `loginRequiredContext`).
+- **Mounted once at the App level** (`App.vue`), never inside the component that triggers them. Triggers call `openX()` from anywhere via the modals module.
 - **Escape closes**, **backdrop click closes** (check `event.target === event.currentTarget`).
 - **Body scroll is locked** while the modal is open via `watch(modalOpen, open => document.body.style.overflow = open ? 'hidden' : '')`.
 - **State is cleaned up on close** via the same watcher (form fields reset, sub-screen reset to initial).
 
-To add a new modal: declare its open ref + actions in `store.js`, create the component using the same skeleton, mount it in `App.vue`, and route any trigger through the store action.
+To add a new modal: declare its open ref + actions in `state/modals.js`, create the component using the same skeleton, mount it in `App.vue`, and route any trigger through the modal action.
 
 ## Footer wiring
 
@@ -227,7 +241,7 @@ To re-skin the site, edit only `main.css`. There is no other source of truth for
 
 Two locales (`en`, `fr`) and two currencies (`USD`, `EUR`). Everything else in the Preferences modal is grayed out with an "Unavailable now" / "Indisponible actuellement" sub-label.
 
-- **State** - `src/i18n/store.js` exports module-scoped `locale` and `currency` refs. Both persist to `localStorage` (`tv_locale`, `tv_currency`) and are restored on load. `setLocale`/`setCurrency` reject unknown values.
+- **State** - `src/i18n/store.js` exports module-scoped `locale` and `currency` refs (purely i18n + currency formatting; modal state lives in `src/state/modals.js`, fiche-data accessors in `src/data/fiches.js`). Both refs persist to `localStorage` (`tv_locale`, `tv_currency`) and are restored on load. `setLocale`/`setCurrency` reject unknown values.
 - **Browser detection** - `detectBrowserDefaults()` returns `fr/EUR` when `navigator.language` starts with `fr`, `en/USD` for English, falls back to `en/USD` otherwise. Stored prefs always win.
 - **Translation** - `t('section.key', params?)` walks the dotted key in `translations[locale.value]`, falls back to `translations.en`, finally returns the raw key. `{name}` tokens are replaced from `params`. Because `t()` reads `locale.value`, any template or `computed()` calling it re-evaluates automatically when the locale changes.
 - **Currency formatting** - `formatAmount(usdAmount)` converts to EUR when needed (fixed 0.92 rate), formats with `toLocaleString(locale)`, places the symbol correctly (`$` prefix / `€` suffix). Components hand in a canonical USD figure.
@@ -290,6 +304,18 @@ The Discover and Review menus share the same machinery in `AppHeader.vue`. To ad
 3. Flip `enabled: true` on the matching entry in `regions.js` / `currencies.js`.
 4. If currency: add an entry to `CURRENCY_META` in `store.js` (`symbol`, `position`, `flag`) and possibly to `LOCALE_META`.
 5. Add the locale to `detectBrowserDefaults()` if you want auto-detection.
+
+## Parody invariants (do not "fix")
+
+The parody premise is that **nothing user-generated can ever be persisted, and the site sets no cookies**. The following behaviors look like bugs but are intentional. Don't "repair" them.
+
+- `SignInModal.onSubmit` always sets `error.value = true`. No real auth, no mock auth, no local-storage shortcut.
+- The three form pages (`/write-review`, `/post-photos`, `/add-sex-worker`) open `LoginRequiredModal` on a valid submit and never persist. The modal targets:
+  - `/write-review` → `publish_review`
+  - `/post-photos` → `publish_photos`
+  - `/add-sex-worker` → `add_place`
+- Pre-fill via `?fiche=:id` works on `/write-review` and `/post-photos` (consumed by `PlaceSearchSelect`), purely to ergonomically open the modal with the right context.
+- `CookieConsentModal`'s Allow / Reject / Confirm only close the modal. There are no cookies to accept or refuse - the site sets none. The modal is the cosmetic mirror of mainstream review platforms' consent banner.
 
 ## Stack
 

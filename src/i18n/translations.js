@@ -221,7 +221,6 @@ export const translations = {
       name_label_indeterminate: 'Sex worker’s name',
       name_placeholder: 'e.g. Micheline la goulue',
       country_label: 'Country',
-      country_placeholder: 'Pick a country',
       address_label: 'Street address',
       address_placeholder: '12 rue de la République',
       city_label: 'City',
@@ -475,7 +474,6 @@ export const translations = {
       section_ruelle: 'Alleys',
       section_parc: 'Parks',
       card_meta: '{age} years old · {cat}',
-      back_home: 'Back to home',
       save_aria: 'Save',
     },
     fiche_page: {
@@ -549,9 +547,6 @@ export const translations = {
       cat_ruelle: 'alley',
       cat_parc: 'park',
       age_label: '{age} years old',
-    },
-    common: {
-      sim_suffix: '- front simulation only',
     },
   },
 
@@ -780,7 +775,6 @@ export const translations = {
       name_label_indeterminate: 'Nom de la travailleuse / du travailleur',
       name_placeholder: 'ex. Micheline la goulue',
       country_label: 'Pays',
-      country_placeholder: 'Choisissez un pays',
       address_label: 'Adresse',
       address_placeholder: '12 rue de la République',
       city_label: 'Ville',
@@ -1040,7 +1034,6 @@ export const translations = {
       section_ruelle: 'Ruelles',
       section_parc: 'Parcs',
       card_meta: '{age} ans · {cat}',
-      back_home: 'Retour à l’accueil',
       save_aria: 'Enregistrer',
     },
     fiche_page: {
@@ -1114,9 +1107,6 @@ export const translations = {
       cat_ruelle: 'ruelle',
       cat_parc: 'parc',
       age_label: '{age} ans',
-    },
-    common: {
-      sim_suffix: '- simulation front seulement',
     },
   },
 };
