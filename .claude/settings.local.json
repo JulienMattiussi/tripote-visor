@@ -55,7 +55,8 @@
       "WebFetch(domain:community.vercel.com)",
       "Bash(unzip -l /home/julien/Téléchargements/suite.zip)",
       "Bash(node /tmp/rename2.mjs)",
-      "Bash(unzip -l \"/home/julien/Téléchargements/suite 2.zip\")"
+      "Bash(unzip -l \"/home/julien/Téléchargements/suite 2.zip\")",
+      "Bash(unzip -l \"/home/julien/Téléchargements/suite 4.zip\")"
     ],
     "additionalDirectories": [
       "/tmp"

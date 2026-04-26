@@ -125,7 +125,7 @@
     "district": "",
     "category": "hotel",
     "schedule_id": "aperitif_and_night",
-    "photo": "",
+    "photo": "/profiles/brigitte/main.jpg",
     "description": {
       "fr": [
         "Plus de trente ans d'expérience.",
@@ -474,7 +474,7 @@
     "district": "",
     "category": "hotel",
     "schedule_id": "late_opening",
-    "photo": "",
+    "photo": "/profiles/solange/main.jpg",
     "description": {
       "fr": [
         "Une institution de l'île.",
@@ -1727,7 +1727,7 @@
     "district": "5e",
     "category": "alley",
     "schedule_id": "office_hours_evening",
-    "photo": "",
+    "photo": "/profiles/anatoline/main.jpg",
     "description": {
       "fr": [
         "Quarante ans dans le Quartier Latin.",
@@ -2140,7 +2140,7 @@
     "district": "13e",
     "category": "alley",
     "schedule_id": "short_evening",
-    "photo": "",
+    "photo": "/profiles/min-ji/main.jpg",
     "description": {
       "fr": [
         "Cinq ans à peine, déjà très réclamée.",
@@ -2214,7 +2214,7 @@
     "district": "",
     "category": "alley",
     "schedule_id": "all_day",
-    "photo": "",
+    "photo": "/profiles/stella/main.jpg",
     "description": {
       "fr": [
         "Cinquante-cinq ans qu'elle arpente sa rue.",
@@ -2401,7 +2401,7 @@
     "district": "13e",
     "category": "alley",
     "schedule_id": "evening_to_morning",
-    "photo": "",
+    "photo": "/profiles/linh/main.jpg",
     "description": {
       "fr": [
         "Onze ans dans le quartier.",

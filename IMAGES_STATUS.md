@@ -10,9 +10,9 @@ and are not tracked here.
 | Category | Total | With photo | Without photo |
 | -------- | ----- | ---------- | ------------- |
 | park     | 33    | 33         | 0             |
-| hotel    | 34    | 23         | 11            |
-| alley    | 33    | 23         | 10            |
-| **all**  | 100   | 79         | 21            |
+| hotel    | 34    | 25         | 9             |
+| alley    | 33    | 27         | 6             |
+| **all**  | 100   | 85         | 15            |
 
 ## What was placed
 
@@ -54,7 +54,7 @@ and are not tracked here.
 | marie-andree | 73  | Marie-Andrée l'increvable | parc.zip          |
 | marie-yvonne | 76  | Marie-Yvonne              | parc.zip          |
 
-### hotel (23)
+### hotel (25)
 
 | id         | age | name                     | source            |
 | ---------- | --- | ------------------------ | ----------------- |
@@ -77,38 +77,44 @@ and are not tracked here.
 | sigrid     | 51  | Sigrid                   | 2026-04-24T224052 |
 | ingrid     | 56  | Ingrid la magnifique     | 2026-04-24T225036 |
 | olga       | 58  | Olga l'implacable        | 2026-04-24T224041 |
+| brigitte   | 61  | La grande Brigitte       | suite 4.zip       |
 | wilhelmine | 62  | Wilhelmine dite Frau Wim | 2026-04-24T225705 |
 | helga      | 64  | Helga l'ours             | 2026-04-24T215923 |
+| solange    | 67  | Solange                  | suite 4.zip       |
 | bernadette | 71  | Tante Bernadette         | 2026-04-24T225045 |
 | josephine  | 75  | Joséphine la doyenne     | 2026-04-26T181017 |
 
-### alley (23)
+### alley (27)
 
-| id       | age | name                    | source            |
-| -------- | --- | ----------------------- | ----------------- |
-| niamh    | 28  | Niamh                   | 2026-04-24T214756 |
-| zeynep   | 29  | Zeynep                  | 2026-04-25T145650 |
-| nadia    | 31  | Nadia                   | 2026-04-24T224230 |
-| priya    | 32  | Priya                   | suite 2.zip       |
-| awa      | 33  | Awa                     | 2026-04-24T230822 |
-| tariq    | 35  | Tariq le passe-partout  | suite 2.zip       |
-| carla    | 36  | Carla                   | 2026-04-25T150342 |
-| roya     | 38  | Roya                    | 2026-04-25T150701 |
-| svetlana | 39  | Svetlana                | 2026-04-25T153147 |
-| salma    | 42  | Salma                   | suite.zip         |
-| behnam   | 47  | Behnam                  | suite 2.zip       |
-| giulia   | 50  | Giulia                  | 2026-04-25T154406 |
-| yvette   | 54  | Yvette la traboulière   | 2026-04-24T224632 |
-| larissa  | 55  | Larissa                 | 2026-04-25T154209 |
-| boris    | 57  | Boris le grognon        | suite 2.zip       |
-| astrid   | 60  | Astrid la farceuse      | 2026-04-24T224624 |
-| pietro   | 61  | Pietro le gentleman     | suite.zip         |
-| lucette  | 64  | Mère Lucette            | 2026-04-24T225004 |
-| margaret | 66  | Margaret                | 2026-04-25T154702 |
-| roger    | 68  | Roger le titi           | suite.zip         |
-| doris    | 69  | Doris                   | 2026-04-24T225101 |
-| colette  | 72  | Colette                 | 2026-04-25T154138 |
-| suzanne  | 73  | Suzanne dite la Baronne | 2026-04-24T215636 |
+| id        | age | name                    | source            |
+| --------- | --- | ----------------------- | ----------------- |
+| min-ji    | 25  | Min-ji                  | suite 4.zip       |
+| niamh     | 28  | Niamh                   | 2026-04-24T214756 |
+| zeynep    | 29  | Zeynep                  | 2026-04-25T145650 |
+| nadia     | 31  | Nadia                   | 2026-04-24T224230 |
+| priya     | 32  | Priya                   | suite 2.zip       |
+| awa       | 33  | Awa                     | 2026-04-24T230822 |
+| linh      | 34  | Linh                    | suite 4.zip       |
+| tariq     | 35  | Tariq le passe-partout  | suite 2.zip       |
+| carla     | 36  | Carla                   | 2026-04-25T150342 |
+| roya      | 38  | Roya                    | 2026-04-25T150701 |
+| svetlana  | 39  | Svetlana                | 2026-04-25T153147 |
+| salma     | 42  | Salma                   | suite.zip         |
+| behnam    | 47  | Behnam                  | suite 2.zip       |
+| giulia    | 50  | Giulia                  | 2026-04-25T154406 |
+| yvette    | 54  | Yvette la traboulière   | 2026-04-24T224632 |
+| larissa   | 55  | Larissa                 | 2026-04-25T154209 |
+| boris     | 57  | Boris le grognon        | suite 2.zip       |
+| astrid    | 60  | Astrid la farceuse      | 2026-04-24T224624 |
+| pietro    | 61  | Pietro le gentleman     | suite.zip         |
+| lucette   | 64  | Mère Lucette            | 2026-04-24T225004 |
+| margaret  | 66  | Margaret                | 2026-04-25T154702 |
+| roger     | 68  | Roger le titi           | suite.zip         |
+| doris     | 69  | Doris                   | 2026-04-24T225101 |
+| anatoline | 70  | Anatoline la philosophe | suite 4.zip       |
+| colette   | 72  | Colette                 | 2026-04-25T154138 |
+| suzanne   | 73  | Suzanne dite la Baronne | 2026-04-24T215636 |
+| stella    | 78  | Stella la vétérane      | suite 4.zip       |
 
 ## What is still missing
 
@@ -117,26 +123,28 @@ inferred from the first name. `M` = male profile, `F` = female profile.
 
 ### park — complete
 
-### hotel — 11 missing
+### hotel — 9 missing
 
 - **mid** : `lupita(37, F, MX)`, `lucia(38, F, IT/ES)`, `khadija(40, F, NA)`, `tatiana(44, F, RU)`, `carmen(47, F, ES)`, `despina(48, F, GR)`, `mireille(50, F, FR)`, `adele(52, F, FR)`, `esperanza(53, F, ES)`
-- **older** : `brigitte(61, F, FR)`, `solange(67, F, FR)`
 
-### alley — 10 missing
+### alley — 6 missing
 
-- **young** : `min-ji(25, F, KR)`, `linh(34, F, VN)`
 - **mid** : `bineta(41, F, WAF)`, `soledad(43, F, ES)`, `mila(44, F, EE)`, `aylin(46, F, TR)`, `maialen(49, F, BQ)`, `sofia(53, F, any)`
-- **very old** : `anatoline(70, F, FR)`, `stella(78, F, IT/FR)`
 
 ## What to source for the next batch
 
 Aggregated by characteristic (in order of need):
 
 - **men** — 0 profiles still uncovered. ✓
-- **Asian women** — 2 profiles uncovered: `min-ji(25, KR)` (alley) and
-  `linh(34, VN)` (alley).
+- **Asian women** — 0 profiles still uncovered. ✓
 - **Arab / North-African / Middle-Eastern women** — 2 profiles uncovered:
   `khadija(40)` (hotel); `aylin(46)` (alley).
+- **All remaining slots are women, mostly mid-aged (37-53) European /
+  Mediterranean / Hispanic** — 13 hotel + alley slots split as follows:
+  hotel `lupita(37, MX)`, `lucia(38, IT/ES)`, `tatiana(44, RU)`,
+  `carmen(47, ES)`, `despina(48, GR)`, `mireille(50, FR)`,
+  `adele(52, FR)`, `esperanza(53, ES)`; alley `bineta(41, WAF)`,
+  `soledad(43, ES)`, `mila(44, EE)`, `maialen(49, BQ)`, `sofia(53)`.
 - **Mediterranean / Hispanic women** — `lupita(37)`, `lucia(38)`,
   `carmen(47)`, `despina(48)`, `esperanza(53)` (hotel); `soledad(43)`,
   `maialen(49)` (alley).
