@@ -126,6 +126,7 @@ const emptyText = computed(() =>
           @keydown.enter="goFiche(f.id)"
         >
           <div class="sr-photo">
+            <img v-if="f.photo" :src="f.photo" :alt="f.name" loading="lazy" />
             <button
               type="button"
               class="sr-heart"
@@ -260,6 +261,14 @@ const emptyText = computed(() =>
   background: var(--surface);
   border-radius: var(--radius);
   overflow: hidden;
+}
+
+.sr-photo img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .sr-heart {

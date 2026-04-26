@@ -54,6 +54,7 @@ const goFiche = (id) => router.push({ name: 'profile', params: { id } });
         @keydown.enter="goFiche(f.id)"
       >
         <div class="exp-thumb">
+          <img v-if="f.photo" :src="f.photo" :alt="f.name" loading="lazy" />
           <span class="exp-city-tag">{{ f.city }}</span>
           <div class="exp-rating-overlay" aria-hidden="true">
             <span class="exp-stars">
@@ -115,6 +116,14 @@ const goFiche = (id) => router.push({ name: 'profile', params: { id } });
   background: var(--brand-light);
   box-shadow: var(--shadow);
   overflow: hidden;
+}
+
+.exp-thumb img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .exp-city-tag {

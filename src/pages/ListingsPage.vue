@@ -151,7 +151,9 @@ const goFiche = (id) => {
         @click="goFiche(f.id)"
         @keydown.enter="goFiche(f.id)"
       >
-        <div class="lst-card-thumb" aria-hidden="true"></div>
+        <div class="lst-card-thumb">
+          <img v-if="f.photo" :src="f.photo" :alt="f.name" loading="lazy" />
+        </div>
         <div class="lst-card-body">
           <h3 class="lst-card-name">{{ f.name }}</h3>
           <p class="lst-card-loc">{{ formatLocation(f) }}</p>
@@ -305,6 +307,14 @@ const goFiche = (id) => {
 .lst-card-thumb {
   aspect-ratio: 4 / 3;
   background: var(--surface);
+  overflow: hidden;
+}
+
+.lst-card-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .lst-card-body {

@@ -46,7 +46,15 @@
       "Bash(unzip -l /home/julien/Téléchargements/parc.zip)",
       "Bash(node /tmp/place-park-batch2.mjs)",
       "Bash(node /tmp/place-recycled.mjs)",
-      "Bash(node /tmp/rejuvenate-and-place.mjs)"
+      "Bash(node /tmp/rejuvenate-and-place.mjs)",
+      "Bash(unzip -l \"/home/julien/Téléchargements/parc \\(1\\).zip\")",
+      "Bash(node /tmp/place-parc1.mjs)",
+      "Bash(unzip -l \"/home/julien/Téléchargements/parc 3.zip\")",
+      "WebFetch(domain:vercel.com)",
+      "WebSearch",
+      "WebFetch(domain:community.vercel.com)",
+      "Bash(unzip -l /home/julien/Téléchargements/suite.zip)",
+      "Bash(node /tmp/rename2.mjs)"
     ],
     "additionalDirectories": [
       "/tmp"

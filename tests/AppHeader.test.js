@@ -240,7 +240,7 @@ describe('AppHeader Discover and Review dropdowns', () => {
     const expected = [
       { label: 'Write a review', name: 'write-review' },
       { label: 'Publish photos', name: 'post-photos' },
-      { label: 'Add a sex worker', name: 'add-sex-worker' },
+      { label: 'Add a sex worker', name: 'add-person' },
     ];
 
     for (const { label, name } of expected) {

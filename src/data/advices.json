@@ -971,144 +971,6 @@
       "author": "Walker_Polite"
     }
   ],
-  "anatole": [
-    {
-      "rating": 5,
-      "title": "Génial",
-      "body": "Génial. Tout simplement génial.",
-      "lang": "fr",
-      "date": "2026-04-06",
-      "author": "Veilleur1179"
-    },
-    {
-      "rating": 3,
-      "title": "Décevant côté service",
-      "body": "L'accueil était sympa mais le reste laisse à désirer. Pas catastrophique non plus.",
-      "lang": "fr",
-      "date": "2026-01-23",
-      "author": "Connaisseur1428"
-    },
-    {
-      "rating": 1,
-      "title": "Il y avait des puces",
-      "body": "Il y avait des puces. Je n'ai pas tenu cinq minutes.",
-      "lang": "fr",
-      "date": "2025-12-28",
-      "author": "LunaireLecteur"
-    },
-    {
-      "rating": 4,
-      "title": "Très bonne adresse",
-      "body": "Très bonne adresse, je recommande. Petit bémol sur l'attente avant l'accueil, mais sinon parfait.",
-      "lang": "fr",
-      "date": "2025-12-19",
-      "author": "Vincent_K"
-    },
-    {
-      "rating": 4,
-      "title": "Recommandé",
-      "body": "Recommandé. Quelques détails à peaufiner mais l'essentiel est là.",
-      "lang": "fr",
-      "date": "2025-12-10",
-      "author": "MethodiqueNoctambule"
-    },
-    {
-      "rating": 4,
-      "title": "Bien mais peut mieux faire",
-      "body": "L'expérience est solide, mais on sent qu'il y a une marge de progression. Ne rien changer aux ingrédients, juste un poil plus d'écoute.",
-      "lang": "fr",
-      "date": "2025-11-26",
-      "author": "Flaneur1943"
-    },
-    {
-      "rating": 2,
-      "title": "Pas top",
-      "body": "Pas top du tout. L'établissement aurait besoin d'un sérieux coup de neuf.",
-      "lang": "fr",
-      "date": "2025-06-01",
-      "author": "Simon_I"
-    },
-    {
-      "rating": 1,
-      "title": "Plus jamais",
-      "body": "Plus jamais ça. Je suis ressorti en larmes.",
-      "lang": "fr",
-      "date": "2025-04-11",
-      "author": "Patricia_U"
-    },
-    {
-      "rating": 1,
-      "title": "Arnaque",
-      "body": "Arnaque pure et simple. La presta n'a rien à voir avec ce qui est annoncé.",
-      "lang": "fr",
-      "date": "2025-03-19",
-      "author": "Pauline_W"
-    },
-    {
-      "rating": 4,
-      "title": "Bella esperienza",
-      "body": "Bella esperienza. Un dettaglio da rifinire.",
-      "lang": "it",
-      "date": "2025-01-28",
-      "author": "Civetta_1150"
-    },
-    {
-      "rating": 5,
-      "title": "Bravo",
-      "body": "Bravo et encore bravo. Quelle générosité.",
-      "lang": "fr",
-      "date": "2024-12-21",
-      "author": "Critique1433"
-    },
-    {
-      "rating": 4,
-      "title": "Très chaleureux",
-      "body": "Rencontre chaleureuse, on se sent à l'aise. Le cadre est joli, l'attention sincère. Une étoile en moins parce que c'était trop court à mon goût.",
-      "lang": "fr",
-      "date": "2024-11-30",
-      "author": "Loup1289"
-    },
-    {
-      "rating": 4,
-      "title": "Très bonne adresse",
-      "body": "Très bonne adresse, je recommande. Petit bémol sur l'attente avant l'accueil, mais sinon parfait.",
-      "lang": "fr",
-      "date": "2024-10-21",
-      "author": "Mante_Genereux"
-    },
-    {
-      "rating": 1,
-      "title": "There were fleas",
-      "body": "There were fleas. Five minutes was enough.",
-      "lang": "en",
-      "date": "2024-09-29",
-      "author": "Wanderer_Dapper"
-    },
-    {
-      "rating": 1,
-      "title": "Eine Schande",
-      "body": "Eine Schande. Diesen Preis für sowas zu verlangen.",
-      "lang": "de",
-      "date": "2024-09-22",
-      "author": "Kritiker_Versonnen"
-    },
-    {
-      "rating": 1,
-      "title": "Zéro pointé",
-      "body": "0 sur 5 si je pouvais. Une étoile parce que c'est le minimum imposé. L'odeur, l'attente, le manque flagrant d'envie. Je ne sais même pas comment cet endroit existe encore. Tuot le monde devrait éviter.",
-      "lang": "fr",
-      "date": "2024-08-09",
-      "author": "Inspecteur1838"
-    },
-    {
-      "rating": 2,
-      "title": "Manque d'envie",
-      "body": "Manque d'envie évident. Je suis reparti avant la fin.",
-      "lang": "fr",
-      "date": "2024-07-17",
-      "author": "Inspecteur852"
-    }
-  ],
   "beata": [
     {
       "rating": 3,
@@ -4949,96 +4811,6 @@
       "author": "Osservatore_Sincero"
     }
   ],
-  "henri": [
-    {
-      "rating": 5,
-      "title": "Maravilloso",
-      "body": "Maravilloso de principio a fin.",
-      "lang": "es",
-      "date": "2026-04-20",
-      "author": "Turista_Callada"
-    },
-    {
-      "rating": 2,
-      "title": "Pas pour moi",
-      "body": "Pas pour moi. L'accueil était correct, la suite beaucoup moins.",
-      "lang": "fr",
-      "date": "2026-02-15",
-      "author": "Chat_Maladroit"
-    },
-    {
-      "rating": 1,
-      "title": "Scam",
-      "body": "Pure scam. Nothing matched what was promised.",
-      "lang": "en",
-      "date": "2025-12-21",
-      "author": "HonestPatron"
-    },
-    {
-      "rating": 3,
-      "title": "Moyen",
-      "body": "Tes moyen. Ni bon ni mauvais.",
-      "lang": "fr",
-      "date": "2025-10-06",
-      "author": "Aventurier_Tranquille"
-    },
-    {
-      "rating": 4,
-      "title": "Quasi parfait",
-      "body": "Tout y est presque. Je remettrai bien une pièce dans la machine.",
-      "lang": "fr",
-      "date": "2025-09-15",
-      "author": "Mathieu_U"
-    },
-    {
-      "rating": 4,
-      "title": "Très chaleureux",
-      "body": "Rencontre chaleureuse, on se sent à l'aise. Le cadre est joli, l'attention sincère. Une étoile en moins parce que c'était trop court à mon goût.",
-      "lang": "fr",
-      "date": "2025-07-31",
-      "author": "CasanierMarcheur"
-    },
-    {
-      "rating": 3,
-      "title": "Rien d'extraordinaire",
-      "body": "Rien d'extraordinaire. L'attente était trop longue, l'ambiance trop bruyante. Mais sans plus de défauts.",
-      "lang": "fr",
-      "date": "2025-07-14",
-      "author": "Loup_Gourmand"
-    },
-    {
-      "rating": 1,
-      "title": "Scappate",
-      "body": "Scappate. Non scherzo.",
-      "lang": "it",
-      "date": "2025-05-13",
-      "author": "TimidoScoiattolo"
-    },
-    {
-      "rating": 5,
-      "title": "Ausgezeichnet",
-      "body": "Ausgezeichnet. Herzlicher Empfang, Liebe zum Detail.",
-      "lang": "de",
-      "date": "2024-12-25",
-      "author": "ReisendAdler"
-    },
-    {
-      "rating": 5,
-      "title": "Il meglio della mia vita",
-      "body": "Il meglio della mia vita. Senza esagerare.",
-      "lang": "it",
-      "date": "2024-12-10",
-      "author": "Errante_Sveglio"
-    },
-    {
-      "rating": 5,
-      "title": "Excellence",
-      "body": "Maîtrise parfaite du sujet. Petit clin d'oeil au café d'arrivée, vraiment un détail apprécié. Cinq étoiles méritées.",
-      "lang": "fr",
-      "date": "2024-10-25",
-      "author": "SageCitoyen"
-    }
-  ],
   "frieda": [
     {
       "rating": 3,
@@ -8189,6 +7961,234 @@
       "lang": "it",
       "date": "2024-12-04",
       "author": "SolitarioCorvo"
+    }
+  ],
+  "anatoline": [
+    {
+      "rating": 5,
+      "title": "Génial",
+      "body": "Génial. Tout simplement génial.",
+      "lang": "fr",
+      "date": "2026-04-06",
+      "author": "Veilleur1179"
+    },
+    {
+      "rating": 3,
+      "title": "Décevant côté service",
+      "body": "L'accueil était sympa mais le reste laisse à désirer. Pas catastrophique non plus.",
+      "lang": "fr",
+      "date": "2026-01-23",
+      "author": "Connaisseur1428"
+    },
+    {
+      "rating": 1,
+      "title": "Il y avait des puces",
+      "body": "Il y avait des puces. Je n'ai pas tenu cinq minutes.",
+      "lang": "fr",
+      "date": "2025-12-28",
+      "author": "LunaireLecteur"
+    },
+    {
+      "rating": 4,
+      "title": "Très bonne adresse",
+      "body": "Très bonne adresse, je recommande. Petit bémol sur l'attente avant l'accueil, mais sinon parfait.",
+      "lang": "fr",
+      "date": "2025-12-19",
+      "author": "Vincent_K"
+    },
+    {
+      "rating": 4,
+      "title": "Recommandé",
+      "body": "Recommandé. Quelques détails à peaufiner mais l'essentiel est là.",
+      "lang": "fr",
+      "date": "2025-12-10",
+      "author": "MethodiqueNoctambule"
+    },
+    {
+      "rating": 4,
+      "title": "Bien mais peut mieux faire",
+      "body": "L'expérience est solide, mais on sent qu'il y a une marge de progression. Ne rien changer aux ingrédients, juste un poil plus d'écoute.",
+      "lang": "fr",
+      "date": "2025-11-26",
+      "author": "Flaneur1943"
+    },
+    {
+      "rating": 2,
+      "title": "Pas top",
+      "body": "Pas top du tout. L'établissement aurait besoin d'un sérieux coup de neuf.",
+      "lang": "fr",
+      "date": "2025-06-01",
+      "author": "Simon_I"
+    },
+    {
+      "rating": 1,
+      "title": "Plus jamais",
+      "body": "Plus jamais ça. Je suis ressorti en larmes.",
+      "lang": "fr",
+      "date": "2025-04-11",
+      "author": "Patricia_U"
+    },
+    {
+      "rating": 1,
+      "title": "Arnaque",
+      "body": "Arnaque pure et simple. La presta n'a rien à voir avec ce qui est annoncé.",
+      "lang": "fr",
+      "date": "2025-03-19",
+      "author": "Pauline_W"
+    },
+    {
+      "rating": 4,
+      "title": "Bella esperienza",
+      "body": "Bella esperienza. Un dettaglio da rifinire.",
+      "lang": "it",
+      "date": "2025-01-28",
+      "author": "Civetta_1150"
+    },
+    {
+      "rating": 5,
+      "title": "Bravo",
+      "body": "Bravo et encore bravo. Quelle générosité.",
+      "lang": "fr",
+      "date": "2024-12-21",
+      "author": "Critique1433"
+    },
+    {
+      "rating": 4,
+      "title": "Très chaleureux",
+      "body": "Rencontre chaleureuse, on se sent à l'aise. Le cadre est joli, l'attention sincère. Une étoile en moins parce que c'était trop court à mon goût.",
+      "lang": "fr",
+      "date": "2024-11-30",
+      "author": "Loup1289"
+    },
+    {
+      "rating": 4,
+      "title": "Très bonne adresse",
+      "body": "Très bonne adresse, je recommande. Petit bémol sur l'attente avant l'accueil, mais sinon parfait.",
+      "lang": "fr",
+      "date": "2024-10-21",
+      "author": "Mante_Genereux"
+    },
+    {
+      "rating": 1,
+      "title": "There were fleas",
+      "body": "There were fleas. Five minutes was enough.",
+      "lang": "en",
+      "date": "2024-09-29",
+      "author": "Wanderer_Dapper"
+    },
+    {
+      "rating": 1,
+      "title": "Eine Schande",
+      "body": "Eine Schande. Diesen Preis für sowas zu verlangen.",
+      "lang": "de",
+      "date": "2024-09-22",
+      "author": "Kritiker_Versonnen"
+    },
+    {
+      "rating": 1,
+      "title": "Zéro pointé",
+      "body": "0 sur 5 si je pouvais. Une étoile parce que c'est le minimum imposé. L'odeur, l'attente, le manque flagrant d'envie. Je ne sais même pas comment cet endroit existe encore. Tuot le monde devrait éviter.",
+      "lang": "fr",
+      "date": "2024-08-09",
+      "author": "Inspecteur1838"
+    },
+    {
+      "rating": 2,
+      "title": "Manque d'envie",
+      "body": "Manque d'envie évident. Je suis reparti avant la fin.",
+      "lang": "fr",
+      "date": "2024-07-17",
+      "author": "Inspecteur852"
+    }
+  ],
+  "stella": [
+    {
+      "rating": 5,
+      "title": "Maravilloso",
+      "body": "Maravilloso de principio a fin.",
+      "lang": "es",
+      "date": "2026-04-20",
+      "author": "Turista_Callada"
+    },
+    {
+      "rating": 2,
+      "title": "Pas pour moi",
+      "body": "Pas pour moi. L'accueil était correct, la suite beaucoup moins.",
+      "lang": "fr",
+      "date": "2026-02-15",
+      "author": "Chat_Maladroit"
+    },
+    {
+      "rating": 1,
+      "title": "Scam",
+      "body": "Pure scam. Nothing matched what was promised.",
+      "lang": "en",
+      "date": "2025-12-21",
+      "author": "HonestPatron"
+    },
+    {
+      "rating": 3,
+      "title": "Moyen",
+      "body": "Tes moyen. Ni bon ni mauvais.",
+      "lang": "fr",
+      "date": "2025-10-06",
+      "author": "Aventurier_Tranquille"
+    },
+    {
+      "rating": 4,
+      "title": "Quasi parfait",
+      "body": "Tout y est presque. Je remettrai bien une pièce dans la machine.",
+      "lang": "fr",
+      "date": "2025-09-15",
+      "author": "Mathieu_U"
+    },
+    {
+      "rating": 4,
+      "title": "Très chaleureux",
+      "body": "Rencontre chaleureuse, on se sent à l'aise. Le cadre est joli, l'attention sincère. Une étoile en moins parce que c'était trop court à mon goût.",
+      "lang": "fr",
+      "date": "2025-07-31",
+      "author": "CasanierMarcheur"
+    },
+    {
+      "rating": 3,
+      "title": "Rien d'extraordinaire",
+      "body": "Rien d'extraordinaire. L'attente était trop longue, l'ambiance trop bruyante. Mais sans plus de défauts.",
+      "lang": "fr",
+      "date": "2025-07-14",
+      "author": "Loup_Gourmand"
+    },
+    {
+      "rating": 1,
+      "title": "Scappate",
+      "body": "Scappate. Non scherzo.",
+      "lang": "it",
+      "date": "2025-05-13",
+      "author": "TimidoScoiattolo"
+    },
+    {
+      "rating": 5,
+      "title": "Ausgezeichnet",
+      "body": "Ausgezeichnet. Herzlicher Empfang, Liebe zum Detail.",
+      "lang": "de",
+      "date": "2024-12-25",
+      "author": "ReisendAdler"
+    },
+    {
+      "rating": 5,
+      "title": "Il meglio della mia vita",
+      "body": "Il meglio della mia vita. Senza esagerare.",
+      "lang": "it",
+      "date": "2024-12-10",
+      "author": "Errante_Sveglio"
+    },
+    {
+      "rating": 5,
+      "title": "Excellence",
+      "body": "Maîtrise parfaite du sujet. Petit clin d'oeil au café d'arrivée, vraiment un détail apprécié. Cinq étoiles méritées.",
+      "lang": "fr",
+      "date": "2024-10-25",
+      "author": "SageCitoyen"
     }
   ]
 }

@@ -9,14 +9,14 @@ and are not tracked here.
 
 | Category | Total | With photo | Without photo |
 | -------- | ----- | ---------- | ------------- |
-| park     | 33    | 21         | 12            |
-| hotel    | 34    | 14         | 20            |
-| alley    | 33    | 16         | 17            |
-| **all**  | 100   | 51         | 49            |
+| park     | 33    | 33         | 0             |
+| hotel    | 34    | 20         | 14            |
+| alley    | 33    | 19         | 14            |
+| **all**  | 100   | 72         | 28            |
 
 ## What was placed
 
-### park (21)
+### park (33 — complete)
 
 | id           | age | name                      | source            |
 | ------------ | --- | ------------------------- | ----------------- |
@@ -24,16 +24,28 @@ and are not tracked here.
 | paloma       | 27  | Paloma                    | 2026-04-24T230634 |
 | zeinab       | 27  | Zeinab (rejuvenated)      | recycled          |
 | fadila       | 28  | Fadila (rejuvenated)      | recycled          |
+| yuki         | 28  | Yuki                      | parc (1).zip      |
 | pilar        | 29  | Pilar (rejuvenated)       | recycled          |
 | aminata      | 30  | Aminata                   | 2026-04-24T230851 |
+| bakary       | 31  | Bakary                    | parc (1).zip      |
 | rania        | 33  | Rania                     | parc.zip          |
+| adetokunbo   | 34  | Adetokunbo                | parc (1).zip      |
 | kavita       | 35  | Kavita                    | recycled          |
 | ida          | 38  | Ida                       | 2026-04-24T230404 |
+| souleymane   | 39  | Souleymane                | parc (1).zip      |
+| sonja        | 41  | Sonja                     | parc 3.zip        |
+| daria        | 42  | Daria                     | parc (1).zip      |
+| octavia      | 44  | Octavia                   | parc (1).zip      |
 | sabrina      | 45  | Sabrina                   | parc.zip          |
+| hassan       | 46  | Hassan                    | parc (1).zip      |
 | roxana       | 47  | Roxana                    | parc.zip          |
+| brigida      | 48  | Brigida                   | parc 3.zip        |
+| beata        | 49  | Beata                     | parc 3.zip        |
 | gabriela     | 51  | Gabriela                  | parc.zip          |
+| helena       | 53  | Helena                    | parc 3.zip        |
 | geraldine    | 56  | Géraldine                 | parc.zip          |
 | leontine     | 56  | Léontine                  | parc.zip          |
+| eleni        | 59  | Eleni                     | parc 3.zip        |
 | gennaro      | 62  | Gennaro                   | parc.zip          |
 | wilma        | 64  | Wilma                     | 2026-04-24T230356 |
 | marie-josee  | 65  | Marie-Josée               | parc.zip          |
@@ -42,17 +54,23 @@ and are not tracked here.
 | marie-andree | 73  | Marie-Andrée l'increvable | parc.zip          |
 | marie-yvonne | 76  | Marie-Yvonne              | parc.zip          |
 
-### hotel (14)
+### hotel (20)
 
 | id         | age | name                     | source            |
 | ---------- | --- | ------------------------ | ----------------- |
 | esmeralda  | 26  | Esmeralda la fougueuse   | 2026-04-25T130225 |
 | layla      | 27  | Layla                    | recycled          |
+| issa       | 28  | Issa                     | suite.zip         |
+| adam       | 29  | Adam                     | suite.zip         |
 | latifa     | 30  | Latifa                   | recycled          |
+| andriy     | 31  | Andriy                   | suite.zip         |
 | anjali     | 32  | Anjali                   | recycled          |
+| yacine     | 33  | Yacine                   | suite.zip         |
 | renata     | 34  | Renata                   | 2026-04-24T225109 |
 | klara      | 35  | Klara                    | 2026-04-24T225053 |
 | fatou      | 39  | Fatou                    | 2026-04-25T125421 |
+| mehdi      | 42  | Mehdi                    | suite.zip         |
+| murat      | 45  | Murat                    | suite.zip         |
 | sigrid     | 51  | Sigrid                   | 2026-04-24T224052 |
 | ingrid     | 56  | Ingrid la magnifique     | 2026-04-24T225036 |
 | olga       | 58  | Olga l'implacable        | 2026-04-24T224041 |
@@ -61,9 +79,9 @@ and are not tracked here.
 | bernadette | 71  | Tante Bernadette         | 2026-04-24T225045 |
 | josephine  | 75  | Joséphine la doyenne     | 2026-04-26T181017 |
 
-### alley (16)
+### alley (19)
 
-| id       | age | name                    | image timestamp   |
+| id       | age | name                    | source            |
 | -------- | --- | ----------------------- | ----------------- |
 | niamh    | 28  | Niamh                   | 2026-04-24T214756 |
 | zeynep   | 29  | Zeynep                  | 2026-04-25T145650 |
@@ -72,12 +90,15 @@ and are not tracked here.
 | carla    | 36  | Carla                   | 2026-04-25T150342 |
 | roya     | 38  | Roya                    | 2026-04-25T150701 |
 | svetlana | 39  | Svetlana                | 2026-04-25T153147 |
+| salma    | 42  | Salma                   | suite.zip         |
 | giulia   | 50  | Giulia                  | 2026-04-25T154406 |
 | yvette   | 54  | Yvette la traboulière   | 2026-04-24T224632 |
 | larissa  | 55  | Larissa                 | 2026-04-25T154209 |
 | astrid   | 60  | Astrid la farceuse      | 2026-04-24T224624 |
+| pietro   | 61  | Pietro le gentleman     | suite.zip         |
 | lucette  | 64  | Mère Lucette            | 2026-04-24T225004 |
 | margaret | 66  | Margaret                | 2026-04-25T154702 |
+| roger    | 68  | Roger le titi           | suite.zip         |
 | doris    | 69  | Doris                   | 2026-04-24T225101 |
 | colette  | 72  | Colette                 | 2026-04-25T154138 |
 | suzanne  | 73  | Suzanne dite la Baronne | 2026-04-24T215636 |
@@ -87,35 +108,30 @@ and are not tracked here.
 Listed by category, then age bucket, with apparent ethnicity/gender hints
 inferred from the first name. `M` = male profile, `F` = female profile.
 
-### park — 12 missing
+### park — complete
 
-- **young** (under 35) : `yuki(28, F, JP)`, `bakary(31, M, WAF)`, `adetokunbo(34, M, NG)`
-- **mid** (35-54) : `sonja(41, F, EE)`, `daria(42, F, EE)`, `octavia(44, F, IT)`, `brigida(48, F, IT)`, `beata(49, F, PL)`, `helena(53, F, EU)`, `souleymane(39, M, WAF)`, `hassan(46, M, AR)`
-- **older** (55-69) : `eleni(59, F, GR)`
+### hotel — 14 missing
 
-### hotel — 20 missing
-
-- **young** : `issa(28, M, WAF)`, `adam(29, M, any)`, `andriy(31, M, UA)`, `yacine(33, M, NA)`
-- **mid** : `soraya(36, F, IR)`, `lupita(37, F, MX)`, `lucia(38, F, IT/ES)`, `khadija(40, F, NA)`, `wei(41, F, CN)`, `hiroko(43, F, JP)`, `tatiana(44, F, RU)`, `carmen(47, F, ES)`, `despina(48, F, GR)`, `mireille(50, F, FR)`, `adele(52, F, FR)`, `esperanza(53, F, ES)`, `mehdi(42, M, AR)`, `murat(45, M, TR)`
+- **mid** : `soraya(36, F, IR)`, `lupita(37, F, MX)`, `lucia(38, F, IT/ES)`, `khadija(40, F, NA)`, `wei(41, F, CN)`, `hiroko(43, F, JP)`, `tatiana(44, F, RU)`, `carmen(47, F, ES)`, `despina(48, F, GR)`, `mireille(50, F, FR)`, `adele(52, F, FR)`, `esperanza(53, F, ES)`
 - **older** : `brigitte(61, F, FR)`, `solange(67, F, FR)`
 
-### alley — 17 missing
+### alley — 14 missing
 
 - **young** : `min-ji(25, F, KR)`, `priya(32, F, IN)`, `linh(34, F, VN)`
-- **mid** : `bineta(41, F, WAF)`, `salma(42, F, AR)`, `soledad(43, F, ES)`, `mila(44, F, EE)`, `aylin(46, F, TR)`, `maialen(49, F, BQ)`, `sofia(53, F, any)`, `tariq(35, M, AR)`, `behnam(47, M, IR)`
-- **older** : `boris(57, M, RU)`, `pietro(61, M, IT)`, `roger(68, M, FR)`
-- **very old** : `anatole(70, M, FR)`, `henri(78, M, FR)`
+- **mid** : `bineta(41, F, WAF)`, `soledad(43, F, ES)`, `mila(44, F, EE)`, `aylin(46, F, TR)`, `maialen(49, F, BQ)`, `sofia(53, F, any)`, `tariq(35, M, AR)`, `behnam(47, M, IR)`
+- **older** : `boris(57, M, RU)`
+- **very old** : `anatoline(70, F, FR)`, `stella(78, F, IT/FR)`
 
 ## What to source for the next batch
 
 Aggregated by characteristic (in order of need):
 
-- **men** — 17 profiles total without an image (gennaro is staffed via a
-  cross-dressing photo). Spread: park 4, hotel 6, alley 7. Ages span 28-78.
-- **Asian women** — 5 profiles uncovered: `yuki(28)` (park); `wei(41)`,
-  `hiroko(43)` (hotel); `min-ji(25)`, `priya(32)`, `linh(34)` (alley).
-- **Arab / North-African / Middle-Eastern women** — 4 profiles uncovered:
-  `soraya(36)`, `khadija(40)` (hotel); `salma(42)`, `aylin(46)` (alley).
+- **men** — 3 profiles still without an image, all in alley:
+  `tariq(35, AR)`, `behnam(47, IR)`, `boris(57, RU)`.
+- **Asian women** — 5 profiles uncovered: `wei(41)`, `hiroko(43)` (hotel);
+  `min-ji(25)`, `priya(32)`, `linh(34)` (alley).
+- **Arab / North-African / Middle-Eastern women** — 3 profiles uncovered:
+  `soraya(36)`, `khadija(40)` (hotel); `aylin(46)` (alley).
 - **Mediterranean / Hispanic women** — `lupita(37)`, `lucia(38)`,
   `carmen(47)`, `despina(48)`, `esperanza(53)` (hotel); `soledad(43)`,
   `maialen(49)` (alley).

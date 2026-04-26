@@ -171,7 +171,7 @@ describe('CreateListingPage (Add a sex worker)', () => {
   beforeEach(async () => {
     setLocale('en');
     closeLoginRequired();
-    router = await setupRouter('/add-sex-worker');
+    router = await setupRouter('/add-person');
   });
 
   it('renders the hero, type chips, name + address fields, and relationship radios', () => {

@@ -57,6 +57,7 @@ const goHome = () => router.push({ name: 'home' });
         @keydown.enter="goFiche(f.id)"
       >
         <div class="dp-thumb">
+          <img v-if="f.photo" :src="f.photo" :alt="f.name" loading="lazy" />
           <div class="dp-rating-overlay" aria-hidden="true">
             <span class="dp-stars">
               <span
@@ -226,6 +227,14 @@ const goHome = () => router.push({ name: 'home' });
   background: linear-gradient(135deg, var(--brand-light), var(--surface-alt));
   overflow: hidden;
   box-shadow: var(--shadow);
+}
+
+.dp-thumb img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .dp-rating-overlay {

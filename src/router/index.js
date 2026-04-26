@@ -22,7 +22,7 @@ export const routes = [
   { path: '/encounters/:key', name: 'article', component: ArticlePage, props: true },
   { path: '/write-review', name: 'write-review', component: UserReviewPage },
   { path: '/post-photos', name: 'post-photos', component: PostPhotosPage },
-  { path: '/add-sex-worker', name: 'add-sex-worker', component: CreateListingPage },
+  { path: '/add-person', name: 'add-person', component: CreateListingPage },
   { path: '/hotels', name: 'hotels', component: HotelsPage },
   { path: '/parks', name: 'parks', component: ParksPage },
   { path: '/alleys', name: 'alleys', component: AlleysPage },

@@ -49,7 +49,7 @@
     "district": "Le Vieux-Port",
     "category": "hotel",
     "schedule_id": "night_duty",
-    "photo": "",
+    "photo": "/profiles/mehdi/main.jpg",
     "description": {
       "fr": [
         "Plus de quinze ans dans la maison.",
@@ -167,7 +167,7 @@
     "district": "",
     "category": "hotel",
     "schedule_id": "late_opening",
-    "photo": "",
+    "photo": "/profiles/yacine/main.jpg",
     "description": {
       "fr": [
         "Jeune mais déjà très demandé.",
@@ -243,7 +243,7 @@
     "district": "",
     "category": "hotel",
     "schedule_id": "weekend_night",
-    "photo": "",
+    "photo": "/profiles/adam/main.jpg",
     "description": {
       "fr": [
         "Récemment installé mais déjà fidélisé par sa clientèle.",
@@ -275,12 +275,12 @@
   {
     "id": "soraya",
     "name": "Soraya",
-    "age": 36,
+    "age": 30,
     "city": "Toulouse",
     "district": "",
     "category": "hotel",
     "schedule_id": "evening_to_morning",
-    "photo": "",
+    "photo": "/profiles/soraya/main.jpg",
     "description": {
       "fr": [
         "Dix ans d'expérience à son actif.",
@@ -437,7 +437,7 @@
     "district": "",
     "category": "hotel",
     "schedule_id": "night_duty",
-    "photo": "",
+    "photo": "/profiles/murat/main.jpg",
     "description": {
       "fr": [
         "Vingt ans qu'il exerce.",
@@ -513,7 +513,7 @@
     "district": "",
     "category": "hotel",
     "schedule_id": "dusk_to_dawn",
-    "photo": "",
+    "photo": "/profiles/andriy/main.jpg",
     "description": {
       "fr": [
         "Récemment arrivé mais s'est imposé vite.",
@@ -781,7 +781,7 @@
     "district": "",
     "category": "hotel",
     "schedule_id": "short_evening",
-    "photo": "",
+    "photo": "/profiles/issa/main.jpg",
     "description": {
       "fr": [
         "Six ans de métier.",
@@ -1314,7 +1314,7 @@
     "district": "Pigalle",
     "category": "alley",
     "schedule_id": "night_duty",
-    "photo": "",
+    "photo": "/profiles/roger/main.jpg",
     "description": {
       "fr": [
         "Quarante ans qu'il fait les nuits du quartier.",
@@ -1468,7 +1468,7 @@
     "district": "Le Panier",
     "category": "alley",
     "schedule_id": "late_opening",
-    "photo": "",
+    "photo": "/profiles/salma/main.jpg",
     "description": {
       "fr": [
         "Vingt ans qu'elle tient le quartier.",
@@ -1720,8 +1720,8 @@
     "secondary_photos": ["/profiles/niamh/secondary-1.jpg", "/profiles/niamh/secondary-2.jpg"]
   },
   {
-    "id": "anatole",
-    "name": "Anatole le philosophe",
+    "id": "anatoline",
+    "name": "Anatoline la philosophe",
     "age": 70,
     "city": "Paris",
     "district": "5e",
@@ -1731,14 +1731,14 @@
     "description": {
       "fr": [
         "Quarante ans dans le Quartier Latin.",
-        "Érudit, blagueur, connaît tous les recoins.",
+        "Érudite, blagueuse, connaît tous les recoins.",
         "Sa fameuse \"contre-allée du collège\" est un secret bien gardé.",
         "Cour de l'ancien hôtel particulier."
       ],
       "en": [
         "Forty years in the Latin Quarter.",
         "Scholarly, joker, knows every nook.",
-        "His famous \"college side-alley\" is a well-kept secret.",
+        "Her famous \"college side-alley\" is a well-kept secret.",
         "Courtyard of the old townhouse."
       ]
     },
@@ -1754,7 +1754,10 @@
     "price": 180,
     "lat": 48.8604,
     "lon": 2.37,
-    "secondary_photos": ["/profiles/anatole/secondary-1.jpg", "/profiles/anatole/secondary-2.jpg"]
+    "secondary_photos": [
+      "/profiles/anatoline/secondary-1.jpg",
+      "/profiles/anatoline/secondary-2.jpg"
+    ]
   },
   {
     "id": "awa",
@@ -1801,7 +1804,7 @@
     "district": "4e",
     "category": "alley",
     "schedule_id": "classic_evening",
-    "photo": "",
+    "photo": "/profiles/pietro/main.jpg",
     "description": {
       "fr": [
         "Trente-cinq ans dans le Marais.",
@@ -2204,8 +2207,8 @@
     "secondary_photos": ["/profiles/maialen/secondary-1.jpg", "/profiles/maialen/secondary-2.jpg"]
   },
   {
-    "id": "henri",
-    "name": "Henri le vétéran",
+    "id": "stella",
+    "name": "Stella la vétérane",
     "age": 78,
     "city": "Saint-Étienne",
     "district": "",
@@ -2214,16 +2217,16 @@
     "photo": "",
     "description": {
       "fr": [
-        "Cinquante-cinq ans qu'il arpente sa rue.",
-        "Doyen incontesté.",
+        "Cinquante-cinq ans qu'elle arpente sa rue.",
+        "Doyenne incontestée.",
         "Son histoire du quartier vaut le détour.",
         "Petit hall d'immeuble ouvrier.",
-        "Tient encore le coup, qu'on se le dise."
+        "Tient encore le coup, qu’on se le dise."
       ],
       "en": [
-        "Fifty-five years walking his street.",
+        "Fifty-five years walking her street.",
         "Undisputed dean.",
-        "His neighborhood history is worth the trip.",
+        "Her neighborhood history is worth the trip.",
         "Small working-class building lobby.",
         "Still going strong, make no mistake."
       ]
@@ -2240,7 +2243,7 @@
     "price": 355,
     "lat": 45.45897,
     "lon": 4.39903,
-    "secondary_photos": ["/profiles/henri/secondary-1.jpg", "/profiles/henri/secondary-2.jpg"]
+    "secondary_photos": ["/profiles/stella/secondary-1.jpg", "/profiles/stella/secondary-2.jpg"]
   },
   {
     "id": "priya",
@@ -2815,7 +2818,7 @@
     "district": "Tête d'Or",
     "category": "park",
     "schedule_id": "all_day",
-    "photo": "",
+    "photo": "/profiles/brigida/main.jpg",
     "description": {
       "fr": [
         "Vingt-cinq ans dans le parc.",
@@ -2929,7 +2932,7 @@
     "district": "",
     "category": "park",
     "schedule_id": "late_afternoon",
-    "photo": "",
+    "photo": "/profiles/daria/main.jpg",
     "description": {
       "fr": [
         "Dix-huit ans qu'elle connaît la grande terrasse.",
@@ -2966,7 +2969,7 @@
     "district": "Monceau",
     "category": "park",
     "schedule_id": "all_day",
-    "photo": "",
+    "photo": "/profiles/eleni/main.jpg",
     "description": {
       "fr": [
         "Trente ans dans le parc Monceau.",
@@ -3077,7 +3080,7 @@
     "district": "Luxembourg",
     "category": "park",
     "schedule_id": "morning_and_noon",
-    "photo": "",
+    "photo": "/profiles/yuki/main.jpg",
     "description": {
       "fr": [
         "Six ans dans les allées.",
@@ -3230,7 +3233,7 @@
     "district": "parc",
     "category": "park",
     "schedule_id": "late_afternoon",
-    "photo": "",
+    "photo": "/profiles/bakary/main.jpg",
     "description": {
       "fr": [
         "Sept ans dans le parc.",
@@ -3267,7 +3270,7 @@
     "district": "parc Pommery",
     "category": "park",
     "schedule_id": "all_day",
-    "photo": "",
+    "photo": "/profiles/octavia/main.jpg",
     "description": {
       "fr": [
         "Vingt ans qu'elle fréquente le parc.",
@@ -3304,7 +3307,7 @@
     "district": "parc",
     "category": "park",
     "schedule_id": "extended_afternoon",
-    "photo": "",
+    "photo": "/profiles/souleymane/main.jpg",
     "description": {
       "fr": [
         "Quatorze ans dans le parc.",
@@ -3381,7 +3384,7 @@
     "district": "",
     "category": "park",
     "schedule_id": "extended_afternoon",
-    "photo": "",
+    "photo": "/profiles/helena/main.jpg",
     "description": {
       "fr": [
         "Vingt-cinq ans dans le bois.",
@@ -3455,7 +3458,7 @@
     "district": "Buttes-Chaumont",
     "category": "park",
     "schedule_id": "late_afternoon",
-    "photo": "",
+    "photo": "/profiles/adetokunbo/main.jpg",
     "description": {
       "fr": [
         "Dix ans dans le parc.",
@@ -3495,7 +3498,7 @@
     "district": "Citadelle",
     "category": "park",
     "schedule_id": "morning_and_noon",
-    "photo": "",
+    "photo": "/profiles/beata/main.jpg",
     "description": {
       "fr": [
         "Vingt-deux ans dans le parc.",
@@ -3571,7 +3574,7 @@
     "district": "parc de la Citadelle",
     "category": "park",
     "schedule_id": "extended_afternoon",
-    "photo": "",
+    "photo": "/profiles/sonja/main.jpg",
     "description": {
       "fr": [
         "Quinze ans dans le parc.",
@@ -3688,7 +3691,7 @@
     "district": "parc",
     "category": "park",
     "schedule_id": "all_day",
-    "photo": "",
+    "photo": "/profiles/hassan/main.jpg",
     "description": {
       "fr": [
         "Vingt ans dans le parc.",

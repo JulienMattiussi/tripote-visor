@@ -13,7 +13,7 @@ The site has a home page plus a small constellation of secondary pages reachable
 - `/encounters` - 4 article previews (1 featured + 3) linking to `/encounters/:key`
 - `/encounters/:key` - press-style full article view
 - `/hotels`, `/parks`, `/alleys` - listings, share `ListingsPage.vue` via `listing-type` prop
-- `/write-review`, `/post-photos`, `/add-sex-worker` - parody form pages
+- `/write-review`, `/post-photos`, `/add-person` - parody form pages
 - `/about` - parody premise + shared `SeriousNote`
 - `/safety` - integrity policy, ends on a "what we don't do" pivot + shared `SeriousNote`
 - `/terms` - 6 numbered sections + shared `SeriousNote` aside
@@ -41,7 +41,7 @@ src/
 │   ├── SearchResultsPage.vue     # /search - filters by ?q= and ?age=
 │   ├── UserReviewPage.vue        # /write-review
 │   ├── PostPhotosPage.vue        # /post-photos
-│   ├── CreateListingPage.vue     # /add-sex-worker
+│   ├── CreateListingPage.vue     # /add-person
 │   ├── AboutPage.vue
 │   ├── SafetyPage.vue
 │   ├── TermsPage.vue
@@ -138,24 +138,24 @@ The bust glyph in both favicons and in `AppHeader`'s inline SVG is the same shap
 
 All routes live in `src/router/index.js`. `createAppRouter({ history })` is a factory so tests can inject `createMemoryHistory()` (see `tests/helpers/router.js`). All internal navigation goes through `<router-link>` or `router.push({ name, params })` - never raw `<a href>` to internal URLs.
 
-| Path               | Name             | Page                                                         |
-| ------------------ | ---------------- | ------------------------------------------------------------ |
-| `/`                | `home`           | `HomePage.vue`                                               |
-| `/encounters`      | `encounters`     | `TravelStoriesPage.vue`                                      |
-| `/encounters/:key` | `article`        | `ArticlePage.vue` (press-style article view)                 |
-| `/hotels`          | `hotels`         | `HotelsPage.vue` (wraps `ListingsPage`)                      |
-| `/parks`           | `parks`          | `ParksPage.vue` (wraps `ListingsPage`)                       |
-| `/alleys`          | `alleys`         | `AlleysPage.vue` (wraps `ListingsPage`)                      |
-| `/p/:id`           | `profile`        | `ProfilePage.vue` (single profile)                           |
-| `/search`          | `search`         | `SearchResultsPage.vue` (`?q=` text, `?age=<bucket>`)        |
-| `/write-review`    | `write-review`   | `UserReviewPage.vue`                                         |
-| `/post-photos`     | `post-photos`    | `PostPhotosPage.vue`                                         |
-| `/add-sex-worker`  | `add-sex-worker` | `CreateListingPage.vue`                                      |
-| `/about`           | `about`          | `AboutPage.vue`                                              |
-| `/safety`          | `safety`         | `SafetyPage.vue`                                             |
-| `/terms`           | `terms`          | `TermsPage.vue`                                              |
-| `/resources`       | `resources`      | `ResourcesPage.vue`                                          |
-| `/discover`        | `discover`       | `DiscoverPage.vue` (top-4 profiles + DestinationsHighlights) |
+| Path               | Name           | Page                                                         |
+| ------------------ | -------------- | ------------------------------------------------------------ |
+| `/`                | `home`         | `HomePage.vue`                                               |
+| `/encounters`      | `encounters`   | `TravelStoriesPage.vue`                                      |
+| `/encounters/:key` | `article`      | `ArticlePage.vue` (press-style article view)                 |
+| `/hotels`          | `hotels`       | `HotelsPage.vue` (wraps `ListingsPage`)                      |
+| `/parks`           | `parks`        | `ParksPage.vue` (wraps `ListingsPage`)                       |
+| `/alleys`          | `alleys`       | `AlleysPage.vue` (wraps `ListingsPage`)                      |
+| `/p/:id`           | `profile`      | `ProfilePage.vue` (single profile)                           |
+| `/search`          | `search`       | `SearchResultsPage.vue` (`?q=` text, `?age=<bucket>`)        |
+| `/write-review`    | `write-review` | `UserReviewPage.vue`                                         |
+| `/post-photos`     | `post-photos`  | `PostPhotosPage.vue`                                         |
+| `/add-person`      | `add-person`   | `CreateListingPage.vue`                                      |
+| `/about`           | `about`        | `AboutPage.vue`                                              |
+| `/safety`          | `safety`       | `SafetyPage.vue`                                             |
+| `/terms`           | `terms`        | `TermsPage.vue`                                              |
+| `/resources`       | `resources`    | `ResourcesPage.vue`                                          |
+| `/discover`        | `discover`     | `DiscoverPage.vue` (top-4 profiles + DestinationsHighlights) |
 
 ## Pages
 
@@ -206,7 +206,7 @@ To add a new modal: declare its open ref + actions in `state/modals.js`, create 
 Currently:
 
 - **About column**: `About Us → /about`, `Resources and Policies → /resources`, `Trust & Safety → /safety`. (Placeholders no longer exist in this column.)
-- **Explore column**: `Write a review → /write-review`, `Add a sex worker → /add-sex-worker`, `Join → openSignin()`, `Top destinations → /discover`, `Encounter Stories → /encounters`.
+- **Explore column**: `Write a review → /write-review`, `Add a sex worker → /add-person`, `Join → openSignin()`, `Top destinations → /discover`, `Encounter Stories → /encounters`.
 - **Settings column** (rightmost): currency `<select>`, locale `<select>` (both fall back to opening `PreferencesModal` when the user picks the `…` option), and the GitHub social pill, right-aligned.
 - **Legal nav** (bottom row): `Terms of Use → /terms`, `Cookie consent → openCookieModal()`.
 
@@ -307,10 +307,10 @@ The Discover and Review menus share the same machinery in `AppHeader.vue`. To ad
 The parody premise is that **nothing user-generated can ever be persisted, and the site sets no cookies**. The following behaviors look like bugs but are intentional. Don't "repair" them.
 
 - `SignInModal.onSubmit` always sets `error.value = true`. No real auth, no mock auth, no local-storage shortcut.
-- The three form pages (`/write-review`, `/post-photos`, `/add-sex-worker`) open `LoginRequiredModal` on a valid submit and never persist. The modal targets:
+- The three form pages (`/write-review`, `/post-photos`, `/add-person`) open `LoginRequiredModal` on a valid submit and never persist. The modal targets:
   - `/write-review` → `publish_review`
   - `/post-photos` → `publish_photos`
-  - `/add-sex-worker` → `add_place`
+  - `/add-person` → `add_place`
 - Pre-fill via `?profile=:id` works on `/write-review` and `/post-photos` (consumed by `PlaceSearchSelect`), purely to ergonomically open the modal with the right context.
 - `CookieConsentModal`'s Allow / Reject / Confirm only close the modal. There are no cookies to accept or refuse - the site sets none. The modal is the cosmetic mirror of mainstream review platforms' consent banner.
 
