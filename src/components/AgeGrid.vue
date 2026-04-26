@@ -2,15 +2,13 @@
 import { computed } from 'vue';
 import { useRouter } from 'vue-router';
 import { t } from '../i18n/store.js';
+import { AGE_BUCKETS } from '../data/ageBuckets.js';
 
 const router = useRouter();
 
-const buckets = computed(() => [
-  { id: 'under-30', label: t('age_groups.under_30'), img: '/age/under-30.svg' },
-  { id: '30-45', label: t('age_groups.b30_45'), img: '/age/30-45.svg' },
-  { id: '45-60', label: t('age_groups.b45_60'), img: '/age/45-60.svg' },
-  { id: 'over-60', label: t('age_groups.over_60'), img: '/age/over-60.svg' },
-]);
+const buckets = computed(() =>
+  AGE_BUCKETS.map((b) => ({ id: b.id, img: b.img, label: t(b.labelKey) })),
+);
 
 const onPick = (id) => router.push({ name: 'search', query: { age: id } });
 </script>

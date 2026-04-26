@@ -2,12 +2,8 @@ import { describe, it, expect, beforeEach } from 'vitest';
 import { mount } from '@vue/test-utils';
 import App from '../src/App.vue';
 import CookieConsentModal from '../src/components/CookieConsentModal.vue';
-import {
-  cookieModalOpen,
-  openCookieModal,
-  closeCookieModal,
-  setLocale,
-} from '../src/i18n/store.js';
+import { setLocale } from '../src/i18n/store.js';
+import { cookieModalOpen, openCookieModal, closeCookieModal } from '../src/state/modals.js';
 import { setupRouter, withRouter } from './helpers/router.js';
 
 describe('CookieConsentModal', () => {

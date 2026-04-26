@@ -1,6 +1,7 @@
 <script setup>
 import { ref, computed } from 'vue';
-import { t, formatLieu } from '../i18n/store.js';
+import { t } from '../i18n/store.js';
+import { formatLieu } from '../data/fiches.js';
 import fichesData from '../data/fiches.json';
 
 const SUGGESTION_LIMIT = 6;

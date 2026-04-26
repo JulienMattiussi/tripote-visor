@@ -2,7 +2,8 @@ import { describe, it, expect, beforeEach, vi, afterEach } from 'vitest';
 import { mount } from '@vue/test-utils';
 import SignInModal from '../src/components/SignInModal.vue';
 import AppHeader from '../src/components/AppHeader.vue';
-import { signinOpen, signinScreen, openSignin, closeSignin, setLocale } from '../src/i18n/store.js';
+import { setLocale } from '../src/i18n/store.js';
+import { signinOpen, signinScreen, openSignin, closeSignin } from '../src/state/modals.js';
 import { setupRouter, withRouter } from './helpers/router.js';
 
 describe('SignInModal', () => {

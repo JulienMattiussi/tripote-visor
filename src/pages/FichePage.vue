@@ -1,10 +1,16 @@
 <script setup>
-import { computed, ref } from 'vue';
+import { computed } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
-import { t, locale, openLoginRequired, formatLieu, formatReviewDate } from '../i18n/store.js';
+import { t, locale } from '../i18n/store.js';
+import { openLoginRequired } from '../state/modals.js';
+import { formatLieu } from '../data/fiches.js';
+import { todayStatus, periodsOf } from '../data/schedule.js';
 import fichesData from '../data/fiches.json';
 import schedulesData from '../data/schedules.json';
 import advicesData from '../data/advices.json';
+import FicheGallery from '../components/FicheGallery.vue';
+import FicheSchedule from '../components/FicheSchedule.vue';
+import FicheReviews from '../components/FicheReviews.vue';
 
 const route = useRoute();
 const router = useRouter();
@@ -13,18 +19,11 @@ const fiche = computed(() => fichesData.find((f) => f.id === route.params.id));
 const schedule = computed(() =>
   fiche.value ? schedulesData.find((s) => s.id === fiche.value.horaires_id) : null,
 );
-
-const REVIEWS_PREVIEW = 5;
-const showAllReviews = ref(false);
 const reviews = computed(() => (fiche.value ? (advicesData[fiche.value.id] ?? []) : []));
 const reviewCount = computed(() => reviews.value.length);
-const visibleReviews = computed(() =>
-  showAllReviews.value ? reviews.value : reviews.value.slice(0, REVIEWS_PREVIEW),
-);
 const averageRating = computed(() => {
   if (!reviewCount.value) return 0;
-  const sum = reviews.value.reduce((acc, r) => acc + r.rating, 0);
-  return sum / reviewCount.value;
+  return reviews.value.reduce((acc, r) => acc + r.rating, 0) / reviewCount.value;
 });
 
 const descriptifLines = computed(() => {
@@ -34,29 +33,7 @@ const descriptifLines = computed(() => {
   return fiche.value.descriptif ?? [];
 });
 
-const DAYS_ORDER = ['lundi', 'mardi', 'mercredi', 'jeudi', 'vendredi', 'samedi', 'dimanche'];
-const DAY_BY_INDEX = ['dimanche', 'lundi', 'mardi', 'mercredi', 'jeudi', 'vendredi', 'samedi'];
-
-const todayName = computed(() => DAY_BY_INDEX[new Date().getDay()]);
-
-const todayStatus = computed(() => {
-  if (!schedule.value) return { open: false, label: '' };
-  const todaySched = schedule.value.jours[todayName.value];
-  if (!todaySched) {
-    return { open: false, label: t('fiche_page.status_closed_today') };
-  }
-  const [, end] = todaySched.split('-');
-  return { open: true, label: t('fiche_page.status_open', { time: end }) };
-});
-
-const orderedDays = computed(() =>
-  DAYS_ORDER.map((day) => ({
-    key: day,
-    label: t(`fiche_page.day_${day}`),
-    time: schedule.value?.jours?.[day] ?? null,
-    isToday: day === todayName.value,
-  })),
-);
+const status = computed(() => todayStatus(schedule.value, t));
 
 const services = computed(() => {
   const codes = fiche.value?.services ?? [];
@@ -77,55 +54,7 @@ const paymentMethods = computed(() => {
   );
 });
 
-const PERIODS = [
-  { key: 'matin', ranges: [[360, 720]] },
-  { key: 'midi', ranges: [[720, 840]] },
-  {
-    key: 'apres_midi',
-    ranges: [[840, 1080]],
-  },
-  { key: 'soir', ranges: [[1080, 1320]] },
-  {
-    key: 'nuit',
-    ranges: [
-      [1320, 1440],
-      [0, 360],
-    ],
-  },
-];
-
-const parseTime = (str) => {
-  const [h, m] = str.split(':').map(Number);
-  return h * 60 + m;
-};
-
-const segmentsOf = (range) => {
-  const [s, e] = range.split('-').map(parseTime);
-  if (e <= s)
-    return [
-      [s, 1440],
-      [0, e],
-    ];
-  return [[s, e]];
-};
-
-const overlap = (a, b, c, d) => Math.max(a, c) < Math.min(b, d);
-
-const periods = computed(() => {
-  if (!schedule.value) return [];
-  const matched = new Set();
-  for (const time of Object.values(schedule.value.jours)) {
-    if (!time) continue;
-    const segs = segmentsOf(time);
-    for (const period of PERIODS) {
-      if (matched.has(period.key)) continue;
-      if (segs.some((s) => period.ranges.some((r) => overlap(s[0], s[1], r[0], r[1])))) {
-        matched.add(period.key);
-      }
-    }
-  }
-  return PERIODS.filter((p) => matched.has(p.key)).map((p) => t(`fiche_page.period_${p.key}`));
-});
+const periods = computed(() => periodsOf(schedule.value, t));
 
 const categoryLabel = computed(() =>
   fiche.value ? t(`fiche_page.cat_${fiche.value.categorie}`) : '',
@@ -212,25 +141,7 @@ const goHome = () => router.push({ name: 'home' });
       </div>
     </header>
 
-    <section class="fp-gallery">
-      <div class="container fp-gallery-grid">
-        <div class="fp-photo-main" aria-label="Photo principale">
-          <img v-if="fiche.photo" :src="fiche.photo" :alt="fiche.nom" />
-          <span v-else class="fp-photo-empty">{{ t('fiche_page.thumb_main') }}</span>
-        </div>
-        <div class="fp-photo-thumbs">
-          <div class="fp-thumb">
-            <span>{{ t('fiche_page.thumb_interior') }}</span>
-          </div>
-          <div class="fp-thumb">
-            <span>{{ t('fiche_page.thumb_ambiance') }}</span>
-          </div>
-          <div class="fp-thumb">
-            <span>{{ t('fiche_page.thumb_more') }}</span>
-          </div>
-        </div>
-      </div>
-    </section>
+    <FicheGallery :fiche="fiche" />
 
     <nav class="fp-tabs" :aria-label="t('fiche_page.tab_presentation')">
       <div class="container fp-tabs-inner">
@@ -246,8 +157,8 @@ const goHome = () => router.push({ name: 'home' });
         <section id="presentation" class="fp-block">
           <h2 class="fp-block-title">{{ t('fiche_page.glance_title') }}</h2>
           <p class="fp-status">
-            <span :class="['fp-status-tag', todayStatus.open ? 'open' : 'closed']">
-              {{ todayStatus.label }}
+            <span :class="['fp-status-tag', status.open ? 'open' : 'closed']">
+              {{ status.label }}
             </span>
             <a href="#horaires">{{ t('fiche_page.see_all_horaires') }}</a>
           </p>
@@ -307,62 +218,7 @@ const goHome = () => router.push({ name: 'home' });
           </p>
         </section>
 
-        <section id="avis" class="fp-block">
-          <div class="fp-reviews-header">
-            <h2 class="fp-block-title">{{ t('fiche_page.reviews_title') }}</h2>
-            <button type="button" class="fp-top-btn fp-reviews-add" @click="goWriteReview">
-              + {{ t('fiche_page.add_review') }}
-            </button>
-          </div>
-          <p v-if="reviewCount === 0" class="fp-empty">
-            {{ t('fiche_page.no_reviews') }}
-          </p>
-          <template v-else>
-            <p class="fp-reviews-summary">
-              <span class="fp-reviews-avg">{{ averageRating.toFixed(1) }}</span>
-              <span class="fp-stars" aria-hidden="true">
-                <span
-                  v-for="n in 5"
-                  :key="n"
-                  :class="['dot', { filled: n <= Math.round(averageRating) }]"
-                ></span>
-              </span>
-              <span class="fp-reviews-total">
-                {{ t('fiche_page.reviews_count', { count: reviewCount }) }}
-              </span>
-            </p>
-            <ul class="fp-reviews-list">
-              <li v-for="(r, i) in visibleReviews" :key="i" class="fp-review" :lang="r.lang">
-                <div class="fp-review-head">
-                  <div class="fp-review-rating" aria-hidden="true">
-                    <span
-                      v-for="n in 5"
-                      :key="n"
-                      :class="['dot', { filled: n <= r.rating }]"
-                    ></span>
-                  </div>
-                  <span class="fp-review-meta">
-                    <span class="fp-review-author">{{ r.author }}</span>
-                    <span aria-hidden="true">·</span>
-                    <time class="fp-review-date" :datetime="r.date">
-                      {{ formatReviewDate(r.date) }}
-                    </time>
-                  </span>
-                </div>
-                <h3 class="fp-review-title">{{ r.title }}</h3>
-                <p class="fp-review-body">{{ r.body }}</p>
-              </li>
-            </ul>
-            <button
-              v-if="reviewCount > REVIEWS_PREVIEW && !showAllReviews"
-              type="button"
-              class="fp-reviews-more"
-              @click="showAllReviews = true"
-            >
-              {{ t('fiche_page.see_all_reviews', { count: reviewCount }) }}
-            </button>
-          </template>
-        </section>
+        <FicheReviews :reviews="reviews" @add-review="goWriteReview" />
       </div>
 
       <aside class="fp-right">
@@ -378,21 +234,7 @@ const goHome = () => router.push({ name: 'home' });
           </button>
         </div>
 
-        <div id="horaires" class="fp-side-block">
-          <h3 class="fp-side-title">{{ t('fiche_page.hours_title') }}</h3>
-          <p :class="['fp-status-tag', todayStatus.open ? 'open' : 'closed']">
-            {{ todayStatus.label }}
-          </p>
-          <table class="fp-hours">
-            <tbody>
-              <tr v-for="d in orderedDays" :key="d.key" :class="{ today: d.isToday }">
-                <th scope="row">{{ d.label }}</th>
-                <td v-if="d.time">{{ d.time }}</td>
-                <td v-else class="fp-closed-cell">{{ t('fiche_page.closed') }}</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+        <FicheSchedule :schedule="schedule" />
       </aside>
     </main>
   </article>
@@ -523,50 +365,6 @@ const goHome = () => router.push({ name: 'home' });
   border-radius: 999px;
   font-size: 13px;
   font-weight: 600;
-}
-
-.fp-gallery {
-  background: var(--bg);
-  padding: 16px 0;
-}
-
-.fp-gallery-grid {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 8px;
-}
-
-.fp-photo-main,
-.fp-thumb {
-  background: var(--surface);
-  border-radius: var(--radius);
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--text-muted);
-  font-weight: 700;
-  font-size: 14px;
-}
-
-.fp-photo-main {
-  aspect-ratio: 16 / 9;
-}
-
-.fp-photo-main img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.fp-photo-thumbs {
-  display: grid;
-  grid-template-rows: repeat(3, 1fr);
-  gap: 8px;
-}
-
-.fp-thumb {
-  min-height: 80px;
 }
 
 .fp-tabs {
@@ -738,155 +536,6 @@ const goHome = () => router.push({ name: 'home' });
   margin-bottom: 12px;
 }
 
-.fp-empty {
-  color: var(--text-muted);
-  font-style: italic;
-  margin: 0;
-}
-
-.fp-reviews-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  flex-wrap: wrap;
-  margin-bottom: 12px;
-}
-
-.fp-reviews-header .fp-block-title {
-  margin: 0;
-}
-
-.fp-reviews-summary {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin: 0 0 18px 0;
-  font-size: 14px;
-  color: var(--text);
-}
-
-.fp-reviews-avg {
-  font-size: 22px;
-  font-weight: 800;
-  color: var(--brand-dark);
-}
-
-.fp-stars {
-  display: inline-flex;
-  gap: 2px;
-}
-
-.fp-stars .dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background: var(--border);
-  display: inline-block;
-}
-
-.fp-stars .dot.filled {
-  background: var(--brand);
-}
-
-.fp-reviews-total {
-  color: var(--text-muted);
-}
-
-.fp-reviews-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
-
-.fp-review {
-  background: var(--bg);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 14px 18px;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.fp-review-head {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-}
-
-.fp-review-rating {
-  display: inline-flex;
-  gap: 2px;
-}
-
-.fp-review-meta {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 12px;
-  color: var(--text-muted);
-}
-
-.fp-review-author {
-  font-weight: 600;
-  color: var(--brand-dark);
-}
-
-.fp-review-date {
-  color: var(--text-muted);
-}
-
-.fp-review-rating .dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: var(--border);
-  display: inline-block;
-}
-
-.fp-review-rating .dot.filled {
-  background: var(--brand);
-}
-
-.fp-review-title {
-  font-size: 15px;
-  font-weight: 800;
-  margin: 4px 0 0 0;
-  color: var(--text);
-  line-height: 1.3;
-}
-
-.fp-review-body {
-  font-size: 14px;
-  line-height: 1.55;
-  margin: 0;
-  color: var(--text);
-}
-
-.fp-reviews-more {
-  margin-top: 14px;
-  align-self: flex-start;
-  padding: 8px 16px;
-  border-radius: 999px;
-  background: var(--surface);
-  font-weight: 700;
-  font-size: 13px;
-  color: var(--brand-dark);
-  cursor: pointer;
-  font-family: inherit;
-  border: 1px solid var(--border);
-}
-
-.fp-reviews-more:hover {
-  background: var(--brand-tint);
-  border-color: var(--brand);
-}
-
 .fp-right {
   display: flex;
   flex-direction: column;
@@ -918,46 +567,9 @@ const goHome = () => router.push({ name: 'home' });
   gap: 8px;
 }
 
-.fp-hours {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 14px;
-  margin-top: 10px;
-}
-
-.fp-hours th,
-.fp-hours td {
-  padding: 4px 0;
-  text-align: left;
-  font-weight: 600;
-}
-
-.fp-hours td {
-  text-align: right;
-  color: var(--text);
-  font-weight: 500;
-}
-
-.fp-hours tr.today th,
-.fp-hours tr.today td {
-  color: var(--brand-dark);
-  font-weight: 800;
-}
-
-.fp-closed-cell {
-  color: var(--danger);
-}
-
 @media (max-width: 900px) {
   .fp-main {
     grid-template-columns: 1fr;
-  }
-  .fp-gallery-grid {
-    grid-template-columns: 1fr;
-  }
-  .fp-photo-thumbs {
-    grid-template-rows: none;
-    grid-template-columns: repeat(3, 1fr);
   }
   .fp-services {
     grid-template-columns: 1fr;

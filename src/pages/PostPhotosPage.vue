@@ -1,7 +1,8 @@
 <script setup>
 import { ref, computed } from 'vue';
 import { useRoute } from 'vue-router';
-import { t, openLoginRequired } from '../i18n/store.js';
+import { t } from '../i18n/store.js';
+import { openLoginRequired } from '../state/modals.js';
 import fichesData from '../data/fiches.json';
 import PlaceSearchSelect from '../components/PlaceSearchSelect.vue';
 

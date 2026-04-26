@@ -1,15 +1,7 @@
 <script setup>
 import { onBeforeUnmount, watch } from 'vue';
-import {
-  locale,
-  currency,
-  modalOpen,
-  modalTab,
-  t,
-  setLocale,
-  setCurrency,
-  closePreferences,
-} from '../i18n/store.js';
+import { locale, currency, t, setLocale, setCurrency } from '../i18n/store.js';
+import { modalOpen, modalTab, closePreferences } from '../state/modals.js';
 import { regions, SUGGESTED_REGION } from '../i18n/regions.js';
 import { currencies } from '../i18n/currencies.js';
 

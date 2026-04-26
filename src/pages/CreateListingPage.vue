@@ -1,6 +1,7 @@
 <script setup>
 import { ref, computed } from 'vue';
-import { t, openLoginRequired } from '../i18n/store.js';
+import { t } from '../i18n/store.js';
+import { openLoginRequired } from '../state/modals.js';
 import SeriousNote from '../components/SeriousNote.vue';
 
 const SEXES = ['female', 'male', 'indeterminate'];

@@ -1,7 +1,8 @@
 <script setup>
 import { computed } from 'vue';
 import { useRouter } from 'vue-router';
-import { t, formatAmount, formatLieu, reviewCountFor, reviewAverageFor } from '../i18n/store.js';
+import { t, formatAmount } from '../i18n/store.js';
+import { formatLieu, reviewCountFor, reviewAverageFor } from '../data/fiches.js';
 import DestinationsHighlights from '../components/DestinationsHighlights.vue';
 import fichesData from '../data/fiches.json';
 

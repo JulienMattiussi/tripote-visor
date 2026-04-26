@@ -1,15 +1,7 @@
 <script setup>
 import { ref, computed } from 'vue';
-import {
-  t,
-  currency,
-  locale,
-  setCurrency,
-  setLocale,
-  openPreferences,
-  openSignin,
-  openCookieModal,
-} from '../i18n/store.js';
+import { t, currency, locale, setCurrency, setLocale } from '../i18n/store.js';
+import { openPreferences, openSignin, openCookieModal } from '../state/modals.js';
 
 const aboutLinks = computed(() => [
   { key: 'about_1', label: t('footer.col_about_1'), to: { name: 'about' } },

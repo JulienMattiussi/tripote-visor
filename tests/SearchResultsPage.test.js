@@ -45,7 +45,7 @@ describe('SearchResultsPage - global view', () => {
 
   it('clicking a heart opens the login-required modal without navigating', async () => {
     const { loginRequiredOpen, loginRequiredContext, closeLoginRequired } =
-      await import('../src/i18n/store.js');
+      await import('../src/state/modals.js');
     closeLoginRequired();
     const wrapper = mount(SearchResultsPage, withRouter(router));
     const firstCard = wrapper.find('.sr-card');
@@ -165,5 +165,72 @@ describe('SearchResultsPage - locale', () => {
     const wrapper = mount(SearchResultsPage, withRouter(router));
     const titles = wrapper.findAll('.sr-section-title').map((t) => t.text());
     expect(titles).toEqual(['Hôtels', 'Ruelles', 'Parcs']);
+  });
+});
+
+describe('SearchResultsPage - age filtering', () => {
+  beforeEach(() => setLocale('en'));
+
+  const ageInBucket = (age, bucket) => {
+    if (bucket === 'under-30') return age < 30;
+    if (bucket === '30-45') return age >= 30 && age < 45;
+    if (bucket === '45-60') return age >= 45 && age < 60;
+    if (bucket === 'over-60') return age >= 60;
+    return true;
+  };
+
+  const parseAge = (metaText) => {
+    const m = metaText.match(/(\d+)\s+years\s+old/);
+    return m ? Number(m[1]) : null;
+  };
+
+  for (const bucket of ['under-30', '30-45', '45-60', 'over-60']) {
+    it(`?age=${bucket} renders only fiches whose age falls in the bucket`, async () => {
+      const router = await setupRouter(`/search?age=${bucket}`);
+      const wrapper = mount(SearchResultsPage, withRouter(router));
+      const expected = fiches.filter((f) => ageInBucket(f.age, bucket));
+      expect(wrapper.find('.sr-count').text()).toContain(String(expected.length));
+      const visibleAges = wrapper.findAll('.sr-card-meta').map((el) => parseAge(el.text()));
+      expect(visibleAges.length).toBeGreaterThan(0);
+      for (const age of visibleAges) {
+        expect(age).not.toBeNull();
+        expect(ageInBucket(age, bucket), `${age} not in ${bucket}`).toBe(true);
+      }
+    });
+  }
+
+  it('treats 30 as the lower bound of 30-45 (not under-30)', async () => {
+    const has30 = fiches.some((f) => f.age === 30);
+    if (!has30) return;
+    const under = await setupRouter('/search?age=under-30');
+    const underWrapper = mount(SearchResultsPage, withRouter(under));
+    const underAges = underWrapper.findAll('.sr-card-meta').map((el) => parseAge(el.text()));
+    expect(underAges).not.toContain(30);
+
+    const mid = await setupRouter('/search?age=30-45');
+    const midWrapper = mount(SearchResultsPage, withRouter(mid));
+    const midCount = Number(midWrapper.find('.sr-count').text().match(/(\d+)/)[1]);
+    const expected = fiches.filter((f) => f.age >= 30 && f.age < 45).length;
+    expect(midCount).toBe(expected);
+  });
+
+  it('renders the bucket label in the page title', async () => {
+    const router = await setupRouter('/search?age=under-30');
+    const wrapper = mount(SearchResultsPage, withRouter(router));
+    expect(wrapper.find('.sr-title').text()).toContain('Under 30');
+  });
+
+  it('combines ?q= and ?age= (intersect both filters)', async () => {
+    // Mireille is age 50, which sits in the 45-60 bucket
+    const matching = await setupRouter('/search?q=mireille&age=45-60');
+    const matchWrapper = mount(SearchResultsPage, withRouter(matching));
+    const matchCards = matchWrapper.findAll('.sr-card');
+    expect(matchCards.length).toBe(1);
+    expect(matchCards[0].text()).toContain('Mireille');
+
+    // Same name but with a bucket Mireille does not belong to
+    const empty = await setupRouter('/search?q=mireille&age=under-30');
+    const emptyWrapper = mount(SearchResultsPage, withRouter(empty));
+    expect(emptyWrapper.findAll('.sr-card').length).toBe(0);
   });
 });

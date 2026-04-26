@@ -1,16 +1,8 @@
 import { describe, it, expect, beforeEach } from 'vitest';
 import { mount } from '@vue/test-utils';
 import PreferencesModal from '../src/components/PreferencesModal.vue';
-import {
-  locale,
-  currency,
-  modalOpen,
-  modalTab,
-  openPreferences,
-  closePreferences,
-  setLocale,
-  setCurrency,
-} from '../src/i18n/store.js';
+import { locale, currency, setLocale, setCurrency } from '../src/i18n/store.js';
+import { modalOpen, modalTab, openPreferences, closePreferences } from '../src/state/modals.js';
 
 describe('PreferencesModal', () => {
   beforeEach(() => {

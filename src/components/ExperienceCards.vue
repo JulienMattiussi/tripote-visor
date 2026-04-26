@@ -1,51 +1,41 @@
 <script setup>
-import { ref, computed } from 'vue';
+import { computed } from 'vue';
+import { useRouter } from 'vue-router';
 import { t, formatAmount } from '../i18n/store.js';
+import { reviewCountFor, reviewAverageFor } from '../data/fiches.js';
+import fichesData from '../data/fiches.json';
 
-const favorites = ref({ 1: false, 2: false, 3: false, 4: false });
+const router = useRouter();
 
-const RAW_EXPERIENCES = [
-  {
-    id: 1,
-    img: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?w=600&q=60',
-    rating: 4.8,
-    reviews: 73,
-    priceUsd: 72,
-  },
-  {
-    id: 2,
-    img: 'https://images.unsplash.com/photo-1509803874385-db7c23652552?w=600&q=60',
-    rating: 4.9,
-    reviews: 21,
-    priceUsd: 5,
-  },
-  {
-    id: 3,
-    img: 'https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=600&q=60',
-    rating: 4.7,
-    reviews: 3,
-    priceUsd: 16,
-  },
-  {
-    id: 4,
-    img: 'https://images.unsplash.com/photo-1491557345352-5929e343eb89?w=600&q=60',
-    rating: 4.7,
-    reviews: 8,
-    priceUsd: 320,
-  },
-];
+const HOUR_MS = 3600 * 1000;
 
-const experiences = computed(() =>
-  RAW_EXPERIENCES.map((e) => ({
-    ...e,
-    title: t(`experiences.item_${e.id}_title`),
-    price: t(`experiences.item_${e.id}_price`, { amount: formatAmount(e.priceUsd) }),
-  })),
-);
-
-const toggleFav = (id) => {
-  favorites.value[id] = !favorites.value[id];
+const mulberry32 = (seed) => () => {
+  seed = (seed + 0x6d2b79f5) | 0;
+  let x = seed;
+  x = Math.imul(x ^ (x >>> 15), x | 1);
+  x ^= x + Math.imul(x ^ (x >>> 7), x | 61);
+  return ((x ^ (x >>> 14)) >>> 0) / 4294967296;
 };
+
+const picks = computed(() => {
+  const rng = mulberry32(Math.floor(Date.now() / HOUR_MS));
+  const byVille = new Map();
+  for (const f of fichesData) {
+    if (!byVille.has(f.ville)) byVille.set(f.ville, []);
+    byVille.get(f.ville).push(f);
+  }
+  const villes = [...byVille.keys()];
+  for (let i = villes.length - 1; i > 0; i--) {
+    const j = Math.floor(rng() * (i + 1));
+    [villes[i], villes[j]] = [villes[j], villes[i]];
+  }
+  return villes.slice(0, 4).map((ville) => {
+    const list = byVille.get(ville);
+    return list[Math.floor(rng() * list.length)];
+  });
+});
+
+const goFiche = (id) => router.push({ name: 'fiche', params: { id } });
 </script>
 
 <template>
@@ -53,57 +43,43 @@ const toggleFav = (id) => {
     <h2 class="section-title">{{ t('experiences.title') }}</h2>
     <p class="section-subtitle">{{ t('experiences.subtitle') }}</p>
 
-    <div class="carousel">
-      <ul class="exp-grid">
-        <li v-for="exp in experiences" :key="exp.id" class="exp-card">
-          <div class="thumb">
-            <img :src="exp.img" :alt="exp.title" loading="lazy" />
-            <button
-              class="fav-btn"
-              :aria-pressed="favorites[exp.id]"
-              :aria-label="
-                favorites[exp.id] ? t('experiences.fav_remove') : t('experiences.fav_add')
-              "
-              @click="toggleFav(exp.id)"
-            >
-              <svg
-                viewBox="0 0 24 24"
-                :class="['heart', { filled: favorites[exp.id] }]"
-                aria-hidden="true"
-              >
-                <path
-                  d="M12 21s-7-4.5-9.5-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.5 6C19 16.5 12 21 12 21z"
-                />
-              </svg>
-            </button>
-          </div>
-          <h3 class="exp-title">{{ exp.title }}</h3>
-          <div class="rating">
-            <span class="stars" aria-hidden="true">
+    <ul class="exp-grid">
+      <li
+        v-for="f in picks"
+        :key="f.id"
+        class="exp-card"
+        tabindex="0"
+        role="link"
+        @click="goFiche(f.id)"
+        @keydown.enter="goFiche(f.id)"
+      >
+        <div class="exp-thumb">
+          <span class="exp-city-tag">{{ f.ville }}</span>
+          <div class="exp-rating-overlay" aria-hidden="true">
+            <span class="exp-stars">
               <span
                 v-for="i in 5"
                 :key="i"
-                :class="['dot', { filled: i <= Math.round(exp.rating) }]"
+                :class="['dot', { filled: i <= Math.round(reviewAverageFor(f.id)) }]"
               ></span>
             </span>
-            <span class="rating-num">{{ exp.rating.toFixed(1) }}</span>
-            <span class="reviews">({{ exp.reviews }})</span>
+            <span class="exp-rating-num">
+              {{ reviewCountFor(f.id) ? reviewAverageFor(f.id).toFixed(1) : '-' }}
+            </span>
+            <span class="exp-rating-count">({{ reviewCountFor(f.id) }})</span>
           </div>
-          <div class="price">{{ exp.price }}</div>
-        </li>
-      </ul>
-
-      <button class="nav-arrow" type="button" :aria-label="t('experiences.next_aria')">›</button>
-    </div>
+        </div>
+        <h3 class="exp-name">{{ f.nom }}</h3>
+        <div class="exp-price">
+          {{ t('experiences.from_price', { amount: formatAmount(f.prix) }) }}
+        </div>
+      </li>
+    </ul>
   </section>
 </template>
 
 <style scoped>
 .experiences {
-  position: relative;
-}
-
-.carousel {
   position: relative;
 }
 
@@ -119,88 +95,69 @@ const toggleFav = (id) => {
 .exp-card {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 6px;
   cursor: pointer;
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
 }
 
-.thumb {
+.exp-card:hover,
+.exp-card:focus-visible {
+  transform: translateY(-2px);
+  outline: none;
+}
+
+.exp-thumb {
   position: relative;
   aspect-ratio: 4 / 3;
   border-radius: var(--radius);
+  background: var(--brand-light);
+  box-shadow: var(--shadow);
   overflow: hidden;
+}
+
+.exp-city-tag {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  right: 12px;
+  text-align: center;
+  background: var(--scrim);
+  color: var(--on-dark);
+  font-weight: 800;
+  font-size: 18px;
+  letter-spacing: 0.02em;
+  padding: 6px 12px;
+  border-radius: 999px;
+  text-transform: uppercase;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+.exp-rating-overlay {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--bg);
+  border-radius: 999px;
+  padding: 4px 10px;
+  font-size: 13px;
   box-shadow: var(--shadow);
 }
 
-.thumb img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-
-.exp-card:hover .thumb img {
-  transform: scale(1.04);
-}
-
-.fav-btn {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  width: 32px;
-  height: 32px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(255, 255, 255, 0.85);
-  border-radius: 50%;
-  backdrop-filter: blur(2px);
-}
-
-.fav-btn:hover {
-  background: var(--bg);
-}
-
-.heart {
-  width: 18px;
-  height: 18px;
-  fill: none;
-  stroke: var(--text);
-  stroke-width: 2;
-}
-
-.heart.filled {
-  fill: var(--danger);
-  stroke: var(--danger);
-}
-
-.exp-title {
-  font-size: 14px;
-  font-weight: 700;
-  line-height: 1.3;
-  margin: 4px 0 0 0;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-
-.rating {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 13px;
-}
-
-.stars {
+.exp-stars {
   display: inline-flex;
   gap: 2px;
 }
 
 .dot {
-  width: 10px;
-  height: 10px;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
-  background: #d9d9d9;
+  background: var(--border);
   display: inline-block;
 }
 
@@ -208,46 +165,34 @@ const toggleFav = (id) => {
   background: var(--brand);
 }
 
-.rating-num {
+.exp-rating-num {
   font-weight: 700;
 }
 
-.reviews {
+.exp-rating-count {
   color: var(--text-muted);
 }
 
-.price {
+.exp-name {
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--brand-dark);
+  margin: 6px 0 0;
+  line-height: 1.3;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.exp-price {
   font-size: 13px;
   color: var(--text-muted);
-}
-
-.nav-arrow {
-  position: absolute;
-  right: -16px;
-  top: 40%;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: var(--bg);
-  box-shadow: var(--shadow-hover);
-  font-size: 22px;
-  font-weight: 700;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 2;
-}
-
-.nav-arrow:hover {
-  background: var(--surface);
 }
 
 @media (max-width: 900px) {
   .exp-grid {
     grid-template-columns: repeat(2, 1fr);
-  }
-  .nav-arrow {
-    display: none;
   }
 }
 </style>

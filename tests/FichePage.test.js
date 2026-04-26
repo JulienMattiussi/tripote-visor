@@ -139,7 +139,7 @@ describe('FichePage - interactions', () => {
 
   it('clicking the sidebar Save button opens the login-required modal', async () => {
     const { loginRequiredOpen, loginRequiredContext, closeLoginRequired } =
-      await import('../src/i18n/store.js');
+      await import('../src/state/modals.js');
     closeLoginRequired();
     const wrapper = mount(FichePage, withRouter(router));
     await wrapper.find('.fp-save-btn').trigger('click');
@@ -150,7 +150,7 @@ describe('FichePage - interactions', () => {
 
   it('clicking an action chip opens the login-required modal with the right target', async () => {
     const { loginRequiredOpen, loginRequiredContext, closeLoginRequired } =
-      await import('../src/i18n/store.js');
+      await import('../src/state/modals.js');
     closeLoginRequired();
     const wrapper = mount(FichePage, withRouter(router));
     const chips = wrapper.findAll('.fp-chip');

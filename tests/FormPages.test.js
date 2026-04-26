@@ -3,12 +3,12 @@ import { mount } from '@vue/test-utils';
 import UserReviewPage from '../src/pages/UserReviewPage.vue';
 import PostPhotosPage from '../src/pages/PostPhotosPage.vue';
 import CreateListingPage from '../src/pages/CreateListingPage.vue';
+import { setLocale } from '../src/i18n/store.js';
 import {
-  setLocale,
   loginRequiredOpen,
   loginRequiredContext,
   closeLoginRequired,
-} from '../src/i18n/store.js';
+} from '../src/state/modals.js';
 import { setupRouter, withRouter } from './helpers/router.js';
 
 let router;

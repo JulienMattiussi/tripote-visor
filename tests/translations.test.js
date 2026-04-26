@@ -97,11 +97,10 @@ describe('translation dictionary integrity', () => {
       'age_groups.over_60',
       'experiences.title',
       'experiences.subtitle',
-      'experiences.item_1_price',
+      'experiences.from_price',
       'discover_page.hero_title',
       'discover_page.section_title',
       'dest_top.title',
-      'inspiration.title',
       'tc.cta',
       'community.title',
       'footer.col_about_1',
@@ -138,9 +137,7 @@ describe('locale switching on the full App', () => {
     'Search All',
     'Discover now',
     'Pick the age range that suits you',
-    "Can't-miss picks near you",
-    'Inspiration to get you going',
-    'Popular destinations',
+    'Four cities, four exceptional experiences.',
     'Four stories you won’t forget',
     'Read the stories',
     'About Tripote-visor',
@@ -154,9 +151,7 @@ describe('locale switching on the full App', () => {
     'Tout rechercher',
     'Découvrez maintenant',
     'Choisissez selon l’âge qui vous convient',
-    'Des expériences qui devraient vous plaire',
-    'Des idées pour vous inspirer',
-    'Destinations populaires',
+    'Quatre villes, quatre expériences exceptionnelles.',
     'Quatre histoires qu’on n’oublie pas',
     'Lire les récits',
     'À propos de Tripote-visor',
@@ -239,15 +234,15 @@ describe('locale switching on the full App', () => {
 
   it('prices reformat to EUR with French grouping when switching to fr/EUR', async () => {
     const wrapper = mountApp();
-    // Default EN/USD: prices contain "$72"
-    expect(wrapper.text()).toMatch(/\$72\b/);
+    // Default EN/USD: at least one price uses the "from $X" template
+    expect(wrapper.text()).toMatch(/from \$\d+/);
 
     setLocale('fr');
     setCurrency('EUR');
     await wrapper.vm.$nextTick();
     const text = wrapper.text();
-    expect(text).toMatch(/à partir de .*€ par adulte/);
-    expect(text).not.toMatch(/\$72\b/);
+    expect(text).toMatch(/à partir de \d[\d\s]*\s?€/);
+    expect(text).not.toMatch(/from \$\d+/);
   });
 
   it('interpolated values (year, amount) are reused across locales', async () => {

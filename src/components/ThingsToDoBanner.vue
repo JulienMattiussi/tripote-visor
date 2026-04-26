@@ -4,17 +4,18 @@ import { t } from '../i18n/store.js';
 
 const router = useRouter();
 const onBook = () => router.push({ name: 'discover' });
+
+const slides = ['/ttd/slide-1.jpg', '/ttd/slide-2.jpg', '/ttd/slide-3.jpg', '/ttd/slide-4.jpg'];
 </script>
 
 <template>
   <section class="ttd-banner" :aria-label="t('ttd.aria')">
     <div class="ttd-image">
-      <img
-        src="https://images.unsplash.com/photo-1502680390469-be75c86b636f?w=900&q=60"
-        :alt="t('ttd.alt_image')"
-        loading="lazy"
-      />
-      <span class="credit">@Eddie J.</span>
+      <div class="ttd-track" aria-hidden="true">
+        <img :src="slides[0]" :alt="t('ttd.alt_image')" loading="lazy" />
+        <img v-for="(src, i) in slides.slice(1)" :key="i" :src="src" alt="" loading="lazy" />
+        <img :src="slides[0]" alt="" loading="lazy" />
+      </div>
     </div>
     <div class="ttd-text">
       <h2>
@@ -44,23 +45,51 @@ const onBook = () => router.push({ name: 'discover' });
 
 .ttd-image {
   position: relative;
+  overflow: hidden;
 }
 
-.ttd-image img {
-  width: 100%;
+.ttd-track {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  width: 500%;
+  animation: ttd-slideshow 20s linear infinite;
+}
+
+.ttd-track img {
+  width: 20%;
   height: 100%;
   object-fit: cover;
+  flex-shrink: 0;
 }
 
-.credit {
-  position: absolute;
-  left: 16px;
-  bottom: 16px;
-  background: var(--scrim);
-  color: var(--on-dark);
-  font-size: 12px;
-  padding: 4px 10px;
-  border-radius: 999px;
+@keyframes ttd-slideshow {
+  0%,
+  22.5% {
+    transform: translateX(0%);
+  }
+  25%,
+  47.5% {
+    transform: translateX(-20%);
+  }
+  50%,
+  72.5% {
+    transform: translateX(-40%);
+  }
+  75%,
+  97.5% {
+    transform: translateX(-60%);
+  }
+  100% {
+    transform: translateX(-80%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ttd-track {
+    animation: none;
+    transform: translateX(0%);
+  }
 }
 
 .ttd-text {

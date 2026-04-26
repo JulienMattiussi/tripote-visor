@@ -1,7 +1,8 @@
 <script setup>
 import { computed, ref, onMounted, onUnmounted } from 'vue';
 import { useRouter, useRoute } from 'vue-router';
-import { t, currency, currencyFlag, openPreferences, openSignin } from '../i18n/store.js';
+import { t, currency, currencyFlag } from '../i18n/store.js';
+import { openPreferences, openSignin } from '../state/modals.js';
 
 const router = useRouter();
 const route = useRoute();

@@ -1,14 +1,8 @@
 <script setup>
 import { computed, ref, watch } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
-import {
-  t,
-  formatAmount,
-  formatLieu,
-  locale,
-  reviewCountFor,
-  reviewAverageFor,
-} from '../i18n/store.js';
+import { t, formatAmount, locale } from '../i18n/store.js';
+import { formatLieu, reviewCountFor, reviewAverageFor } from '../data/fiches.js';
 import fichesData from '../data/fiches.json';
 
 const props = defineProps({

@@ -1,15 +1,15 @@
 import { describe, it, expect, beforeEach, afterEach } from 'vitest';
 import { mount } from '@vue/test-utils';
 import LoginRequiredModal from '../src/components/LoginRequiredModal.vue';
+import { setLocale } from '../src/i18n/store.js';
 import {
-  setLocale,
   loginRequiredOpen,
   loginRequiredContext,
   signinOpen,
   openLoginRequired,
   closeLoginRequired,
   closeSignin,
-} from '../src/i18n/store.js';
+} from '../src/state/modals.js';
 
 describe('LoginRequiredModal', () => {
   beforeEach(() => {

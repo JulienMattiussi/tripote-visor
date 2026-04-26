@@ -2,8 +2,6 @@ import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest';
 import { mount, flushPromises } from '@vue/test-utils';
 import AgeGrid from '../src/components/AgeGrid.vue';
 import ExperienceCards from '../src/components/ExperienceCards.vue';
-import InspirationCards from '../src/components/InspirationCards.vue';
-import DestinationsGrid from '../src/components/DestinationsGrid.vue';
 import TravelersChoice from '../src/components/TravelersChoice.vue';
 import CommunityBlurb from '../src/components/CommunityBlurb.vue';
 import ThingsToDoBanner from '../src/components/ThingsToDoBanner.vue';
@@ -45,52 +43,35 @@ describe('AgeGrid', () => {
 });
 
 describe('ExperienceCards', () => {
-  it('renders four experience cards with localised price tags', () => {
-    const wrapper = mount(ExperienceCards);
-    expect(wrapper.findAll('.exp-card')).toHaveLength(4);
-    expect(wrapper.text()).toMatch(/\$72|72\s*\$/);
+  it('renders four cards from four distinct cities with the city tag overlaid', async () => {
+    const router = await setupRouter('/');
+    const wrapper = mount(ExperienceCards, withRouter(router));
+    const cards = wrapper.findAll('.exp-card');
+    expect(cards).toHaveLength(4);
+    const cities = wrapper.findAll('.exp-city-tag').map((c) => c.text());
+    expect(cities).toHaveLength(4);
+    expect(new Set(cities).size).toBe(4);
   });
 
-  it('toggling the favourite heart flips its filled state', async () => {
-    const wrapper = mount(ExperienceCards);
-    const firstHeart = wrapper.findAll('.fav-btn')[0];
-    expect(firstHeart.find('.heart').classes()).not.toContain('filled');
-    await firstHeart.trigger('click');
-    expect(wrapper.findAll('.fav-btn')[0].find('.heart').classes()).toContain('filled');
-  });
-});
-
-describe('InspirationCards', () => {
-  it('renders three inspiration cards', () => {
-    const wrapper = mount(InspirationCards);
-    expect(wrapper.findAll('.insp-card')).toHaveLength(3);
+  it('clicking a card navigates to that fiche', async () => {
+    const router = await setupRouter('/');
+    const wrapper = mount(ExperienceCards, withRouter(router));
+    await wrapper.findAll('.exp-card')[0].trigger('click');
+    await flushPromises();
+    expect(router.currentRoute.value.name).toBe('fiche');
+    expect(typeof router.currentRoute.value.params.id).toBe('string');
   });
 
-  it('toggling a favourite is independent per card', async () => {
-    const wrapper = mount(InspirationCards);
-    const hearts = wrapper.findAll('.fav-btn');
-    await hearts[0].trigger('click');
-    expect(wrapper.findAll('.fav-btn')[0].find('.heart').classes()).toContain('filled');
-    expect(wrapper.findAll('.fav-btn')[1].find('.heart').classes()).not.toContain('filled');
-  });
-});
-
-describe('DestinationsGrid', () => {
-  it('renders four destination cards with English names by default', () => {
-    const wrapper = mount(DestinationsGrid);
-    expect(wrapper.findAll('.dest-card')).toHaveLength(4);
-    const text = wrapper.text();
-    expect(text).toContain('Rome, Italy');
-    expect(text).toContain('Paris, France');
-    expect(text).toContain('London, UK');
-  });
-
-  it('uses French names when locale is fr', () => {
-    setLocale('fr');
-    const wrapper = mount(DestinationsGrid);
-    const text = wrapper.text();
-    expect(text).toContain('Rome, Italie');
-    expect(text).toContain('Londres, Royaume-Uni');
+  it('the same hour produces the same picks (hourly rotation)', async () => {
+    vi.useFakeTimers();
+    vi.setSystemTime(new Date('2026-04-26T13:42:00'));
+    const router = await setupRouter('/');
+    const w1 = mount(ExperienceCards, withRouter(router));
+    const w2 = mount(ExperienceCards, withRouter(router));
+    expect(w1.findAll('.exp-city-tag').map((c) => c.text())).toEqual(
+      w2.findAll('.exp-city-tag').map((c) => c.text()),
+    );
+    vi.useRealTimers();
   });
 });
 

@@ -1,12 +1,12 @@
 <script setup>
 import { computed, onBeforeUnmount, watch } from 'vue';
+import { t } from '../i18n/store.js';
 import {
-  t,
   loginRequiredOpen,
   loginRequiredContext,
   closeLoginRequired,
   openSignin,
-} from '../i18n/store.js';
+} from '../state/modals.js';
 
 const message = computed(() => {
   const ctx = loginRequiredContext.value;

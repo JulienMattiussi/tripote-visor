@@ -1,11 +1,8 @@
 import { describe, it, expect, beforeEach, afterEach } from 'vitest';
 import { mount } from '@vue/test-utils';
 import AppFooter from '../src/components/AppFooter.vue';
+import { setLocale, setCurrency, locale, currency } from '../src/i18n/store.js';
 import {
-  setLocale,
-  setCurrency,
-  locale,
-  currency,
   signinOpen,
   cookieModalOpen,
   modalOpen,
@@ -13,7 +10,7 @@ import {
   closeSignin,
   closeCookieModal,
   closePreferences,
-} from '../src/i18n/store.js';
+} from '../src/state/modals.js';
 import { setupRouter, withRouter } from './helpers/router.js';
 
 let router;
