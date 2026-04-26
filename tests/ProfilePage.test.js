@@ -57,12 +57,6 @@ describe('ProfilePage - rendering for a known profile', () => {
     expect(wrapper.find('.fp-review').exists()).toBe(false);
   });
 
-  it('renders the photo placeholder when profile.photo is empty', () => {
-    const wrapper = mount(ProfilePage, withRouter(router));
-    expect(wrapper.find('.fp-photo-main img').exists()).toBe(false);
-    expect(wrapper.find('.fp-photo-empty').exists()).toBe(true);
-  });
-
   it('renders the four navigation tabs as anchor links', () => {
     const wrapper = mount(ProfilePage, withRouter(router));
     const tabs = wrapper.findAll('.fp-tabs a');

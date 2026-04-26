@@ -26,19 +26,7 @@
       "Bash(file:*)",
       "Bash(curl -s http://localhost:*)",
       "Bash(curl -s -o /dev/null*)",
-      "Read(//tmp/**)",
-      "Bash(node -e ' *)",
-      "Bash(unzip -l /home/julien/Téléchargements/parcs.zip)",
-      "Bash(unzip -q /home/julien/Téléchargements/parcs.zip -d /tmp/)",
-      "Bash(unzip -l /home/julien/Téléchargements/couloir*.zip)",
-      "Bash(unzip -q /home/julien/Téléchargements/couloir.zip -d /tmp/)",
-      "Bash(node /tmp/distribute-corridors.mjs)",
-      "Bash(unzip -l /home/julien/Téléchargements/hotel.zip)",
-      "Bash(unzip -q /home/julien/Téléchargements/hotel.zip -d /tmp/)",
-      "Bash(node /tmp/fill-hotel-empty.mjs)",
-      "Bash(node /tmp/fix-component-imports.mjs)",
-      "Bash(node /tmp/fix-lib-imports.mjs)",
-      "Bash(node /tmp/add-coords.mjs)"
+      "Bash(node -e ' *)"
     ]
   }
 }

@@ -7,7 +7,7 @@
     "district": "11e",
     "category": "hotel",
     "schedule_id": "classic_evening",
-    "photo": "",
+    "photo": "/profiles/mireille/main.jpg",
     "description": {
       "fr": [
         "Grande expérience du métier.",
@@ -88,7 +88,7 @@
     "district": "Croix-Rousse",
     "category": "hotel",
     "schedule_id": "evening_to_morning",
-    "photo": "",
+    "photo": "/profiles/lucia/main.jpg",
     "description": {
       "fr": [
         "Tient l'établissement depuis l'âge de vingt-cinq ans.",
@@ -204,7 +204,7 @@
     "district": "Vieux Nice",
     "category": "hotel",
     "schedule_id": "classic_evening",
-    "photo": "",
+    "photo": "/profiles/carmen/main.jpg",
     "description": {
       "fr": [
         "Trente ans qu'elle tient sa pension.",
@@ -319,7 +319,7 @@
     "district": "",
     "category": "hotel",
     "schedule_id": "office_hours_evening",
-    "photo": "",
+    "photo": "/profiles/esperanza/main.jpg",
     "description": {
       "fr": [
         "Trente et un ans qu'elle tient maison.",
@@ -705,7 +705,7 @@
     "district": "",
     "category": "hotel",
     "schedule_id": "weekend_night",
-    "photo": "",
+    "photo": "/profiles/tatiana/main.jpg",
     "description": {
       "fr": [
         "Vingt ans dans le métier.",
@@ -744,7 +744,7 @@
     "district": "",
     "category": "hotel",
     "schedule_id": "classic_evening",
-    "photo": "",
+    "photo": "/profiles/adele/main.jpg",
     "description": {
       "fr": [
         "Trente ans qu'elle tient ses quartiers.",
@@ -818,7 +818,7 @@
     "district": "",
     "category": "hotel",
     "schedule_id": "classic_evening",
-    "photo": "",
+    "photo": "/profiles/despina/main.jpg",
     "description": {
       "fr": [
         "Vingt-deux ans dans le métier.",
@@ -971,7 +971,7 @@
     "district": "",
     "category": "hotel",
     "schedule_id": "night_duty",
-    "photo": "",
+    "photo": "/profiles/khadija/main.jpg",
     "description": {
       "fr": [
         "Quinze ans qu'elle reçoit.",
@@ -1124,7 +1124,7 @@
     "district": "",
     "category": "hotel",
     "schedule_id": "classic_evening",
-    "photo": "",
+    "photo": "/profiles/lupita/main.jpg",
     "description": {
       "fr": [
         "Onze ans dans le métier.",
@@ -1653,7 +1653,7 @@
     "district": "",
     "category": "alley",
     "schedule_id": "extended_afternoon",
-    "photo": "",
+    "photo": "/profiles/aylin/main.jpg",
     "description": {
       "fr": [
         "Vingt ans dans la rue.",
@@ -1915,7 +1915,7 @@
     "district": "",
     "category": "alley",
     "schedule_id": "dusk_to_dawn",
-    "photo": "",
+    "photo": "/profiles/mila/main.jpg",
     "description": {
       "fr": [
         "Vingt ans dans les ruelles de la ville rose.",
@@ -1991,7 +1991,7 @@
     "district": "",
     "category": "alley",
     "schedule_id": "late_opening",
-    "photo": "",
+    "photo": "/profiles/sofia/main.jpg",
     "description": {
       "fr": [
         "Vingt-cinq ans dans les ruelles du quartier.",
@@ -2091,7 +2091,8 @@
     "price": 375,
     "lat": 48.89432,
     "lon": 2.40656,
-    "secondary_photos": ["/profiles/bineta/secondary-1.jpg", "/profiles/bineta/secondary-2.jpg"]
+    "secondary_photos": ["/profiles/bineta/secondary-1.jpg", "/profiles/bineta/secondary-2.jpg"],
+    "photo": "/profiles/bineta/main.jpg"
   },
   {
     "id": "carla",
@@ -2177,7 +2178,7 @@
     "district": "",
     "category": "alley",
     "schedule_id": "extended_afternoon",
-    "photo": "",
+    "photo": "/profiles/maialen/main.jpg",
     "description": {
       "fr": [
         "Vingt-deux ans dans la vieille ville.",
@@ -2475,7 +2476,7 @@
     "district": "",
     "category": "alley",
     "schedule_id": "weekend_night",
-    "photo": "",
+    "photo": "/profiles/soledad/main.jpg",
     "description": {
       "fr": [
         "Vingt ans dans le quartier.",
