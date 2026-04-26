@@ -1,8 +1,16 @@
 <script setup>
+import { computed } from 'vue';
 import { t } from '../i18n/store.js';
 
-defineProps({
+const props = defineProps({
   profile: { type: Object, required: true },
+});
+
+const THUMB_LABEL_KEYS = ['profile_page.thumb_interior', 'profile_page.thumb_ambiance'];
+
+const thumbs = computed(() => {
+  const photos = props.profile.secondary_photos ?? [];
+  return THUMB_LABEL_KEYS.map((key, i) => ({ src: photos[i] ?? '', label: t(key) }));
 });
 </script>
 
@@ -14,14 +22,9 @@ defineProps({
         <span v-else class="fp-photo-empty">{{ t('profile_page.thumb_main') }}</span>
       </div>
       <div class="fp-photo-thumbs">
-        <div class="fp-thumb">
-          <span>{{ t('profile_page.thumb_interior') }}</span>
-        </div>
-        <div class="fp-thumb">
-          <span>{{ t('profile_page.thumb_ambiance') }}</span>
-        </div>
-        <div class="fp-thumb">
-          <span>{{ t('profile_page.thumb_more') }}</span>
+        <div v-for="(thumb, i) in thumbs" :key="i" class="fp-thumb">
+          <img v-if="thumb.src" :src="thumb.src" :alt="thumb.label" loading="lazy" />
+          <span v-else>{{ thumb.label }}</span>
         </div>
       </div>
     </div>
@@ -36,7 +39,7 @@ defineProps({
 
 .fp-gallery-grid {
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 1fr 1fr;
   gap: 8px;
 }
 
@@ -54,7 +57,7 @@ defineProps({
 }
 
 .fp-photo-main {
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 1 / 1;
 }
 
 .fp-photo-main img {
@@ -65,12 +68,15 @@ defineProps({
 
 .fp-photo-thumbs {
   display: grid;
-  grid-template-rows: repeat(3, 1fr);
+  grid-template-rows: 1fr 1fr;
   gap: 8px;
+  aspect-ratio: 1 / 1;
 }
 
-.fp-thumb {
-  min-height: 80px;
+.fp-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 @media (max-width: 900px) {
@@ -78,8 +84,12 @@ defineProps({
     grid-template-columns: 1fr;
   }
   .fp-photo-thumbs {
+    aspect-ratio: auto;
     grid-template-rows: none;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr 1fr;
+  }
+  .fp-thumb {
+    aspect-ratio: 2 / 1;
   }
 }
 </style>

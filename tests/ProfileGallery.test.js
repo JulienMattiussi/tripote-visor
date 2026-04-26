@@ -25,11 +25,11 @@ describe('ProfileGallery', () => {
     expect(wrapper.find('.fp-photo-empty').exists()).toBe(false);
   });
 
-  it('renders three thumbnail slots', () => {
+  it('renders two thumbnail slots', () => {
     const wrapper = mount(ProfileGallery, {
       props: { profile: { name: 'X', photo: '' } },
     });
-    expect(wrapper.findAll('.fp-thumb')).toHaveLength(3);
+    expect(wrapper.findAll('.fp-thumb')).toHaveLength(2);
   });
 
   it('switches the placeholder labels to French when locale is fr', () => {
