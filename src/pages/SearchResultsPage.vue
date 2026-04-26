@@ -3,9 +3,9 @@ import { computed } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 import { t } from '../i18n/store.js';
 import { openLoginRequired } from '../state/modals.js';
-import { formatLocation, reviewCountFor, reviewAverageFor } from '../data/profiles.js';
+import { formatLocation, reviewCountFor, reviewAverageFor } from '../lib/profiles.js';
 import profilesData from '../data/profiles.json';
-import { ageInBucket, ageBucketLabelKey } from '../data/ageBuckets.js';
+import { ageInBucket, ageBucketLabelKey } from '../lib/ageBuckets.js';
 
 const route = useRoute();
 const router = useRouter();

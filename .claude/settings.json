@@ -35,7 +35,9 @@
       "Bash(node /tmp/distribute-corridors.mjs)",
       "Bash(unzip -l /home/julien/Téléchargements/hotel.zip)",
       "Bash(unzip -q /home/julien/Téléchargements/hotel.zip -d /tmp/)",
-      "Bash(node /tmp/fill-hotel-empty.mjs)"
+      "Bash(node /tmp/fill-hotel-empty.mjs)",
+      "Bash(node /tmp/fix-component-imports.mjs)",
+      "Bash(node /tmp/fix-lib-imports.mjs)"
     ]
   }
 }

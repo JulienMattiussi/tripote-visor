@@ -2,8 +2,8 @@
 import { computed } from 'vue';
 import { useRouter } from 'vue-router';
 import { t, formatAmount } from '../i18n/store.js';
-import { formatLocation, reviewCountFor, reviewAverageFor } from '../data/profiles.js';
-import DestinationsHighlights from '../components/DestinationsHighlights.vue';
+import { formatLocation, reviewCountFor, reviewAverageFor } from '../lib/profiles.js';
+import DestinationsHighlights from '../components/home/DestinationsHighlights.vue';
 import profilesData from '../data/profiles.json';
 
 const router = useRouter();

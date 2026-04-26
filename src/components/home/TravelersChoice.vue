@@ -1,6 +1,6 @@
 <script setup>
 import { useRouter } from 'vue-router';
-import { t } from '../i18n/store.js';
+import { t } from '../../i18n/store.js';
 
 const router = useRouter();
 const onSeeWinners = () => router.push({ name: 'encounters' });

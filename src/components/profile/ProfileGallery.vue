@@ -1,6 +1,6 @@
 <script setup>
 import { computed } from 'vue';
-import { t } from '../i18n/store.js';
+import { t } from '../../i18n/store.js';
 
 const props = defineProps({
   profile: { type: Object, required: true },

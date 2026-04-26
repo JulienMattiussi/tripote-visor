@@ -1,10 +1,10 @@
 import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest';
 import { mount, flushPromises } from '@vue/test-utils';
-import AgeGrid from '../src/components/AgeGrid.vue';
-import ExperienceCards from '../src/components/ExperienceCards.vue';
-import TravelersChoice from '../src/components/TravelersChoice.vue';
-import CommunityBlurb from '../src/components/CommunityBlurb.vue';
-import ThingsToDoBanner from '../src/components/ThingsToDoBanner.vue';
+import AgeGrid from '../src/components/home/AgeGrid.vue';
+import ExperienceCards from '../src/components/home/ExperienceCards.vue';
+import TravelersChoice from '../src/components/home/TravelersChoice.vue';
+import CommunityBlurb from '../src/components/home/CommunityBlurb.vue';
+import ThingsToDoBanner from '../src/components/home/ThingsToDoBanner.vue';
 import { setLocale, setCurrency } from '../src/i18n/store.js';
 import { setupRouter, withRouter } from './helpers/router.js';
 

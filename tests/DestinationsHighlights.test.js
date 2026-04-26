@@ -1,6 +1,6 @@
 import { describe, it, expect, beforeEach } from 'vitest';
 import { mount, flushPromises } from '@vue/test-utils';
-import DestinationsHighlights from '../src/components/DestinationsHighlights.vue';
+import DestinationsHighlights from '../src/components/home/DestinationsHighlights.vue';
 import profilesData from '../src/data/profiles.json';
 import advicesData from '../src/data/advices.json';
 import citiesData from '../src/data/cities.json';

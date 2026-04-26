@@ -1,7 +1,7 @@
 <script setup>
 import { computed } from 'vue';
-import { t } from '../i18n/store.js';
-import { orderedDays, todayStatus } from '../data/schedule.js';
+import { t } from '../../i18n/store.js';
+import { orderedDays, todayStatus } from '../../lib/schedule.js';
 
 const props = defineProps({
   schedule: { type: Object, default: null },

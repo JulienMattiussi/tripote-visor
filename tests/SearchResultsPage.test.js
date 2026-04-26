@@ -1,7 +1,7 @@
 import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest';
 import { mount, flushPromises } from '@vue/test-utils';
 import SearchResultsPage from '../src/pages/SearchResultsPage.vue';
-import HeroSearch from '../src/components/HeroSearch.vue';
+import HeroSearch from '../src/components/home/HeroSearch.vue';
 import fiches from '../src/data/profiles.json';
 import { setLocale } from '../src/i18n/store.js';
 import { setupRouter, withRouter } from './helpers/router.js';

@@ -50,30 +50,34 @@ src/
 ├── components/
 │   ├── AppHeader.vue             # Sticky nav, scroll-compact mode, Discover/Review dropdowns
 │   ├── AppFooter.vue             # 3-col grid (About / Explore / Settings) + legal nav, GitHub social
-│   ├── HeroSearch.vue            # home only
-│   ├── ThingsToDoBanner.vue      # CSS-only 4-image slideshow (5s/slide, slide-left)
-│   ├── AgeGrid.vue               # 4 age-bucket vignettes; click navigates to /search?age=<id>
-│   ├── ExperienceCards.vue       # 4 profiles from 4 distinct cities, hourly-deterministic random pick
-│   ├── DestinationsHighlights.vue # top cities × 3 profiles each (home + discover)
-│   ├── TravelersChoice.vue       # home promo strip; CTA navigates to /encounters
-│   ├── CommunityBlurb.vue
-│   ├── ProfileGallery.vue          # ProfilePage: photo + 3 thumbs + alt-empty placeholder
-│   ├── ProfileSchedule.vue         # ProfilePage: weekly hours table + open/closed today badge
-│   ├── ProfileReviews.vue          # ProfilePage: empty state, summary, list, "see all" toggle
 │   ├── PlaceSearchSelect.vue     # v-model profile search-and-select (review / photo forms)
-│   ├── PreferencesModal.vue
-│   ├── SignInModal.vue
-│   ├── CookieConsentModal.vue
-│   ├── LoginRequiredModal.vue    # gates profile actions + form submits behind sign-in
-│   └── SeriousNote.vue           # shared callout, optional `collapsed` prop
-├── data/
+│   ├── SeriousNote.vue           # shared callout, optional `collapsed` prop
+│   ├── home/                     # blocks composing the home page
+│   │   ├── HeroSearch.vue
+│   │   ├── ThingsToDoBanner.vue  # CSS-only 4-image slideshow (5s/slide, slide-left)
+│   │   ├── AgeGrid.vue           # 4 age-bucket vignettes; click navigates to /search?age=<id>
+│   │   ├── ExperienceCards.vue   # 4 profiles from 4 distinct cities, hourly-deterministic random pick
+│   │   ├── DestinationsHighlights.vue # top cities × 3 profiles each (home + discover)
+│   │   ├── TravelersChoice.vue   # home promo strip; CTA navigates to /encounters
+│   │   └── CommunityBlurb.vue
+│   ├── profile/                  # sub-blocks of /p/:id (ProfilePage)
+│   │   ├── ProfileGallery.vue    # photo + 2 thumbs + alt-empty placeholder
+│   │   ├── ProfileSchedule.vue   # weekly hours table + open/closed today badge
+│   │   └── ProfileReviews.vue    # empty state, summary, list, "see all" toggle
+│   └── modals/                   # the 4 app-level modals
+│       ├── PreferencesModal.vue
+│       ├── SignInModal.vue
+│       ├── CookieConsentModal.vue
+│       └── LoginRequiredModal.vue # gates profile actions + form submits behind sign-in
+├── data/                          # raw JSON fixtures (no logic)
 │   ├── articles.json             # 4 press articles (per-locale title/excerpt/lead/body)
-│   ├── profiles.json               # 100 profile entries (name, age, city, district, category, schedule_id, description: { fr, en }, services, payment, price)
+│   ├── profiles.json             # 100 profile entries (name, age, city, district, category, schedule_id, description: { fr, en }, services, payment, price, secondary_photos)
 │   ├── cities.json               # 50 cities ranked by profile count, with optional photo URL
 │   ├── schedules.json            # 15 weekly schedule patterns referenced by profiles
-│   ├── advices.json              # 1000 seeded reviews keyed by profile id (rating/title/body/lang/date/author)
+│   └── advices.json              # 1000 seeded reviews keyed by profile id (rating/title/body/lang/date/author)
+├── lib/                           # pure-data helpers (consume src/data/*.json)
 │   ├── ageBuckets.js             # AGE_BUCKETS array (id + labelKey + img + predicate) + ageInBucket / ageBucketLabelKey
-│   ├── profiles.js                 # formatLocation, reviewCountFor, reviewAverageFor (consume advices.json)
+│   ├── profiles.js               # formatLocation, reviewCountFor, reviewAverageFor (consume advices.json)
 │   └── schedule.js               # todayName / todayStatus / orderedDays / periodsOf
 ├── state/
 │   └── modals.js                 # 4 modals: open refs (preferences/signin/cookie/loginRequired) + open*/close* actions
@@ -92,7 +96,8 @@ public/
 ├── articles/                     # 4 hero photos for press articles
 ├── cities/                       # city hero photos for DestinationsHighlights
 ├── age/                          # 4 silhouette SVGs for AgeGrid (under-30, 30-45, 45-60, over-60)
-└── ttd/                          # 4 slides for the ThingsToDoBanner slideshow
+├── ttd/                          # 4 slides for the ThingsToDoBanner slideshow
+└── profiles/<id>/                # per-profile photos: secondary-1.jpg, secondary-2.jpg
 
 tests/
 ├── helpers/
@@ -233,7 +238,7 @@ To re-skin the site, edit only `main.css`. There is no other source of truth for
 
 Two locales (`en`, `fr`) and two currencies (`USD`, `EUR`). Everything else in the Preferences modal is grayed out with an "Unavailable now" / "Indisponible actuellement" sub-label.
 
-- **State** - `src/i18n/store.js` exports module-scoped `locale` and `currency` refs (purely i18n + currency formatting; modal state lives in `src/state/modals.js`, profile-data accessors in `src/data/profiles.js`). Both refs persist to `localStorage` (`tv_locale`, `tv_currency`) and are restored on load. `setLocale`/`setCurrency` reject unknown values.
+- **State** - `src/i18n/store.js` exports module-scoped `locale` and `currency` refs (purely i18n + currency formatting; modal state lives in `src/state/modals.js`, profile-data accessors in `src/lib/profiles.js`). Both refs persist to `localStorage` (`tv_locale`, `tv_currency`) and are restored on load. `setLocale`/`setCurrency` reject unknown values.
 - **Browser detection** - `detectBrowserDefaults()` returns `fr/EUR` when `navigator.language` starts with `fr`, `en/USD` for English, falls back to `en/USD` otherwise. Stored prefs always win.
 - **Translation** - `t('section.key', params?)` walks the dotted key in `translations[locale.value]`, falls back to `translations.en`, finally returns the raw key. `{name}` tokens are replaced from `params`. Because `t()` reads `locale.value`, any template or `computed()` calling it re-evaluates automatically when the locale changes.
 - **Currency formatting** - `formatAmount(usdAmount)` converts to EUR when needed (fixed 0.92 rate), formats with `toLocaleString(locale)`, places the symbol correctly (`$` prefix / `€` suffix). Components hand in a canonical USD figure.

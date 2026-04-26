@@ -1,5 +1,5 @@
 <script setup>
-import { t } from '../i18n/store.js';
+import { t } from '../../i18n/store.js';
 </script>
 
 <template>

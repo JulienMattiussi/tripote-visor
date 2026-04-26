@@ -1,8 +1,8 @@
 <script setup>
 import { computed } from 'vue';
 import { useRouter } from 'vue-router';
-import { t } from '../i18n/store.js';
-import { AGE_BUCKETS } from '../data/ageBuckets.js';
+import { t } from '../../i18n/store.js';
+import { AGE_BUCKETS } from '../../lib/ageBuckets.js';
 
 const router = useRouter();
 

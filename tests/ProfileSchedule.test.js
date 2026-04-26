@@ -1,6 +1,6 @@
 import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest';
 import { mount } from '@vue/test-utils';
-import ProfileSchedule from '../src/components/ProfileSchedule.vue';
+import ProfileSchedule from '../src/components/profile/ProfileSchedule.vue';
 import { setLocale } from '../src/i18n/store.js';
 
 const SAMPLE_SCHEDULE = {

@@ -1,7 +1,7 @@
 <script setup>
 import { onBeforeUnmount, watch } from 'vue';
-import { t } from '../i18n/store.js';
-import { cookieModalOpen, closeCookieModal } from '../state/modals.js';
+import { t } from '../../i18n/store.js';
+import { cookieModalOpen, closeCookieModal } from '../../state/modals.js';
 
 const onBackdrop = (event) => {
   if (event.target === event.currentTarget) closeCookieModal();

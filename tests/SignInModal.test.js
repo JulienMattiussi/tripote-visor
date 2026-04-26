@@ -1,6 +1,6 @@
 import { describe, it, expect, beforeEach, vi, afterEach } from 'vitest';
 import { mount } from '@vue/test-utils';
-import SignInModal from '../src/components/SignInModal.vue';
+import SignInModal from '../src/components/modals/SignInModal.vue';
 import AppHeader from '../src/components/AppHeader.vue';
 import { setLocale } from '../src/i18n/store.js';
 import { signinOpen, signinScreen, openSignin, closeSignin } from '../src/state/modals.js';

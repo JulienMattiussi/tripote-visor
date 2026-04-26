@@ -1,6 +1,6 @@
 <script setup>
 import { computed, ref } from 'vue';
-import { t, formatReviewDate } from '../i18n/store.js';
+import { t, formatReviewDate } from '../../i18n/store.js';
 
 const props = defineProps({
   reviews: { type: Array, default: () => [] },

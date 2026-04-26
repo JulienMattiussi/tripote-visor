@@ -10,7 +10,7 @@ import {
   locale,
   detectBrowserDefaults,
 } from '../src/i18n/store.js';
-import { formatLocation, reviewCountFor, reviewAverageFor } from '../src/data/profiles.js';
+import { formatLocation, reviewCountFor, reviewAverageFor } from '../src/lib/profiles.js';
 import { setupRouter, withRouter } from './helpers/router.js';
 import advicesData from '../src/data/advices.json';
 

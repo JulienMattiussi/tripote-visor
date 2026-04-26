@@ -1,4 +1,4 @@
-import advicesData from './advices.json';
+import advicesData from '../data/advices.json';
 
 export function reviewCountFor(id) {
   const list = advicesData[id];

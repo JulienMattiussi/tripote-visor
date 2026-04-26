@@ -1,6 +1,6 @@
 import { describe, it, expect, beforeEach } from 'vitest';
 import { mount } from '@vue/test-utils';
-import ProfileReviews from '../src/components/ProfileReviews.vue';
+import ProfileReviews from '../src/components/profile/ProfileReviews.vue';
 import { setLocale } from '../src/i18n/store.js';
 
 beforeEach(() => setLocale('en'));

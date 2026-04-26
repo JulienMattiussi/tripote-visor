@@ -2,7 +2,7 @@
 import { computed, ref, watch } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 import { t, formatAmount, locale } from '../i18n/store.js';
-import { formatLocation, reviewCountFor, reviewAverageFor } from '../data/profiles.js';
+import { formatLocation, reviewCountFor, reviewAverageFor } from '../lib/profiles.js';
 import profilesData from '../data/profiles.json';
 
 const props = defineProps({

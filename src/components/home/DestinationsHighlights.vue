@@ -1,10 +1,10 @@
 <script setup>
 import { computed } from 'vue';
 import { useRouter } from 'vue-router';
-import { t } from '../i18n/store.js';
-import { reviewAverageFor } from '../data/profiles.js';
-import profilesData from '../data/profiles.json';
-import citiesData from '../data/cities.json';
+import { t } from '../../i18n/store.js';
+import { reviewAverageFor } from '../../lib/profiles.js';
+import profilesData from '../../data/profiles.json';
+import citiesData from '../../data/cities.json';
 
 const TOP_CITIES = 6;
 const PER_CITY = 3;

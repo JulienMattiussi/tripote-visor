@@ -1,10 +1,10 @@
 <script setup>
 import AppHeader from './components/AppHeader.vue';
 import AppFooter from './components/AppFooter.vue';
-import PreferencesModal from './components/PreferencesModal.vue';
-import SignInModal from './components/SignInModal.vue';
-import CookieConsentModal from './components/CookieConsentModal.vue';
-import LoginRequiredModal from './components/LoginRequiredModal.vue';
+import PreferencesModal from './components/modals/PreferencesModal.vue';
+import SignInModal from './components/modals/SignInModal.vue';
+import CookieConsentModal from './components/modals/CookieConsentModal.vue';
+import LoginRequiredModal from './components/modals/LoginRequiredModal.vue';
 </script>
 
 <template>

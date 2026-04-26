@@ -1,6 +1,6 @@
 import { describe, it, expect, beforeEach, afterEach } from 'vitest';
 import { mount } from '@vue/test-utils';
-import LoginRequiredModal from '../src/components/LoginRequiredModal.vue';
+import LoginRequiredModal from '../src/components/modals/LoginRequiredModal.vue';
 import { setLocale } from '../src/i18n/store.js';
 import {
   loginRequiredOpen,

@@ -1,7 +1,7 @@
 <script setup>
 import { ref, computed } from 'vue';
 import { t } from '../i18n/store.js';
-import { formatLocation } from '../data/profiles.js';
+import { formatLocation } from '../lib/profiles.js';
 import profilesData from '../data/profiles.json';
 
 const SUGGESTION_LIMIT = 6;

@@ -1,9 +1,9 @@
 <script setup>
 import { computed } from 'vue';
 import { useRouter } from 'vue-router';
-import { t, formatAmount } from '../i18n/store.js';
-import { reviewCountFor, reviewAverageFor } from '../data/profiles.js';
-import profilesData from '../data/profiles.json';
+import { t, formatAmount } from '../../i18n/store.js';
+import { reviewCountFor, reviewAverageFor } from '../../lib/profiles.js';
+import profilesData from '../../data/profiles.json';
 
 const router = useRouter();
 

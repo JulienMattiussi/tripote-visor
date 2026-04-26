@@ -1,6 +1,6 @@
 import { describe, it, expect, beforeEach } from 'vitest';
 import { mount } from '@vue/test-utils';
-import PreferencesModal from '../src/components/PreferencesModal.vue';
+import PreferencesModal from '../src/components/modals/PreferencesModal.vue';
 import { locale, currency, setLocale, setCurrency } from '../src/i18n/store.js';
 import { modalOpen, modalTab, openPreferences, closePreferences } from '../src/state/modals.js';
 

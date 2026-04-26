@@ -1,7 +1,7 @@
 <script setup>
 import { ref, onBeforeUnmount, watch } from 'vue';
-import { t } from '../i18n/store.js';
-import { signinOpen, signinScreen, closeSignin, goToSigninEmail } from '../state/modals.js';
+import { t } from '../../i18n/store.js';
+import { signinOpen, signinScreen, closeSignin, goToSigninEmail } from '../../state/modals.js';
 
 const email = ref('');
 const password = ref('');
