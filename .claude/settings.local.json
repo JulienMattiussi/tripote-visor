@@ -35,7 +35,10 @@
       "Bash(curl -s http://localhost:5173/src/i18n/store.js -o /dev/null -w \"store.js: %{http_code}\\\\n\")",
       "Bash(curl -s http://localhost:5173/src/components/PreferencesModal.vue -o /dev/null -w \"modal: %{http_code}\\\\n\")",
       "Bash(node --input-type=module -e ' *)",
-      "WebFetch(domain:www.tripadvisor.fr)"
+      "WebFetch(domain:www.tripadvisor.fr)",
+      "Bash(awk '{print $1}')",
+      "Bash(uniq -d echo \"--- hotel zip ---\" md5sum /tmp/hotel/*.jpg)",
+      "Bash(unzip -l /home/julien/Téléchargements/rues.zip)"
     ],
     "additionalDirectories": [
       "/tmp"

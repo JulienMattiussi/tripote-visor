@@ -1342,7 +1342,8 @@
     "payment_paypal": true,
     "price": 105,
     "lat": 48.8702,
-    "lon": 2.37064
+    "lon": 2.37064,
+    "secondary_photos": ["/profiles/roger/secondary-1.jpg", "/profiles/roger/secondary-2.jpg"]
   },
   {
     "id": "suzanne",
@@ -1380,7 +1381,8 @@
     "payment_paypal": false,
     "price": 180,
     "lat": 48.84765,
-    "lon": 2.33636
+    "lon": 2.33636,
+    "secondary_photos": ["/profiles/suzanne/secondary-1.jpg", "/profiles/suzanne/secondary-2.jpg"]
   },
   {
     "id": "tariq",
@@ -1416,7 +1418,8 @@
     "payment_paypal": false,
     "price": 145,
     "lat": 48.85764,
-    "lon": 2.36036
+    "lon": 2.36036,
+    "secondary_photos": ["/profiles/tariq/secondary-1.jpg", "/profiles/tariq/secondary-2.jpg"]
   },
   {
     "id": "yvette",
@@ -1454,7 +1457,8 @@
     "payment_paypal": false,
     "price": 200,
     "lat": 45.7514,
-    "lon": 4.82819
+    "lon": 4.82819,
+    "secondary_photos": ["/profiles/yvette/secondary-1.jpg", "/profiles/yvette/secondary-2.jpg"]
   },
   {
     "id": "salma",
@@ -1490,7 +1494,8 @@
     "payment_paypal": false,
     "price": 390,
     "lat": 43.31222,
-    "lon": 5.3547
+    "lon": 5.3547,
+    "secondary_photos": ["/profiles/salma/secondary-1.jpg", "/profiles/salma/secondary-2.jpg"]
   },
   {
     "id": "nadia",
@@ -1526,7 +1531,8 @@
     "payment_paypal": false,
     "price": 180,
     "lat": 48.94644,
-    "lon": 2.37197
+    "lon": 2.37197,
+    "secondary_photos": ["/profiles/nadia/secondary-1.jpg", "/profiles/nadia/secondary-2.jpg"]
   },
   {
     "id": "giulia",
@@ -1562,7 +1568,8 @@
     "payment_paypal": false,
     "price": 65,
     "lat": 43.72009,
-    "lon": 7.26751
+    "lon": 7.26751,
+    "secondary_photos": ["/profiles/giulia/secondary-1.jpg", "/profiles/giulia/secondary-2.jpg"]
   },
   {
     "id": "boris",
@@ -1598,7 +1605,8 @@
     "payment_paypal": false,
     "price": 230,
     "lat": 48.56918,
-    "lon": 7.75752
+    "lon": 7.75752,
+    "secondary_photos": ["/profiles/boris/secondary-1.jpg", "/profiles/boris/secondary-2.jpg"]
   },
   {
     "id": "svetlana",
@@ -1634,7 +1642,8 @@
     "payment_paypal": true,
     "price": 65,
     "lat": 48.83699,
-    "lon": 2.36167
+    "lon": 2.36167,
+    "secondary_photos": ["/profiles/svetlana/secondary-1.jpg", "/profiles/svetlana/secondary-2.jpg"]
   },
   {
     "id": "aylin",
@@ -1670,7 +1679,8 @@
     "payment_paypal": true,
     "price": 30,
     "lat": 50.70618,
-    "lon": 3.17946
+    "lon": 3.17946,
+    "secondary_photos": ["/profiles/aylin/secondary-1.jpg", "/profiles/aylin/secondary-2.jpg"]
   },
   {
     "id": "niamh",
@@ -1706,7 +1716,8 @@
     "payment_paypal": false,
     "price": 185,
     "lat": 47.20902,
-    "lon": -1.54867
+    "lon": -1.54867,
+    "secondary_photos": ["/profiles/niamh/secondary-1.jpg", "/profiles/niamh/secondary-2.jpg"]
   },
   {
     "id": "anatole",
@@ -1742,7 +1753,8 @@
     "payment_paypal": false,
     "price": 180,
     "lat": 48.8604,
-    "lon": 2.37
+    "lon": 2.37,
+    "secondary_photos": ["/profiles/anatole/secondary-1.jpg", "/profiles/anatole/secondary-2.jpg"]
   },
   {
     "id": "awa",
@@ -1778,7 +1790,8 @@
     "payment_paypal": true,
     "price": 215,
     "lat": 48.9111,
-    "lon": 2.39477
+    "lon": 2.39477,
+    "secondary_photos": ["/profiles/awa/secondary-1.jpg", "/profiles/awa/secondary-2.jpg"]
   },
   {
     "id": "pietro",
@@ -1814,7 +1827,8 @@
     "payment_paypal": true,
     "price": 375,
     "lat": 48.84998,
-    "lon": 2.34398
+    "lon": 2.34398,
+    "secondary_photos": ["/profiles/pietro/secondary-1.jpg", "/profiles/pietro/secondary-2.jpg"]
   },
   {
     "id": "roya",
@@ -1850,7 +1864,8 @@
     "payment_paypal": false,
     "price": 290,
     "lat": 48.84912,
-    "lon": 2.34892
+    "lon": 2.34892,
+    "secondary_photos": ["/profiles/roya/secondary-1.jpg", "/profiles/roya/secondary-2.jpg"]
   },
   {
     "id": "lucette",
@@ -1886,7 +1901,8 @@
     "payment_paypal": false,
     "price": 355,
     "lat": 14.59868,
-    "lon": -61.07232
+    "lon": -61.07232,
+    "secondary_photos": ["/profiles/lucette/secondary-1.jpg", "/profiles/lucette/secondary-2.jpg"]
   },
   {
     "id": "mila",
@@ -1922,7 +1938,8 @@
     "payment_paypal": false,
     "price": 290,
     "lat": 43.60439,
-    "lon": 1.44566
+    "lon": 1.44566,
+    "secondary_photos": ["/profiles/mila/secondary-1.jpg", "/profiles/mila/secondary-2.jpg"]
   },
   {
     "id": "margaret",
@@ -1960,7 +1977,8 @@
     "payment_paypal": false,
     "price": 340,
     "lat": 48.84935,
-    "lon": 2.33722
+    "lon": 2.33722,
+    "secondary_photos": ["/profiles/margaret/secondary-1.jpg", "/profiles/margaret/secondary-2.jpg"]
   },
   {
     "id": "sofia",
@@ -1996,7 +2014,8 @@
     "payment_paypal": false,
     "price": 390,
     "lat": 43.3001,
-    "lon": 5.38912
+    "lon": 5.38912,
+    "secondary_photos": ["/profiles/sofia/secondary-1.jpg", "/profiles/sofia/secondary-2.jpg"]
   },
   {
     "id": "zeynep",
@@ -2032,7 +2051,8 @@
     "payment_paypal": true,
     "price": 335,
     "lat": 48.97837,
-    "lon": 2.37311
+    "lon": 2.37311,
+    "secondary_photos": ["/profiles/zeynep/secondary-1.jpg", "/profiles/zeynep/secondary-2.jpg"]
   },
   {
     "id": "bineta",
@@ -2068,7 +2088,8 @@
     "payment_paypal": true,
     "price": 375,
     "lat": 48.89432,
-    "lon": 2.40656
+    "lon": 2.40656,
+    "secondary_photos": ["/profiles/bineta/secondary-1.jpg", "/profiles/bineta/secondary-2.jpg"]
   },
   {
     "id": "carla",
@@ -2106,7 +2127,8 @@
     "payment_paypal": true,
     "price": 345,
     "lat": 42.69305,
-    "lon": 9.43188
+    "lon": 9.43188,
+    "secondary_photos": ["/profiles/carla/secondary-1.jpg", "/profiles/carla/secondary-2.jpg"]
   },
   {
     "id": "min-ji",
@@ -2142,7 +2164,8 @@
     "payment_paypal": true,
     "price": 150,
     "lat": 48.84477,
-    "lon": 2.336
+    "lon": 2.336,
+    "secondary_photos": ["/profiles/min-ji/secondary-1.jpg", "/profiles/min-ji/secondary-2.jpg"]
   },
   {
     "id": "maialen",
@@ -2178,7 +2201,8 @@
     "payment_paypal": false,
     "price": 320,
     "lat": 43.49744,
-    "lon": -1.46053
+    "lon": -1.46053,
+    "secondary_photos": ["/profiles/maialen/secondary-1.jpg", "/profiles/maialen/secondary-2.jpg"]
   },
   {
     "id": "henri",
@@ -2216,7 +2240,8 @@
     "payment_paypal": false,
     "price": 355,
     "lat": 45.45897,
-    "lon": 4.39903
+    "lon": 4.39903,
+    "secondary_photos": ["/profiles/henri/secondary-1.jpg", "/profiles/henri/secondary-2.jpg"]
   },
   {
     "id": "priya",
@@ -2252,7 +2277,8 @@
     "payment_paypal": true,
     "price": 50,
     "lat": 48.91935,
-    "lon": 2.34908
+    "lon": 2.34908,
+    "secondary_photos": ["/profiles/priya/secondary-1.jpg", "/profiles/priya/secondary-2.jpg"]
   },
   {
     "id": "larissa",
@@ -2288,7 +2314,8 @@
     "payment_paypal": false,
     "price": 270,
     "lat": 48.85255,
-    "lon": 2.37175
+    "lon": 2.37175,
+    "secondary_photos": ["/profiles/larissa/secondary-1.jpg", "/profiles/larissa/secondary-2.jpg"]
   },
   {
     "id": "doris",
@@ -2324,7 +2351,8 @@
     "payment_paypal": false,
     "price": 210,
     "lat": 49.18094,
-    "lon": -0.36702
+    "lon": -0.36702,
+    "secondary_photos": ["/profiles/doris/secondary-1.jpg", "/profiles/doris/secondary-2.jpg"]
   },
   {
     "id": "behnam",
@@ -2360,7 +2388,8 @@
     "payment_paypal": true,
     "price": 125,
     "lat": 45.75428,
-    "lon": 4.81993
+    "lon": 4.81993,
+    "secondary_photos": ["/profiles/behnam/secondary-1.jpg", "/profiles/behnam/secondary-2.jpg"]
   },
   {
     "id": "linh",
@@ -2396,7 +2425,8 @@
     "payment_paypal": false,
     "price": 195,
     "lat": 48.85501,
-    "lon": 2.3462
+    "lon": 2.3462,
+    "secondary_photos": ["/profiles/linh/secondary-1.jpg", "/profiles/linh/secondary-2.jpg"]
   },
   {
     "id": "astrid",
@@ -2432,7 +2462,8 @@
     "payment_paypal": true,
     "price": 95,
     "lat": 50.64453,
-    "lon": 3.06469
+    "lon": 3.06469,
+    "secondary_photos": ["/profiles/astrid/secondary-1.jpg", "/profiles/astrid/secondary-2.jpg"]
   },
   {
     "id": "soledad",
@@ -2468,7 +2499,8 @@
     "payment_paypal": false,
     "price": 340,
     "lat": 43.30948,
-    "lon": -0.37142
+    "lon": -0.37142,
+    "secondary_photos": ["/profiles/soledad/secondary-1.jpg", "/profiles/soledad/secondary-2.jpg"]
   },
   {
     "id": "colette",
@@ -2506,7 +2538,8 @@
     "payment_paypal": false,
     "price": 25,
     "lat": 49.78092,
-    "lon": 4.69835
+    "lon": 4.69835,
+    "secondary_photos": ["/profiles/colette/secondary-1.jpg", "/profiles/colette/secondary-2.jpg"]
   },
   {
     "id": "aminata",
