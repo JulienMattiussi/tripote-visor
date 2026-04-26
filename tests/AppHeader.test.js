@@ -109,7 +109,9 @@ describe('AppHeader scroll-triggered compact state', () => {
 
     expect(wrapper.classes()).toContain('scrolled');
     expect(wrapper.find('.compact-search').exists()).toBe(true);
-    expect(wrapper.find('.compact-search input').attributes('placeholder')).toBe('Search');
+    expect(wrapper.find('.compact-search input').attributes('placeholder')).toBe(
+      'A name, a city, a fancy…',
+    );
 
     // Top nav still has the two dropdowns (unchanged across scroll).
     const navLabels = wrapper.findAll('.main-nav li').map((li) => li.text());
@@ -153,7 +155,9 @@ describe('AppHeader scroll-triggered compact state', () => {
     const wrapper = mountHeader();
     await setScroll(wrapper, 300);
 
-    expect(wrapper.find('.compact-search input').attributes('placeholder')).toBe('Rechercher');
+    expect(wrapper.find('.compact-search input').attributes('placeholder')).toBe(
+      'Un nom, une ville, une envie…',
+    );
     const tabs = wrapper.findAll('.category-nav li').map((t) => t.text());
     expect(tabs).toEqual(['Hôtels', 'Parcs', 'Ruelles']);
   });

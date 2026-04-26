@@ -24,14 +24,15 @@ describe('HeroSearch', () => {
     expect(labels.join(' ')).not.toContain('Restaurants');
   });
 
-  it('switches the placeholder when the active tab changes', async () => {
+  it('keeps the same unified placeholder across every tab', async () => {
     const wrapper = mount(HeroSearch);
     const input = wrapper.find('input[type="text"]');
 
-    expect(input.attributes('placeholder')).toMatch(/Places to go/i);
-
+    expect(input.attributes('placeholder')).toBe('A name, a city, a fancy…');
     await wrapper.findAll('.tab')[1].trigger('click');
-    expect(input.attributes('placeholder')).toMatch(/Where are you going/i);
+    expect(input.attributes('placeholder')).toBe('A name, a city, a fancy…');
+    await wrapper.findAll('.tab')[3].trigger('click');
+    expect(input.attributes('placeholder')).toBe('A name, a city, a fancy…');
   });
 
   it('ignores submit when the query is empty', async () => {
