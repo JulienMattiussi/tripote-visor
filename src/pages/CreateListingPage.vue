@@ -6,7 +6,7 @@ import SeriousNote from '../components/SeriousNote.vue';
 
 const SEXES = ['female', 'male', 'indeterminate'];
 const TYPES = ['hotel', 'park', 'alley'];
-const RELATIONSHIPS = ['owner', 'employee', 'traveller'];
+const RELATIONSHIPS = ['owner', 'employee', 'visitor'];
 
 const COUNTRIES = [
   { code: 'FR', label: 'France' },

@@ -21,6 +21,11 @@ const goHome = () => router.push({ name: 'home' });
       <p class="ab-block-body">{{ t('about_page.parody_body') }}</p>
     </article>
 
+    <article class="ab-block">
+      <h2 class="ab-block-title">{{ t('about_page.fictional_title') }}</h2>
+      <p class="ab-block-body">{{ t('about_page.fictional_body') }}</p>
+    </article>
+
     <SeriousNote class="ab-serious" />
 
     <div class="ab-footer">

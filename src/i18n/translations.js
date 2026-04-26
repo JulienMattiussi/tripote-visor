@@ -156,7 +156,7 @@ export const translations = {
     ur_page: {
       hero_title: 'Write a review',
       hero_subtitle:
-        'Share your experience with millions of travellers - every review helps the community pick better places.',
+        'Share your experience with the community - every review helps users pick better places.',
       step_label: 'Step {n} of 4',
       place_label: 'Where did you go?',
       place_placeholder: 'Search someone',
@@ -172,7 +172,7 @@ export const translations = {
       title_placeholder: 'Sum up your visit in one line',
       body_label: 'Tell us about it',
       body_placeholder:
-        'What did you love? What could be better? Other travellers want the honest scoop.',
+        'What did you love? What could be better? Other users want the honest scoop.',
       photos_label: 'Add photos (optional)',
       photos_hint: 'JPG or PNG, up to 5 files.',
       submit: 'Publish my review',
@@ -226,11 +226,11 @@ export const translations = {
       website_placeholder: 'https://…',
       description_label: 'Short description',
       description_placeholder:
-        'A sentence or two travellers will see first when they land on the page.',
+        'A sentence or two visitors will see first when they land on the page.',
       relationship_label: 'What is your relationship to this person?',
       relationship_owner: 'I own or manage it',
       relationship_employee: 'It’s me',
-      relationship_traveller: 'I’m a traveller who visited',
+      relationship_visitor: 'I’m a visitor who came by',
       submit: 'Submit listing',
       error_required: 'Please fill in every required field before submitting.',
     },
@@ -285,10 +285,10 @@ export const translations = {
         'You may freely browse the site, share screenshots, fork its source code, or otherwise reuse all or part of it. No fee, no quota, no licence to accept, and no terms of service to honour beyond what is reasonable under applicable law.',
       section_4_title: '4. Fictional content',
       section_4_body:
-        'All hotels, restaurants, activities, destinations, photographs of people, traveller names, reviews, ratings, prices and itineraries shown on Tripote-visor are entirely fictional or used as placeholders. Any resemblance to real establishments, persons, places or events is coincidental and unintended. All images are fictional and AI-generated, and do not constitute an endorsement.',
+        'All hotels, parks, alleys, photographs of people, user names, reviews, ratings, prices and locations shown on Tripote-visor are entirely fictional or used as placeholders. Any resemblance to real establishments, persons, places or events is coincidental and unintended. All images are fictional and AI-generated, and do not constitute an endorsement.',
       section_5_title: '5. No warranty',
       section_5_body:
-        'The site is provided "as is", without warranty of any kind. It is not intended to plan, book, or otherwise inform real travel decisions, and its operator cannot be held liable for any decision taken on the basis of its content.',
+        'The site is provided "as is", without warranty of any kind. It is not intended to plan, book, or otherwise inform any real-world decisions, and its operator cannot be held liable for any decision taken on the basis of its content.',
       section_6_title: '6. In short',
       section_6_body:
         'This page exists for clarity, not to assert any rights - there is nothing to enforce. If anything above is unclear, treat it as: Tripote-visor is a parody site with no real moving parts. Have fun.',
@@ -383,6 +383,9 @@ export const translations = {
       parody_title: 'The parody',
       parody_body:
         'Tripote-visor is a parody of well-known travel review platforms. Its premise is deliberately uncomfortable: it imagines what such a site would look like if, instead of hotels and restaurants, it claimed to list sex workers with client-facing reviews and rankings. There are no real listings, no real reviews, no platform behind it. Whatever discomfort the name produces is intentional: the gap between a polished interface and the topic it claims to organise is the point.',
+      fictional_title: 'Fictional content',
+      fictional_body:
+        'Everything visible on this site is fictional. The profiles, their photos, the reviews, the user names, the cities, the prices and the schedules are all generated for this front-end demonstration. Profile photos are AI-generated; no real person, business or location is featured. Any resemblance to a real human or place is coincidental and unintended.',
       back_home: 'Back to home',
     },
     place_search: {
@@ -726,7 +729,7 @@ export const translations = {
       relationship_label: 'Quel est votre lien avec cette personne ?',
       relationship_owner: 'Je le possède ou le gère',
       relationship_employee: 'C’est moi',
-      relationship_traveller: 'Je suis un utilisateur qui l’a visité',
+      relationship_visitor: 'Je suis un utilisateur qui l’a visité',
       submit: 'Soumettre la profile',
       error_required: 'Merci de remplir chaque champ obligatoire avant de soumettre.',
     },
@@ -783,10 +786,10 @@ export const translations = {
         'Vous pouvez librement consulter, partager des captures d’écran, forker ou réutiliser ce site, en tout ou partie. Aucun frais, aucun quota, aucune licence à accepter, aucune condition générale à honorer au-delà de ce qui est raisonnable au regard du droit applicable.',
       section_4_title: '4. Contenu fictif',
       section_4_body:
-        'L’ensemble des hôtels, restaurants, activités, destinations, photographies de personnes, noms d’utilisateurs, avis, notes, prix et itinéraires présentés sur Tripote-visor est entièrement fictif ou utilisé comme placeholder. Toute ressemblance avec des établissements, personnes, lieux ou événements réels est fortuite et non intentionnelle. Toutes les images sont fictives et générées par IA, et ne valent pas recommandation.',
+        'L’ensemble des hôtels, parcs, ruelles, photographies de personnes, noms d’utilisateurs, avis, notes, prix et lieux présentés sur Tripote-visor est entièrement fictif ou utilisé comme placeholder. Toute ressemblance avec des établissements, personnes, lieux ou événements réels est fortuite et non intentionnelle. Toutes les images sont fictives et générées par IA, et ne valent pas recommandation.',
       section_5_title: '5. Aucune garantie',
       section_5_body:
-        'Le site est fourni « en l’état », sans garantie d’aucune sorte. Il n’a pas pour but de planifier, réserver ou orienter des décisions de voyage réelles, et son exploitant ne saurait être tenu responsable d’une décision prise sur la base de son contenu.',
+        'Le site est fourni « en l’état », sans garantie d’aucune sorte. Il n’a pas pour but de planifier, réserver ou orienter des décisions du monde réel, et son exploitant ne saurait être tenu responsable d’une décision prise sur la base de son contenu.',
       section_6_title: '6. En résumé',
       section_6_body:
         'Cette page est là pour la clarté, pas pour faire valoir des droits - il n’y a rien à faire respecter. Si un point reste obscur, retenez ceci : Tripote-visor est un site parodique sans aucune mécanique réelle. Amusez-vous bien.',
@@ -885,6 +888,9 @@ export const translations = {
       parody_title: 'La parodie',
       parody_body:
         'Tripote-visor est une parodie des grandes plateformes d’avis de voyage. Son postulat est volontairement dérangeant : il imagine à quoi ressemblerait un tel site si, au lieu d’hôtels et de restaurants, il prétendait référencer des personnes prostituées avec des avis et des classements pour les clients. Il n’y a aucun référencement réel, aucun avis, aucune plateforme derrière. Le malaise que provoque le nom est intentionnel : c’est précisément l’écart entre une interface soignée et le sujet qu’elle prétend ordonner qui fait le propos.',
+      fictional_title: 'Contenu fictif',
+      fictional_body:
+        'Tout ce qui est visible sur ce site est fictif. Les fiches, leurs photos, les avis, les noms d’utilisateurs, les villes, les prix et les horaires sont entièrement générés pour cette démonstration front-end. Les photos de profil sont produites par IA ; aucune personne, entreprise ou adresse réelle n’est représentée. Toute ressemblance avec une personne réelle ou un lieu existant est fortuite et non intentionnelle.',
       back_home: 'Retour à l’accueil',
     },
     place_search: {

@@ -192,7 +192,7 @@ describe('CreateListingPage (Add a sex worker)', () => {
     expect(relationshipLabels).toEqual([
       'I own or manage it',
       'It’s me',
-      'I’m a traveller who visited',
+      'I’m a visitor who came by',
     ]);
   });
 
