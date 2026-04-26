@@ -40,4 +40,37 @@ describe('ProfileGallery', () => {
     expect(wrapper.find('.fp-photo-empty').text()).toBe('Principale');
     expect(wrapper.text()).toContain('Intérieur');
   });
+
+  it('renders an <img> in each thumb when secondary_photos are provided', () => {
+    const wrapper = mount(ProfileGallery, {
+      props: {
+        profile: {
+          name: 'X',
+          photo: '',
+          secondary_photos: ['/profiles/x/secondary-1.jpg', '/profiles/x/secondary-2.jpg'],
+        },
+      },
+    });
+    const imgs = wrapper.findAll('.fp-thumb img');
+    expect(imgs).toHaveLength(2);
+    expect(imgs[0].attributes('src')).toBe('/profiles/x/secondary-1.jpg');
+    expect(imgs[1].attributes('src')).toBe('/profiles/x/secondary-2.jpg');
+  });
+
+  it('falls back to the placeholder when a secondary slot is null', () => {
+    const wrapper = mount(ProfileGallery, {
+      props: {
+        profile: {
+          name: 'X',
+          photo: '',
+          secondary_photos: [null, '/profiles/x/secondary-2.jpg'],
+        },
+      },
+    });
+    const thumbs = wrapper.findAll('.fp-thumb');
+    expect(thumbs[0].find('img').exists()).toBe(false);
+    expect(thumbs[0].find('span').exists()).toBe(true);
+    expect(thumbs[1].find('img').exists()).toBe(true);
+    expect(thumbs[1].find('img').attributes('src')).toBe('/profiles/x/secondary-2.jpg');
+  });
 });

@@ -89,6 +89,15 @@ const goWriteReview = () => {
   router.push({ name: 'write-review', query: { profile: profile.value.id } });
 };
 const goHome = () => router.push({ name: 'home' });
+
+const mapUrl = computed(() => {
+  if (!profile.value?.lat || !profile.value?.lon) return '';
+  const { lat, lon } = profile.value;
+  const dLat = 0.005;
+  const dLon = 0.008;
+  const bbox = [lon - dLon, lat - dLat, lon + dLon, lat + dLat].join(',');
+  return `https://www.openstreetmap.org/export/embed.html?bbox=${bbox}&layer=mapnik&marker=${lat},${lon}`;
+});
 </script>
 
 <template>
@@ -207,7 +216,15 @@ const goHome = () => router.push({ name: 'home' });
 
         <section id="location" class="fp-block">
           <h2 class="fp-block-title">{{ t('profile_page.localization_title') }}</h2>
-          <div class="fp-map" aria-hidden="true">
+          <iframe
+            v-if="mapUrl"
+            class="fp-map"
+            :src="mapUrl"
+            :title="t('profile_page.localization_title')"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+          <div v-else class="fp-map fp-map-empty" aria-hidden="true">
             <span>{{ t('profile_page.map_placeholder') }}</span>
           </div>
           <p class="fp-address">
@@ -525,15 +542,20 @@ const goHome = () => router.push({ name: 'home' });
 }
 
 .fp-map {
-  height: 220px;
-  background: var(--surface);
+  width: 100%;
+  height: 260px;
+  border: 1px solid var(--border);
   border-radius: var(--radius);
+  margin-bottom: 12px;
+}
+
+.fp-map-empty {
+  background: var(--surface);
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--text-muted);
   font-weight: 700;
-  margin-bottom: 12px;
 }
 
 .fp-right {

@@ -34,7 +34,12 @@
     "payment_card": true,
     "payment_paypal": false,
     "price": 155,
-    "secondary_photos": ["/profiles/mireille/secondary-1.jpg", "/profiles/mireille/secondary-2.jpg"]
+    "secondary_photos": [
+      "/profiles/mireille/secondary-1.jpg",
+      "/profiles/mireille/secondary-2.jpg"
+    ],
+    "lat": 48.8453,
+    "lon": 2.34041
   },
   {
     "id": "mehdi",
@@ -71,7 +76,9 @@
     "payment_card": true,
     "payment_paypal": false,
     "price": 230,
-    "secondary_photos": ["/profiles/mehdi/secondary-1.jpg", "/profiles/mehdi/secondary-2.jpg"]
+    "secondary_photos": ["/profiles/mehdi/secondary-1.jpg", "/profiles/mehdi/secondary-2.jpg"],
+    "lat": 43.28738,
+    "lon": 5.36565
   },
   {
     "id": "lucia",
@@ -106,7 +113,9 @@
     "payment_card": true,
     "payment_paypal": false,
     "price": 265,
-    "secondary_photos": ["/profiles/lucia/secondary-1.jpg", "/profiles/lucia/secondary-2.jpg"]
+    "secondary_photos": ["/profiles/lucia/secondary-1.jpg", "/profiles/lucia/secondary-2.jpg"],
+    "lat": 45.77801,
+    "lon": 4.84625
   },
   {
     "id": "brigitte",
@@ -143,7 +152,12 @@
     "payment_card": false,
     "payment_paypal": false,
     "price": 150,
-    "secondary_photos": ["/profiles/brigitte/secondary-1.jpg", "/profiles/brigitte/secondary-2.jpg"]
+    "secondary_photos": [
+      "/profiles/brigitte/secondary-1.jpg",
+      "/profiles/brigitte/secondary-2.jpg"
+    ],
+    "lat": 48.59024,
+    "lon": 7.73388
   },
   {
     "id": "yacine",
@@ -178,7 +192,9 @@
     "payment_card": false,
     "payment_paypal": false,
     "price": 60,
-    "secondary_photos": ["/profiles/yacine/secondary-1.jpg", "/profiles/yacine/secondary-2.jpg"]
+    "secondary_photos": ["/profiles/yacine/secondary-1.jpg", "/profiles/yacine/secondary-2.jpg"],
+    "lat": 44.83111,
+    "lon": -0.58696
   },
   {
     "id": "carmen",
@@ -215,7 +231,9 @@
     "payment_card": true,
     "payment_paypal": true,
     "price": 175,
-    "secondary_photos": ["/profiles/carmen/secondary-1.jpg", "/profiles/carmen/secondary-2.jpg"]
+    "secondary_photos": ["/profiles/carmen/secondary-1.jpg", "/profiles/carmen/secondary-2.jpg"],
+    "lat": 43.72127,
+    "lon": 7.27822
   },
   {
     "id": "adam",
@@ -250,7 +268,9 @@
     "payment_card": false,
     "payment_paypal": false,
     "price": 190,
-    "secondary_photos": ["/profiles/adam/secondary-1.jpg", "/profiles/adam/secondary-2.jpg"]
+    "secondary_photos": ["/profiles/adam/secondary-1.jpg", "/profiles/adam/secondary-2.jpg"],
+    "lat": 50.64434,
+    "lon": 3.04638
   },
   {
     "id": "soraya",
@@ -287,7 +307,9 @@
     "payment_card": false,
     "payment_paypal": false,
     "price": 30,
-    "secondary_photos": ["/profiles/soraya/secondary-1.jpg", "/profiles/soraya/secondary-2.jpg"]
+    "secondary_photos": ["/profiles/soraya/secondary-1.jpg", "/profiles/soraya/secondary-2.jpg"],
+    "lat": 43.58591,
+    "lon": 1.4422
   },
   {
     "id": "esperanza",
@@ -325,7 +347,9 @@
     "secondary_photos": [
       "/profiles/esperanza/secondary-1.jpg",
       "/profiles/esperanza/secondary-2.jpg"
-    ]
+    ],
+    "lat": 48.13346,
+    "lon": -1.65904
   },
   {
     "id": "ingrid",
@@ -362,7 +386,9 @@
     "payment_card": false,
     "payment_paypal": true,
     "price": 265,
-    "secondary_photos": ["/profiles/ingrid/secondary-1.jpg", "/profiles/ingrid/secondary-2.jpg"]
+    "secondary_photos": ["/profiles/ingrid/secondary-1.jpg", "/profiles/ingrid/secondary-2.jpg"],
+    "lat": 49.27788,
+    "lon": 4.02587
   },
   {
     "id": "wei",
@@ -399,7 +425,9 @@
     "payment_card": false,
     "payment_paypal": false,
     "price": 25,
-    "secondary_photos": ["/profiles/wei/secondary-1.jpg", "/profiles/wei/secondary-2.jpg"]
+    "secondary_photos": ["/profiles/wei/secondary-1.jpg", "/profiles/wei/secondary-2.jpg"],
+    "lat": 48.85104,
+    "lon": 2.36146
   },
   {
     "id": "murat",
@@ -434,7 +462,9 @@
     "payment_card": false,
     "payment_paypal": true,
     "price": 75,
-    "secondary_photos": ["/profiles/murat/secondary-1.jpg", "/profiles/murat/secondary-2.jpg"]
+    "secondary_photos": ["/profiles/murat/secondary-1.jpg", "/profiles/murat/secondary-2.jpg"],
+    "lat": 47.75401,
+    "lon": 7.34476
   },
   {
     "id": "solange",
@@ -471,7 +501,9 @@
     "payment_card": false,
     "payment_paypal": true,
     "price": 165,
-    "secondary_photos": ["/profiles/solange/secondary-1.jpg", "/profiles/solange/secondary-2.jpg"]
+    "secondary_photos": ["/profiles/solange/secondary-1.jpg", "/profiles/solange/secondary-2.jpg"],
+    "lat": 16.22706,
+    "lon": -61.52328
   },
   {
     "id": "andriy",
@@ -506,7 +538,9 @@
     "payment_card": false,
     "payment_paypal": false,
     "price": 80,
-    "secondary_photos": ["/profiles/andriy/secondary-1.jpg", "/profiles/andriy/secondary-2.jpg"]
+    "secondary_photos": ["/profiles/andriy/secondary-1.jpg", "/profiles/andriy/secondary-2.jpg"],
+    "lat": 47.20219,
+    "lon": -1.56089
   },
   {
     "id": "layla",
@@ -541,7 +575,9 @@
     "payment_card": false,
     "payment_paypal": false,
     "price": 175,
-    "secondary_photos": ["/profiles/layla/secondary-1.jpg", "/profiles/layla/secondary-2.jpg"]
+    "secondary_photos": ["/profiles/layla/secondary-1.jpg", "/profiles/layla/secondary-2.jpg"],
+    "lat": 43.51088,
+    "lon": 5.43752
   },
   {
     "id": "wilhelmine",
@@ -581,7 +617,9 @@
     "secondary_photos": [
       "/profiles/wilhelmine/secondary-1.jpg",
       "/profiles/wilhelmine/secondary-2.jpg"
-    ]
+    ],
+    "lat": 48.06989,
+    "lon": 7.36216
   },
   {
     "id": "renata",
@@ -616,7 +654,9 @@
     "payment_card": true,
     "payment_paypal": false,
     "price": 350,
-    "secondary_photos": ["/profiles/renata/secondary-1.jpg", "/profiles/renata/secondary-2.jpg"]
+    "secondary_photos": ["/profiles/renata/secondary-1.jpg", "/profiles/renata/secondary-2.jpg"],
+    "lat": 48.83991,
+    "lon": 2.34178
   },
   {
     "id": "fatou",
@@ -653,7 +693,9 @@
     "payment_card": false,
     "payment_paypal": false,
     "price": 35,
-    "secondary_photos": ["/profiles/fatou/secondary-1.jpg", "/profiles/fatou/secondary-2.jpg"]
+    "secondary_photos": ["/profiles/fatou/secondary-1.jpg", "/profiles/fatou/secondary-2.jpg"],
+    "lat": 48.93233,
+    "lon": 2.36723
   },
   {
     "id": "tatiana",
@@ -690,7 +732,9 @@
     "payment_card": true,
     "payment_paypal": true,
     "price": 335,
-    "secondary_photos": ["/profiles/tatiana/secondary-1.jpg", "/profiles/tatiana/secondary-2.jpg"]
+    "secondary_photos": ["/profiles/tatiana/secondary-1.jpg", "/profiles/tatiana/secondary-2.jpg"],
+    "lat": 43.56984,
+    "lon": 7.0189
   },
   {
     "id": "adele",
@@ -725,7 +769,9 @@
     "payment_card": true,
     "payment_paypal": false,
     "price": 50,
-    "secondary_photos": ["/profiles/adele/secondary-1.jpg", "/profiles/adele/secondary-2.jpg"]
+    "secondary_photos": ["/profiles/adele/secondary-1.jpg", "/profiles/adele/secondary-2.jpg"],
+    "lat": 47.38999,
+    "lon": 0.68194
   },
   {
     "id": "issa",
@@ -760,7 +806,9 @@
     "payment_card": true,
     "payment_paypal": true,
     "price": 85,
-    "secondary_photos": ["/profiles/issa/secondary-1.jpg", "/profiles/issa/secondary-2.jpg"]
+    "secondary_photos": ["/profiles/issa/secondary-1.jpg", "/profiles/issa/secondary-2.jpg"],
+    "lat": 49.49212,
+    "lon": 0.09636
   },
   {
     "id": "despina",
@@ -795,7 +843,9 @@
     "payment_card": true,
     "payment_paypal": false,
     "price": 155,
-    "secondary_photos": ["/profiles/despina/secondary-1.jpg", "/profiles/despina/secondary-2.jpg"]
+    "secondary_photos": ["/profiles/despina/secondary-1.jpg", "/profiles/despina/secondary-2.jpg"],
+    "lat": 43.96549,
+    "lon": 4.79919
   },
   {
     "id": "klara",
@@ -830,7 +880,9 @@
     "payment_card": true,
     "payment_paypal": false,
     "price": 395,
-    "secondary_photos": ["/profiles/klara/secondary-1.jpg", "/profiles/klara/secondary-2.jpg"]
+    "secondary_photos": ["/profiles/klara/secondary-1.jpg", "/profiles/klara/secondary-2.jpg"],
+    "lat": 45.91302,
+    "lon": 6.11589
   },
   {
     "id": "bernadette",
@@ -870,7 +922,9 @@
     "secondary_photos": [
       "/profiles/bernadette/secondary-1.jpg",
       "/profiles/bernadette/secondary-2.jpg"
-    ]
+    ],
+    "lat": 46.1276,
+    "lon": 3.41013
   },
   {
     "id": "anjali",
@@ -905,7 +959,9 @@
     "payment_card": false,
     "payment_paypal": false,
     "price": 125,
-    "secondary_photos": ["/profiles/anjali/secondary-1.jpg", "/profiles/anjali/secondary-2.jpg"]
+    "secondary_photos": ["/profiles/anjali/secondary-1.jpg", "/profiles/anjali/secondary-2.jpg"],
+    "lat": 48.85042,
+    "lon": 2.35581
   },
   {
     "id": "khadija",
@@ -940,7 +996,9 @@
     "payment_card": true,
     "payment_paypal": false,
     "price": 385,
-    "secondary_photos": ["/profiles/khadija/secondary-1.jpg", "/profiles/khadija/secondary-2.jpg"]
+    "secondary_photos": ["/profiles/khadija/secondary-1.jpg", "/profiles/khadija/secondary-2.jpg"],
+    "lat": 45.78229,
+    "lon": 4.8479
   },
   {
     "id": "olga",
@@ -975,7 +1033,9 @@
     "payment_card": false,
     "payment_paypal": true,
     "price": 235,
-    "secondary_photos": ["/profiles/olga/secondary-1.jpg", "/profiles/olga/secondary-2.jpg"]
+    "secondary_photos": ["/profiles/olga/secondary-1.jpg", "/profiles/olga/secondary-2.jpg"],
+    "lat": 48.40508,
+    "lon": -4.50585
   },
   {
     "id": "esmeralda",
@@ -1013,7 +1073,9 @@
     "secondary_photos": [
       "/profiles/esmeralda/secondary-1.jpg",
       "/profiles/esmeralda/secondary-2.jpg"
-    ]
+    ],
+    "lat": 42.70497,
+    "lon": 2.88521
   },
   {
     "id": "helga",
@@ -1050,7 +1112,9 @@
     "payment_card": true,
     "payment_paypal": true,
     "price": 330,
-    "secondary_photos": ["/profiles/helga/secondary-1.jpg", "/profiles/helga/secondary-2.jpg"]
+    "secondary_photos": ["/profiles/helga/secondary-1.jpg", "/profiles/helga/secondary-2.jpg"],
+    "lat": 48.64204,
+    "lon": -2.02312
   },
   {
     "id": "lupita",
@@ -1085,7 +1149,9 @@
     "payment_card": false,
     "payment_paypal": false,
     "price": 225,
-    "secondary_photos": ["/profiles/lupita/secondary-1.jpg", "/profiles/lupita/secondary-2.jpg"]
+    "secondary_photos": ["/profiles/lupita/secondary-1.jpg", "/profiles/lupita/secondary-2.jpg"],
+    "lat": 44.84366,
+    "lon": -0.59712
   },
   {
     "id": "sigrid",
@@ -1120,7 +1186,9 @@
     "payment_card": false,
     "payment_paypal": false,
     "price": 90,
-    "secondary_photos": ["/profiles/sigrid/secondary-1.jpg", "/profiles/sigrid/secondary-2.jpg"]
+    "secondary_photos": ["/profiles/sigrid/secondary-1.jpg", "/profiles/sigrid/secondary-2.jpg"],
+    "lat": 47.07369,
+    "lon": 2.39902
   },
   {
     "id": "hiroko",
@@ -1155,7 +1223,9 @@
     "payment_card": true,
     "payment_paypal": true,
     "price": 375,
-    "secondary_photos": ["/profiles/hiroko/secondary-1.jpg", "/profiles/hiroko/secondary-2.jpg"]
+    "secondary_photos": ["/profiles/hiroko/secondary-1.jpg", "/profiles/hiroko/secondary-2.jpg"],
+    "lat": 48.85849,
+    "lon": 2.36844
   },
   {
     "id": "josephine",
@@ -1195,7 +1265,9 @@
     "secondary_photos": [
       "/profiles/josephine/secondary-1.jpg",
       "/profiles/josephine/secondary-2.jpg"
-    ]
+    ],
+    "lat": 45.82959,
+    "lon": 1.25163
   },
   {
     "id": "latifa",
@@ -1230,7 +1302,9 @@
     "payment_card": true,
     "payment_paypal": false,
     "price": 35,
-    "secondary_photos": ["/profiles/latifa/secondary-1.jpg", "/profiles/latifa/secondary-2.jpg"]
+    "secondary_photos": ["/profiles/latifa/secondary-1.jpg", "/profiles/latifa/secondary-2.jpg"],
+    "lat": 48.93286,
+    "lon": 2.25191
   },
   {
     "id": "roger",
@@ -1266,7 +1340,9 @@
     "payment_check": false,
     "payment_card": true,
     "payment_paypal": true,
-    "price": 105
+    "price": 105,
+    "lat": 48.8702,
+    "lon": 2.37064
   },
   {
     "id": "suzanne",
@@ -1302,7 +1378,9 @@
     "payment_check": false,
     "payment_card": false,
     "payment_paypal": false,
-    "price": 180
+    "price": 180,
+    "lat": 48.84765,
+    "lon": 2.33636
   },
   {
     "id": "tariq",
@@ -1336,7 +1414,9 @@
     "payment_check": false,
     "payment_card": false,
     "payment_paypal": false,
-    "price": 145
+    "price": 145,
+    "lat": 48.85764,
+    "lon": 2.36036
   },
   {
     "id": "yvette",
@@ -1372,7 +1452,9 @@
     "payment_check": true,
     "payment_card": true,
     "payment_paypal": false,
-    "price": 200
+    "price": 200,
+    "lat": 45.7514,
+    "lon": 4.82819
   },
   {
     "id": "salma",
@@ -1406,7 +1488,9 @@
     "payment_check": true,
     "payment_card": false,
     "payment_paypal": false,
-    "price": 390
+    "price": 390,
+    "lat": 43.31222,
+    "lon": 5.3547
   },
   {
     "id": "nadia",
@@ -1440,7 +1524,9 @@
     "payment_check": false,
     "payment_card": false,
     "payment_paypal": false,
-    "price": 180
+    "price": 180,
+    "lat": 48.94644,
+    "lon": 2.37197
   },
   {
     "id": "giulia",
@@ -1474,7 +1560,9 @@
     "payment_check": false,
     "payment_card": false,
     "payment_paypal": false,
-    "price": 65
+    "price": 65,
+    "lat": 43.72009,
+    "lon": 7.26751
   },
   {
     "id": "boris",
@@ -1508,7 +1596,9 @@
     "payment_check": false,
     "payment_card": false,
     "payment_paypal": false,
-    "price": 230
+    "price": 230,
+    "lat": 48.56918,
+    "lon": 7.75752
   },
   {
     "id": "svetlana",
@@ -1542,7 +1632,9 @@
     "payment_check": false,
     "payment_card": true,
     "payment_paypal": true,
-    "price": 65
+    "price": 65,
+    "lat": 48.83699,
+    "lon": 2.36167
   },
   {
     "id": "aylin",
@@ -1576,7 +1668,9 @@
     "payment_check": false,
     "payment_card": false,
     "payment_paypal": true,
-    "price": 30
+    "price": 30,
+    "lat": 50.70618,
+    "lon": 3.17946
   },
   {
     "id": "niamh",
@@ -1610,7 +1704,9 @@
     "payment_check": false,
     "payment_card": false,
     "payment_paypal": false,
-    "price": 185
+    "price": 185,
+    "lat": 47.20902,
+    "lon": -1.54867
   },
   {
     "id": "anatole",
@@ -1644,7 +1740,9 @@
     "payment_check": false,
     "payment_card": true,
     "payment_paypal": false,
-    "price": 180
+    "price": 180,
+    "lat": 48.8604,
+    "lon": 2.37
   },
   {
     "id": "awa",
@@ -1678,7 +1776,9 @@
     "payment_check": false,
     "payment_card": true,
     "payment_paypal": true,
-    "price": 215
+    "price": 215,
+    "lat": 48.9111,
+    "lon": 2.39477
   },
   {
     "id": "pietro",
@@ -1712,7 +1812,9 @@
     "payment_check": false,
     "payment_card": false,
     "payment_paypal": true,
-    "price": 375
+    "price": 375,
+    "lat": 48.84998,
+    "lon": 2.34398
   },
   {
     "id": "roya",
@@ -1746,7 +1848,9 @@
     "payment_check": false,
     "payment_card": false,
     "payment_paypal": false,
-    "price": 290
+    "price": 290,
+    "lat": 48.84912,
+    "lon": 2.34892
   },
   {
     "id": "lucette",
@@ -1780,7 +1884,9 @@
     "payment_check": false,
     "payment_card": true,
     "payment_paypal": false,
-    "price": 355
+    "price": 355,
+    "lat": 14.59868,
+    "lon": -61.07232
   },
   {
     "id": "mila",
@@ -1814,7 +1920,9 @@
     "payment_check": false,
     "payment_card": true,
     "payment_paypal": false,
-    "price": 290
+    "price": 290,
+    "lat": 43.60439,
+    "lon": 1.44566
   },
   {
     "id": "margaret",
@@ -1850,7 +1958,9 @@
     "payment_check": false,
     "payment_card": false,
     "payment_paypal": false,
-    "price": 340
+    "price": 340,
+    "lat": 48.84935,
+    "lon": 2.33722
   },
   {
     "id": "sofia",
@@ -1884,7 +1994,9 @@
     "payment_check": true,
     "payment_card": true,
     "payment_paypal": false,
-    "price": 390
+    "price": 390,
+    "lat": 43.3001,
+    "lon": 5.38912
   },
   {
     "id": "zeynep",
@@ -1918,7 +2030,9 @@
     "payment_check": true,
     "payment_card": true,
     "payment_paypal": true,
-    "price": 335
+    "price": 335,
+    "lat": 48.97837,
+    "lon": 2.37311
   },
   {
     "id": "bineta",
@@ -1952,7 +2066,9 @@
     "payment_check": false,
     "payment_card": false,
     "payment_paypal": true,
-    "price": 375
+    "price": 375,
+    "lat": 48.89432,
+    "lon": 2.40656
   },
   {
     "id": "carla",
@@ -1988,7 +2104,9 @@
     "payment_check": false,
     "payment_card": true,
     "payment_paypal": true,
-    "price": 345
+    "price": 345,
+    "lat": 42.69305,
+    "lon": 9.43188
   },
   {
     "id": "min-ji",
@@ -2022,7 +2140,9 @@
     "payment_check": false,
     "payment_card": true,
     "payment_paypal": true,
-    "price": 150
+    "price": 150,
+    "lat": 48.84477,
+    "lon": 2.336
   },
   {
     "id": "maialen",
@@ -2056,7 +2176,9 @@
     "payment_check": false,
     "payment_card": false,
     "payment_paypal": false,
-    "price": 320
+    "price": 320,
+    "lat": 43.49744,
+    "lon": -1.46053
   },
   {
     "id": "henri",
@@ -2092,7 +2214,9 @@
     "payment_check": true,
     "payment_card": true,
     "payment_paypal": false,
-    "price": 355
+    "price": 355,
+    "lat": 45.45897,
+    "lon": 4.39903
   },
   {
     "id": "priya",
@@ -2126,7 +2250,9 @@
     "payment_check": false,
     "payment_card": false,
     "payment_paypal": true,
-    "price": 50
+    "price": 50,
+    "lat": 48.91935,
+    "lon": 2.34908
   },
   {
     "id": "larissa",
@@ -2160,7 +2286,9 @@
     "payment_check": true,
     "payment_card": true,
     "payment_paypal": false,
-    "price": 270
+    "price": 270,
+    "lat": 48.85255,
+    "lon": 2.37175
   },
   {
     "id": "doris",
@@ -2194,7 +2322,9 @@
     "payment_check": false,
     "payment_card": false,
     "payment_paypal": false,
-    "price": 210
+    "price": 210,
+    "lat": 49.18094,
+    "lon": -0.36702
   },
   {
     "id": "behnam",
@@ -2228,7 +2358,9 @@
     "payment_check": false,
     "payment_card": false,
     "payment_paypal": true,
-    "price": 125
+    "price": 125,
+    "lat": 45.75428,
+    "lon": 4.81993
   },
   {
     "id": "linh",
@@ -2262,7 +2394,9 @@
     "payment_check": false,
     "payment_card": false,
     "payment_paypal": false,
-    "price": 195
+    "price": 195,
+    "lat": 48.85501,
+    "lon": 2.3462
   },
   {
     "id": "astrid",
@@ -2296,7 +2430,9 @@
     "payment_check": false,
     "payment_card": false,
     "payment_paypal": true,
-    "price": 95
+    "price": 95,
+    "lat": 50.64453,
+    "lon": 3.06469
   },
   {
     "id": "soledad",
@@ -2330,7 +2466,9 @@
     "payment_check": false,
     "payment_card": true,
     "payment_paypal": false,
-    "price": 340
+    "price": 340,
+    "lat": 43.30948,
+    "lon": -0.37142
   },
   {
     "id": "colette",
@@ -2366,7 +2504,9 @@
     "payment_check": false,
     "payment_card": false,
     "payment_paypal": false,
-    "price": 25
+    "price": 25,
+    "lat": 49.78092,
+    "lon": 4.69835
   },
   {
     "id": "aminata",
@@ -2401,7 +2541,9 @@
     "payment_card": true,
     "payment_paypal": false,
     "price": 145,
-    "secondary_photos": ["/profiles/aminata/secondary-1.jpg", "/profiles/aminata/secondary-2.jpg"]
+    "secondary_photos": ["/profiles/aminata/secondary-1.jpg", "/profiles/aminata/secondary-2.jpg"],
+    "lat": 48.86871,
+    "lon": 2.3597
   },
   {
     "id": "geraldine",
@@ -2439,7 +2581,9 @@
     "secondary_photos": [
       "/profiles/geraldine/secondary-1.jpg",
       "/profiles/geraldine/secondary-2.jpg"
-    ]
+    ],
+    "lat": 48.84209,
+    "lon": 2.20653
   },
   {
     "id": "sabrina",
@@ -2474,7 +2618,9 @@
     "payment_card": true,
     "payment_paypal": false,
     "price": 380,
-    "secondary_photos": ["/profiles/sabrina/secondary-1.jpg", "/profiles/sabrina/secondary-2.jpg"]
+    "secondary_photos": ["/profiles/sabrina/secondary-1.jpg", "/profiles/sabrina/secondary-2.jpg"],
+    "lat": 48.83045,
+    "lon": 2.44119
   },
   {
     "id": "pilar",
@@ -2509,7 +2655,9 @@
     "payment_card": true,
     "payment_paypal": false,
     "price": 335,
-    "secondary_photos": ["/profiles/pilar/secondary-1.jpg", "/profiles/pilar/secondary-2.jpg"]
+    "secondary_photos": ["/profiles/pilar/secondary-1.jpg", "/profiles/pilar/secondary-2.jpg"],
+    "lat": 48.78942,
+    "lon": 2.14346
   },
   {
     "id": "ida",
@@ -2544,7 +2692,9 @@
     "payment_card": false,
     "payment_paypal": false,
     "price": 235,
-    "secondary_photos": ["/profiles/ida/secondary-1.jpg", "/profiles/ida/secondary-2.jpg"]
+    "secondary_photos": ["/profiles/ida/secondary-1.jpg", "/profiles/ida/secondary-2.jpg"],
+    "lat": 48.82469,
+    "lon": 2.22444
   },
   {
     "id": "marie-josee",
@@ -2584,7 +2734,9 @@
     "secondary_photos": [
       "/profiles/marie-josee/secondary-1.jpg",
       "/profiles/marie-josee/secondary-2.jpg"
-    ]
+    ],
+    "lat": 48.84069,
+    "lon": 2.43663
   },
   {
     "id": "rania",
@@ -2619,7 +2771,9 @@
     "payment_card": true,
     "payment_paypal": false,
     "price": 125,
-    "secondary_photos": ["/profiles/rania/secondary-1.jpg", "/profiles/rania/secondary-2.jpg"]
+    "secondary_photos": ["/profiles/rania/secondary-1.jpg", "/profiles/rania/secondary-2.jpg"],
+    "lat": 48.86357,
+    "lon": 2.22754
   },
   {
     "id": "brigida",
@@ -2654,7 +2808,9 @@
     "payment_card": true,
     "payment_paypal": true,
     "price": 230,
-    "secondary_photos": ["/profiles/brigida/secondary-1.jpg", "/profiles/brigida/secondary-2.jpg"]
+    "secondary_photos": ["/profiles/brigida/secondary-1.jpg", "/profiles/brigida/secondary-2.jpg"],
+    "lat": 45.74896,
+    "lon": 4.84164
   },
   {
     "id": "gabriela",
@@ -2689,7 +2845,12 @@
     "payment_card": true,
     "payment_paypal": false,
     "price": 215,
-    "secondary_photos": ["/profiles/gabriela/secondary-1.jpg", "/profiles/gabriela/secondary-2.jpg"]
+    "secondary_photos": [
+      "/profiles/gabriela/secondary-1.jpg",
+      "/profiles/gabriela/secondary-2.jpg"
+    ],
+    "lat": 43.60348,
+    "lon": 1.4522
   },
   {
     "id": "anouk",
@@ -2724,7 +2885,9 @@
     "payment_card": true,
     "payment_paypal": false,
     "price": 210,
-    "secondary_photos": ["/profiles/anouk/secondary-1.jpg", "/profiles/anouk/secondary-2.jpg"]
+    "secondary_photos": ["/profiles/anouk/secondary-1.jpg", "/profiles/anouk/secondary-2.jpg"],
+    "lat": 48.77632,
+    "lon": 2.29134
   },
   {
     "id": "daria",
@@ -2759,7 +2922,9 @@
     "payment_card": true,
     "payment_paypal": false,
     "price": 90,
-    "secondary_photos": ["/profiles/daria/secondary-1.jpg", "/profiles/daria/secondary-2.jpg"]
+    "secondary_photos": ["/profiles/daria/secondary-1.jpg", "/profiles/daria/secondary-2.jpg"],
+    "lat": 48.90954,
+    "lon": 2.07615
   },
   {
     "id": "eleni",
@@ -2794,7 +2959,9 @@
     "payment_card": false,
     "payment_paypal": false,
     "price": 315,
-    "secondary_photos": ["/profiles/eleni/secondary-1.jpg", "/profiles/eleni/secondary-2.jpg"]
+    "secondary_photos": ["/profiles/eleni/secondary-1.jpg", "/profiles/eleni/secondary-2.jpg"],
+    "lat": 48.86099,
+    "lon": 2.37023
   },
   {
     "id": "fadila",
@@ -2829,7 +2996,9 @@
     "payment_card": false,
     "payment_paypal": false,
     "price": 250,
-    "secondary_photos": ["/profiles/fadila/secondary-1.jpg", "/profiles/fadila/secondary-2.jpg"]
+    "secondary_photos": ["/profiles/fadila/secondary-1.jpg", "/profiles/fadila/secondary-2.jpg"],
+    "lat": 48.87023,
+    "lon": 2.35499
   },
   {
     "id": "roxana",
@@ -2864,7 +3033,9 @@
     "payment_card": false,
     "payment_paypal": false,
     "price": 300,
-    "secondary_photos": ["/profiles/roxana/secondary-1.jpg", "/profiles/roxana/secondary-2.jpg"]
+    "secondary_photos": ["/profiles/roxana/secondary-1.jpg", "/profiles/roxana/secondary-2.jpg"],
+    "lat": 44.84522,
+    "lon": -0.58337
   },
   {
     "id": "yuki",
@@ -2899,7 +3070,9 @@
     "payment_card": true,
     "payment_paypal": false,
     "price": 60,
-    "secondary_photos": ["/profiles/yuki/secondary-1.jpg", "/profiles/yuki/secondary-2.jpg"]
+    "secondary_photos": ["/profiles/yuki/secondary-1.jpg", "/profiles/yuki/secondary-2.jpg"],
+    "lat": 48.86301,
+    "lon": 2.36824
   },
   {
     "id": "pierre-andre",
@@ -2937,7 +3110,9 @@
     "secondary_photos": [
       "/profiles/pierre-andre/secondary-1.jpg",
       "/profiles/pierre-andre/secondary-2.jpg"
-    ]
+    ],
+    "lat": 45.88517,
+    "lon": 6.11062
   },
   {
     "id": "zeinab",
@@ -2972,7 +3147,9 @@
     "payment_card": false,
     "payment_paypal": false,
     "price": 215,
-    "secondary_photos": ["/profiles/zeinab/secondary-1.jpg", "/profiles/zeinab/secondary-2.jpg"]
+    "secondary_photos": ["/profiles/zeinab/secondary-1.jpg", "/profiles/zeinab/secondary-2.jpg"],
+    "lat": 43.31541,
+    "lon": 5.35219
   },
   {
     "id": "frieda",
@@ -3009,7 +3186,9 @@
     "payment_card": false,
     "payment_paypal": false,
     "price": 50,
-    "secondary_photos": ["/profiles/frieda/secondary-1.jpg", "/profiles/frieda/secondary-2.jpg"]
+    "secondary_photos": ["/profiles/frieda/secondary-1.jpg", "/profiles/frieda/secondary-2.jpg"],
+    "lat": 48.57526,
+    "lon": 7.73811
   },
   {
     "id": "bakary",
@@ -3044,7 +3223,9 @@
     "payment_card": true,
     "payment_paypal": true,
     "price": 280,
-    "secondary_photos": ["/profiles/bakary/secondary-1.jpg", "/profiles/bakary/secondary-2.jpg"]
+    "secondary_photos": ["/profiles/bakary/secondary-1.jpg", "/profiles/bakary/secondary-2.jpg"],
+    "lat": 48.92605,
+    "lon": 2.40056
   },
   {
     "id": "octavia",
@@ -3079,7 +3260,9 @@
     "payment_card": false,
     "payment_paypal": false,
     "price": 330,
-    "secondary_photos": ["/profiles/octavia/secondary-1.jpg", "/profiles/octavia/secondary-2.jpg"]
+    "secondary_photos": ["/profiles/octavia/secondary-1.jpg", "/profiles/octavia/secondary-2.jpg"],
+    "lat": 49.25478,
+    "lon": 4.01355
   },
   {
     "id": "souleymane",
@@ -3117,7 +3300,9 @@
     "secondary_photos": [
       "/profiles/souleymane/secondary-1.jpg",
       "/profiles/souleymane/secondary-2.jpg"
-    ]
+    ],
+    "lat": 48.92155,
+    "lon": 2.35871
   },
   {
     "id": "maite",
@@ -3152,7 +3337,9 @@
     "payment_card": false,
     "payment_paypal": false,
     "price": 335,
-    "secondary_photos": ["/profiles/maite/secondary-1.jpg", "/profiles/maite/secondary-2.jpg"]
+    "secondary_photos": ["/profiles/maite/secondary-1.jpg", "/profiles/maite/secondary-2.jpg"],
+    "lat": 43.29486,
+    "lon": -0.36334
   },
   {
     "id": "helena",
@@ -3187,7 +3374,9 @@
     "payment_card": true,
     "payment_paypal": false,
     "price": 295,
-    "secondary_photos": ["/profiles/helena/secondary-1.jpg", "/profiles/helena/secondary-2.jpg"]
+    "secondary_photos": ["/profiles/helena/secondary-1.jpg", "/profiles/helena/secondary-2.jpg"],
+    "lat": 48.85731,
+    "lon": 2.23723
   },
   {
     "id": "paloma",
@@ -3222,7 +3411,9 @@
     "payment_card": false,
     "payment_paypal": false,
     "price": 355,
-    "secondary_photos": ["/profiles/paloma/secondary-1.jpg", "/profiles/paloma/secondary-2.jpg"]
+    "secondary_photos": ["/profiles/paloma/secondary-1.jpg", "/profiles/paloma/secondary-2.jpg"],
+    "lat": 43.95602,
+    "lon": 4.80496
   },
   {
     "id": "adetokunbo",
@@ -3260,7 +3451,9 @@
     "secondary_photos": [
       "/profiles/adetokunbo/secondary-1.jpg",
       "/profiles/adetokunbo/secondary-2.jpg"
-    ]
+    ],
+    "lat": 48.83751,
+    "lon": 2.35617
   },
   {
     "id": "beata",
@@ -3295,7 +3488,9 @@
     "payment_card": true,
     "payment_paypal": true,
     "price": 285,
-    "secondary_photos": ["/profiles/beata/secondary-1.jpg", "/profiles/beata/secondary-2.jpg"]
+    "secondary_photos": ["/profiles/beata/secondary-1.jpg", "/profiles/beata/secondary-2.jpg"],
+    "lat": 50.61288,
+    "lon": 3.04444
   },
   {
     "id": "gennaro",
@@ -3332,7 +3527,9 @@
     "payment_card": true,
     "payment_paypal": false,
     "price": 165,
-    "secondary_photos": ["/profiles/gennaro/secondary-1.jpg", "/profiles/gennaro/secondary-2.jpg"]
+    "secondary_photos": ["/profiles/gennaro/secondary-1.jpg", "/profiles/gennaro/secondary-2.jpg"],
+    "lat": 43.72394,
+    "lon": 7.25123
   },
   {
     "id": "sonja",
@@ -3367,7 +3564,9 @@
     "payment_card": true,
     "payment_paypal": true,
     "price": 180,
-    "secondary_photos": ["/profiles/sonja/secondary-1.jpg", "/profiles/sonja/secondary-2.jpg"]
+    "secondary_photos": ["/profiles/sonja/secondary-1.jpg", "/profiles/sonja/secondary-2.jpg"],
+    "lat": 48.58978,
+    "lon": 7.75714
   },
   {
     "id": "jean-yves",
@@ -3405,7 +3604,9 @@
     "secondary_photos": [
       "/profiles/jean-yves/secondary-1.jpg",
       "/profiles/jean-yves/secondary-2.jpg"
-    ]
+    ],
+    "lat": 48.00334,
+    "lon": -4.11929
   },
   {
     "id": "leontine",
@@ -3440,7 +3641,12 @@
     "payment_card": true,
     "payment_paypal": false,
     "price": 105,
-    "secondary_photos": ["/profiles/leontine/secondary-1.jpg", "/profiles/leontine/secondary-2.jpg"]
+    "secondary_photos": [
+      "/profiles/leontine/secondary-1.jpg",
+      "/profiles/leontine/secondary-2.jpg"
+    ],
+    "lat": 47.06316,
+    "lon": 2.38682
   },
   {
     "id": "hassan",
@@ -3475,7 +3681,9 @@
     "payment_card": true,
     "payment_paypal": true,
     "price": 110,
-    "secondary_photos": ["/profiles/hassan/secondary-1.jpg", "/profiles/hassan/secondary-2.jpg"]
+    "secondary_photos": ["/profiles/hassan/secondary-1.jpg", "/profiles/hassan/secondary-2.jpg"],
+    "lat": 48.96498,
+    "lon": 2.23502
   },
   {
     "id": "kavita",
@@ -3510,7 +3718,9 @@
     "payment_card": false,
     "payment_paypal": false,
     "price": 25,
-    "secondary_photos": ["/profiles/kavita/secondary-1.jpg", "/profiles/kavita/secondary-2.jpg"]
+    "secondary_photos": ["/profiles/kavita/secondary-1.jpg", "/profiles/kavita/secondary-2.jpg"],
+    "lat": 48.84537,
+    "lon": 2.4563
   },
   {
     "id": "wilma",
@@ -3547,6 +3757,8 @@
     "payment_card": false,
     "payment_paypal": false,
     "price": 335,
-    "secondary_photos": ["/profiles/wilma/secondary-1.jpg", "/profiles/wilma/secondary-2.jpg"]
+    "secondary_photos": ["/profiles/wilma/secondary-1.jpg", "/profiles/wilma/secondary-2.jpg"],
+    "lat": 47.73996,
+    "lon": 7.32745
   }
 ]

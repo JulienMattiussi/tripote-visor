@@ -107,4 +107,21 @@ describe('ThingsToDoBanner', () => {
     await flushPromises();
     expect(router.currentRoute.value.name).toBe('discover');
   });
+
+  it('renders a 5-image slideshow track (4 unique slides + the first duplicated for seamless loop)', async () => {
+    const router = await setupRouter('/');
+    const wrapper = mount(ThingsToDoBanner, withRouter(router));
+    const imgs = wrapper.findAll('.ttd-track img');
+    expect(imgs).toHaveLength(5);
+    // First image carries the localized alt; the others are decorative
+    expect(imgs[0].attributes('alt')).toBeTruthy();
+    expect(imgs[0].attributes('alt').length).toBeGreaterThan(0);
+    for (let i = 1; i < imgs.length; i++) {
+      expect(imgs[i].attributes('alt')).toBe('');
+    }
+    // The last image is the same source as the first (loop seam)
+    expect(imgs[imgs.length - 1].attributes('src')).toBe(imgs[0].attributes('src'));
+    // Track is aria-hidden so the duplicate doesn't pollute the AT tree
+    expect(wrapper.find('.ttd-track').attributes('aria-hidden')).toBe('true');
+  });
 });
